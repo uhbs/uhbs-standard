@@ -32,7 +32,9 @@ jobs:
       - name: Build landing site (UHBS hub)
         working-directory: web
         run: |
-          npm ci
+          # Match ci-validate: skip dependency lifecycle scripts (supply-chain).
+          # package.json has no required prepare/postinstall; vite build is explicit.
+          npm ci --ignore-scripts
           npm run build
 
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
