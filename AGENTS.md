@@ -4,7 +4,7 @@ Guidance for coding assistants and automated agents working in this repository.
 
 ## Project facts (do not invent)
 
-- **UHBS** = open-source **beta-status** evaluation framework for honeypots / deception tech.
+- **UHBS** = open-source **evaluation framework** for honeypots / deception tech.
 - **Not** a consortium, Steering Committee, or adopted industry/academic standard.
 - Spec / package version: **4.5.1** · License: **Apache-2.0**
 - Maintainer: see `MAINTAINERS.md` (single author today).

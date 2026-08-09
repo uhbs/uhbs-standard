@@ -15,4 +15,4 @@ Published lab grades and scorecards under `docs/conformance/` remain authoritati
 
 ## Trust
 
-RFC text is discussion material for the beta framework. It does not create mandatory industry requirements or imply multi-party governance that does not exist today.
+RFC text is discussion material for the framework. It does not create mandatory industry requirements or imply multi-party governance that does not exist today.

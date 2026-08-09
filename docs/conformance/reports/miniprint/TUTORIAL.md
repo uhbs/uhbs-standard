@@ -1,8 +1,7 @@
 # Tutorial: grade miniprint with UHBS (quick + full)
 
 **Status:** Informative · evaluation proof  
-**Target:** [sa7mon/miniprint](https://github.com/sa7mon/miniprint) — PJL printer honeypot on TCP **9100**  
-**Published artifacts:** [`quick/`](quick/README.md) · [`full/`](full/README.md) · trust notes: [METHODOLOGY.md](METHODOLOGY.md)
+**Target:** [sa7mon/miniprint](https://github.com/sa7mon/miniprint) — PJL printer honeypot on TCP **9100Published artifacts:** [`quick/`](quick/README.md) · [`full/`](full/README.md) · trust notes: [METHODOLOGY.md](METHODOLOGY.md)
 
 ---
 
@@ -178,7 +177,7 @@ ls docs/conformance/reports/miniprint/full/static/
 | Module E ≈ 55 | Accept queue stalls under concurrent connects |
 | Module C = 55 (full) | Text logs without STIX/OTel/ECS |
 | δ_C &lt; 1 | Safety Gate not cleared (no remote shell exec surface on this decoy) |
-| UHQS 50.43 / D | Below beta Production Baseline (UHQS &gt; 80 + gate) |
+| UHQS 50.43 / D | Below Production Baseline (UHQS &gt; 80 + gate) |
 
 ---
 
