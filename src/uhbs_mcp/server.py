@@ -56,7 +56,8 @@ logging.basicConfig(level=logging.INFO, handlers=[_handler], force=True)
 log = logging.getLogger("uhbs_mcp")
 
 INSTRUCTIONS = f"""\
-UHBS (Universal Honeypot Benchmarking Standard) v{__version__} — open-source evaluation framework for honeypots / deception tech (Apache-2.0).
+UHBS (Universal Honeypot Benchmarking Standard) v{__version__} — open-source
+evaluation framework for honeypots / deception tech (Apache-2.0).
 
 Not a consortium or adopted industry standard. Product names appear only under
 docs/conformance/ as evaluation proof.
