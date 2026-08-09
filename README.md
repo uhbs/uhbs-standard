@@ -10,7 +10,7 @@
 <a href="https://uhbs.github.io/uhbs-standard/mkdocs/specification/scoring-formula/"><img alt="UHQS" src="https://img.shields.io/badge/UHQS-0--100-success.svg"></a>
 <a href="https://doi.org/10.5281/zenodo.21631156"><img alt="DOI" src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21631156-blue"></a>
 
-Open-source **beta** framework for **lab / sandbox** evaluation of honeypots and decoys — vendor-neutral **UHQS** scoring (0–100) with a non-linear Safety Gate.
+Open-source evaluation framework for **lab / sandbox**evaluation of honeypots and decoys — vendor-neutral **UHQS** scoring (0–100) with a non-linear Safety Gate.
 
 **UHBS v4.5.1** measures deception realism, containment, scale, and telemetry quality by **class and protocol**. It is **not** an industry consortium standard or multi-party governed body. Source and docs: [github.com/uhbs/uhbs-standard](https://github.com/uhbs/uhbs-standard) · [uhbs.github.io/uhbs-standard](https://uhbs.github.io/uhbs-standard/) · [ROADMAP](https://github.com/uhbs/uhbs-standard/blob/main/ROADMAP.md).
 
@@ -41,7 +41,7 @@ Open-source **beta** framework for **lab / sandbox** evaluation of honeypots and
 
 ## Project status
 
-**Status:** Beta / Experimental — [specification status](https://uhbs.github.io/uhbs-standard/mkdocs/specification/status/)
+**Status:** Experimental — [specification status](https://uhbs.github.io/uhbs-standard/mkdocs/specification/status/)
 
 | Topic | Reality today |
 | --- | --- |

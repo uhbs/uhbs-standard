@@ -1,6 +1,6 @@
 # UHBS Project Notes (not institutional governance)
 
-> **Honesty notice.** UHBS is an open-source **beta-status evaluation
+> **Honesty notice.** UHBS is an open-source **evaluation
 > framework**. It is **not** a standards body, consortium, or
 > multi-party committee. There is no Steering Committee and no independent
 > adopter roster today.
@@ -13,9 +13,9 @@
 
 | Claim | Reality today |
 | --- | --- |
-| Evaluation **framework** (spec + schemas + harness + fixtures) | Yes — Beta / Experimental |
+| Evaluation **framework** (spec + schemas + harness + fixtures) | Yes — Experimental |
 | Vendor-neutral class/protocol methodology | Intentional design goal |
-| Industry / academic **standard** with institutional backing | **No** — beta-status framework |
+| Industry / academic **standard** with institutional backing | **No** — evaluation framework |
 | Multi-organization stewards / Steering Committee | **No** — see ROADMAP |
 | Independent external adopters | **Not yet** — see ROADMAP |
 
@@ -50,7 +50,7 @@ committee vote because no committee exists.
 
 ```markdown
 # RFC-NNNN: Title
-- Status: Beta | Accepted | Rejected | Deferred
+- Status: Proposed | Accepted | Rejected | Deferred
 - Author(s):
 - Spec impact: Modules / UHQS / TPS / Other
 - Motivation

@@ -223,7 +223,7 @@ README refresh. **UHQS math, weights, and δ_C are unchanged.**
 
 Minor release: fifteen new built-in protocol plugins (registry **36** protocols),
 awesome-honeypots survey grades/skips, analyst-facing report/scorecard pages,
-LDAP/Bluetooth harness hardening, and beta-status project framing (no “personal
+LDAP/Bluetooth harness hardening, and project framing (no “personal
 project” posture language).
 
 ### Added
@@ -265,7 +265,7 @@ project” posture language).
 
 ### Changed
 - Package / schemas / fixtures / docs / Docker tags advertise **4.3.0**
-- Project posture language: open-source **beta-status** evaluation framework
+- Project posture language: open-source **evaluation framework**
   (removed “personal project” framing from docs, landing, MCP, discovery files)
 - Plugin-authoring documents lab-target safety for proxy/DNS/DHCP/IMAP probes
 
@@ -367,7 +367,7 @@ Published fixtures, reports, Docker tags, and docs now advertise `4.0.1`.
 
 ### Changed
 - GitHub Pages root is the React landing hub; MkDocs deploys under `/mkdocs/`
-- Project maturity wording: **draft** → **beta**
+- Project maturity wording: **draft** → public evaluation framework
 - Cowrie live fixture regraded to UHQS **61.37** / D (SSH full); worked-example **46.97** kept in tests
 - ROADMAP evaluation corpus ≥5 OSS targets marked complete
 - **Module E P95 defaults** are class/protocol-aware when TPS omits

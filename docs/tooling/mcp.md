@@ -11,7 +11,7 @@ Cursor, Claude Desktop, VS Code Copilot, ChatGPT connectors, and similar hosts
 can **validate scorecards**, **recompute UHQS**, and **read schemas** without
 inventing math.
 
-UHBS remains an open-source **beta-status** framework — not a consortium
+UHBS remains an open-source **evaluation framework** — not a consortium
 standard. MCP is optional tooling for agents; the CLI and Docker lab stay the
 primary human workflows ([CLI guide](cli.md)).
 

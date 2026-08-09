@@ -265,7 +265,7 @@ uhbs validate-scorecard docs/conformance/fixtures/espot-web-api.scorecard.json -
 | Module A = 86.75 | Decoy still accepts illegal HTTP versions (partial credit on 0–100 scale) |
 | Full C = 55 | Real logs lack STIX/OTel/ECS schema |
 | D &lt; 95 | Safety Gate applies exponential δ_C |
-| Full UHQS 63.33 / D | Below beta Production Baseline (UHQS &gt; 80 + gate) |
+| Full UHQS 63.33 / D | Below Production Baseline (UHQS &gt; 80 + gate) |
 | Quick UHQS 49.34 / F | Lower once δ_C is harsh and D is weak |
 
 For trust-facing narrative, cite **full/** and [METHODOLOGY.md](METHODOLOGY.md).

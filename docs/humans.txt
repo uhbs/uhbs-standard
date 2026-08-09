@@ -10,7 +10,7 @@ Doctype: HTML5
 Software: UHBS v4.5.1 (Apache-2.0)
 
 /* Notes */
-UHBS is a beta-status evaluation framework — not a consortium standard.
+UHBS is an evaluation framework — not a consortium standard.
 Preferred AI/agent entrypoints (absolute):
   https://uhbs.github.io/uhbs-standard/llms.txt
   https://uhbs.github.io/uhbs-standard/llms-full.txt

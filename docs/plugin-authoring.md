@@ -1,7 +1,7 @@
 # Writing a third-party UHBS protocol plugin
 
 > **Status:** Phase 1 / experimental extension point. UHBS is an open-source
-> beta-status framework (see [`AGENTS.md`](https://github.com/uhbs/uhbs-standard/blob/main/AGENTS.md) and
+> evaluation framework (see [`AGENTS.md`](https://github.com/uhbs/uhbs-standard/blob/main/AGENTS.md) and
 > [`GOVERNANCE.md`](https://github.com/uhbs/uhbs-standard/blob/main/GOVERNANCE.md)) — this page describes what the code
 > does today, not a certified or committee-reviewed plugin API.
 

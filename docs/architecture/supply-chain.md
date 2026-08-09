@@ -2,7 +2,7 @@
 
 > Companion to [`GOVERNANCE.md`](https://github.com/uhbs/uhbs-standard/blob/main/GOVERNANCE.md) §7 and
 > [`ROADMAP.md`](https://github.com/uhbs/uhbs-standard/blob/main/ROADMAP.md) Phase 4 (Integrity / OpenSSF / SLSA).
-> Written for an open-source **beta-status** project, not a certified
+> Written for an open-source  project, not a certified
 > supply-chain program — see [`AGENTS.md`](https://github.com/uhbs/uhbs-standard/blob/main/AGENTS.md).
 
 ## Aspirational target (not achieved)
