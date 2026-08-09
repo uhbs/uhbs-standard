@@ -58,6 +58,7 @@ jobs:
           )
           PY
           fi
+      # upload-artifact latest is v7.x; download-artifact is v8.x — intentional pair.
       - name: Upload dist artifacts
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
