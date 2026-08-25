@@ -1,0 +1,98 @@
+[
+  {
+    "id": "all",
+    "label": "All"
+  },
+  {
+    "id": "ftp",
+    "label": "FTP"
+  },
+  {
+    "id": "generic",
+    "label": "Generic TCP"
+  },
+  {
+    "id": "git",
+    "label": "Git"
+  },
+  {
+    "id": "http",
+    "label": "HTTP"
+  },
+  {
+    "id": "mcp",
+    "label": "MCP"
+  },
+  {
+    "id": "modbus",
+    "label": "Modbus"
+  },
+  {
+    "id": "mysql",
+    "label": "MySQL"
+  },
+  {
+    "id": "ntp",
+    "label": "NTP"
+  },
+  {
+    "id": "pjl",
+    "label": "PJL"
+  },
+  {
+    "id": "pop3",
+    "label": "POP3"
+  },
+  {
+    "id": "postgres",
+    "label": "PostgreSQL"
+  },
+  {
+    "id": "rdp",
+    "label": "RDP"
+  },
+  {
+    "id": "redis",
+    "label": "Redis"
+  },
+  {
+    "id": "s7comm",
+    "label": "S7comm"
+  },
+  {
+    "id": "sip",
+    "label": "SIP"
+  },
+  {
+    "id": "smb",
+    "label": "SMB"
+  },
+  {
+    "id": "smtp",
+    "label": "SMTP"
+  },
+  {
+    "id": "snmp",
+    "label": "SNMP"
+  },
+  {
+    "id": "ssh",
+    "label": "SSH"
+  },
+  {
+    "id": "ssh_tarpit",
+    "label": "SSH tarpit"
+  },
+  {
+    "id": "telnet",
+    "label": "Telnet"
+  },
+  {
+    "id": "tftp",
+    "label": "TFTP"
+  },
+  {
+    "id": "vnc",
+    "label": "VNC"
+  }
+]
