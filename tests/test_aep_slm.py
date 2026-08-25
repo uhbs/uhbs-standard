@@ -51,7 +51,10 @@ def _prepare_experiment(tmp_path: Path, *, trials_per_arm: int = 5) -> Path:
 
 
 def test_packaged_slm_schema_and_locked_template_exist() -> None:
-    schema_dir = Path(aep_mod.__file__).resolve().parent / "schemas"
+    schema_dir = Path(aep_mod.__file__).resolve().parents[1] / "schemas"
+    if not (schema_dir / "aep-slm.schema.json").is_file():
+        # Compatible with both uhbs_cli/aep.py module and uhbs_cli/aep/ package.
+        schema_dir = Path(aep_mod.__file__).resolve().parent / "schemas"
     assert (schema_dir / "aep-slm.schema.json").is_file()
     assert (ROOT / "schemas" / "aep-slm.schema.json").is_file()
     assert (PACKAGED_SLM / "aep-slm.yaml").is_file()
