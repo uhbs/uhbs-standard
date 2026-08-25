@@ -18,8 +18,9 @@ Guidance for coding assistants and automated agents working in this repository.
 | Spec prose | `docs/specification/` |
 | Schemas | `schemas/*.schema.json` |
 | MCP tools for AI hosts | `src/uhbs_mcp/` · docs `docs/tooling/mcp.md` · `server.json` |
-| AEP offline analysis | `src/uhbs_cli/aep.py` · docs `docs/advanced-evidence/` |
-| AEP SLM (alpha, opt-in) | `src/uhbs_cli/aep_slm.py` · docs `docs/advanced-evidence/slm-alpha.md` (off until config edit; do **not** expose via MCP) |
+| AEP offline analysis | `src/uhbs_cli/aep/` · docs `docs/advanced-evidence/` |
+| AEP SLM (alpha, opt-in) | `src/uhbs_cli/aep_slm/` · docs `docs/advanced-evidence/slm-alpha.md` (off until config edit; do **not** expose via MCP) |
+| CLI entry (`uhbs`) | `src/uhbs_cli/cli/` (`python -m uhbs_cli.cli` or console script) |
 | Experimental matrix / provenance / genai-bench | `src/uhbs_cli/{matrix,provenance,genai_bench}.py` · `docs/experimental/` (informative; do **not** expose lab probes via MCP) |
 | Maturity / future governance | `ROADMAP.md` only (do not claim Phase 6 done) |
 | Vendor-neutrality | Classes/protocols in docs; product names only under `docs/conformance/` |

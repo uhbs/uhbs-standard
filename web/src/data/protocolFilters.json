@@ -4,76 +4,8 @@
     "label": "All"
   },
   {
-    "id": "ftp",
-    "label": "FTP"
-  },
-  {
-    "id": "generic",
-    "label": "Generic TCP"
-  },
-  {
-    "id": "git",
-    "label": "Git"
-  },
-  {
     "id": "http",
     "label": "HTTP"
-  },
-  {
-    "id": "mcp",
-    "label": "MCP"
-  },
-  {
-    "id": "modbus",
-    "label": "Modbus"
-  },
-  {
-    "id": "mysql",
-    "label": "MySQL"
-  },
-  {
-    "id": "ntp",
-    "label": "NTP"
-  },
-  {
-    "id": "pjl",
-    "label": "PJL"
-  },
-  {
-    "id": "pop3",
-    "label": "POP3"
-  },
-  {
-    "id": "postgres",
-    "label": "PostgreSQL"
-  },
-  {
-    "id": "rdp",
-    "label": "RDP"
-  },
-  {
-    "id": "redis",
-    "label": "Redis"
-  },
-  {
-    "id": "s7comm",
-    "label": "S7comm"
-  },
-  {
-    "id": "sip",
-    "label": "SIP"
-  },
-  {
-    "id": "smb",
-    "label": "SMB"
-  },
-  {
-    "id": "smtp",
-    "label": "SMTP"
-  },
-  {
-    "id": "snmp",
-    "label": "SNMP"
   },
   {
     "id": "ssh",
@@ -88,11 +20,79 @@
     "label": "Telnet"
   },
   {
-    "id": "tftp",
-    "label": "TFTP"
+    "id": "ftp",
+    "label": "FTP"
+  },
+  {
+    "id": "redis",
+    "label": "Redis"
+  },
+  {
+    "id": "smb",
+    "label": "SMB"
+  },
+  {
+    "id": "sip",
+    "label": "SIP"
+  },
+  {
+    "id": "pjl",
+    "label": "PJL"
+  },
+  {
+    "id": "modbus",
+    "label": "Modbus"
+  },
+  {
+    "id": "mcp",
+    "label": "MCP"
+  },
+  {
+    "id": "smtp",
+    "label": "SMTP"
+  },
+  {
+    "id": "pop3",
+    "label": "POP3"
+  },
+  {
+    "id": "mysql",
+    "label": "MySQL"
+  },
+  {
+    "id": "postgres",
+    "label": "PostgreSQL"
+  },
+  {
+    "id": "rdp",
+    "label": "RDP"
+  },
+  {
+    "id": "generic",
+    "label": "Generic TCP"
   },
   {
     "id": "vnc",
     "label": "VNC"
+  },
+  {
+    "id": "git",
+    "label": "Git"
+  },
+  {
+    "id": "ntp",
+    "label": "NTP"
+  },
+  {
+    "id": "s7comm",
+    "label": "S7comm"
+  },
+  {
+    "id": "snmp",
+    "label": "SNMP"
+  },
+  {
+    "id": "tftp",
+    "label": "TFTP"
   }
 ]

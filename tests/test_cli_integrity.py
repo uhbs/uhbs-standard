@@ -176,3 +176,45 @@ def test_cli_lab_list_protocols() -> None:
     result = runner.invoke(main, ["lab", "--list-protocols"])
     assert result.exit_code == 0, result.output
     assert "ssh" in result.output
+
+
+def test_cli_command_tree_complete() -> None:
+    """Registration side-effects must keep all top-level and nested commands."""
+    assert sorted(main.list_commands(None)) == [
+        "aep",
+        "genai-bench",
+        "lab",
+        "matrix",
+        "provenance",
+        "score",
+        "validate-evidence",
+        "validate-profile",
+        "validate-scorecard",
+    ]
+    aep = main.get_command(None, "aep")
+    assert aep is not None
+    assert sorted(aep.list_commands(None)) == [
+        "analyze",
+        "example",
+        "init",
+        "report",
+        "slm",
+        "validate",
+        "validate-trials",
+    ]
+    slm = aep.get_command(None, "slm")
+    assert slm is not None
+    assert sorted(slm.list_commands(None)) == [
+        "generate",
+        "init",
+        "status",
+        "validate",
+    ]
+    for group_name, expected in (
+        ("matrix", ["analyze", "example", "report", "validate"]),
+        ("provenance", ["attach", "example", "summarize", "validate"]),
+        ("genai-bench", ["analyze", "example", "stub"]),
+    ):
+        group = main.get_command(None, group_name)
+        assert group is not None, group_name
+        assert sorted(group.list_commands(None)) == expected

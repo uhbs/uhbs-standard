@@ -39,6 +39,7 @@ __all__ = [
     "EXAMPLE_BUNDLES",
     "FSV_LAYERS",
     "UHBS_VERSION",
+    "_schema_dir",
     "analyze",
     "bootstrap_ci",
     "compute_dtdr",

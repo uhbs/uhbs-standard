@@ -27,7 +27,3 @@ __all__ = [
     "_schema_dir",
     "main",
 ]
-
-
-if __name__ == "__main__":
-    main()
