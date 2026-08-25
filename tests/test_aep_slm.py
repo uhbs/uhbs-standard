@@ -19,9 +19,12 @@ from uhbs_cli.cli import main
 
 ROOT = Path(__file__).resolve().parents[1]
 BEGINNER = ROOT / "examples" / "advanced-evidence" / "beginner"
-PACKAGED_SLM = (
-    Path(slm.__file__).resolve().parent / "data" / "advanced-evidence" / "slm"
-)
+# Compatible with both uhbs_cli/aep_slm.py module and uhbs_cli/aep_slm/ package.
+_SLM_ROOT = Path(slm.__file__).resolve().parent
+if (_SLM_ROOT / "data" / "advanced-evidence" / "slm").is_dir():
+    PACKAGED_SLM = _SLM_ROOT / "data" / "advanced-evidence" / "slm"
+else:
+    PACKAGED_SLM = _SLM_ROOT.parent / "data" / "advanced-evidence" / "slm"
 
 
 def _unlock(cfg: dict) -> dict:
@@ -401,7 +404,13 @@ def test_status_cli_json_locked(tmp_path: Path) -> None:
 
 
 def test_module_import_has_no_eager_urllib() -> None:
-    src = Path(slm.__file__).read_text(encoding="utf-8")
-    # Top-level import block should not pull urllib (lazy inside helpers).
-    head = src.split("def default_config_template")[0]
-    assert "urllib" not in head
+    # urllib must stay lazy inside helpers (never module-level import).
+    root = Path(slm.__file__).resolve().parent
+    sources = [Path(slm.__file__)]
+    if root.name == "aep_slm" and (root / "http_client.py").is_file():
+        sources = sorted(root.glob("*.py"))
+    for path in sources:
+        for line in path.read_text(encoding="utf-8").splitlines():
+            # Only module-level imports (no leading whitespace).
+            if line.startswith(("import urllib", "from urllib")):
+                raise AssertionError(f"{path.name}: eager urllib import: {line}")
