@@ -39,8 +39,26 @@ FORBIDDEN_IMPORT_ROOTS = {
 }
 
 
+def _aep_source_files() -> list[Path]:
+    """Return all Python sources that implement AEP (module file or package)."""
+    root = Path(aep_mod.__file__).resolve()
+    if root.name == "__init__.py":
+        return sorted(p for p in root.parent.glob("*.py") if p.is_file())
+    return [root]
+
+
+def _uhbs_cli_schemas_dir() -> Path:
+    """Locate packaged schemas next to the uhbs_cli package (file or aep/ package)."""
+    root = Path(aep_mod.__file__).resolve().parent
+    if (root / "schemas").is_dir():
+        return root / "schemas"
+    if (root.parent / "schemas").is_dir():
+        return root.parent / "schemas"
+    raise AssertionError(f"uhbs_cli schemas not found near {aep_mod.__file__}")
+
+
 def test_packaged_aep_schemas_exist() -> None:
-    schema_dir = Path(aep_mod.__file__).resolve().parent / "schemas"
+    schema_dir = _uhbs_cli_schemas_dir()
     for name in (
         "aep-experiment.schema.json",
         "aep-trial.schema.json",
@@ -51,17 +69,23 @@ def test_packaged_aep_schemas_exist() -> None:
 
 
 def test_aep_module_import_policy() -> None:
-    src = Path(aep_mod.__file__).read_text(encoding="utf-8")
-    tree = ast.parse(src)
+    """AEP implementation modules must stay offline (no network/lab imports)."""
     imported: set[str] = set()
-    for node in ast.walk(tree):
-        if isinstance(node, ast.Import):
-            for alias in node.names:
-                imported.add(alias.name.split(".")[0])
-        elif isinstance(node, ast.ImportFrom) and node.module:
-            imported.add(node.module.split(".")[0])
+    sources = _aep_source_files()
+    assert sources, "expected at least one AEP source file"
+    for path in sources:
+        tree = ast.parse(path.read_text(encoding="utf-8"))
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                for alias in node.names:
+                    imported.add(alias.name.split(".")[0])
+            elif isinstance(node, ast.ImportFrom) and node.module:
+                # Ignore relative package imports (`.stats`, `uhbs_cli.aep.stats`).
+                if node.level and node.level > 0:
+                    continue
+                imported.add(node.module.split(".")[0])
     bad = sorted(imported & FORBIDDEN_IMPORT_ROOTS)
-    assert bad == [], f"AEP module must not import {bad}"
+    assert bad == [], f"AEP modules must not import {bad}"
 
 
 def test_beginner_example_end_to_end(tmp_path: Path) -> None:
@@ -468,7 +492,7 @@ def test_uhbs_schema_dir_env(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) ->
     with pytest.raises(aep_mod.AepError, match="schema not found"):
         aep_mod.load_schema("aep-experiment.schema.json")
     # Restore by copying real schemas
-    real = Path(aep_mod.__file__).resolve().parent / "schemas"
+    real = _uhbs_cli_schemas_dir()
     for name in (
         "aep-experiment.schema.json",
         "aep-trial.schema.json",

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "all",
+    "label": "All"
+  },
+  {
+    "id": "http",
+    "label": "HTTP"
+  },
+  {
+    "id": "ssh",
+    "label": "SSH"
+  },
+  {
+    "id": "ssh_tarpit",
+    "label": "SSH tarpit"
+  },
+  {
+    "id": "telnet",
+    "label": "Telnet"
+  },
+  {
+    "id": "ftp",
+    "label": "FTP"
+  },
+  {
+    "id": "redis",
+    "label": "Redis"
+  },
+  {
+    "id": "smb",
+    "label": "SMB"
+  },
+  {
+    "id": "sip",
+    "label": "SIP"
+  },
+  {
+    "id": "pjl",
+    "label": "PJL"
+  },
+  {
+    "id": "modbus",
+    "label": "Modbus"
+  },
+  {
+    "id": "mcp",
+    "label": "MCP"
+  },
+  {
+    "id": "smtp",
+    "label": "SMTP"
+  },
+  {
+    "id": "pop3",
+    "label": "POP3"
+  },
+  {
+    "id": "mysql",
+    "label": "MySQL"
+  },
+  {
+    "id": "postgres",
+    "label": "PostgreSQL"
+  },
+  {
+    "id": "rdp",
+    "label": "RDP"
+  },
+  {
+    "id": "generic",
+    "label": "Generic TCP"
+  },
+  {
+    "id": "vnc",
+    "label": "VNC"
+  },
+  {
+    "id": "git",
+    "label": "Git"
+  },
+  {
+    "id": "ntp",
+    "label": "NTP"
+  },
+  {
+    "id": "s7comm",
+    "label": "S7comm"
+  },
+  {
+    "id": "snmp",
+    "label": "SNMP"
+  },
+  {
+    "id": "tftp",
+    "label": "TFTP"
+  }
+]
