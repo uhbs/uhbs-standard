@@ -93,7 +93,11 @@ def probe_ssh_rfc4253(host: str, port: int) -> RFCSuiteResult:
             id="rfc4253.reject_null_in_id",
             team="red",
             passed=not continued,
-            detail="null in client ID did not proceed to KEX" if not continued else "accepted null ID",
+            detail=(
+                "null in client ID did not proceed to KEX"
+                if not continued
+                else "accepted null ID"
+            ),
             score=100.0 if not continued else 0.0,
             evidence=[err4 or raw4[:40].hex()],
         )

@@ -71,7 +71,13 @@ def probe_smtp_rfc5321(host: str, port: int) -> RFCSuiteResult:
     script = b"EHLO bench.invalid\r\nQUIT\r\n"
     raw, _, err = _transact(host, port, script, recv_first=True)
     text = raw.decode("utf-8", "replace")
-    ehlo_ok = "250" in text and ("EHLO" in text.upper() or "PIPELINING" in text.upper() or "SIZE" in text.upper() or "\n250-" in text or "\n250 " in text)
+    ehlo_ok = "250" in text and (
+        "EHLO" in text.upper()
+        or "PIPELINING" in text.upper()
+        or "SIZE" in text.upper()
+        or "\n250-" in text
+        or "\n250 " in text
+    )
     # Accept multiline 250- capabilities
     ehlo_ok = ehlo_ok or bool(re.search(r"(?m)^250[\s-]", text))
     suite.checks.append(
@@ -89,7 +95,9 @@ def probe_smtp_rfc5321(host: str, port: int) -> RFCSuiteResult:
     script = b"NOOP\nQUIT\n"
     raw, _, err = _transact(host, port, script, recv_first=True)
     codes = _smtp_codes(raw)
-    safe = bool(codes) and not any(c >= 500 and c not in (500, 501, 502, 503, 504) for c in codes if c != 221)
+    safe = bool(codes) and not any(
+        c >= 500 and c not in (500, 501, 502, 503, 504) for c in codes if c != 221
+    )
     # Pass if we got any SMTP-shaped reply and no crash
     suite.checks.append(
         CheckResult(
