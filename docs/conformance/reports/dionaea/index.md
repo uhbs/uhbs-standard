@@ -31,6 +31,6 @@ Malware-capture oriented honeypot; UHBS graded selected FTP/HTTP/SMB surfaces.
 
 ## Trust & limitations
 
-- Evaluation proof under UHBS 4.2.2 — not a certification or endorsement.
+- Evaluation proof under UHBS 4.5.1 — not a certification or endorsement.
 - Prefer **full/** over **quick/** for decisions.
 - Reading guide: [READING-UHQS.md](../READING-UHQS.md).

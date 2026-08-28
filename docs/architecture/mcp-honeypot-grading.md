@@ -1,7 +1,7 @@
 # MCP honeypot grading vs UHBS AI-host MCP
 
 **Status:** Informative  
-**UHBS:** 4.2.2
+**UHBS:** 4.5.1
 
 UHBS has **two** MCP-related surfaces. Do not confuse them:
 

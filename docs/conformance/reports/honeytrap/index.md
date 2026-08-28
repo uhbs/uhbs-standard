@@ -22,7 +22,7 @@
 
 ## Trust & limitations
 
-- UHBS 4.2.2 evaluation proof is **informative** — not a certification or vendor ranking.
+- UHBS 4.5.1 evaluation proof is **informative** — not a certification or vendor ranking.
 - Prefer **full/** artifacts over **quick/** for operational decisions.
 - Re-run via [TUTORIAL.md](TUTORIAL.md); environment notes in [METHODOLOGY.md](METHODOLOGY.md).
 - How to read modules: [READING-UHQS.md](../READING-UHQS.md)

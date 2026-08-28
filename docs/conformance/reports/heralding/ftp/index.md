@@ -1,7 +1,7 @@
 # heralding — FTP
 
 **Status:** Informative · evaluation proof  
-**UHBS:** v4.2.2 · **Class:** Low-Interaction · **Protocol:** `ftp`  
+**UHBS:** 4.5.1 · **Class:** Low-Interaction · **Protocol:** `ftp`  
 **Target id:** `heralding-ftp` · **Evaluated:** 2026-07-29
 
 | Run | UHQS | Grade | δ_C | Artifacts |

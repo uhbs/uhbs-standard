@@ -1,7 +1,7 @@
 # qeeqbox-honeypots — REDIS
 
 **Status:** Informative · evaluation proof  
-**UHBS:** v4.2.2 · **Class:** Low-Interaction · **Protocol:** `redis`  
+**UHBS:** 4.5.1 · **Class:** Low-Interaction · **Protocol:** `redis`  
 **Target id:** `qeeqbox-redis` · **Evaluated:** 2026-07-29
 
 | Run | UHQS | Grade | δ_C | Artifacts |

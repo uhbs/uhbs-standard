@@ -20,4 +20,4 @@ LLMPot lab grading required an XFF / reverse-proxy fallback adjustment so the ha
 - Apply only in the lab checkout used for Module F / dynamic runs described in the tutorial.
 - Confirm HTTP probes still hit the graded listener after the change.
 - Cite UHQS from `full/SCORECARD.txt`, not from this patch note alone.
-- UHBS 4.2.2 proof remains informative evaluation evidence — not an endorsement of LLMPot.
+- UHBS 4.5.1 proof remains informative evaluation evidence — not an endorsement of LLMPot.

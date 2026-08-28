@@ -32,6 +32,6 @@ Medium-interaction SSH/Telnet honeypot widely used for interactive session and m
 
 ## Trust & limitations
 
-- Evaluation proof under UHBS 4.2.2 — not a certification or endorsement.
+- Evaluation proof under UHBS 4.5.1 — not a certification or endorsement.
 - Prefer **full/** over **quick/** for decisions.
 - Reading guide: [READING-UHQS.md](../READING-UHQS.md).

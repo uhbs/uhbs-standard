@@ -1,7 +1,7 @@
 # beelzebub — MCP
 
 **Status:** Informative · evaluation proof  
-**UHBS:** v4.2.2 · **Class:** Web-API · **Protocol:** `mcp`  
+**UHBS:** 4.5.1 · **Class:** Web-API · **Protocol:** `mcp`  
 **Target id:** `beelzebub-mcp` · **Evaluated:** 2026-07-28
 
 | Run | UHQS | Grade | δ_C | Artifacts |

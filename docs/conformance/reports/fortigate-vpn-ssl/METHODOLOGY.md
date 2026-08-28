@@ -1,6 +1,6 @@
 # Methodology: FortiGate VPN-SSL Honeypot UHBS lab
 
-**UHBS:** 4.2.2 · Graded **HTTP** Web-API profile.
+**UHBS:** 4.5.1 · Graded **HTTP** Web-API profile.
 
 Quick **46.78 / F**, full **46.78 / F**.
 

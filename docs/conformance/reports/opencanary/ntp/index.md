@@ -1,7 +1,7 @@
 # opencanary — NTP
 
 **Status:** Informative · evaluation proof  
-**UHBS:** v4.2.2 · **Class:** Low-Interaction · **Protocol:** `ntp`  
+**UHBS:** 4.5.1 · **Class:** Low-Interaction · **Protocol:** `ntp`  
 **Target id:** `opencanary-ntp` · **Evaluated:** 2026-07-27
 
 | Run | UHQS | Grade | δ_C | Artifacts |

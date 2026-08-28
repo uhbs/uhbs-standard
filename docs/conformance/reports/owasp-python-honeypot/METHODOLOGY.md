@@ -1,6 +1,6 @@
 # Methodology: OWASP Python-Honeypot UHBS lab
 
-**UHBS:** 4.2.2 · Graded **HTTP** basic-auth weak-password module (Apache httpd).  
+**UHBS:** 4.5.1 · Graded **HTTP** basic-auth weak-password module (Apache httpd).  
 Lab image builds from upstream tree with `Dockerfile.lab`; credentials `admin` / `123456` per module defaults.
 
 Quick **43.98 / F**, full **43.98 / F** · δ_C **0.5625** (operator air-gap attestation; C=75).

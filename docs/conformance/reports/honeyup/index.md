@@ -34,6 +34,6 @@ Uploader honeypot mimicking weak `/uploads` PHP endpoints to collect malware and
 
 ## Trust & limitations
 
-- Evaluation proof under UHBS 4.2.2 — not certification or vendor ranking.
+- Evaluation proof under UHBS 4.5.1 — not certification or vendor ranking.
 - Prefer **full/** artifacts over **quick/** for operational decisions.
 - Re-run via [TUTORIAL.md](TUTORIAL.md); environment notes in [METHODOLOGY.md](METHODOLOGY.md).

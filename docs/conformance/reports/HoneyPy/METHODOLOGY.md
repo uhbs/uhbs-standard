@@ -1,6 +1,6 @@
 # Methodology: HoneyPy (skipped)
 
-**UHBS:** 4.2.2 · **Status:** skipped in batch C — no SCORECARD artifacts.
+**UHBS:** 4.5.1 · **Status:** skipped in batch C — no SCORECARD artifacts.
 
 HoneyPy targets Python 2.7 with legacy dependencies (Twisted, old autopep8 pins). A minimal `Dockerfile.lab` could not resolve pip constraints on `python:2.7-slim` within the batch window, and the project is explicitly unmaintained (upstream recommends honeydb-agent). HTTP plugin grading was deferred until a pinned dependency lockfile or community image exists.
 
@@ -11,4 +11,4 @@ HoneyPy targets Python 2.7 with legacy dependencies (Twisted, old autopep8 pins)
 3. This methodology (scope / blockers)  
 4. Tutorial replication commands  
 
-Skip hubs explain why no SCORECARD exists yet. See [READING-UHQS.md](../READING-UHQS.md). Informative only · UHBS 4.2.2 · isolate honeypot networks in real deployments.
+Skip hubs explain why no SCORECARD exists yet. See [READING-UHQS.md](../READING-UHQS.md). Informative only · UHBS 4.5.1 · isolate honeypot networks in real deployments.

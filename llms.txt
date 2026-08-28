@@ -23,10 +23,11 @@ This file is the **repository + site-root** agent index (AEO/GEO for coding assi
 ## Essential
 
 - [README](https://github.com/uhbs/uhbs-standard/blob/main/README.md): Project posture and quickstart
+- [Install & use UHBS](https://uhbs.github.io/uhbs-standard/mkdocs/tooling/install-and-use/): Short human getting-started (install, validate, score)
 - [ROADMAP](https://github.com/uhbs/uhbs-standard/blob/main/ROADMAP.md): Maturity plan; Phase 6 community goals mostly unchecked
 - [MAINTAINERS](https://github.com/uhbs/uhbs-standard/blob/main/MAINTAINERS.md): Single maintainer today
 - [Landing hub](https://uhbs.github.io/uhbs-standard/): React overview + published lab grades
-- [MkDocs docs](https://uhbs.github.io/uhbs-standard/mkdocs/): Specification, scorecards, conformance reports
+- [MkDocs docs](https://uhbs.github.io/uhbs-standard/mkdocs/): Specification, scorecards, published grades
 - [CITATION.cff](https://github.com/uhbs/uhbs-standard/blob/main/CITATION.cff): How to cite
 
 ## Normative / machine-readable
@@ -49,7 +50,7 @@ This file is the **repository + site-root** agent index (AEO/GEO for coding assi
 - [CLI guide](https://github.com/uhbs/uhbs-standard/blob/main/docs/tooling/cli.md): Commands and integrity checks
 - [MCP guide](https://github.com/uhbs/uhbs-standard/blob/main/docs/tooling/mcp.md): Cursor / Claude / VS Code config
 - [MCP honeypot grading](https://github.com/uhbs/uhbs-standard/blob/main/docs/architecture/mcp-honeypot-grading.md): Live `uhbs-lab --protocol mcp` (not AI-host MCP)
-- [Conformance fixtures](https://github.com/uhbs/uhbs-standard/tree/main/docs/conformance/fixtures): Proof scorecards only
+- [Published grades / fixtures](https://github.com/uhbs/uhbs-standard/tree/main/docs/conformance): Proof scorecards + reproduce-grade Docker recipes (not the install guide)
 
 ## Optional
 

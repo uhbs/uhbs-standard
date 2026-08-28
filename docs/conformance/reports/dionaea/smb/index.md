@@ -1,7 +1,7 @@
 # dionaea — SMB
 
 **Status:** Informative · evaluation proof  
-**UHBS:** v4.2.2 · **Class:** Low-Interaction · **Protocol:** `smb`  
+**UHBS:** 4.5.1 · **Class:** Low-Interaction · **Protocol:** `smb`  
 **Target id:** `dionaea-smb` · **Evaluated:** 2026-07-27
 
 | Run | UHQS | Grade | δ_C | Artifacts |

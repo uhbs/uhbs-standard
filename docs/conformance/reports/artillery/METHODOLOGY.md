@@ -1,6 +1,6 @@
 # Methodology: artillery UHBS lab
 
-**UHBS:** 4.2.2 · Graded **generic** Low-Interaction decoy.  
+**UHBS:** 4.5.1 · Graded **generic** Low-Interaction decoy.  
 Quick **39.84 / F**, full **37.55 / F**.
 
 ## Analyst trust notes

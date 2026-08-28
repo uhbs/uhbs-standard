@@ -1,6 +1,6 @@
 # Methodology: sticky_elephant UHBS lab
 
-**UHBS:** 4.2.2 · Graded **postgres** Low-Interaction decoy.  
+**UHBS:** 4.5.1 · Graded **postgres** Low-Interaction decoy.  
 Quick **40.35 / F**, full **38.06 / F**.
 
 ## Analyst trust notes

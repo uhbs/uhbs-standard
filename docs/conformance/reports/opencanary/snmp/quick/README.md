@@ -1,6 +1,6 @@
 # opencanary / snmp — quick artifacts
 
-**UHQS 40.69 / F** · UHBS v4.2.2 · δ_C=0.5625
+**UHQS 40.69 / F** · UHBS v4.5.1 · δ_C=0.5625
 
 This page is the human-readable landing for the UHBS-Lab run artifacts. The authoritative proof is the verbatim scorecard below (same bytes as `SCORECARD.txt`).
 
