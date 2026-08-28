@@ -1,7 +1,7 @@
 # qeeqbox-honeypots — POSTGRES
 
 **Status:** Informative · evaluation proof  
-**UHBS:** v4.2.2 · **Class:** Database · **Protocol:** `postgres`  
+**UHBS:** 4.5.1 · **Class:** Database · **Protocol:** `postgres`  
 **Target id:** `qeeqbox-postgres` · **Evaluated:** 2026-07-29
 
 | Run | UHQS | Grade | δ_C | Artifacts |

@@ -1,6 +1,6 @@
 # Methodology: SMTPLLMPot skip
 
-**UHBS:** 4.2.2 · **SMTP** · **Status:** skipped (OpenAI LLM required)
+**UHBS:** 4.5.1 · **SMTP** · **Status:** skipped (OpenAI LLM required)
 
 LLM-backed SMTP cannot be exercised without API keys in this air-gapped grading policy.
 
@@ -17,7 +17,7 @@ Until then, treat this page as a **skip / gap note**. See [READING-UHQS.md](../R
 
 ## Trust
 
-Informative only · UHBS 4.2.2 · not an endorsement. Isolate honeypot networks in real deployments; do not cite UHQS without SCORECARD proof.
+Informative only · UHBS 4.5.1 · not an endorsement. Isolate honeypot networks in real deployments; do not cite UHQS without SCORECARD proof.
 
 ## Environment note
 

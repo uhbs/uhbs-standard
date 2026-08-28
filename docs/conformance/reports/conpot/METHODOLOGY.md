@@ -35,7 +35,7 @@
 
 | Field | Full | Quick |
 | --- | --- | --- |
-| Image | `uhbs:4.0.1-full` | `uhbs:4.0.1` |
+| Image | `uhbs:4.5.1-full` | `uhbs:4.5.1` |
 | TPS | [`labs/conpot/ics_modbus_full.yaml`](../../labs/conpot/ics_modbus_full.yaml) | [`labs/conpot/ics_modbus_quick.yaml`](../../labs/conpot/ics_modbus_quick.yaml) |
 | Inventory | [`labs/conpot/inventory.yaml`](../../labs/conpot/inventory.yaml) | CLI + quick TPS |
 | Protocol plugin | **modbus** | same |
@@ -51,7 +51,7 @@
 
 ```text
 ┌──────────────────────┐   network uhbs-lab    ┌──────────────────────────┐
-│ uhbs:4.0.1[-full]    │ ───────────────────── │ conpot-lab               │
+│ uhbs:4.5.1[-full]    │ ───────────────────── │ conpot-lab               │
 │ mounts /honeypot     │ ← source tree         │ Modbus :5020 (graded)    │
 │ mounts /telemetry    │ ← conpot.log          │ (+ other listeners N/A)  │
 └──────────────────────┘                       └──────────────────────────┘

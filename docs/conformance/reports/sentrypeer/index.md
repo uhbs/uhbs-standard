@@ -2,7 +2,7 @@
 
 **Status:** Informative · evaluation proof  
 **Upstream:** [https://github.com/SentryPeer/SentryPeer](https://github.com/SentryPeer/SentryPeer) · GitHub last push `2026-07-27`  
-**UHBS:** 4.2.2 (no version bump)
+**UHBS:** 4.5.1 (no version bump)
 
 ## What this decoy is
 
@@ -31,7 +31,7 @@ SIP/VoIP honeypot oriented at toll-fraud and SIP abuse telemetry.
 
 ## Trust & limitations
 
-- This page is **evaluation proof** under UHBS 4.2.2 — not a certification or vendor ranking.
+- This page is **evaluation proof** under UHBS 4.5.1 — not a certification or vendor ranking.
 - Prefer **full/** artifacts over **quick/** for operational decisions.
 - Re-run via [TUTORIAL.md](TUTORIAL.md); environment notes in [METHODOLOGY.md](METHODOLOGY.md).
 - How to read modules: [READING-UHQS.md](../READING-UHQS.md)

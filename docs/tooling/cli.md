@@ -23,6 +23,18 @@ library is required (Click is already a dependency; styling is in
 ## Install
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install uhbs
+uhbs --help
+```
+
+Short walkthrough (validate profile / scorecard / score):  
+[Install & use UHBS](install-and-use.md).
+
+From a git checkout:
+
+```bash
 git clone https://github.com/uhbs/uhbs-standard.git
 cd uhbs-standard
 python -m venv .venv

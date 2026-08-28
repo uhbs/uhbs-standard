@@ -1,7 +1,7 @@
 # Optional full grading image: UHBS CLI/lab + Module F SAST tools.
-# Build after uhbs:4.2.2:  docker build -f Dockerfile.full -t uhbs:4.2.2-full .
+# Build after uhbs:4.5.1:  docker build -f Dockerfile.full -t uhbs:4.5.1-full .
 # MCP remains host-side (uhbs[mcp]); see docs/tooling/mcp.md.
-FROM uhbs:4.2.2
+FROM uhbs:4.5.1
 
 USER root
 

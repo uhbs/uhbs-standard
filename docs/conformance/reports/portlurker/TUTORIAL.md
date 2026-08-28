@@ -15,7 +15,7 @@ UHBS_QUICK=1 UHBS_AIRGAP_ATTESTED=1 uhbs-lab \
 
 ## What you get / what this means
 
-Graded labs produce `SCORECARD.txt` (verbatim modules + UHQS + δ_C) and `report.json`. Prefer **full** over quick. Read A–F with [READING-UHQS.md](../READING-UHQS.md). Module C is harness visibility — wire SIEM yourself. Skip notes mean no UHQS was invented; re-queue when a hermetic recipe exists. UHBS 4.2.2 proof is informative only — not an endorsement.
+Graded labs produce `SCORECARD.txt` (verbatim modules + UHQS + δ_C) and `report.json`. Prefer **full** over quick. Read A–F with [READING-UHQS.md](../READING-UHQS.md). Module C is harness visibility — wire SIEM yourself. Skip notes mean no UHQS was invented; re-queue when a hermetic recipe exists. UHBS 4.5.1 proof is informative only — not an endorsement.
 
 ## Analyst checklist
 
@@ -23,4 +23,4 @@ Graded labs produce `SCORECARD.txt` (verbatim modules + UHQS + δ_C) and `report
 - Confirm Safety Gate / δ_C before citing a composite score externally.
 - Wire your own log shipping — Module C is harness visibility, not SIEM coverage.
 - Re-run after upstream or TPS changes; keep class/protocol/target ids aligned with inventory.
-- UHBS 4.2.2 remains an open-source evaluation framework (Apache-2.0) — informative proof only.
+- UHBS 4.5.1 remains an open-source evaluation framework (Apache-2.0) — informative proof only.

@@ -1,7 +1,7 @@
 # qeeqbox-honeypots — MYSQL
 
 **Status:** Informative · evaluation proof  
-**UHBS:** v4.2.2 · **Class:** Database · **Protocol:** `mysql`  
+**UHBS:** 4.5.1 · **Class:** Database · **Protocol:** `mysql`  
 **Target id:** `qeeqbox-mysql` · **Evaluated:** 2026-07-29
 
 | Run | UHQS | Grade | δ_C | Artifacts |

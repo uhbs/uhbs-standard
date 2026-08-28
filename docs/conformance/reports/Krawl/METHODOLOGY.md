@@ -1,6 +1,6 @@
 # Methodology: Krawl UHBS lab
 
-**UHBS:** 4.2.2 · Graded **HTTP** Web-API profile.
+**UHBS:** 4.5.1 · Graded **HTTP** Web-API profile.
 
 Quick **50.91 / D**, full **50.91 / D**.
 

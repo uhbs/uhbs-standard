@@ -24,7 +24,8 @@ Canonical hosts:
 ## Essential
 
 - [Home / landing](https://uhbs.github.io/uhbs-standard/): Hub overview and published lab grades
-- [MkDocs docs](https://uhbs.github.io/uhbs-standard/mkdocs/): Spec, scorecards, reports
+- [Install & use UHBS](https://uhbs.github.io/uhbs-standard/mkdocs/tooling/install-and-use/): Short getting-started (install, validate, score)
+- [MkDocs docs](https://uhbs.github.io/uhbs-standard/mkdocs/): Spec, scorecards, published grades
 - [Document status](https://uhbs.github.io/uhbs-standard/mkdocs/specification/status/): Experimental; UHBS-Core vs UHBS-Lab
 - [Scoring formula (UHQS)](https://uhbs.github.io/uhbs-standard/mkdocs/specification/scoring-formula/): Normative UHQS and δ_C Safety Gate
 - [Modules A–F](https://uhbs.github.io/uhbs-standard/mkdocs/specification/modules/): Evaluation module objectives
@@ -35,8 +36,10 @@ Canonical hosts:
 - [Core principles](https://uhbs.github.io/uhbs-standard/mkdocs/specification/core-principles/): Dual-plane audit and isolation
 - [Target profiles (TPS)](https://uhbs.github.io/uhbs-standard/mkdocs/specification/target-profiles/): profile.yaml classes and weights
 - [CLI & validator](https://uhbs.github.io/uhbs-standard/mkdocs/tooling/cli/): uhbs validate-profile / validate-scorecard / score
+- [Install & use UHBS](https://uhbs.github.io/uhbs-standard/mkdocs/tooling/install-and-use/): Human getting-started walkthrough
 - [MCP server (AI hosts)](https://uhbs.github.io/uhbs-standard/mkdocs/tooling/mcp/): stdio tools for Cursor / Claude / VS Code — validate, UHQS, fixtures
 - [Reference implementation](https://uhbs.github.io/uhbs-standard/mkdocs/reference-implementation/): uhbs_core Modules A–F harness
+- [Published grades](https://uhbs.github.io/uhbs-standard/mkdocs/conformance/): Proof scorecards + reproduce-grade Docker recipes
 
 ## Evidence & maturity
 

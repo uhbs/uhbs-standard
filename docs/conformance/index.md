@@ -1,30 +1,41 @@
-# Conformance Suite
+# Published grades (conformance)
 
 **Status:** Normative (fixtures) / Informative (narrative + lab reports)
 
-This suite proves that UHQS math, weights, and grade bands match the reference
-harness. Fixtures and **published lab reports** are the only place in the public
-docs where specific deception products are named — as evaluation proof (not as
-UHBS requirements).
+This section is **evaluation proof**: finished scorecards and Docker lab recipes
+for named honeypots. It is **not** the “how to install UHBS” guide.
+
+!!! tip "Looking for install / CLI steps?"
+    Start here instead: **[Install & use UHBS](../tooling/install-and-use.md)**.
+
+| Page type | Meaning |
+| --- | --- |
+| **Report hub** | Published quick / full UHQS for one product |
+| **Reproduce grade** | Exact Docker commands used to produce that grade |
+| **Methodology** | Trust notes / provenance for the run |
+
+Fixtures and **published lab reports** are the only place in the public docs
+where specific deception products are named — as evaluation proof (not as UHBS
+requirements).
 
 Optional controlled comparative evidence (VoD / FSV / DTDR / EER) lives in the
 [Advanced Evidence Profile](../advanced-evidence/index.md) and does **not** alter
 these UHQS fixtures.
 
-## Lab reports (start here for real runs)
+## Lab reports (reproduce published grades)
 
-Published quick + full Docker grades, tutorials, and provenance:
+Published quick + full Docker grades, reproduce recipes, and provenance:
 
 **→ [reports/index.md](reports/index.md)**
 
-| Honeypot | Quick | Full | Tutorial |
+| Honeypot | Quick | Full | Reproduce grade |
 | --- | --- | --- | --- |
-| [ESPot](reports/espot/index.md) | [49.34 / F](reports/espot/quick/) | [63.33 / D](reports/espot/full/) | [TUTORIAL](reports/espot/TUTORIAL.md) |
-| [miniprint](reports/miniprint/index.md) | [41.83 / F](reports/miniprint/quick/) | [50.43 / D](reports/miniprint/full/) | [TUTORIAL](reports/miniprint/TUTORIAL.md) |
-| [Conpot](reports/conpot/index.md) | [44.55 / F](reports/conpot/quick/) | [55.4 / D](reports/conpot/full/) | [TUTORIAL](reports/conpot/TUTORIAL.md) |
-| [Cowrie](reports/cowrie/index.md) | [82.76 / B](reports/cowrie/ssh/quick/) | [61.37 / D](reports/cowrie/ssh/full/) | [TUTORIAL](reports/cowrie/TUTORIAL.md) |
-| [Endlessh](reports/endlessh/index.md) | [46.55 / F](reports/endlessh/quick/) | [54.07 / D](reports/endlessh/full/) | [TUTORIAL](reports/endlessh/TUTORIAL.md) |
-| [OpenCanary](reports/opencanary/index.md) | see hub | see hub | [TUTORIAL](reports/opencanary/TUTORIAL.md) |
+| [ESPot](reports/espot/index.md) | [49.34 / F](reports/espot/quick/) | [63.33 / D](reports/espot/full/) | [recipe](reports/espot/TUTORIAL.md) |
+| [miniprint](reports/miniprint/index.md) | [41.83 / F](reports/miniprint/quick/) | [50.43 / D](reports/miniprint/full/) | [recipe](reports/miniprint/TUTORIAL.md) |
+| [Conpot](reports/conpot/index.md) | [44.55 / F](reports/conpot/quick/) | [55.4 / D](reports/conpot/full/) | [recipe](reports/conpot/TUTORIAL.md) |
+| [Cowrie](reports/cowrie/index.md) | [82.76 / B](reports/cowrie/ssh/quick/) | [61.37 / D](reports/cowrie/ssh/full/) | [recipe](reports/cowrie/TUTORIAL.md) |
+| [Endlessh](reports/endlessh/index.md) | [46.55 / F](reports/endlessh/quick/) | [54.07 / D](reports/endlessh/full/) | [recipe](reports/endlessh/TUTORIAL.md) |
+| [OpenCanary](reports/opencanary/index.md) | see hub | see hub | [recipe](reports/opencanary/TUTORIAL.md) |
 
 ## Fixtures
 

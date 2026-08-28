@@ -84,19 +84,19 @@ See [Advanced Evidence Profile](advanced-evidence/index.md) ·
 
 ## Start here
 
-1. Read [Core Principles](specification/core-principles.md) — dual-plane audit and isolation requirements  
-2. Author a [Target Profile Specification](specification/target-profiles.md) (`profile.yaml`)  
-3. Execute [Modules A–F](specification/modules.md) in the five-phase **lab** workflow  
-4. Compute [UHQS](specification/scoring-formula.md) and publish a standard scorecard  
-5. *(Optional)* Add [AEP](advanced-evidence/index.md) for sandboxed lab decoy-vs-reference studies  
-6. *(Optional)* Try [Experimental extensions](experimental/index.md) (`uhbs matrix` / `genai-bench` / `provenance`)  
-7. *(Optional, alpha)* [AEP SLM](advanced-evidence/slm-alpha.md) only if you need mock/local trial drafting — edit config to unlock  
-
-
-
+1. **[Install & use UHBS](tooling/install-and-use.md)** — install the CLI, validate a profile/scorecard, compute UHQS (no honeypot required)  
+2. Read [Core Principles](specification/core-principles.md) — dual-plane audit and isolation requirements  
+3. Author a [Target Profile Specification](specification/target-profiles.md) (`profile.yaml`)  
+4. *(Optional)* Run the [lab harness](reference-implementation.md) against a decoy you control  
+5. *(Optional)* Browse [published grades](conformance/reports/index.md) to audit or reproduce a finished lab result  
+6. *(Optional)* Add [AEP](advanced-evidence/index.md) for sandboxed lab decoy-vs-reference studies  
+7. *(Optional)* Try [Experimental extensions](experimental/index.md) (`uhbs matrix` / `genai-bench` / `provenance`)  
+8. *(Optional, alpha)* [AEP SLM](advanced-evidence/slm-alpha.md) only if you need mock/local trial drafting — edit config to unlock  
 
 ```bash
-pip install -e .
+pip install uhbs
+uhbs --version
+# from a git checkout:
 uhbs validate-profile templates/profile.yaml
 ```
 

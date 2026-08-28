@@ -113,6 +113,11 @@ pytest -q
 
 ## Quickstart
 
+Short walkthrough: [Install & use UHBS](https://uhbs.github.io/uhbs-standard/mkdocs/tooling/install-and-use/)
+(install → validate profile → validate scorecard → compute UHQS). No honeypot required.
+
+Published honeypot pages under docs/conformance are **reproduce-a-grade recipes**, not that guide.
+
 ### 1. Validate a profile or scorecard
 
 ```bash

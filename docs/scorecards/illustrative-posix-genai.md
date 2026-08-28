@@ -2,7 +2,7 @@
 
 **Status:** Synthetic layout sample only — **not** a live UHBS-Lab Docker run.
 
-Vendor-neutral illustrative scorecard demonstrating the UHBS v4.0.1 standard output layout.
+Vendor-neutral illustrative scorecard demonstrating the UHBS v4.5.1 standard output layout.
 For published lab scorecards, see [Official Examples](index.md).
 
 | Field | Value |
@@ -10,7 +10,7 @@ For published lab scorecards, see [Official Examples](index.md).
 | Target | Illustrative interactive shell decoy (GenAI-augmented) |
 | Class | POSIX-Shell |
 | Evaluated | 2026-07-26 |
-| Spec | UHBS 4.0.1 |
+| Spec | UHBS 4.5.1 |
 
 ## Module Results
 

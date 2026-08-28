@@ -28,4 +28,4 @@ After a successful run you should have `SCORECARD.txt`, `report.json`, and optio
 
 ## Trust limits
 
-UHBS 4.2.2 evaluation proof is **informative** — not a certification or endorsement.
+UHBS 4.5.1 evaluation proof is **informative** — not a certification or endorsement.

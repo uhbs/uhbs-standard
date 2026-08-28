@@ -35,7 +35,7 @@
 
 | Field | Full | Quick |
 | --- | --- | --- |
-| Image | `uhbs:4.0.1-full` | `uhbs:4.0.1` |
+| Image | `uhbs:4.5.1-full` | `uhbs:4.5.1` |
 | TPS | [`labs/miniprint/low_interaction_full.yaml`](../../labs/miniprint/low_interaction_full.yaml) | [`labs/miniprint/low_interaction_quick.yaml`](../../labs/miniprint/low_interaction_quick.yaml) |
 | Inventory | [`labs/miniprint/inventory.yaml`](../../labs/miniprint/inventory.yaml) | CLI + quick TPS |
 | Protocol plugin | **generic** (id `pjl`) | same |
@@ -51,7 +51,7 @@
 
 ```text
 ┌──────────────────────┐   network uhbs-lab    ┌──────────────────────┐
-│ uhbs:4.0.1[-full]    │ ───────────────────── │ miniprint-lab :9100  │
+│ uhbs:4.5.1[-full]    │ ───────────────────── │ miniprint-lab :9100  │
 │ mounts /honeypot     │ ← source tree         │ PJL raw listener     │
 │ mounts /telemetry    │ ← miniprint.log       │ (full run only)      │
 └──────────────────────┘                       └──────────────────────┘

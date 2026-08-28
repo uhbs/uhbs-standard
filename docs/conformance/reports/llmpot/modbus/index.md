@@ -1,7 +1,7 @@
 # llmpot — MODBUS
 
 **Status:** Informative · evaluation proof  
-**UHBS:** v4.2.2 · **Class:** ICS-SCADA · **Protocol:** `modbus`  
+**UHBS:** 4.5.1 · **Class:** ICS-SCADA · **Protocol:** `modbus`  
 **Target id:** `llmpot-modbus` · **Evaluated:** 2026-07-28
 
 | Run | UHQS | Grade | δ_C | Artifacts |

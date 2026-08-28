@@ -1,6 +1,6 @@
 # Methodology: kippo UHBS lab
 
-**UHBS:** 4.2.2 · Graded **ssh** Low-Interaction decoy.  
+**UHBS:** 4.5.1 · Graded **ssh** Low-Interaction decoy.  
 Quick **35.64 / F**, full **35.64 / F**.
 
 ## Analyst trust notes
