@@ -48,7 +48,7 @@ lab inventory and product-specific signal overlays stay out of tree.
 | `test_telemetry.py` | Module C — Telemetry Quality |
 | `test_safety.py` | Module D — Safety Gate (δ_C) |
 | `test_scale.py` | Module E — Scalability & Latency |
-| `test_static_code.py` | Module F — White-Box Static Audit |
+| `test_static_code/` | Module F — White-Box Static Audit |
 | `models.py` | UHQS formula + profile weights + δ_C |
 | `report.py` | Scorecard layout |
 | `protocols/` | Protocol plugins (ssh, http, mcp, ftp, redis, modbus, smb, smtp, telnet, mysql, rdp, sip, snmp, ntp, tftp, vnc, git, generic) |

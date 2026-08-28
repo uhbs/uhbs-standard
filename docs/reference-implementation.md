@@ -30,7 +30,7 @@ uhbs lab --list-protocols
 | Module C | `test_telemetry.py` |
 | Module D (Safety Gate) | `test_safety.py` |
 | Module E | `test_scale.py` |
-| Module F | `test_static_code.py` |
+| Module F | `test_static_code/` |
 | UHQS + δ_C | `models.py` → `compute_uhqs` (+ `calculate_uhqs_v4.py`) |
 | Profile weights (§5.3) | `PROFILE_WEIGHTS` in `models.py` |
 | Phases 1–5 | `run_benchmark.py` |
