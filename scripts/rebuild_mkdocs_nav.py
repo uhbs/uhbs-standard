@@ -299,7 +299,6 @@ lines += [
     "      - How to read a grade: conformance/reports/READING-UHQS.md",
     "      - Awesome honeypots triage: conformance/awesome-honeypots/TRIAGE.md",
     "      - Awesome deferred protocols: conformance/awesome-honeypots/DEFERRED-PROTOCOLS.md",
-    "      - ESPot lab note (legacy path): conformance/lab-espot-web-api.md",
 ]
 
 for d in ordered:

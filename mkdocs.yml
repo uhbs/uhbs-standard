@@ -27,7 +27,7 @@ theme:
   features:
     - navigation.instant
     - navigation.tracking
-    - navigation.sections
+    # No navigation.sections — top-level titles (Get started, Scorecards, …) stay collapsible.
     # Only expand the active section's tree — keeps Scorecards / Published grades usable.
     - navigation.prune
     - navigation.top
@@ -94,7 +94,6 @@ nav:
       - How to read a grade: conformance/reports/READING-UHQS.md
       - Awesome honeypots triage: conformance/awesome-honeypots/TRIAGE.md
       - Awesome deferred protocols: conformance/awesome-honeypots/DEFERRED-PROTOCOLS.md
-      - ESPot lab note (legacy path): conformance/lab-espot-web-api.md
       - ESPot:
           - Report hub: conformance/reports/espot/index.md
           - Reproduce grade: conformance/reports/espot/TUTORIAL.md
