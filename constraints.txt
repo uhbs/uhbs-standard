@@ -5,7 +5,7 @@ click==8.4.2
 jsonschema==4.26.0
 jsonschema-specifications==2025.9.1
 mcp==2.0.0
-mcp-types==2.0.0
+mcp-types==2.1.1
 mypy==2.3.1
 paramiko==5.0.0
 pytest==9.1.1
