@@ -16,6 +16,7 @@ Patch release: advertise UHBS **4.5.2** across package, schemas, fixtures, docs,
 
 ### Changed
 - Spec/package/schema/`uhbs_version` fixtures, Docker tags, and docs aligned to **4.5.2**
+- Single source of truth for the version string: `src/uhbs_core/_version.py` (setuptools dynamic version; CLI/MCP import it; bump mirrors with `python scripts/bump_version.py X.Y.Z`)
 
 ## [4.5.1] — 2026-08-04
 

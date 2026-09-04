@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass, field
 from typing import Any
 
+from uhbs_core._version import __version__
 from uhbs_core.uhqs_math import (
     PROFILE_WEIGHTS as _LETTER_WEIGHTS,
 )
@@ -217,7 +218,7 @@ class UHQSResult:
     profile_class: str
     grade: str
     phase: str = "combined"
-    version: str = "4.5.2"
+    version: str = __version__
     containment_measured: bool = True
 
     # Compat with older report code expecting .hqs / .S/.R/...
@@ -286,7 +287,7 @@ def compute_uhqs(
         profile_class=profile_class,
         grade=grade_for(result.uhqs),
         phase=phase,
-        version="4.5.2",
+        version=__version__,
         containment_measured=containment_measured,
     )
 

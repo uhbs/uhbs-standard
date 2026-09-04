@@ -32,6 +32,7 @@ from uhbs_core import (
     test_stealth,
     test_telemetry,
 )
+from uhbs_core._version import __version__
 from uhbs_core.hqs import scores_from_modules
 from uhbs_core.inventory import load_inventory, resolve_target
 from uhbs_core.manifest import write_manifest
@@ -188,7 +189,7 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     print_lab_sandbox_notice()
 
-    p = argparse.ArgumentParser(description="UHBS v4.5.2 Universal Honeypot Benchmark")
+    p = argparse.ArgumentParser(description=f"UHBS v{__version__} Universal Honeypot Benchmark")
     p.add_argument("--inventory", type=Path)
     p.add_argument("--target", required=False, help="required unless --list-protocols")
     p.add_argument("--baseline")
@@ -321,7 +322,7 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     extras = {
         "target_scores": t_scores,
-        "uhqs_version": "4.5.2",
+        "uhqs_version": __version__,
         "tps": {
             "name": tps.name,
             "class": tps.profile_class,
@@ -384,7 +385,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     if baseline and "baseline_uhqs" in extras:
         echo_info(
-            f"Baseline UHQS 4.5.2: {extras['baseline_uhqs']['uhqs']}  "
+            f"Baseline UHQS {__version__}: {extras['baseline_uhqs']['uhqs']}  "
             f"Δ={extras['delta_uhqs']}"
         )
     echo_ok(f"Wrote {path}")

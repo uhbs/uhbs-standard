@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "uhbs"
-version = "4.5.2"
+dynamic = ["version"]
 description = "Universal Honeypot Benchmarking Standard (UHBS) — validators and UHBS-Lab reference core"
 readme = "README.md"
 license = "Apache-2.0"
@@ -103,6 +103,9 @@ Documentation = "https://uhbs.github.io/uhbs-standard/mkdocs/"
 Repository = "https://github.com/uhbs/uhbs-standard"
 Issues = "https://github.com/uhbs/uhbs-standard/issues"
 Changelog = "https://github.com/uhbs/uhbs-standard/blob/main/CHANGELOG.md"
+
+[tool.setuptools.dynamic]
+version = {attr = "uhbs_core._version.__version__"}
 
 [tool.setuptools.packages.find]
 where = ["src"]

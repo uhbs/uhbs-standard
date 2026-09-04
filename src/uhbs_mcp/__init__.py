@@ -2,4 +2,6 @@
 
 from __future__ import annotations
 
-__version__ = "4.5.2"
+from uhbs_core import __version__
+
+__all__ = ["__version__"]

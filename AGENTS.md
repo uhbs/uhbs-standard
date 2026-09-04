@@ -14,6 +14,7 @@ Guidance for coding assistants and automated agents working in this repository.
 
 | Concern | Source of truth |
 | --- | --- |
+| Spec / package version | `src/uhbs_core/_version.py` (bump via `python scripts/bump_version.py X.Y.Z`) |
 | UHQS / δ_C / grades / weights | `src/uhbs_core/uhqs_math.py` (CLI + MCP wrap it via `uhbs_cli.scoring`) |
 | Spec prose | `docs/specification/` |
 | Schemas | `schemas/*.schema.json` |
@@ -35,10 +36,12 @@ Guidance for coding assistants and automated agents working in this repository.
 6. Do **not** expose `uhbs aep slm` / model-calling paths via MCP; keep SLM opt-in via local config unlock only.
 7. Do **not** expose `uhbs genai-bench` live probes or provenance collectors via MCP.
 8. Run `pytest -q` and `ruff check` on touched Python before finishing.
-9. When bumping the UHBS version string, **do not** bulk-replace inside
-   `web/package-lock.json` (or other lockfiles) — that can rewrite npm package
-   versions (e.g. `debug@4.4.3` → nonexistent `debug@4.4.4`) and break Pages
-   deploy. Exclude lockfiles; run `npm ci` in `web/` after intentional lock changes.
+9. Version string lives only in `src/uhbs_core/_version.py`. Bump with
+   `python scripts/bump_version.py X.Y.Z` (or verify with `--check`). Do **not**
+   bulk-replace inside `web/package-lock.json` (or other lockfiles) — that can
+   rewrite npm package versions (e.g. `debug@4.4.3` → nonexistent `debug@4.4.4`)
+   and break Pages deploy. Exclude lockfiles; run `npm ci` in `web/` after
+   intentional lock changes.
 
 ## Install / verify
 

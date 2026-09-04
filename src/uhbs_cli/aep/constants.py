@@ -3,11 +3,26 @@
 from __future__ import annotations
 
 import re
+from pathlib import Path
 
 AEP_VERSION = "1.0.0"
-UHBS_VERSION = "4.5.2"
 ARMS = ("decoy", "reference", "evaluator_control")
 FSV_LAYERS = ("network", "protocol", "system", "state")
+
+
+def _read_uhbs_version() -> str:
+    """Read SoT without importing ``uhbs_core`` (AEP isolation policy)."""
+    version_path = Path(__file__).resolve().parents[2] / "uhbs_core" / "_version.py"
+    text = version_path.read_text(encoding="utf-8")
+    match = re.search(r'^__version__\s*=\s*"([^"]+)"\s*$', text, re.M)
+    if not match:
+        raise RuntimeError(f"cannot parse __version__ from {version_path}")
+    return match.group(1)
+
+
+UHBS_VERSION = _read_uhbs_version()
+
+__all__ = ["AEP_VERSION", "ARMS", "FSV_LAYERS", "UHBS_VERSION"]
 
 _FORBIDDEN_ARG_PATTERNS = (
     re.compile(r"^https?://", re.I),

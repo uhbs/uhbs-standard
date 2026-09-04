@@ -9,6 +9,7 @@ import pytest
 
 pytest.importorskip("mcp")
 
+from uhbs_core import __version__
 from uhbs_mcp.server import (  # noqa: E402
     compute_uhqs_tool,
     get_scorecard_summary,
@@ -82,5 +83,5 @@ def test_validate_profile_template() -> None:
 def test_server_json_present() -> None:
     data = json.loads((ROOT / "server.json").read_text(encoding="utf-8"))
     assert data["name"] == "io.github.uhbs/uhbs"
-    assert data["version"] == "4.5.2"
+    assert data["version"] == __version__
     assert data["packages"][0]["transport"]["type"] == "stdio"

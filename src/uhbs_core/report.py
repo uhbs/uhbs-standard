@@ -7,6 +7,8 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+from uhbs_core._version import __version__
+
 from .models import DIM_LABELS, DIMS, UHQS_ATTR, ModuleResult, TargetSpec, UHQSResult
 
 
@@ -44,7 +46,7 @@ def render_card(
     weights = uhqs.weights
     lines = [
         "====================================================================================",
-        "                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.5.2",
+        f"                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v{__version__}",
         "====================================================================================",
         f"Target System         : {target.label}",
         f"System Profile Class  : {uhqs.profile_class}",
@@ -96,7 +98,7 @@ def render_card(
     lines += [
         "------------------------------------------------------------------------------------",
         f"SAFETY GATE MULTIPLIER                : {gate}",
-        f"FINAL COMPOSITE SCORE (UHQS 4.5.2)      : {uhqs.uhqs} / 100",
+        f"FINAL COMPOSITE SCORE (UHQS {__version__})      : {uhqs.uhqs} / 100",
         f"OVERALL EVALUATION GRADE              : {uhqs.grade}",
         "====================================================================================",
     ]
@@ -121,7 +123,7 @@ def write_report(
     (out_dir / "REPORT.txt").write_text(card, encoding="utf-8")
     (out_dir / "SCORECARD.txt").write_text(card, encoding="utf-8")
     payload = {
-        "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.5.2",
+        "framework": f"Universal Honeypot Benchmarking Standard (UHBS) v{__version__}",
         "evaluation_type": evaluation_type,
         "target": {
             "name": target.name,
