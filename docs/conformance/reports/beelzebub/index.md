@@ -35,6 +35,6 @@ Multi-protocol honeypot including SSH/HTTP/Telnet/Redis and MCP surfaces in UHBS
 
 ## Trust & limitations
 
-- Evaluation proof under UHBS 4.5.1 — not a certification or endorsement.
+- Evaluation proof under UHBS 4.5.2 — not a certification or endorsement.
 - Prefer **full/** over **quick/** for decisions.
 - Reading guide: [READING-UHQS.md](../READING-UHQS.md).

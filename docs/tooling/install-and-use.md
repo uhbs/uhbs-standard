@@ -29,7 +29,7 @@ pip install uhbs
 uhbs --version
 ```
 
-You should see `uhbs, version 4.5.1` (or newer).
+You should see `uhbs, version 4.5.2` (or newer).
 
 From a git checkout of this repository:
 

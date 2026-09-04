@@ -1,6 +1,6 @@
 # Methodology: telnet-iot-honeypot skip record
 
-**UHBS:** 4.5.1 · **Result:** skipped (no UHQS)
+**UHBS:** 4.5.2 · **Result:** skipped (no UHQS)
 
 ## Skip reason
 
@@ -16,4 +16,4 @@ No `SCORECARD.txt` or `report.json` was generated. This page exists so readers d
 - Confirm Safety Gate / δ_C before citing a composite score externally.
 - Wire your own log shipping — Module C is harness visibility, not SIEM coverage.
 - Re-run after upstream or TPS changes; keep class/protocol/target ids aligned with inventory.
-- UHBS 4.5.1 remains an open-source evaluation framework (Apache-2.0) — informative proof only.
+- UHBS 4.5.2 remains an open-source evaluation framework (Apache-2.0) — informative proof only.

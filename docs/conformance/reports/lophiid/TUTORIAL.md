@@ -12,4 +12,4 @@ This product was **not graded** in this UHBS round. lophiid is a hybrid AI / mul
 
 ## Trust
 
-Do not invent UHQS numbers. UHBS 4.5.1 evaluation notes are informative only — not endorsements. See [READING-UHQS.md](../READING-UHQS.md).
+Do not invent UHQS numbers. UHBS 4.5.2 evaluation notes are informative only — not endorsements. See [READING-UHQS.md](../READING-UHQS.md).

@@ -1,7 +1,7 @@
 # opencanary — SNMP
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 4.5.1 · **Class:** Low-Interaction · **Protocol:** `snmp`  
+**UHBS:** 4.5.2 · **Class:** Low-Interaction · **Protocol:** `snmp`  
 **Target id:** `opencanary-snmp` · **Evaluated:** 2026-07-27
 
 | Run | UHQS | Grade | δ_C | Artifacts |

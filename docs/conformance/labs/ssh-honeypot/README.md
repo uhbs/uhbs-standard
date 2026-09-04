@@ -11,4 +11,4 @@ This directory is reserved for TPS YAML and inventory helpers used by `uhbs-lab`
 
 ## Trust
 
-Informative skip note only · UHBS 4.5.1 · not an endorsement. Isolate honeypot networks and wire your own telemetry shipping in real deployments.
+Informative skip note only · UHBS 4.5.2 · not an endorsement. Isolate honeypot networks and wire your own telemetry shipping in real deployments.

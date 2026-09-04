@@ -34,4 +34,4 @@ After a successful run you should have `SCORECARD.txt`, `report.json`, and optio
 
 ## Trust limits
 
-Informative UHBS 4.5.1 evaluation proof — not a certification. Re-run after upstream or TPS changes.
+Informative UHBS 4.5.2 evaluation proof — not a certification. Re-run after upstream or TPS changes.

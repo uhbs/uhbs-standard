@@ -15,4 +15,4 @@ This tutorial cannot reproduce a UHBS UHQS grade for this product in the current
 
 ## Trust limits
 
-UHBS 4.5.1 evaluation notes are informative only — not certifications or endorsements. Product names appear only under conformance as survey/evaluation evidence.
+UHBS 4.5.2 evaluation notes are informative only — not certifications or endorsements. Product names appear only under conformance as survey/evaluation evidence.

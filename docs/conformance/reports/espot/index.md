@@ -2,7 +2,7 @@
 
 **Proof label:** [mycert/ESPot](https://github.com/mycert/ESPot)  
 **Class / protocol:** `Web-API` · HTTP · port `9200`  
-**UHBS:** 4.5.1 · evaluation proof only (not an endorsement)
+**UHBS:** 4.5.2 · evaluation proof only (not an endorsement)
 
 ESPot is an old Node.js Elasticsearch honeypot aimed at CVE-2014-3120. These reports show what UHBS-Lab produces for that decoy in Docker — including how a **quick** smoke grade differs from a **full** grade.
 
@@ -73,6 +73,6 @@ Elasticsearch HTTP honeypot (Node) for ES exploit probing.
 
 ## Trust & limitations
 
-- Evaluation proof under UHBS 4.5.1 — not a certification or endorsement.
+- Evaluation proof under UHBS 4.5.2 — not a certification or endorsement.
 - Prefer **full/** over **quick/** for decisions.
 - Reading guide: [READING-UHQS.md](../READING-UHQS.md).

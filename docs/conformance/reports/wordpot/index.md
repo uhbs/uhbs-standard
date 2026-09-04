@@ -34,7 +34,7 @@ WordPress-themed HTTP honeypot for CMS scanner and plugin/theme probe capture.
 
 ## Trust & limitations
 
-- This page is **evaluation proof** under UHBS 4.5.1 — not a certification or vendor ranking.
+- This page is **evaluation proof** under UHBS 4.5.2 — not a certification or vendor ranking.
 - Prefer **full/** artifacts over **quick/** for operational decisions.
 - Re-run via [TUTORIAL.md](TUTORIAL.md); environment notes in [METHODOLOGY.md](METHODOLOGY.md).
 - How to read modules: [READING-UHQS.md](../READING-UHQS.md)

@@ -28,6 +28,6 @@ OWASP Honeypot orchestrates many Docker-backed protocol modules. This UHBS proof
 
 ## Trust & limitations
 
-- UHBS 4.5.1 informative proof — prefer **full/** artifacts.
+- UHBS 4.5.2 informative proof — prefer **full/** artifacts.
 - Re-run via [TUTORIAL.md](TUTORIAL.md); see [METHODOLOGY.md](METHODOLOGY.md).
 - [READING-UHQS.md](../READING-UHQS.md)

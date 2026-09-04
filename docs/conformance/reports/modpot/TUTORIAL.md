@@ -28,8 +28,8 @@ After a successful run you should have `SCORECARD.txt`, `report.json`, and optio
 
 ## Trust limits
 
-UHBS 4.5.1 evaluation proof is **informative** — not a certification or endorsement.
+UHBS 4.5.2 evaluation proof is **informative** — not a certification or endorsement.
 
 ## What you get from this lab
 
-After a successful run you should have `SCORECARD.txt` (verbatim modules + UHQS + δ_C) and `report.json`. Prefer **full** over quick for operational decisions. Read modules A–F with [READING-UHQS.md](../READING-UHQS.md). Module C is harness visibility — wire your own SIEM shipping. UHBS 4.5.1 proof is informative only, not an endorsement.
+After a successful run you should have `SCORECARD.txt` (verbatim modules + UHQS + δ_C) and `report.json`. Prefer **full** over quick for operational decisions. Read modules A–F with [READING-UHQS.md](../READING-UHQS.md). Module C is harness visibility — wire your own SIEM shipping. UHBS 4.5.2 proof is informative only, not an endorsement.

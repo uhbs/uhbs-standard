@@ -1,7 +1,7 @@
 # Methodology: DataTrap (Thales) UHBS lab
 
 **Status:** Informative  
-**UHBS:** 4.5.1  
+**UHBS:** 4.5.2  
 **Upstream commit:** `7a906e11a0b19e75a32fead2ddd9a8b2b341beec`
 
 ## What DataTrap speaks vs what UHBS can grade

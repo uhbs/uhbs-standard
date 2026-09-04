@@ -35,7 +35,7 @@
 
 | Field | Full | Quick |
 | --- | --- | --- |
-| Image | `uhbs:4.5.1-full` | `uhbs:4.5.1` |
+| Image | `uhbs:4.5.2-full` | `uhbs:4.5.2` |
 | TPS | [`labs/endlessh/low_interaction_full.yaml`](../../labs/endlessh/low_interaction_full.yaml) | [`labs/endlessh/low_interaction_quick.yaml`](../../labs/endlessh/low_interaction_quick.yaml) |
 | Inventory | [`labs/endlessh/inventory.yaml`](../../labs/endlessh/inventory.yaml) | same + quick TPS |
 | Protocol plugin | **generic** (`ssh_tarpit`) | same |
@@ -48,7 +48,7 @@
 
 ```text
 ┌──────────────────────┐   network uhbs-lab    ┌──────────────────────────┐
-│ uhbs:4.5.1[-full]    │ ───────────────────── │ endlessh-lab             │
+│ uhbs:4.5.2[-full]    │ ───────────────────── │ endlessh-lab             │
 │ mounts /honeypot     │ ← skeeto/endlessh src │ TCP :2222 tarpit         │
 │ mounts /telemetry    │ ← logs + gateway      │ (no SSH handshake)       │
 └──────────────────────┘                       └──────────────────────────┘
