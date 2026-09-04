@@ -1,7 +1,7 @@
 # llmpot — S7COMM
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 4.5.1 · **Class:** ICS-SCADA · **Protocol:** `s7comm`  
+**UHBS:** 4.5.2 · **Class:** ICS-SCADA · **Protocol:** `s7comm`  
 **Target id:** `llmpot-s7comm` · **Evaluated:** 2026-07-28
 
 | Run | UHQS | Grade | δ_C | Artifacts |

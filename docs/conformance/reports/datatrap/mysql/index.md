@@ -1,7 +1,7 @@
 # datatrap — MYSQL
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 4.5.1 · **Class:** Low-Interaction · **Protocol:** `mysql`  
+**UHBS:** 4.5.2 · **Class:** Low-Interaction · **Protocol:** `mysql`  
 **Target id:** `datatrap-mysql` · **Evaluated:** 2026-07-28
 
 | Run | UHQS | Grade | δ_C | Artifacts |

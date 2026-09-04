@@ -24,4 +24,4 @@ UHBS publishes evaluation notes for products that were surveyed during conforman
 
 ## Trust
 
-Informative only · UHBS 4.5.1 · not an endorsement. See [READING-UHQS.md](../READING-UHQS.md) for how graded proofs should be read when artifacts exist.
+Informative only · UHBS 4.5.2 · not an endorsement. See [READING-UHQS.md](../READING-UHQS.md) for how graded proofs should be read when artifacts exist.

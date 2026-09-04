@@ -45,6 +45,6 @@ Multi-service canary/honeypot framework (many protocols); UHBS publishes per-pro
 
 ## Trust & limitations
 
-- Evaluation proof under UHBS 4.5.1 — not a certification or endorsement.
+- Evaluation proof under UHBS 4.5.2 — not a certification or endorsement.
 - Prefer **full/** over **quick/** for decisions.
 - Reading guide: [READING-UHQS.md](../READING-UHQS.md).

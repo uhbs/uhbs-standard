@@ -10,7 +10,7 @@ export const Footer = () => {
           <Shield className="w-6 h-6" />
         </div>
         <div className="font-mono text-sm text-secondary-foreground mb-4">
-          Universal Honeypot Benchmarking Standard <span className="text-primary/70">·</span> v4.5.1 <span className="text-primary/70">·</span> 2026
+          Universal Honeypot Benchmarking Standard <span className="text-primary/70">·</span> v4.5.2 <span className="text-primary/70">·</span> 2026
         </div>
         <p className="text-xs text-muted-foreground max-w-lg mx-auto mb-6">
           Open-source evaluation framework (Apache-2.0). Not a consortium, Steering Committee, or adopted industry standard.

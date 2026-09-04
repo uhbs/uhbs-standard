@@ -59,25 +59,25 @@ export const FiveDimensionComparison = () => {
       num: "01",
       title: "Dual-Plane Audit vs. Runtime-Only",
       left: { label: "5-Dimension Framework", text: "Functions purely as an operational runtime framework, observing honeypot behavior during active exposure." },
-      right: { label: "UHBS v4.5.1", text: "Employs a Dual-Plane Audit Philosophy — requires pre-deployment static code analysis (Module F) to catch hardcoded SSH keys, static seeds, or vulnerable command wrappers before dynamic sandbox probing begins." },
+      right: { label: "UHBS v4.5.2", text: "Employs a Dual-Plane Audit Philosophy — requires pre-deployment static code analysis (Module F) to catch hardcoded SSH keys, static seeds, or vulnerable command wrappers before dynamic sandbox probing begins." },
     },
     {
       num: "02",
       title: "Non-Linear Safety Gate vs. Linear Averaging",
       left: { label: "5-Dimension Framework", text: "Aggregates metrics using simple linear weighted averages. A high interaction score can mask a serious containment flaw, allowing dangerous decoys to pass evaluation." },
-      right: { label: "UHBS v4.5.1", text: "Implements a strict Safety Gate Multiplier (δ_C). If Module D containment drops below 95/100, an exponential penalty degrades the entire UHQS score regardless of performance elsewhere." },
+      right: { label: "UHBS v4.5.2", text: "Implements a strict Safety Gate Multiplier (δ_C). If Module D containment drops below 95/100, an exponential penalty degrades the entire UHQS score regardless of performance elsewhere." },
     },
     {
       num: "03",
       title: "Profile-Adaptive Context (TPS) vs. Static Metrics",
       left: { label: "5-Dimension Framework", text: "Applies identical static metric weights across all honeypot classes — a SCADA PLC and an SSH shell are evaluated with the same emphasis." },
-      right: { label: "UHBS v4.5.1", text: "Target Profile Specification (profile.yaml) adjusts evaluation weights. ICS-SCADA weights protocol fidelity at w_A = 0.35, while POSIX shells emphasize state behavior at w_B = 0.25." },
+      right: { label: "UHBS v4.5.2", text: "Target Profile Specification (profile.yaml) adjusts evaluation weights. ICS-SCADA weights protocol fidelity at w_A = 0.35, while POSIX shells emphasize state behavior at w_B = 0.25." },
     },
     {
       num: "04",
       title: "GenAI & Cloud Coverage vs. Traditional IT Only",
       left: { label: "5-Dimension Framework", text: "Designed around traditional IT OS and network service emulators — SSH servers, HTTP endpoints, and network stacks." },
-      right: { label: "UHBS v4.5.1", text: "Explicitly tests next-generation decoys: indirect prompt injections, system prompt leaks, context exhaustion attacks, and cloud API boundary breaches across public-cloud control planes and container orchestration surfaces." },
+      right: { label: "UHBS v4.5.2", text: "Explicitly tests next-generation decoys: indirect prompt injections, system prompt leaks, context exhaustion attacks, and cloud API boundary breaches across public-cloud control planes and container orchestration surfaces." },
     },
   ];
 
@@ -97,10 +97,10 @@ export const FiveDimensionComparison = () => {
         <motion.div variants={fadeUpVariant} className="mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-sans mb-4 flex items-center gap-3">
             <GitCommit className="text-primary w-8 h-8" />
-            UHBS v4.5.1 vs. 5-Dimension Framework
+            UHBS v4.5.2 vs. 5-Dimension Framework
           </h2>
           <p className="text-secondary-foreground max-w-3xl">
-            Proposed five-dimension honeypot metrics (interaction, data quality, resource efficiency, stealth, fingerprinting resistance) are a useful conceptual lens—not an adopted industry standard. UHBS v4.5.1 operationalizes overlapping axes with dual-plane auditing, a non-linear Safety Gate, and coverage for modern decoy classes. For the full evidence-graded comparison against fourteen framework/model families, see the{" "}
+            Proposed five-dimension honeypot metrics (interaction, data quality, resource efficiency, stealth, fingerprinting resistance) are a useful conceptual lens—not an adopted industry standard. UHBS v4.5.2 operationalizes overlapping axes with dual-plane auditing, a non-linear Safety Gate, and coverage for modern decoy classes. For the full evidence-graded comparison against fourteen framework/model families, see the{" "}
             <a href="mkdocs/mappings/related-frameworks/" className="text-primary hover:underline">
               related frameworks
             </a>{" "}
@@ -115,8 +115,8 @@ export const FiveDimensionComparison = () => {
             <thead>
               <tr className="border-b border-border text-muted-foreground">
                 <th className="py-3 pr-6 font-normal w-1/4">5-Dimension Metric</th>
-                <th className="py-3 pr-6 font-normal w-1/5">UHBS v4.5.1 Module</th>
-                <th className="py-3 font-normal">Key Expansion in UHBS v4.5.1</th>
+                <th className="py-3 pr-6 font-normal w-1/5">UHBS v4.5.2 Module</th>
+                <th className="py-3 font-normal">Key Expansion in UHBS v4.5.2</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border/30">
@@ -162,7 +162,7 @@ export const FiveDimensionComparison = () => {
                     </div>
                     <p className="text-sm text-secondary-foreground leading-relaxed">{diff.left.text}</p>
                   </div>
-                  {/* Right: UHBS v4.5.1 */}
+                  {/* Right: UHBS v4.5.2 */}
                   <div className="p-6 bg-[#0f1629]/50">
                     <div className="flex items-center gap-2 mb-3">
                       <CheckCircle className="w-4 h-4 text-primary shrink-0" />
@@ -182,7 +182,7 @@ export const FiveDimensionComparison = () => {
           <div>
             <h4 className="font-semibold text-primary font-mono text-sm uppercase tracking-wide mb-2">Bottom Line for Security Leadership</h4>
             <p className="text-sm text-secondary-foreground leading-relaxed">
-              Five-dimension proposals provide a useful conceptual lens for categorizing honeypot quality. UHBS v4.5.1 turns overlapping concerns into a machine-verifiable evaluation — adding a pre-deployment code audit plane (Module F), a non-linear safety gate that makes containment failures non-maskable, and explicit support for GenAI and OT/ICS decoy classes. See the{" "}
+              Five-dimension proposals provide a useful conceptual lens for categorizing honeypot quality. UHBS v4.5.2 turns overlapping concerns into a machine-verifiable evaluation — adding a pre-deployment code audit plane (Module F), a non-linear safety gate that makes containment failures non-maskable, and explicit support for GenAI and OT/ICS decoy classes. See the{" "}
               <a href="mkdocs/mappings/related-frameworks/" className="text-primary hover:underline">
                 evidence-based framework comparison
               </a>{" "}

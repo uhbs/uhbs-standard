@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 
 AEP_VERSION = "1.0.0"
-UHBS_VERSION = "4.5.1"
+UHBS_VERSION = "4.5.2"
 ARMS = ("decoy", "reference", "evaluator_control")
 FSV_LAYERS = ("network", "protocol", "system", "state")
 

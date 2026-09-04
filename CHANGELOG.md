@@ -3,11 +3,19 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.5.1** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
+share version **4.5.2** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
 AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`; experimental as
 `uhbs[experimental]` / `uhbs[genai-bench]`).
 
 ## [Unreleased]
+
+## [4.5.2] — 2026-09-04
+
+Patch release: advertise UHBS **4.5.2** across package, schemas, fixtures, docs, and lab artifacts.
+**UHQS math unchanged.**
+
+### Changed
+- Spec/package/schema/`uhbs_version` fixtures, Docker tags, and docs aligned to **4.5.2**
 
 ## [4.5.1] — 2026-08-04
 

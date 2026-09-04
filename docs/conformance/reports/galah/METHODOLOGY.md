@@ -1,6 +1,6 @@
 # Methodology: galah skip
 
-**UHBS:** 4.5.1 · **HTTP** · **Status:** skipped (LLM API required)
+**UHBS:** 4.5.2 · **HTTP** · **Status:** skipped (LLM API required)
 
 Galah dynamically generates HTTP responses via external LLM APIs. The UHBS batch policy for this session disallowed OpenAI/Anthropic keys and did not provision Ollama. Skipping avoids misleading sub-zero scores from an idle binary.
 
@@ -19,4 +19,4 @@ Until then, treat this page as a **skip / gap note**. See [READING-UHQS.md](../R
 
 ## Trust
 
-Informative only · UHBS 4.5.1 · not an endorsement. Isolate honeypot networks in real deployments; do not cite UHQS without SCORECARD proof.
+Informative only · UHBS 4.5.2 · not an endorsement. Isolate honeypot networks in real deployments; do not cite UHQS without SCORECARD proof.

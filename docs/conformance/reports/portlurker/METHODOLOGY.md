@@ -1,6 +1,6 @@
 # Methodology: portlurker UHBS lab
 
-**UHBS:** 4.5.1 · **generic** TCP on container port **8080**, host **19104**. Lab config `config.uhbs-lab.yml` enables a single TCP listener without banners to keep behavior deterministic for Module A.
+**UHBS:** 4.5.2 · **generic** TCP on container port **8080**, host **19104**. Lab config `config.uhbs-lab.yml` enables a single TCP listener without banners to keep behavior deterministic for Module A.
 
 ## Evidence hierarchy
 
@@ -9,7 +9,7 @@
 3. This methodology (scope / blockers)  
 4. Tutorial replication commands  
 
-Skip hubs explain why no SCORECARD exists yet. See [READING-UHQS.md](../READING-UHQS.md). Informative only · UHBS 4.5.1 · isolate honeypot networks in real deployments.
+Skip hubs explain why no SCORECARD exists yet. See [READING-UHQS.md](../READING-UHQS.md). Informative only · UHBS 4.5.2 · isolate honeypot networks in real deployments.
 
 ## Analyst checklist
 
@@ -17,4 +17,4 @@ Skip hubs explain why no SCORECARD exists yet. See [READING-UHQS.md](../READING-
 - Confirm Safety Gate / δ_C before citing a composite score externally.
 - Wire your own log shipping — Module C is harness visibility, not SIEM coverage.
 - Re-run after upstream or TPS changes; keep class/protocol/target ids aligned with inventory.
-- UHBS 4.5.1 remains an open-source evaluation framework (Apache-2.0) — informative proof only.
+- UHBS 4.5.2 remains an open-source evaluation framework (Apache-2.0) — informative proof only.

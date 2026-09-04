@@ -1,7 +1,7 @@
 # Methodology: LLMPot UHBS lab
 
 **Status:** Informative  
-**UHBS:** 4.5.1  
+**UHBS:** 4.5.2  
 **Upstream commit:** `9568b5ffe6f3626c70078e53eacaac4a9fcf1b9e`
 
 ## What LLMPot speaks vs what UHBS can grade

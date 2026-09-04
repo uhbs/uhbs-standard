@@ -26,7 +26,7 @@ export const Hero = () => {
         
         <motion.h1 variants={fadeUpVariant} className="text-5xl md:text-7xl font-bold leading-tight mb-6 max-w-4xl text-foreground font-sans tracking-tight">
           Universal Honeypot Benchmarking Standard <br className="hidden md:block"/>
-          <span className="text-muted-foreground font-mono text-4xl md:text-6xl tracking-tighter">(UHBS) v4.5.1 <span className="text-primary/70">· 2026</span></span>
+          <span className="text-muted-foreground font-mono text-4xl md:text-6xl tracking-tighter">(UHBS) v4.5.2 <span className="text-primary/70">· 2026</span></span>
         </motion.h1>
         
         <motion.p variants={fadeUpVariant} className="text-xl md:text-2xl text-secondary-foreground max-w-3xl mb-8 font-light leading-relaxed">
