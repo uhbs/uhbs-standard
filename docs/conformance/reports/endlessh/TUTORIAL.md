@@ -14,8 +14,8 @@
 ```bash
 git clone https://github.com/uhbs/uhbs-standard.git
 cd uhbs-standard
-docker build -t uhbs:4.5.1 .
-docker build -f Dockerfile.full -t uhbs:4.5.1-full .
+docker build -t uhbs:4.5.2 .
+docker build -f Dockerfile.full -t uhbs:4.5.2-full .
 ```
 
 ---
@@ -76,7 +76,7 @@ docker run --rm \
   -e UHBS_QUICK=1 \
   -e UHBS_AIRGAP_ATTESTED=1 \
   -e PYTHONUNBUFFERED=1 \
-  uhbs:4.5.1 \
+  uhbs:4.5.2 \
   lab \
     --inventory /work/docs/conformance/labs/endlessh/inventory.yaml \
     --target endlessh \
@@ -137,7 +137,7 @@ docker run --rm \
   -e PYTHONUNBUFFERED=1 \
   -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:4.5.1-full \
+  uhbs:4.5.2-full \
   lab \
     --inventory /work/docs/conformance/labs/endlessh/inventory.yaml \
     --target endlessh \

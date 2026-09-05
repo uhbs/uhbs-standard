@@ -2,7 +2,7 @@
 
 **Proof label:** [skeeto/endlessh](https://github.com/skeeto/endlessh)  
 **Class / protocol:** `Low-Interaction` · **ssh_tarpit** (generic TCP) · container port `2222`  
-**UHBS:** 4.5.1 · evaluation proof only (not an endorsement)
+**UHBS:** 4.5.2 · evaluation proof only (not an endorsement)
 
 Endlessh is an **SSH tarpit**: it accepts TCP and slowly drips random banner lines,
 but **never** emits a valid `SSH-2.0-…` identification string. This grade uses the
@@ -73,6 +73,6 @@ SSH tarpit that slowly drips banners to stall scanners (not a real SSH stack).
 
 ## Trust & limitations
 
-- Evaluation proof under UHBS 4.5.1 — not a certification or endorsement.
+- Evaluation proof under UHBS 4.5.2 — not a certification or endorsement.
 - Prefer **full/** over **quick/** for decisions.
 - Reading guide: [READING-UHQS.md](../READING-UHQS.md).

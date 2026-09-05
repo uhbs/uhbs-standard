@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Calculate UHQS 4.5.1 from report.json or explicit module scores."""
+"""Calculate UHQS 4.5.2 from report.json or explicit module scores."""
 
 from __future__ import annotations
 
@@ -7,6 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
+from uhbs_core._version import __version__
 from uhbs_core.models import compute_uhqs
 
 
@@ -15,7 +16,7 @@ def main() -> int:
 
     print_lab_sandbox_notice()
 
-    p = argparse.ArgumentParser(description="UHQS 4.5.1 composite score")
+    p = argparse.ArgumentParser(description=f"UHQS {__version__} composite score")
     p.add_argument("--input", help="report.json with modules[] or scores{}")
     p.add_argument("--output", default="report.json")
     p.add_argument("--protocol", type=float, dest="s_a", help="Module A score")
@@ -67,7 +68,7 @@ def main() -> int:
     from uhbs_core.termui import echo_ok
 
     echo_ok(
-        f"UHQS 4.5.1 = {uhqs.uhqs}  grade={uhqs.grade}  δ_C={uhqs.delta_c}  "
+        f"UHQS {__version__} = {uhqs.uhqs}  grade={uhqs.grade}  δ_C={uhqs.delta_c}  "
         f"A={uhqs.S_A} B={uhqs.S_B} C_telem={uhqs.S_C} C_gate={uhqs.C} "
         f"E={uhqs.S_E} F={uhqs.S_F} class={uhqs.profile_class}"
     )

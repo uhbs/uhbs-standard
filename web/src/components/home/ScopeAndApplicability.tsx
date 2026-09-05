@@ -28,7 +28,7 @@ export const ScopeAndApplicability = () => {
             </h2>
             <div className="prose prose-invert prose-lg text-secondary-foreground font-light leading-relaxed">
               <p>
-                The UHBS v4.5.1 framework provides a rigorous technical foundation for evaluating the efficacy, safety, and realism of deception assets prior to deployment.
+                The UHBS v4.5.2 framework provides a rigorous technical foundation for evaluating the efficacy, safety, and realism of deception assets prior to deployment.
               </p>
               <p className="mt-4">
                 Historically, deception technology has been evaluated subjectively. UHBS introduces a verifiable, deterministic mathematical model designed to expose flaws in protocol state machines, containment boundaries, and behavioral realism.
@@ -41,7 +41,7 @@ export const ScopeAndApplicability = () => {
                 <div>
                   <h4 className="text-primary font-semibold font-mono mb-2 uppercase tracking-wide text-sm">Vendor-Neutral Baseline</h4>
                   <p className="text-secondary-foreground text-sm">
-                    UHBS v4.5.1 is an open-source evaluation framework for comparing and grading honeypots by class and protocol — mathematically reproducible, not a consortium or adopted industry standard.
+                    UHBS v4.5.2 is an open-source evaluation framework for comparing and grading honeypots by class and protocol — mathematically reproducible, not a consortium or adopted industry standard.
                   </p>
                 </div>
               </div>

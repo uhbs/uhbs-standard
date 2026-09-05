@@ -1,7 +1,7 @@
 # Methodology: GenAIPot UHBS lab
 
 **Status:** Informative  
-**UHBS:** 4.5.1  
+**UHBS:** 4.5.2  
 **Upstream zip tree:** `205ffe40008f2e76e0decdb01bc19bf8e00acd8a`  
 **Image:** `annls/genaipot:latest` @ `sha256:627d7fde6d4a6f937fde3b3366fb55605a90cea6370e1f5beac9c39d8ecfeeac` (reports v0.9.2)
 

@@ -1,6 +1,6 @@
 # Tutorial: grade sticky_elephant with UHBS (postgres)
 
-**Upstream:** [betheroot/sticky_elephant](https://github.com/betheroot/sticky_elephant) · **UHBS:** 4.5.1
+**Upstream:** [betheroot/sticky_elephant](https://github.com/betheroot/sticky_elephant) · **UHBS:** 4.5.2
 
 ```bash
 docker network create uhbs-lab 2>/dev/null || true
@@ -26,4 +26,4 @@ Open the **full** SCORECARD first (authoritative). Treat **quick** as a smoke ch
 
 ## Trust limits
 
-UHBS 4.5.1 evaluation proof is **informative** — not a certification or endorsement. Re-run after upstream or TPS changes; do not invent scores without regenerating artifacts.
+UHBS 4.5.2 evaluation proof is **informative** — not a certification or endorsement. Re-run after upstream or TPS changes; do not invent scores without regenerating artifacts.

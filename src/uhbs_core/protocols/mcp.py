@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 from typing import Any
 
+from uhbs_core._version import __version__
 from uhbs_core.models import CheckResult, TargetSpec
 from uhbs_core.protocols.base import ProtocolPlugin
 from uhbs_core.protocols.mcp_jsonrpc import (
@@ -106,7 +107,7 @@ def _init_params() -> dict[str, Any]:
     return {
         "protocolVersion": "2024-11-05",
         "capabilities": {},
-        "clientInfo": {"name": "uhbs-mcp-grader", "version": "4.5.1"},
+        "clientInfo": {"name": "uhbs-mcp-grader", "version": __version__},
     }
 
 

@@ -1,3 +1,5 @@
 """UHBS-Lab reference core — vendor-neutral Modules A–F harness."""
 
-__version__ = "4.5.1"
+from uhbs_core._version import __version__
+
+__all__ = ["__version__"]

@@ -1,7 +1,7 @@
 # elastichoney — HTTP
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 4.5.1 · **Class:** Web-API · **Protocol:** `http`  
+**UHBS:** 4.5.2 · **Class:** Web-API · **Protocol:** `http`  
 **Target id:** `elastichoney-http` · **Evaluated:** 2026-07-29
 
 | Run | UHQS | Grade | δ_C | Artifacts |

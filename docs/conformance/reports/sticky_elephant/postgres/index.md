@@ -1,7 +1,7 @@
 # sticky_elephant — postgres
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 4.5.1 · **Class:** Low-Interaction · **Protocol:** `postgres`  
+**UHBS:** 4.5.2 · **Class:** Low-Interaction · **Protocol:** `postgres`  
 **Target id:** `sticky_elephant-postgres` · **Evaluated:** 2026-07-29
 
 | Run | UHQS | Grade | δ_C | Artifacts |

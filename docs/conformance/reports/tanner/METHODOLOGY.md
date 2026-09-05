@@ -1,6 +1,6 @@
 # Methodology: tanner skip
 
-**UHBS:** 4.5.1 · **HTTP (declared)** · **Status:** skipped — backend service, not HTTP decoy listener.
+**UHBS:** 4.5.2 · **HTTP (declared)** · **Status:** skipped — backend service, not HTTP decoy listener.
 
 See [READING-UHQS.md](../READING-UHQS.md).
 
@@ -15,7 +15,7 @@ Until then, treat this page as a **skip / gap note**. See [READING-UHQS.md](../R
 
 ## Trust
 
-Informative only · UHBS 4.5.1 · not an endorsement. Isolate honeypot networks in real deployments; do not cite UHQS without SCORECARD proof.
+Informative only · UHBS 4.5.2 · not an endorsement. Isolate honeypot networks in real deployments; do not cite UHQS without SCORECARD proof.
 
 ## Environment note
 

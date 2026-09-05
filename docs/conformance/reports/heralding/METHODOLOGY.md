@@ -1,6 +1,6 @@
 # Methodology: Heralding UHBS lab
 
-**UHBS:** 4.5.1 · Graded **SSH**, **FTP**, and **SMTP** (dedicated SMTP config `heralding-smtp-lab.yml` on host port **17025**).  
+**UHBS:** 4.5.2 · Graded **SSH**, **FTP**, and **SMTP** (dedicated SMTP config `heralding-smtp-lab.yml` on host port **17025**).  
 Auth is intentionally rejected on credential protocols (credential logger).
 
 SSH quick **44.38 / F**, full **44.18 / F**. FTP quick **35.96 / F**, full **35.85 / F**. SMTP quick **45.07 / F**, full **45.07 / F** (δ_C=0.5625 on SMTP lab).

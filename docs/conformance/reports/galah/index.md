@@ -11,4 +11,4 @@ See [TUTORIAL.md](TUTORIAL.md) · [METHODOLOGY.md](METHODOLOGY.md).
 
 ## Trust
 
-Informative UHBS 4.5.1 gap note — not an endorsement. [READING-UHQS.md](../READING-UHQS.md)
+Informative UHBS 4.5.2 gap note — not an endorsement. [READING-UHQS.md](../READING-UHQS.md)
