@@ -7,4 +7,4 @@
 | MQTT :1883 | [mqtt hub](mqtt/index.md) | **20.66** | F |
 
 - [Reproduce notes](METHODOLOGY.md)
-- [Scorecard page](../../scorecards/mqtt-decoy-a.md)
+- [Scorecard page](../../../scorecards/mqtt-decoy-a.md)

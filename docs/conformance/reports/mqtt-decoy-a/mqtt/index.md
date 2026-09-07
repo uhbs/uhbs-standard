@@ -31,4 +31,4 @@ Shallow vs real-enough discriminators from `uhbs_core.protocols.mqtt`:
 - Pub/sub cross-client echo missing → payload fail (both decoys)
 - Decoy A also fails UNSUBSCRIBE (returns SUBACK-shaped reply)
 
-Published scorecard: [`../../../scorecards/mqtt-decoy-a.md`](../../../scorecards/mqtt-decoy-a.md)
+Published scorecard: [`../../../../scorecards/mqtt-decoy-a.md`](../../../../scorecards/mqtt-decoy-a.md)
