@@ -37,6 +37,8 @@ featured = [
     "datatrap",
     "honeymcp",
     "genaipot",
+    "mqtt-decoy-a",
+    "mqtt-decoy-b",
 ]
 
 DISPLAY = {
@@ -112,6 +114,8 @@ DISPLAY = {
     "ensnare": "Ensnare (skipped)",
     "snare": "snare (skipped)",
     "illustrative": "Illustrative",
+    "mqtt-decoy-a": "MQTT decoy A",
+    "mqtt-decoy-b": "MQTT decoy B",
 }
 
 # Longest-prefix first for scorecard stem → product key
@@ -166,6 +170,8 @@ SCORECARD_PREFIXES = sorted(
         "pyrdp",
         "shiva",
         "qeeqbox",
+        "mqtt-decoy-a",
+        "mqtt-decoy-b",
         "illustrative",
     },
     key=len,

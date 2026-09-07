@@ -1,0 +1,23 @@
+====================================================================================
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.5.2
+====================================================================================
+Target System         : mqtt-decoy-a
+System Profile Class  : Low-Interaction
+Protocols             : mqtt
+Evaluation Date       : 2026-09-07
+Evaluation Type       : Protocol-surface + module harness (remote MQTT decoy)
+Environment           : Operator-provided honeypot endpoint (98.90.197.80:1883)
+------------------------------------------------------------------------------------
+EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
+------------------------------------------------------------------------------------
+Module A: Protocol Fidelity         :  86.8/100       0.30     PASSED (fsm=67 nego=100 timing=100)
+Module B: Behavioral Realism        :  48.4/100       0.15     PARTIAL (mqtt.state.unsubscribe,mqtt.payload.pubsub_echo)
+Module C: Telemetry Quality         : 100.0/100       0.25     PASSED
+Module D: Safety & Containment (C)  :  55.0/100       GATE     FAILED (Safety Gate not cleared — non-SSH / no egress attestation)
+Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (P50=57.5ms P95=59.2ms P99=61.3ms TPS_limit=300.0ms proto=mqtt)
+Module F: Static Code Audit         :   0.0/100       0.20     SKIPPED (no source_root configured)
+------------------------------------------------------------------------------------
+SAFETY GATE MULTIPLIER                : δ_C = 0.3025 (C = 55.0 < 95 — exponential penalty)
+FINAL COMPOSITE SCORE (UHQS 4.5.2)      : 20.66 / 100
+OVERALL EVALUATION GRADE              : GRADE F (Fail)
+====================================================================================

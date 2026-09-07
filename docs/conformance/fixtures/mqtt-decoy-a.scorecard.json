@@ -1,0 +1,63 @@
+{
+  "uhbs_version": "4.5.2",
+  "target": {
+    "name": "MQTT decoy A (MQTT :1883)",
+    "class": "Low-Interaction",
+    "profile_ref": "docs/conformance/labs/mqtt/low_interaction_mqtt.yaml"
+  },
+  "evaluated_at": "2026-09-07",
+  "auditor": "UHBS MQTT protocol-surface lab (Modules A\u2013F; remote decoy, no source_root)",
+  "modules": {
+    "A": {
+      "score": 86.75,
+      "status": "PASSED",
+      "weight": 0.3,
+      "notes": "fsm=67 nego=100 timing=100"
+    },
+    "B": {
+      "score": 48.39,
+      "status": "PARTIAL",
+      "weight": 0.15,
+      "notes": "mqtt.state.unsubscribe,mqtt.payload.pubsub_echo"
+    },
+    "C": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.25,
+      "notes": "UHBS C1 schema: STIX 2.1 / OTel / ECS best-effort validators"
+    },
+    "D": {
+      "score": 55.0,
+      "status": "FAILED",
+      "notes": "Module D (protocol-agnostic): no SSH exec surface configured \u2014 Safety Gate cannot fully clear without shell probes or UHBS_EGRESS_GATEWAY_LOG evidence. Non-SSH decoys are graded on gateway/airgap attestation only."
+    },
+    "E": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.1,
+      "notes": "P50=57.5ms P95=59.2ms P99=61.3ms TPS_limit=300.0ms proto=mqtt"
+    },
+    "F": {
+      "score": 0.0,
+      "status": "SKIPPED",
+      "weight": 0.2,
+      "notes": "no source_root configured"
+    }
+  },
+  "weights": {
+    "w_A": 0.3,
+    "w_B": 0.15,
+    "w_C": 0.25,
+    "w_E": 0.1,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 55.0,
+    "delta_c": 0.3025,
+    "passed": false,
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 20.66,
+  "grade": "F",
+  "notes": "Evaluation proof only. Remote MQTT honeypot 98.90.197.80:1883. Protocol fidelity via uhbs_core.protocols.mqtt. Module F skipped (no source_root). Module D Safety Gate not cleared (non-SSH decoy without egress gateway attestation). Artifacts: docs/conformance/reports/mqtt-decoy-a/mqtt/."
+}

@@ -32,6 +32,8 @@ Full artifacts (tutorials, methodology, `SCORECARD.txt`, `report.json`) live und
 | [Beelzebub — SSH :2222](beelzebub-ssh.md) | Low-Interaction · SSH | **59.88** | D |
 | [Beelzebub — Telnet :23](beelzebub-telnet.md) | Low-Interaction · Telnet | **47.89** | F |
 | [Cowrie — SSH :2222](cowrie-ssh.md) | Low-Interaction · SSH | **61.37** | D |
+| [MQTT decoy A — MQTT :1883](mqtt-decoy-a.md) | Low-Interaction · MQTT | **20.66** | F |
+| [MQTT decoy B — MQTT :1883](mqtt-decoy-b.md) | Low-Interaction · MQTT | **21.41** | F |
 | [Cowrie — Telnet :2223](cowrie-telnet.md) | Low-Interaction · Telnet | **64.9** | D |
 | [DataTrap — HTTP :8080](datatrap-http.md) | Web-API · HTTP | **65.85** | D |
 | [DataTrap — MYSQL :3306](datatrap-mysql.md) | Low-Interaction · MYSQL | **50.65** | D |

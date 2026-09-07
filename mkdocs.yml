@@ -191,6 +191,16 @@ nav:
           - SMTP hub: conformance/reports/genaipot/smtp/index.md
           - Reproduce grade: conformance/reports/genaipot/TUTORIAL.md
           - Methodology: conformance/reports/genaipot/METHODOLOGY.md
+      - MQTT decoy A:
+          - Report hub: conformance/reports/mqtt-decoy-a/index.md
+          - MQTT hub: conformance/reports/mqtt-decoy-a/mqtt/index.md
+          - Reproduce grade: conformance/reports/mqtt-decoy-a/TUTORIAL.md
+          - Methodology: conformance/reports/mqtt-decoy-a/METHODOLOGY.md
+      - MQTT decoy B:
+          - Report hub: conformance/reports/mqtt-decoy-b/index.md
+          - MQTT hub: conformance/reports/mqtt-decoy-b/mqtt/index.md
+          - Reproduce grade: conformance/reports/mqtt-decoy-b/TUTORIAL.md
+          - Methodology: conformance/reports/mqtt-decoy-b/METHODOLOGY.md
       - Acra (skipped):
           - Report hub: conformance/reports/acra/index.md
           - Reproduce grade: conformance/reports/acra/TUTORIAL.md
@@ -500,6 +510,10 @@ nav:
       - GenAIPot:
           - POP3: scorecards/genaipot-pop3.md
           - SMTP: scorecards/genaipot-smtp.md
+      - MQTT decoy A:
+          - Overview: scorecards/mqtt-decoy-a.md
+      - MQTT decoy B:
+          - Overview: scorecards/mqtt-decoy-b.md
       - Artillery:
           - Generic: scorecards/artillery-generic.md
       - Dionaea:

@@ -1,0 +1,121 @@
+{
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.5.2",
+  "evaluation_type": "Protocol-surface MQTT honeypot grade (remote decoy)",
+  "target": {
+    "name": "mqtt-decoy-b",
+    "kind": "mqtt",
+    "host": "3.84.184.144",
+    "port": 1883,
+    "profile_class": "Low-Interaction",
+    "protocols": [
+      "mqtt"
+    ],
+    "ports_map": {
+      "mqtt": 1883
+    }
+  },
+  "uhqs": {
+    "target": "mqtt-decoy-b",
+    "S_A": 86.75,
+    "S_B": 65.0,
+    "S_C": 100.0,
+    "C": 55.0,
+    "S_E": 100.0,
+    "S_F": 0.0,
+    "delta_c": 0.3025,
+    "uhqs": 21.41,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "GRADE F (Fail)",
+    "version": "4.5.2",
+    "containment_measured": true
+  },
+  "notes": "Evaluation proof only. Remote MQTT honeypot 3.84.184.144:1883. Protocol fidelity via uhbs_core.protocols.mqtt. Module F skipped (no source_root). Module D Safety Gate not cleared (non-SSH decoy without egress gateway attestation). Artifacts: docs/conformance/reports/mqtt-decoy-b/mqtt/.",
+  "mqtt_checks": {
+    "A": [
+      [
+        "mqtt.fsm.illegal_type",
+        true,
+        "illegal type response len=0"
+      ],
+      [
+        "mqtt.fsm.publish_before_connect",
+        true,
+        "pre-CONNECT PUBLISH rejected/closed recv=empty"
+      ],
+      [
+        "mqtt.fsm.bad_protocol_level",
+        false,
+        "CONNACK accepted protocol level 99"
+      ],
+      [
+        "mqtt.fsm.truncated_connect",
+        true,
+        "truncated CONNECT handled recv=empty"
+      ],
+      [
+        "mqtt.nego.connack",
+        true,
+        "recv=20020000 ok=True"
+      ],
+      [
+        "mqtt.nego.connack_framing",
+        true,
+        "CONNACK RL=2"
+      ],
+      [
+        "mqtt.nego.empty_client_id",
+        true,
+        "empty client-id CONNACK rc=0"
+      ],
+      [
+        "mqtt.timing.sample_size",
+        true,
+        "n=50 requested=50 errors=0"
+      ],
+      [
+        "mqtt.timing.iat_jitter",
+        true,
+        "median=57.824ms pstdev=2.492ms (target jitter often <2ms vs native)"
+      ],
+      [
+        "mqtt.module_a.composite",
+        true,
+        "fsm=67 nego=100 timing=100"
+      ]
+    ],
+    "B": [
+      [
+        "mqtt.state.subscribe",
+        true,
+        "suback=9003000100 ok=True"
+      ],
+      [
+        "mqtt.state.ping",
+        true,
+        "pingresp=d000 ok=True"
+      ],
+      [
+        "mqtt.state.unsubscribe",
+        true,
+        "unsuback=b0020004 ok=True"
+      ],
+      [
+        "mqtt.payload.pubsub_echo",
+        false,
+        "no PUBLISH delivered to subscriber (shallow stub?)"
+      ],
+      [
+        "mqtt.fuzz.binary",
+        true,
+        "survived binary blast"
+      ]
+    ]
+  }
+}

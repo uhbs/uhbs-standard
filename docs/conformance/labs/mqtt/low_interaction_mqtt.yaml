@@ -1,0 +1,29 @@
+# Low-Interaction MQTT decoy — Target Profile Specification (TPS)
+metadata:
+  name: "Low-Interaction-MQTT-Decoy"
+  class: "Low-Interaction"
+  version: "1.0.0"
+  uhbs_version: "4.5.2"
+
+protocols:
+  - mqtt
+
+ports:
+  mqtt: 1883
+
+performance_baseline:
+  probe_timeout_sec: 3.0
+  timing_samples: 50
+
+module_weights:
+  w_A: 0.30
+  w_B: 0.15
+  w_C: 0.25
+  w_E: 0.10
+  w_F: 0.20
+
+strict_rfc_enforcement: true
+
+notes: |
+  Vendor-neutral MQTT 3.1.1 surface grading (IoT/OT messaging decoys).
+  Product names appear only under conformance as evaluation proof.
