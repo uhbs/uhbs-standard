@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 EVAL = json.loads(Path("/tmp/mqtt_eval.json").read_text())
 TODAY = "2026-09-07"
-VERSION = "4.5.2"
+VERSION = "4.6.0"
 
 LABELS = {
     "mqtt-decoy-a": {
@@ -39,7 +39,7 @@ metadata:
   name: "Low-Interaction-MQTT-Decoy"
   class: "Low-Interaction"
   version: "1.0.0"
-  uhbs_version: "4.5.2"
+  uhbs_version: "4.6.0"
 
 protocols:
   - mqtt

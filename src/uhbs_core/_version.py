@@ -11,4 +11,4 @@ script — never edit ``web/package-lock.json`` as part of a version bump.
 
 from __future__ import annotations
 
-__version__ = "4.5.2"
+__version__ = "4.6.0"

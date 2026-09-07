@@ -1,7 +1,7 @@
 # Scorecard: mqtt-decoy-b — mqtt
 
 **Status:** Informative · evaluation proof (not an endorsement)  
-**UHBS:** **4.5.2** · **Class:** Low-Interaction · **Protocol / surface:** `mqtt`  
+**UHBS:** **4.6.0** · **Class:** Low-Interaction · **Protocol / surface:** `mqtt`  
 **Target id (lab):** `mqtt-decoy-b` · **Evaluation date:** 2026-09-07  
 **Endpoint:** `3.84.184.144:1883`
 
@@ -48,7 +48,7 @@ These numbers are from the UHBS module harness against the live MQTT decoy.
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.5.2
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.6.0
 ====================================================================================
 Target System         : mqtt-decoy-b
 System Profile Class  : Low-Interaction
@@ -67,7 +67,7 @@ Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (P50=57.7m
 Module F: Static Code Audit         :   0.0/100       0.20     SKIPPED (no source_root configured)
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 0.3025 (C = 55.0 < 95 — exponential penalty)
-FINAL COMPOSITE SCORE (UHQS 4.5.2)      : 21.41 / 100
+FINAL COMPOSITE SCORE (UHQS 4.6.0)      : 21.41 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ====================================================================================
 ```

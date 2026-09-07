@@ -3,11 +3,41 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.5.2** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
+share version **4.6.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
 AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`; experimental as
 `uhbs[experimental]` / `uhbs[genai-bench]`).
 
 ## [Unreleased]
+
+## [4.6.0] — 2026-09-07
+
+Minor release: MQTT honeypot fidelity probes feed Modules **A/B** (and thus UHQS),
+plus published MQTT decoy scorecards. **UHQS formula / weights / Safety Gate math
+unchanged.**
+
+### Added
+- **MQTT scoring (lab):** deepen `uhbs_core.protocols.mqtt` beyond CONNECT stubs —
+  FSM refusals (pre-auth PUBLISH, bad protocol level, truncated CONNECT),
+  CONNACK framing, PING/UNSUBSCRIBE state checks, and cross-client pub/sub echo
+  so shallow always-CONNACK decoys score poorly vs real-enough brokers
+- MQTT checks participate in Module **A** (`probe_fsm` / `probe_negotiation` /
+  `probe_timing`) and Module **B** (`probe_state` / `probe_payload` / `probe_fuzz`)
+  when a target lists `protocol: mqtt` (alias `mqtts`)
+- Offline stub tests: realistic broker suite vs always-CONNACK shallow honeypot
+- Published evaluation proof: **MQTT decoy A** (`98.90.197.80`) and **MQTT decoy B**
+  (`3.84.184.144`) — scorecard pages, fixtures, report hubs, Low-Interaction TPS
+  (`docs/conformance/labs/mqtt/low_interaction_mqtt.yaml`)
+
+### Changed
+- Spec/package/schema/`uhbs_version` fixtures, Docker tags, docs, and site copy
+  aligned to **4.6.0**
+- MkDocs nav / scorecards index include MQTT decoy groups
+
+### Notes
+- MQTT remains lab/harness-facing (not newly exposed via MCP)
+- Remote MQTT scorecards are protocol-surface grades; Module F skipped without
+  `source_root`, and Safety Gate δ_C may penalize non-SSH decoys without egress
+  attestation
 
 ## [4.5.2] — 2026-09-04
 

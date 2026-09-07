@@ -1,5 +1,5 @@
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.5.2
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.6.0
 ====================================================================================
 Target System         : mqtt-decoy-a
 System Profile Class  : Low-Interaction
@@ -18,6 +18,6 @@ Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (P50=57.5m
 Module F: Static Code Audit         :   0.0/100       0.20     SKIPPED (no source_root configured)
 ------------------------------------------------------------------------------------
 SAFETY GATE MULTIPLIER                : δ_C = 0.3025 (C = 55.0 < 95 — exponential penalty)
-FINAL COMPOSITE SCORE (UHQS 4.5.2)      : 20.66 / 100
+FINAL COMPOSITE SCORE (UHQS 4.6.0)      : 20.66 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
 ====================================================================================

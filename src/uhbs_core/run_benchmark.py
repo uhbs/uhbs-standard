@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""UHBS v4.5.2 — Universal Honeypot Benchmarking Standard orchestrator (uhbs-core).
+"""UHBS v4.6.0 — Universal Honeypot Benchmarking Standard orchestrator (uhbs-core).
 
 Phases (§6):
   1) profile  — load TPS
   2) static   — Module F (+ optional capability signals)
   3) sandbox  — air-gap / egress preflight
   4) dynamic  — Modules A–E via protocol plugins
-  5) score    — UHQS 4.5.2 with profile-adaptive weights + δ_C gate
+  5) score    — UHQS 4.6.0 with profile-adaptive weights + δ_C gate
 
 Examples:
   uhbs lab --tps posix_shell_ssh --target 127.0.0.1 --port 2222 \\

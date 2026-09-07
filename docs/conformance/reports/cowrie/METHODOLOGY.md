@@ -1,7 +1,7 @@
 # Methodology: Cowrie multi-protocol UHBS lab
 
 **Status:** Informative  
-**UHBS:** 4.5.2 · Images `uhbs:4.5.2` / `uhbs:4.5.2-full`  
+**UHBS:** 4.6.0 · Images `uhbs:4.6.0` / `uhbs:4.6.0-full`  
 **Upstream commit:** `e7d1854a9489fa78845af01e445232f854414f87`
 
 ## Verified product protocols

@@ -1,4 +1,4 @@
-"""UHBS v4.5.2 scorecard + JSON report writer."""
+"""UHBS v4.6.0 scorecard + JSON report writer."""
 
 from __future__ import annotations
 

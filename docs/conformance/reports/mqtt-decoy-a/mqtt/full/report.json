@@ -1,5 +1,5 @@
 {
-  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.5.2",
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v4.6.0",
   "evaluation_type": "Protocol-surface MQTT honeypot grade (remote decoy)",
   "target": {
     "name": "mqtt-decoy-a",
@@ -33,7 +33,7 @@
     },
     "profile_class": "Low-Interaction",
     "grade": "GRADE F (Fail)",
-    "version": "4.5.2",
+    "version": "4.6.0",
     "containment_measured": true
   },
   "notes": "Evaluation proof only. Remote MQTT honeypot 98.90.197.80:1883. Protocol fidelity via uhbs_core.protocols.mqtt. Module F skipped (no source_root). Module D Safety Gate not cleared (non-SSH decoy without egress gateway attestation). Artifacts: docs/conformance/reports/mqtt-decoy-a/mqtt/.",

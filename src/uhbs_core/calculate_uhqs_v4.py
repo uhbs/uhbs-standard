@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Calculate UHQS 4.5.2 from report.json or explicit module scores."""
+"""Calculate UHQS 4.6.0 from report.json or explicit module scores."""
 
 from __future__ import annotations
 

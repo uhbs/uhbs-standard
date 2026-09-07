@@ -1,4 +1,4 @@
-# blacknet — evaluation skipped (UHBS 4.5.2)
+# blacknet — evaluation skipped (UHBS 4.6.0)
 
 **Status:** Skipped · no UHQS numbers  
 **Upstream:** [morian/blacknet](https://github.com/morian/blacknet)

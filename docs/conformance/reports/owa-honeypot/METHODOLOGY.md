@@ -1,6 +1,6 @@
 # Methodology: owa-honeypot UHBS lab
 
-**UHBS:** 4.5.2 · Graded **HTTP** Web-API profile.
+**UHBS:** 4.6.0 · Graded **HTTP** Web-API profile.
 
 Quick **41.71 / F**, full **41.71 / F**.
 

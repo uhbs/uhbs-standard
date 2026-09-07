@@ -1,6 +1,6 @@
 # Methodology: pyrdp UHBS lab
 
-**UHBS:** 4.5.2 · Graded **rdp** Low-Interaction decoy.  
+**UHBS:** 4.6.0 · Graded **rdp** Low-Interaction decoy.  
 Quick **33.93 / F**, full **33.93 / F**.
 
 ## Analyst trust notes

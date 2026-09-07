@@ -1,4 +1,4 @@
-"""UHBS v4.5.2 — Universal Honeypot Benchmarking Standard shared types."""
+"""UHBS v4.6.0 — Universal Honeypot Benchmarking Standard shared types."""
 
 from __future__ import annotations
 
