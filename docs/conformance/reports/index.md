@@ -34,6 +34,8 @@
 | [miniprint (sa7mon)](miniprint/index.md) | Low-Interaction | PJL/raw `:9100` | [41.83 / F](miniprint/quick/README.md) | [50.43 / D](miniprint/full/README.md) | [Reproduce](miniprint/TUTORIAL.md) |
 | [Conpot (mushorg)](conpot/index.md) | ICS-SCADA | Modbus `:5020` | [44.55 / F](conpot/quick/README.md) | [55.4 / D](conpot/full/README.md) | [Reproduce](conpot/TUTORIAL.md) |
 | [Cowrie](cowrie/index.md) | Low-Interaction | SSH `:2222` + Telnet `:2223` (SFTP via SSH) | see hub | see hub | [Reproduce](cowrie/TUTORIAL.md) |
+| [MQTT decoy A](mqtt-decoy-a/index.md) | Low-Interaction | MQTT `:1883` | — | [20.66 / F](mqtt-decoy-a/mqtt/full/) | [Reproduce](mqtt-decoy-a/TUTORIAL.md) |
+| [MQTT decoy B](mqtt-decoy-b/index.md) | Low-Interaction | MQTT `:1883` | — | [21.41 / F](mqtt-decoy-b/mqtt/full/) | [Reproduce](mqtt-decoy-b/TUTORIAL.md) |
 | [LLM Honeypot (Palisade)](llm-honeypot/index.md) | Low-Interaction | SSH `:2222` (Telnet off) | [67.94 / D](llm-honeypot/ssh/quick/) | [61.17 / D](llm-honeypot/ssh/full/) | [Reproduce](llm-honeypot/TUTORIAL.md) |
 | [HoneyAgents](honeyagents/index.md) | Low-Interaction | SSH `:2222` (Telnet mapped, not enabled) | [67.94 / D](honeyagents/ssh/quick/) | [65.24 / D](honeyagents/ssh/full/) | [Reproduce](honeyagents/TUTORIAL.md) |
 | [LLMPot (momalab)](llmpot/index.md) | multi | Modbus `:5020` / S7comm `:102` / HTTP `:8080` | see hub | see hub | [Reproduce](llmpot/TUTORIAL.md) |
