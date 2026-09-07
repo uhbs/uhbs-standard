@@ -71,8 +71,10 @@ def test_mqtt_against_stub() -> None:
             strict_rfc_enforcement=True,
         )
         plugin = MQTTPlugin()
-        assert plugin.probe_negotiation(host, port, target, tps)[0].passed
-        assert plugin.probe_state(host, port, target, tps)[0].passed
+        nego = plugin.probe_negotiation(host, port, target, tps)
+        assert any(c.id == "mqtt.nego.connack" and c.passed for c in nego)
+        state = plugin.probe_state(host, port, target, tps)
+        assert any(c.id == "mqtt.state.subscribe" and c.passed for c in state)
         assert is_connack(b"\x20\x02\x00\x00")
         assert build_connect().startswith(b"\x10")
     finally:
