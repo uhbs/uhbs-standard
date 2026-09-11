@@ -1,0 +1,51 @@
+From 8c8fc2f5423758bd8abd3f3d1bfad570ed57370c Mon Sep 17 00:00:00 2001
+From: Cursor Agent <cursoragent@cursor.com>
+Date: Fri, 11 Sep 2026 04:55:28 +0000
+Subject: [PATCH] Add UHBS to Guides
+
+List the Universal Honeypot Benchmarking Standard under Guides as a
+vendor-neutral honeypot / deception evaluation framework (UHQS).
+
+Signed-off-by: Cursor Agent <cursoragent@cursor.com>
+---
+ README.md    | 5 +++--
+ README_CN.md | 1 +
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/README.md b/README.md
+index 5a5f474..bf1b17b 100644
+--- a/README.md
++++ b/README.md
+@@ -576,6 +576,7 @@ Discover more awesome lists at <b><code>504652⭐</code></b> <b><code>&nbsp;3682
+ - 🌎 [T-Pot: A Multi-Honeypot Platform](dtag-dev-sec.github.io/mediator/feature/2015/03/17/concept.html)
+ - <b><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?⭐</code></b> <b><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?🍴</code></b> [Honeypot (Dionaea and kippo) setup script](https://github.com/andrewmichaelsmith/honeypot-setup-script/))
+ - 🌎 [The Security Canary Maturity Model](tracebit.com/blog/the-security-canary-maturity-model)
++- <b><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2⭐</code></b> <b><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0🍴</code></b> [UHBS](https://github.com/uhbs/uhbs-standard)) - Open-source Universal Honeypot Benchmarking Standard for vendor-neutral honeypot and deception evaluation (UHQS scoring).
+ 
+ - Deployment
+ 
+@@ -590,6 +591,6 @@ Discover more awesome lists at <b><code>504652⭐</code></b> <b><code>&nbsp;3682
+   - 🌎 [The Tularosa Study: An Experimental Design and Implementation to Quantify the Effectiveness of Cyber Deception](www.osti.gov/servlets/purl/1524844)
+   - 🌎 ['It's Not Paranoia If They're Really After You': When Announcing Deception Technology Can Change Attacker Decisions](scholarspace.manoa.hawaii.edu/items/88cd00a5-914f-456e-a322-01c22fd5b7d7)
+   - 🌎 [When to Deceive: A Cross-Layer Stackelberg Game Framework for Strategic Timing of Cyber Deception](arxiv.org/pdf/2505.21244)
+-
+-## Source
++
++## Source
+ <b><code>&nbsp;10550⭐</code></b> <b><code>&nbsp;&nbsp;1375🍴</code></b> [paralax/awesome-honeypots](https://github.com/paralax/awesome-honeypots))
+\ No newline at end of file
+diff --git a/README_CN.md b/README_CN.md
+index c1dae4b..d7ab45f 100644
+--- a/README_CN.md
++++ b/README_CN.md
+@@ -473,6 +473,7 @@
+ ## 指南
+ 
+ - [T-Pot: 多蜜罐平台](https://dtag-dev-sec.github.io/mediator/feature/2015/03/17/concept.html)
++- [UHBS](https://github.com/uhbs/uhbs-standard) - 开源的通用蜜罐基准测试标准（Universal Honeypot Benchmarking Standard），用于厂商中立的蜜罐 / 欺骗技术评估（UHQS 评分）。
+ - [蜜罐 (Dionaea and kippo) 设置脚本](https://github.com/andrewmichaelsmith/honeypot-setup-script/)
+ 
+ - 部署
+-- 
+2.43.0
+
