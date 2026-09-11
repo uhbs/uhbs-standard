@@ -58,6 +58,8 @@ def test_protocol_plugins_registered() -> None:
         "oracle",
         "pjl",
         "socks5",
+        "redis",
+        "elasticsearch",
     }.issubset(names)
 
 

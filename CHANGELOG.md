@@ -9,6 +9,24 @@ AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`; experimental as
 
 ## [Unreleased]
 
+### Added
+- **Redis scoring (lab):** deepen `uhbs_core.protocols.redis` beyond PING/SET stubs —
+  FSM refusals (invalid verb, wrong arity, truncated RESP), ECHO/INFO negotiation,
+  SET/GET + INCR + DEL/EXISTS state checks, and cross-connection GET so shallow
+  always-+OK decoys score poorly vs real-enough Redis
+- **Elasticsearch scoring (lab):** new `uhbs_core.protocols.elasticsearch` plugin
+  (aliases `es`, `opensearch`, `elastic`) — FSM HTTP/JSON error shapes, root +
+  cluster-health negotiation, index lifecycle state, and document round-trip
+  payload so canned always-200 ES decoys score poorly vs real-enough nodes
+- Redis and Elasticsearch checks participate in Module **A** (`probe_fsm` /
+  `probe_negotiation` / `probe_timing`) and Module **B** (`probe_state` /
+  `probe_payload` / `probe_fuzz`) when a target lists `protocol: redis` or
+  `protocol: elasticsearch`
+- Offline stub tests: realistic vs shallow decoys for both protocols
+
+### Notes
+- Redis and Elasticsearch remain lab/harness-facing (not newly exposed via MCP)
+
 ## [4.6.0] — 2026-09-07
 
 Minor release: MQTT honeypot fidelity probes feed Modules **A/B** (and thus UHQS),
