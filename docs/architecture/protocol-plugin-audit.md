@@ -220,21 +220,39 @@ missing a 100 ms bar.
   ISO-TSAP stack before any PLC memory ops.
 - **Disclosed limitation:** no Read/Write Var or SZL identity probing yet.
 
-## 7. Redis — `protocols/redis.py` 🟡 Tier 1 (live-baseline verified)
+## 7. Redis — `protocols/redis.py` 🟢 Tier 1 (deepened for Module A/B)
 
 - **Standards:** RESP (REdis Serialization Protocol).
-- **A1 (`redis.fsm.invalid_verb`):** an unknown RESP verb must get a real
-  `-ERR` reply. **Fixed this round:** `passed` is now derived directly from
-  the score band (`passed = score >= 70`) rather than being set
-  independently — the prior version could return `passed=True` at
-  `score=40`, a boolean/numeric contract violation for any downstream
-  consumer (dashboards, CI gates, other agents).
-- **A2:** `PING` → `PONG`/`+` reply.
-- **B1:** `SET`/`GET` round trip on a marker key.
-- **Why it's good:** live-verified this round via
-  `tests/test_plugin_baseline_live.py` against the real, official
-  `redis:7-alpine` image (score ≥ 90/100), proving the plugin recognizes
-  ground truth, not just "not a honeypot."
+- **A1 (`redis.fsm.invalid_verb` / `wrong_arity` / `truncated_array`):** unknown
+  verb and wrong-arity GET must return real `-ERR` replies (not `+OK`/`+PONG`);
+  truncated RESP arrays must not hang the harness. `passed` is derived from the
+  score band (`passed = score >= 70`) so boolean and numeric never disagree.
+- **A2 (`redis.nego.ping` / `echo` / `info_server`):** `PING`→`PONG`, `ECHO`
+  bulk echo, and `INFO server` with `redis_version` (critical when Strict).
+- **B1 (`redis.state.set_get` / `incr` / `del_exists`):** SET/GET exact value
+  (critical), INCR, DEL/EXISTS.
+- **B2 (`redis.payload.cross_conn_get`, critical):** SET on one TCP connection,
+  GET on another — strongest discriminator for memoryless always-+OK decoys.
+- **Why it's good:** live-verified via `tests/test_plugin_baseline_live.py`
+  against official `redis:7-alpine` (nego+state ≥ 90/100), plus offline
+  realistic-vs-shallow stub tests in `tests/test_redis_protocol.py`.
+
+## 7b. Elasticsearch — `protocols/elasticsearch.py` 🟡 Tier 2 (new)
+
+- **Standards:** Elasticsearch REST API over HTTP (also covers OpenSearch-shaped
+  roots). Aliases: `es`, `opensearch`, `elastic`.
+- **A1 (`elasticsearch.fsm.malformed_json` / `bad_method` / `missing_index`):**
+  malformed document JSON, nonsense methods, and missing-index GETs must yield
+  4xx + error-shaped JSON — not a canned 200 cluster root.
+- **A2 (`elasticsearch.nego.root_info` / `cluster_health`):** `GET /` tagline /
+  version, and `GET /_cluster/health` with green/yellow/red status.
+- **B1 (`elasticsearch.state.index_lifecycle`, critical):** create index
+  (`acknowledged`), HEAD without canned root body, DELETE, then HEAD→404.
+- **B2 (`elasticsearch.payload.doc_roundtrip`, critical):** index a document and
+  GET `_source` back — strongest shallow always-200 discriminator.
+- **Why it's good:** offline realistic-vs-shallow stub tests in
+  `tests/test_elasticsearch_protocol.py`. Not a substitute for grading
+  elastichoney as plain `http` when only HTTP surface checks are needed.
 
 ## 8. SMB — `protocols/smb.py` 🟢 Tier 1 (this round)
 
