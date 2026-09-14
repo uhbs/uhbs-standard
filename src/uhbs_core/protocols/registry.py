@@ -12,6 +12,7 @@ from .bluetooth import BluetoothPlugin
 from .coap import CoAPPlugin
 from .dhcp import DHCPPlugin
 from .dns import DNSPlugin
+from .elasticsearch import ElasticsearchPlugin
 from .ftp import FTPPlugin
 from .generic import GenericTCPPlugin
 from .git import GitPlugin
@@ -132,6 +133,8 @@ def get_plugin(name: str) -> ProtocolPlugin:
         key = "pjl"
     if key in {"socks", "socks4"}:
         key = "socks5"
+    if key in {"es", "opensearch", "elastic"}:
+        key = "elasticsearch"
     if key in _REGISTRY and key != "generic":
         return _REGISTRY[key]
     if key == "generic" and "generic" in _REGISTRY:
@@ -203,6 +206,7 @@ def _bootstrap() -> None:
         CoAPPlugin(),
         FTPPlugin(),
         RedisPlugin(),
+        ElasticsearchPlugin(),
         SMBPlugin(),
         MySQLPlugin(),
         PostgresPlugin(),

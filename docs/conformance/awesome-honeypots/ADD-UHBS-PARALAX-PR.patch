@@ -1,0 +1,28 @@
+From 4c41b19aff8a622f4d3cf2a1149fa9abe530618a Mon Sep 17 00:00:00 2001
+From: Cursor Agent <cursoragent@cursor.com>
+Date: Fri, 11 Sep 2026 04:57:28 +0000
+Subject: [PATCH] Add UHBS to Guides
+
+List the Universal Honeypot Benchmarking Standard under Guides as a
+vendor-neutral honeypot / deception evaluation framework (UHQS).
+
+Signed-off-by: Cursor Agent <cursoragent@cursor.com>
+---
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/README.md b/README.md
+index 49a7bae..f6cab3f 100644
+--- a/README.md
++++ b/README.md
+@@ -576,6 +576,7 @@ Discover more awesome lists at [sindresorhus/awesome](https://github.com/sindres
+ - [T-Pot: A Multi-Honeypot Platform](https://dtag-dev-sec.github.io/mediator/feature/2015/03/17/concept.html)
+ - [Honeypot (Dionaea and kippo) setup script](https://github.com/andrewmichaelsmith/honeypot-setup-script/)
+ - [The Security Canary Maturity Model](https://tracebit.com/blog/the-security-canary-maturity-model)
++- [UHBS](https://github.com/uhbs/uhbs-standard) - Open-source Universal Honeypot Benchmarking Standard for vendor-neutral honeypot and deception evaluation (UHQS scoring).
+ 
+ - Deployment
+ 
+-- 
+2.43.0
+

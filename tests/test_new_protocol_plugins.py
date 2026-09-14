@@ -29,6 +29,8 @@ def test_new_plugins_resolve() -> None:
         "vnc",
         "git",
         "smb",
+        "redis",
+        "elasticsearch",
     ):
         p = get_plugin(name)
         assert p.name == name

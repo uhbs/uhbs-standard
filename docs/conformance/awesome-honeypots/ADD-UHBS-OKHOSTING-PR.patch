@@ -1,0 +1,28 @@
+From 0aa5408ba7be1fcfef2b89be103a4260669b26bb Mon Sep 17 00:00:00 2001
+From: Cursor Agent <cursoragent@cursor.com>
+Date: Fri, 11 Sep 2026 05:01:31 +0000
+Subject: [PATCH] Add UHBS honeypot evaluation framework
+
+List UHBS under cyber security resources as a vendor-neutral honeypot /
+deception evaluation standard (UHQS scoring).
+
+Signed-off-by: Cursor Agent <cursoragent@cursor.com>
+---
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/README.md b/README.md
+index 042037f..13913a3 100644
+--- a/README.md
++++ b/README.md
+@@ -127,6 +127,7 @@ A curated list of cyber security resources and tools.
+ * [vnaya - Cybersecurity For Your Kids](https://www.vnaya.com/these-top-educational-cyber-security-resources-will-help-your-kids-to-stay-safe-from-cyber-crime/) - These Top Educational Cyber Security Resources Will Help Your Kids To Stay Safe From Cyber Crime.
+ * [Gracker AI](https://gracker.ai/) - AI Cybersecurity Marketing Tool
+ * [Watchtower](https://github.com/fzn0x/watchtower) - AI Pentesting Framework Automation Tool
++* [UHBS](https://github.com/uhbs/uhbs-standard) - Open-source Universal Honeypot Benchmarking Standard for vendor-neutral honeypot and deception evaluation (UHQS scoring).
+ * [ARS3NAL](https://github.com/inflictx/Arsenal) - Offline-first, searchable arsenal of pentest & bug bounty resources: ~1500 payloads, command generator, GTFOBins, wordlists, embedded CyberChef, reverse shells and 70 checklists.
+ 
+ ## Must Read
+-- 
+2.43.0
+
