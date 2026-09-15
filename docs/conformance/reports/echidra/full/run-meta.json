@@ -1,0 +1,77 @@
+{
+  "uhbs_version": "4.6.0",
+  "run_mode": "full",
+  "evaluated_at": "2026-09-15T12:14:00Z",
+  "proof_label": "echidra (Qyleron/EchidraOSS SSH honeypot)",
+  "target": {
+    "repository": "https://github.com/Qyleron/EchidraOSS",
+    "git_commit": "c16548ba4eb54af0cf9efa2c545d83039b2c1ece",
+    "class": "Low-Interaction",
+    "protocol": "ssh",
+    "host": "echidra-lab",
+    "port": 2222,
+    "user": "root",
+    "container_image": "echidraoss-honeypot",
+    "container_image_id": "sha256:2d48d2a38ed71d19d99c966f624870310b50c3e31f10ffd73bab37f31780e5ec"
+  },
+  "grader": {
+    "package_version": "4.6.0",
+    "uhbs_git_commit": "9e5a2dc8cb8fe926f9a7b86dedbcad2ad5d349ba",
+    "docker_image": "uhbs:4.0.0-full",
+    "docker_image_id": "sha256:e1d1ee47bb9ef17201de1d2bf5ca6709fbc28a8cd5383ec2d86d60a49e850695",
+    "inventory": "docs/conformance/labs/echidra/inventory.yaml",
+    "tps": "docs/conformance/labs/echidra/low_interaction_ssh_full.yaml"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "concurrency": 10,
+    "requests": 50,
+    "timing_samples": 1000,
+    "strict_rfc_enforcement": true,
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "plugin": "ssh",
+    "auth": "root/admin"
+  },
+  "results": {
+    "uhqs": 43.45,
+    "grade": "F",
+    "delta_c": 1.0,
+    "module_scores": {
+      "A": 21.5,
+      "B": 25.0,
+      "C": 55.0,
+      "D": 100.0,
+      "E": 55.0,
+      "F": 70.0
+    },
+    "safety_gate_passed": true
+  },
+  "limitations": [
+    "SSH-only grade (HTTP/FTP/Telnet not scored).",
+    "sessions.jsonl text/JSON \u2014 Module C capped without STIX/OTel/ECS.",
+    "Lab auth root/admin (any credentials accepted by design).",
+    "Air-gap attested via UHBS_AIRGAP_ATTESTED=1 (Docker Desktop lab).",
+    "SAST gate capped Module F at 70; trivy unavailable in this full image build.",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement.",
+    "Lab docker images were uhbs:4.0.0[-full]; fixture/package version stamped 4.6.0 for current UHBS tree."
+  ]
+}

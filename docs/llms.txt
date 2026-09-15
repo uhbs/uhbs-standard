@@ -44,7 +44,7 @@ Canonical hosts:
 ## Evidence & maturity
 
 - [Conformance fixtures](https://uhbs.github.io/uhbs-standard/mkdocs/conformance/): Named product proof scorecards only
-- [Lab reports](https://uhbs.github.io/uhbs-standard/mkdocs/conformance/reports/): Published quick+full grades (ESPot, miniprint, Conpot, Cowrie, OpenCanary)
+- [Lab reports](https://uhbs.github.io/uhbs-standard/mkdocs/conformance/reports/): Published quick+full grades (ESPot, miniprint, Conpot, Cowrie, OpenCanary, EchidraOSS)
 - [Roadmap](https://uhbs.github.io/uhbs-standard/mkdocs/roadmap/): Technical done vs Phase 6 community goals
 - [Maintainers](https://github.com/uhbs/uhbs-standard/blob/main/MAINTAINERS.md): Single author today
 - [Citation](https://github.com/uhbs/uhbs-standard/blob/main/CITATION.cff): How to cite UHBS

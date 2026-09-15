@@ -34,6 +34,7 @@ FIXTURES = ROOT / "docs" / "conformance" / "fixtures"
         ("opencanary-telnet.scorecard.json", 64.9, "D"),
         ("opencanary-redis.scorecard.json", 53.72, "D"),
         ("endlessh-low-interaction.scorecard.json", 54.07, "D"),
+        ("echidra-low-interaction.scorecard.json", 43.45, "F"),
         ("safety-gate-fail.scorecard.json", 0.0, "F"),
     ],
 )
