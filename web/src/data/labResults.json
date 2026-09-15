@@ -1,7 +1,7 @@
 [
   {
     "name": "ESPot",
-    "classLabel": "Web-API · HTTP :9200",
+    "classLabel": "Web-API \u00b7 HTTP :9200",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/mycert/ESPot",
@@ -21,7 +21,7 @@
   },
   {
     "name": "miniprint",
-    "classLabel": "Low-Interaction · PJL :9100",
+    "classLabel": "Low-Interaction \u00b7 PJL :9100",
     "protocol": "pjl",
     "protocolLabel": "PJL",
     "repo": "https://github.com/sa7mon/miniprint",
@@ -41,7 +41,7 @@
   },
   {
     "name": "Conpot",
-    "classLabel": "ICS-SCADA · Modbus :5020",
+    "classLabel": "ICS-SCADA \u00b7 Modbus :5020",
     "protocol": "modbus",
     "protocolLabel": "Modbus",
     "repo": "https://github.com/mushorg/conpot",
@@ -61,7 +61,7 @@
   },
   {
     "name": "Cowrie (SSH)",
-    "classLabel": "Low-Interaction · SSH :2222",
+    "classLabel": "Low-Interaction \u00b7 SSH :2222",
     "protocol": "ssh",
     "protocolLabel": "SSH",
     "repo": "https://github.com/cowrie/cowrie",
@@ -81,7 +81,7 @@
   },
   {
     "name": "Cowrie (Telnet)",
-    "classLabel": "Low-Interaction · Telnet :2223",
+    "classLabel": "Low-Interaction \u00b7 Telnet :2223",
     "protocol": "telnet",
     "protocolLabel": "Telnet",
     "repo": "https://github.com/cowrie/cowrie",
@@ -101,7 +101,7 @@
   },
   {
     "name": "LLM Honeypot (SSH)",
-    "classLabel": "Low-Interaction · SSH :2222",
+    "classLabel": "Low-Interaction \u00b7 SSH :2222",
     "protocol": "ssh",
     "protocolLabel": "SSH",
     "repo": "https://github.com/PalisadeResearch/llm-honeypot",
@@ -121,7 +121,7 @@
   },
   {
     "name": "HoneyAgents (SSH)",
-    "classLabel": "Low-Interaction · SSH :2222",
+    "classLabel": "Low-Interaction \u00b7 SSH :2222",
     "protocol": "ssh",
     "protocolLabel": "SSH",
     "repo": "https://github.com/mrwadams/honeyagents",
@@ -141,7 +141,7 @@
   },
   {
     "name": "GenAIPot (SMTP)",
-    "classLabel": "Low-Interaction · SMTP :25",
+    "classLabel": "Low-Interaction \u00b7 SMTP :25",
     "protocol": "smtp",
     "protocolLabel": "SMTP",
     "repo": "https://github.com/ls1911/GenAIPot",
@@ -161,7 +161,7 @@
   },
   {
     "name": "GenAIPot (POP3)",
-    "classLabel": "Low-Interaction · POP3 :110",
+    "classLabel": "Low-Interaction \u00b7 POP3 :110",
     "protocol": "pop3",
     "protocolLabel": "POP3",
     "repo": "https://github.com/ls1911/GenAIPot",
@@ -181,7 +181,7 @@
   },
   {
     "name": "LLMPot (Modbus)",
-    "classLabel": "ICS-SCADA · Modbus :5020",
+    "classLabel": "ICS-SCADA \u00b7 Modbus :5020",
     "protocol": "modbus",
     "protocolLabel": "Modbus",
     "repo": "https://github.com/momalab/LLMPot",
@@ -201,7 +201,7 @@
   },
   {
     "name": "LLMPot (S7comm)",
-    "classLabel": "ICS-SCADA · S7comm :102",
+    "classLabel": "ICS-SCADA \u00b7 S7comm :102",
     "protocol": "s7comm",
     "protocolLabel": "S7comm",
     "repo": "https://github.com/momalab/LLMPot",
@@ -221,7 +221,7 @@
   },
   {
     "name": "LLMPot (HTTP)",
-    "classLabel": "Web-API · HTTP :8080",
+    "classLabel": "Web-API \u00b7 HTTP :8080",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/momalab/LLMPot",
@@ -241,7 +241,7 @@
   },
   {
     "name": "DataTrap (SSH)",
-    "classLabel": "Low-Interaction · SSH :2222",
+    "classLabel": "Low-Interaction \u00b7 SSH :2222",
     "protocol": "ssh",
     "protocolLabel": "SSH",
     "repo": "https://github.com/ThalesGroup/dd-honeypot",
@@ -261,7 +261,7 @@
   },
   {
     "name": "DataTrap (HTTP)",
-    "classLabel": "Web-API · HTTP :8080",
+    "classLabel": "Web-API \u00b7 HTTP :8080",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/ThalesGroup/dd-honeypot",
@@ -281,7 +281,7 @@
   },
   {
     "name": "DataTrap (MySQL)",
-    "classLabel": "Low-Interaction · MySQL :3306",
+    "classLabel": "Low-Interaction \u00b7 MySQL :3306",
     "protocol": "mysql",
     "protocolLabel": "MySQL",
     "repo": "https://github.com/ThalesGroup/dd-honeypot",
@@ -301,7 +301,7 @@
   },
   {
     "name": "DataTrap (PostgreSQL)",
-    "classLabel": "Low-Interaction · PostgreSQL :5432",
+    "classLabel": "Low-Interaction \u00b7 PostgreSQL :5432",
     "protocol": "postgres",
     "protocolLabel": "PostgreSQL",
     "repo": "https://github.com/ThalesGroup/dd-honeypot",
@@ -321,7 +321,7 @@
   },
   {
     "name": "DataTrap (Redis)",
-    "classLabel": "Low-Interaction · Redis :6379",
+    "classLabel": "Low-Interaction \u00b7 Redis :6379",
     "protocol": "redis",
     "protocolLabel": "Redis",
     "repo": "https://github.com/ThalesGroup/dd-honeypot",
@@ -341,7 +341,7 @@
   },
   {
     "name": "DataTrap (Telnet)",
-    "classLabel": "Low-Interaction · Telnet :2323",
+    "classLabel": "Low-Interaction \u00b7 Telnet :2323",
     "protocol": "telnet",
     "protocolLabel": "Telnet",
     "repo": "https://github.com/ThalesGroup/dd-honeypot",
@@ -361,7 +361,7 @@
   },
   {
     "name": "Endlessh",
-    "classLabel": "Low-Interaction · ssh_tarpit :2222",
+    "classLabel": "Low-Interaction \u00b7 ssh_tarpit :2222",
     "protocol": "ssh_tarpit",
     "protocolLabel": "SSH tarpit",
     "repo": "https://github.com/skeeto/endlessh",
@@ -380,8 +380,28 @@
     "fullCard": "mkdocs/conformance/reports/endlessh/full/SCORECARD.txt"
   },
   {
+    "name": "EchidraOSS",
+    "classLabel": "Low-Interaction \u00b7 SSH :2222",
+    "protocol": "ssh",
+    "protocolLabel": "SSH",
+    "repo": "https://github.com/Qyleron/EchidraOSS",
+    "repoUpdated": "2026-09-15",
+    "uhqsQuick": 57.33,
+    "uhqsFull": 43.45,
+    "gradeQuick": "D",
+    "gradeFull": "F",
+    "hub": "mkdocs/conformance/reports/echidra/",
+    "tutorial": "mkdocs/conformance/reports/echidra/TUTORIAL/",
+    "methodology": "mkdocs/conformance/reports/echidra/METHODOLOGY/",
+    "scorecard": "mkdocs/scorecards/echidra-ssh/",
+    "quick": "mkdocs/conformance/reports/echidra/quick/",
+    "full": "mkdocs/conformance/reports/echidra/full/",
+    "quickCard": "mkdocs/conformance/reports/echidra/quick/SCORECARD.txt",
+    "fullCard": "mkdocs/conformance/reports/echidra/full/SCORECARD.txt"
+  },
+  {
     "name": "OpenCanary (HTTP)",
-    "classLabel": "Web-API · HTTP :80",
+    "classLabel": "Web-API \u00b7 HTTP :80",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/thinkst/opencanary",
@@ -401,7 +421,7 @@
   },
   {
     "name": "OpenCanary (FTP)",
-    "classLabel": "Low-Interaction · FTP :21",
+    "classLabel": "Low-Interaction \u00b7 FTP :21",
     "protocol": "ftp",
     "protocolLabel": "FTP",
     "repo": "https://github.com/thinkst/opencanary",
@@ -421,7 +441,7 @@
   },
   {
     "name": "OpenCanary (SSH)",
-    "classLabel": "Low-Interaction · SSH :2222",
+    "classLabel": "Low-Interaction \u00b7 SSH :2222",
     "protocol": "ssh",
     "protocolLabel": "SSH",
     "repo": "https://github.com/thinkst/opencanary",
@@ -441,7 +461,7 @@
   },
   {
     "name": "OpenCanary (Telnet)",
-    "classLabel": "Low-Interaction · Telnet :23",
+    "classLabel": "Low-Interaction \u00b7 Telnet :23",
     "protocol": "telnet",
     "protocolLabel": "Telnet",
     "repo": "https://github.com/thinkst/opencanary",
@@ -461,7 +481,7 @@
   },
   {
     "name": "OpenCanary (Redis)",
-    "classLabel": "Low-Interaction · Redis :6379",
+    "classLabel": "Low-Interaction \u00b7 Redis :6379",
     "protocol": "redis",
     "protocolLabel": "Redis",
     "repo": "https://github.com/thinkst/opencanary",
@@ -481,7 +501,7 @@
   },
   {
     "name": "OpenCanary (MySQL)",
-    "classLabel": "Low-Interaction · MySQL :3306",
+    "classLabel": "Low-Interaction \u00b7 MySQL :3306",
     "protocol": "mysql",
     "protocolLabel": "MySQL",
     "repo": "https://github.com/thinkst/opencanary",
@@ -501,7 +521,7 @@
   },
   {
     "name": "OpenCanary (RDP)",
-    "classLabel": "Low-Interaction · RDP :3389",
+    "classLabel": "Low-Interaction \u00b7 RDP :3389",
     "protocol": "rdp",
     "protocolLabel": "RDP",
     "repo": "https://github.com/thinkst/opencanary",
@@ -521,7 +541,7 @@
   },
   {
     "name": "OpenCanary (SIP)",
-    "classLabel": "Low-Interaction · SIP :5060",
+    "classLabel": "Low-Interaction \u00b7 SIP :5060",
     "protocol": "sip",
     "protocolLabel": "SIP",
     "repo": "https://github.com/thinkst/opencanary",
@@ -541,7 +561,7 @@
   },
   {
     "name": "OpenCanary (SNMP)",
-    "classLabel": "Low-Interaction · SNMP :161",
+    "classLabel": "Low-Interaction \u00b7 SNMP :161",
     "protocol": "snmp",
     "protocolLabel": "SNMP",
     "repo": "https://github.com/thinkst/opencanary",
@@ -561,7 +581,7 @@
   },
   {
     "name": "OpenCanary (NTP)",
-    "classLabel": "Low-Interaction · NTP :123",
+    "classLabel": "Low-Interaction \u00b7 NTP :123",
     "protocol": "ntp",
     "protocolLabel": "NTP",
     "repo": "https://github.com/thinkst/opencanary",
@@ -581,7 +601,7 @@
   },
   {
     "name": "OpenCanary (TFTP)",
-    "classLabel": "Low-Interaction · TFTP :69",
+    "classLabel": "Low-Interaction \u00b7 TFTP :69",
     "protocol": "tftp",
     "protocolLabel": "TFTP",
     "repo": "https://github.com/thinkst/opencanary",
@@ -601,7 +621,7 @@
   },
   {
     "name": "OpenCanary (VNC)",
-    "classLabel": "Low-Interaction · VNC :5900",
+    "classLabel": "Low-Interaction \u00b7 VNC :5900",
     "protocol": "vnc",
     "protocolLabel": "VNC",
     "repo": "https://github.com/thinkst/opencanary",
@@ -621,7 +641,7 @@
   },
   {
     "name": "OpenCanary (Git)",
-    "classLabel": "Low-Interaction · Git :9418",
+    "classLabel": "Low-Interaction \u00b7 Git :9418",
     "protocol": "git",
     "protocolLabel": "Git",
     "repo": "https://github.com/thinkst/opencanary",
@@ -641,7 +661,7 @@
   },
   {
     "name": "OpenCanary (SMB)",
-    "classLabel": "Low-Interaction · SMB :445",
+    "classLabel": "Low-Interaction \u00b7 SMB :445",
     "protocol": "smb",
     "protocolLabel": "SMB",
     "repo": "https://github.com/thinkst/opencanary",
@@ -661,7 +681,7 @@
   },
   {
     "name": "Beelzebub (HTTP)",
-    "classLabel": "Web-API · HTTP :8080",
+    "classLabel": "Web-API \u00b7 HTTP :8080",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/beelzebub-labs/beelzebub",
@@ -681,7 +701,7 @@
   },
   {
     "name": "Beelzebub (Redis)",
-    "classLabel": "Low-Interaction · Redis :6379",
+    "classLabel": "Low-Interaction \u00b7 Redis :6379",
     "protocol": "redis",
     "protocolLabel": "Redis",
     "repo": "https://github.com/beelzebub-labs/beelzebub",
@@ -701,7 +721,7 @@
   },
   {
     "name": "Beelzebub (SSH)",
-    "classLabel": "Low-Interaction · SSH :2222",
+    "classLabel": "Low-Interaction \u00b7 SSH :2222",
     "protocol": "ssh",
     "protocolLabel": "SSH",
     "repo": "https://github.com/beelzebub-labs/beelzebub",
@@ -721,7 +741,7 @@
   },
   {
     "name": "Beelzebub (Telnet)",
-    "classLabel": "Low-Interaction · Telnet :23",
+    "classLabel": "Low-Interaction \u00b7 Telnet :23",
     "protocol": "telnet",
     "protocolLabel": "Telnet",
     "repo": "https://github.com/beelzebub-labs/beelzebub",
@@ -741,7 +761,7 @@
   },
   {
     "name": "Beelzebub (MCP)",
-    "classLabel": "Web-API (MCP v1) · :8000",
+    "classLabel": "Web-API (MCP v1) \u00b7 :8000",
     "protocol": "mcp",
     "protocolLabel": "MCP",
     "repo": "https://github.com/beelzebub-labs/beelzebub",
@@ -761,7 +781,7 @@
   },
   {
     "name": "HoneyMCP (MCP)",
-    "classLabel": "Web-API (MCP v1) · :8080",
+    "classLabel": "Web-API (MCP v1) \u00b7 :8080",
     "protocol": "mcp",
     "protocolLabel": "MCP",
     "repo": "https://github.com/kosiorkosa47/honeymcp",
@@ -781,7 +801,7 @@
   },
   {
     "name": "Trapster Community (FTP)",
-    "classLabel": "Low-Interaction · FTP :2121",
+    "classLabel": "Low-Interaction \u00b7 FTP :2121",
     "protocol": "ftp",
     "protocolLabel": "FTP",
     "repo": "https://github.com/0xBallpoint/trapster-community",
@@ -801,7 +821,7 @@
   },
   {
     "name": "Trapster Community (HTTP)",
-    "classLabel": "Web-API · HTTP :8080",
+    "classLabel": "Web-API \u00b7 HTTP :8080",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/0xBallpoint/trapster-community",
@@ -821,7 +841,7 @@
   },
   {
     "name": "Trapster Community (SSH)",
-    "classLabel": "Low-Interaction · SSH :2222",
+    "classLabel": "Low-Interaction \u00b7 SSH :2222",
     "protocol": "ssh",
     "protocolLabel": "SSH",
     "repo": "https://github.com/0xBallpoint/trapster-community",
@@ -841,7 +861,7 @@
   },
   {
     "name": "Trapster Community (Telnet)",
-    "classLabel": "Low-Interaction · Telnet :2323",
+    "classLabel": "Low-Interaction \u00b7 Telnet :2323",
     "protocol": "telnet",
     "protocolLabel": "Telnet",
     "repo": "https://github.com/0xBallpoint/trapster-community",
@@ -861,7 +881,7 @@
   },
   {
     "name": "Dionaea (FTP)",
-    "classLabel": "Low-Interaction · FTP :21",
+    "classLabel": "Low-Interaction \u00b7 FTP :21",
     "protocol": "ftp",
     "protocolLabel": "FTP",
     "repo": "https://github.com/dinotools/dionaea",
@@ -881,7 +901,7 @@
   },
   {
     "name": "Dionaea (HTTP)",
-    "classLabel": "Web-API · HTTP :80",
+    "classLabel": "Web-API \u00b7 HTTP :80",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/dinotools/dionaea",
@@ -901,7 +921,7 @@
   },
   {
     "name": "Dionaea (SMB)",
-    "classLabel": "Low-Interaction · SMB :445",
+    "classLabel": "Low-Interaction \u00b7 SMB :445",
     "protocol": "smb",
     "protocolLabel": "SMB",
     "repo": "https://github.com/dinotools/dionaea",
@@ -921,7 +941,7 @@
   },
   {
     "name": "Elastichoney",
-    "classLabel": "Web-API · HTTP :9200",
+    "classLabel": "Web-API \u00b7 HTTP :9200",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/jordan-wright/elastichoney",
@@ -941,7 +961,7 @@
   },
   {
     "name": "honeypot-ftp",
-    "classLabel": "Low-Interaction · FTP :21",
+    "classLabel": "Low-Interaction \u00b7 FTP :21",
     "protocol": "ftp",
     "protocolLabel": "FTP",
     "repo": "https://github.com/alexbredo/honeypot-ftp",
@@ -961,7 +981,7 @@
   },
   {
     "name": "qeeqbox (SSH)",
-    "classLabel": "Low-Interaction · SSH :19022",
+    "classLabel": "Low-Interaction \u00b7 SSH :19022",
     "protocol": "ssh",
     "protocolLabel": "SSH",
     "repo": "https://github.com/qeeqbox/honeypots",
@@ -981,7 +1001,7 @@
   },
   {
     "name": "qeeqbox (HTTP)",
-    "classLabel": "Web-API · HTTP :19080",
+    "classLabel": "Web-API \u00b7 HTTP :19080",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/qeeqbox/honeypots",
@@ -1001,7 +1021,7 @@
   },
   {
     "name": "qeeqbox (FTP)",
-    "classLabel": "Low-Interaction · FTP :19021",
+    "classLabel": "Low-Interaction \u00b7 FTP :19021",
     "protocol": "ftp",
     "protocolLabel": "FTP",
     "repo": "https://github.com/qeeqbox/honeypots",
@@ -1021,7 +1041,7 @@
   },
   {
     "name": "qeeqbox (Telnet)",
-    "classLabel": "Low-Interaction · Telnet :19023",
+    "classLabel": "Low-Interaction \u00b7 Telnet :19023",
     "protocol": "telnet",
     "protocolLabel": "Telnet",
     "repo": "https://github.com/qeeqbox/honeypots",
@@ -1041,7 +1061,7 @@
   },
   {
     "name": "qeeqbox (SMTP)",
-    "classLabel": "Low-Interaction · SMTP :19025",
+    "classLabel": "Low-Interaction \u00b7 SMTP :19025",
     "protocol": "smtp",
     "protocolLabel": "SMTP",
     "repo": "https://github.com/qeeqbox/honeypots",
@@ -1061,7 +1081,7 @@
   },
   {
     "name": "qeeqbox (POP3)",
-    "classLabel": "Low-Interaction · POP3 :19110",
+    "classLabel": "Low-Interaction \u00b7 POP3 :19110",
     "protocol": "pop3",
     "protocolLabel": "POP3",
     "repo": "https://github.com/qeeqbox/honeypots",
@@ -1081,7 +1101,7 @@
   },
   {
     "name": "qeeqbox (MySQL)",
-    "classLabel": "Database · MySQL :19306",
+    "classLabel": "Database \u00b7 MySQL :19306",
     "protocol": "mysql",
     "protocolLabel": "MySQL",
     "repo": "https://github.com/qeeqbox/honeypots",
@@ -1101,7 +1121,7 @@
   },
   {
     "name": "qeeqbox (PostgreSQL)",
-    "classLabel": "Database · PostgreSQL :19432",
+    "classLabel": "Database \u00b7 PostgreSQL :19432",
     "protocol": "postgres",
     "protocolLabel": "PostgreSQL",
     "repo": "https://github.com/qeeqbox/honeypots",
@@ -1121,7 +1141,7 @@
   },
   {
     "name": "qeeqbox (Redis)",
-    "classLabel": "Low-Interaction · Redis :19637",
+    "classLabel": "Low-Interaction \u00b7 Redis :19637",
     "protocol": "redis",
     "protocolLabel": "Redis",
     "repo": "https://github.com/qeeqbox/honeypots",
@@ -1141,7 +1161,7 @@
   },
   {
     "name": "qeeqbox (VNC)",
-    "classLabel": "Low-Interaction · VNC :19900",
+    "classLabel": "Low-Interaction \u00b7 VNC :19900",
     "protocol": "vnc",
     "protocolLabel": "VNC",
     "repo": "https://github.com/qeeqbox/honeypots",
@@ -1161,7 +1181,7 @@
   },
   {
     "name": "sshesame",
-    "classLabel": "Low-Interaction · SSH",
+    "classLabel": "Low-Interaction \u00b7 SSH",
     "protocol": "ssh",
     "protocolLabel": "SSH",
     "repo": "https://github.com/jaksi/sshesame",
@@ -1181,7 +1201,7 @@
   },
   {
     "name": "ssh-auth-logger",
-    "classLabel": "Low-Interaction · SSH",
+    "classLabel": "Low-Interaction \u00b7 SSH",
     "protocol": "ssh",
     "protocolLabel": "SSH",
     "repo": "https://github.com/JustinAzoff/ssh-auth-logger",
@@ -1201,7 +1221,7 @@
   },
   {
     "name": "ssh-honeypotd",
-    "classLabel": "Low-Interaction · SSH",
+    "classLabel": "Low-Interaction \u00b7 SSH",
     "protocol": "ssh",
     "protocolLabel": "SSH",
     "repo": "https://github.com/sjinks/ssh-honeypotd",
@@ -1221,7 +1241,7 @@
   },
   {
     "name": "HellPot",
-    "classLabel": "Web-API · HTTP tarpit",
+    "classLabel": "Web-API \u00b7 HTTP tarpit",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/yunginnanet/HellPot",
@@ -1241,7 +1261,7 @@
   },
   {
     "name": "HoneyWire",
-    "classLabel": "Web-API · HTTP (WebRouterDecoy)",
+    "classLabel": "Web-API \u00b7 HTTP (WebRouterDecoy)",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/andreicscs/HoneyWire",
@@ -1261,7 +1281,7 @@
   },
   {
     "name": "express-honeypot",
-    "classLabel": "Web-API · HTTP",
+    "classLabel": "Web-API \u00b7 HTTP",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/christophe77/express-honeypot",
@@ -1281,7 +1301,7 @@
   },
   {
     "name": "mailoney",
-    "classLabel": "Low-Interaction · SMTP",
+    "classLabel": "Low-Interaction \u00b7 SMTP",
     "protocol": "smtp",
     "protocolLabel": "SMTP",
     "repo": "https://github.com/phin3has/mailoney",
@@ -1301,7 +1321,7 @@
   },
   {
     "name": "pghoney",
-    "classLabel": "Low-Interaction · PostgreSQL",
+    "classLabel": "Low-Interaction \u00b7 PostgreSQL",
     "protocol": "postgres",
     "protocolLabel": "PostgreSQL",
     "repo": "https://github.com/betheroot/pghoney",
@@ -1321,7 +1341,7 @@
   },
   {
     "name": "mysql-honeypotd",
-    "classLabel": "Low-Interaction · MySQL",
+    "classLabel": "Low-Interaction \u00b7 MySQL",
     "protocol": "mysql",
     "protocolLabel": "MySQL",
     "repo": "https://github.com/sjinks/mysql-honeypotd",
@@ -1341,7 +1361,7 @@
   },
   {
     "name": "Log4Pot",
-    "classLabel": "Web-API · HTTP Log4Shell",
+    "classLabel": "Web-API \u00b7 HTTP Log4Shell",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/thomaspatzke/Log4Pot",
@@ -1361,7 +1381,7 @@
   },
   {
     "name": "node-ftp-honeypot",
-    "classLabel": "Low-Interaction · FTP",
+    "classLabel": "Low-Interaction \u00b7 FTP",
     "protocol": "ftp",
     "protocolLabel": "FTP",
     "repo": "https://github.com/christophe77/node-ftp-honeypot",
@@ -1381,7 +1401,7 @@
   },
   {
     "name": "sentrypeer",
-    "classLabel": "Low-Interaction · SIP",
+    "classLabel": "Low-Interaction \u00b7 SIP",
     "protocol": "sip",
     "protocolLabel": "SIP",
     "repo": "https://github.com/SentryPeer/SentryPeer",
@@ -1401,7 +1421,7 @@
   },
   {
     "name": "wordpot",
-    "classLabel": "Web-API · WordPress HTTP",
+    "classLabel": "Web-API \u00b7 WordPress HTTP",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/gbrindisi/wordpot",
@@ -1421,7 +1441,7 @@
   },
   {
     "name": "mockssh",
-    "classLabel": "Low-Interaction · SSH",
+    "classLabel": "Low-Interaction \u00b7 SSH",
     "protocol": "ssh",
     "protocolLabel": "SSH",
     "repo": "https://github.com/ncouture/MockSSH",
@@ -1441,7 +1461,7 @@
   },
   {
     "name": "heralding (SSH)",
-    "classLabel": "Low-Interaction · SSH",
+    "classLabel": "Low-Interaction \u00b7 SSH",
     "protocol": "ssh",
     "protocolLabel": "SSH",
     "repo": "https://github.com/johnnykv/heralding",
@@ -1461,7 +1481,7 @@
   },
   {
     "name": "heralding (FTP)",
-    "classLabel": "Low-Interaction · FTP",
+    "classLabel": "Low-Interaction \u00b7 FTP",
     "protocol": "ftp",
     "protocolLabel": "FTP",
     "repo": "https://github.com/johnnykv/heralding",
@@ -1481,7 +1501,7 @@
   },
   {
     "name": "heralding (SMTP)",
-    "classLabel": "Low-Interaction · SMTP",
+    "classLabel": "Low-Interaction \u00b7 SMTP",
     "protocol": "smtp",
     "protocolLabel": "SMTP",
     "repo": "https://github.com/johnnykv/heralding",
@@ -1501,7 +1521,7 @@
   },
   {
     "name": "owasp-python-honeypot",
-    "classLabel": "Web-API · HTTP",
+    "classLabel": "Web-API \u00b7 HTTP",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/OWASP/Python-Honeypot",
@@ -1521,7 +1541,7 @@
   },
   {
     "name": "owa-honeypot",
-    "classLabel": "Web-API · HTTP",
+    "classLabel": "Web-API \u00b7 HTTP",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/joda32/owa-honeypot",
@@ -1541,7 +1561,7 @@
   },
   {
     "name": "honeyup",
-    "classLabel": "Web-API · HTTP",
+    "classLabel": "Web-API \u00b7 HTTP",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/LogoiLab/honeyup",
@@ -1561,7 +1581,7 @@
   },
   {
     "name": "modpot",
-    "classLabel": "Web-API · HTTP",
+    "classLabel": "Web-API \u00b7 HTTP",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/referefref/modpot",
@@ -1581,7 +1601,7 @@
   },
   {
     "name": "Krawl",
-    "classLabel": "Web-API · HTTP",
+    "classLabel": "Web-API \u00b7 HTTP",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/BlessedRebuS/Krawl",
@@ -1601,7 +1621,7 @@
   },
   {
     "name": "flux",
-    "classLabel": "Web-API · HTTP",
+    "classLabel": "Web-API \u00b7 HTTP",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/andrewmichaelsmith/flux",
@@ -1621,7 +1641,7 @@
   },
   {
     "name": "fortigate-vpn-ssl",
-    "classLabel": "Web-API · HTTP",
+    "classLabel": "Web-API \u00b7 HTTP",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/PeterGabaldon/Fortigate.VPN-SSL.Honeypot",
@@ -1641,7 +1661,7 @@
   },
   {
     "name": "honeytrap",
-    "classLabel": "Low-Interaction · SSH",
+    "classLabel": "Low-Interaction \u00b7 SSH",
     "protocol": "ssh",
     "protocolLabel": "SSH",
     "repo": "https://github.com/honeytrap/honeytrap",
@@ -1661,7 +1681,7 @@
   },
   {
     "name": "portlurker",
-    "classLabel": "Low-Interaction · generic TCP",
+    "classLabel": "Low-Interaction \u00b7 generic TCP",
     "protocol": "generic",
     "protocolLabel": "Generic",
     "repo": "https://github.com/bartnv/portlurker",
@@ -1681,7 +1701,7 @@
   },
   {
     "name": "sticky_elephant",
-    "classLabel": "Low-Interaction · PostgreSQL",
+    "classLabel": "Low-Interaction \u00b7 PostgreSQL",
     "protocol": "postgres",
     "protocolLabel": "PostgreSQL",
     "repo": "https://github.com/betheroot/sticky_elephant",
@@ -1701,7 +1721,7 @@
   },
   {
     "name": "kippo",
-    "classLabel": "Low-Interaction · SSH",
+    "classLabel": "Low-Interaction \u00b7 SSH",
     "protocol": "ssh",
     "protocolLabel": "SSH",
     "repo": "https://github.com/desaster/kippo",
@@ -1721,7 +1741,7 @@
   },
   {
     "name": "nosqlpot",
-    "classLabel": "Low-Interaction · Redis",
+    "classLabel": "Low-Interaction \u00b7 Redis",
     "protocol": "redis",
     "protocolLabel": "Redis",
     "repo": "https://github.com/torque59/nosqlpot",
@@ -1741,7 +1761,7 @@
   },
   {
     "name": "pyRDP",
-    "classLabel": "Low-Interaction · RDP",
+    "classLabel": "Low-Interaction \u00b7 RDP",
     "protocol": "rdp",
     "protocolLabel": "RDP",
     "repo": "https://github.com/GoSecure/pyrdp",
@@ -1761,7 +1781,7 @@
   },
   {
     "name": "Artillery",
-    "classLabel": "Low-Interaction · generic TCP",
+    "classLabel": "Low-Interaction \u00b7 generic TCP",
     "protocol": "generic",
     "protocolLabel": "Generic",
     "repo": "https://github.com/BinaryDefense/artillery",
@@ -1781,7 +1801,7 @@
   },
   {
     "name": "honeyhttpd",
-    "classLabel": "Web-API · HTTP",
+    "classLabel": "Web-API \u00b7 HTTP",
     "protocol": "http",
     "protocolLabel": "HTTP",
     "repo": "https://github.com/bocajspear1/honeyhttpd",
@@ -1801,7 +1821,7 @@
   },
   {
     "name": "shiva",
-    "classLabel": "Low-Interaction · SMTP",
+    "classLabel": "Low-Interaction \u00b7 SMTP",
     "protocol": "smtp",
     "protocolLabel": "SMTP",
     "repo": "https://github.com/shiva-spampot/shiva",

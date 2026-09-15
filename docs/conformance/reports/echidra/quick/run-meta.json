@@ -1,0 +1,74 @@
+{
+  "uhbs_version": "4.6.0",
+  "run_mode": "quick",
+  "evaluated_at": "2026-09-15T12:10:00Z",
+  "proof_label": "echidra (Qyleron/EchidraOSS SSH honeypot)",
+  "target": {
+    "repository": "https://github.com/Qyleron/EchidraOSS",
+    "git_commit": "c16548ba4eb54af0cf9efa2c545d83039b2c1ece",
+    "class": "Low-Interaction",
+    "protocol": "ssh",
+    "host": "echidra-lab",
+    "port": 2222,
+    "user": "root",
+    "container_image": "echidraoss-honeypot",
+    "container_image_id": "sha256:2d48d2a38ed71d19d99c966f624870310b50c3e31f10ffd73bab37f31780e5ec"
+  },
+  "grader": {
+    "package_version": "4.6.0",
+    "uhbs_git_commit": "9e5a2dc8cb8fe926f9a7b86dedbcad2ad5d349ba",
+    "docker_image": "uhbs:4.0.0",
+    "docker_image_id": "sha256:792a7201a691232a33f7c3782e3371dbcef3b71f4578163a123a23b4d3ec73f7",
+    "inventory": "docs/conformance/labs/echidra/inventory.yaml",
+    "tps": "docs/conformance/labs/echidra/low_interaction_ssh_quick.yaml"
+  },
+  "flags": {
+    "UHBS_QUICK": true,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": null,
+    "skip_sast_tools": true,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": null,
+    "plugin": "ssh",
+    "auth": "root/admin"
+  },
+  "results": {
+    "uhqs": 57.33,
+    "grade": "D",
+    "delta_c": 1.0,
+    "module_scores": {
+      "A": 23.5,
+      "B": 25.0,
+      "C": 100.0,
+      "D": 100.0,
+      "E": 55.0,
+      "F": 80.1
+    },
+    "safety_gate_passed": true
+  },
+  "limitations": [
+    "UHBS_QUICK=1 shortens timing samples and lightens Module E.",
+    "telemetry_dir unset \u2192 Module C C1 schema gates largely skipped (optimistic C).",
+    "--skip-sast-tools \u2192 no bandit/semgrep.",
+    "SSH-only grade (HTTP/FTP/Telnet not scored).",
+    "Lab auth root/admin (Echidra accepts any credentials).",
+    "Prefer full/ for claim-grade evaluation.",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement.",
+    "Lab docker images were uhbs:4.0.0[-full]; fixture/package version stamped 4.6.0 for current UHBS tree."
+  ]
+}

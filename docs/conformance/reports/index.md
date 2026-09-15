@@ -41,6 +41,7 @@
 | [LLMPot (momalab)](llmpot/index.md) | multi | Modbus `:5020` / S7comm `:102` / HTTP `:8080` | see hub | see hub | [Reproduce](llmpot/TUTORIAL.md) |
 | [DataTrap (Thales)](datatrap/index.md) | multi | SSH / HTTP / MySQL / Redis / Telnet / PostgreSQL | see hub | see hub | [Reproduce](datatrap/TUTORIAL.md) |
 | [Endlessh (skeeto)](endlessh/index.md) | Low-Interaction | `ssh_tarpit` `:2222` | [46.55 / F](endlessh/quick/README.md) | [54.07 / D](endlessh/full/README.md) | [Reproduce](endlessh/TUTORIAL.md) |
+| [EchidraOSS (Qyleron)](echidra/index.md) | Low-Interaction | SSH `:2222` | [57.33 / D](echidra/quick/README.md) | [43.45 / F](echidra/full/README.md) | [Reproduce](echidra/TUTORIAL.md) |
 | [OpenCanary (thinkst)](opencanary/index.md) | multi | HTTP / FTP / SSH / Telnet / Redis / MySQL / RDP / SIP / SNMP / NTP / TFTP / VNC / Git / SMB | see hub | see hub | [Reproduce](opencanary/TUTORIAL.md) |
 | [Beelzebub](beelzebub/index.md) | multi | SSH / HTTP / Telnet / Redis / MCP | see hub | see hub | [Reproduce](beelzebub/TUTORIAL.md) |
 | [HoneyMCP](honeymcp/index.md) | Web-API | MCP `:8080` | [43.04 / F](honeymcp/mcp/quick/) | [42.93 / F](honeymcp/mcp/full/) | [Reproduce](honeymcp/TUTORIAL.md) |

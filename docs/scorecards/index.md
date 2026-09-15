@@ -78,6 +78,7 @@ Full artifacts (tutorials, methodology, `SCORECARD.txt`, `report.json`) live und
 | [LLMPot — S7comm :102](llmpot-s7comm.md) | ICS-SCADA · S7comm | **65.41** | D |
 | [Log4Pot — http](log4pot-http.md) | Web-API · http | **38.0** | F |
 | [Low-Interaction / PJL decoy (miniprint proof)](miniprint-low-interaction.md) | Scorecard: Low-Interaction / PJL decoy (miniprint proof) | — | — |
+| [EchidraOSS — SSH :2222](echidra-ssh.md) | Low-Interaction · SSH | **43.45** | F |
 | [Low-Interaction / SSH tarpit (Endlessh proof)](endlessh-ssh-tarpit.md) | Scorecard: Low-Interaction / SSH tarpit (Endlessh proof) | — | — |
 | [mailoney — smtp](mailoney-smtp.md) | Low-Interaction · smtp | **38.69** | F |
 | [mockssh — ssh](mockssh-ssh.md) | Low-Interaction · ssh | **59.0** | D |

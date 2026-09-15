@@ -112,6 +112,10 @@ nav:
           - TELNET hub: conformance/reports/cowrie/telnet/index.md
           - Reproduce grade: conformance/reports/cowrie/TUTORIAL.md
           - Methodology: conformance/reports/cowrie/METHODOLOGY.md
+      - EchidraOSS:
+          - Report hub: conformance/reports/echidra/index.md
+          - Reproduce grade: conformance/reports/echidra/TUTORIAL.md
+          - Methodology: conformance/reports/echidra/METHODOLOGY.md
       - Endlessh:
           - Report hub: conformance/reports/endlessh/index.md
           - Reproduce grade: conformance/reports/endlessh/TUTORIAL.md
@@ -463,6 +467,8 @@ nav:
       - Cowrie:
           - SSH: scorecards/cowrie-ssh.md
           - TELNET: scorecards/cowrie-telnet.md
+      - EchidraOSS:
+          - SSH: scorecards/echidra-ssh.md
       - Endlessh:
           - SSH tarpit: scorecards/endlessh-ssh-tarpit.md
       - OpenCanary:
