@@ -5,6 +5,9 @@ import {
   XCircle,
   GitCommit,
 } from "lucide-react";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { fadeUpVariant, staggerContainer } from "./motion";
 
 export const FiveDimensionComparison = () => {
@@ -13,21 +16,21 @@ export const FiveDimensionComparison = () => {
       dim: "Fingerprinting Resistance",
       module: "Module A",
       moduleName: "Protocol & Syntax Fidelity",
-      color: "text-cyan-400",
+      color: "text-main",
       expansion: "Adds statistical Inter-Arrival Time (IAT) side-channel testing via Kolmogorov-Smirnov distribution test and strict finite state machine (FSM) validation.",
     },
     {
       dim: "Interaction",
       module: "Module B",
       moduleName: "Behavioral & Stateful Realism",
-      color: "text-blue-400",
+      color: "text-main",
       expansion: "Evaluates dynamic cross-session state persistence (100% state modification retention) and non-UTF8 binary fuzzing.",
     },
     {
       dim: "Data Quality",
       module: "Module C",
       moduleName: "Telemetry Quality & Pipeline Resilience",
-      color: "text-indigo-400",
+      color: "text-main",
       expansion: "Enforces 100% schema compliance against STIX 2.1, OpenTelemetry, and ECS standards, and tests SIEM log-parser injection resistance.",
     },
     {
@@ -82,7 +85,7 @@ export const FiveDimensionComparison = () => {
   ];
 
   return (
-    <section id="compare" className="py-24 border-t border-border/50 bg-[#0a0e1a]">
+    <section id="compare" className="py-24 border-t-2 border-border bg-page">
       <motion.div
         className="container mx-auto px-6"
         initial="hidden"
@@ -91,17 +94,17 @@ export const FiveDimensionComparison = () => {
         variants={staggerContainer}
       >
         <motion.div variants={fadeUpVariant} className="mb-4 flex items-center gap-3">
-          <div className="h-px w-8 bg-primary"></div>
-          <span className="font-mono text-primary uppercase tracking-widest text-xs">Framework Analysis</span>
+          <div className="h-0.5 w-8 bg-main"></div>
+          <span className="font-mono text-main uppercase tracking-widest text-xs">Framework Analysis</span>
         </motion.div>
         <motion.div variants={fadeUpVariant} className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold font-sans mb-4 flex items-center gap-3">
-            <GitCommit className="text-primary w-8 h-8" />
+          <h2 className="text-3xl md:text-4xl font-heading mb-4 flex items-center gap-3">
+            <GitCommit className="text-main w-8 h-8" aria-hidden />
             UHBS v4.6.0 vs. 5-Dimension Framework
           </h2>
-          <p className="text-secondary-foreground max-w-3xl">
+          <p className="text-muted-foreground max-w-3xl">
             Proposed five-dimension honeypot metrics (interaction, data quality, resource efficiency, stealth, fingerprinting resistance) are a useful conceptual lens—not an adopted industry standard. UHBS v4.6.0 operationalizes overlapping axes with dual-plane auditing, a non-linear Safety Gate, and coverage for modern decoy classes. For the full evidence-graded comparison against fourteen framework/model families, see the{" "}
-            <a href="mkdocs/mappings/related-frameworks/" className="text-primary hover:underline">
+            <a href="mkdocs/mappings/related-frameworks/" className="text-main hover:underline">
               related frameworks
             </a>{" "}
             mapping.
@@ -109,38 +112,42 @@ export const FiveDimensionComparison = () => {
         </motion.div>
 
         {/* Mapping Table */}
-        <motion.div variants={fadeUpVariant} className="mb-16 overflow-x-auto">
+        <motion.div variants={fadeUpVariant} className="mb-16">
           <div className="font-mono text-xs text-muted-foreground uppercase tracking-wider mb-4">Direct Dimension Mapping</div>
-          <table className="w-full text-left text-sm font-mono border-collapse">
-            <thead>
-              <tr className="border-b border-border text-muted-foreground">
-                <th className="py-3 pr-6 font-normal w-1/4">5-Dimension Metric</th>
-                <th className="py-3 pr-6 font-normal w-1/5">UHBS v4.6.0 Module</th>
-                <th className="py-3 font-normal">Key Expansion in UHBS v4.6.0</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border/30">
-              {mappingRows.map((row, i) => (
-                <tr key={i} className="hover:bg-card/50 transition-colors group">
-                  <td className="py-4 pr-6 align-top">
-                    <div className="flex items-center gap-2">
-                      {row.isNew && (
-                        <span className="text-[10px] bg-success/20 text-success border border-success/30 px-1.5 py-0.5 rounded-sm uppercase tracking-wider">New</span>
-                      )}
-                      <span className={row.isNew ? "text-muted-foreground italic" : "text-foreground"}>{row.dim}</span>
-                    </div>
-                  </td>
-                  <td className="py-4 pr-6 align-top">
-                    <div>
-                      <span className={`font-bold ${row.color}`}>{row.module}</span>
-                      <div className="text-muted-foreground text-xs mt-0.5 leading-relaxed">{row.moduleName}</div>
-                    </div>
-                  </td>
-                  <td className="py-4 text-secondary-foreground text-xs leading-relaxed align-top">{row.expansion}</td>
+          <div className="border-2 border-border rounded-base shadow-shadow bg-secondary-background overflow-x-auto">
+            <table className="w-full text-left text-sm font-mono">
+              <thead>
+                <tr className="border-b border-border text-muted-foreground bg-page">
+                  <th className="py-3 px-4 font-normal w-1/4">5-Dimension Metric</th>
+                  <th className="py-3 px-4 font-normal w-1/5">UHBS v4.6.0 Module</th>
+                  <th className="py-3 px-4 font-normal">Key Expansion in UHBS v4.6.0</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {mappingRows.map((row, i) => (
+                  <tr key={i} className="border-b border-border last:border-b-0 odd:bg-slate-50/80">
+                    <td className="py-4 px-4 align-top">
+                      <div className="flex items-center gap-2">
+                        {row.isNew && (
+                          <Badge variant="success" className="text-[10px] uppercase tracking-wider">
+                            New
+                          </Badge>
+                        )}
+                        <span className={row.isNew ? "text-muted-foreground italic" : "text-foreground"}>{row.dim}</span>
+                      </div>
+                    </td>
+                    <td className="py-4 px-4 align-top">
+                      <div>
+                        <span className={`font-heading ${row.color}`}>{row.module}</span>
+                        <div className="text-muted-foreground text-xs mt-0.5 leading-relaxed">{row.moduleName}</div>
+                      </div>
+                    </td>
+                    <td className="py-4 px-4 text-muted-foreground text-xs leading-relaxed align-top">{row.expansion}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </motion.div>
 
         {/* Architectural Differences */}
@@ -148,47 +155,55 @@ export const FiveDimensionComparison = () => {
           <div className="font-mono text-xs text-muted-foreground uppercase tracking-wider mb-8">Key Architectural Differences</div>
           <div className="space-y-4">
             {differences.map((diff, i) => (
-              <motion.div key={i} variants={fadeUpVariant} className="border border-border/50 bg-card overflow-hidden">
-                <div className="bg-[#0f1629] border-b border-border/50 px-6 py-3 flex items-center gap-4">
-                  <span className="font-mono text-muted-foreground text-sm">{diff.num}</span>
-                  <h4 className="font-bold text-foreground text-sm">{diff.title}</h4>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border/50">
-                  {/* Left: 5-Dimension */}
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <XCircle className="w-4 h-4 text-muted-foreground shrink-0" />
-                      <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">{diff.left.label}</span>
+              <motion.div key={i} variants={fadeUpVariant}>
+                <Card className="overflow-hidden gap-0 py-0">
+                  <CardHeader className="border-b-2 border-border bg-background py-3 flex flex-row items-center gap-4 [--card-spacing:--spacing(6)]">
+                    <span className="font-mono text-muted-foreground text-sm">{diff.num}</span>
+                    <CardTitle className="text-sm text-black">{diff.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-0">
+                    <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border">
+                      {/* Left: 5-Dimension */}
+                      <div className="p-6">
+                        <div className="flex items-center gap-2 mb-3">
+                          <XCircle className="w-4 h-4 text-muted-foreground shrink-0" aria-hidden />
+                          <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">{diff.left.label}</span>
+                        </div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{diff.left.text}</p>
+                      </div>
+                      {/* Right: UHBS v4.6.0 */}
+                      <div className="p-6 bg-background/60">
+                        <div className="flex items-center gap-2 mb-3">
+                          <CheckCircle className="w-4 h-4 text-main shrink-0" aria-hidden />
+                          <span className="font-mono text-xs text-main uppercase tracking-wider">{diff.right.label}</span>
+                        </div>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{diff.right.text}</p>
+                      </div>
                     </div>
-                    <p className="text-sm text-secondary-foreground leading-relaxed">{diff.left.text}</p>
-                  </div>
-                  {/* Right: UHBS v4.6.0 */}
-                  <div className="p-6 bg-[#0f1629]/50">
-                    <div className="flex items-center gap-2 mb-3">
-                      <CheckCircle className="w-4 h-4 text-primary shrink-0" />
-                      <span className="font-mono text-xs text-primary uppercase tracking-wider">{diff.right.label}</span>
-                    </div>
-                    <p className="text-sm text-secondary-foreground leading-relaxed">{diff.right.text}</p>
-                  </div>
-                </div>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
         {/* Summary callout */}
-        <motion.div variants={fadeUpVariant} className="border border-primary/30 bg-primary/5 p-6 flex gap-4 items-start">
-          <Shield className="w-6 h-6 text-primary shrink-0 mt-0.5" />
-          <div>
-            <h4 className="font-semibold text-primary font-mono text-sm uppercase tracking-wide mb-2">Bottom Line for Security Leadership</h4>
-            <p className="text-sm text-secondary-foreground leading-relaxed">
-              Five-dimension proposals provide a useful conceptual lens for categorizing honeypot quality. UHBS v4.6.0 turns overlapping concerns into a machine-verifiable evaluation — adding a pre-deployment code audit plane (Module F), a non-linear safety gate that makes containment failures non-maskable, and explicit support for GenAI and OT/ICS decoy classes. See the{" "}
-              <a href="mkdocs/mappings/related-frameworks/" className="text-primary hover:underline">
-                evidence-based framework comparison
-              </a>{" "}
-              for CDMM, game-theoretic models, Honeyval, ICS research, and more.
-            </p>
-          </div>
+        <motion.div variants={fadeUpVariant}>
+          <Alert className="bg-background">
+            <Shield className="text-black" />
+            <AlertTitle className="font-mono text-sm uppercase tracking-wide text-black">
+              Bottom Line for Security Leadership
+            </AlertTitle>
+            <AlertDescription>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Five-dimension proposals provide a useful conceptual lens for categorizing honeypot quality. UHBS v4.6.0 turns overlapping concerns into a machine-verifiable evaluation — adding a pre-deployment code audit plane (Module F), a non-linear safety gate that makes containment failures non-maskable, and explicit support for GenAI and OT/ICS decoy classes. See the{" "}
+                <a href="mkdocs/mappings/related-frameworks/" className="text-main hover:underline">
+                  evidence-based framework comparison
+                </a>{" "}
+                for CDMM, game-theoretic models, Honeyval, ICS research, and more.
+              </p>
+            </AlertDescription>
+          </Alert>
         </motion.div>
       </motion.div>
     </section>

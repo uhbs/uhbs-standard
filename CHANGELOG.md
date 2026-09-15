@@ -9,6 +9,9 @@ AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`; experimental as
 
 ## [Unreleased]
 
+### Changed
+- Landing site (`web/`): rebuild with [Neobrutalism](https://www.neobrutalism.dev/) (Tailwind v4 + registry UI) on a bright off-white canvas; copy and Results data unchanged
+
 ### Added
 - Published lab report + landing Results: **EchidraOSS** (SSH `:2222`, quick UHQS 57.33 / D, full UHQS 43.45 / F)
 - **Redis scoring (lab):** deepen `uhbs_core.protocols.redis` beyond PING/SET stubs —

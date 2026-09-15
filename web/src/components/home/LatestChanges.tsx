@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { fadeUpVariant, staggerContainer } from "./motion";
 
 export const LatestChanges = () => {
@@ -48,7 +48,7 @@ export const LatestChanges = () => {
   ];
 
   return (
-    <section id="latest" className="py-24 border-t border-border/50 bg-[#0a0e1a]">
+    <section id="latest" className="py-24 border-t-2 border-border bg-page">
       <motion.div
         className="container mx-auto px-6"
         initial="hidden"
@@ -57,29 +57,30 @@ export const LatestChanges = () => {
         variants={staggerContainer}
       >
         <motion.div variants={fadeUpVariant} className="mb-4 flex items-center gap-3">
-          <div className="h-px w-8 bg-primary"></div>
-          <span className="font-mono text-primary uppercase tracking-widest text-xs">
+          <div className="h-1 w-8 bg-main border border-border" />
+          <Badge variant="mint" className="uppercase tracking-widest font-mono text-[10px]">
             Latest changes
-          </span>
+          </Badge>
         </motion.div>
         <motion.div variants={fadeUpVariant} className="mb-10 max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold font-sans mb-4">
-            UHBS 4.6.0
-          </h2>
-          <p className="text-secondary-foreground leading-relaxed mb-3">
+          <h2 className="text-3xl md:text-4xl font-heading mb-4">UHBS 4.6.0</h2>
+          <p className="text-muted-foreground leading-relaxed mb-3">
             MQTT decoys now participate in UHQS via Modules A/B fidelity probes.{" "}
-            <span className="text-foreground font-medium">UHQS formula, weights, and Safety Gate δ<sub>C</sub> are unchanged</span>.
+            <span className="text-foreground font-medium">
+              UHQS formula, weights, and Safety Gate δ<sub>C</sub> are unchanged
+            </span>
+            .
           </p>
           <p className="text-sm font-mono text-muted-foreground">
             Details:{" "}
             <a
               href="https://github.com/uhbs/uhbs-standard/blob/main/CHANGELOG.md"
-              className="text-primary hover:underline"
+              className="text-main hover:underline"
             >
               CHANGELOG
             </a>
             {" · "}
-            <a href="mkdocs/scorecards/" className="text-primary hover:underline">
+            <a href="mkdocs/scorecards/" className="text-main hover:underline">
               Scorecards
             </a>
           </p>
@@ -87,29 +88,31 @@ export const LatestChanges = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
           {items.map((item) => (
-            <motion.div
-              key={item.title}
-              variants={fadeUpVariant}
-              className="border border-border/60 bg-card/40 p-6"
-            >
-              <div className="flex items-center gap-2 mb-2">
-                <h3 className="font-sans text-lg font-semibold">{item.title}</h3>
-                <span className="text-[10px] uppercase tracking-wider font-mono text-warning border border-warning/40 px-1.5 py-0.5">
-                  {item.badge}
-                </span>
-              </div>
-              <p className="text-sm text-secondary-foreground leading-relaxed mb-4">{item.body}</p>
-              <div className="flex flex-wrap gap-3 font-mono text-xs">
-                {item.links.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="inline-flex items-center gap-1 text-primary hover:underline"
-                  >
-                    {link.label} <ArrowRight className="w-3 h-3" aria-hidden="true" />
-                  </a>
-                ))}
-              </div>
+            <motion.div key={item.title} variants={fadeUpVariant}>
+              <Card className="h-full">
+                <CardHeader>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <CardTitle className="text-lg">{item.title}</CardTitle>
+                    <Badge variant={item.badge === "Experimental" ? "warning" : "mint"}>
+                      {item.badge}
+                    </Badge>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{item.body}</p>
+                  <div className="flex flex-wrap gap-3 font-mono text-xs">
+                    {item.links.map((link) => (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        className="inline-flex items-center gap-1 text-main hover:underline"
+                      >
+                        {link.label} <ArrowRight className="w-3 h-3" aria-hidden />
+                      </a>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </div>

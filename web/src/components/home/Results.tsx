@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Terminal } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { fadeUpVariant, staggerContainer } from "./motion";
 import { ResultsCards } from "./results/ResultsCards";
 import { ResultsList } from "./results/ResultsList";
@@ -10,7 +11,7 @@ export const Results = () => {
   const q = useResultsQuery();
 
   return (
-    <section id="results" className="py-24 border-t border-border/50">
+    <section id="results" className="py-24 border-t-2 border-border bg-page">
       <motion.div
         className="container mx-auto px-6"
         initial="hidden"
@@ -19,13 +20,14 @@ export const Results = () => {
         variants={staggerContainer}
       >
         <motion.div variants={fadeUpVariant} className="mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold font-sans mb-4 flex items-center gap-3">
-            <Terminal className="text-primary w-8 h-8" />
+          <h2 className="text-3xl md:text-4xl font-heading mb-4 flex items-center gap-3">
+            <Terminal className="text-main w-8 h-8" aria-hidden />
             Results
           </h2>
-          <p className="text-secondary-foreground max-w-3xl">
+          <p className="text-muted-foreground max-w-3xl">
             Published UHBS-Lab Docker runs — tutorials, quick + full scorecards, and methodology.
-            Evaluation proof only (not endorsements). Prefer <span className="text-foreground font-mono text-sm">full/</span> for claim-grade numbers.
+            Evaluation proof only (not endorsements). Prefer{" "}
+            <span className="text-foreground font-mono text-sm">full/</span> for claim-grade numbers.
           </p>
         </motion.div>
 
@@ -48,7 +50,8 @@ export const Results = () => {
 
         {q.filteredLabs.length === 0 && (
           <p className="font-mono text-sm text-muted-foreground mb-10">
-            No published labs for this protocol filter{q.searchQuery.trim() ? " / search" : ""}.
+            No published labs for this protocol filter
+            {q.searchQuery.trim() ? " / search" : ""}.
           </p>
         )}
 
@@ -77,19 +80,19 @@ export const Results = () => {
           />
         )}
 
-        <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-4 font-mono text-sm">
-          <a href="mkdocs/conformance/reports/" className="inline-flex items-center gap-2 border border-border px-4 py-2 hover:border-primary/50 transition-colors">
-            All lab reports <ArrowRight className="w-4 h-4 text-primary" />
-          </a>
-          <a href="mkdocs/scorecards/" className="inline-flex items-center gap-2 border border-border px-4 py-2 hover:border-primary/50 transition-colors">
-            All scorecards <ArrowRight className="w-4 h-4 text-primary" />
-          </a>
-          <a href="mkdocs/tooling/cli/" className="inline-flex items-center gap-2 border border-border px-4 py-2 hover:border-primary/50 transition-colors">
-            Docker / CLI guide <ArrowRight className="w-4 h-4 text-primary" />
-          </a>
-          <a href="mkdocs/tooling/mcp/" className="inline-flex items-center gap-2 border border-border px-4 py-2 hover:border-primary/50 transition-colors">
-            MCP for AI hosts <ArrowRight className="w-4 h-4 text-primary" />
-          </a>
+        <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-4">
+          <Button variant="neutral" render={<a href="mkdocs/conformance/reports/" />}>
+            All lab reports <ArrowRight />
+          </Button>
+          <Button variant="neutral" render={<a href="mkdocs/scorecards/" />}>
+            All scorecards <ArrowRight />
+          </Button>
+          <Button variant="neutral" render={<a href="mkdocs/tooling/cli/" />}>
+            Docker / CLI guide <ArrowRight />
+          </Button>
+          <Button variant="neutral" render={<a href="mkdocs/tooling/mcp/" />}>
+            MCP for AI hosts <ArrowRight />
+          </Button>
         </motion.div>
       </motion.div>
     </section>
