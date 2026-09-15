@@ -161,4 +161,4 @@ for provenance only.
 - [Beginner tutorial](tutorial-beginner.md) (ordinary AEP without SLM)
 - [CLI & validator](../tooling/cli.md)
 - [Changelog (Unreleased)](https://github.com/uhbs/uhbs-standard/blob/main/CHANGELOG.md)
-- Landing hub section: [Advanced Evidence Profile](https://uhbs.github.io/uhbs-standard/#advanced-evidence)
+- Landing hub: https://uhbs.github.io/uhbs-standard/ · AEP overview: https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/

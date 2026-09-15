@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.6.0",
+  "uhbs_version": "4.6.1",
   "target": {
     "name": "echidra (Qyleron/EchidraOSS SSH honeypot)",
     "class": "Low-Interaction",

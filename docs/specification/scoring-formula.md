@@ -1,4 +1,4 @@
-# Universal Scoring Methodology (UHQS 4.6.0)
+# Universal Scoring Methodology (UHQS 4.6.1)
 
 **Status:** Normative
 
@@ -27,9 +27,17 @@ Implementations **MUST** round the final UHQS to **two decimal places** (half-up
 Python `round` semantics as used by the reference harness).
 
 !!! note
-    Module D does **not** appear as a weighted term \(w_D \cdot S_D\). Its influence is entirely through \(\delta_C\).
+    Module D does **not** appear as a weighted term \(w_D \cdot S_D\). Its influence is entirely through \(\delta_C\). That is why Module D is missing from the parentheses in the UHQS sum: containment multiplies the whole score instead of adding another averageable term.
+
+    The public landing page typesets these formulas with [KaTeX](https://katex.org/); this document is the normative source.
 
 ## Non-Linear Safety Gate (\(\delta_C\))
+
+Containment (Module D) is **not** averaged into the weighted sum. It becomes a
+**multiplier** \(\delta_C\) on the whole UHQS. A Module D score below **95**
+triggers **exponential degradation** of the entire score: a decoy that leaks
+data or allows lateral movement is treated as failing evaluation even if other
+modules look strong.
 
 \[
 \delta_C =
@@ -47,6 +55,18 @@ Python `round` semantics as used by the reference harness).
 | 75 | 0.56 | 44% composite reduction |
 | 70 | 0.49 | Fail: 51% reduction — a decoy with perfect deception can still fail evaluation |
 | 0 | 0.00 | UHQS collapses to 0 |
+
+**Example status bands** (same thresholds as the reference landing / harness
+reporting):
+
+| Module D Score | \(\delta_C\) (approx.) | Status |
+| --- | ---: | --- |
+| 95 – 100 | 1.00 | PASS |
+| 90 – 94 | ~0.81 | WARN |
+| 85 – 89 | ~0.72 | WARN |
+| 75 – 84 | ~0.56 | FAIL |
+| &lt; 75 | ≤ 0.49 | CRIT |
+
 
 ## Profile-Adaptive Weight Distributions
 

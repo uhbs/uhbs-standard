@@ -1,7 +1,7 @@
 # Advanced Evidence Profile (AEP)
 
 **Status:** Optional · informative · offline analysis only  
-**UHBS version:** 4.6.0 · **AEP schema version:** 1.0.0  
+**UHBS version:** 4.6.1 · **AEP schema version:** 1.0.0  
 **Evaluation scope:** Laboratory / sandbox only — **not** real-world production testing
 
 !!! danger "Lab evaluation only"
@@ -94,4 +94,4 @@ Most users should start with ordinary AEP tutorials and skip SLM until they need
 - [Related deception frameworks](../mappings/related-frameworks.md)
 - [CLI & Validator](../tooling/cli.md)
 - [Improvement notes (informative)](improvement-notes.md)
-- Landing hub: [Advanced Evidence Profile](https://uhbs.github.io/uhbs-standard/#advanced-evidence)
+- Landing hub: [uhbs.github.io/uhbs-standard](https://uhbs.github.io/uhbs-standard/) (overview) · AEP docs: this section

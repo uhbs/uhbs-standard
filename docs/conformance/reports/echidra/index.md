@@ -2,7 +2,7 @@
 
 **Proof label:** [Qyleron/EchidraOSS](https://github.com/Qyleron/EchidraOSS)  
 **Class / protocol:** `Low-Interaction` · SSH · container port `2222`  
-**UHBS:** package **4.6.0** · lab harness image **4.0.0** (SCORECARD banner) · evaluation proof only (not an endorsement)
+**UHBS:** package **4.6.1** · lab harness image **4.0.0** (SCORECARD banner) · evaluation proof only (not an endorsement)
 
 Echidra is a multi-protocol deceptive honeypot (SSH / HTTP / FTP / Telnet) with
 MITRE ATT&CK-tagged classification and a dashboard. This published grade evaluates

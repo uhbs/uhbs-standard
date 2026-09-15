@@ -59,7 +59,7 @@ function SceneScore({ reduce }: { reduce: boolean }) {
   return (
     <div className="flex flex-col items-center justify-center gap-4 py-4">
       <motion.div
-        className="font-mono text-6xl sm:text-7xl font-bold text-primary tabular-nums"
+        className="font-mono text-6xl sm:text-7xl font-bold text-main tabular-nums"
         initial={reduce ? false : { opacity: 0, scale: 0.85 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7, ease }}
@@ -80,7 +80,7 @@ function SceneScore({ reduce }: { reduce: boolean }) {
         </motion.span>
       </motion.div>
       <motion.p
-        className="text-sm text-secondary-foreground"
+        className="text-sm text-muted-foreground"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: reduce ? 0 : 0.55 }}
@@ -111,7 +111,7 @@ function SceneSkills({ reduce }: { reduce: boolean }) {
             initial={false}
           >
             <motion.div
-              className="h-full bg-primary"
+              className="h-full bg-main"
               initial={reduce ? { width: "72%" } : { width: "0%" }}
               animate={{ width: `${55 + i * 8}%` }}
               transition={{ delay: reduce ? 0 : 0.3 + i * 0.28, duration: 0.7, ease }}
@@ -144,13 +144,13 @@ function SceneImportance({ reduce }: { reduce: boolean }) {
           animate={{ opacity: 1 }}
           transition={{ delay: reduce ? 0 : 0.15 + i * 0.2 }}
         >
-          <div className="flex justify-between text-xs text-secondary-foreground">
+          <div className="flex justify-between text-xs text-muted-foreground">
             <span>{k.label}</span>
-            <span className="text-primary font-mono">{k.level >= 0.7 ? "matters a lot" : k.level >= 0.5 ? "matters" : "matters less"}</span>
+            <span className="text-main font-mono">{k.level >= 0.7 ? "matters a lot" : k.level >= 0.5 ? "matters" : "matters less"}</span>
           </div>
           <div className="h-2 rounded-full bg-border overflow-hidden">
             <motion.div
-              className="h-full bg-primary/80"
+              className="h-full bg-main/80"
               initial={reduce ? { width: `${k.level * 100}%` } : { width: "8%" }}
               animate={{ width: `${k.level * 100}%` }}
               transition={{ delay: reduce ? 0 : 0.25 + i * 0.2, duration: 0.75, ease }}
@@ -169,7 +169,7 @@ function SceneMix({ reduce }: { reduce: boolean }) {
         {SKILLS.map((s, i) => (
           <motion.span
             key={s.label}
-            className="font-mono text-[11px] px-2 py-1 border border-border text-secondary-foreground"
+            className="font-mono text-[11px] px-2 py-1 border border-border text-muted-foreground"
             initial={reduce ? false : { opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0, scale: [1, 0.92, 1] }}
             transition={{
@@ -191,12 +191,12 @@ function SceneMix({ reduce }: { reduce: boolean }) {
         mix together
       </motion.div>
       <motion.div
-        className="border border-primary/40 bg-primary/10 px-8 py-4 text-center"
+        className="border border-main/40 bg-main/10 px-8 py-4 text-center"
         initial={reduce ? false : { opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: reduce ? 0 : 1.35, duration: 0.55, ease }}
       >
-        <div className="font-mono text-[10px] uppercase tracking-wider text-primary mb-1">Everyday quality</div>
+        <div className="font-mono text-[10px] uppercase tracking-wider text-main mb-1">Everyday quality</div>
         <div className="text-4xl font-bold text-foreground tabular-nums">72</div>
       </motion.div>
     </div>
@@ -234,7 +234,7 @@ function SceneSafety({ reduce }: { reduce: boolean }) {
         </div>
       </div>
       <motion.div
-        className="max-w-sm text-center text-sm text-secondary-foreground border border-danger/30 bg-danger/5 px-4 py-3"
+        className="max-w-sm text-center text-sm text-muted-foreground border border-danger/30 bg-danger/5 px-4 py-3"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: reduce ? 0 : 1.25 }}
@@ -249,17 +249,17 @@ function SceneResult({ reduce }: { reduce: boolean }) {
   return (
     <div className="flex flex-col items-center gap-4 py-6">
       <motion.div
-        className="text-center border border-primary/35 bg-primary/10 px-10 py-6"
+        className="text-center border border-main/35 bg-main/10 px-10 py-6"
         initial={reduce ? false : { opacity: 0, scale: 0.92 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease }}
       >
-        <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-2">Final UHQS</div>
+        <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-main mb-2">Final UHQS</div>
         <div className="text-5xl sm:text-6xl font-bold text-foreground tabular-nums">58.00</div>
-        <div className="mt-2 font-mono text-sm text-secondary-foreground">Grade D</div>
+        <div className="mt-2 font-mono text-sm text-muted-foreground">Grade D</div>
       </motion.div>
       <motion.p
-        className="text-sm text-secondary-foreground text-center max-w-sm leading-relaxed"
+        className="text-sm text-muted-foreground text-center max-w-sm leading-relaxed"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: reduce ? 0 : 0.4 }}
@@ -380,7 +380,7 @@ export function UhqsHumanExplainerModal({ open, onClose }: ModalProps) {
           <button
             type="button"
             aria-label="Close explanation"
-            className="absolute inset-0 bg-[#05070f]/80 backdrop-blur-[2px]"
+            className="absolute inset-0 bg-overlay"
             onClick={onClose}
           />
 
@@ -389,7 +389,7 @@ export function UhqsHumanExplainerModal({ open, onClose }: ModalProps) {
             aria-modal="true"
             aria-labelledby={titleId}
             aria-live="polite"
-            className="relative z-10 w-full sm:max-w-lg max-h-[92vh] overflow-hidden border border-border bg-card shadow-2xl sm:rounded-sm flex flex-col"
+            className="relative z-10 w-full sm:max-w-lg max-h-[92vh] overflow-hidden border-2 border-border bg-secondary-background shadow-shadow sm:rounded-base flex flex-col"
             initial={{ opacity: 0, y: 24, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 12, scale: 0.98 }}
@@ -397,17 +397,17 @@ export function UhqsHumanExplainerModal({ open, onClose }: ModalProps) {
           >
             <div className="flex items-start justify-between gap-4 px-5 pt-5 pb-3">
               <div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-primary mb-1.5">
+                <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-main mb-1.5">
                   Explanation for humans
                 </div>
-                <h2 id={titleId} className="text-lg font-semibold text-foreground leading-snug">
+                <h2 id={titleId} className="text-lg font-heading text-foreground leading-snug">
                   How the quality score works
                 </h2>
               </div>
               <button
                 type="button"
                 onClick={onClose}
-                className="shrink-0 p-2 text-muted-foreground hover:text-foreground border border-transparent hover:border-border transition-colors"
+                className="shrink-0 p-2 text-muted-foreground hover:text-foreground border-2 border-transparent hover:border-border transition-colors"
                 aria-label="Close"
               >
                 <X className="w-4 h-4" />
@@ -415,9 +415,9 @@ export function UhqsHumanExplainerModal({ open, onClose }: ModalProps) {
             </div>
 
             <div className="px-5">
-              <div className="h-0.5 w-full rounded-full bg-border/80 overflow-hidden" aria-hidden>
+              <div className="h-0.5 w-full rounded-full bg-border overflow-hidden" aria-hidden>
                 <motion.div
-                  className="h-full bg-primary origin-left"
+                  className="h-full bg-main origin-left"
                   style={{ scaleX: (step + progress) / STEPS.length }}
                 />
               </div>
@@ -436,14 +436,14 @@ export function UhqsHumanExplainerModal({ open, onClose }: ModalProps) {
                   transition={{ duration: 0.35, ease }}
                   className="space-y-3"
                 >
-                  <h3 className="text-xl font-semibold text-foreground leading-tight">{current.title}</h3>
-                  <p className="text-sm text-secondary-foreground leading-relaxed">{current.line}</p>
+                  <h3 className="text-xl font-heading text-foreground leading-tight">{current.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{current.line}</p>
                   <StepScene id={current.id} reduce={reduce} />
                 </motion.div>
               </AnimatePresence>
             </div>
 
-            <div className="px-5 py-3 border-t border-border/50 bg-background/30 flex items-center justify-between gap-3">
+            <div className="px-5 py-3 border-t-2 border-border bg-page flex items-center justify-between gap-3">
               <p className="font-mono text-[10px] text-muted-foreground tracking-wide">
                 {paused ? "Paused · Space to resume" : "Too fast? Pause anytime · Space"}
               </p>
@@ -453,8 +453,8 @@ export function UhqsHumanExplainerModal({ open, onClose }: ModalProps) {
                 aria-pressed={paused}
                 className={
                   paused
-                    ? "inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider px-3 py-1.5 border border-primary bg-primary/15 text-primary hover:bg-primary/25 transition-colors"
-                    : "inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider px-3 py-1.5 border border-border text-secondary-foreground hover:border-primary/50 hover:text-primary transition-colors"
+                    ? "inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider px-3 py-1.5 border-2 border-border bg-background text-black shadow-shadow"
+                    : "inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider px-3 py-1.5 border-2 border-border bg-secondary-background text-foreground shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all"
                 }
               >
                 {paused ? (
@@ -484,7 +484,7 @@ export function UhqsHumanExplainerTrigger() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 border border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 hover:border-primary/60 transition-colors"
+        className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 border border-main/40 bg-main/10 text-main hover:bg-main/20 hover:border-main/60 transition-colors"
       >
         <Sparkles className="w-3 h-3" aria-hidden />
         Explanation for Humans
