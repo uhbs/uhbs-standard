@@ -6,9 +6,10 @@ import {
   ArrowRight,
   Layers,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { mkdocsUrl } from "@/lib/urls";
 import { fadeUpVariant, staggerContainer } from "./motion";
 
 export const Hero = () => {
@@ -33,7 +34,7 @@ export const Hero = () => {
         >
           Universal Honeypot Benchmarking Standard <br className="hidden md:block" />
           <span className="text-muted-foreground font-mono text-4xl md:text-6xl tracking-tighter">
-            (UHBS) v4.6.0 <span className="text-main">· 2026</span>
+            (UHBS) v4.6.1 <span className="text-main">· 2026</span>
           </span>
         </motion.h1>
 
@@ -42,25 +43,22 @@ export const Hero = () => {
           className="text-xl md:text-2xl text-muted-foreground max-w-3xl mb-8 font-base leading-relaxed"
         >
           An objective, repeatable, quantitative methodology for benchmarking honeypots, decoys, and
-          deception technology — an open-source evaluation framework (not a consortium standard).
+          deception technology — an open-source evaluation framework.
         </motion.p>
 
         <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-3 mb-12">
-          <Button render={<a href="mkdocs/" />}>
+          <ButtonLink href={mkdocsUrl()}>
             Open docs <ArrowRight />
-          </Button>
-          <Button variant="neutral" render={<a href="#results" />}>
+          </ButtonLink>
+          <ButtonLink variant="neutral" href="#results">
             Results
-          </Button>
-          <Button variant="neutral" render={<a href="#mcp" />}>
+          </ButtonLink>
+          <ButtonLink variant="neutral" href="#mcp">
             MCP
-          </Button>
-          <Button
-            variant="neutral"
-            render={<a href="https://github.com/uhbs/uhbs-standard" />}
-          >
+          </ButtonLink>
+          <ButtonLink variant="neutral" href="https://github.com/uhbs/uhbs-standard">
             GitHub
-          </Button>
+          </ButtonLink>
         </motion.div>
 
         <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-3 mt-2 mb-12">

@@ -1,5 +1,6 @@
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { resolveHref } from "@/lib/urls";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { LabResult } from "../../../data/labResults";
 import { GradeBadge } from "../GradeBadge";
@@ -44,12 +45,12 @@ export function ResultsCards({
                   {lab.classLabel}
                 </div>
                 <CardTitle className="text-xl">
-                  <a href={lab.hub} className="hover:text-main transition-colors">
+                  <a href={resolveHref(lab.hub)} className="hover:text-main transition-colors">
                     {lab.name}
                   </a>
                 </CardTitle>
                 <a
-                  href={lab.repo}
+                  href={resolveHref(lab.repo)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1"
@@ -90,17 +91,17 @@ export function ResultsCards({
                       Guides
                     </div>
                     <div className="flex flex-col gap-1.5">
-                      <a href={lab.tutorial} className="text-main hover:underline flex items-center gap-1">
+                      <a href={resolveHref(lab.tutorial)} className="text-main hover:underline flex items-center gap-1">
                         Tutorial <ArrowRight className="w-3 h-3" aria-hidden />
                       </a>
                       <a
-                        href={lab.methodology}
+                        href={resolveHref(lab.methodology)}
                         className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
                       >
                         Methodology <ArrowRight className="w-3 h-3" aria-hidden />
                       </a>
                       <a
-                        href={lab.hub}
+                        href={resolveHref(lab.hub)}
                         className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
                       >
                         Report hub <ArrowRight className="w-3 h-3" aria-hidden />
@@ -112,29 +113,29 @@ export function ResultsCards({
                       Runs & scorecards
                     </div>
                     <div className="flex flex-col gap-1.5">
-                      <a href={lab.scorecard} className="text-main hover:underline flex items-center gap-1">
+                      <a href={resolveHref(lab.scorecard)} className="text-main hover:underline flex items-center gap-1">
                         Published scorecard page <ArrowRight className="w-3 h-3" aria-hidden />
                       </a>
                       <a
-                        href={lab.full}
+                        href={resolveHref(lab.full)}
                         className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
                       >
                         Full run artifacts <ArrowRight className="w-3 h-3" aria-hidden />
                       </a>
                       <a
-                        href={lab.fullCard}
+                        href={resolveHref(lab.fullCard)}
                         className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
                       >
                         Full SCORECARD.txt <ArrowRight className="w-3 h-3" aria-hidden />
                       </a>
                       <a
-                        href={lab.quick}
+                        href={resolveHref(lab.quick)}
                         className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
                       >
                         Quick run artifacts <ArrowRight className="w-3 h-3" aria-hidden />
                       </a>
                       <a
-                        href={lab.quickCard}
+                        href={resolveHref(lab.quickCard)}
                         className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
                       >
                         Quick SCORECARD.txt <ArrowRight className="w-3 h-3" aria-hidden />

@@ -1,19 +1,16 @@
 import { motion } from "framer-motion";
-import {
-  Activity,
-  AlertTriangle,
-  CheckCircle,
-  XCircle,
-} from "lucide-react";
+import { Activity, ArrowRight } from "lucide-react";
+import { ButtonLink } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { KatexMath } from "../KatexMath";
 import { UhqsHumanExplainerTrigger } from "../UhqsHumanExplainer";
+import { mkdocsUrl } from "@/lib/urls";
 import { fadeUpVariant, staggerContainer } from "./motion";
 
 export const ScoringMethodology = () => {
   return (
     <section id="scoring" className="py-24 border-t-2 border-border bg-page">
-      <motion.div 
+      <motion.div
         className="container mx-auto px-6"
         initial="hidden"
         whileInView="visible"
@@ -25,174 +22,63 @@ export const ScoringMethodology = () => {
             <Activity className="text-main w-8 h-8" aria-hidden />
             Scoring Methodology
           </h2>
-          <p className="text-muted-foreground">Computing the Universal Honeypot Quality Score (UHQS).</p>
+          <p className="text-muted-foreground">
+            How UHBS turns six evaluation modules into one quality score from 0 to 100.
+          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          <motion.div variants={fadeUpVariant} className="lg:col-span-7">
-            <Card className="h-full">
-              <CardHeader className="flex flex-row flex-wrap items-center justify-between gap-3">
-                <CardTitle className="font-mono text-main text-sm uppercase tracking-wider">
-                  The UHQS 4.6.0 Formula
-                </CardTitle>
-                <UhqsHumanExplainerTrigger />
-              </CardHeader>
-              <CardContent>
-                <div className="uhqs-katex uhqs-katex-display space-y-4">
-                  <KatexMath
-                    display
-                    className="block"
-                    label="UHQS equals delta-C times the weighted sum of modules A, B, C, E, and F"
-                    tex={`\\mathrm{UHQS} = \\delta_{C}\\cdot\\bigl(w_{A}S_{A}+w_{B}S_{B}+w_{C}S_{C}+w_{E}S_{E}+w_{F}S_{F}\\bigr)`}
-                  />
-                  <KatexMath
-                    display
-                    className="block uhqs-katex-danger"
-                    label="Safety Gate: delta-C is 1 when Module D is at least 95, otherwise C over 100 squared"
-                    tex={`\\delta_{C} = \\begin{cases} 1 & \\text{if } C \\ge 95 \\\\ \\bigl(C/100\\bigr)^{2} & \\text{if } C < 95 \\end{cases}`}
-                  />
-                </div>
-                <p className="mt-4 text-xs text-muted-foreground font-mono leading-relaxed">
-                  Module D is missing from the parentheses on purpose: containment becomes{" "}
-                  <KatexMath className="uhqs-katex uhqs-katex-accent inline" tex={`\\delta_{C}`} />{" "}
-                  and multiplies the whole score. Typeset with{" "}
-                  <a href="https://katex.org/" className="text-main hover:underline" target="_blank" rel="noopener noreferrer">KaTeX</a>
-                  . Full normative detail:{" "}
-                  <a href="mkdocs/specification/scoring-formula/" className="text-main hover:underline">scoring formula</a>.
-                </p>
+        <motion.div variants={fadeUpVariant} className="max-w-4xl">
+          <Card>
+            <CardHeader className="flex flex-row flex-wrap items-center justify-between gap-3">
+              <CardTitle className="font-mono text-main text-sm uppercase tracking-wider">
+                The UHQS 4.6.1 Formula
+              </CardTitle>
+              <UhqsHumanExplainerTrigger />
+            </CardHeader>
+            <CardContent>
+              <div className="uhqs-katex uhqs-katex-display space-y-4">
+                <KatexMath
+                  display
+                  className="block"
+                  label="UHQS equals delta-C times the weighted sum of modules A, B, C, E, and F"
+                  tex={`\\mathrm{UHQS} = \\delta_{C}\\cdot\\bigl(w_{A}S_{A}+w_{B}S_{B}+w_{C}S_{C}+w_{E}S_{E}+w_{F}S_{F}\\bigr)`}
+                />
+                <KatexMath
+                  display
+                  className="block uhqs-katex-danger"
+                  label="Safety Gate: delta-C is 1 when Module D is at least 95, otherwise C over 100 squared"
+                  tex={`\\delta_{C} = \\begin{cases} 1 & \\text{if } C \\ge 95 \\\\ \\bigl(C/100\\bigr)^{2} & \\text{if } C < 95 \\end{cases}`}
+                />
+              </div>
 
-                <div className="grid grid-cols-2 gap-4 font-mono text-sm text-muted-foreground mt-6">
-                  <div>
-                    <KatexMath className="uhqs-katex uhqs-katex-accent inline" tex={`\\delta_{C}`} /> : Safety Gate Multiplier (Module D)
-                  </div>
-                  <div>
-                    <KatexMath className="uhqs-katex inline" tex={`S_{x}`} /> : Score for Module X (0–100)
-                  </div>
-                  <div>
-                    <KatexMath className="uhqs-katex inline" tex={`w_{x}`} /> : Profile-Adaptive Weight
-                  </div>
-                </div>
-                
-                <div className="mt-8 pt-8 border-t-2 border-border">
-                  <h4 className="font-mono text-foreground mb-4">Profile-Adaptive Weights (w<sub>x</sub>)</h4>
-                  <div className="border-2 border-border rounded-base shadow-shadow bg-secondary-background overflow-x-auto">
-                    <table className="w-full text-left text-sm font-mono">
-                      <thead>
-                        <tr className="border-b border-border text-muted-foreground bg-page">
-                          <th className="py-2 px-3 font-normal">Target Profile</th>
-                          <th className="py-2 px-3 font-normal text-right">w<sub>A</sub></th>
-                          <th className="py-2 px-3 font-normal text-right">w<sub>B</sub></th>
-                          <th className="py-2 px-3 font-normal text-right">w<sub>C</sub></th>
-                          <th className="py-2 px-3 font-normal text-right">w<sub>E</sub></th>
-                          <th className="py-2 px-3 font-normal text-right">w<sub>F</sub></th>
-                        </tr>
-                      </thead>
-                      <tbody className="text-muted-foreground">
-                        <tr className="border-b border-border odd:bg-slate-50/80">
-                          <td className="py-2 px-3 text-foreground">POSIX Shell</td>
-                          <td className="py-2 px-3 text-right">0.20</td>
-                          <td className="py-2 px-3 text-right text-main">0.25</td>
-                          <td className="py-2 px-3 text-right">0.20</td>
-                          <td className="py-2 px-3 text-right">0.15</td>
-                          <td className="py-2 px-3 text-right">0.20</td>
-                        </tr>
-                        <tr className="border-b border-border odd:bg-slate-50/80">
-                          <td className="py-2 px-3 text-foreground">Low-Interaction</td>
-                          <td className="py-2 px-3 text-right text-main">0.30</td>
-                          <td className="py-2 px-3 text-right">0.15</td>
-                          <td className="py-2 px-3 text-right">0.25</td>
-                          <td className="py-2 px-3 text-right">0.10</td>
-                          <td className="py-2 px-3 text-right">0.20</td>
-                        </tr>
-                        <tr className="border-b border-border odd:bg-slate-50/80">
-                          <td className="py-2 px-3 text-foreground">ICS-SCADA</td>
-                          <td className="py-2 px-3 text-right text-main">0.35</td>
-                          <td className="py-2 px-3 text-right">0.20</td>
-                          <td className="py-2 px-3 text-right">0.15</td>
-                          <td className="py-2 px-3 text-right">0.10</td>
-                          <td className="py-2 px-3 text-right">0.20</td>
-                        </tr>
-                        <tr className="odd:bg-slate-50/80">
-                          <td className="py-2 px-3 text-foreground">Web-API</td>
-                          <td className="py-2 px-3 text-right text-main">0.25</td>
-                          <td className="py-2 px-3 text-right">0.20</td>
-                          <td className="py-2 px-3 text-right">0.20</td>
-                          <td className="py-2 px-3 text-right">0.15</td>
-                          <td className="py-2 px-3 text-right">0.20</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-          
-          <motion.div variants={fadeUpVariant} className="lg:col-span-5">
-            <Card className="h-full flex flex-col">
-              <CardHeader>
-                <CardTitle className="font-mono text-danger text-sm uppercase tracking-wider flex items-center gap-2">
-                  <AlertTriangle className="w-4 h-4" aria-hidden /> Safety Gate Multiplier (δ<sub>C</sub>)
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col flex-1">
-                <p className="text-sm text-muted-foreground mb-6">
-                  A Module D score below 95 triggers exponential degradation of the entire UHQS score. A honeypot that leaks data or allows lateral movement is mathematically rendered useless regardless of realism.
+              <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  In plain terms: each module gets a score from 0 to 100. UHBS mixes those scores
+                  together (with different emphasis depending on the decoy type), then multiplies the
+                  result by a <span className="text-foreground font-medium">safety factor</span>.
                 </p>
-                
-                <div className="flex-1 border-2 border-border rounded-base shadow-shadow bg-secondary-background overflow-x-auto">
-                  <table className="w-full text-left font-mono">
-                    <thead>
-                      <tr className="border-b border-border text-muted-foreground text-sm bg-page">
-                        <th className="py-3 px-3 font-normal">Module D Score</th>
-                        <th className="py-3 px-3 font-normal text-right">δ<sub>C</sub> Value</th>
-                        <th className="py-3 px-3 font-normal text-right">Status</th>
-                      </tr>
-                    </thead>
-                    <tbody className="text-sm">
-                      <tr className="border-b border-border odd:bg-slate-50/80">
-                        <td className="py-3 px-3 text-foreground">95 – 100</td>
-                        <td className="py-3 px-3 text-right">1.00</td>
-                        <td className="py-3 px-3 text-right text-success">
-                          <span className="inline-flex justify-end items-center gap-1 w-full">
-                            <CheckCircle className="w-3 h-3" aria-hidden /> PASS
-                          </span>
-                        </td>
-                      </tr>
-                      <tr className="border-b border-border odd:bg-slate-50/80">
-                        <td className="py-3 px-3 text-foreground">90 – 94</td>
-                        <td className="py-3 px-3 text-right">0.81 <span className="text-muted-foreground text-xs">(-19%)</span></td>
-                        <td className="py-3 px-3 text-right text-warning">WARN</td>
-                      </tr>
-                      <tr className="border-b border-border odd:bg-slate-50/80">
-                        <td className="py-3 px-3 text-foreground">85 – 89</td>
-                        <td className="py-3 px-3 text-right">0.72 <span className="text-muted-foreground text-xs">(-28%)</span></td>
-                        <td className="py-3 px-3 text-right text-warning">WARN</td>
-                      </tr>
-                      <tr className="border-b border-border odd:bg-slate-50/80">
-                        <td className="py-3 px-3 text-foreground">75 – 84</td>
-                        <td className="py-3 px-3 text-right">0.56 <span className="text-muted-foreground text-xs">(-44%)</span></td>
-                        <td className="py-3 px-3 text-right text-danger">FAIL</td>
-                      </tr>
-                      <tr className="odd:bg-slate-50/80">
-                        <td className="py-3 px-3 text-danger">&lt; 75</td>
-                        <td className="py-3 px-3 text-right text-danger">0.49 <span className="text-danger/50 text-xs">(-51%)</span></td>
-                        <td className="py-3 px-3 text-right text-danger">
-                          <span className="inline-flex justify-end items-center gap-1 w-full">
-                            <XCircle className="w-3 h-3" aria-hidden /> CRIT
-                          </span>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
+                <p>
+                  That safety factor comes from containment (Module D). If the decoy is well isolated,
+                  the factor is 1 and the quality score stands. If containment is weak — for example
+                  the decoy can leak data or reach other systems — the factor drops sharply and the
+                  whole score falls with it. Looking realistic is not enough when safety fails.
+                </p>
+                <p>
+                  Different honeypot types also care about different strengths (an industrial PLC
+                  decoy is not graded exactly like a fake SSH shell). The full weight tables, safety
+                  thresholds, and letter grades live in the specification.
+                </p>
+              </div>
+
+              <div className="mt-8">
+                <ButtonLink href={mkdocsUrl("specification/scoring-formula/")}>
+                  Full scoring formula in the docs <ArrowRight />
+                </ButtonLink>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
       </motion.div>
     </section>
   );
 };
-
-// Optional Advanced Evidence Profile (does not change UHQS) — lab evaluation only

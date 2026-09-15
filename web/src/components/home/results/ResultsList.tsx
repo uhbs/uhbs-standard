@@ -1,5 +1,6 @@
 import { ArrowDown, ArrowUp, ArrowUpDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { resolveHref } from "@/lib/urls";
 import {
   Table,
   TableBody,
@@ -103,7 +104,7 @@ export function ResultsList({
             {pageLabs.map((lab) => (
               <TableRow key={`row-${lab.name}`} className="odd:bg-slate-50/80 border-border/60">
                 <TableCell className="font-semibold">
-                  <a href={lab.hub} className="hover:text-main">
+                  <a href={resolveHref(lab.hub)} className="hover:text-main">
                     {lab.name}
                   </a>
                   <div className="text-[10px] text-muted-foreground font-normal mt-0.5">
@@ -115,7 +116,7 @@ export function ResultsList({
                 </TableCell>
                 <TableCell>
                   <a
-                    href={lab.repo}
+                    href={resolveHref(lab.repo)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-main hover:underline font-mono text-xs"
@@ -127,12 +128,12 @@ export function ResultsList({
                   </div>
                 </TableCell>
                 <TableCell>
-                  <a href={lab.tutorial} className="text-main hover:underline font-mono text-xs">
+                  <a href={resolveHref(lab.tutorial)} className="text-main hover:underline font-mono text-xs">
                     Open
                   </a>
                 </TableCell>
                 <TableCell>
-                  <a href={lab.quickCard} className="inline-flex flex-col gap-1 hover:opacity-90">
+                  <a href={resolveHref(lab.quickCard)} className="inline-flex flex-col gap-1 hover:opacity-90">
                     <span className="font-mono text-xs">
                       {lab.uhqsQuick == null ? "—" : lab.uhqsQuick.toFixed(2)}
                     </span>
@@ -140,7 +141,7 @@ export function ResultsList({
                   </a>
                 </TableCell>
                 <TableCell>
-                  <a href={lab.fullCard} className="inline-flex flex-col gap-1 hover:opacity-90">
+                  <a href={resolveHref(lab.fullCard)} className="inline-flex flex-col gap-1 hover:opacity-90">
                     <span className="font-mono text-xs">
                       {lab.uhqsFull == null ? "—" : lab.uhqsFull.toFixed(2)}
                     </span>
@@ -148,7 +149,7 @@ export function ResultsList({
                   </a>
                 </TableCell>
                 <TableCell>
-                  <a href={lab.scorecard} className="text-main hover:underline font-mono text-xs">
+                  <a href={resolveHref(lab.scorecard)} className="text-main hover:underline font-mono text-xs">
                     Page
                   </a>
                 </TableCell>

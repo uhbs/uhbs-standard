@@ -52,4 +52,22 @@ function Button({
   )
 }
 
-export { Button, buttonVariants }
+/** Anchor styled as a neo Button — reliable navigation (Base UI render+href is flaky). */
+function ButtonLink({
+  className,
+  variant,
+  size,
+  href,
+  ...props
+}: React.ComponentProps<"a"> & VariantProps<typeof buttonVariants>) {
+  return (
+    <a
+      data-slot="button-link"
+      href={href}
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}
+    />
+  )
+}
+
+export { Button, ButtonLink, buttonVariants }

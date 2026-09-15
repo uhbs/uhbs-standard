@@ -30,7 +30,7 @@ export const ScopeAndApplicability = () => {
             </h2>
             <div className="text-lg text-muted-foreground font-base leading-relaxed space-y-4">
               <p>
-                The UHBS v4.6.0 framework provides a rigorous technical foundation for evaluating the
+                The UHBS v4.6.1 framework provides a rigorous technical foundation for evaluating the
                 efficacy, safety, and realism of deception assets prior to deployment.
               </p>
               <p>
@@ -48,9 +48,8 @@ export const ScopeAndApplicability = () => {
                     Vendor-Neutral Baseline
                   </h4>
                   <p className="text-muted-foreground text-sm">
-                    UHBS v4.6.0 is an open-source evaluation framework for comparing and grading
-                    honeypots by class and protocol — mathematically reproducible, not a consortium or
-                    adopted industry standard.
+                    UHBS v4.6.1 is an open-source evaluation framework for comparing and grading
+                    honeypots by class and protocol — mathematically reproducible.
                   </p>
                 </div>
               </div>

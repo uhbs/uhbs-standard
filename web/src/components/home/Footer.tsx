@@ -1,4 +1,5 @@
 import { Shield } from "lucide-react";
+import { mkdocsUrl, siteUrl } from "@/lib/urls";
 
 export const Footer = () => {
   return (
@@ -8,7 +9,7 @@ export const Footer = () => {
           <Shield className="w-6 h-6" aria-hidden />
         </div>
         <div className="font-mono text-sm text-muted-foreground mb-4">
-          Universal Honeypot Benchmarking Standard <span className="text-main">·</span> v4.6.0{" "}
+          Universal Honeypot Benchmarking Standard <span className="text-main">·</span> v4.6.1{" "}
           <span className="text-main">·</span> 2026
         </div>
         <p className="text-xs text-muted-foreground max-w-lg mx-auto mb-6">
@@ -16,11 +17,8 @@ export const Footer = () => {
           adopted industry standard.
         </p>
         <div className="flex flex-wrap justify-center gap-6 font-mono text-xs text-muted-foreground">
-          <a href="mkdocs/" className="hover:text-foreground transition-colors">
+          <a href={mkdocsUrl()} className="hover:text-foreground transition-colors">
             Docs
-          </a>
-          <a href="#latest" className="hover:text-foreground transition-colors">
-            Latest
           </a>
           <a href="#results" className="hover:text-foreground transition-colors">
             Results
@@ -34,10 +32,13 @@ export const Footer = () => {
           >
             Changelog
           </a>
-          <a href="mkdocs/scorecards/" className="hover:text-foreground transition-colors">
+          <a href={mkdocsUrl("scorecards/")} className="hover:text-foreground transition-colors">
             Scorecards
           </a>
-          <a href="mkdocs/conformance/reports/" className="hover:text-foreground transition-colors">
+          <a
+            href={mkdocsUrl("conformance/reports/")}
+            className="hover:text-foreground transition-colors"
+          >
             Lab reports
           </a>
           <a
@@ -46,16 +47,19 @@ export const Footer = () => {
           >
             GitHub
           </a>
-          <a href="llms.txt" className="hover:text-foreground transition-colors">
+          <a href={siteUrl("llms.txt")} className="hover:text-foreground transition-colors">
             llms.txt
           </a>
-          <a href="llms-full.txt" className="hover:text-foreground transition-colors">
+          <a href={siteUrl("llms-full.txt")} className="hover:text-foreground transition-colors">
             llms-full.txt
           </a>
-          <a href="sitemap.xml" className="hover:text-foreground transition-colors">
+          <a href={siteUrl("sitemap.xml")} className="hover:text-foreground transition-colors">
             sitemap
           </a>
-          <a href=".well-known/security.txt" className="hover:text-foreground transition-colors">
+          <a
+            href={siteUrl(".well-known/security.txt")}
+            className="hover:text-foreground transition-colors"
+          >
             security.txt
           </a>
           <a href="#scoring" className="hover:text-foreground transition-colors">

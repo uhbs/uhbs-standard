@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Zap, Code, ArrowRight, Check } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { fadeUpVariant, staggerContainer } from "./motion";
 
@@ -90,23 +89,6 @@ export const CoreArchitecture = () => {
           </motion.div>
         </div>
 
-        <motion.div
-          variants={fadeUpVariant}
-          className="border-2 border-border bg-secondary-background p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-shadow"
-        >
-          <span className="font-mono text-sm text-muted-foreground uppercase tracking-wider">
-            Prerequisite Environments
-          </span>
-          <div className="flex flex-wrap gap-3">
-            {["Air-Gapped Sandbox", "Gold Baseline System", "Target Profile Specification (TPS)"].map(
-              (label) => (
-                <Badge key={label} variant="neutral">
-                  {label}
-                </Badge>
-              ),
-            )}
-          </div>
-        </motion.div>
       </motion.div>
     </section>
   );

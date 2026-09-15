@@ -5,12 +5,11 @@ import { CoreArchitecture } from "../components/home/CoreArchitecture";
 import { EvaluationModules } from "../components/home/EvaluationModules";
 import { FiveDimensionComparison } from "../components/home/FiveDimensionComparison";
 import { ScoringMethodology } from "../components/home/ScoringMethodology";
-import { AdvancedEvidenceProfile } from "../components/home/AdvancedEvidenceProfile";
 import { AuditWorkflow } from "../components/home/AuditWorkflow";
 import { Results } from "../components/home/Results";
-import { LatestChanges } from "../components/home/LatestChanges";
 import { McpForAgents } from "../components/home/McpForAgents";
 import { Footer } from "../components/home/Footer";
+import { mkdocsUrl } from "../lib/urls";
 
 const NAV = [
   { href: "#scope", label: "Scope" },
@@ -19,7 +18,6 @@ const NAV = [
   { href: "#compare", label: "Compare" },
   { href: "#scoring", label: "Scoring" },
   { href: "#results", label: "Results" },
-  { href: "#latest", label: "Latest" },
   { href: "#mcp", label: "MCP" },
 ] as const;
 
@@ -46,7 +44,7 @@ export default function Home() {
               </a>
             ))}
             <a
-              href="mkdocs/"
+              href={mkdocsUrl()}
               className="border-2 border-border bg-main text-black px-2.5 py-1 shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all"
             >
               Docs
@@ -62,10 +60,8 @@ export default function Home() {
         <EvaluationModules />
         <FiveDimensionComparison />
         <ScoringMethodology />
-        <AdvancedEvidenceProfile />
         <AuditWorkflow />
         <Results />
-        <LatestChanges />
         <McpForAgents />
       </main>
 

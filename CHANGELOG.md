@@ -3,17 +3,22 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.6.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
+share version **4.6.1** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
 AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`; experimental as
 `uhbs[experimental]` / `uhbs[genai-bench]`).
 
-## [Unreleased]
+## [4.6.1] — 2026-09-15
+
+Landing redesign + discovery/link fixes. **UHQS math unchanged.**
 
 ### Changed
-- Landing site (`web/`): rebuild with [Neobrutalism](https://www.neobrutalism.dev/) (Tailwind v4 + registry UI) on a bright off-white canvas; copy and Results data unchanged
+- Spec/package/schema/`uhbs_version` fixtures aligned to **4.6.1**
+- Landing site (`web/`): rebuild with [Neobrutalism](https://www.neobrutalism.dev/) (Tailwind v4 + registry UI) on a bright off-white canvas; simplified Scoring / Framework Analysis copy; AEP and Latest Changes moved to docs/CHANGELOG only
+- Landing docs buttons and Results links resolve correctly (no Vite SPA fallthrough to the home page)
 
 ### Added
 - Published lab report + landing Results: **EchidraOSS** (SSH `:2222`, quick UHQS 57.33 / D, full UHQS 43.45 / F)
+- Module info tooltips on the Six Evaluation Modules section (plain-language hover tips)
 - **Redis scoring (lab):** deepen `uhbs_core.protocols.redis` beyond PING/SET stubs —
   FSM refusals (invalid verb, wrong arity, truncated RESP), ECHO/INFO negotiation,
   SET/GET + INCR + DEL/EXISTS state checks, and cross-connection GET so shallow

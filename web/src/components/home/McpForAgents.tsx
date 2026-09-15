@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Terminal, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { mkdocsUrl, siteUrl } from "@/lib/urls";
 import { fadeUpVariant, staggerContainer } from "./motion";
 
 export const McpForAgents = () => {
@@ -53,18 +54,18 @@ export const McpForAgents = () => {
 # mcpServers.uhbs → python -m uhbs_mcp  (set UHBS_ROOT to checkout)`}</motion.pre>
 
         <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-4">
-          <Button render={<a href="mkdocs/tooling/mcp/" />}>
+          <ButtonLink href={mkdocsUrl("tooling/mcp/")}>
             MCP install guide <ArrowRight />
-          </Button>
-          <Button
+          </ButtonLink>
+          <ButtonLink
             variant="neutral"
-            render={<a href="https://github.com/uhbs/uhbs-standard/blob/main/server.json" />}
+            href="https://github.com/uhbs/uhbs-standard/blob/main/server.json"
           >
             server.json
-          </Button>
-          <Button variant="neutral" render={<a href="llms.txt" />}>
+          </ButtonLink>
+          <ButtonLink variant="neutral" href={siteUrl("llms.txt")}>
             llms.txt
-          </Button>
+          </ButtonLink>
         </motion.div>
       </motion.div>
     </section>

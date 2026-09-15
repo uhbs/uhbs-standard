@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Terminal } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ButtonLink } from "@/components/ui/button";
 import { fadeUpVariant, staggerContainer } from "./motion";
 import { ResultsCards } from "./results/ResultsCards";
 import { ResultsList } from "./results/ResultsList";
 import { ResultsToolbar } from "./results/ResultsToolbar";
 import { useResultsQuery } from "./results/useResultsQuery";
+import { mkdocsUrl } from "@/lib/urls";
 
 export const Results = () => {
   const q = useResultsQuery();
@@ -81,18 +82,18 @@ export const Results = () => {
         )}
 
         <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-4">
-          <Button variant="neutral" render={<a href="mkdocs/conformance/reports/" />}>
+          <ButtonLink variant="neutral" href={mkdocsUrl("conformance/reports/")}>
             All lab reports <ArrowRight />
-          </Button>
-          <Button variant="neutral" render={<a href="mkdocs/scorecards/" />}>
+          </ButtonLink>
+          <ButtonLink variant="neutral" href={mkdocsUrl("scorecards/")}>
             All scorecards <ArrowRight />
-          </Button>
-          <Button variant="neutral" render={<a href="mkdocs/tooling/cli/" />}>
+          </ButtonLink>
+          <ButtonLink variant="neutral" href={mkdocsUrl("tooling/cli/")}>
             Docker / CLI guide <ArrowRight />
-          </Button>
-          <Button variant="neutral" render={<a href="mkdocs/tooling/mcp/" />}>
+          </ButtonLink>
+          <ButtonLink variant="neutral" href={mkdocsUrl("tooling/mcp/")}>
             MCP for AI hosts <ArrowRight />
-          </Button>
+          </ButtonLink>
         </motion.div>
       </motion.div>
     </section>
