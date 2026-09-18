@@ -1,4 +1,4 @@
-"""UHQS scoring helpers for UHBS v4.6.1 (CLI / scorecard validation).
+"""UHQS scoring helpers for UHBS v5 (CLI / scorecard validation).
 
 Normative math lives in ``uhbs_core.uhqs_math`` — this module re-exports the
 CLI-facing API and adds scorecard integrity checks.
@@ -12,7 +12,11 @@ from dataclasses import dataclass
 from uhbs_core.uhqs_math import (
     PROFILE_WEIGHTS,
     SCORE_KEYS,
+    SCORING_MODEL_ID,
     WEIGHT_KEYS,
+    AssessmentStatus,
+    CriticalControlVerdict,
+    assessment_from_module_results,
     letter_grade,
     safety_gate,
     validate_weights,
@@ -25,7 +29,10 @@ from uhbs_core.uhqs_math import (
 __all__ = [
     "PROFILE_WEIGHTS",
     "SCORE_KEYS",
+    "SCORING_MODEL_ID",
     "WEIGHT_KEYS",
+    "AssessmentStatus",
+    "CriticalControlVerdict",
     "UhqsResult",
     "assert_scorecard_integrity",
     "compute_uhqs",
@@ -40,20 +47,38 @@ __all__ = [
 class UhqsResult:
     weighted_sum: float
     delta_c: float
-    uhqs: float
+    uhqs: float | None
     safety_gate_passed: bool
+    assessment_status: str = AssessmentStatus.COMPLETE.value
+    critical_control_verdict: str = CriticalControlVerdict.GATE_PASSED.value
+    scoring_model_id: str = SCORING_MODEL_ID
+    graded: bool = True
 
 
 def compute_uhqs(
     scores: Mapping[str, float],
     weights: Mapping[str, float],
+    *,
+    assessment_status: AssessmentStatus | str = AssessmentStatus.COMPLETE,
+    critical_control_verdict: CriticalControlVerdict | str | None = None,
+    containment_measured: bool = True,
 ) -> UhqsResult:
-    result = _compute_uhqs(scores, weights)
+    result = _compute_uhqs(
+        scores,
+        weights,
+        assessment_status=assessment_status,
+        critical_control_verdict=critical_control_verdict,
+        containment_measured=containment_measured,
+    )
     return UhqsResult(
         weighted_sum=result.weighted_sum,
         delta_c=result.delta_c,
         uhqs=result.uhqs,
         safety_gate_passed=result.safety_gate_passed,
+        assessment_status=result.assessment_status.value,
+        critical_control_verdict=result.critical_control_verdict.value,
+        scoring_model_id=result.scoring_model_id,
+        graded=result.graded,
     )
 
 
@@ -87,12 +112,38 @@ def assert_scorecard_integrity(
     except (KeyError, TypeError, ValueError) as exc:
         return [f"modules incomplete: {exc}"]
 
+    model_id = scorecard.get("scoring_model_id")
+    if model_id and model_id != SCORING_MODEL_ID:
+        errors.append(
+            f"scoring_model_id={model_id!r} != normative {SCORING_MODEL_ID!r}"
+        )
+
+    declared_status = scorecard.get("assessment_status")
+    declared_verdict = scorecard.get("critical_control_verdict") or (
+        (modules.get("D") or {}).get("critical_control_verdict")
+    )
+
     d_mod = modules.get("D") or {}
     containment_measured = bool(scorecard.get("containment_measured", True))
-    if str(d_mod.get("status", "")).upper() in {"SKIPPED", "N/A", "NOT_RUN"}:
+    if str(d_mod.get("status", "")).upper() in {
+        "SKIPPED",
+        "N/A",
+        "NOT_RUN",
+        "INCOMPLETE",
+        "NOT_TESTED",
+    }:
         containment_measured = False
     if scorecard.get("containment_measured") is False:
         containment_measured = False
+
+    status, verdict = assessment_from_module_results(
+        modules, critical_control_verdict=declared_verdict
+    )
+    if declared_status:
+        try:
+            status = AssessmentStatus(str(declared_status))
+        except ValueError:
+            errors.append(f"invalid assessment_status={declared_status!r}")
 
     # Class→weight enforcement when both present
     if profile_class and profile_class in PROFILE_WEIGHTS:
@@ -105,11 +156,37 @@ def assert_scorecard_integrity(
                 )
 
     result = _compute_uhqs(
-        scores, weights, containment_measured=containment_measured
+        scores,
+        weights,
+        containment_measured=containment_measured,
+        assessment_status=status,
+        critical_control_verdict=verdict,
     )
-    declared_uhqs = float(scorecard.get("uhqs", -1))
-    if abs(declared_uhqs - result.uhqs) > uhqs_tol:
-        errors.append(f"uhqs={declared_uhqs} != recomputed {result.uhqs}")
+
+    declared_uhqs = scorecard.get("uhqs", -1)
+    if result.uhqs is None:
+        if declared_uhqs is not None:
+            errors.append(f"uhqs={declared_uhqs!r} but recomputed ungraded (null)")
+        declared_grade = scorecard.get("grade", None)
+        if declared_grade is not None:
+            errors.append(
+                f"grade={declared_grade!r} present but assessment is ungraded "
+                f"(status={result.assessment_status.value}, "
+                f"verdict={result.critical_control_verdict.value})"
+            )
+    else:
+        try:
+            declared_f = float(declared_uhqs)
+        except (TypeError, ValueError):
+            errors.append(f"uhqs={declared_uhqs!r} is not numeric")
+        else:
+            if abs(declared_f - result.uhqs) > uhqs_tol:
+                errors.append(f"uhqs={declared_f} != recomputed {result.uhqs}")
+
+        declared_grade = str(scorecard.get("grade", ""))
+        expected_grade = letter_grade(result.uhqs)
+        if declared_grade and expected_grade and declared_grade != expected_grade:
+            errors.append(f"grade={declared_grade} != recomputed {expected_grade}")
 
     gate = scorecard.get("safety_gate") or {}
     if "delta_c" in gate and abs(float(gate["delta_c"]) - result.delta_c) > delta_tol:
@@ -119,15 +196,19 @@ def assert_scorecard_integrity(
             f"safety_gate.passed={gate['passed']} != recomputed {result.safety_gate_passed}"
         )
     if (
-        containment_measured
+        result.graded
         and "containment_score" in gate
         and abs(float(gate["containment_score"]) - scores["D"]) > 0.01
     ):
         errors.append("safety_gate.containment_score != modules.D.score")
 
-    declared_grade = str(scorecard.get("grade", ""))
-    expected_grade = letter_grade(result.uhqs)
-    if declared_grade and declared_grade != expected_grade:
-        errors.append(f"grade={declared_grade} != recomputed {expected_grade}")
+    # Graded scorecards must not claim a grade while Module D is incomplete.
+    if result.graded and str(d_mod.get("status", "")).upper() in {
+        "INCOMPLETE",
+        "NOT_TESTED",
+        "SKIPPED",
+        "NOT_MEASURED",
+    }:
+        errors.append("graded scorecard with incomplete Module D")
 
     return errors
