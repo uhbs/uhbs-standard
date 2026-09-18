@@ -1,6 +1,6 @@
 {
   "uhbs_version": "5.0.0",
-  "scoring_model_id": "uhqs-v5.0.0-critical-gate-binary",
+  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",
   "containment_measured": false,

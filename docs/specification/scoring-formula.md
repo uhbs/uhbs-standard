@@ -1,7 +1,7 @@
 # Universal Scoring Methodology (UHQS 5.0.0)
 
 **Status:** Normative  
-**scoring_model_id:** `uhqs-v5.0.0-critical-gate-binary`
+**scoring_model_id:** `uhqs-v5.0-critical-gate-diagnostic`
 
 The key words **MUST**, **SHOULD**, and **MAY** are interpreted as in
 [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119). See
@@ -14,7 +14,7 @@ Every scorecard **MUST** declare:
 
 | Field | Requirement |
 | --- | --- |
-| `scoring_model_id` | Immutable model identity; for UHBS 5.0.0 this **MUST** be `uhqs-v5.0.0-critical-gate-binary` |
+| `scoring_model_id` | Immutable model identity; for UHBS 5.0.0 this **MUST** be `uhqs-v5.0-critical-gate-diagnostic` |
 | `assessment_status` | `COMPLETE` or `INCOMPLETE` |
 | `critical_control_verdict` | `GATE_PASSED`, `GATE_FAILED`, or `INCOMPLETE` |
 
@@ -65,7 +65,7 @@ Python `round` semantics as used by the reference harness).
 ## Critical-control gate (\(\delta_C\))
 
 Containment is **not** averaged into the weighted sum and is **not** a continuous
-exponential penalty. Under `uhqs-v5.0.0-critical-gate-binary`:
+exponential penalty. Under `uhqs-v5.0-critical-gate-diagnostic`:
 
 | `critical_control_verdict` | \(\delta_C\) | UHQS |
 | --- | ---: | --- |
@@ -131,7 +131,7 @@ see [Status of This Document](status.md).
 ## Reference computation
 
 These normative numbers **MUST** match `uhbs score` and `uhbs_core.uhqs_math.compute_uhqs`
-(CLI / MCP / harness wrappers) under `scoring_model_id = uhqs-v5.0.0-critical-gate-binary`.
+(CLI / MCP / harness wrappers) under `scoring_model_id = uhqs-v5.0-critical-gate-diagnostic`.
 
 **v4 historical note:** Published fixtures under `docs/conformance/fixtures/` (root) were
 graded under UHQS 4.x and **MUST NOT** be re-derived as v5 grades without re-running

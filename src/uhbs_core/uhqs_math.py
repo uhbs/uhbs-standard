@@ -1,6 +1,6 @@
 """Normative UHQS 5.0 math — single source of truth for CLI and UHBS-Lab.
 
-scoring_model_id: uhqs-v5.0.0-critical-gate-binary
+scoring_model_id: uhqs-v5.0-critical-gate-diagnostic
 
 When the assessment is COMPLETE and critical_control_verdict is GATE_PASSED:
 
@@ -21,7 +21,7 @@ from enum import StrEnum
 from typing import Any
 
 # Immutable scoring-model identity (do not conflate with uhbs_version).
-SCORING_MODEL_ID = "uhqs-v5.0.0-critical-gate-binary"
+SCORING_MODEL_ID = "uhqs-v5.0-critical-gate-diagnostic"
 
 # Letter keys (scorecards / CLI) ↔ dimension keys (harness)
 LETTER_TO_DIM = {

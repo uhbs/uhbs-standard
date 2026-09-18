@@ -2,7 +2,7 @@
 
 **Status:** Informative · concept-level mapping, medium confidence<br>
 **Source retrieval / review:** MITRE Engage · 2026-09-18<br>
-**UHBS target:** 5.0.0 · `uhqs-v5.0.0-critical-gate-binary`
+**UHBS target:** 5.0.0 · `uhqs-v5.0-critical-gate-diagnostic`
 Maps UHBS evaluation modules to [MITRE Engage](https://engage.mitre.org/) adversary
 engagement goals. This does **not** redefine Engage, certify Engage operations, or
 change UHQS math. It helps operators answer “what was this decoy *for*?” when

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/uhbs/uhbs-standard/raw/main/schemas/scorecard.schema.json",
   "title": "UHBS Benchmark Scorecard (v5)",
-  "description": "UHBS 5.0 evaluation scorecard under scoring_model_id uhqs-v5.0.0-critical-gate-binary. Incomplete or GATE_FAILED assessments MUST set uhqs/grade to null (do not invent letter U).",
+  "description": "UHBS 5.0 evaluation scorecard under scoring_model_id uhqs-v5.0-critical-gate-diagnostic. Incomplete or GATE_FAILED assessments MUST set uhqs/grade to null (do not invent letter U).",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -22,7 +22,7 @@
     },
     "scoring_model_id": {
       "type": "string",
-      "const": "uhqs-v5.0.0-critical-gate-binary",
+      "const": "uhqs-v5.0-critical-gate-diagnostic",
       "description": "Immutable scoring model identity (not merely uhbs_version)."
     },
     "assessment_status": {

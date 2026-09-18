@@ -1,7 +1,7 @@
 # Evaluation Modules (A–F)
 
 UHBS v5.0.0 defines six evaluation modules under scoring model
-`uhqs-v5.0.0-critical-gate-binary` ([RFC 0003](../rfcs/0003-scoring-assurance.md)).
+`uhqs-v5.0-critical-gate-diagnostic` ([RFC 0003](../rfcs/0003-scoring-assurance.md)).
 Module **D** is a **critical-control gate** plus a separate defense-in-depth diagnostic
 score. Incomplete mandatory measurement yields an **Ungraded** result (`uhqs=null`),
 not a manufactured letter grade.
@@ -76,7 +76,7 @@ Module D has two **separate** outputs:
 Removed from v4: `max(score, 95)` floor; attestation-only credit for `UHBS_AIRGAP_ATTESTED`; fail-open unmeasured containment → pass. Environment attestation may describe the lab but **cannot** satisfy a technical control.
 
 !!! danger "Critical-control gate"
-    Under `uhqs-v5.0.0-critical-gate-binary`, a failed or incomplete critical-control verdict yields **Ungraded** (`uhqs=null`). There is no continuous \(\delta_C = (C/100)^2\) penalty and no letter grade for incomplete containment measurement.
+    Under `uhqs-v5.0-critical-gate-diagnostic`, a failed or incomplete critical-control verdict yields **Ungraded** (`uhqs=null`). There is no continuous \(\delta_C = (C/100)^2\) penalty and no letter grade for incomplete containment measurement.
 
 ---
 

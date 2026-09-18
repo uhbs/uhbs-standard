@@ -5,7 +5,7 @@
 - **UHBS version affected:** 5.0.0 → 5.0.0 (breaking)
 - **Created:** 2026-09-18
 - **Supersedes:** UHQS 4.x scoring integrity assumptions for Modules C/D and skip-credit paths
-- **scoring_model_id:** `uhqs-v5.0.0-critical-gate-binary`
+- **scoring_model_id:** `uhqs-v5.0-critical-gate-diagnostic`
 
 ## Problem
 
@@ -85,7 +85,7 @@ Removed from v4:
 
 **Chosen model** (after fixture sensitivity analysis; see [calibration/v5-sensitivity.md](calibration/v5-sensitivity.md)):
 
-**`uhqs-v5.0.0-critical-gate-binary`** — binary critical-control eligibility gate; no composite grade on gate failure or incomplete assessment; when eligible, UHQS is the weighted module sum with \(\delta_C = 1.0\).
+**`uhqs-v5.0-critical-gate-diagnostic`** — binary critical-control eligibility gate; no composite grade on gate failure or incomplete assessment; when eligible, UHQS is the weighted module sum with \(\delta_C = 1.0\).
 
 When `assessment_status = COMPLETE` and `critical_control_verdict = GATE_PASSED`:
 
@@ -97,7 +97,7 @@ with \(\delta_C = 1.0\) (gate already satisfied). Module D’s defense-in-depth 
 
 When the gate fails or the assessment is incomplete: `uhqs = null`, no letter grade; module diagnostics remain.
 
-Store the choice as immutable `scoring_model_id = uhqs-v5.0.0-critical-gate-binary`, not merely `uhbs_version`.
+Store the choice as immutable `scoring_model_id = uhqs-v5.0-critical-gate-diagnostic`, not merely `uhbs_version`.
 
 Profile-adaptive weights for Modules A/B/C/E/F are unchanged from v5.0.0 unless a later RFC revises them.
 
@@ -189,7 +189,7 @@ Independent technical review of this RFC and published responses is **required**
 
 ## Decision
 
-**Accepted for implementation** as the UHBS 5.0.0 scoring and assurance baseline under `scoring_model_id = uhqs-v5.0.0-critical-gate-binary`. Future normative scoring changes require a new RFC.
+**Accepted for implementation** as the UHBS 5.0.0 scoring and assurance baseline under `scoring_model_id = uhqs-v5.0-critical-gate-diagnostic`. Future normative scoring changes require a new RFC.
 
 ## References
 

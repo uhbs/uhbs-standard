@@ -1,7 +1,7 @@
 # Mapping Index
 
 **Status:** Informative<br>
-**UHBS target:** 5.0.0 · `uhqs-v5.0.0-critical-gate-binary`<br>
+**UHBS target:** 5.0.0 · `uhqs-v5.0-critical-gate-diagnostic`<br>
 **Review date:** 2026-09-18
 
 Informative interoperability mappings for readers evaluating the UHBS framework

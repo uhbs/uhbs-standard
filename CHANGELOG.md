@@ -10,7 +10,7 @@ AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`; experimental as
 ## [5.0.0] — 2026-09-18
 
 Breaking UHQS scoring and assurance redesign ([RFC 0003](docs/rfcs/0003-scoring-assurance.md)).
-**scoring_model_id:** `uhqs-v5.0.0-critical-gate-binary`.
+**scoring_model_id:** `uhqs-v5.0-critical-gate-diagnostic`.
 
 ### Changed
 - Check outcomes: `PASS` / `FAIL` / `NOT_APPLICABLE` / `NOT_TESTED` / `ERROR` — only `NOT_APPLICABLE` leaves the denominator

@@ -2,7 +2,7 @@
 
 **Status:** Informative · concept-level mapping, medium confidence<br>
 **Source retrieval / review:** MITRE D3FEND knowledge graph · 2026-09-18<br>
-**UHBS target:** 5.0.0 · `uhqs-v5.0.0-critical-gate-binary`
+**UHBS target:** 5.0.0 · `uhqs-v5.0-critical-gate-diagnostic`
 Maps UHBS profile classes and graded surfaces to the [MITRE D3FEND](https://d3fend.mitre.org/)
 **Deceive** tactic. This does **not** redefine D3FEND, certify coverage of D3FEND
 techniques, or change UHQS math. It helps SOC / architecture readers place a

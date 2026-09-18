@@ -2,7 +2,7 @@
 
 **Status:** Experimental  
 **Specification version:** 5.0.0  
-**scoring_model_id:** `uhqs-v5.0.0-critical-gate-binary`  
+**scoring_model_id:** `uhqs-v5.0-critical-gate-diagnostic`  
 **Keywords:** The key words **MUST**, **MUST NOT**, **REQUIRED**, **SHALL**, **SHALL NOT**,
 **SHOULD**, **SHOULD NOT**, **RECOMMENDED**, **MAY**, and **OPTIONAL** in this
 document are to be interpreted as described in [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119)
@@ -40,7 +40,7 @@ An implementation claiming **UHBS-Core** conformance **MUST**:
 1. Accept a TPS `profile.yaml` validating against `schemas/profile.schema.json`
 2. Emit a scorecard validating against `schemas/scorecard.schema.json`
 3. Compute UHQS using the normative formula and critical-control gate under
-   `scoring_model_id = uhqs-v5.0.0-critical-gate-binary`
+   `scoring_model_id = uhqs-v5.0-critical-gate-diagnostic`
 4. Apply profile-class weights that match § Profile-Adaptive Weight Distributions
 5. Pass public v5 conformance fixtures under `docs/conformance/fixtures/v5/`
 6. Preserve the ability to validate historical v4 scorecards with `schemas/v4/`

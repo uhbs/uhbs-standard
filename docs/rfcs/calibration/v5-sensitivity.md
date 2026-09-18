@@ -2,7 +2,7 @@
 
 **Status:** Informative  
 **Related:** [RFC 0003](../0003-scoring-assurance.md)  
-**scoring_model_id (chosen):** `uhqs-v5.0.0-critical-gate-binary`  
+**scoring_model_id (chosen):** `uhqs-v5.0-critical-gate-diagnostic`  
 **Date:** 2026-09-18
 
 ## Scope
@@ -52,7 +52,7 @@ The discontinuity at 95, plus the historical `max(score, 95)` floor, incentivize
 | Explainability | Exponent arbitrary | Pass/fail eligibility |
 | Gaming surface | Floor + cliff at 95 | Critical controls + evidence |
 
-**Conclusion:** choose **`uhqs-v5.0.0-critical-gate-binary`**. Continuous \((C/95)^k\) was considered and **rejected** as arbitrary without a full live calibration corpus.
+**Conclusion:** choose **`uhqs-v5.0-critical-gate-diagnostic`**. Continuous \((C/95)^k\) was considered and **rejected** as arbitrary without a full live calibration corpus.
 
 ## Open live-corpus items
 

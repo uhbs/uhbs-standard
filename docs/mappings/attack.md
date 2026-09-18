@@ -3,7 +3,7 @@
 **Status:** Informative · analyst hypothesis, not ATT&CK coverage<br>
 **Source:** [MITRE ATT&CK v19.2](https://attack.mitre.org/resources/versions/)
 (current at 2026-09-18; Enterprise/Mobile/ICS, August 2026 agile data update)<br>
-**UHBS target:** 5.0.0 · `uhqs-v5.0.0-critical-gate-binary`
+**UHBS target:** 5.0.0 · `uhqs-v5.0-critical-gate-diagnostic`
 
 Maps UHBS evaluation activities to ATT&CK techniques that an analyst may observe
 or emulate in an authorized lab. A shared identifier does not mean the decoy

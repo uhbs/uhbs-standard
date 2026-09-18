@@ -70,8 +70,8 @@
   },
   "uhqs": null,
   "grade": null,
-  "notes": "Detailed evaluation proof only. Graded with generic plugin protocol id ssh_tarpit \u2014 not SSH/Paramiko. Full Docker lab artifacts live under docs/conformance/reports/endlessh/. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0.0-critical-gate-binary. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
-  "scoring_model_id": "uhqs-v5.0.0-critical-gate-binary",
+  "notes": "Detailed evaluation proof only. Graded with generic plugin protocol id ssh_tarpit \u2014 not SSH/Paramiko. Full Docker lab artifacts live under docs/conformance/reports/endlessh/. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
+  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
   "assessment_status": "COMPLETE",
   "critical_control_verdict": "GATE_FAILED",
   "containment_measured": true

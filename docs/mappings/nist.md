@@ -5,7 +5,7 @@
 (final, 2024) · [SP 800-53 Rev. 5](https://doi.org/10.6028/NIST.SP.800-53r5)
 (final, 2020 with updates) ·
 [SP 800-53A Rev. 5](https://doi.org/10.6028/NIST.SP.800-53Ar5) (final, 2022)<br>
-**UHBS target / review:** 5.0.0 · `uhqs-v5.0.0-critical-gate-binary` · 2026-09-18
+**UHBS target / review:** 5.0.0 · `uhqs-v5.0-critical-gate-diagnostic` · 2026-09-18
 
 | UHBS area | NIST CSF 2.0 function | Example SP 800-53 controls |
 | --- | --- | --- |

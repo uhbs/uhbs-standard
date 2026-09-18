@@ -24,7 +24,7 @@ Calibration notes for RFC 0003: [calibration/v5-sensitivity.md](calibration/v5-s
 
 - **Accepted for implementation** RFCs (e.g. RFC 0003) define the target normative surface for the stated UHBS version; treat draft RFCs as discussion only until accepted **and** reflected in a released version.
 - Published lab grades and scorecards under `docs/conformance/` that lack
-  `scoring_model_id = uhqs-v5.0.0-critical-gate-binary` remain **historical UHQS 4.x**
+  `scoring_model_id = uhqs-v5.0-critical-gate-diagnostic` remain **historical UHQS 4.x**
   evaluation proof. Existing URLs stay resolvable; v5 fixtures live under
   `docs/conformance/fixtures/v5/`.
 

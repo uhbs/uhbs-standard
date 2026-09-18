@@ -28,7 +28,7 @@
     },
     "scoring_model_id": {
       "type": "string",
-      "const": "uhqs-v5.0.0-critical-gate-binary"
+      "const": "uhqs-v5.0-critical-gate-diagnostic"
     },
     "check_catalog_hash": {
       "type": "string",

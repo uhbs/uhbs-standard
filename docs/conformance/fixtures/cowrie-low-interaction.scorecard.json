@@ -67,7 +67,7 @@
   },
   "uhqs": 61.37,
   "grade": "D",
-  "notes": "Evaluation proof only. Live Cowrie SSH full lab (aliases cowrie-ssh fixture). Regraded 2026-07-27. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0.0-critical-gate-binary. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
+  "notes": "Evaluation proof only. Live Cowrie SSH full lab (aliases cowrie-ssh fixture). Regraded 2026-07-27. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
   "framework_refs": {
     "attack": [
       "T1595",
@@ -83,7 +83,7 @@
       "Expose"
     ]
   },
-  "scoring_model_id": "uhqs-v5.0.0-critical-gate-binary",
+  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
   "assessment_status": "COMPLETE",
   "critical_control_verdict": "GATE_PASSED",
   "containment_measured": true
