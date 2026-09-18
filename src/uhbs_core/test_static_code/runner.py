@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import List, Optional
 
 from uhbs_core.hqs import pass_status
-from uhbs_core.models import CheckResult, ModuleResult, TargetSpec
+from uhbs_core.models import CheckOutcome, CheckResult, ModuleResult, TargetSpec
 
 from .artifacts import _scan_artifacts
 from .coverage import _coverage_review
@@ -50,9 +50,10 @@ def run(
             CheckResult(
                 id="white.sast_tools",
                 team="white",
-                passed=True,
-                detail="SAST tools skipped by flag",
-                score=15.0,
+                outcome=CheckOutcome.NOT_TESTED,
+                detail="SAST tools skipped by flag — zero credit",
+                score=0.0,
+                mandatory=True,
             )
         )
     else:

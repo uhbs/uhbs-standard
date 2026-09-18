@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import math
 from collections.abc import Sequence
+from dataclasses import dataclass
 from typing import Any
 
 from uhbs_core.contract_validation import has_passed_score_disagreement
@@ -82,6 +83,36 @@ def score_checks_with_completeness(
     return score_checks(checks), completeness
 
 
+@dataclass(frozen=True)
+class CheckAggregation:
+    score: float
+    complete: bool
+    applicable: int
+    scored: int
+    not_applicable: int
+    not_tested: int
+    errors: int
+    coverage: float
+
+
+def summarize_checks(checks: Sequence[CheckResult]) -> CheckAggregation:
+    """Compatibility wrapper used by Module C/D runners."""
+    comp = module_completeness(list(checks))
+    applicable = int(comp["applicable_checks"])
+    scored = int(comp["scored_checks"])
+    coverage = (scored / applicable) if applicable else 0.0
+    return CheckAggregation(
+        score=score_checks(checks) if comp["complete"] else 0.0,
+        complete=bool(comp["complete"]),
+        applicable=applicable,
+        scored=scored,
+        not_applicable=int(comp["not_applicable"]),
+        not_tested=int(comp["not_tested"]),
+        errors=int(comp["errors"]),
+        coverage=round(coverage, 4),
+    )
+
+
 def earned_over_available(checks: Sequence[CheckResult]) -> float:
     """Linear earned/available among denominator checks (0–100).
 
@@ -129,7 +160,11 @@ def point_weight_score(checks: Sequence[CheckResult]) -> float:
     # plugins to put the weight on every outcome via a convention: use
     # max(score, 0) for PASS as weight, and for non-PASS look at a default
     # equal share.
-    pass_weights = [float(c.score) for c in scored if c.outcome is CheckOutcome.PASS and c.score > 0]
+    pass_weights = [
+        float(c.score)
+        for c in scored
+        if c.outcome is CheckOutcome.PASS and c.score > 0
+    ]
     if not pass_weights:
         return earned_over_available(checks)
     # Assume remaining checks share the median PASS weight as potential.

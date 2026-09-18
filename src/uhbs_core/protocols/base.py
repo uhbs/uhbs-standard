@@ -1,11 +1,11 @@
-"""Protocol plugin interface — UHBS v4.6.1 Module A/B hooks."""
+"""Protocol plugin interface — UHBS v5.0.0 Module A/B hooks."""
 
 from __future__ import annotations
 
 import os
 from abc import ABC, abstractmethod
 
-from ..models import CheckResult, TargetSpec
+from ..models import CheckOutcome, CheckResult, TargetSpec
 from ..stats import ks_2samp, sample_connect_latencies
 from ..tps import TPS
 
@@ -121,12 +121,12 @@ class ProtocolPlugin(ABC):
                 CheckResult(
                     id=f"{self.name}.timing.ks_vs_gold",
                     team="red",
-                    passed=False,
+                    outcome=CheckOutcome.ERROR,
                     detail=(
                         f"gold baseline {baseline_host}:{baseline_port} "
                         f"unreachable/insufficient samples"
                     ),
-                    score=40.0,
+                    score=0.0,
                 )
             )
         return checks
@@ -138,9 +138,10 @@ class ProtocolPlugin(ABC):
             CheckResult(
                 id=f"{self.name}.state.unsupported",
                 team="blue",
-                passed=True,
-                detail="no state probe implemented — skipped",
-                score=50.0,
+                outcome=CheckOutcome.NOT_TESTED,
+                detail="no state probe implemented",
+                score=0.0,
+                mandatory=True,
             )
         ]
 
@@ -151,9 +152,10 @@ class ProtocolPlugin(ABC):
             CheckResult(
                 id=f"{self.name}.payload.unsupported",
                 team="red",
-                passed=True,
-                detail="no payload probe — skipped",
-                score=50.0,
+                outcome=CheckOutcome.NOT_TESTED,
+                detail="no payload probe implemented",
+                score=0.0,
+                mandatory=True,
             )
         ]
 

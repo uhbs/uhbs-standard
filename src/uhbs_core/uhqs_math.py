@@ -1,6 +1,6 @@
 """Normative UHQS 5.0 math — single source of truth for CLI and UHBS-Lab.
 
-scoring_model_id: uhqs-v5.0-critical-gate-diagnostic
+scoring_model_id: uhqs-v5.0.0-critical-gate-binary
 
 When the assessment is COMPLETE and critical_control_verdict is GATE_PASSED:
 
@@ -17,11 +17,11 @@ from __future__ import annotations
 
 from collections.abc import Mapping
 from dataclasses import dataclass
-from enum import Enum
+from enum import StrEnum
 from typing import Any
 
 # Immutable scoring-model identity (do not conflate with uhbs_version).
-SCORING_MODEL_ID = "uhqs-v5.0-critical-gate-diagnostic"
+SCORING_MODEL_ID = "uhqs-v5.0.0-critical-gate-binary"
 
 # Letter keys (scorecards / CLI) ↔ dimension keys (harness)
 LETTER_TO_DIM = {
@@ -77,12 +77,12 @@ PROFILE_WEIGHTS: dict[str, dict[str, float]] = {
 }
 
 
-class AssessmentStatus(str, Enum):
+class AssessmentStatus(StrEnum):
     COMPLETE = "COMPLETE"
     INCOMPLETE = "INCOMPLETE"
 
 
-class CriticalControlVerdict(str, Enum):
+class CriticalControlVerdict(StrEnum):
     GATE_PASSED = "GATE_PASSED"
     GATE_FAILED = "GATE_FAILED"
     INCOMPLETE = "INCOMPLETE"
@@ -125,7 +125,11 @@ def safety_gate(
     the explicit verdict API.
     """
     if critical_control_verdict is not None:
-        verdict = CriticalControlVerdict(str(critical_control_verdict))
+        verdict = (
+            critical_control_verdict
+            if isinstance(critical_control_verdict, CriticalControlVerdict)
+            else CriticalControlVerdict(str(critical_control_verdict))
+        )
         if verdict is CriticalControlVerdict.GATE_PASSED:
             return 1.0, True
         return 0.0, False
@@ -225,12 +229,20 @@ def compute_uhqs(
         + float(weights["w_F"]) * normalized["F"]
     )
 
-    status = AssessmentStatus(str(assessment_status))
+    status = (
+        assessment_status
+        if isinstance(assessment_status, AssessmentStatus)
+        else AssessmentStatus(str(assessment_status))
+    )
 
     if not containment_measured:
         verdict = CriticalControlVerdict.INCOMPLETE
     elif critical_control_verdict is not None:
-        verdict = CriticalControlVerdict(str(critical_control_verdict))
+        verdict = (
+            critical_control_verdict
+            if isinstance(critical_control_verdict, CriticalControlVerdict)
+            else CriticalControlVerdict(str(critical_control_verdict))
+        )
     else:
         # Transitional: infer from legacy numeric gate threshold.
         delta_legacy, passed_legacy = safety_gate(normalized["D"])

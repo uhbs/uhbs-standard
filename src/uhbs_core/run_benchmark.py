@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""UHBS v4.6.1 — Universal Honeypot Benchmarking Standard orchestrator (uhbs-core).
+"""UHBS v5.0.0 — Universal Honeypot Benchmarking Standard orchestrator (uhbs-core).
 
 Phases (§6):
   1) profile  — load TPS
   2) static   — Module F (+ optional capability signals)
   3) sandbox  — air-gap / egress preflight
   4) dynamic  — Modules A–E via protocol plugins
-  5) score    — UHQS 4.6.1 with profile-adaptive weights + δ_C gate
+  5) score    — UHQS 5.0.0 with profile-adaptive weights + δ_C gate
 
 Examples:
   uhbs lab --tps posix_shell_ssh --target 127.0.0.1 --port 2222 \\
@@ -309,15 +309,39 @@ def main(argv: Sequence[str] | None = None) -> int:
         out_dir=args.out,
         skip_sast_tools=args.skip_sast_tools,
     )
-    d_measured = any(
-        m.module == "D" and m.status != "SKIPPED" for m in t_mods
+    d_mod = next((m for m in t_mods if m.module == "D"), None)
+    d_measured = bool(
+        d_mod
+        and d_mod.status not in {"SKIPPED", "INCOMPLETE"}
+        and d_mod.critical_control_verdict
+        != "INCOMPLETE"
     )
+    incomplete = any(
+        (m.module in {"A", "B", "C", "D", "E", "F"} and not m.complete)
+        or m.status == "INCOMPLETE"
+        for m in t_mods
+    )
+    from uhbs_core.uhqs_math import AssessmentStatus, CriticalControlVerdict
+
+    verdict = CriticalControlVerdict.INCOMPLETE
+    if d_mod and d_mod.critical_control_verdict:
+        try:
+            verdict = CriticalControlVerdict(d_mod.critical_control_verdict)
+        except ValueError:
+            verdict = CriticalControlVerdict.INCOMPLETE
+    elif d_measured:
+        verdict = CriticalControlVerdict.GATE_PASSED
+
     t_uhqs = compute_uhqs(
         t_scores,
         target=target.label,
         profile_class=target.profile_class,
         phase="+".join(phases_n),
         containment_measured=d_measured,
+        assessment_status=(
+            AssessmentStatus.INCOMPLETE if incomplete else AssessmentStatus.COMPLETE
+        ),
+        critical_control_verdict=verdict,
     )
 
     extras = {
@@ -361,7 +385,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         )
         extras["baseline_scores"] = b_scores
         extras["baseline_uhqs"] = b_uhqs.to_dict()
-        extras["delta_uhqs"] = round(t_uhqs.uhqs - b_uhqs.uhqs, 2)
+        if t_uhqs.uhqs is not None and b_uhqs.uhqs is not None:
+            extras["delta_uhqs"] = round(t_uhqs.uhqs - b_uhqs.uhqs, 2)
+        else:
+            extras["delta_uhqs"] = None
         extras["baseline_modules"] = [m.to_dict() for m in b_mods]
 
     path = write_report(
@@ -372,6 +399,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         t_mods,
         extras=extras,
         evaluation_type=eval_type,
+        assurance_level="REPRODUCIBLE_LAB",
     )
     print(
         render_card(
@@ -389,9 +417,30 @@ def main(argv: Sequence[str] | None = None) -> int:
             f"Δ={extras['delta_uhqs']}"
         )
     echo_ok(f"Wrote {path}")
+    from uhbs_core.evidence_pack import build_evidence_pack, write_evidence_pack
+
+    pack = build_evidence_pack(
+        target=target,
+        uhqs=t_uhqs,
+        modules=[m for m in t_mods if m.module in {"A", "B", "C", "D", "E", "F"}],
+        out_dir=args.out,
+        profile_ref=str(tps.path) if getattr(tps, "path", None) else None,
+        protocols=target.protocol_list(),
+        assurance_level="REPRODUCIBLE_LAB",
+    )
+    ep = write_evidence_pack(args.out, pack=pack)
+    echo_ok(f"Wrote {ep}")
     manifest = write_manifest(
         args.out,
-        extra={"target": target.label, "uhqs": t_uhqs.uhqs, "grade": t_uhqs.grade},
+        extra={
+            "target": target.label,
+            "uhqs": t_uhqs.uhqs,
+            "grade": t_uhqs.grade,
+            "scoring_model_id": t_uhqs.scoring_model_id,
+            "assessment_status": t_uhqs.assessment_status,
+            "evidence_pack": "evidence-pack.json",
+            "evidence_manifest_digest": pack.get("manifest", {}).get("digest"),
+        },
     )
     echo_ok(f"Wrote {manifest}")
     return 0

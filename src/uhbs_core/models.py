@@ -8,23 +8,22 @@ applicable checks yield an Ungraded assessment (uhqs=null, no letter grade).
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field
-from enum import Enum
 from typing import Any
 
 from uhbs_core._version import __version__
+from uhbs_core.outcomes import CheckOutcome, outcome_from_passed
 from uhbs_core.uhqs_math import (
     PROFILE_WEIGHTS as _LETTER_WEIGHTS,
 )
 from uhbs_core.uhqs_math import (
+    SCORING_MODEL_ID,
     AssessmentStatus,
     CriticalControlVerdict,
-    SCORING_MODEL_ID,
-    compute_uhqs as _shared_compute_uhqs,
+    grade_for,
+    weights_for_class_dims,
 )
 from uhbs_core.uhqs_math import (
-    grade_for,
-    letter_grade,
-    weights_for_class_dims,
+    compute_uhqs as _shared_compute_uhqs,
 )
 
 # Module letter ↔ dimension keys (stable internal IDs)
@@ -70,18 +69,6 @@ UHQS_ATTR = {
 }
 
 
-class CheckOutcome(str, Enum):
-    PASS = "PASS"
-    FAIL = "FAIL"
-    NOT_APPLICABLE = "NOT_APPLICABLE"
-    NOT_TESTED = "NOT_TESTED"
-    ERROR = "ERROR"
-
-
-def _outcome_from_passed(passed: bool) -> CheckOutcome:
-    return CheckOutcome.PASS if passed else CheckOutcome.FAIL
-
-
 @dataclass
 class CheckResult:
     """Single check result with an explicit outcome.
@@ -107,7 +94,7 @@ class CheckResult:
 
     def __post_init__(self) -> None:
         if self.outcome is None:
-            self.outcome = _outcome_from_passed(bool(self.passed))
+            self.outcome = outcome_from_passed(bool(self.passed))
         elif isinstance(self.outcome, str):
             self.outcome = CheckOutcome(self.outcome)
         # Keep passed synchronized for legacy consumers.
@@ -117,10 +104,9 @@ class CheckResult:
             CheckOutcome.NOT_TESTED,
             CheckOutcome.ERROR,
             CheckOutcome.NOT_APPLICABLE,
-        }:
+        } and self.score > 0.0:
             # Untested / error / NA never earn credit.
-            if self.score > 0.0:
-                self.score = 0.0
+            self.score = 0.0
 
     @property
     def earns_credit(self) -> bool:
@@ -143,6 +129,40 @@ class CheckResult:
         d = asdict(self)
         d["outcome"] = self.outcome.value if self.outcome else None
         return d
+
+    @classmethod
+    def make(
+        cls,
+        *,
+        id: str,
+        team: str,
+        outcome: CheckOutcome,
+        detail: str = "",
+        score: float = 0.0,
+        evidence: list[str] | None = None,
+        critical: bool = False,
+        applicability_rationale: str | None = None,
+        evidence_refs: list[str] | None = None,
+        catalog_id: str | None = None,
+        mandatory: bool = True,
+        criterion: str | None = None,
+    ) -> CheckResult:
+        """Explicit-outcome constructor (preferred for new code)."""
+        _ = criterion  # reserved for evidence-pack criterion text
+        return cls(
+            id=id,
+            team=team,
+            passed=outcome is CheckOutcome.PASS,
+            detail=detail,
+            score=score,
+            evidence=evidence or [],
+            critical=critical,
+            outcome=outcome,
+            applicability_rationale=applicability_rationale,
+            evidence_refs=evidence_refs or [],
+            catalog_id=catalog_id,
+            mandatory=mandatory,
+        )
 
 
 @dataclass

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import struct
 
-from uhbs_core.models import CheckResult, TargetSpec
+from uhbs_core.models import CheckOutcome, CheckResult, TargetSpec
 from uhbs_core.netutil import tcp_transact, udp_transact
 from uhbs_core.protocols.udp_base import UdpProtocolPlugin
 from uhbs_core.tps import TPS
@@ -212,9 +212,10 @@ class DNSPlugin(UdpProtocolPlugin):
                 CheckResult(
                     id="dns.nego.tcp_a",
                     team="blue",
-                    passed=False,
+                    outcome=CheckOutcome.NOT_TESTED,
                     detail=tcp_err or "no TCP DNS reply",
-                    score=50.0,
+                    score=0.0,
+                    mandatory=False,
                 )
             )
         else:

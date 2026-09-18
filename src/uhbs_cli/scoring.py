@@ -42,6 +42,18 @@ __all__ = [
     "weights_for_class",
 ]
 
+_INCOMPLETE_MODULE_STATUSES = frozenset(
+    {
+        "INCOMPLETE",
+        "NOT_MEASURED",
+        "NOT_TESTED",
+        "NOT_RUN",
+        "SKIPPED",
+        "N/A",
+        "ERROR",
+    }
+)
+
 
 @dataclass(frozen=True)
 class UhqsResult:
@@ -120,17 +132,18 @@ def assert_scorecard_integrity(
 
     declared_status = scorecard.get("assessment_status")
     declared_verdict = scorecard.get("critical_control_verdict") or (
-        (modules.get("D") or {}).get("critical_control_verdict")
-    )
+        (scorecard.get("safety_gate") or {}).get("critical_control_verdict")
+    ) or ((modules.get("D") or {}).get("critical_control_verdict"))
 
     d_mod = modules.get("D") or {}
     containment_measured = bool(scorecard.get("containment_measured", True))
-    if str(d_mod.get("status", "")).upper() in {
+    if str(d_mod.get("status", "")).upper().replace(" ", "_") in {
         "SKIPPED",
         "N/A",
         "NOT_RUN",
         "INCOMPLETE",
         "NOT_TESTED",
+        "NOT_MEASURED",
     }:
         containment_measured = False
     if scorecard.get("containment_measured") is False:
@@ -165,6 +178,7 @@ def assert_scorecard_integrity(
 
     declared_uhqs = scorecard.get("uhqs", -1)
     if result.uhqs is None:
+        # Ungraded: INCOMPLETE or GATE_FAILED — uhqs/grade must be null / absent.
         if declared_uhqs is not None:
             errors.append(f"uhqs={declared_uhqs!r} but recomputed ungraded (null)")
         declared_grade = scorecard.get("grade", None)
@@ -183,9 +197,11 @@ def assert_scorecard_integrity(
             if abs(declared_f - result.uhqs) > uhqs_tol:
                 errors.append(f"uhqs={declared_f} != recomputed {result.uhqs}")
 
-        declared_grade = str(scorecard.get("grade", ""))
+        declared_grade = scorecard.get("grade", None)
         expected_grade = letter_grade(result.uhqs)
-        if declared_grade and expected_grade and declared_grade != expected_grade:
+        if declared_grade is None:
+            errors.append(f"grade missing for graded UHQS (expected {expected_grade})")
+        elif expected_grade and str(declared_grade) != expected_grade:
             errors.append(f"grade={declared_grade} != recomputed {expected_grade}")
 
     gate = scorecard.get("safety_gate") or {}
@@ -202,13 +218,26 @@ def assert_scorecard_integrity(
     ):
         errors.append("safety_gate.containment_score != modules.D.score")
 
-    # Graded scorecards must not claim a grade while Module D is incomplete.
-    if result.graded and str(d_mod.get("status", "")).upper() in {
-        "INCOMPLETE",
-        "NOT_TESTED",
-        "SKIPPED",
-        "NOT_MEASURED",
-    }:
-        errors.append("graded scorecard with incomplete Module D")
+    gate_verdict = gate.get("critical_control_verdict")
+    if gate_verdict and str(gate_verdict) != result.critical_control_verdict.value:
+        errors.append(
+            f"safety_gate.critical_control_verdict={gate_verdict!r} != "
+            f"recomputed {result.critical_control_verdict.value}"
+        )
+
+    # Graded scorecards must not claim a grade while modules / critical verdict are incomplete.
+    if result.graded:
+        if result.critical_control_verdict is CriticalControlVerdict.INCOMPLETE:
+            errors.append("graded scorecard with INCOMPLETE critical_control_verdict")
+        if result.assessment_status is AssessmentStatus.INCOMPLETE:
+            errors.append("graded scorecard with assessment_status=INCOMPLETE")
+        for key in SCORE_KEYS:
+            mod = modules.get(key) or {}
+            status_s = str(mod.get("status", "")).upper().replace(" ", "_")
+            if mod.get("complete") is False or status_s in _INCOMPLETE_MODULE_STATUSES:
+                errors.append(f"graded scorecard with incomplete module {key}")
+                break
+        if str(d_mod.get("critical_control_verdict", "")).upper() == "INCOMPLETE":
+            errors.append("graded scorecard with Module D critical_control_verdict=INCOMPLETE")
 
     return errors
