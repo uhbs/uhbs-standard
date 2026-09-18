@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.6.1",
+  "uhbs_version": "5.0.0",
   "target": {
     "name": "Dionaea (HTTP :80)",
     "class": "Web-API",
@@ -12,24 +12,29 @@
       "score": 53.54,
       "status": "PARTIAL",
       "weight": 0.25,
-      "notes": "status=200"
+      "notes": "status=200",
+      "complete": true
     },
     "B": {
       "score": 82.5,
       "status": "PASSED",
       "weight": 0.2,
-      "notes": "survived binary blast"
+      "notes": "survived binary blast",
+      "complete": true
     },
     "C": {
       "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.2,
-      "notes": "no STIX objects found"
+      "notes": "no STIX objects found",
+      "complete": true
     },
     "D": {
       "score": 90.0,
-      "status": "PASSED",
-      "notes": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes"
+      "status": "GATE_FAILED",
+      "notes": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes",
+      "critical_control_verdict": "GATE_FAILED",
+      "complete": true
     },
     "E": {
       "score": 55.0,
@@ -38,13 +43,15 @@
       "notes": "P50=1023.8ms P95=1050.0ms P99=1052.8ms TPS_limit=150.0ms proto=http",
       "p50_ms": 1025.61,
       "p95_ms": 1148.84,
-      "p99_ms": 1162.06
+      "p99_ms": 1162.06,
+      "complete": true
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
       "weight": 0.2,
-      "notes": "bandit HIGH=9"
+      "notes": "bandit HIGH=9",
+      "complete": true
     }
   },
   "weights": {
@@ -56,11 +63,16 @@
   },
   "safety_gate": {
     "containment_score": 90.0,
-    "delta_c": 0.81,
+    "delta_c": 0.0,
     "passed": false,
+    "critical_control_verdict": "GATE_FAILED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 51.14,
-  "grade": "D",
-  "notes": "Evaluation proof only. Graded HTTP :80 on Dionaea. Artifacts under docs/conformance/reports/dionaea/http/."
+  "uhqs": null,
+  "grade": null,
+  "notes": "Evaluation proof only. Graded HTTP :80 on Dionaea. Artifacts under docs/conformance/reports/dionaea/http/. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0.0-critical-gate-binary. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
+  "scoring_model_id": "uhqs-v5.0.0-critical-gate-binary",
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }

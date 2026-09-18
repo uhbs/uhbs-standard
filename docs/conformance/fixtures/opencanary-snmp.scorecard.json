@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.6.1",
+  "uhbs_version": "5.0.0",
   "target": {
     "name": "OpenCanary (SNMP :161)",
     "class": "Low-Interaction",
@@ -12,36 +12,43 @@
       "score": 59.71,
       "status": "PARTIAL",
       "weight": 0.3,
-      "notes": ""
+      "notes": "",
+      "complete": true
     },
     "B": {
       "score": 62.5,
       "status": "PARTIAL",
       "weight": 0.15,
-      "notes": ""
+      "notes": "",
+      "complete": true
     },
     "C": {
       "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.25,
-      "notes": ""
+      "notes": "",
+      "complete": true
     },
     "D": {
       "score": 90.0,
-      "status": "PASSED",
-      "notes": ""
+      "status": "GATE_FAILED",
+      "notes": "",
+      "critical_control_verdict": "GATE_FAILED",
+      "complete": true
     },
     "E": {
       "score": 35.0,
       "status": "FAILED",
       "weight": 0.1,
-      "notes": ""
+      "notes": "",
+      "complete": true
     },
     "F": {
       "score": 70.0,
       "status": "PARTIAL",
       "weight": 0.2,
-      "notes": ""
+      "notes": "",
+      "complete": true
     }
   },
   "weights": {
@@ -53,11 +60,16 @@
   },
   "safety_gate": {
     "containment_score": 90.0,
-    "delta_c": 0.81,
+    "delta_c": 0.0,
     "passed": false,
+    "critical_control_verdict": "GATE_FAILED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 47.42,
-  "grade": "F",
-  "notes": "Evaluation proof only. OpenCanary snmp. Regraded 2026-07-27. Artifacts: docs/conformance/reports/opencanary/snmp/."
+  "uhqs": null,
+  "grade": null,
+  "notes": "Evaluation proof only. OpenCanary snmp. Regraded 2026-07-27. Artifacts: docs/conformance/reports/opencanary/snmp/. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0.0-critical-gate-binary. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
+  "scoring_model_id": "uhqs-v5.0.0-critical-gate-binary",
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }

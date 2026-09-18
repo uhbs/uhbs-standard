@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.6.1",
+  "uhbs_version": "5.0.0",
   "target": {
     "name": "Endlessh (skeeto SSH tarpit)",
     "class": "Low-Interaction",
@@ -12,24 +12,29 @@
       "score": 65.43,
       "status": "PARTIAL",
       "weight": 0.3,
-      "notes": "generic TCP connect/banner/timing n=1000; not RFC4253 SSH"
+      "notes": "generic TCP connect/banner/timing n=1000; not RFC4253 SSH",
+      "complete": true
     },
     "B": {
       "score": 62.5,
       "status": "PARTIAL",
       "weight": 0.15,
-      "notes": "survived binary blast"
+      "notes": "survived binary blast",
+      "complete": true
     },
     "C": {
       "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.25,
-      "notes": "text/Docker logs only \u2014 no STIX/OTel/ECS (capped)"
+      "notes": "text/Docker logs only \u2014 no STIX/OTel/ECS (capped)",
+      "complete": true
     },
     "D": {
       "score": 90.0,
-      "status": "GATE FAILED",
-      "notes": "No ports.ssh (tarpit-safe); airgap+gateway attested; Safety Gate not fully cleared (C<95)"
+      "status": "GATE_FAILED",
+      "notes": "No ports.ssh (tarpit-safe); airgap+gateway attested; Safety Gate not fully cleared (C<95)",
+      "critical_control_verdict": "GATE_FAILED",
+      "complete": true
     },
     "E": {
       "score": 100.0,
@@ -38,13 +43,15 @@
       "notes": "200 TCP connects @25 concurrency; P95=7.2ms",
       "p50_ms": 10.71,
       "p95_ms": 64.34,
-      "p99_ms": 86.71
+      "p99_ms": 86.71,
+      "complete": true
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
       "weight": 0.2,
-      "notes": "semgrep error/critical present; SAST gate capped Module F at 70"
+      "notes": "semgrep error/critical present; SAST gate capped Module F at 70",
+      "complete": true
     }
   },
   "weights": {
@@ -56,11 +63,16 @@
   },
   "safety_gate": {
     "containment_score": 90.0,
-    "delta_c": 0.81,
+    "delta_c": 0.0,
     "passed": false,
+    "critical_control_verdict": "GATE_FAILED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 54.07,
-  "grade": "D",
-  "notes": "Detailed evaluation proof only. Graded with generic plugin protocol id ssh_tarpit \u2014 not SSH/Paramiko. Full Docker lab artifacts live under docs/conformance/reports/endlessh/."
+  "uhqs": null,
+  "grade": null,
+  "notes": "Detailed evaluation proof only. Graded with generic plugin protocol id ssh_tarpit \u2014 not SSH/Paramiko. Full Docker lab artifacts live under docs/conformance/reports/endlessh/. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0.0-critical-gate-binary. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
+  "scoring_model_id": "uhqs-v5.0.0-critical-gate-binary",
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }

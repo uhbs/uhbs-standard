@@ -281,7 +281,8 @@ def test_empty_tools_ceiling(mcp_server) -> None:
     payload = plugin.probe_payload(host, port, t, None)
     echo = next(c for c in payload if c.id == "mcp.payload.tool_echo")
     assert "NEUTRAL_NO_SURFACE" in echo.detail
-    assert echo.score == 50.0
+    assert echo.score == 0.0
+    assert echo.outcome.value == "NOT_APPLICABLE"
     assert t.annotations.get("mcp_surface_depth") == "metadata_only"
     b = run_module_b(t)
     assert b.score <= 50.0
@@ -296,7 +297,8 @@ def test_high_risk_schema_denylist(mcp_server) -> None:
     payload = plugin.probe_payload(host, port, t, None)
     echo = next(c for c in payload if c.id == "mcp.payload.tool_echo")
     assert "SKIPPED_HIGH_RISK_TOOL" in echo.detail
-    assert echo.score == 50.0
+    assert echo.score == 0.0
+    assert echo.outcome.value == "NOT_APPLICABLE"
 
 
 def test_schema_denylist_helper() -> None:

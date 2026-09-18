@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/uhbs/uhbs-standard/raw/main/schemas/profile.schema.json",
   "title": "UHBS Target Profile Specification (TPS)",
-  "description": "Machine-readable Target Profile Specification (profile.yaml) required before UHBS evaluation.",
+  "description": "Machine-readable Target Profile Specification (profile.yaml) required before UHBS evaluation (v5).",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -15,8 +15,8 @@
   "properties": {
     "uhbs_version": {
       "type": "string",
-      "const": "4.6.1",
-      "description": "Specification version this profile targets."
+      "pattern": "^5\\.0\\.0$",
+      "description": "Specification version this profile targets (5.0.0)."
     },
     "target_metadata": {
       "type": "object",
@@ -45,15 +45,9 @@
           "minLength": 1,
           "description": "Primary protocol identifier (e.g., ssh, modbus-tcp, https)."
         },
-        "description": {
-          "type": "string"
-        },
-        "vendor": {
-          "type": "string"
-        },
-        "version": {
-          "type": "string"
-        }
+        "description": { "type": "string" },
+        "vendor": { "type": "string" },
+        "version": { "type": "string" }
       }
     },
     "performance_baseline": {
@@ -84,9 +78,7 @@
       "properties": {
         "allowed_outbound": {
           "type": "array",
-          "items": {
-            "type": "string"
-          },
+          "items": { "type": "string" },
           "description": "Explicit allow-list of outbound destinations or CIDR/service labels. Empty means deny-all except audit gateway."
         },
         "allow_local_code_execution": {
@@ -97,9 +89,7 @@
           "type": "boolean",
           "default": true
         },
-        "notes": {
-          "type": "string"
-        }
+        "notes": { "type": "string" }
       }
     },
     "module_weights": {
@@ -119,16 +109,24 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
+        "native_event_format": {
+          "type": "string",
+          "description": "Primary native event format declared by the decoy (e.g. native_json, ecs, ocsf, otlp, stix21)."
+        },
+        "export_formats": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Optional additional export formats validators may check when claimed."
+        },
         "formats": {
           "type": "array",
           "items": {
             "type": "string",
             "enum": ["STIX-2.1", "OpenTelemetry", "ECS"]
-          }
+          },
+          "description": "Legacy display-oriented format labels (prefer native_event_format / export_formats)."
         },
-        "mitre_attack_mapping": {
-          "type": "boolean"
-        }
+        "mitre_attack_mapping": { "type": "boolean" }
       }
     }
   }

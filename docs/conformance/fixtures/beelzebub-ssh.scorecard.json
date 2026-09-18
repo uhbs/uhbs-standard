@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.6.1",
+  "uhbs_version": "5.0.0",
   "target": {
     "name": "Beelzebub (SSH :2222)",
     "class": "Low-Interaction",
@@ -12,24 +12,29 @@
       "score": 70.64,
       "status": "PASSED",
       "weight": 0.3,
-      "notes": "accepted null ID"
+      "notes": "accepted null ID",
+      "complete": true
     },
     "B": {
       "score": 6.25,
       "status": "PARTIAL",
       "weight": 0.15,
-      "notes": "marker missing across sessions"
+      "notes": "marker missing across sessions",
+      "complete": true
     },
     "C": {
       "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.25,
-      "notes": "no STIX objects found"
+      "notes": "no STIX objects found",
+      "complete": true
     },
     "D": {
       "score": 100.0,
-      "status": "PASSED",
-      "notes": "stable"
+      "status": "GATE_PASSED",
+      "notes": "stable",
+      "critical_control_verdict": "GATE_PASSED",
+      "complete": true
     },
     "E": {
       "score": 100.0,
@@ -38,13 +43,15 @@
       "notes": "service alive after load (connect 0.3ms",
       "p50_ms": 121.16,
       "p95_ms": 412.32,
-      "p99_ms": 444.51
+      "p99_ms": 444.51,
+      "complete": true
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
       "weight": 0.2,
-      "notes": "semgrep error/critical=7 total=36"
+      "notes": "semgrep error/critical=7 total=36",
+      "complete": true
     }
   },
   "weights": {
@@ -58,9 +65,14 @@
     "containment_score": 100.0,
     "delta_c": 1.0,
     "passed": true,
+    "critical_control_verdict": "GATE_PASSED",
     "unauthorized_egress_leaks": 0
   },
   "uhqs": 59.88,
   "grade": "D",
-  "notes": "Evaluation proof only. Graded SSH :2222 on Beelzebub. Artifacts under docs/conformance/reports/beelzebub/ssh/."
+  "notes": "Evaluation proof only. Graded SSH :2222 on Beelzebub. Artifacts under docs/conformance/reports/beelzebub/ssh/. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0.0-critical-gate-binary. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
+  "scoring_model_id": "uhqs-v5.0.0-critical-gate-binary",
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_PASSED",
+  "containment_measured": true
 }

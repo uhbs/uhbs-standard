@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.6.1",
+  "uhbs_version": "5.0.0",
   "target": {
     "name": "Trapster Community (HTTP :8080)",
     "class": "Web-API",
@@ -12,24 +12,29 @@
       "score": 86.75,
       "status": "PASSED",
       "weight": 0.25,
-      "notes": "status=200 (want 400/505 or close"
+      "notes": "status=200 (want 400/505 or close",
+      "complete": true
     },
     "B": {
       "score": 82.5,
       "status": "PASSED",
       "weight": 0.2,
-      "notes": "survived binary blast"
+      "notes": "survived binary blast",
+      "complete": true
     },
     "C": {
       "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.2,
-      "notes": "no STIX objects found"
+      "notes": "no STIX objects found",
+      "complete": true
     },
     "D": {
       "score": 90.0,
-      "status": "PASSED",
-      "notes": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes"
+      "status": "GATE_FAILED",
+      "notes": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes",
+      "critical_control_verdict": "GATE_FAILED",
+      "complete": true
     },
     "E": {
       "score": 100.0,
@@ -38,13 +43,15 @@
       "notes": "service alive after load (connect 0.1ms",
       "p50_ms": 2.28,
       "p95_ms": 6.49,
-      "p99_ms": 8.54
+      "p99_ms": 8.54,
+      "complete": true
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
       "weight": 0.2,
-      "notes": "1 predictable PRNG seeds: trapster/modules/http.py"
+      "notes": "1 predictable PRNG seeds: trapster/modules/http.py",
+      "complete": true
     }
   },
   "weights": {
@@ -56,11 +63,16 @@
   },
   "safety_gate": {
     "containment_score": 90.0,
-    "delta_c": 0.81,
+    "delta_c": 0.0,
     "passed": false,
+    "critical_control_verdict": "GATE_FAILED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 63.33,
-  "grade": "D",
-  "notes": "Evaluation proof only. Graded HTTP :8080 on Trapster Community. Artifacts under docs/conformance/reports/trapster/http/."
+  "uhqs": null,
+  "grade": null,
+  "notes": "Evaluation proof only. Graded HTTP :8080 on Trapster Community. Artifacts under docs/conformance/reports/trapster/http/. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0.0-critical-gate-binary. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
+  "scoring_model_id": "uhqs-v5.0.0-critical-gate-binary",
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }

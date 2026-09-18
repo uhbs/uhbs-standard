@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.6.1",
+  "uhbs_version": "5.0.0",
   "target": {
     "name": "echidra (Qyleron/EchidraOSS SSH honeypot)",
     "class": "Low-Interaction",
@@ -12,24 +12,29 @@
       "score": 21.5,
       "status": "PARTIAL",
       "weight": 0.3,
-      "notes": "SSH RFC4253; accepted null ID; n=1000 timing"
+      "notes": "SSH RFC4253; accepted null ID; n=1000 timing",
+      "complete": true
     },
     "B": {
       "score": 25.0,
       "status": "PARTIAL",
       "weight": 0.15,
-      "notes": "cross-session marker missing"
+      "notes": "cross-session marker missing",
+      "complete": true
     },
     "C": {
       "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.25,
-      "notes": "sessions.jsonl present \u2014 no STIX/OTel/ECS (schema-capped)"
+      "notes": "sessions.jsonl present \u2014 no STIX/OTel/ECS (schema-capped)",
+      "complete": true
     },
     "D": {
       "score": 100.0,
-      "status": "GATE PASSED",
-      "notes": "SSH shell egress probes blocked; C>=95"
+      "status": "GATE_PASSED",
+      "notes": "SSH shell egress probes blocked; C>=95",
+      "critical_control_verdict": "GATE_PASSED",
+      "complete": true
     },
     "E": {
       "score": 55.0,
@@ -38,13 +43,15 @@
       "notes": "SSH session load P95>>100ms",
       "p50_ms": 1315.8,
       "p95_ms": 1813.5,
-      "p99_ms": 1858.7
+      "p99_ms": 1858.7,
+      "complete": true
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
       "weight": 0.2,
-      "notes": "hardcoded SSH banner + SAST gate capped F at 70"
+      "notes": "hardcoded SSH banner + SAST gate capped F at 70",
+      "complete": true
     }
   },
   "weights": {
@@ -58,9 +65,14 @@
     "containment_score": 100.0,
     "delta_c": 1.0,
     "passed": true,
+    "critical_control_verdict": "GATE_PASSED",
     "unauthorized_egress_leaks": 0
   },
   "uhqs": 43.45,
   "grade": "F",
-  "notes": "Evaluation proof only. Echidra product name is not a UHBS requirement. SSH-primary grade on container :2222 with root/admin. Artifacts: docs/conformance/reports/echidra/."
+  "notes": "Evaluation proof only. Echidra product name is not a UHBS requirement. SSH-primary grade on container :2222 with root/admin. Artifacts: docs/conformance/reports/echidra/. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0.0-critical-gate-binary. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
+  "scoring_model_id": "uhqs-v5.0.0-critical-gate-binary",
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_PASSED",
+  "containment_measured": true
 }

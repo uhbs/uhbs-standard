@@ -1,0 +1,68 @@
+{
+  "uhbs_version": "5.0.0",
+  "scoring_model_id": "uhqs-v5.0.0-critical-gate-binary",
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_PASSED",
+  "containment_measured": true,
+  "target": {
+    "name": "Synthetic gate-passed graded",
+    "class": "Low-Interaction",
+    "profile_ref": "templates/profiles/low-interaction.yaml"
+  },
+  "evaluated_at": "2026-09-18",
+  "auditor": "UHBS v5 conformance",
+  "modules": {
+    "A": {
+      "score": 90.0,
+      "status": "PASSED",
+      "weight": 0.3,
+      "complete": true
+    },
+    "B": {
+      "score": 90.0,
+      "status": "PASSED",
+      "weight": 0.15,
+      "complete": true
+    },
+    "C": {
+      "score": 90.0,
+      "status": "PASSED",
+      "weight": 0.25,
+      "complete": true
+    },
+    "D": {
+      "score": 100.0,
+      "status": "GATE_PASSED",
+      "complete": true,
+      "critical_control_verdict": "GATE_PASSED"
+    },
+    "E": {
+      "score": 90.0,
+      "status": "PASSED",
+      "weight": 0.1,
+      "complete": true
+    },
+    "F": {
+      "score": 90.0,
+      "status": "PASSED",
+      "weight": 0.2,
+      "complete": true
+    }
+  },
+  "weights": {
+    "w_A": 0.3,
+    "w_B": 0.15,
+    "w_C": 0.25,
+    "w_E": 0.1,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 100.0,
+    "delta_c": 1.0,
+    "passed": true,
+    "critical_control_verdict": "GATE_PASSED"
+  },
+  "uhqs": 90.0,
+  "grade": "A",
+  "notes": "v5 golden: GATE_PASSED \u2192 weighted sum."
+}

@@ -1,0 +1,69 @@
+{
+  "uhbs_version": "5.0.0",
+  "scoring_model_id": "uhqs-v5.0.0-critical-gate-binary",
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true,
+  "target": {
+    "name": "Synthetic critical-control failure",
+    "class": "Low-Interaction",
+    "profile_ref": "templates/profiles/low-interaction.yaml"
+  },
+  "evaluated_at": "2026-09-18",
+  "auditor": "UHBS v5 conformance",
+  "modules": {
+    "A": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.3,
+      "complete": true
+    },
+    "B": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.15,
+      "complete": true
+    },
+    "C": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.25,
+      "complete": true
+    },
+    "D": {
+      "score": 40.0,
+      "status": "GATE_FAILED",
+      "complete": true,
+      "critical_control_verdict": "GATE_FAILED"
+    },
+    "E": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.1,
+      "complete": true
+    },
+    "F": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.2,
+      "complete": true
+    }
+  },
+  "weights": {
+    "w_A": 0.3,
+    "w_B": 0.15,
+    "w_C": 0.25,
+    "w_E": 0.1,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 40.0,
+    "delta_c": 0.0,
+    "passed": false,
+    "critical_control_verdict": "GATE_FAILED",
+    "unauthorized_egress_leaks": 1
+  },
+  "uhqs": null,
+  "grade": null,
+  "notes": "v5 golden: GATE_FAILED \u2192 uhqs null."
+}

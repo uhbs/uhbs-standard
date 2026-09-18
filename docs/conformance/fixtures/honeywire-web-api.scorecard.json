@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.6.1",
+  "uhbs_version": "5.0.0",
   "target": {
     "name": "HoneyWire WebRouterDecoy (andreicscs)",
     "class": "Web-API",
@@ -12,36 +12,43 @@
       "score": 100.0,
       "status": "PASSED",
       "weight": 0.25,
-      "notes": "fsm=100 nego=100 timing=100"
+      "notes": "fsm=100 nego=100 timing=100",
+      "complete": true
     },
     "B": {
       "score": 82.5,
       "status": "PASSED",
       "weight": 0.2,
-      "notes": "survived binary blast"
+      "notes": "survived binary blast",
+      "complete": true
     },
     "C": {
       "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.2,
-      "notes": "no STIX objects found (events go to HoneyWire Hub API, not harness telemetry schemas)"
+      "notes": "no STIX objects found (events go to HoneyWire Hub API, not harness telemetry schemas)",
+      "complete": true
     },
     "D": {
       "score": 75.0,
-      "status": "GATE FAILED",
-      "notes": "UHBS_AIRGAP_ATTESTED=1; Safety Gate not fully cleared (C<95)"
+      "status": "GATE_FAILED",
+      "notes": "UHBS_AIRGAP_ATTESTED=1; Safety Gate not fully cleared (C<95)",
+      "critical_control_verdict": "GATE_FAILED",
+      "complete": true
     },
     "E": {
       "score": 100.0,
       "status": "PASSED",
       "weight": 0.15,
-      "notes": "service alive after load"
+      "notes": "service alive after load",
+      "complete": true
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
       "weight": 0.2,
-      "notes": "POSIX coverage 0% (0/104); SAST tools skipped"
+      "notes": "POSIX coverage 0% (0/104); SAST tools skipped",
+      "complete": true
     }
   },
   "weights": {
@@ -53,11 +60,16 @@
   },
   "safety_gate": {
     "containment_score": 75.0,
-    "delta_c": 0.5625,
+    "delta_c": 0.0,
     "passed": false,
+    "critical_control_verdict": "GATE_FAILED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 45.84,
-  "grade": "F",
-  "notes": "Graded surface is the official WebRouterDecoy sensor (Netgear router lure), not the Hub UI. TcpTarpit / FileCanary / ICMP / NetworkScanDetector were not graded in this round. Product name is evaluation proof only."
+  "uhqs": null,
+  "grade": null,
+  "notes": "Graded surface is the official WebRouterDecoy sensor (Netgear router lure), not the Hub UI. TcpTarpit / FileCanary / ICMP / NetworkScanDetector were not graded in this round. Product name is evaluation proof only. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0.0-critical-gate-binary. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
+  "scoring_model_id": "uhqs-v5.0.0-critical-gate-binary",
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }

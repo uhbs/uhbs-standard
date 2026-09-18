@@ -2,6 +2,13 @@
 
 **Status:** Normative (fixtures) / Informative (narrative + lab reports)
 
+!!! warning "UHBS v4.6.1 historical scoring model"
+    Lab report pages under `docs/conformance/reports/` keep stable URLs and may
+    cite DOI-era grades under UHQS 4.x. They are **historical**. New evaluations
+    use UHBS **5.0.0** / `scoring_model_id=uhqs-v5.0-critical-gate-diagnostic`
+    ([RFC 0003](../rfcs/0003-scoring-assurance.md)). Archived v4 fixtures:
+    [`archive/v4.6.1/`](archive/v4.6.1/).
+
 This section is **evaluation proof**: finished scorecards and Docker lab recipes
 for named honeypots. It is **not** the “how to install UHBS” guide.
 

@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.6.1",
+  "uhbs_version": "5.0.0",
   "target": {
     "name": "Cowrie (Low-Interaction / SSH)",
     "class": "Low-Interaction",
@@ -12,36 +12,43 @@
       "score": 57.07,
       "status": "PARTIAL",
       "weight": 0.3,
-      "notes": ""
+      "notes": "",
+      "complete": true
     },
     "B": {
       "score": 60.0,
       "status": "PARTIAL",
       "weight": 0.15,
-      "notes": ""
+      "notes": "",
+      "complete": true
     },
     "C": {
       "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.25,
-      "notes": ""
+      "notes": "",
+      "complete": true
     },
     "D": {
       "score": 100.0,
-      "status": "PASSED",
-      "notes": ""
+      "status": "GATE_PASSED",
+      "notes": "",
+      "critical_control_verdict": "GATE_PASSED",
+      "complete": true
     },
     "E": {
       "score": 75.0,
       "status": "PARTIAL",
       "weight": 0.1,
-      "notes": ""
+      "notes": "",
+      "complete": true
     },
     "F": {
       "score": 70.0,
       "status": "PARTIAL",
       "weight": 0.2,
-      "notes": ""
+      "notes": "",
+      "complete": true
     }
   },
   "weights": {
@@ -55,14 +62,29 @@
     "containment_score": 100.0,
     "delta_c": 1.0,
     "passed": true,
+    "critical_control_verdict": "GATE_PASSED",
     "unauthorized_egress_leaks": 0
   },
   "uhqs": 61.37,
   "grade": "D",
-  "notes": "Evaluation proof only. Live Cowrie SSH full lab (aliases cowrie-ssh fixture). Regraded 2026-07-27.",
+  "notes": "Evaluation proof only. Live Cowrie SSH full lab (aliases cowrie-ssh fixture). Regraded 2026-07-27. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0.0-critical-gate-binary. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
   "framework_refs": {
-    "attack": ["T1595", "T1059", "T1105"],
-    "d3fend": ["D3-DNR", "D3-SHN"],
-    "engage_goals": ["Elicit", "Expose"]
-  }
+    "attack": [
+      "T1595",
+      "T1059",
+      "T1105"
+    ],
+    "d3fend": [
+      "D3-DNR",
+      "D3-SHN"
+    ],
+    "engage_goals": [
+      "Elicit",
+      "Expose"
+    ]
+  },
+  "scoring_model_id": "uhqs-v5.0.0-critical-gate-binary",
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_PASSED",
+  "containment_measured": true
 }

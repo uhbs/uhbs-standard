@@ -3,7 +3,7 @@
 **Status:** Informative  
 **Purpose:** Published, reproducible UHBS-Lab outputs for named honeypots / decoys so the community can **audit**, **replicate**, and **compare** grades — not so UHBS can endorse products.
 
-> UHBS is an open-source **evaluation framework** (v4.6.1).  
+> UHBS is an open-source **evaluation framework** (v5.0.0).  
 > Named products appear **only** under `docs/conformance/` as evaluation proof.  
 > A grade is not a certification, badge program, or consortium verdict.
 
@@ -11,10 +11,15 @@
     For install + validate + score (no Docker honeypot), use
     **[Install & use UHBS](../../tooling/install-and-use.md)**.
 
+!!! warning "Historical v4 grades"
+    Existing report URLs remain resolvable. Grades produced under UHQS 4.x are
+    **historical** relative to `scoring_model_id=uhqs-v5.0-critical-gate-diagnostic`.
+    See [RFC 0003](../../rfcs/0003-scoring-assurance.md).
+
 !!! note "Scorecard banners vs current package"
     Verbatim `SCORECARD.txt` / `REPORT.txt` files keep the harness version
     stamped at **lab run time** (for example `SCORECARD v4.0.1`). That is
-    historical proof. Rebuild recipes and this site use **UHBS 4.6.1** today.
+    historical proof. Rebuild recipes and this site use **UHBS 5.0.0** today.
 
 ## How to use this directory
 

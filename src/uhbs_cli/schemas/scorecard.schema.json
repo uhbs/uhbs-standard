@@ -1,23 +1,42 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/uhbs/uhbs-standard/raw/main/schemas/scorecard.schema.json",
-  "title": "UHBS Benchmark Scorecard",
-  "description": "Standardized UHBS v4.6.1 evaluation scorecard output.",
+  "title": "UHBS Benchmark Scorecard (v5)",
+  "description": "UHBS 5.0 evaluation scorecard under scoring_model_id uhqs-v5.0.0-critical-gate-binary. Incomplete or GATE_FAILED assessments MUST set uhqs/grade to null (do not invent letter U).",
   "type": "object",
   "additionalProperties": false,
   "required": [
+    "scoring_model_id",
+    "assessment_status",
     "uhbs_version",
     "target",
     "evaluated_at",
     "modules",
-    "safety_gate",
-    "uhqs",
-    "grade"
+    "safety_gate"
   ],
   "properties": {
     "uhbs_version": {
       "type": "string",
-      "const": "4.6.1"
+      "pattern": "^5\\.0\\.0$",
+      "description": "UHBS specification version (5.0.0)."
+    },
+    "scoring_model_id": {
+      "type": "string",
+      "const": "uhqs-v5.0.0-critical-gate-binary",
+      "description": "Immutable scoring model identity (not merely uhbs_version)."
+    },
+    "assessment_status": {
+      "type": "string",
+      "enum": ["COMPLETE", "INCOMPLETE"]
+    },
+    "critical_control_verdict": {
+      "type": "string",
+      "enum": ["GATE_PASSED", "GATE_FAILED", "INCOMPLETE"],
+      "description": "Top-level copy of the critical-control verdict (also recorded under safety_gate / modules.D)."
+    },
+    "containment_measured": {
+      "type": "boolean",
+      "description": "False when Module D critical controls were not executed."
     },
     "target": {
       "type": "object",
@@ -47,9 +66,7 @@
       "format": "date",
       "description": "ISO-8601 date of evaluation (YYYY-MM-DD)."
     },
-    "auditor": {
-      "type": "string"
-    },
+    "auditor": { "type": "string" },
     "modules": {
       "type": "object",
       "additionalProperties": false,
@@ -78,23 +95,33 @@
     "safety_gate": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["containment_score", "delta_c", "passed"],
+      "required": ["critical_control_verdict", "delta_c", "passed"],
       "properties": {
-        "containment_score": {
-          "type": "number",
-          "minimum": 0,
-          "maximum": 100,
-          "description": "Module D containment score C."
+        "critical_control_verdict": {
+          "type": "string",
+          "enum": ["GATE_PASSED", "GATE_FAILED", "INCOMPLETE"]
         },
         "delta_c": {
           "type": "number",
           "minimum": 0,
           "maximum": 1,
-          "description": "Safety Gate multiplier δ_C."
+          "description": "Safety Gate multiplier δ_C (1.0 only when GATE_PASSED)."
         },
         "passed": {
           "type": "boolean",
-          "description": "True when C >= 95 (no exponential penalty)."
+          "description": "True only when critical_control_verdict is GATE_PASSED."
+        },
+        "containment_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Optional Module D defense-in-depth score C (diagnostic)."
+        },
+        "defense_in_depth_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Optional alias for diagnostic Module D defense-in-depth score."
         },
         "unauthorized_egress_leaks": {
           "type": "integer",
@@ -103,19 +130,22 @@
       }
     },
     "uhqs": {
-      "type": "number",
+      "type": ["number", "null"],
       "minimum": 0,
       "maximum": 100,
-      "description": "Final composite Universal Honeypot Quality Score."
+      "description": "Composite UHQS, or null when Ungraded (INCOMPLETE / GATE_FAILED)."
     },
     "grade": {
-      "type": "string",
-      "enum": ["A", "B", "C", "D", "F"],
-      "description": "Letter grade derived from UHQS."
+      "type": ["string", "null"],
+      "enum": ["A", "B", "C", "D", "F", null],
+      "description": "Letter grade for completed GATE_PASSED assessments only. Not required when Ungraded; do not invent U."
     },
-    "notes": {
-      "type": "string"
+    "collection_capability": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Informative Collection Capability Profile (does not alter UHQS)."
     },
+    "notes": { "type": "string" },
     "framework_refs": {
       "type": "object",
       "additionalProperties": false,
@@ -182,10 +212,14 @@
         "score": { "type": "number", "minimum": 0, "maximum": 100 },
         "status": {
           "type": "string",
-          "enum": ["PASSED", "PARTIAL", "FAILED", "SKIPPED"]
+          "enum": ["PASSED", "PARTIAL", "FAILED", "SKIPPED", "INCOMPLETE"]
         },
         "weight": { "type": "number", "minimum": 0, "maximum": 1 },
-        "notes": { "type": "string" }
+        "notes": { "type": "string" },
+        "complete": { "type": "boolean" },
+        "coverage": { "type": "number", "minimum": 0, "maximum": 1 },
+        "applicable_checks": { "type": "integer", "minimum": 0 },
+        "scored_checks": { "type": "integer", "minimum": 0 }
       }
     },
     "moduleDResult": {
@@ -196,9 +230,25 @@
         "score": { "type": "number", "minimum": 0, "maximum": 100 },
         "status": {
           "type": "string",
-          "enum": ["GATE PASSED", "GATE FAILED", "PASSED", "FAILED"]
+          "enum": [
+            "GATE PASSED",
+            "GATE FAILED",
+            "GATE_PASSED",
+            "GATE_FAILED",
+            "PASSED",
+            "FAILED",
+            "INCOMPLETE"
+          ]
         },
-        "notes": { "type": "string" }
+        "notes": { "type": "string" },
+        "critical_control_verdict": {
+          "type": "string",
+          "enum": ["GATE_PASSED", "GATE_FAILED", "INCOMPLETE"]
+        },
+        "complete": { "type": "boolean" },
+        "coverage": { "type": "number", "minimum": 0, "maximum": 1 },
+        "applicable_checks": { "type": "integer", "minimum": 0 },
+        "scored_checks": { "type": "integer", "minimum": 0 }
       }
     },
     "moduleEResult": {
@@ -209,13 +259,17 @@
         "score": { "type": "number", "minimum": 0, "maximum": 100 },
         "status": {
           "type": "string",
-          "enum": ["PASSED", "PARTIAL", "FAILED", "SKIPPED"]
+          "enum": ["PASSED", "PARTIAL", "FAILED", "SKIPPED", "INCOMPLETE"]
         },
         "weight": { "type": "number", "minimum": 0, "maximum": 1 },
         "notes": { "type": "string" },
         "p50_ms": { "type": "number", "minimum": 0 },
         "p95_ms": { "type": "number", "minimum": 0 },
-        "p99_ms": { "type": "number", "minimum": 0 }
+        "p99_ms": { "type": "number", "minimum": 0 },
+        "complete": { "type": "boolean" },
+        "coverage": { "type": "number", "minimum": 0, "maximum": 1 },
+        "applicable_checks": { "type": "integer", "minimum": 0 },
+        "scored_checks": { "type": "integer", "minimum": 0 }
       }
     },
     "moduleFResult": {
@@ -226,12 +280,16 @@
         "score": { "type": "number", "minimum": 0, "maximum": 100 },
         "status": {
           "type": "string",
-          "enum": ["PASSED", "PARTIAL", "FAILED", "SKIPPED"]
+          "enum": ["PASSED", "PARTIAL", "FAILED", "SKIPPED", "INCOMPLETE"]
         },
         "weight": { "type": "number", "minimum": 0, "maximum": 1 },
         "notes": { "type": "string" },
         "critical_findings": { "type": "integer", "minimum": 0 },
-        "high_findings": { "type": "integer", "minimum": 0 }
+        "high_findings": { "type": "integer", "minimum": 0 },
+        "complete": { "type": "boolean" },
+        "coverage": { "type": "number", "minimum": 0, "maximum": 1 },
+        "applicable_checks": { "type": "integer", "minimum": 0 },
+        "scored_checks": { "type": "integer", "minimum": 0 }
       }
     }
   }

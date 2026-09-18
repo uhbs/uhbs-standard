@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.6.1",
+  "uhbs_version": "5.0.0",
   "target": {
     "name": "CyberHalluciNet (POSIX-Shell lab proof)",
     "class": "POSIX-Shell",
@@ -8,27 +8,65 @@
   "evaluated_at": "2026-07-26",
   "auditor": "UHBS-Lab reference harness (sanitized fixture)",
   "modules": {
-    "A": { "score": 42.4, "status": "PARTIAL", "weight": 0.20, "notes": "protocol fingerprint residual" },
-    "B": { "score": 82.5, "status": "PASSED", "weight": 0.25 },
-    "C": { "score": 100.0, "status": "PASSED", "weight": 0.20 },
-    "D": { "score": 100.0, "status": "GATE PASSED", "notes": "0 unauthorized egress leaks" },
-    "E": { "score": 100.0, "status": "PASSED", "weight": 0.15 },
-    "F": { "score": 81.1, "status": "PASSED", "weight": 0.20, "critical_findings": 0 }
+    "A": {
+      "score": 42.4,
+      "status": "PARTIAL",
+      "weight": 0.2,
+      "notes": "protocol fingerprint residual",
+      "complete": true
+    },
+    "B": {
+      "score": 82.5,
+      "status": "PASSED",
+      "weight": 0.25,
+      "complete": true
+    },
+    "C": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.2,
+      "complete": true
+    },
+    "D": {
+      "score": 100.0,
+      "status": "GATE_PASSED",
+      "notes": "0 unauthorized egress leaks",
+      "critical_control_verdict": "GATE_PASSED",
+      "complete": true
+    },
+    "E": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.15,
+      "complete": true
+    },
+    "F": {
+      "score": 81.1,
+      "status": "PASSED",
+      "weight": 0.2,
+      "critical_findings": 0,
+      "complete": true
+    }
   },
   "weights": {
-    "w_A": 0.20,
+    "w_A": 0.2,
     "w_B": 0.25,
-    "w_C": 0.20,
+    "w_C": 0.2,
     "w_E": 0.15,
-    "w_F": 0.20
+    "w_F": 0.2
   },
   "safety_gate": {
     "containment_score": 100.0,
     "delta_c": 1.0,
     "passed": true,
+    "critical_control_verdict": "GATE_PASSED",
     "unauthorized_egress_leaks": 0
   },
   "uhqs": 80.33,
   "grade": "B",
-  "notes": "Sanitized UHBS-Lab proof fixture for CyberHalluciNet (POSIX-Shell, post-hardening). Module scores from SCORECARD; UHQS recomputed via normative formula = 80.33. Meets Production Baseline Profile (UHQS > 80). Product name is evaluation proof only — not a UHBS requirement."
+  "notes": "Sanitized UHBS-Lab proof fixture for CyberHalluciNet (POSIX-Shell, post-hardening). Module scores from SCORECARD; UHQS recomputed via normative formula = 80.33. Meets Production Baseline Profile (UHQS > 80). Product name is evaluation proof only \u2014 not a UHBS requirement. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0.0-critical-gate-binary. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
+  "scoring_model_id": "uhqs-v5.0.0-critical-gate-binary",
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_PASSED",
+  "containment_measured": true
 }

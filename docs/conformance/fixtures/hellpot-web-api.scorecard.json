@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.6.1",
+  "uhbs_version": "5.0.0",
   "target": {
     "name": "HellPot (HTTP tarpit / Web-API)",
     "class": "Web-API",
@@ -12,36 +12,43 @@
       "score": 86.75,
       "status": "PASSED",
       "weight": 0.25,
-      "notes": "status=200 (want 400/505 or close); CheckResult scores on 0–100 scale"
+      "notes": "status=200 (want 400/505 or close); CheckResult scores on 0\u2013100 scale",
+      "complete": true
     },
     "B": {
       "score": 82.5,
       "status": "PASSED",
       "weight": 0.2,
-      "notes": "survived binary blast"
+      "notes": "survived binary blast",
+      "complete": true
     },
     "C": {
       "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.2,
-      "notes": "no STIX objects found (schema-capped)"
+      "notes": "no STIX objects found (schema-capped)",
+      "complete": true
     },
     "D": {
       "score": 75.0,
-      "status": "GATE FAILED",
-      "notes": "UHBS_AIRGAP_ATTESTED=1; Safety Gate not fully cleared (C<95)"
+      "status": "GATE_FAILED",
+      "notes": "UHBS_AIRGAP_ATTESTED=1; Safety Gate not fully cleared (C<95)",
+      "critical_control_verdict": "GATE_FAILED",
+      "complete": true
     },
     "E": {
       "score": 100.0,
       "status": "PASSED",
       "weight": 0.15,
-      "notes": "service alive after load (connect 0.1ms)"
+      "notes": "service alive after load (connect 0.1ms)",
+      "complete": true
     },
     "F": {
       "score": 69.0,
       "status": "PARTIAL",
       "weight": 0.2,
-      "notes": "POSIX coverage 0% (0/104)"
+      "notes": "POSIX coverage 0% (0/104)",
+      "complete": true
     }
   },
   "weights": {
@@ -53,16 +60,30 @@
   },
   "safety_gate": {
     "containment_score": 75.0,
-    "delta_c": 0.5625,
+    "delta_c": 0.0,
     "passed": false,
+    "critical_control_verdict": "GATE_FAILED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 43.87,
-  "grade": "F",
-  "notes": "Evaluation proof only. HellPot product name is not a UHBS requirement. Full lab artifacts: docs/conformance/reports/HellPot/.",
+  "uhqs": null,
+  "grade": null,
+  "notes": "Evaluation proof only. HellPot product name is not a UHBS requirement. Full lab artifacts: docs/conformance/reports/HellPot/. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0.0-critical-gate-binary. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
   "framework_refs": {
-    "attack": ["T1595", "T1499"],
-    "d3fend": ["D3-DNR", "D3-SHN"],
-    "engage_goals": ["Affect", "Expose"]
-  }
+    "attack": [
+      "T1595",
+      "T1499"
+    ],
+    "d3fend": [
+      "D3-DNR",
+      "D3-SHN"
+    ],
+    "engage_goals": [
+      "Affect",
+      "Expose"
+    ]
+  },
+  "scoring_model_id": "uhqs-v5.0.0-critical-gate-binary",
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }
