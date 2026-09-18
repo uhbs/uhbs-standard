@@ -1,0 +1,68 @@
+{
+  "uhbs_version": "5.0.0",
+  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+  "assessment_status": "INCOMPLETE",
+  "critical_control_verdict": "INCOMPLETE",
+  "containment_measured": false,
+  "target": {
+    "name": "Synthetic incomplete assessment",
+    "class": "Low-Interaction",
+    "profile_ref": "templates/profiles/low-interaction.yaml"
+  },
+  "evaluated_at": "2026-09-18",
+  "auditor": "UHBS v5 conformance",
+  "modules": {
+    "A": {
+      "score": 80.0,
+      "status": "PASSED",
+      "weight": 0.3,
+      "complete": true
+    },
+    "B": {
+      "score": 80.0,
+      "status": "PASSED",
+      "weight": 0.15,
+      "complete": true
+    },
+    "C": {
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "weight": 0.25,
+      "complete": false
+    },
+    "D": {
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "complete": false,
+      "critical_control_verdict": "INCOMPLETE"
+    },
+    "E": {
+      "score": 70.0,
+      "status": "PARTIAL",
+      "weight": 0.1,
+      "complete": true
+    },
+    "F": {
+      "score": 70.0,
+      "status": "PARTIAL",
+      "weight": 0.2,
+      "complete": true
+    }
+  },
+  "weights": {
+    "w_A": 0.3,
+    "w_B": 0.15,
+    "w_C": 0.25,
+    "w_E": 0.1,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 0.0,
+    "delta_c": 0.0,
+    "passed": false,
+    "critical_control_verdict": "INCOMPLETE"
+  },
+  "uhqs": null,
+  "grade": null,
+  "notes": "v5 golden: incomplete \u2192 Ungraded."
+}

@@ -76,6 +76,7 @@ scapy = [
 ]
 dev = [
   "pytest>=8.0",
+  "pytest-cov>=5.0",
   "ruff>=0.5",
   "mypy>=1.10",
   "paramiko>=3.0",
@@ -145,13 +146,33 @@ extend-exclude = [
 select = ["E", "F", "I", "UP", "B", "SIM"]
 
 [tool.ruff.lint.per-file-ignores]
+"tests/test_framework_refs.py" = ["E501"]
+"tests/test_uhqs_v5.py" = ["E501"]
+"scripts/**/*.py" = ["E501"]
+"tests/test_v5_coverage_boost.py" = ["E501"]
 # Lab harness protocol plugins retain long probe detail strings / socket patterns.
 "src/uhbs_core/protocols/**/*.py" = ["E501", "SIM105"]
+"src/uhbs_core/hassh.py" = ["SIM102", "F841"]
 "src/uhbs_core/sandbox_preflight.py" = ["E402", "E501"]
 "src/uhbs_core/test_*.py" = ["E", "F", "I", "UP", "B", "SIM"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+addopts = [
+  "--cov=uhbs_core",
+  "--cov=uhbs_cli",
+  "--cov=uhbs_mcp",
+  "--cov-report=term-missing:skip-covered",
+  "--cov-fail-under=80",
+]
+
+[tool.coverage.run]
+source = ["uhbs_core", "uhbs_cli", "uhbs_mcp"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+skip_covered = true
 
 # Scoped, additive mypy config — see docs/architecture/supply-chain.md.
 # Deliberately limited to the NEW modules added in the 2026-07-27 governance/

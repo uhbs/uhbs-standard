@@ -1,0 +1,29 @@
+{
+  "bundle_version": "attack-v15.1-subset-uhbs-2026-09",
+  "sources": [
+    "MITRE ATT&CK Enterprise (informative subset for UHBS validation)",
+    "MITRE ATT&CK ICS (informative subset)"
+  ],
+  "techniques": {
+    "T1041": {"name": "Exfiltration Over C2 Channel", "domain": "enterprise", "revoked": false, "deprecated": false},
+    "T1048": {"name": "Exfiltration Over Alternative Protocol", "domain": "enterprise", "revoked": false, "deprecated": false},
+    "T1059": {"name": "Command and Scripting Interpreter", "domain": "enterprise", "revoked": false, "deprecated": false},
+    "T1059.004": {"name": "Unix Shell", "domain": "enterprise", "revoked": false, "deprecated": false},
+    "T1071": {"name": "Application Layer Protocol", "domain": "enterprise", "revoked": false, "deprecated": false},
+    "T1078": {"name": "Valid Accounts", "domain": "enterprise", "revoked": false, "deprecated": false},
+    "T1082": {"name": "System Information Discovery", "domain": "enterprise", "revoked": false, "deprecated": false},
+    "T1083": {"name": "File and Directory Discovery", "domain": "enterprise", "revoked": false, "deprecated": false},
+    "T1105": {"name": "Ingress Tool Transfer", "domain": "enterprise", "revoked": false, "deprecated": false},
+    "T1110": {"name": "Brute Force", "domain": "enterprise", "revoked": false, "deprecated": false},
+    "T1133": {"name": "External Remote Services", "domain": "enterprise", "revoked": false, "deprecated": false},
+    "T1190": {"name": "Exploit Public-Facing Application", "domain": "enterprise", "revoked": false, "deprecated": false},
+    "T1548": {"name": "Abuse Elevation Control Mechanism", "domain": "enterprise", "revoked": false, "deprecated": false},
+    "T1595": {"name": "Active Scanning", "domain": "enterprise", "revoked": false, "deprecated": false},
+    "T0800": {"name": "Activate Firmware Update Mode", "domain": "ics", "revoked": false, "deprecated": false},
+    "T0801": {"name": "Monitor Process State", "domain": "ics", "revoked": false, "deprecated": false},
+    "T0836": {"name": "Modify Parameter", "domain": "ics", "revoked": false, "deprecated": false},
+    "T0840": {"name": "Network Connection Enumeration", "domain": "ics", "revoked": false, "deprecated": false},
+    "T0855": {"name": "Unauthorized Command Message", "domain": "ics", "revoked": false, "deprecated": false},
+    "T0886": {"name": "Remote Services", "domain": "ics", "revoked": false, "deprecated": false}
+  }
+}

@@ -6,7 +6,7 @@ import subprocess
 from pathlib import Path
 from typing import List, Optional, Sequence, Tuple
 
-from uhbs_core.models import CheckResult
+from uhbs_core.models import CheckOutcome, CheckResult
 
 def _run_tool_json(
     cmd: Sequence[str], cwd: Path, timeout: int = 180
@@ -46,9 +46,10 @@ def _sast_checks(root: Path, image: Optional[str], out_dir: Optional[Path]) -> L
             CheckResult(
                 id="white.bandit",
                 team="white",
-                passed=True,
-                detail="bandit not installed (skipped)",
-                score=5.0,
+                outcome=CheckOutcome.NOT_TESTED,
+                detail="bandit not installed",
+                score=0.0,
+                mandatory=False,
             )
         )
     else:
@@ -86,9 +87,10 @@ def _sast_checks(root: Path, image: Optional[str], out_dir: Optional[Path]) -> L
             CheckResult(
                 id="white.semgrep",
                 team="white",
-                passed=True,
-                detail="semgrep not installed (skipped)",
-                score=5.0,
+                outcome=CheckOutcome.NOT_TESTED,
+                detail="semgrep not installed",
+                score=0.0,
+                mandatory=False,
             )
         )
     else:
@@ -124,12 +126,13 @@ def _sast_checks(root: Path, image: Optional[str], out_dir: Optional[Path]) -> L
     tok, trivy, terr = _run_tool_json(tcmd, cwd=root, timeout=300)
     if terr == "not installed":
         checks.append(
-            CheckResult(
+            CheckResult.make(
                 id="white.trivy",
                 team="white",
-                passed=True,
-                detail="trivy not installed (skipped)",
-                score=4.0,
+                outcome=CheckOutcome.NOT_TESTED,
+                detail="trivy not installed — not tested (zero credit)",
+                mandatory=False,
+                catalog_id="F.sast",
             )
         )
     else:

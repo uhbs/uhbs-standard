@@ -1,11 +1,11 @@
 # UHBS — full agent digest (llms-full.txt)
 
-> Curated plain-text digest of UHBS v4.6.0 for answer engines and coding agents. Prefer the live docs and GitHub sources when they disagree with this file. Last aligned: 2026-08-02.
+> Curated plain-text digest of UHBS v5.0.0 for answer engines and coding agents. Prefer the live docs and GitHub sources when they disagree with this file. Last aligned: 2026-08-02.
 > Canonical: https://github.com/uhbs/uhbs-standard · https://uhbs.github.io/uhbs-standard/ · https://uhbs.github.io/uhbs-standard/mkdocs/
 
 ## What UHBS is
 
-UHBS (Universal Honeypot Benchmarking Standard) is an open-source **evaluation framework** for comparing honeypots and deception systems by **decoy class** and **protocol**, not by vendor brand. Version **4.6.0**. License **Apache-2.0**. Author/maintainer: Moran Zavdi (@mziqudhd92).
+UHBS (Universal Honeypot Benchmarking Standard) is an open-source **evaluation framework** for comparing honeypots and deception systems by **decoy class** and **protocol**, not by vendor brand. Version **5.0.0**. License **Apache-2.0**. Author/maintainer: Moran Zavdi (@mziqudhd92).
 
 It is **not** a consortium standard, not multi-party governed, and not a mandatory industry requirement. Suggested Production Baseline Profile (RECOMMENDED for internal use): **UHQS > 80** with Module D Safety Gate pass (containment C ≥ 95 → δ_C = 1.0).
 
@@ -57,7 +57,7 @@ uhbs score --class Low-Interaction --scores scores.json
 uhbs lab --list-protocols
 uhbs aep --help   # offline only; local experiment.yaml + trials.jsonl
 uhbs aep slm --help   # alpha; generate blocked until config unlock
-# 36 built-in protocols in v4.6.0 (bluetooth, dhcp, dns, ftp, generic, git, http,
+# 36 built-in protocols in v5.0.0 (bluetooth, dhcp, dns, ftp, generic, git, http,
 # httpproxy, imap, ipp, irc, kubernetes, ldap, mcp, memcache, modbus, mongodb,
 # mssql, mysql, ntp, oracle, pjl, pop3, postgres, rdp, redis, s7comm, sip, smb,
 # smtp, snmp, socks5, ssh, telnet, tftp, vnc)
@@ -65,7 +65,6 @@ uhbs aep slm --help   # alpha; generate blocked until config unlock
 # Docs: https://uhbs.github.io/uhbs-standard/mkdocs/tooling/mcp/
 # AEP: https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/
 # AEP SLM (alpha): https://uhbs.github.io/uhbs-standard/mkdocs/advanced-evidence/slm-alpha/
-# Landing AEP: https://uhbs.github.io/uhbs-standard/#advanced-evidence
 # Related frameworks: https://uhbs.github.io/uhbs-standard/mkdocs/mappings/related-frameworks/
 ```
 
@@ -82,6 +81,7 @@ Published full-lab proof (sanitized fixtures; prefer live fixture JSON if this d
 - miniprint (Low-Interaction PJL): UHQS **47.77** (F)
 - Conpot (ICS-SCADA Modbus): UHQS **55.51** (D)
 - Cowrie (Low-Interaction SSH): UHQS **61.37** (D)
+- EchidraOSS (Low-Interaction SSH): UHQS **43.45** (F)
 - OpenCanary HTTP: UHQS **50.12** (D); FTP **59.43** (D); SSH **28.44** (F); Telnet **57.00** (D); Redis **48.26** (F)
 - Endlessh (SSH tarpit / ssh_tarpit): UHQS **51.90** (D)
 - CyberHalluciNet / POSIX-Shell lab (illustrative): UHQS **80.33** (B)

@@ -1,4 +1,4 @@
-# telnet-iot-honeypot — evaluation skipped (UHBS 4.6.0)
+# telnet-iot-honeypot — evaluation skipped (UHBS 5.0.0)
 
 **Status:** Skipped · no UHQS numbers  
 **Upstream:** [Phype/telnet-iot-honeypot](https://github.com/Phype/telnet-iot-honeypot)

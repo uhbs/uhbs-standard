@@ -78,6 +78,7 @@ Full artifacts (tutorials, methodology, `SCORECARD.txt`, `report.json`) live und
 | [LLMPot — S7comm :102](llmpot-s7comm.md) | ICS-SCADA · S7comm | **65.41** | D |
 | [Log4Pot — http](log4pot-http.md) | Web-API · http | **38.0** | F |
 | [Low-Interaction / PJL decoy (miniprint proof)](miniprint-low-interaction.md) | Scorecard: Low-Interaction / PJL decoy (miniprint proof) | — | — |
+| [EchidraOSS — SSH :2222](echidra-ssh.md) | Low-Interaction · SSH | **43.45** | F |
 | [Low-Interaction / SSH tarpit (Endlessh proof)](endlessh-ssh-tarpit.md) | Scorecard: Low-Interaction / SSH tarpit (Endlessh proof) | — | — |
 | [mailoney — smtp](mailoney-smtp.md) | Low-Interaction · smtp | **38.69** | F |
 | [mockssh — ssh](mockssh-ssh.md) | Low-Interaction · ssh | **59.0** | D |
@@ -115,11 +116,11 @@ Full artifacts (tutorials, methodology, `SCORECARD.txt`, `report.json`) live und
 After an official evaluation, maintainers can embed:
 
 ```markdown
-![UHBS v4.6.0 Grade A](https://img.shields.io/badge/UHBS%20v4.6.0-Grade%20A-brightgreen)
-![UHBS v4.6.0 Grade B](https://img.shields.io/badge/UHBS%20v4.6.0-Grade%20B-yellowgreen)
-![UHBS v4.6.0 Grade C](https://img.shields.io/badge/UHBS%20v4.6.0-Grade%20C-yellow)
-![UHBS v4.6.0 Grade D](https://img.shields.io/badge/UHBS%20v4.6.0-Grade%20D-orange)
-![UHBS v4.6.0 Grade F](https://img.shields.io/badge/UHBS%20v4.6.0-Grade%20F-red)
+![UHBS v5.0.0 Grade A](https://img.shields.io/badge/UHBS%20v5.0.0-Grade%20A-brightgreen)
+![UHBS v5.0.0 Grade B](https://img.shields.io/badge/UHBS%20v5.0.0-Grade%20B-yellowgreen)
+![UHBS v5.0.0 Grade C](https://img.shields.io/badge/UHBS%20v5.0.0-Grade%20C-yellow)
+![UHBS v5.0.0 Grade D](https://img.shields.io/badge/UHBS%20v5.0.0-Grade%20D-orange)
+![UHBS v5.0.0 Grade F](https://img.shields.io/badge/UHBS%20v5.0.0-Grade%20F-red)
 ```
 
 ## Submitting a Scorecard

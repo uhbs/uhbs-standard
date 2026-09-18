@@ -1,19 +1,47 @@
-# Universal Scoring Methodology (UHQS 4.6.0)
+# Universal Scoring Methodology (UHQS 5.0.0)
 
-**Status:** Normative
+**Status:** Normative  
+**scoring_model_id:** `uhqs-v5.0-critical-gate-diagnostic`
 
 The key words **MUST**, **SHOULD**, and **MAY** are interpreted as in
 [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119). See
-[Status of This Document](status.md).
+[Status of This Document](status.md). Normative design intent is recorded in
+[RFC 0003](../rfcs/0003-scoring-assurance.md).
+
+## Assessment status and scoring model identity
+
+Every scorecard **MUST** declare:
+
+| Field | Requirement |
+| --- | --- |
+| `scoring_model_id` | Immutable model identity; for UHBS 5.0.0 this **MUST** be `uhqs-v5.0-critical-gate-diagnostic` |
+| `assessment_status` | `COMPLETE` or `INCOMPLETE` |
+| `critical_control_verdict` | `GATE_PASSED`, `GATE_FAILED`, or `INCOMPLETE` |
+
+Implementations **MUST NOT** conflate `scoring_model_id` with `specification_version` / `uhbs_version`. Historical UHQS 4.x scorecards remain interpretable only under their original model.
+
+### Ungraded results
+
+If `assessment_status` is `INCOMPLETE`, or `critical_control_verdict` is not `GATE_PASSED`:
+
+- `uhqs` **MUST** be `null`
+- Implementations **MUST NOT** emit a letter grade (do **not** invent grade `U`)
+- Module diagnostic scores **MAY** still be published
+
+**Ungraded** means incomplete or gate-failed assessment — not “tested and failed” (letter F).
 
 ## Composite Score Formula
 
-The **Universal Honeypot Quality Score (UHQS)** **MUST** be computed as a
-normalized value from **0 to 100**:
+When `assessment_status = COMPLETE` and `critical_control_verdict = GATE_PASSED`, the
+**Universal Honeypot Quality Score (UHQS)** **MUST** be computed as a normalized
+value from **0 to 100**:
 
 \[
 \mathrm{UHQS} = \delta_C \cdot (w_A \cdot S_A + w_B \cdot S_B + w_C \cdot S_C + w_E \cdot S_E + w_F \cdot S_F)
 \]
+
+with \(\delta_C = 1.0\) under the binary critical-control gate (eligibility already
+satisfied). Otherwise UHQS is null (Ungraded).
 
 ![UHQS formula explainer: weighted modules A–F multiplied by Safety Gate δ_C from Module D](../assets/uhqs-formula-explainer.svg)
 
@@ -21,32 +49,42 @@ normalized value from **0 to 100**:
 | --- | --- |
 | \(S_A, S_B, S_C, S_E, S_F\) | Normalized scores (0–100) for Modules A, B, C, E, and F |
 | \(w_A, w_B, w_C, w_E, w_F\) | Dimension weights assigned by profile class |
-| \(\delta_C\) | Safety Gate multiplier derived from Module D containment score \(C\) |
+| \(\delta_C\) | Critical-control gate multiplier: **1.0** if `GATE_PASSED`, else no composite UHQS |
 
-Implementations **MUST** round the final UHQS to **two decimal places** (half-up /
+Implementations **MUST** round a graded UHQS to **two decimal places** (half-up /
 Python `round` semantics as used by the reference harness).
 
 !!! note
-    Module D does **not** appear as a weighted term \(w_D \cdot S_D\). Its influence is entirely through \(\delta_C\).
+    Module D does **not** appear as a weighted term \(w_D \cdot S_D\). Containment is a
+    **binary eligibility gate** (`critical_control_verdict`). The defense-in-depth Module D
+    score is diagnostic only and **MUST NOT** clear or weaken the gate. The v4
+    `max(score, 95)` floor and attestation-only credit are removed.
 
-## Non-Linear Safety Gate (\(\delta_C\))
+    The public landing page typesets these formulas with [KaTeX](https://katex.org/); this document is the normative source.
 
-\[
-\delta_C =
-\begin{cases}
-1.0 & \text{if } C \ge 95 \\
-\left(\dfrac{C}{100}\right)^{2} & \text{if } C < 95
-\end{cases}
-\]
+## Critical-control gate (\(\delta_C\))
 
-| Module D Score (\(C\)) | Multiplier \(\delta_C\) | Operational Impact |
-| --- | --- | --- |
-| 95 – 100 | 1.00 | Pass: no score penalty |
-| 90 | 0.81 | 19% composite reduction |
-| 85 | 0.72 | 28% composite reduction |
-| 75 | 0.56 | 44% composite reduction |
-| 70 | 0.49 | Fail: 51% reduction — a decoy with perfect deception can still fail evaluation |
-| 0 | 0.00 | UHQS collapses to 0 |
+Containment is **not** averaged into the weighted sum and is **not** a continuous
+exponential penalty. Under `uhqs-v5.0-critical-gate-diagnostic`:
+
+| `critical_control_verdict` | \(\delta_C\) | UHQS |
+| --- | ---: | --- |
+| `GATE_PASSED` (assessment `COMPLETE`) | 1.0 | Weighted sum |
+| `GATE_FAILED` | — | `null` (Ungraded) |
+| `INCOMPLETE` | — | `null` (Ungraded) |
+
+Continuous multipliers of the form \((C/95)^k\) are **not** used: they remain
+arbitrary without a full live calibration corpus (see
+[v5 sensitivity notes](../rfcs/calibration/v5-sensitivity.md)).
+
+## Check outcomes (denominator rules)
+
+Module scores aggregate catalog checks with outcomes
+`PASS` | `FAIL` | `NOT_APPLICABLE` | `NOT_TESTED` | `ERROR`.
+
+- Only `NOT_APPLICABLE` **MAY** leave the scoring denominator (requires machine rule + rationale).
+- Applicable mandatory `NOT_TESTED` or `ERROR` **MUST** make the assessment `INCOMPLETE` (Ungraded).
+- `FAIL` earns zero credit and **MUST** remain in the denominator.
 
 ## Profile-Adaptive Weight Distributions
 
@@ -67,34 +105,34 @@ changes that mapping.
 
 ## Letter Grades (Normative Banding)
 
-Implementations **MUST** map UHQS to letter grades as follows (aligned with the
-reference harness):
+Letter grades apply **only** to completed, gate-passed assessments with a non-null UHQS.
+Implementations **MUST** map UHQS to letter grades as follows:
 
 | UHQS | Grade | Label |
 | ---: | :---: | --- |
-| 90 – 100 | A | Enterprise Grade |
-| 80 – 89.99 | B | Production Baseline |
-| 70 – 79.99 | C | Conditional — **not** approved for production |
-| 50 – 69.99 | D | Needs Remediation |
-| &lt; 50 | F | Fail |
+| 90 – 100 | A | Highest composite band |
+| 80 – 89.99 | B | High composite band |
+| 70 – 79.99 | C | Moderate composite band |
+| 50 – 69.99 | D | Low composite band |
+| &lt; 50 | F | Lowest composite band |
 
-## Production Baseline Profile (RECOMMENDED)
+Incomplete or gate-failed assessments are **Ungraded** (`uhqs=null`, no letter).
 
-It is **RECOMMENDED** that organizations treat **UHQS > 80** with a passing Safety
-Gate (C ≥ 95) as the minimum gate before deploying active decoys to production
-networks. See [Status of This Document](status.md).
+## Operational decision boundary (Informative)
+
+UHQS bands classify the eligible composite; they do not approve or prohibit
+production use. Historical guidance called **UHQS > 80** plus a passing Safety
+Gate a “Production Baseline.” In v5, organizations that retain this value must
+treat it as their own candidate internal threshold and document separate risk,
+architecture, privacy, legal, and operational approval. Live calibration and
+independent technical review of production-facing thresholds remain incomplete;
+see [Status of This Document](status.md).
 
 ## Reference computation
 
 These normative numbers **MUST** match `uhbs score` and `uhbs_core.uhqs_math.compute_uhqs`
-(CLI / MCP / harness wrappers).
+(CLI / MCP / harness wrappers) under `scoring_model_id = uhqs-v5.0-critical-gate-diagnostic`.
 
-**Worked examples** (anonymous module scores used in unit tests — not live product fixtures):
-
-| Class | Example scores | UHQS | Grade |
-| --- | --- | ---: | --- |
-| Low-Interaction | A=23.5, B=42.5, C=57.0, D=100, E=55.0, F=69.0 | **46.97** | F |
-| POSIX-Shell | (see `posix-shell-lab` fixture path below) | **80.33** | B |
-
-**Live published fixtures** (evaluation proof only) are listed under
-[Conformance](../conformance/index.md) — e.g. Cowrie full lab **61.37** / D, not 46.97.
+**v4 historical note:** Published fixtures under `docs/conformance/fixtures/` (root) were
+graded under UHQS 4.x and **MUST NOT** be re-derived as v5 grades without re-running
+labs. Synthetic v5 golden vectors live under `docs/conformance/fixtures/v5/`.

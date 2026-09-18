@@ -3,11 +3,57 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.6.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
+share version **5.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
 AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`; experimental as
 `uhbs[experimental]` / `uhbs[genai-bench]`).
 
-## [Unreleased]
+## [5.0.0] — 2026-09-18
+
+Breaking UHQS scoring and assurance redesign ([RFC 0003](docs/rfcs/0003-scoring-assurance.md)).
+**scoring_model_id:** `uhqs-v5.0-critical-gate-diagnostic`.
+
+### Changed
+- Check outcomes: `PASS` / `FAIL` / `NOT_APPLICABLE` / `NOT_TESTED` / `ERROR` — only `NOT_APPLICABLE` leaves the denominator
+- Incomplete mandatory checks → `assessment_status=INCOMPLETE`, `uhqs=null`, no letter grade (no invented `U`)
+- Module D: critical-control verdict + defense-in-depth score; removed `max(score, 95)` floor and attestation-only credit
+- Module C: declared-format validation (STIX optional), sink-side injection, ground-truth recall, pinned ATT&CK
+- Skip-credit paths purged across protocol / telemetry / safety / static modules
+- Harness emits schema-valid `evidence-pack.json`; v4 schemas frozen under `schemas/v4/`
+- Historical v4.6.1 fixtures archived under `docs/conformance/archive/v4.6.1/`; published report URLs unchanged
+
+### Added
+- RFC 0003 + synthetic calibration notes (`docs/rfcs/calibration/v5-sensitivity.md`)
+- v5 golden fixtures: incomplete / gate-failed / gate-passed cases
+- Invariant and mutation regression tests (`tests/test_uhqs_v5_invariants.py`)
+
+## [4.6.1] — 2026-09-15
+
+Landing redesign + discovery/link fixes. **UHQS math unchanged.**
+
+### Changed
+- Spec/package/schema/`uhbs_version` fixtures aligned to **4.6.1**
+- Landing site (`web/`): rebuild with [Neobrutalism](https://www.neobrutalism.dev/) (Tailwind v4 + registry UI) on a bright off-white canvas; simplified Scoring / Framework Analysis copy; AEP and Latest Changes moved to docs/CHANGELOG only
+- Landing docs buttons and Results links resolve correctly (no Vite SPA fallthrough to the home page)
+
+### Added
+- Published lab report + landing Results: **EchidraOSS** (SSH `:2222`, quick UHQS 57.33 / D, full UHQS 43.45 / F)
+- Module info tooltips on the Six Evaluation Modules section (plain-language hover tips)
+- **Redis scoring (lab):** deepen `uhbs_core.protocols.redis` beyond PING/SET stubs —
+  FSM refusals (invalid verb, wrong arity, truncated RESP), ECHO/INFO negotiation,
+  SET/GET + INCR + DEL/EXISTS state checks, and cross-connection GET so shallow
+  always-+OK decoys score poorly vs real-enough Redis
+- **Elasticsearch scoring (lab):** new `uhbs_core.protocols.elasticsearch` plugin
+  (aliases `es`, `opensearch`, `elastic`) — FSM HTTP/JSON error shapes, root +
+  cluster-health negotiation, index lifecycle state, and document round-trip
+  payload so canned always-200 ES decoys score poorly vs real-enough nodes
+- Redis and Elasticsearch checks participate in Module **A** (`probe_fsm` /
+  `probe_negotiation` / `probe_timing`) and Module **B** (`probe_state` /
+  `probe_payload` / `probe_fuzz`) when a target lists `protocol: redis` or
+  `protocol: elasticsearch`
+- Offline stub tests: realistic vs shallow decoys for both protocols
+
+### Notes
+- Redis and Elasticsearch remain lab/harness-facing (not newly exposed via MCP)
 
 ### Added
 - **Redis scoring (lab):** deepen `uhbs_core.protocols.redis` beyond PING/SET stubs —

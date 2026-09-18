@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.6.0",
+  "uhbs_version": "5.0.0",
   "target": {
     "name": "miniprint (sa7mon PJL printer honeypot)",
     "class": "Low-Interaction",
@@ -12,24 +12,29 @@
       "score": 65.43,
       "status": "PARTIAL",
       "weight": 0.3,
-      "notes": "generic TCP/PJL plugin; high IAT jitter vs native-printer expectation; n=1000 timing"
+      "notes": "generic TCP/PJL plugin; high IAT jitter vs native-printer expectation; n=1000 timing",
+      "complete": true
     },
     "B": {
       "score": 62.5,
       "status": "PARTIAL",
       "weight": 0.15,
-      "notes": "survived binary blast; limited stateful PJL probes in harness"
+      "notes": "survived binary blast; limited stateful PJL probes in harness",
+      "complete": true
     },
     "C": {
       "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.25,
-      "notes": "miniprint.log text \u2014 no STIX/OTel/ECS (schema-capped)"
+      "notes": "miniprint.log text \u2014 no STIX/OTel/ECS (schema-capped)",
+      "complete": true
     },
     "D": {
       "score": 90.0,
-      "status": "GATE FAILED",
-      "notes": "no SSH exec surface; airgap+gateway attested; C<95"
+      "status": "GATE_FAILED",
+      "notes": "no SSH exec surface; airgap+gateway attested; C<95",
+      "critical_control_verdict": "GATE_FAILED",
+      "complete": true
     },
     "E": {
       "score": 55.0,
@@ -38,13 +43,15 @@
       "notes": "P95>>100ms under load (single-threaded handler)",
       "p50_ms": 1055.08,
       "p95_ms": 1127.1,
-      "p99_ms": 2112.47
+      "p99_ms": 2112.47,
+      "complete": true
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
       "weight": 0.2,
-      "notes": "semgrep 1 error/critical; SAST gate capped F at 70"
+      "notes": "semgrep 1 error/critical; SAST gate capped F at 70",
+      "complete": true
     }
   },
   "weights": {
@@ -56,11 +63,16 @@
   },
   "safety_gate": {
     "containment_score": 90.0,
-    "delta_c": 0.81,
+    "delta_c": 0.0,
     "passed": false,
+    "critical_control_verdict": "GATE_FAILED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 50.43,
-  "grade": "D",
-  "notes": "Evaluation proof only. miniprint product name is not a UHBS requirement. PJL spoken over raw :9100 via generic TCP plugin (no first-class PJL RFC suite yet). Artifacts: docs/conformance/reports/miniprint/."
+  "uhqs": null,
+  "grade": null,
+  "notes": "Evaluation proof only. miniprint product name is not a UHBS requirement. PJL spoken over raw :9100 via generic TCP plugin (no first-class PJL RFC suite yet). Artifacts: docs/conformance/reports/miniprint/. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
+  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }

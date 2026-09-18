@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.6.0",
+  "uhbs_version": "5.0.0",
   "target": {
     "name": "conpot (mushorg ICS/SCADA honeypot, Modbus)",
     "class": "ICS-SCADA",
@@ -12,24 +12,29 @@
       "score": 79.0,
       "status": "PASSED",
       "weight": 0.35,
-      "notes": "modbus plugin; FC03 holding-register nego fails (exception 0x02 on default coil/input map); n=1000 timing"
+      "notes": "modbus plugin; FC03 holding-register nego fails (exception 0x02 on default coil/input map); n=1000 timing",
+      "complete": true
     },
     "B": {
       "score": 42.5,
       "status": "PARTIAL",
       "weight": 0.2,
-      "notes": "write/read exchange completed; survived binary blast"
+      "notes": "write/read exchange completed; survived binary blast",
+      "complete": true
     },
     "C": {
       "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.15,
-      "notes": "conpot.log text \u2014 no STIX/OTel/ECS (schema-capped)"
+      "notes": "conpot.log text \u2014 no STIX/OTel/ECS (schema-capped)",
+      "complete": true
     },
     "D": {
       "score": 90.0,
-      "status": "GATE FAILED",
-      "notes": "no SSH exec surface; airgap+gateway attested; C<95"
+      "status": "GATE_FAILED",
+      "notes": "no SSH exec surface; airgap+gateway attested; C<95",
+      "critical_control_verdict": "GATE_FAILED",
+      "complete": true
     },
     "E": {
       "score": 100.0,
@@ -38,13 +43,15 @@
       "notes": "P95 within TPS at moderated concurrency 5 / requests 50",
       "p50_ms": 0.99,
       "p95_ms": 1.62,
-      "p99_ms": 1.95
+      "p99_ms": 1.95,
+      "complete": true
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
       "weight": 0.2,
-      "notes": "template SSL keys + bandit HIGH; SAST gate capped F at 70"
+      "notes": "template SSL keys + bandit HIGH; SAST gate capped F at 70",
+      "complete": true
     }
   },
   "weights": {
@@ -56,16 +63,30 @@
   },
   "safety_gate": {
     "containment_score": 90.0,
-    "delta_c": 0.81,
+    "delta_c": 0.0,
     "passed": false,
+    "critical_control_verdict": "GATE_FAILED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 55.4,
-  "grade": "D",
-  "notes": "Evaluation proof only. Conpot product name is not a UHBS requirement. Modbus-primary grade on container :5020; other default listeners not scored. Artifacts: docs/conformance/reports/conpot/.",
+  "uhqs": null,
+  "grade": null,
+  "notes": "Evaluation proof only. Conpot product name is not a UHBS requirement. Modbus-primary grade on container :5020; other default listeners not scored. Artifacts: docs/conformance/reports/conpot/. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
   "framework_refs": {
-    "attack": ["T1595", "T1040"],
-    "d3fend": ["D3-DNR", "D3-SHN"],
-    "engage_goals": ["Expose", "Elicit"]
-  }
+    "attack": [
+      "T1595",
+      "T1040"
+    ],
+    "d3fend": [
+      "D3-DNR",
+      "D3-SHN"
+    ],
+    "engage_goals": [
+      "Expose",
+      "Elicit"
+    ]
+  },
+  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }

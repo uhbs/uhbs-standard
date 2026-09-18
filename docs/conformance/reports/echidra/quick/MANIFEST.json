@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "9e64ea0961ea2a1ac04ccb8a0bfef86bb8ea1c4156470f98779566a95184b6d0"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "7bf062267de7d8bc4bc636d55d9e4f31b7915fe226ec11b66b52ee2514c983b8"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "7bf062267de7d8bc4bc636d55d9e4f31b7915fe226ec11b66b52ee2514c983b8"
+    },
+    {
+      "path": "report.json",
+      "sha256": "2b5a589d58d8a32d9f70d6f349eabf56cdcaee156fbdd637a879631ef2b1811d"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "b91b8bf509b0a9992dfeb19313b982f671435f491990c48841c597e39fdd5d45"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "32c02986df25216fd351be420b28a70d52617807df7102cd3a28f98407b1ab1a"
+    }
+  ],
+  "extra": {
+    "target": "echidra",
+    "uhqs": 57.33,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

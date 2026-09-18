@@ -1,0 +1,63 @@
+{
+  "uhbs_version": "4.6.1",
+  "target": {
+    "name": "OpenCanary (HTTP :80)",
+    "class": "Web-API",
+    "profile_ref": "docs/conformance/labs/opencanary/web_api_http_full.yaml"
+  },
+  "evaluated_at": "2026-07-27",
+  "auditor": "UHBS-Lab detailed Docker run (opencanary/http)",
+  "modules": {
+    "A": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.25,
+      "notes": ""
+    },
+    "B": {
+      "score": 82.5,
+      "status": "PARTIAL",
+      "weight": 0.2,
+      "notes": ""
+    },
+    "C": {
+      "score": 55.0,
+      "status": "PARTIAL",
+      "weight": 0.2,
+      "notes": ""
+    },
+    "D": {
+      "score": 90.0,
+      "status": "PASSED",
+      "notes": ""
+    },
+    "E": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.15,
+      "notes": ""
+    },
+    "F": {
+      "score": 70.0,
+      "status": "PARTIAL",
+      "weight": 0.2,
+      "notes": ""
+    }
+  },
+  "weights": {
+    "w_A": 0.25,
+    "w_B": 0.2,
+    "w_C": 0.2,
+    "w_E": 0.15,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 90.0,
+    "delta_c": 0.81,
+    "passed": false,
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 66.02,
+  "grade": "D",
+  "notes": "Evaluation proof only. OpenCanary http. Regraded 2026-07-27. Artifacts: docs/conformance/reports/opencanary/http/."
+}

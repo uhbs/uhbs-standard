@@ -1,7 +1,7 @@
 # Methodology: LLM Honeypot (Palisade) UHBS lab
 
 **Status:** Informative  
-**UHBS:** 4.6.0  
+**UHBS:** 5.0.0  
 **Upstream commit:** `156004a1b122f201448635417ee47bd44d7f28ca`
 
 ## Protocol survey

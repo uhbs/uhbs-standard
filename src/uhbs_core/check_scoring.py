@@ -1,67 +1,29 @@
-"""Shared check-list aggregation for UHBS Module A/B (v4.6.0 architecture fix).
+"""Shared check-list aggregation for UHBS modules (v5 outcome contract).
 
-Prior behavior (pre-2026-07-27): a check-list was reduced to a plain
-arithmetic mean of scores. This let a single catastrophic failure (score
-0.0) sit next to two superficial passes (100.0, 100.0) and net ~33.3 —
-diluting a severe protocol/behavioral defect into a passing-looking number.
+Only ``NOT_APPLICABLE`` checks leave the scoring denominator. ``NOT_TESTED``
+and ``ERROR`` remain in the denominator at zero earned credit and block
+module completeness when ``mandatory=True``.
 
-This module implements the architecture-review remediation:
+Gates:
 
-1. **Circuit breaker.** Any check marked ``critical=True`` (see
-   :class:`uhbs_core.models.CheckResult`) that has ``passed=False`` hard-caps
-   the aggregate to ``0.0``, regardless of every other check in the list.
-   Security gatekeepers — "does the FTP canary reject RETR before auth?",
-   "does SMB actually negotiate a real dialect?", "does Modbus really hold
-   the value it was told to write?" — MUST be marked critical in the plugin
-   so a benchmark cannot average its way past a real failure.
-
-2. **Integrity gate (2026-07-27 code-review follow-up).** Any check whose
-   own ``passed`` boolean and ``score`` number *disagree* — per
-   :func:`uhbs_core.contract_validation.has_passed_score_disagreement` —
-   ALSO hard-caps the aggregate to ``0.0``, exactly like a failed critical
-   gate. This closes a real loophole found in this module's own prior
-   version: a single-check list with ``passed=True, score=0.0`` (e.g. a
-   plugin bug that forgot to set ``score``, which defaults to ``0.0`` on
-   ``CheckResult``) used to fall through to the "legacy pass-rate fallback"
-   below and silently score ``100.0`` — precisely the "boolean says pass,
-   number says fail" bug class the whole review was about, and it bypassed
-   even the ``critical=True`` circuit breaker in gate #1 above (that gate
-   only ever looks at ``critical and not passed``, never at whether
-   ``passed`` and ``score`` actually agree). A check that contradicts
-   itself cannot be trusted at all, so — same reasoning as a critical-gate
-   failure — the whole list is zeroed rather than silently averaged/
-   pass-rated past the contradiction.
-
-3. **Geometric mean, not arithmetic mean, for the remainder.** Geometric
-   mean punishes a low outlier far harder than an arithmetic mean does
-   (e.g. gmean(0.5, 100, 100) ≈ 17 vs mean(0, 100, 100) ≈ 33), so a single
-   weak-but-not-gating check still visibly drags the module score down
-   instead of nearly vanishing.
-
-4. **Legacy pass-rate fallback.** If every check in the list has an
-   explicit ``score == 0.0`` (i.e. no plugin populated a real score, only
-   ``passed``/``failed`` booleans) AND none of them tripped gate #2 above,
-   fall back to ``pass_rate * 100``. Note that, by construction, any
-   ``passed=True`` check with ``score == 0.0`` always trips gate #2 first
-   (0.0 is always below the pass floor) — so this fallback is now only
-   reachable when every check in the list is ``passed=False`` with
-   ``score == 0.0``, which trivially evaluates to ``0.0`` anyway. It is
-   kept (rather than deleted) purely so the formula stays self-documenting
-   for that degenerate-but-correct case — no currently-shipped plugin
-   exercises a non-zero result from this path, and none should.
-
-``uhbs_core.test_stealth`` (Module A) and ``uhbs_core.test_realism``
-(Module B) both delegate to :func:`score_checks` so the math stays in one
-place, per the repository's "single source of truth" rule for scoring.
+1. **Circuit breaker.** Any ``critical=True`` check that is not PASS
+   (FAIL / ERROR / NOT_TESTED) hard-caps the aggregate to ``0.0``.
+2. **Integrity gate.** Self-contradictory PASS/score pairs zero the list
+   (see ``contract_validation.has_passed_score_disagreement``).
+3. **Geometric mean** over checks that remain in the denominator.
+4. **Completeness** is reported separately via ``module_completeness`` —
+   callers must not publish a graded module score when incomplete.
 """
 
 from __future__ import annotations
 
 import math
 from collections.abc import Sequence
+from dataclasses import dataclass
+from typing import Any
 
 from uhbs_core.contract_validation import has_passed_score_disagreement
-from uhbs_core.models import CheckResult
+from uhbs_core.models import CheckOutcome, CheckResult, module_completeness
 
 # Floor used in place of a literal 0.0 before taking log() — keeps a single
 # exact-zero score from making the *entire* geometric mean collapse to zero
@@ -69,30 +31,150 @@ from uhbs_core.models import CheckResult
 _LOG_FLOOR = 0.5
 
 
-def score_checks(checks: Sequence[CheckResult]) -> float:
-    """Aggregate a Module A/B check list into one 0-100 score.
+def _denominator_checks(checks: Sequence[CheckResult]) -> list[CheckResult]:
+    return [c for c in checks if c.outcome is not CheckOutcome.NOT_APPLICABLE]
 
-    See module docstring for the circuit-breaker + geometric-mean rationale.
-    """
+
+def score_checks(checks: Sequence[CheckResult]) -> float:
+    """Aggregate a check list into one 0-100 score (v5 denominator rules)."""
     if not checks:
         return 0.0
 
-    # 1) Circuit breaker — a failed critical gate zeroes the whole list.
-    if any(c.critical and not c.passed for c in checks):
+    scored = _denominator_checks(checks)
+    if not scored:
+        # All NOT_APPLICABLE — no earned credit; caller should mark NA/incomplete.
         return 0.0
 
-    # 2) Integrity gate — a self-contradictory check (passed/score disagree)
-    # zeroes the whole list too. See module docstring for why this can't be
-    # left to the legacy fallback below.
-    if any(has_passed_score_disagreement(c) for c in checks):
+    # 1) Circuit breaker — critical non-PASS zeroes the whole list.
+    if any(
+        c.critical and c.outcome is not CheckOutcome.PASS
+        for c in scored
+    ):
         return 0.0
 
-    # 3) Geometric mean over real scores.
-    if any(c.score > 0 for c in checks):
-        vals = [max(float(c.score), _LOG_FLOOR) for c in checks]
+    # 2) Integrity gate — contradictory PASS/score zeroes the list.
+    if any(
+        c.outcome is CheckOutcome.PASS and has_passed_score_disagreement(c)
+        for c in scored
+    ):
+        return 0.0
+    if any(
+        c.outcome is CheckOutcome.FAIL
+        and has_passed_score_disagreement(c)
+        for c in scored
+    ):
+        return 0.0
+
+    # 3) Geometric mean over denominator members (NOT_TESTED/ERROR contribute ~0).
+    if any(c.score > 0 for c in scored):
+        vals = [max(float(c.score), _LOG_FLOOR) for c in scored]
         log_mean = sum(math.log(v) for v in vals) / len(vals)
         return round(min(100.0, math.exp(log_mean)), 4)
 
-    # 4) Legacy fallback — booleans only, no scores populated. Reachable
-    # only when every check is passed=False/score=0.0 (see docstring).
-    return 100.0 * sum(1 for c in checks if c.passed) / len(checks)
+    # 4) Boolean-only fallback among denominator checks.
+    return 100.0 * sum(1 for c in scored if c.outcome is CheckOutcome.PASS) / len(scored)
+
+
+def score_checks_with_completeness(
+    checks: Sequence[CheckResult],
+) -> tuple[float, dict[str, Any]]:
+    """Return (score, completeness dict). Score is diagnostic even if incomplete."""
+    completeness = module_completeness(list(checks))
+    return score_checks(checks), completeness
+
+
+@dataclass(frozen=True)
+class CheckAggregation:
+    score: float
+    complete: bool
+    applicable: int
+    scored: int
+    not_applicable: int
+    not_tested: int
+    errors: int
+    coverage: float
+
+
+def summarize_checks(checks: Sequence[CheckResult]) -> CheckAggregation:
+    """Compatibility wrapper used by Module C/D runners."""
+    comp = module_completeness(list(checks))
+    applicable = int(comp["applicable_checks"])
+    scored = int(comp["scored_checks"])
+    coverage = (scored / applicable) if applicable else 0.0
+    return CheckAggregation(
+        score=score_checks(checks) if comp["complete"] else 0.0,
+        complete=bool(comp["complete"]),
+        applicable=applicable,
+        scored=scored,
+        not_applicable=int(comp["not_applicable"]),
+        not_tested=int(comp["not_tested"]),
+        errors=int(comp["errors"]),
+        coverage=round(coverage, 4),
+    )
+
+
+def earned_over_available(checks: Sequence[CheckResult]) -> float:
+    """Linear earned/available among denominator checks (0–100).
+
+    Prefer geometric ``score_checks`` for Modules A/B; use this for modules
+    that historically summed point weights (C/D/E/F) so removing a check
+    cannot silently shrink the ceiling.
+    """
+    scored = _denominator_checks(checks)
+    if not scored:
+        return 0.0
+    # Each check's nominal max is inferred as max(score, 100) for PASS,
+    # else treat weight as the check's declared score when PASS would have
+    # earned it — plugins should set score to the weight on PASS and 0 otherwise.
+    # For equal-weight checks, use count-based ratio of PASS.
+    # When scores are point-weights, sum earned / sum of max weights among
+    # measured outcomes. We approximate max weight as max(c.score, 1.0) for
+    # PASS else look at a conventional weight from detail — simpler: equal weight.
+    earned = sum(1.0 for c in scored if c.outcome is CheckOutcome.PASS)
+    return round(100.0 * earned / len(scored), 2)
+
+
+def point_weight_score(checks: Sequence[CheckResult]) -> float:
+    """Sum of earned scores / sum of potential weights among denominator checks.
+
+    Potential weight for each check is the score it would award on PASS. Plugins
+    encode that as ``score`` when PASS, and should still record the potential
+    via a positive score only on PASS; for FAIL/NOT_TESTED/ERROR the potential
+    is recovered from ``metrics`` or assumed equal. Here we use equal potential
+    per check when all non-PASS have score 0: fall back to earned_over_available.
+    When some PASS scores exist, potential = max(pass scores) per check id group
+    is unavailable; use sum(pass scores) / max(sum(all absolute weights), eps).
+
+    Practical rule used by Modules C/D/E/F: each check declares its weight in
+    ``score`` on PASS and 0 otherwise; potential total is supplied by the caller
+    OR inferred as sum of scores on PASS plus a registered weight on failures
+    stored in ``CheckResult`` — for v5 we store weight in score only on PASS and
+    use equal-weight fallback when potentials are unknown.
+    """
+    scored = _denominator_checks(checks)
+    if not scored:
+        return 0.0
+    earned = sum(float(c.score) for c in scored if c.outcome is CheckOutcome.PASS)
+    # Potential: if any check has a positive score on PASS, estimate available
+    # as earned + 0 for failures... that shrinks the ceiling. Instead require
+    # plugins to put the weight on every outcome via a convention: use
+    # max(score, 0) for PASS as weight, and for non-PASS look at a default
+    # equal share.
+    pass_weights = [
+        float(c.score)
+        for c in scored
+        if c.outcome is CheckOutcome.PASS and c.score > 0
+    ]
+    if not pass_weights:
+        return earned_over_available(checks)
+    # Assume remaining checks share the median PASS weight as potential.
+    typical = sorted(pass_weights)[len(pass_weights) // 2]
+    available = 0.0
+    for c in scored:
+        if c.outcome is CheckOutcome.PASS and c.score > 0:
+            available += float(c.score)
+        else:
+            available += typical
+    if available <= 0:
+        return 0.0
+    return round(min(100.0, 100.0 * earned / available), 2)

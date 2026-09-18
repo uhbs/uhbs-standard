@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import {
-  Terminal,
-  ArrowRight,
-} from "lucide-react";
+import { Terminal, ArrowRight } from "lucide-react";
+import { ButtonLink } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { mkdocsUrl, siteUrl } from "@/lib/urls";
 import { fadeUpVariant, staggerContainer } from "./motion";
 
 export const McpForAgents = () => {
   return (
-    <section id="mcp" className="py-24 border-t border-border/50 bg-[#0f1629]/40">
+    <section id="mcp" className="py-24 border-t-2 border-border bg-page">
       <motion.div
         className="container mx-auto px-6"
         initial="hidden"
@@ -17,13 +17,13 @@ export const McpForAgents = () => {
       >
         <motion.div variants={fadeUpVariant} className="max-w-3xl mb-10">
           <div className="flex items-center gap-3 mb-4">
-            <Terminal className="w-7 h-7 text-primary" />
-            <h2 className="text-3xl font-bold font-sans">MCP for AI hosts</h2>
+            <Terminal className="w-7 h-7 text-main" aria-hidden />
+            <h2 className="text-3xl font-heading">MCP for AI hosts</h2>
           </div>
-          <p className="text-secondary-foreground text-lg font-light leading-relaxed">
-            Optional local stdio server so Cursor, Claude Desktop, VS Code, and other
-            MCP clients can validate scorecards and recompute UHQS without inventing math.
-            Live Docker lab probes stay on the CLI.
+          <p className="text-muted-foreground text-lg font-base leading-relaxed">
+            Optional local stdio server so Cursor, Claude Desktop, VS Code, and other MCP clients can
+            validate scorecards and recompute UHQS without inventing math. Live Docker lab probes stay
+            on the CLI.
           </p>
         </motion.div>
 
@@ -33,36 +33,41 @@ export const McpForAgents = () => {
         >
           {[
             { title: "Validate", body: "scorecard · profile · evidence schemas + UHQS integrity" },
-            { title: "Score", body: "compute_uhqs / δ_C from uhqs_math — same as uhbs score" },
+            { title: "Score", body: "compute_uhqs eligibility + weighted sum from the shared uhqs_math source" },
             { title: "Discover", body: "fixtures, lab report hubs, scoring-formula resource" },
           ].map((card) => (
-            <div key={card.title} className="border border-border/60 bg-card/50 p-5">
-              <div className="text-primary mb-2">{card.title}</div>
-              <div className="text-muted-foreground text-xs leading-relaxed">{card.body}</div>
-            </div>
+            <Card key={card.title} size="sm">
+              <CardContent>
+                <div className="text-black bg-background inline-block px-2 py-0.5 border-2 border-border mb-2 text-xs uppercase tracking-wider">
+                  {card.title}
+                </div>
+                <div className="text-muted-foreground text-xs leading-relaxed">{card.body}</div>
+              </CardContent>
+            </Card>
           ))}
         </motion.div>
 
         <motion.pre
           variants={fadeUpVariant}
-          className="bg-background border border-border/60 p-5 overflow-x-auto text-xs font-mono text-secondary-foreground mb-8"
+          className="bg-slate-50 border-2 border-border p-5 overflow-x-auto text-xs font-mono text-foreground mb-8 shadow-[2px_2px_0_0_#000]"
         >{`pip install -e ".[mcp]"
 # mcpServers.uhbs → python -m uhbs_mcp  (set UHBS_ROOT to checkout)`}</motion.pre>
 
-        <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-4 font-mono text-sm">
-          <a href="mkdocs/tooling/mcp/" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 hover:opacity-90">
-            MCP install guide <ArrowRight className="w-4 h-4" />
-          </a>
-          <a href="https://github.com/uhbs/uhbs-standard/blob/main/server.json" className="inline-flex items-center gap-2 border border-border px-4 py-2 hover:border-primary/50">
+        <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-4">
+          <ButtonLink href={mkdocsUrl("tooling/mcp/")}>
+            MCP install guide <ArrowRight />
+          </ButtonLink>
+          <ButtonLink
+            variant="neutral"
+            href="https://github.com/uhbs/uhbs-standard/blob/main/server.json"
+          >
             server.json
-          </a>
-          <a href="llms.txt" className="inline-flex items-center gap-2 border border-border px-4 py-2 hover:border-primary/50">
+          </ButtonLink>
+          <ButtonLink variant="neutral" href={siteUrl("llms.txt")}>
             llms.txt
-          </a>
+          </ButtonLink>
         </motion.div>
       </motion.div>
     </section>
   );
 };
-
-// Section: Latest experimental changes

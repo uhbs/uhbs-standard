@@ -1,7 +1,7 @@
 # mqtt-decoy-a — MQTT
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 4.6.0 · **Class:** Low-Interaction · **Protocol:** `mqtt`  
+**UHBS:** 5.0.0 · **Class:** Low-Interaction · **Protocol:** `mqtt`  
 **Target id:** `mqtt-decoy-a` · **Evaluated:** 2026-09-07  
 **Endpoint:** `98.90.197.80:1883` (operator-provided honeypot)
 

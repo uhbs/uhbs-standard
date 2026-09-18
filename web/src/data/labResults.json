@@ -380,6 +380,26 @@
     "fullCard": "mkdocs/conformance/reports/endlessh/full/SCORECARD.txt"
   },
   {
+    "name": "EchidraOSS",
+    "classLabel": "Low-Interaction · SSH :2222",
+    "protocol": "ssh",
+    "protocolLabel": "SSH",
+    "repo": "https://github.com/Qyleron/EchidraOSS",
+    "repoUpdated": "2026-09-15",
+    "uhqsQuick": 57.33,
+    "uhqsFull": 43.45,
+    "gradeQuick": "D",
+    "gradeFull": "F",
+    "hub": "mkdocs/conformance/reports/echidra/",
+    "tutorial": "mkdocs/conformance/reports/echidra/TUTORIAL/",
+    "methodology": "mkdocs/conformance/reports/echidra/METHODOLOGY/",
+    "scorecard": "mkdocs/scorecards/echidra-ssh/",
+    "quick": "mkdocs/conformance/reports/echidra/quick/",
+    "full": "mkdocs/conformance/reports/echidra/full/",
+    "quickCard": "mkdocs/conformance/reports/echidra/quick/SCORECARD.txt",
+    "fullCard": "mkdocs/conformance/reports/echidra/full/SCORECARD.txt"
+  },
+  {
     "name": "OpenCanary (HTTP)",
     "classLabel": "Web-API · HTTP :80",
     "protocol": "http",

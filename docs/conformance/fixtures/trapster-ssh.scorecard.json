@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.6.0",
+  "uhbs_version": "5.0.0",
   "target": {
     "name": "Trapster Community (SSH :2222)",
     "class": "Low-Interaction",
@@ -12,24 +12,29 @@
       "score": 70.64,
       "status": "PASSED",
       "weight": 0.3,
-      "notes": "accepted null ID"
+      "notes": "accepted null ID",
+      "complete": true
     },
     "B": {
       "score": 6.25,
       "status": "PARTIAL",
       "weight": 0.15,
-      "notes": "marker missing across sessions"
+      "notes": "marker missing across sessions",
+      "complete": true
     },
     "C": {
       "score": 25.0,
       "status": "PARTIAL",
       "weight": 0.25,
-      "notes": "accepted"
+      "notes": "accepted",
+      "complete": true
     },
     "D": {
       "score": 100.0,
-      "status": "PASSED",
-      "notes": "leak/unstable"
+      "status": "GATE_PASSED",
+      "notes": "leak/unstable",
+      "critical_control_verdict": "GATE_PASSED",
+      "complete": true
     },
     "E": {
       "score": 20.0,
@@ -38,13 +43,15 @@
       "notes": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=150.0ms proto=ssh",
       "p50_ms": 0.0,
       "p95_ms": 0.0,
-      "p99_ms": 0.0
+      "p99_ms": 0.0,
+      "complete": true
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
       "weight": 0.2,
-      "notes": "1 predictable PRNG seeds: trapster/modules/http.py"
+      "notes": "1 predictable PRNG seeds: trapster/modules/http.py",
+      "complete": true
     }
   },
   "weights": {
@@ -58,9 +65,14 @@
     "containment_score": 100.0,
     "delta_c": 1.0,
     "passed": true,
+    "critical_control_verdict": "GATE_PASSED",
     "unauthorized_egress_leaks": 0
   },
   "uhqs": 44.38,
   "grade": "F",
-  "notes": "Evaluation proof only. Graded SSH :2222 on Trapster Community. Artifacts under docs/conformance/reports/trapster/ssh/."
+  "notes": "Evaluation proof only. Graded SSH :2222 on Trapster Community. Artifacts under docs/conformance/reports/trapster/ssh/. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
+  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_PASSED",
+  "containment_measured": true
 }

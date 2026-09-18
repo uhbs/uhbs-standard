@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "4.6.0",
+  "uhbs_version": "5.0.0",
   "target": {
     "name": "Dionaea (SMB :445)",
     "class": "Low-Interaction",
@@ -12,24 +12,29 @@
       "score": 70.43,
       "status": "PASSED",
       "weight": 0.3,
-      "notes": "median=0.444ms pstdev=198.996ms (target jitter often <2ms vs native"
+      "notes": "median=0.444ms pstdev=198.996ms (target jitter often <2ms vs native",
+      "complete": true
     },
     "B": {
       "score": 82.5,
       "status": "PASSED",
       "weight": 0.15,
-      "notes": "survived binary blast"
+      "notes": "survived binary blast",
+      "complete": true
     },
     "C": {
       "score": 55.0,
       "status": "PARTIAL",
       "weight": 0.25,
-      "notes": "no STIX objects found"
+      "notes": "no STIX objects found",
+      "complete": true
     },
     "D": {
       "score": 90.0,
-      "status": "PASSED",
-      "notes": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes"
+      "status": "GATE_FAILED",
+      "notes": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes",
+      "critical_control_verdict": "GATE_FAILED",
+      "complete": true
     },
     "E": {
       "score": 55.0,
@@ -38,13 +43,15 @@
       "notes": "P50=1022.2ms P95=1029.2ms P99=1032.0ms TPS_limit=150.0ms proto=smb",
       "p50_ms": 1025.55,
       "p95_ms": 1183.46,
-      "p99_ms": 1203.6
+      "p99_ms": 1203.6,
+      "complete": true
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
       "weight": 0.2,
-      "notes": "bandit HIGH=9"
+      "notes": "bandit HIGH=9",
+      "complete": true
     }
   },
   "weights": {
@@ -56,11 +63,16 @@
   },
   "safety_gate": {
     "containment_score": 90.0,
-    "delta_c": 0.81,
+    "delta_c": 0.0,
     "passed": false,
+    "critical_control_verdict": "GATE_FAILED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 54.07,
-  "grade": "D",
-  "notes": "Evaluation proof only. Graded SMB :445 on Dionaea. Artifacts under docs/conformance/reports/dionaea/smb/."
+  "uhqs": null,
+  "grade": null,
+  "notes": "Evaluation proof only. Graded SMB :445 on Dionaea. Artifacts under docs/conformance/reports/dionaea/smb/. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
+  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }

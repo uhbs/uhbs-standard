@@ -1,10 +1,10 @@
-site_name: Universal Honeypot Benchmarking Standard (UHBS)
-site_description: Open-source evaluation framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100, Safety Gate). Optional AEP and alpha SLM trial helper. Spec v4.6.0. Not a consortium standard.
+site_name: UHBS — Honeypot Evaluation Framework
+site_description: Open-source evaluation framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100, Safety Gate). Optional AEP and alpha SLM trial helper. Spec v5.0.0. Not a consortium standard.
 site_url: https://uhbs.github.io/uhbs-standard/mkdocs/
 repo_url: https://github.com/uhbs/uhbs-standard
 repo_name: uhbs/uhbs-standard
 edit_uri: edit/main/docs/
-copyright: UHBS v4.6.0 — evaluation framework (Apache-2.0)
+copyright: UHBS v5.0.0 — evaluation framework (Apache-2.0)
 
 theme:
   name: material
@@ -77,6 +77,9 @@ nav:
   - Home: index.md
   - Get started:
       - Install & use UHBS: tooling/install-and-use.md
+      - 2026 audit-readiness checklist: governance/audit-readiness-2026.md
+      - Telemetry legal & safety: governance/telemetry-legal-safety.md
+      - Terminology: governance/terminology.md
       - CLI & Validator: tooling/cli.md
       - Lab harness: reference-implementation.md
       - MCP server (AI hosts): tooling/mcp.md
@@ -112,6 +115,10 @@ nav:
           - TELNET hub: conformance/reports/cowrie/telnet/index.md
           - Reproduce grade: conformance/reports/cowrie/TUTORIAL.md
           - Methodology: conformance/reports/cowrie/METHODOLOGY.md
+      - EchidraOSS:
+          - Report hub: conformance/reports/echidra/index.md
+          - Reproduce grade: conformance/reports/echidra/TUTORIAL.md
+          - Methodology: conformance/reports/echidra/METHODOLOGY.md
       - Endlessh:
           - Report hub: conformance/reports/endlessh/index.md
           - Reproduce grade: conformance/reports/endlessh/TUTORIAL.md
@@ -463,6 +470,8 @@ nav:
       - Cowrie:
           - SSH: scorecards/cowrie-ssh.md
           - TELNET: scorecards/cowrie-telnet.md
+      - EchidraOSS:
+          - SSH: scorecards/echidra-ssh.md
       - Endlessh:
           - SSH tarpit: scorecards/endlessh-ssh-tarpit.md
       - OpenCanary:
@@ -607,6 +616,7 @@ nav:
       - Engage: mappings/engage.md
       - NIST: mappings/nist.md
       - IEC 62443: mappings/iec-62443.md
+      - 2026 regulatory context: mappings/regulatory-context.md
       - Related frameworks: mappings/related-frameworks.md
   - Advanced Evidence (optional):
       - Overview: advanced-evidence/index.md
@@ -633,7 +643,9 @@ nav:
       - Architecture: architecture/experimental-benchmarks.md
       - RFC 0002: rfcs/0002-experimental-benchmark-extensions.md
   - Governance:
+      - Framework crosswalk governance: governance/framework-crosswalks.md
       - Roadmap: roadmap.md
       - RFCs: rfcs/README.md
       - RFC-0001 Baseline: rfcs/0001-uhbs-4.0-baseline.md
+      - RFC-0003 Scoring assurance: rfcs/0003-scoring-assurance.md
       - RFC Template: rfcs/0000-template.md

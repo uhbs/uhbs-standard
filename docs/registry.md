@@ -38,7 +38,7 @@ Until a multi-maintainer process exists, open an issue with label
 ## Badge snippet (do not use yet)
 
 ```markdown
-![UHBS v4.6.0 attested](https://img.shields.io/badge/UHBS%20v4.6.0-attested-blue)
+![UHBS v5.0.0 attested](https://img.shields.io/badge/UHBS%20v5.0.0-attested-blue)
 ```
 
 Do **not** publish grade or “attested” badges for unattested runs, and do not

@@ -1,0 +1,45 @@
+{
+  "POSIX-Shell": [
+    "event_time",
+    "source_endpoint",
+    "destination_endpoint",
+    "protocol_action",
+    "authentication_result",
+    "command_content",
+    "session_id"
+  ],
+  "GenAI-Shell": [
+    "event_time",
+    "source_endpoint",
+    "protocol_action",
+    "command_content",
+    "session_id"
+  ],
+  "Low-Interaction": [
+    "event_time",
+    "source_endpoint",
+    "protocol_action"
+  ],
+  "ICS-SCADA": [
+    "event_time",
+    "source_endpoint",
+    "destination_endpoint",
+    "protocol_action",
+    "session_id"
+  ],
+  "Web-API": [
+    "event_time",
+    "source_endpoint",
+    "destination_endpoint",
+    "protocol_action",
+    "authentication_result",
+    "request_content"
+  ],
+  "Database": [
+    "event_time",
+    "source_endpoint",
+    "protocol_action",
+    "authentication_result",
+    "request_content"
+  ]
+}

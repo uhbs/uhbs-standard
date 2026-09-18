@@ -3,7 +3,7 @@
 **Status:** Informative  
 **Purpose:** Published, reproducible UHBS-Lab outputs for named honeypots / decoys so the community can **audit**, **replicate**, and **compare** grades — not so UHBS can endorse products.
 
-> UHBS is an open-source **evaluation framework** (v4.6.0).  
+> UHBS is an open-source **evaluation framework** (v5.0.0).  
 > Named products appear **only** under `docs/conformance/` as evaluation proof.  
 > A grade is not a certification, badge program, or consortium verdict.
 
@@ -11,10 +11,15 @@
     For install + validate + score (no Docker honeypot), use
     **[Install & use UHBS](../../tooling/install-and-use.md)**.
 
+!!! warning "Historical v4 grades"
+    Existing report URLs remain resolvable. Grades produced under UHQS 4.x are
+    **historical** relative to `scoring_model_id=uhqs-v5.0-critical-gate-diagnostic`.
+    See [RFC 0003](../../rfcs/0003-scoring-assurance.md).
+
 !!! note "Scorecard banners vs current package"
     Verbatim `SCORECARD.txt` / `REPORT.txt` files keep the harness version
     stamped at **lab run time** (for example `SCORECARD v4.0.1`). That is
-    historical proof. Rebuild recipes and this site use **UHBS 4.6.0** today.
+    historical proof. Rebuild recipes and this site use **UHBS 5.0.0** today.
 
 ## How to use this directory
 
@@ -41,6 +46,7 @@
 | [LLMPot (momalab)](llmpot/index.md) | multi | Modbus `:5020` / S7comm `:102` / HTTP `:8080` | see hub | see hub | [Reproduce](llmpot/TUTORIAL.md) |
 | [DataTrap (Thales)](datatrap/index.md) | multi | SSH / HTTP / MySQL / Redis / Telnet / PostgreSQL | see hub | see hub | [Reproduce](datatrap/TUTORIAL.md) |
 | [Endlessh (skeeto)](endlessh/index.md) | Low-Interaction | `ssh_tarpit` `:2222` | [46.55 / F](endlessh/quick/README.md) | [54.07 / D](endlessh/full/README.md) | [Reproduce](endlessh/TUTORIAL.md) |
+| [EchidraOSS (Qyleron)](echidra/index.md) | Low-Interaction | SSH `:2222` | [57.33 / D](echidra/quick/README.md) | [43.45 / F](echidra/full/README.md) | [Reproduce](echidra/TUTORIAL.md) |
 | [OpenCanary (thinkst)](opencanary/index.md) | multi | HTTP / FTP / SSH / Telnet / Redis / MySQL / RDP / SIP / SNMP / NTP / TFTP / VNC / Git / SMB | see hub | see hub | [Reproduce](opencanary/TUTORIAL.md) |
 | [Beelzebub](beelzebub/index.md) | multi | SSH / HTTP / Telnet / Redis / MCP | see hub | see hub | [Reproduce](beelzebub/TUTORIAL.md) |
 | [HoneyMCP](honeymcp/index.md) | Web-API | MCP `:8080` | [43.04 / F](honeymcp/mcp/quick/) | [42.93 / F](honeymcp/mcp/full/) | [Reproduce](honeymcp/TUTORIAL.md) |

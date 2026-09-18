@@ -1,7 +1,7 @@
 # Methodology: Trapster Community multi-protocol UHBS lab
 
 **Status:** Informative  
-**UHBS:** 4.6.0 · Images `uhbs:4.6.0` (quick) / `uhbs:4.6.0-full` (full)  
+**UHBS:** 5.0.0 · Images `uhbs:5.0.0` (quick) / `uhbs:5.0.0-full` (full)  
 **Upstream commit:** `dfc2c43dad119578f9c7344a0077790ed7fee01b`
 
 ## What was graded

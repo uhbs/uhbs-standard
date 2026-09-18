@@ -12,7 +12,7 @@ import ipaddress
 import socket
 import struct
 
-from uhbs_core.models import CheckResult, TargetSpec
+from uhbs_core.models import CheckOutcome, CheckResult, TargetSpec
 from uhbs_core.protocols.base import ProtocolPlugin
 from uhbs_core.rfc_probes import _transact
 from uhbs_core.tps import TPS
@@ -190,9 +190,11 @@ class SOCKS5Plugin(ProtocolPlugin):
                 CheckResult(
                     id="socks5.fsm.socks4_reply_shape",
                     team="blue",
-                    passed=True,
+                    outcome=CheckOutcome.NOT_APPLICABLE,
                     detail="SOCKS4 probe closed (SOCKS5-only server)",
-                    score=50.0,
+                    score=0.0,
+                    mandatory=False,
+                    applicability_rationale="Target appears SOCKS5-only; SOCKS4 shape not applicable",
                 )
             )
         else:
@@ -200,13 +202,14 @@ class SOCKS5Plugin(ProtocolPlugin):
                 CheckResult(
                     id="socks5.fsm.socks4_reply_shape",
                     team="blue",
-                    passed=True,
+                    outcome=CheckOutcome.NOT_TESTED,
                     detail=(
                         s4_raw[:4].hex()
                         if s4_raw
-                        else (s4_err or "no SOCKS4-shaped reply — skipped")
+                        else (s4_err or "no SOCKS4-shaped reply")
                     ),
-                    score=50.0,
+                    score=0.0,
+                    mandatory=False,
                 )
             )
 

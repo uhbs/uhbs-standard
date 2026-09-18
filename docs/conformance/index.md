@@ -2,6 +2,13 @@
 
 **Status:** Normative (fixtures) / Informative (narrative + lab reports)
 
+!!! warning "UHBS v4.6.1 historical scoring model"
+    Lab report pages under `docs/conformance/reports/` keep stable URLs and may
+    cite DOI-era grades under UHQS 4.x. They are **historical**. New evaluations
+    use UHBS **5.0.0** / `scoring_model_id=uhqs-v5.0-critical-gate-diagnostic`
+    ([RFC 0003](../rfcs/0003-scoring-assurance.md)). Archived v4 fixtures:
+    [`archive/v4.6.1/`](archive/v4.6.1/).
+
 This section is **evaluation proof**: finished scorecards and Docker lab recipes
 for named honeypots. It is **not** the “how to install UHBS” guide.
 
@@ -35,6 +42,7 @@ Published quick + full Docker grades, reproduce recipes, and provenance:
 | [Conpot](reports/conpot/index.md) | [44.55 / F](reports/conpot/quick/) | [55.4 / D](reports/conpot/full/) | [recipe](reports/conpot/TUTORIAL.md) |
 | [Cowrie](reports/cowrie/index.md) | [82.76 / B](reports/cowrie/ssh/quick/) | [61.37 / D](reports/cowrie/ssh/full/) | [recipe](reports/cowrie/TUTORIAL.md) |
 | [Endlessh](reports/endlessh/index.md) | [46.55 / F](reports/endlessh/quick/) | [54.07 / D](reports/endlessh/full/) | [recipe](reports/endlessh/TUTORIAL.md) |
+| [EchidraOSS](reports/echidra/index.md) | [57.33 / D](reports/echidra/quick/) | [43.45 / F](reports/echidra/full/) | [recipe](reports/echidra/TUTORIAL.md) |
 | [OpenCanary](reports/opencanary/index.md) | see hub | see hub | [recipe](reports/opencanary/TUTORIAL.md) |
 
 ## Fixtures
@@ -53,6 +61,7 @@ Published quick + full Docker grades, reproduce recipes, and provenance:
 | [`fixtures/opencanary-telnet.scorecard.json`](fixtures/opencanary-telnet.scorecard.json) | OpenCanary (Telnet, **full**) | 64.9 | D |
 | [`fixtures/opencanary-redis.scorecard.json`](fixtures/opencanary-redis.scorecard.json) | OpenCanary (Redis, **full**) | 53.72 | D |
 | [`fixtures/endlessh-low-interaction.scorecard.json`](fixtures/endlessh-low-interaction.scorecard.json) | Endlessh (SSH tarpit / `ssh_tarpit`, **full**) | 54.07 | D |
+| [`fixtures/echidra-low-interaction.scorecard.json`](fixtures/echidra-low-interaction.scorecard.json) | EchidraOSS (SSH / Low-Interaction, **full**) | 43.45 | F |
 | [`fixtures/safety-gate-fail.scorecard.json`](fixtures/safety-gate-fail.scorecard.json) | Synthetic δ_C penalty case | 0.0 | F |
 
 ## How to run

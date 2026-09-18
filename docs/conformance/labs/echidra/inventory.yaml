@@ -1,0 +1,20 @@
+# Inventory for Qyleron/EchidraOSS UHBS Docker lab (SSH primary).
+# Inside uhbs-lab, Echidra listens on container port 2222 (asyncssh).
+# Mounts: source → /honeypot, logs → /telemetry
+# Auth: any credentials are accepted (lab uses root/admin).
+sites:
+  echidra:
+    kind: ssh
+    class: Low-Interaction
+    host: echidra-lab
+    protocol: ssh
+    protocols: [ssh]
+    port: 2222
+    ports:
+      ssh: 2222
+    user: root
+    password: admin
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/echidra/low_interaction_ssh_full.yaml
+    container_image: echidraoss-honeypot
