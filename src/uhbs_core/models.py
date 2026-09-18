@@ -297,6 +297,9 @@ class TargetSpec:
             found.append("smtp")
         return found
 
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
 
 @dataclass
 class UHQSResult:
