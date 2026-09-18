@@ -1,6 +1,13 @@
 # Mapping Index
 
-Informative interoperability mappings for readers evaluating the UHBS framework against familiar security frameworks. These pages explain **how UHBS concepts relate** to external taxonomies — they are **not** certifications, compliance attestations, or claims that UHBS implements those standards.
+**Status:** Informative<br>
+**UHBS target:** 5.0.0 · `uhqs-v5.0.0-critical-gate-binary`<br>
+**Review date:** 2026-09-18
+
+Informative interoperability mappings for readers evaluating the UHBS framework
+against familiar security frameworks. These pages explain **how UHBS concepts
+relate** to external taxonomies — they are **not** certifications, compliance
+attestations, legal advice, or claims that UHBS implements those standards.
 
 Use these mappings when:
 
@@ -16,7 +23,12 @@ Use these mappings when:
 - [MITRE Engage](engage.md) — Expose / Affect / Elicit / Understand goals vs UHBS modules
 - [NIST CSF / SP 800-53](nist.md) — informative crosswalk for governance readers
 - [IEC 62443 (OT/ICS)](iec-62443.md) — OT-oriented reading notes for industrial honeypot evaluations
+- [2026 framework and regulatory context](regulatory-context.md) — pinned source/status register and claim boundaries
 - [Related deception frameworks](related-frameworks.md) — evidence-graded comparison of 14 framework/model families vs UHBS
+
+Mapping records follow [Framework Crosswalk Governance](../governance/framework-crosswalks.md):
+pin the source release, state granularity and rationale, assign confidence, and
+review on source or UHBS drift.
 
 For controlled comparative experiments that stay outside UHQS, see the optional
 [Advanced Evidence Profile (AEP)](../advanced-evidence/index.md).
@@ -38,4 +50,9 @@ These tags do **not** affect UHQS, δ_C, or letter grade. See the
 
 ## Trust limits
 
-Mappings are **informative**. They do not replace the verbatim SCORECARD / `report.json` proof for any graded product under `docs/conformance/`. Prefer absolute URLs on the published docs site when sharing externally. UHBS remains an open-source evaluation framework (Apache-2.0, v4.6.1) — not an adopted industry or academic standard.
+Mappings are **informative**. They do not replace the verbatim SCORECARD /
+`report.json` proof for any graded product under `docs/conformance/`, and they
+do not establish that an external control or legal duty is satisfied. Prefer
+absolute URLs on the published docs site when sharing externally. UHBS remains
+an experimental open-source evaluation framework (Apache-2.0, v5.0.0) — not an
+adopted industry or academic standard.

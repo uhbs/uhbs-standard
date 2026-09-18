@@ -15,7 +15,16 @@ from . import genai_bench_cmds as genai_bench_cmds  # noqa: F401
 from . import matrix_cmds as matrix_cmds  # noqa: F401
 from . import provenance_cmds as provenance_cmds  # noqa: F401
 from .core import main
-from .paths import ROOT, SCHEMA_DIR, _load_json, _load_schema, _load_yaml, _repo_root, _schema_dir
+from .paths import (
+    ROOT,
+    SCHEMA_DIR,
+    _load_json,
+    _load_schema,
+    _load_yaml,
+    _repo_root,
+    _schema_dir,
+    _schema_for_document,
+)
 
 __all__ = [
     "ROOT",
@@ -25,5 +34,6 @@ __all__ = [
     "_load_yaml",
     "_repo_root",
     "_schema_dir",
+    "_schema_for_document",
     "main",
 ]

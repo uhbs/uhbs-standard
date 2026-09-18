@@ -1,7 +1,7 @@
 # beelzebub — REDIS
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 4.6.1 · **Class:** Low-Interaction · **Protocol:** `redis`  
+**UHBS:** 5.0.0 · **Class:** Low-Interaction · **Protocol:** `redis`  
 **Target id:** `beelzebub-redis` · **Evaluated:** 2026-07-27
 
 | Run | UHQS | Grade | δ_C | Artifacts |

@@ -3,9 +3,28 @@
 All notable changes to the UHBS specification and tooling are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/). Spec and CLI
-share version **4.6.1** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
+share version **5.0.0** (`uhbs_core` ships in-tree as `uhbs[lab]`; MCP as `uhbs[mcp]`;
 AEP as `uhbs[aep]`; AEP SLM alpha as `uhbs[aep-slm]`; experimental as
 `uhbs[experimental]` / `uhbs[genai-bench]`).
+
+## [5.0.0] — 2026-09-18
+
+Breaking UHQS scoring and assurance redesign ([RFC 0003](docs/rfcs/0003-scoring-assurance.md)).
+**scoring_model_id:** `uhqs-v5.0.0-critical-gate-binary`.
+
+### Changed
+- Check outcomes: `PASS` / `FAIL` / `NOT_APPLICABLE` / `NOT_TESTED` / `ERROR` — only `NOT_APPLICABLE` leaves the denominator
+- Incomplete mandatory checks → `assessment_status=INCOMPLETE`, `uhqs=null`, no letter grade (no invented `U`)
+- Module D: critical-control verdict + defense-in-depth score; removed `max(score, 95)` floor and attestation-only credit
+- Module C: declared-format validation (STIX optional), sink-side injection, ground-truth recall, pinned ATT&CK
+- Skip-credit paths purged across protocol / telemetry / safety / static modules
+- Harness emits schema-valid `evidence-pack.json`; v4 schemas frozen under `schemas/v4/`
+- Historical v4.6.1 fixtures archived under `docs/conformance/archive/v4.6.1/`; published report URLs unchanged
+
+### Added
+- RFC 0003 + synthetic calibration notes (`docs/rfcs/calibration/v5-sensitivity.md`)
+- v5 golden fixtures: incomplete / gate-failed / gate-passed cases
+- Invariant and mutation regression tests (`tests/test_uhqs_v5_invariants.py`)
 
 ## [4.6.1] — 2026-09-15
 

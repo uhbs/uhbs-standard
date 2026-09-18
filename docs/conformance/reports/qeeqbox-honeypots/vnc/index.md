@@ -1,7 +1,7 @@
 # qeeqbox-honeypots — VNC
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 4.6.1 · **Class:** Low-Interaction · **Protocol:** `vnc`  
+**UHBS:** 5.0.0 · **Class:** Low-Interaction · **Protocol:** `vnc`  
 **Target id:** `qeeqbox-vnc` · **Evaluated:** 2026-07-29
 
 | Run | UHQS | Grade | δ_C | Artifacts |

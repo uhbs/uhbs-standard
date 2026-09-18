@@ -1,7 +1,7 @@
 # Methodology: HoneyMCP UHBS lab
 
 **Status:** Informative  
-**UHBS:** 4.6.1  
+**UHBS:** 5.0.0  
 **Upstream commit:** `966bb908d140809957ba01e05132631c514ade5d`
 
 ## What was graded

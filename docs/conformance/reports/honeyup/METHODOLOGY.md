@@ -1,6 +1,6 @@
 # Methodology: HoneyUp UHBS lab
 
-**UHBS:** 4.6.1 · Graded **HTTP** Web-API profile.
+**UHBS:** 5.0.0 · Graded **HTTP** Web-API profile.
 
 Quick **50.91 / D**, full **50.91 / D**.
 

@@ -34,6 +34,6 @@ LLM-maintained async HTTP honeypot with extensive scanner trap families (fake VP
 
 ## Trust & limitations
 
-- Evaluation proof under UHBS 4.6.1 — not certification or vendor ranking.
+- Evaluation proof under UHBS 5.0.0 — not certification or vendor ranking.
 - Prefer **full/** artifacts over **quick/** for operational decisions.
 - Re-run via [TUTORIAL.md](TUTORIAL.md); environment notes in [METHODOLOGY.md](METHODOLOGY.md).

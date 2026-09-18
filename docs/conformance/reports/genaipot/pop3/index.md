@@ -1,7 +1,7 @@
 # genaipot — POP3
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 4.6.1 · **Class:** Low-Interaction · **Protocol:** `pop3`  
+**UHBS:** 5.0.0 · **Class:** Low-Interaction · **Protocol:** `pop3`  
 **Target id:** `genaipot-pop3` · **Evaluated:** 2026-07-28
 
 | Run | UHQS | Grade | δ_C | Artifacts |

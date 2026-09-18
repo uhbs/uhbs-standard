@@ -9,7 +9,7 @@
 | Class | Low-Interaction |
 | Protocol | SSH `:2222` |
 | Evaluated | 2026-09-15 (full Docker lab) |
-| Spec | UHBS 4.6.1 (lab harness image 4.0.0) |
+| Spec | UHBS 5.0.0 (lab harness image 4.0.0) |
 
 ## Module Results
 

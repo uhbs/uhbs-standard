@@ -1,7 +1,7 @@
 # trapster — TELNET
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 4.6.1 · **Class:** Low-Interaction · **Protocol:** `telnet`  
+**UHBS:** 5.0.0 · **Class:** Low-Interaction · **Protocol:** `telnet`  
 **Target id:** `trapster-telnet` · **Evaluated:** 2026-07-27
 
 | Run | UHQS | Grade | δ_C | Artifacts |

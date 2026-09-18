@@ -1,7 +1,7 @@
 # Methodology: HoneyAgents UHBS lab
 
 **Status:** Informative  
-**UHBS:** 4.6.1  
+**UHBS:** 5.0.0  
 **Upstream commit:** `43d4114fe8b235c1646571f7bc50bacc7a32533a`
 
 ## Protocol survey

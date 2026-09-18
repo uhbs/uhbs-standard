@@ -1,7 +1,7 @@
 # datatrap — POSTGRES
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 4.6.1 · **Class:** Low-Interaction · **Protocol:** `postgres`  
+**UHBS:** 5.0.0 · **Class:** Low-Interaction · **Protocol:** `postgres`  
 **Target id:** `datatrap-postgres` · **Evaluated:** 2026-07-28
 
 | Run | UHQS | Grade | δ_C | Artifacts |

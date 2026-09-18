@@ -1,7 +1,7 @@
 # artillery — generic
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 4.6.1 · **Class:** Low-Interaction · **Protocol:** `generic`  
+**UHBS:** 5.0.0 · **Class:** Low-Interaction · **Protocol:** `generic`  
 **Target id:** `artillery-generic` · **Evaluated:** 2026-07-29
 
 | Run | UHQS | Grade | δ_C | Artifacts |

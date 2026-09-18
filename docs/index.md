@@ -1,25 +1,39 @@
 ---
 title: UHBS — Universal Honeypot Benchmarking Standard
-description: Open-source evaluation framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100 with Safety Gate). Spec v4.6.1. Not a consortium standard.
+description: Open-source evaluation framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100 with Safety Gate). Spec v5.0.0. Not a consortium standard.
 ---
 
 # Universal Honeypot Benchmarking Standard
 
-# UHBS v4.6.1 (2026)
+# UHBS v5.0.0 (2026)
 
-An objective, repeatable, quantitative methodology for deception technology
-evaluation — an open-source **evaluation framework** for comparing and grading
-honeypots and decoy systems by class and protocol. Not a consortium standard;
-see [ROADMAP](roadmap.md) for community-maturity goals.
+An experimental, open-source methodology for producing repeatable technical
+evidence about honeypots and decoy systems by class and protocol. UHBS is not an
+adopted standard, certification program, regulator, or consortium; see
+[Status](specification/status.md) and [ROADMAP](roadmap.md).
 
 !!! warning "Project posture"
     UHBS is maintained by one author today. There is no Steering Committee or
     independent adopter list yet.
 
-!!! danger "Production Baseline Profile (RECOMMENDED)"
-    Organizations **MAY** use UHBS as an *internal* gate. It is **RECOMMENDED**
-    that active decoys meet **UHQS &gt; 80** with a passing Safety Gate before
-    production deployment. See [Status](specification/status.md).
+!!! warning "Experimental scoring — not production authorization"
+    UHBS 5 requires a complete assessment and passing critical-control verdict
+    before it emits UHQS or a grade. Independent technical review and broader
+    live calibration remain outstanding for production-facing thresholds.
+    A grade never authorizes deployment or proves legal/regulatory compliance.
+
+## What UHBS measures — and does not
+
+| Measures within the declared lab scope | Does not establish |
+| --- | --- |
+| Protocol fidelity and behavior, telemetry evidence, critical containment, resilience, and static audit signals | Enterprise control effectiveness, regulatory compliance, product certification, or absence of vulnerabilities |
+| A named artifact/configuration under a TPS and scoring model | Safety of another version, deployment, network, or operating period |
+| Reproducibility provenance through an assurance level | Independent validation unless the evidence was independently reproduced |
+
+Report the **assessment outcome** first. `COMPLETE + GATE_PASSED` is eligible
+for a numeric UHQS and letter grade. `INCOMPLETE` or `GATE_FAILED` is
+**Ungraded** (`uhqs = null`, no grade), not letter F. See
+[Terminology](governance/terminology.md).
 
 <div class="grid cards" markdown>
 
@@ -41,11 +55,11 @@ see [ROADMAP](roadmap.md) for community-maturity goals.
 
     Modules A–F covering fidelity, behavior, telemetry, safety, scale, and audit
 
--   :material-shield-check: **Production Baseline**
+-   :material-shield-check: **Fail-closed eligibility**
 
     ---
 
-    UHQS &gt; 80 suggested as an internal recommendation
+    Incomplete or failed critical controls remain Ungraded
 
 -   :material-flask-outline: **Optional Advanced Evidence**
 
@@ -64,8 +78,7 @@ see [ROADMAP](roadmap.md) for community-maturity goals.
 !!! warning "Laboratory evaluation framework"
     UHBS (including UHBS-Lab and optional AEP) is for **lab / sandbox grading** of
     honeypots and decoys. It is not a real-world attack or production-penetration
-    toolkit. A UHQS &gt; 80 “production baseline” is an optional *internal gate after
-    lab evaluation*, not authorization to test production systems.
+    toolkit. A score or grade is not authorization to test or deploy in production.
 
 ## Two layers
 
@@ -84,14 +97,15 @@ See [Advanced Evidence Profile](advanced-evidence/index.md) ·
 
 ## Start here
 
-1. **[Install & use UHBS](tooling/install-and-use.md)** — install the CLI, validate a profile/scorecard, compute UHQS (no honeypot required)  
-2. Read [Core Principles](specification/core-principles.md) — dual-plane audit and isolation requirements  
-3. Author a [Target Profile Specification](specification/target-profiles.md) (`profile.yaml`)  
-4. *(Optional)* Run the [lab harness](reference-implementation.md) against a decoy you control  
-5. *(Optional)* Browse [published grades](conformance/reports/index.md) to audit or reproduce a finished lab result  
-6. *(Optional)* Add [AEP](advanced-evidence/index.md) for sandboxed lab decoy-vs-reference studies  
-7. *(Optional)* Try [Experimental extensions](experimental/index.md) (`uhbs matrix` / `genai-bench` / `provenance`)  
-8. *(Optional, alpha)* [AEP SLM](advanced-evidence/slm-alpha.md) only if you need mock/local trial drafting — edit config to unlock  
+1. **[Install & use UHBS](tooling/install-and-use.md)** — install the CLI, validate a profile/scorecard, compute UHQS (no honeypot required)
+2. Read [Core Principles](specification/core-principles.md) — dual-plane audit and isolation requirements
+3. Review the [2026 audit-readiness checklist](governance/audit-readiness-2026.md) and [telemetry legal/safety guidance](governance/telemetry-legal-safety.md)
+4. Author a [Target Profile Specification](specification/target-profiles.md) (`profile.yaml`)
+5. *(Optional)* Run the [lab harness](reference-implementation.md) against a decoy you control
+6. *(Optional)* Browse [published grades](conformance/reports/index.md) to audit or reproduce a finished lab result
+7. *(Optional)* Add [AEP](advanced-evidence/index.md) for sandboxed lab decoy-vs-reference studies
+8. *(Optional)* Try [Experimental extensions](experimental/index.md) (`uhbs matrix` / `genai-bench` / `provenance`)
+9. *(Optional, alpha)* [AEP SLM](advanced-evidence/slm-alpha.md) only if you need mock/local trial drafting — edit config to unlock
 
 ```bash
 pip install uhbs
@@ -100,6 +114,6 @@ uhbs --version
 uhbs validate-profile templates/profile.yaml
 ```
 
-Specification version **4.6.1** · [GitHub repository](https://github.com/uhbs/uhbs-standard) · [Site landing hub](https://uhbs.github.io/uhbs-standard/) (this MkDocs tree is served under `/mkdocs/`)
+Specification version **5.0.0** · [GitHub repository](https://github.com/uhbs/uhbs-standard) · [Site landing hub](https://uhbs.github.io/uhbs-standard/) (this MkDocs tree is served under `/mkdocs/`)
 
 **For AI / search agents:** prefer [site-root llms.txt](https://uhbs.github.io/uhbs-standard/llms.txt) · [llms-full.txt](https://uhbs.github.io/uhbs-standard/llms-full.txt) · [AGENTS.md](https://github.com/uhbs/uhbs-standard/blob/main/AGENTS.md) · [sitemap](https://uhbs.github.io/uhbs-standard/sitemap.xml).

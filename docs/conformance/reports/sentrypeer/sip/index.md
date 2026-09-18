@@ -1,7 +1,7 @@
 # sentrypeer — SIP
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 4.6.1 · **Class:** Low-Interaction · **Protocol:** `sip`  
+**UHBS:** 5.0.0 · **Class:** Low-Interaction · **Protocol:** `sip`  
 **Target id:** `sentrypeer-sip` · **Evaluated:** 2026-07-29
 
 | Run | UHQS | Grade | δ_C | Artifacts |

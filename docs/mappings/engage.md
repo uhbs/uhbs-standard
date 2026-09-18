@@ -1,6 +1,8 @@
 # MITRE Engage Mapping (Informative)
 
-**Status:** Informative  
+**Status:** Informative · concept-level mapping, medium confidence<br>
+**Source retrieval / review:** MITRE Engage · 2026-09-18<br>
+**UHBS target:** 5.0.0 · `uhqs-v5.0.0-critical-gate-binary`
 Maps UHBS evaluation modules to [MITRE Engage](https://engage.mitre.org/) adversary
 engagement goals. This does **not** redefine Engage, certify Engage operations, or
 change UHQS math. It helps operators answer “what was this decoy *for*?” when
@@ -50,3 +52,5 @@ Supporting notes (optional):
 3. Mappings are **Informative**; UHQS math does **not** depend on them. UHBS does
    **not** claim Engage certification or that a scorecard proves a completed
    Engage operation.
+4. Revalidate goals and activities when Engage changes; see
+   [Framework Crosswalk Governance](../governance/framework-crosswalks.md).
