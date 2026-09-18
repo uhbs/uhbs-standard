@@ -167,7 +167,6 @@ addopts = [
 ]
 
 [tool.coverage.run]
-branch = true
 source = ["uhbs_core", "uhbs_cli", "uhbs_mcp"]
 
 [tool.coverage.report]

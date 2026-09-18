@@ -846,6 +846,12 @@ class _FakePlugin:
     def probe_load_once(self, *_a, **_k):
         return 10.0
 
+    def probe_state(self, *_a, **_k):
+        return self._ok("state")
+
+    def probe_payload(self, *_a, **_k):
+        return self._ok("payload")
+
     def probe_fuzz(self, *_a, **_k):
         return self._ok("fuzz")
 
@@ -1568,3 +1574,186 @@ def test_run_benchmark_main_happy_and_error_paths(
 
     # No protocol must fail before execution.
     assert run_benchmark.main(["--target", "127.0.0.1"]) == 2
+
+
+def test_realism_success_and_metadata_ceiling(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from uhbs_core import test_realism
+    from uhbs_core.tps import TPS
+
+    monkeypatch.setattr(test_realism, "get_plugin", lambda _p: _FakePlugin())
+    target = TargetSpec(
+        name="x",
+        host="127.0.0.1",
+        protocol="http",
+        protocols=["http"],
+        ports_map={"http": 8080},
+    )
+    result = test_realism.run(target, TPS(name="t", protocol="http"))
+    assert result.score == 100.0
+    assert result.metrics["per_protocol"]["http"] == 100.0
+
+    target.annotations["mcp_surface_depth"] = "metadata_only"
+    target.annotations["mcp_surface_reason"] = "no safe tools"
+    capped = test_realism.run(target, TPS(name="t", protocol="http"))
+    assert capped.score == 50.0
+    assert any("ceiling" in note for note in capped.notes)
+
+    target.annotations["mcp_surface_depth"] = "interactive"
+    interactive = test_realism.run(target, TPS(name="t", protocol="http"))
+    assert interactive.score == 100.0
+    assert any("interactive" in note for note in interactive.notes)
+
+    no_ports = TargetSpec(
+        name="bad",
+        host="127.0.0.1",
+        protocol="http",
+        protocols=["http"],
+        ports_map={},
+    )
+    monkeypatch.setattr(no_ports, "port_for", lambda _p: None)
+    failed = test_realism.run(no_ports, TPS(name="t", protocol="http"))
+    assert failed.status == "FAILED"
+
+
+def test_calculate_uhqs_cli_paths(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    from uhbs_core import calculate_uhqs_v4
+
+    output = tmp_path / "out.json"
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "uhbs-uhqs",
+            "--protocol",
+            "100",
+            "--behavior",
+            "100",
+            "--telemetry",
+            "100",
+            "--containment",
+            "100",
+            "--scale",
+            "100",
+            "--static",
+            "100",
+            "--class",
+            "Web-API",
+            "--output",
+            str(output),
+        ],
+    )
+    assert calculate_uhqs_v4.main() == 0
+    payload = json.loads(output.read_text(encoding="utf-8"))
+    assert payload["uhqs"]["uhqs"] == 100.0
+
+    input_path = tmp_path / "input.json"
+    input_path.write_text(
+        json.dumps(
+            {
+                "scores": {
+                    "protocol": 90,
+                    "behavior": 90,
+                    "telemetry": 90,
+                    "containment": 100,
+                    "scale": 90,
+                    "static": 90,
+                },
+                "uhqs": {"profile_class": "Low-Interaction"},
+            }
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "uhbs-uhqs",
+            "--input",
+            str(input_path),
+            "--output",
+            str(output),
+        ],
+    )
+    assert calculate_uhqs_v4.main() == 0
+
+    monkeypatch.setattr(sys, "argv", ["uhbs-uhqs", "--output", str(output)])
+    assert calculate_uhqs_v4.main() == 2
+
+
+def test_module_cli_entrypoints(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Exercise argument wiring without touching the network."""
+    from uhbs_core import test_realism, test_safety, test_scale, test_stealth
+
+    passed = ModuleResult(
+        module="A",
+        dimension="protocol",
+        score=100.0,
+        status="PASSED",
+        checks=[
+            CheckResult(
+                id="ok",
+                team="blue",
+                outcome=CheckOutcome.PASS,
+                score=100,
+            )
+        ],
+        metrics={"ok": True},
+        complete=True,
+        critical_control_verdict="GATE_PASSED",
+    )
+
+    monkeypatch.setattr(test_stealth, "run", lambda *_a, **_k: passed)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "module-a",
+            "--target",
+            "127.0.0.1",
+            "--protocols",
+            "http,smtp",
+            "--http-port",
+            "8080",
+            "--smtp-port",
+            "2525",
+        ],
+    )
+    assert test_stealth.main() == 0
+    monkeypatch.setattr(
+        sys, "argv", ["module-a", "--target", "x", "--list-protocols"]
+    )
+    assert test_stealth.main() == 0
+
+    monkeypatch.setattr(test_realism, "run", lambda *_a, **_k: passed)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["module-b", "--target", "127.0.0.1", "--protocol", "http"],
+    )
+    assert test_realism.main() == 0
+
+    monkeypatch.setattr(test_scale, "run", lambda *_a, **_k: passed)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "module-e",
+            "--target",
+            "127.0.0.1",
+            "--protocol",
+            "http",
+            "--requests",
+            "2",
+        ],
+    )
+    assert test_scale.main() == 0
+
+    monkeypatch.setattr(test_safety, "run", lambda *_a, **_k: passed)
+    monkeypatch.setattr(
+        sys, "argv", ["module-d", "--target", "127.0.0.1", "--port", "2222"]
+    )
+    assert test_safety.main() == 0
