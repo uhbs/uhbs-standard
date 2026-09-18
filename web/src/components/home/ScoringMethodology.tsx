@@ -23,7 +23,7 @@ export const ScoringMethodology = () => {
             Scoring Methodology
           </h2>
           <p className="text-muted-foreground">
-            How UHBS turns six evaluation modules into one quality score from 0 to 100.
+            Assessment eligibility comes first; only complete, gate-passed evidence receives a score.
           </p>
         </motion.div>
 
@@ -31,7 +31,7 @@ export const ScoringMethodology = () => {
           <Card>
             <CardHeader className="flex flex-row flex-wrap items-center justify-between gap-3">
               <CardTitle className="font-mono text-main text-sm uppercase tracking-wider">
-                The UHQS 4.6.1 Formula
+                The UHQS 5.0.0 Formula
               </CardTitle>
               <UhqsHumanExplainerTrigger />
             </CardHeader>
@@ -40,33 +40,33 @@ export const ScoringMethodology = () => {
                 <KatexMath
                   display
                   className="block"
-                  label="UHQS equals delta-C times the weighted sum of modules A, B, C, E, and F"
-                  tex={`\\mathrm{UHQS} = \\delta_{C}\\cdot\\bigl(w_{A}S_{A}+w_{B}S_{B}+w_{C}S_{C}+w_{E}S_{E}+w_{F}S_{F}\\bigr)`}
+                  label="For an eligible assessment, UHQS equals the weighted sum of modules A, B, C, E, and F"
+                  tex={`\\mathrm{UHQS} = w_{A}S_{A}+w_{B}S_{B}+w_{C}S_{C}+w_{E}S_{E}+w_{F}S_{F}`}
                 />
                 <KatexMath
                   display
                   className="block uhqs-katex-danger"
-                  label="Safety Gate: delta-C is 1 when Module D is at least 95, otherwise C over 100 squared"
-                  tex={`\\delta_{C} = \\begin{cases} 1 & \\text{if } C \\ge 95 \\\\ \\bigl(C/100\\bigr)^{2} & \\text{if } C < 95 \\end{cases}`}
+                  label="UHQS is null unless the assessment is complete and critical controls pass"
+                  tex={`\\mathrm{UHQS}=\\varnothing\\quad\\text{if INCOMPLETE or GATE\\_FAILED}`}
                 />
               </div>
 
               <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  In plain terms: each module gets a score from 0 to 100. UHBS mixes those scores
-                  together (with different emphasis depending on the decoy type), then multiplies the
-                  result by a <span className="text-foreground font-medium">safety factor</span>.
+                  In plain terms: every applicable mandatory check must run and produce evidence.
+                  An untested, errored, omitted, or unevidenced mandatory check makes the result{" "}
+                  <span className="text-foreground font-medium">Ungraded</span>, not a low letter grade.
                 </p>
                 <p>
-                  That safety factor comes from containment (Module D). If the decoy is well isolated,
-                  the factor is 1 and the quality score stands. If containment is weak — for example
-                  the decoy can leak data or reach other systems — the factor drops sharply and the
-                  whole score falls with it. Looking realistic is not enough when safety fails.
+                  Module D is a critical-control eligibility gate. Every applicable containment control
+                  must pass with evidence. A critical failure cannot be averaged away; the separate
+                  defense-in-depth diagnostic remains visible but is not weighted into UHQS.
                 </p>
                 <p>
                   Different honeypot types also care about different strengths (an industrial PLC
-                  decoy is not graded exactly like a fake SSH shell). The full weight tables, safety
-                  thresholds, and letter grades live in the specification.
+                  decoy is not graded exactly like a fake SSH shell). Report outcome, scoring model,
+                  assurance level, UHQS, and grade separately. None is certification or deployment
+                  authorization.
                 </p>
               </div>
 

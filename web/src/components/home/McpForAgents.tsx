@@ -33,7 +33,7 @@ export const McpForAgents = () => {
         >
           {[
             { title: "Validate", body: "scorecard · profile · evidence schemas + UHQS integrity" },
-            { title: "Score", body: "compute_uhqs / δ_C from uhqs_math — same as uhbs score" },
+            { title: "Score", body: "compute_uhqs eligibility + weighted sum from the shared uhqs_math source" },
             { title: "Discover", body: "fixtures, lab report hubs, scoring-formula resource" },
           ].map((card) => (
             <Card key={card.title} size="sm">

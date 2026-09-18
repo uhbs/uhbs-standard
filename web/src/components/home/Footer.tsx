@@ -9,7 +9,7 @@ export const Footer = () => {
           <Shield className="w-6 h-6" aria-hidden />
         </div>
         <div className="font-mono text-sm text-muted-foreground mb-4">
-          Universal Honeypot Benchmarking Standard <span className="text-main">·</span> v4.6.1{" "}
+          Universal Honeypot Benchmarking Standard <span className="text-main">·</span> v5.0.0{" "}
           <span className="text-main">·</span> 2026
         </div>
         <p className="text-xs text-muted-foreground max-w-lg mx-auto mb-6">
@@ -22,6 +22,9 @@ export const Footer = () => {
           </a>
           <a href="#results" className="hover:text-foreground transition-colors">
             Results
+          </a>
+          <a href="#latest" className="hover:text-foreground transition-colors">
+            Latest
           </a>
           <a href="#mcp" className="hover:text-foreground transition-colors">
             MCP

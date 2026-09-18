@@ -30,13 +30,14 @@ export const ScopeAndApplicability = () => {
             </h2>
             <div className="text-lg text-muted-foreground font-base leading-relaxed space-y-4">
               <p>
-                The UHBS v4.6.1 framework provides a rigorous technical foundation for evaluating the
-                efficacy, safety, and realism of deception assets prior to deployment.
+                UHBS v5.0.0 defines a versioned lab method for evaluating selected technical
+                properties of a declared deception asset and configuration.
               </p>
               <p>
-                Historically, deception technology has been evaluated subjectively. UHBS introduces a
-                verifiable, deterministic mathematical model designed to expose flaws in protocol state
-                machines, containment boundaries, and behavioral realism.
+                It combines protocol and behavioral checks, telemetry ground truth, fail-closed
+                containment evidence, resilience observations, and static audit signals. It does not
+                replace architecture review, vulnerability assessment, legal approval, or operational
+                risk acceptance.
               </p>
             </div>
 
@@ -48,8 +49,9 @@ export const ScopeAndApplicability = () => {
                     Vendor-Neutral Baseline
                   </h4>
                   <p className="text-muted-foreground text-sm">
-                    UHBS v4.6.1 is an open-source evaluation framework for comparing and grading
-                    honeypots by class and protocol — mathematically reproducible.
+                    UHBS v5.0.0 is an open-source evaluation framework for comparing and grading
+                    honeypots by class and protocol. Results are reproducible only to the extent shown
+                    by their evidence pack and assurance level.
                   </p>
                 </div>
               </div>
@@ -58,21 +60,20 @@ export const ScopeAndApplicability = () => {
             <Alert className="mt-6 bg-secondary-background">
               <AlertTriangle className="text-warning" />
               <AlertTitle className="font-mono text-xs uppercase tracking-wider text-warning">
-                Production Baseline
+                Assessment outcome before grade
               </AlertTitle>
               <AlertDescription>
-                Organizations <span className="text-foreground font-semibold">MAY</span> use UHBS as an
-                internal gate. It is <span className="text-foreground font-semibold">RECOMMENDED</span>{" "}
-                that active decoys meet{" "}
-                <span className="text-foreground font-semibold">UHQS &gt; 80</span> with a passing Safety
-                Gate before production deployment. See the docs for status and limitations.
+                Only <span className="text-foreground font-semibold">COMPLETE + GATE_PASSED</span>{" "}
+                assessments receive UHQS and a letter grade. Incomplete or critical-control-failed
+                assessments are Ungraded. Production-facing thresholds still require broader live
+                calibration and independent technical review.
               </AlertDescription>
             </Alert>
           </motion.div>
 
           <motion.div variants={fadeUpVariant}>
             <h3 className="text-xl font-mono mb-8 text-foreground border-b-2 border-border pb-4">
-              Universal Applicability Matrix
+              Target profile examples
             </h3>
 
             <div className="space-y-4">
@@ -111,6 +112,10 @@ export const ScopeAndApplicability = () => {
                 </Card>
               ))}
             </div>
+            <p className="mt-5 text-xs font-mono text-muted-foreground">
+              Protocol support and check applicability vary by TPS and harness plugin; this list is
+              not a claim of complete protocol coverage.
+            </p>
           </motion.div>
         </div>
       </motion.div>

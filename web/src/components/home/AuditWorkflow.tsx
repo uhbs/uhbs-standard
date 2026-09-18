@@ -6,9 +6,9 @@ export const AuditWorkflow = () => {
   const steps = [
     { num: 1, title: "Profile Setup", desc: "Define Target Profile Specification (TPS)" },
     { num: 2, title: "Static Audit", desc: "Execute Module F White-Box Scans" },
-    { num: 3, title: "Provisioning", desc: "Deploy Sandbox & Gold Baseline" },
-    { num: 4, title: "Live Execution", desc: "Adversarial Probing (Modules A-E)" },
-    { num: 5, title: "Computation", desc: "Compute UHQS & Final Report" },
+    { num: 3, title: "Provisioning", desc: "Deploy Authorized, Isolated Lab" },
+    { num: 4, title: "Evidence", desc: "Run Checks & Preserve Ground Truth" },
+    { num: 5, title: "Decision", desc: "Outcome First; Grade If Eligible" },
   ];
 
   return (
@@ -21,7 +21,7 @@ export const AuditWorkflow = () => {
         variants={staggerContainer}
       >
         <motion.h2 variants={fadeUpVariant} className="text-3xl font-heading mb-12 text-center">
-          Standard Audit Workflow
+          Evidence Workflow
         </motion.h2>
 
         <div className="relative">

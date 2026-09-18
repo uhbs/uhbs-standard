@@ -29,7 +29,7 @@ export const FiveDimensionComparison = () => {
       moduleName: "Telemetry Quality & Pipeline Resilience",
       color: "text-main",
       expansion:
-        "Enforces 100% schema compliance against STIX 2.1, OpenTelemetry, and ECS standards, and tests SIEM log-parser injection resistance.",
+        "Validates only declared native/export formats, tests sink-side injection resilience, and measures required observables, completeness, and timeliness against ground truth.",
     },
     {
       dim: "Stealth & Containment",
@@ -37,7 +37,7 @@ export const FiveDimensionComparison = () => {
       moduleName: "Safety, Containment & Boundary Controls",
       color: "text-danger",
       expansion:
-        "Upgraded from a simple score into a Non-Linear Safety Gate (δ_C) with out-of-bound egress sweeps and exponential penalty on breach.",
+        "Separates a fail-closed critical-control verdict from diagnostic hardening. Failure or missing evidence is Ungraded and cannot be averaged away.",
     },
     {
       dim: "Resource Efficiency",
@@ -45,7 +45,7 @@ export const FiveDimensionComparison = () => {
       moduleName: "Scalability, Latency & Stress Performance",
       color: "text-warning",
       expansion:
-        "Enforces strict response percentile cutoffs (P95 < 150ms) under load and tests circuit-breaker recovery under memory flooding.",
+        "Compares response percentiles with TPS-specific thresholds and records behavior under bounded, authorized lab load.",
     },
     {
       dim: "— Not Covered —",
@@ -76,7 +76,7 @@ export const FiveDimensionComparison = () => {
         <motion.div variants={fadeUpVariant} className="mb-16">
           <h2 className="text-3xl md:text-4xl font-heading mb-4 flex items-center gap-3">
             <GitCommit className="text-main w-8 h-8" aria-hidden />
-            UHBS v4.6.1 vs. 5-Dimension Framework
+            UHBS v5.0.0 vs. 5-Dimension Framework
           </h2>
           <p className="text-muted-foreground max-w-3xl leading-relaxed">
             UHBS turns common honeypot quality ideas into a practical grading system: it checks both
@@ -99,8 +99,8 @@ export const FiveDimensionComparison = () => {
               <thead>
                 <tr className="border-b border-border text-muted-foreground bg-page">
                   <th className="py-3 px-4 font-normal w-1/4">5-Dimension Metric</th>
-                  <th className="py-3 px-4 font-normal w-1/5">UHBS v4.6.1 Module</th>
-                  <th className="py-3 px-4 font-normal">Key Expansion in UHBS v4.6.1</th>
+                  <th className="py-3 px-4 font-normal w-1/5">UHBS v5.0.0 Module</th>
+                  <th className="py-3 px-4 font-normal">Key Expansion in UHBS v5.0.0</th>
                 </tr>
               </thead>
               <tbody>
@@ -152,10 +152,10 @@ export const FiveDimensionComparison = () => {
             <AlertDescription>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Five-dimension proposals provide a useful conceptual lens for categorizing honeypot
-                quality. UHBS v4.6.1 turns overlapping concerns into a machine-verifiable evaluation —
-                adding a pre-deployment code audit plane (Module F), a non-linear safety gate that
-                makes containment failures non-maskable, and explicit support for GenAI and OT/ICS
-                decoy classes. See the{" "}
+                quality. UHBS v5.0.0 operationalizes overlapping concerns with versioned checks and
+                evidence — adding a static audit plane (Module F), a fail-closed critical-control
+                verdict, and target profiles for GenAI and OT/ICS decoy classes. This remains an
+                experimental framework, not independent certification. See the{" "}
                 <a href={mkdocsUrl("mappings/related-frameworks/")} className="text-main hover:underline">
                   evidence-based framework comparison
                 </a>{" "}

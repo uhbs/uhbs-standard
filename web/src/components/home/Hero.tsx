@@ -24,7 +24,7 @@ export const Hero = () => {
         <motion.div variants={fadeUpVariant} className="flex items-center gap-3 mb-8">
           <div className="h-1 w-12 bg-main border border-border" />
           <Badge variant="mint" className="uppercase tracking-widest font-mono">
-            Evaluation Framework
+            Experimental evaluation framework
           </Badge>
         </motion.div>
 
@@ -34,7 +34,7 @@ export const Hero = () => {
         >
           Universal Honeypot Benchmarking Standard <br className="hidden md:block" />
           <span className="text-muted-foreground font-mono text-4xl md:text-6xl tracking-tighter">
-            (UHBS) v4.6.1 <span className="text-main">· 2026</span>
+            (UHBS) v5.0.0 <span className="text-main">· 2026</span>
           </span>
         </motion.h1>
 
@@ -42,8 +42,16 @@ export const Hero = () => {
           variants={fadeUpVariant}
           className="text-xl md:text-2xl text-muted-foreground max-w-3xl mb-8 font-base leading-relaxed"
         >
-          An objective, repeatable, quantitative methodology for benchmarking honeypots, decoys, and
-          deception technology — an open-source evaluation framework.
+          Repeatable technical evidence for honeypots and decoys: fidelity, behavior, telemetry,
+          critical containment, resilience, and static audit signals.
+        </motion.p>
+
+        <motion.p
+          variants={fadeUpVariant}
+          className="max-w-3xl mb-8 border-l-4 border-main pl-4 text-sm md:text-base text-muted-foreground leading-relaxed"
+        >
+          Not an adopted standard, certification, regulator, or consortium. A UHBS grade is scoped
+          lab evidence—not production authorization or proof of legal or regulatory compliance.
         </motion.p>
 
         <motion.div variants={fadeUpVariant} className="flex flex-wrap gap-3 mb-12">
@@ -52,6 +60,9 @@ export const Hero = () => {
           </ButtonLink>
           <ButtonLink variant="neutral" href="#results">
             Results
+          </ButtonLink>
+          <ButtonLink variant="neutral" href={mkdocsUrl("governance/audit-readiness-2026/")}>
+            Audit checklist
           </ButtonLink>
           <ButtonLink variant="neutral" href="#mcp">
             MCP
@@ -66,7 +77,7 @@ export const Hero = () => {
             { label: "Protocol-Agnostic", icon: Globe },
             { label: "Quantitative Scoring 0–100", icon: Activity },
             { label: "Six Evaluation Modules", icon: Layers },
-            { label: "Production Baseline", icon: Shield },
+            { label: "Fail-Closed Safety Gate", icon: Shield },
           ].map((badge) => (
             <Badge key={badge.label} variant="neutral" className="px-3 py-1.5 text-sm gap-2">
               <badge.icon className="size-4 text-main" aria-hidden />
