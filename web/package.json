@@ -1,7 +1,7 @@
 {
   "name": "uhbs-standard-web",
   "private": true,
-  "version": "4.2.2",
+  "version": "5.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
