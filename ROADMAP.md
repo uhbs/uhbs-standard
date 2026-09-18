@@ -126,7 +126,7 @@ tables only. Do not publish proprietary lab signal overlays or private host path
 - [x] Round UHQS to **2 decimals**
 - [x] Golden fixtures from sanitized lab scorecards (named only under conformance/)
 - [x] Conformance tests in CI
-- [x] UHQS v5 scoring & assurance redesign ([RFC 0003](docs/rfcs/0003-scoring-assurance.md)): outcome contract, completeness gate, critical-control verdict, Module C rebuild, `scoring_model_id`
+- [x] UHQS v5 scoring & assurance redesign ([RFC 0003](rfcs/0003-scoring-assurance.md)): outcome contract, completeness gate, critical-control verdict, Module C rebuild, `scoring_model_id`
 - [x] Frozen v4 validators under `schemas/v4/` (historical scorecards remain verifiable)
 - [ ] Pydantic v2 schema validation for `CheckResult`/`ModuleResult`/`ProtocolPlugin`
       (today: phase-1 advisory lint only — `uhbs_core.contract_validation`,
