@@ -45,9 +45,9 @@ def test_one_rfc_fail_still_drags_but_not_to_structural_floor() -> None:
         CheckResult(id="d", team="red", passed=False, score=0.0),
     ]
     result = score_checks(checks)
-    # gmean with floor 0.5 → still low, but a perfect-minus-one suite is
-    # distinguishable from the old structural ~25 ceiling on a *passing* suite.
-    assert 0.0 < result < 40.0
+    # Near-zero floor collapses a single FAIL; still distinguishable from total
+    # circuit-breaker zero on critical failures.
+    assert 0.0 < result < 1.0
 
 
 def test_jsonl_content_in_json_extension_parses_events(tmp_path: Path) -> None:

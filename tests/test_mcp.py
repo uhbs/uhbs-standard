@@ -62,6 +62,20 @@ def test_list_profile_classes() -> None:
     assert result["ok"] is True
     assert "Web-API" in result["classes"]
     assert abs(sum(result["classes"]["Web-API"].values()) - 1.0) < 0.001
+    assert "GATE_PASSED" in result["delta_c"]
+    assert "(C/100)" not in result["delta_c"]
+
+
+def test_compute_uhqs_explicit_gate_failed_despite_high_d() -> None:
+    result = compute_uhqs_tool(
+        scores={"A": 100, "B": 100, "C": 100, "D": 100, "E": 100, "F": 100},
+        profile_class="Web-API",
+        critical_control_verdict="GATE_FAILED",
+    )
+    assert result["ok"] is True
+    assert result["uhqs"] is None
+    assert result["graded"] is False
+    assert result["critical_control_verdict"] == "GATE_FAILED"
 
 
 def test_list_conformance_fixtures() -> None:

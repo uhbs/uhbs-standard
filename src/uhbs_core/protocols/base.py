@@ -134,6 +134,8 @@ class ProtocolPlugin(ABC):
     def probe_state(
         self, host: str, port: int, target: TargetSpec, tps: TPS | None
     ) -> list[CheckResult]:
+        # Harness stub: optional until a protocol implements state probing.
+        # Zero credit; does not block module completeness.
         return [
             CheckResult(
                 id=f"{self.name}.state.unsupported",
@@ -141,13 +143,14 @@ class ProtocolPlugin(ABC):
                 outcome=CheckOutcome.NOT_TESTED,
                 detail="no state probe implemented",
                 score=0.0,
-                mandatory=True,
+                mandatory=False,
             )
         ]
 
     def probe_payload(
         self, host: str, port: int, target: TargetSpec, tps: TPS | None
     ) -> list[CheckResult]:
+        # Harness stub: optional until a protocol implements payload probing.
         return [
             CheckResult(
                 id=f"{self.name}.payload.unsupported",
@@ -155,7 +158,7 @@ class ProtocolPlugin(ABC):
                 outcome=CheckOutcome.NOT_TESTED,
                 detail="no payload probe implemented",
                 score=0.0,
-                mandatory=True,
+                mandatory=False,
             )
         ]
 

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from collections.abc import Iterable, Sequence
 from datetime import date
 from pathlib import Path
@@ -20,6 +21,21 @@ def _sha256_text(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+_SECRETISH = re.compile(
+    r"(?i)\b(password|passwd|secret|token|api[_-]?key|authorization)\b\s*[:=]\s*.+"
+)
+_BEARERISH = re.compile(r"(?i)\bbearer\s+\S+")
+
+
+def _redact_evidence_text(text: str, *, max_len: int = 400) -> str:
+    """Truncate and scrub obvious secret-bearing fragments from evidence strings."""
+    cleaned = _SECRETISH.sub(r"\1=[REDACTED]", str(text))
+    cleaned = _BEARERISH.sub("Bearer [REDACTED]", cleaned)
+    if len(cleaned) > max_len:
+        return cleaned[: max_len - 3] + "..."
+    return cleaned
+
+
 def check_catalog_hash(check_ids: Iterable[str]) -> str:
     """Placeholder catalog hash: SHA-256 of sorted check ids (newline-joined)."""
     blob = "\n".join(sorted(check_ids))
@@ -30,7 +46,10 @@ def _evidence_hashes(check: Any) -> list[str]:
     existing = list(getattr(check, "evidence_hashes", None) or [])
     if existing:
         return existing
-    return [_sha256_text(str(e)) for e in (getattr(check, "evidence", None) or [])]
+    return [
+        _sha256_text(_redact_evidence_text(str(e)))
+        for e in (getattr(check, "evidence", None) or [])
+    ]
 
 
 def build_evidence_pack(
@@ -83,7 +102,9 @@ def build_evidence_pack(
                     "mandatory": c.mandatory,
                     "applicability_rationale": c.applicability_rationale,
                     "catalog_id": c.catalog_id or c.id,
-                    "evidence": list(c.evidence or []),
+                    "evidence": [
+                        _redact_evidence_text(str(e)) for e in (c.evidence or [])
+                    ],
                     "evidence_refs": list(c.evidence_refs or []),
                     "evidence_hashes": _evidence_hashes(c),
                 }

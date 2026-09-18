@@ -56,7 +56,7 @@ def _sast_checks(root: Path, image: Optional[str], out_dir: Optional[Path]) -> L
         metrics = bandit.get("metrics", {}) if isinstance(bandit, dict) else {}
         totals = metrics.get("_totals", {}) if isinstance(metrics, dict) else {}
         sev_h = int(totals.get("SEVERITY.HIGH", 0) or 0)
-        sev_c = int(totals.get("SEVERITY.HIGH", 0) or 0)  # bandit has HIGH/MEDIUM/LOW
+        sev_c = int(totals.get("SEVERITY.CRITICAL", 0) or 0)
         # Also count CONFIDENCE — prefer results list
         results = bandit.get("results", []) if isinstance(bandit, dict) else []
         high = sum(1 for r in results if str(r.get("issue_severity", "")).upper() == "HIGH")

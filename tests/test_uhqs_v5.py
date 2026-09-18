@@ -36,8 +36,8 @@ def test_not_tested_stays_in_denominator_and_blocks_completeness() -> None:
         CheckResult(id="a", team="blue", outcome=CheckOutcome.PASS, score=100.0),
         CheckResult(id="b", team="blue", outcome=CheckOutcome.NOT_TESTED, score=0.0),
     ]
-    # Geometric mean of 100 and ~0.5 floor
-    assert score_checks(checks) < 50.0
+    # Near-zero log floor → essentially no earned credit from the untested check
+    assert score_checks(checks) < 0.1
     assert module_completeness(checks)["complete"] is False
 
 

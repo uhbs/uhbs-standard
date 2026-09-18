@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
 from uhbs_core.check_scoring import score_checks as _score_checks  # noqa: E402
+from uhbs_core.check_scoring import summarize_checks  # noqa: E402
 from uhbs_core.hqs import pass_status  # noqa: E402
 from uhbs_core.models import CheckResult, ModuleResult, TargetSpec  # noqa: E402
 from uhbs_core.protocols import get_plugin, list_protocols  # noqa: E402
@@ -43,6 +44,7 @@ def run(
             score=0.0,
             status="SKIPPED",
             notes=["no exec host"],
+            complete=False,
         )
 
     if tps is None:
@@ -97,26 +99,34 @@ def run(
             status="FAILED",
             checks=all_checks,
             notes=["no protocols probed — set protocol/ports in TPS or inventory"],
+            complete=False,
         )
 
     score = sum(per_proto.values()) / len(per_proto)
     _ = native_baseline_ms  # reserved for gold-baseline KS compare
+    agg = summarize_checks(all_checks)
+    published = round(score, 2) if agg.complete else 0.0
     return ModuleResult(
         module="A",
         dimension="protocol",
-        score=round(score, 2),
-        status=pass_status(score),
+        score=published,
+        status="INCOMPLETE" if not agg.complete else pass_status(published),
         checks=all_checks,
         metrics={
             "per_protocol": per_proto,
             "protocols": protocols,
             "timing_samples": samples,
             "available_plugins": list_protocols(),
+            "coverage": agg.coverage,
+            "not_tested": agg.not_tested,
         },
         notes=[
             f"UHBS Module A — plugins={list(per_proto)}",
             f"class={tps.profile_class} strict_rfc={tps.strict_rfc_enforcement}",
         ],
+        complete=agg.complete,
+        applicable_checks=agg.applicable,
+        scored_checks=agg.scored,
     )
 
 

@@ -61,10 +61,10 @@ class UhqsResult:
     delta_c: float
     uhqs: float | None
     safety_gate_passed: bool
-    assessment_status: str = AssessmentStatus.COMPLETE.value
-    critical_control_verdict: str = CriticalControlVerdict.GATE_PASSED.value
+    assessment_status: str = AssessmentStatus.INCOMPLETE.value
+    critical_control_verdict: str = CriticalControlVerdict.INCOMPLETE.value
     scoring_model_id: str = SCORING_MODEL_ID
-    graded: bool = True
+    graded: bool = False
 
 
 def compute_uhqs(
@@ -149,14 +149,36 @@ def assert_scorecard_integrity(
     if scorecard.get("containment_measured") is False:
         containment_measured = False
 
-    status, verdict = assessment_from_module_results(
+    derived_status, verdict = assessment_from_module_results(
         modules, critical_control_verdict=declared_verdict
     )
+    status = derived_status
     if declared_status:
         try:
-            status = AssessmentStatus(str(declared_status))
+            declared_as = AssessmentStatus(str(declared_status))
         except ValueError:
             errors.append(f"invalid assessment_status={declared_status!r}")
+        else:
+            if (
+                declared_as is AssessmentStatus.COMPLETE
+                and derived_status is AssessmentStatus.INCOMPLETE
+            ):
+                errors.append(
+                    "assessment_status=COMPLETE but modules/verdict imply INCOMPLETE"
+                )
+            elif declared_as != derived_status:
+                errors.append(
+                    f"assessment_status={declared_as.value} != derived "
+                    f"{derived_status.value}"
+                )
+            # Fail closed: any INCOMPLETE signal wins for recomputation.
+            if (
+                declared_as is AssessmentStatus.INCOMPLETE
+                or derived_status is AssessmentStatus.INCOMPLETE
+            ):
+                status = AssessmentStatus.INCOMPLETE
+            else:
+                status = declared_as
 
     # Class→weight enforcement when both present
     if profile_class and profile_class in PROFILE_WEIGHTS:
@@ -176,10 +198,14 @@ def assert_scorecard_integrity(
         critical_control_verdict=verdict,
     )
 
-    declared_uhqs = scorecard.get("uhqs", -1)
+    if "uhqs" in scorecard:
+        declared_uhqs = scorecard.get("uhqs")
+    else:
+        declared_uhqs = None if result.uhqs is None else -1
+
     if result.uhqs is None:
-        # Ungraded: INCOMPLETE or GATE_FAILED — uhqs/grade must be null / absent.
-        if declared_uhqs is not None:
+        # Ungraded: INCOMPLETE or GATE_FAILED — uhqs/grade must be null or omitted.
+        if "uhqs" in scorecard and declared_uhqs is not None:
             errors.append(f"uhqs={declared_uhqs!r} but recomputed ungraded (null)")
         declared_grade = scorecard.get("grade", None)
         if declared_grade is not None:
@@ -189,13 +215,16 @@ def assert_scorecard_integrity(
                 f"verdict={result.critical_control_verdict.value})"
             )
     else:
-        try:
-            declared_f = float(declared_uhqs)
-        except (TypeError, ValueError):
-            errors.append(f"uhqs={declared_uhqs!r} is not numeric")
+        if "uhqs" not in scorecard:
+            errors.append("uhqs missing for graded UHQS")
         else:
-            if abs(declared_f - result.uhqs) > uhqs_tol:
-                errors.append(f"uhqs={declared_f} != recomputed {result.uhqs}")
+            try:
+                declared_f = float(declared_uhqs)  # type: ignore[arg-type]
+            except (TypeError, ValueError):
+                errors.append(f"uhqs={declared_uhqs!r} is not numeric")
+            else:
+                if abs(declared_f - result.uhqs) > uhqs_tol:
+                    errors.append(f"uhqs={declared_f} != recomputed {result.uhqs}")
 
         declared_grade = scorecard.get("grade", None)
         expected_grade = letter_grade(result.uhqs)

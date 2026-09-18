@@ -1,4 +1,9 @@
-"""Pinned MITRE ATT&CK technique ID resolution (Enterprise + ICS)."""
+"""Pinned MITRE ATT&CK technique ID resolution (Enterprise + ICS).
+
+Loads the same primary pin as Module C (``data/attack/pinned_techniques.json``)
+and merges any extra IDs from the legacy ``data/attack_pin.json`` so both
+call sites share one authoritative technique set.
+"""
 
 from __future__ import annotations
 
@@ -9,7 +14,9 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
-_PIN_PATH = Path(__file__).resolve().parent / "data" / "attack_pin.json"
+_DATA = Path(__file__).resolve().parent / "data"
+_PRIMARY_PIN = _DATA / "attack" / "pinned_techniques.json"
+_LEGACY_PIN = _DATA / "attack_pin.json"
 _TECH_RE = re.compile(r"^T[0-9]{4}(?:\.[0-9]{3})?$")
 _TECH_FIND_RE = re.compile(r"\bT[0-9]{4}(?:\.[0-9]{3})?\b")
 
@@ -25,15 +32,47 @@ class AttackMappingResult:
     detail: str
 
 
+def _normalize_entry(entry: dict[str, Any]) -> dict[str, Any]:
+    domains = entry.get("domains")
+    if domains is None and entry.get("domain"):
+        domains = [entry["domain"]]
+    return {
+        "name": entry.get("name"),
+        "revoked": bool(entry.get("revoked")),
+        "deprecated": bool(entry.get("deprecated")),
+        "domains": list(domains or ()),
+    }
+
+
 @lru_cache(maxsize=1)
 def _load_pin() -> dict[str, Any]:
-    return json.loads(_PIN_PATH.read_text(encoding="utf-8"))
+    techniques: dict[str, Any] = {}
+    meta: dict[str, Any] = {
+        "bundle_id": "",
+        "enterprise_version": "",
+        "ics_version": "",
+        "bundle_version": "",
+    }
+    # Legacy first, primary overwrites on conflict.
+    for path in (_LEGACY_PIN, _PRIMARY_PIN):
+        if not path.is_file():
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        for key in ("bundle_id", "enterprise_version", "ics_version", "bundle_version"):
+            if data.get(key):
+                meta[key] = data[key]
+        if not meta["bundle_id"] and data.get("bundle_version"):
+            meta["bundle_id"] = str(data["bundle_version"])
+        for tid, entry in (data.get("techniques") or {}).items():
+            if isinstance(entry, dict):
+                techniques[str(tid)] = _normalize_entry(entry)
+    return {**meta, "techniques": techniques}
 
 
 def pin_meta() -> dict[str, str]:
     data = _load_pin()
     return {
-        "bundle_id": str(data.get("bundle_id", "")),
+        "bundle_id": str(data.get("bundle_id") or data.get("bundle_version") or ""),
         "enterprise_version": str(data.get("enterprise_version", "")),
         "ics_version": str(data.get("ics_version", "")),
     }
@@ -52,10 +91,8 @@ def resolve_technique(technique_id: str) -> AttackMappingResult:
             detail="id does not match T####(.###) pattern",
         )
     techniques = _load_pin().get("techniques") or {}
-    # Preserve dotted form; also try as-given
     entry = techniques.get(tid) or techniques.get(technique_id.strip())
     if not entry:
-        # Try original casing keys
         for k, v in techniques.items():
             if k.upper() == tid:
                 entry = v

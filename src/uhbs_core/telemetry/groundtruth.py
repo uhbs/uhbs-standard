@@ -154,26 +154,35 @@ def assess_sink_resilience(
     run_id: str,
     payload_ids: list[str],
 ) -> dict[str, Any]:
-    """Verify injected markers appear as data without breaking record framing."""
+    """Verify injected markers appear as data without breaking record framing.
+
+    Requires the current ``run_id`` in every credited marker so prior-run
+    ``UHBS_INJECT:*`` lines cannot satisfy this assessment.
+    """
     blob = _blobify(records)
+    blob_upper = blob.upper()
+    run_token = f"UHBS_INJECT:{run_id}"
     found = []
     for pid in payload_ids:
-        f"UHBS_INJECT:{run_id}:{pid.upper()}" if False else f"UHBS_INJECT:{run_id}"
-        # Match per-payload family token
-        token = f"UHBS_INJECT:{run_id}"
-        if token in blob and pid.upper() in blob.upper():
+        # Prefer family-specific token; fall back to run_id + payload family.
+        family = f"{run_token}:{pid.upper()}"
+        if family.upper() in blob_upper or (
+            run_token in blob and pid.upper() in blob_upper
+        ):
             found.append(pid)
 
-    # Framing: count malformed markers
     malformed = sum(
         1
         for r in records
         if isinstance(r, dict) and "__malformed__" in r
     )
+    # Require a clear majority of this run's payloads (ceil 2/3), never stale-only.
+    need = max(1, (2 * len(payload_ids) + 2) // 3) if payload_ids else 1
     return {
         "markers_found": found,
         "markers_expected": list(payload_ids),
         "malformed_records": malformed,
         "json_parse_ok": malformed == 0,
-        "ok": malformed == 0 and len(found) >= max(1, len(payload_ids) // 2),
+        "run_id": run_id,
+        "ok": malformed == 0 and len(found) >= need and run_token in blob,
     }

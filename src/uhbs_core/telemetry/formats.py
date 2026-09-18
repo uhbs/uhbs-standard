@@ -102,7 +102,7 @@ def validate_stix21(obj: dict[str, Any]) -> tuple[bool, str]:
     if t not in _STIX_TYPES:
         return False, f"unknown STIX type: {t}"
     oid = obj.get("id")
-    if oid is not None and not _STIX_ID.match(str(oid)) and "--" not in str(oid):
+    if oid is not None and not _STIX_ID.match(str(oid)):
         return False, f"id not STIX-shaped: {oid}"
     spec = str(obj.get("spec_version", obj.get("specVersion", ""))).strip()
     if not spec:

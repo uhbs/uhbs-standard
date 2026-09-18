@@ -25,10 +25,10 @@ from typing import Any
 from uhbs_core.contract_validation import has_passed_score_disagreement
 from uhbs_core.models import CheckOutcome, CheckResult, module_completeness
 
-# Floor used in place of a literal 0.0 before taking log() — keeps a single
-# exact-zero score from making the *entire* geometric mean collapse to zero
-# via a math domain error, while still contributing an extremely low value.
-_LOG_FLOOR = 0.5
+# Tiny floor avoids log(0) domain errors while keeping zero-score checks
+# (FAIL / NOT_TESTED / ERROR) near-zero in the geometric mean. Do not use a
+# larger floor (e.g. 0.5) — that leaked multi-point credit for unmeasured checks.
+_LOG_FLOOR = 1e-9
 
 
 def _denominator_checks(checks: Sequence[CheckResult]) -> list[CheckResult]:

@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import re
 import sys
 from pathlib import Path
 from typing import List, Optional
@@ -24,6 +25,9 @@ from uhbs_core.models import CheckResult, ModuleResult, TargetSpec  # noqa: E402
 from uhbs_core.outcomes import CheckOutcome, ContainmentVerdict  # noqa: E402
 from uhbs_core.ssh_session import run_ssh_command, run_ssh_shell_commands  # noqa: E402
 from uhbs_core.tps import TPS  # noqa: E402
+
+# Whole-word canary token — avoid substring false positives ("WHITE", "ARCHITECT").
+_CANARY_HIT_RE = re.compile(r"(?:^|[^A-Z0-9_])HIT(?:[^A-Z0-9_]|$)", re.IGNORECASE)
 
 
 def _gateway_canary_hits() -> CheckResult:
@@ -49,11 +53,26 @@ def _gateway_canary_hits() -> CheckResult:
             mandatory=True,
             catalog_id="D1.critical",
         )
-    text = p.read_text(encoding="utf-8", errors="replace")
+    # Snapshot once after probes; size/mtime recorded for operator audit of TOCTOU.
+    try:
+        st = p.stat()
+        text = p.read_text(encoding="utf-8", errors="replace")
+        snapshot_meta = f"mtime={st.st_mtime_ns} size={st.st_size}"
+    except OSError as exc:
+        return CheckResult.make(
+            id="d1.egress_gateway_log",
+            team="blue",
+            outcome=CheckOutcome.ERROR,
+            detail=f"gateway log unreadable: {exc}",
+            mandatory=True,
+            catalog_id="D1.critical",
+        )
     hits = [
         ln
         for ln in text.splitlines()
-        if ln.strip() and not ln.strip().startswith("#") and "HIT" in ln.upper()
+        if ln.strip()
+        and not ln.strip().startswith("#")
+        and _CANARY_HIT_RE.search(ln) is not None
     ]
     ok = len(hits) == 0
     return CheckResult.make(
@@ -62,7 +81,7 @@ def _gateway_canary_hits() -> CheckResult:
         outcome=CheckOutcome.PASS if ok else CheckOutcome.FAIL,
         detail="0 gateway canary hits" if ok else f"{len(hits)} canary hits",
         score=100.0 if ok else 0.0,
-        evidence=hits[:5],
+        evidence=[snapshot_meta, *hits[:5]],
         critical=True,
         mandatory=True,
         catalog_id="D1.critical",
@@ -380,26 +399,15 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
         )
     )
 
-    if breakout:
-        # Ensure failed criticals exist
-        for c in checks:
-            if c.critical and c.outcome == CheckOutcome.PASS and "LEAK" in (c.detail or ""):
-                pass
-
+    # Verdict is critical-controls only. Non-critical D3/DiD failures set
+    # breakout for the diagnostic score but must not override GATE_PASSED.
     verdict = _verdict_from_critical(checks)
-    if breakout and verdict == ContainmentVerdict.GATE_PASSED:
-        verdict = ContainmentVerdict.GATE_FAILED
 
-    # Defense-in-depth diagnostic: geometric mean over non-critical scored + all scored
+    # Defense-in-depth diagnostic: geometric mean over scored critical + DiD checks
     did_checks = [c for c in checks if not c.critical and c.outcome in {CheckOutcome.PASS, CheckOutcome.FAIL}]
     crit_scored = [
         c for c in checks if c.critical and c.outcome in {CheckOutcome.PASS, CheckOutcome.FAIL}
     ]
-    # DiD score uses all PASS/FAIL including critical (diagnostic picture)
-    agg_all = summarize_checks(
-        [c for c in checks if c.outcome != CheckOutcome.NOT_APPLICABLE or c.applicability_rationale]
-    )
-    # For diagnostic score, only PASS/FAIL
     from uhbs_core.check_scoring import score_checks
 
     did_score = score_checks(crit_scored + did_checks) if (crit_scored or did_checks) else 0.0

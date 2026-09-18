@@ -7,6 +7,7 @@ import re
 from pathlib import Path
 from typing import List, Optional
 
+from uhbs_core.check_scoring import summarize_checks
 from uhbs_core.hqs import pass_status
 from uhbs_core.models import CheckOutcome, CheckResult, ModuleResult, TargetSpec
 
@@ -28,6 +29,7 @@ def run(
             score=0.0,
             status="SKIPPED",
             notes=["no source_root configured"],
+            complete=False,
         )
     root = Path(target.source_root).expanduser().resolve()
     if not root.is_dir():
@@ -37,6 +39,7 @@ def run(
             score=0.0,
             status="FAILED",
             error=f"source_root not found: {root}",
+            complete=False,
         )
 
     if out_dir:
@@ -89,14 +92,23 @@ def run(
     if sast_gate and not sast_gate.passed:
         score = min(score, 70.0)
 
+    agg = summarize_checks(checks)
+    published = round(score, 2) if agg.complete else 0.0
     return ModuleResult(
         module="F",
         dimension="static",
-        score=round(score, 2),
-        status=pass_status(score),
+        score=published,
+        status="INCOMPLETE" if not agg.complete else pass_status(published),
         checks=checks,
-        metrics={"source_root": str(root)},
+        metrics={
+            "source_root": str(root),
+            "coverage": agg.coverage,
+            "not_tested": agg.not_tested,
+        },
         notes=["Module F white-box audit (keys/prompts/SAST/VFS)"],
+        complete=agg.complete,
+        applicable_checks=agg.applicable,
+        scored_checks=agg.scored,
     )
 
 

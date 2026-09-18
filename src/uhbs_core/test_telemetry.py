@@ -290,22 +290,40 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
                 ok, _ = validate_stix21(obj)
                 if ok:
                     false_stix += 1
-        checks.append(
-            CheckResult.make(
-                id="c1.stix_not_required",
-                team="blue",
-                outcome=CheckOutcome.PASS,
-                detail="STIX not declared — format credit not claimed for non-STIX logs",
-                score=100.0,
-                catalog_id="C1",
-                mandatory=False,
+        if false_stix > 0:
+            checks.append(
+                CheckResult.make(
+                    id="c1.stix_false_positive",
+                    team="blue",
+                    outcome=CheckOutcome.FAIL,
+                    detail=(
+                        f"{false_stix} non-STIX records incorrectly validated as STIX"
+                    ),
+                    score=0.0,
+                    catalog_id="C1",
+                    mandatory=True,
+                )
             )
-        )
-        _ = false_stix
+        else:
+            checks.append(
+                CheckResult.make(
+                    id="c1.stix_not_required",
+                    team="blue",
+                    outcome=CheckOutcome.NOT_APPLICABLE,
+                    detail="STIX not declared — format credit not claimed for non-STIX logs",
+                    score=0.0,
+                    catalog_id="C1",
+                    mandatory=False,
+                    applicability_rationale=(
+                        "STIX 2.1 not in declared native_event_format"
+                    ),
+                )
+            )
 
     # C2 — sink-side injection resilience
     port = target.shell_exec_port()
     payload_ids: list[str] = []
+    rows_after_flat: list[Any] | None = None
     if target.host and port is not None:
         for pid, cmd in injection_payloads(run_id):
             payload_ids.append(pid)
@@ -314,12 +332,16 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
             )
             # Shell acceptance is evidence of delivery attempt, not the score.
             _ = out
-        # Re-read sink after injection
+        # Re-read sink after injection — subsequent checks must use this snapshot.
         rows_after = _iter_records(tdir)  # type: ignore[arg-type]
         flat_after: list[Any] = []
         for r in rows_after:
             if isinstance(r, dict) and "__malformed__" not in r:
                 flat_after.extend(_flatten(r))
+            elif isinstance(r, dict) and "__malformed__" in r:
+                flat_after.append(r)
+        rows_after_flat = flat_after
+        dict_rows = [x for x in flat_after if isinstance(x, dict)]
         assessment = assess_sink_resilience(flat_after, run_id, payload_ids)
         checks.append(
             CheckResult.make(
@@ -347,9 +369,14 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
             )
         )
 
+    # Prefer post-injection sink for C3–C5 when available
+    sink_rows = dict_rows if rows_after_flat is None else [
+        x for x in rows_after_flat if isinstance(x, dict)
+    ]
+
     # C3 — required observables
     required = _load_required_observables(profile_class)
-    ratio, detail = _observable_coverage(dict_rows, required)
+    ratio, detail = _observable_coverage(sink_rows, required)
     checks.append(
         CheckResult.make(
             id="c3.observable_coverage",
@@ -361,20 +388,16 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
         )
     )
 
-    # C4 — ground-truth (manifest recorded; match against sink)
+    # C4 — ground-truth (manifest recorded; match against post-injection sink)
     manifest = make_tagged_interactions(run_id, count=4)
-    # Persist markers into detail even if live inject unavailable — match existing logs
-    gt = match_ground_truth(manifest, dict_rows, required_fields=required[:3])
-    # Without live tagged inject into this sink, recall may be 0 → FAIL (measured)
-    # If we delivered markers via C2, re-match
+    gt = match_ground_truth(manifest, sink_rows, required_fields=required[:3])
     if payload_ids and target.host and port is not None:
-        # Also search for run_id markers from C2 as proxy completeness
         proxy_manifest = make_tagged_interactions(run_id, count=len(payload_ids))
         for i, pid in enumerate(payload_ids):
             if i < len(proxy_manifest.events):
                 proxy_manifest.events[i].tag = f"UHBS_INJECT:{run_id}"
                 proxy_manifest.events[i].kind = pid
-        gt = match_ground_truth(proxy_manifest, dict_rows, required_fields=required[:3])
+        gt = match_ground_truth(proxy_manifest, sink_rows, required_fields=required[:3])
 
     checks.append(
         CheckResult.make(
@@ -400,7 +423,7 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
     )
 
     # C5 — ATT&CK only when claimed in telemetry text
-    blob = json.dumps(dict_rows, default=str)
+    blob = json.dumps(sink_rows, default=str)
     claimed_ids = extract_technique_ids(blob)
     # Reject bare-word "attack" / "mitre" credit (v4 regression)
     if not claimed_ids:

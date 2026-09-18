@@ -375,13 +375,37 @@ def main(argv: Sequence[str] | None = None) -> int:
             out_dir=args.out / "baseline",
             skip_sast_tools=args.skip_sast_tools,
         )
-        b_d = any(m.module == "D" and m.status != "SKIPPED" for m in b_mods)
+        b_d_mod = next((m for m in b_mods if m.module == "D"), None)
+        b_measured = bool(
+            b_d_mod
+            and b_d_mod.status not in {"SKIPPED", "INCOMPLETE"}
+            and b_d_mod.critical_control_verdict != "INCOMPLETE"
+        )
+        b_incomplete = any(
+            (m.module in {"A", "B", "C", "D", "E", "F"} and not m.complete)
+            or m.status == "INCOMPLETE"
+            for m in b_mods
+        )
+        b_verdict = CriticalControlVerdict.INCOMPLETE
+        if b_d_mod and b_d_mod.critical_control_verdict:
+            try:
+                b_verdict = CriticalControlVerdict(b_d_mod.critical_control_verdict)
+            except ValueError:
+                b_verdict = CriticalControlVerdict.INCOMPLETE
+        elif b_measured:
+            b_verdict = CriticalControlVerdict.GATE_PASSED
         b_uhqs = compute_uhqs(
             b_scores,
             target=baseline.label,
             profile_class=baseline.profile_class,
             phase="+".join(phases_n),
-            containment_measured=b_d,
+            containment_measured=b_measured,
+            critical_control_verdict=b_verdict,
+            assessment_status=(
+                AssessmentStatus.INCOMPLETE
+                if b_incomplete
+                else AssessmentStatus.COMPLETE
+            ),
         )
         extras["baseline_scores"] = b_scores
         extras["baseline_uhqs"] = b_uhqs.to_dict()

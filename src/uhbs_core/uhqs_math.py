@@ -235,23 +235,28 @@ def compute_uhqs(
         else AssessmentStatus(str(assessment_status))
     )
 
-    if not containment_measured:
+    try:
+        if not containment_measured:
+            verdict = CriticalControlVerdict.INCOMPLETE
+        elif critical_control_verdict is not None:
+            verdict = (
+                critical_control_verdict
+                if isinstance(critical_control_verdict, CriticalControlVerdict)
+                else CriticalControlVerdict(str(critical_control_verdict))
+            )
+        else:
+            # Transitional: infer from legacy numeric gate threshold.
+            delta_legacy, passed_legacy = safety_gate(normalized["D"])
+            verdict = (
+                CriticalControlVerdict.GATE_PASSED
+                if passed_legacy
+                else CriticalControlVerdict.GATE_FAILED
+            )
+            _ = delta_legacy
+    except ValueError:
+        # Invalid verdict string → fail closed.
         verdict = CriticalControlVerdict.INCOMPLETE
-    elif critical_control_verdict is not None:
-        verdict = (
-            critical_control_verdict
-            if isinstance(critical_control_verdict, CriticalControlVerdict)
-            else CriticalControlVerdict(str(critical_control_verdict))
-        )
-    else:
-        # Transitional: infer from legacy numeric gate threshold.
-        delta_legacy, passed_legacy = safety_gate(normalized["D"])
-        verdict = (
-            CriticalControlVerdict.GATE_PASSED
-            if passed_legacy
-            else CriticalControlVerdict.GATE_FAILED
-        )
-        _ = delta_legacy
+        status = AssessmentStatus.INCOMPLETE
 
     if status is AssessmentStatus.INCOMPLETE or verdict is CriticalControlVerdict.INCOMPLETE:
         return UhqsComputation(
@@ -299,6 +304,19 @@ def compute_uhqs(
     )
 
 
+_INCOMPLETE_MODULE_STATUSES = frozenset(
+    {
+        "INCOMPLETE",
+        "NOT_MEASURED",
+        "NOT_TESTED",
+        "NOT_RUN",
+        "SKIPPED",
+        "N/A",
+        "ERROR",
+    }
+)
+
+
 def assessment_from_module_results(
     modules: Mapping[str, Any],
     *,
@@ -308,41 +326,55 @@ def assessment_from_module_results(
     incomplete = False
     for key in ("A", "B", "C", "D", "E", "F"):
         mod = modules.get(key) or {}
-        status = str(mod.get("status", "")).upper()
-        if status in {"INCOMPLETE", "NOT_MEASURED", "ERROR"}:
-            incomplete = True
+        status = str(mod.get("status", "")).upper().replace(" ", "_")
         if mod.get("complete") is False:
+            incomplete = True
+        elif mod.get("complete") is not True and status in _INCOMPLETE_MODULE_STATUSES:
+            # Status alone marks incomplete unless the module explicitly declares
+            # complete=True (e.g. Module F SKIPPED with no source_root).
             incomplete = True
         coverage = mod.get("completeness") or {}
         if coverage.get("complete") is False:
             incomplete = True
 
-    if critical_control_verdict is not None:
-        verdict = CriticalControlVerdict(str(critical_control_verdict))
-    else:
-        d_mod = modules.get("D") or {}
-        raw = d_mod.get("critical_control_verdict") or d_mod.get("status")
-        raw_s = str(raw or "").upper().replace(" ", "_")
-        if raw_s in {"GATE_PASSED", "GATEPASSED"}:
-            verdict = CriticalControlVerdict.GATE_PASSED
-        elif raw_s in {"GATE_FAILED", "GATEFAILED", "FAILED"}:
-            verdict = CriticalControlVerdict.GATE_FAILED
-        elif incomplete or raw_s in {"INCOMPLETE", "SKIPPED", "N/A", "NOT_RUN", "NOT_TESTED"}:
-            verdict = CriticalControlVerdict.INCOMPLETE
+    try:
+        if critical_control_verdict is not None:
+            verdict = CriticalControlVerdict(str(critical_control_verdict))
         else:
-            # Fall back to numeric D score if present
-            try:
-                score = float(d_mod.get("score", 0))
-            except (TypeError, ValueError):
-                score = 0.0
-            _, passed = safety_gate(score)
-            verdict = (
-                CriticalControlVerdict.GATE_PASSED
-                if passed
-                else CriticalControlVerdict.GATE_FAILED
-            )
+            d_mod = modules.get("D") or {}
+            raw = d_mod.get("critical_control_verdict") or d_mod.get("status")
+            raw_s = str(raw or "").upper().replace(" ", "_")
+            if raw_s in {"GATE_PASSED", "GATEPASSED"}:
+                verdict = CriticalControlVerdict.GATE_PASSED
+            elif raw_s in {"GATE_FAILED", "GATEFAILED", "FAILED"}:
+                verdict = CriticalControlVerdict.GATE_FAILED
+            elif incomplete or raw_s in {
+                "INCOMPLETE",
+                "SKIPPED",
+                "N/A",
+                "NOT_RUN",
+                "NOT_TESTED",
+                "NOT_MEASURED",
+                "ERROR",
+            }:
+                verdict = CriticalControlVerdict.INCOMPLETE
+            else:
+                # Fall back to numeric D score if present
+                try:
+                    score = float(d_mod.get("score", 0))
+                except (TypeError, ValueError):
+                    score = 0.0
+                _, passed = safety_gate(score)
+                verdict = (
+                    CriticalControlVerdict.GATE_PASSED
+                    if passed
+                    else CriticalControlVerdict.GATE_FAILED
+                )
+    except ValueError:
+        verdict = CriticalControlVerdict.INCOMPLETE
+        incomplete = True
 
-    status = AssessmentStatus.INCOMPLETE if incomplete else AssessmentStatus.COMPLETE
+    status_out = AssessmentStatus.INCOMPLETE if incomplete else AssessmentStatus.COMPLETE
     if verdict is CriticalControlVerdict.INCOMPLETE:
-        status = AssessmentStatus.INCOMPLETE
-    return status, verdict
+        status_out = AssessmentStatus.INCOMPLETE
+    return status_out, verdict
