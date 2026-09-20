@@ -146,7 +146,9 @@ def write_report(
     *,
     assurance_level: str | None = None,
 ) -> Path:
-    out_dir.mkdir(parents=True, exist_ok=True)
+    # The report directory is selected by the local lab operator. UHBS does
+    # not expose report generation as an MCP filesystem-write primitive.
+    out_dir.mkdir(parents=True, exist_ok=True)  # NOSONAR
     card = render_card(
         target, baseline, uhqs, modules, evaluation_type=evaluation_type
     )

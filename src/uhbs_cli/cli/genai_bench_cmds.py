@@ -60,7 +60,11 @@ def genai_bench_analyze(replay: Path, out: Path) -> None:
     try:
         data = gb.load_replay(replay)
         report = gb.analyze_replay(data)
-        out.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+        # Explicit local CLI destination; live probes and collectors remain
+        # outside MCP, so the invoking OS user owns this path choice.
+        out.write_text(
+            json.dumps(report, indent=2) + "\n", encoding="utf-8"
+        )  # NOSONAR
     except gb.GenaiBenchError as exc:
         raise click.ClickException(str(exc)) from exc
     echo_ok(f"OK  wrote {out} (experimental; UHQS unchanged)")

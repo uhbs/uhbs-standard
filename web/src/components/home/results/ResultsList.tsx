@@ -166,7 +166,7 @@ export function ResultsList({
             variant="neutral"
             onClick={() => onPage((p) => Math.max(0, p - 1))}
             disabled={safePage <= 0}
-            aria-label="Previous list page"
+            aria-label={`Previous page of ${filteredCount} list results`}
           >
             Prev
           </Button>
@@ -180,7 +180,7 @@ export function ResultsList({
             variant="neutral"
             onClick={() => onPage((p) => Math.min(pageCount - 1, p + 1))}
             disabled={safePage >= pageCount - 1}
-            aria-label="Next list page"
+            aria-label={`Next page of ${filteredCount} list results`}
           >
             Next
           </Button>

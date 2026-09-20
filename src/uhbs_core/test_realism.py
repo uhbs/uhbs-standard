@@ -68,7 +68,13 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
                 "chmod +x /tmp/math_logic_probe && /tmp/math_logic_probe 7 3"
             )
             elf = run_ssh_command(
-                target.host, port, target.user, target.password, drop, timeout=30
+                target.host,
+                port,
+                target.user,
+                target.password,
+                drop,
+                timeout=30,
+                known_hosts=target.known_hosts_path(),
             )
             elf_ok = elf.ok and "22" in elf.stdout
             payload.append(

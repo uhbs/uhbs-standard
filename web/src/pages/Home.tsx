@@ -26,6 +26,9 @@ const NAV = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-page text-foreground font-sans selection:bg-main selection:text-black">
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <nav
         aria-label="Primary navigation"
         className="fixed top-0 left-0 w-full z-40 bg-secondary-background border-b-2 border-border shadow-shadow"
@@ -33,7 +36,7 @@ export default function Home() {
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <a
             href="/uhbs-standard/"
-            className="flex items-center gap-2 font-mono font-heading text-lg text-foreground hover:text-main transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+            className="flex items-center gap-2 font-mono font-heading text-lg text-foreground hover:text-main transition-colors focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-black focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
           >
             <Shield className="text-main w-5 h-5" aria-hidden />
             UHBS<span className="text-muted-foreground font-base">v5</span>
@@ -44,7 +47,7 @@ export default function Home() {
               <a
                 key={item.href}
                 href={item.href}
-                className="hover:text-foreground transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+                className="hover:text-foreground transition-colors focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-black focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
               >
                 {item.label}
               </a>
@@ -52,7 +55,7 @@ export default function Home() {
             </div>
             <a
                 href={mkdocsUrl()}
-                className="border-2 border-border bg-main text-black px-3 py-1.5 font-mono text-xs shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all focus-visible:ring-2 focus-visible:ring-black"
+                className="border-2 border-border bg-main text-black px-3 py-1.5 font-mono text-xs shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-all focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-black focus-visible:ring-2 focus-visible:ring-black"
               >
                 Docs
               </a>
@@ -60,7 +63,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <main>
+      <main id="main-content">
         <Hero />
         <ScopeAndApplicability />
         <CoreArchitecture />

@@ -67,8 +67,13 @@ export const Hero = () => {
           <ButtonLink variant="neutral" href="#mcp">
             MCP
           </ButtonLink>
-          <ButtonLink variant="neutral" href="https://github.com/uhbs/uhbs-standard">
-            GitHub
+          <ButtonLink
+            variant="neutral"
+            href="https://github.com/uhbs/uhbs-standard"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub <span className="sr-only">(opens in new tab)</span>
           </ButtonLink>
         </motion.div>
 
@@ -93,9 +98,11 @@ export const Hero = () => {
             </p>
             <a
               href="https://github.com/uhbs/uhbs-standard/blob/main/docs/assets/uhbs-lab-demo.cast"
-              className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-black"
             >
-              asciinema cast →
+              asciinema cast → <span className="sr-only">(opens in new tab)</span>
             </a>
           </div>
           <Card className="overflow-hidden p-0 gap-0 py-0 shadow-shadow">

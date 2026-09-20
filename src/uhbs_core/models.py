@@ -223,8 +223,21 @@ class TargetSpec:
     ports_map: dict[str, int] = field(default_factory=dict)
     # Lab inventory annotations (mcp_path, mcp_transport, mcp_custom_allowlist_tools, …)
     annotations: dict[str, Any] = field(default_factory=dict)
+    # Optional OpenSSH known_hosts file for Module D / shell probes (also via
+    # UHBS_SSH_KNOWN_HOSTS or inventory ``ssh_known_hosts``).
+    ssh_known_hosts: str | None = None
     native_event_format: str | None = None
     export_formats: list[str] = field(default_factory=list)
+
+    def known_hosts_path(self) -> str | None:
+        """Resolve the pinned SSH known_hosts path for this target."""
+        if self.ssh_known_hosts and str(self.ssh_known_hosts).strip():
+            return str(self.ssh_known_hosts).strip()
+        ann = self.annotations or {}
+        path = ann.get("ssh_known_hosts")
+        if path is not None and str(path).strip():
+            return str(path).strip()
+        return None
 
     @property
     def label(self) -> str:

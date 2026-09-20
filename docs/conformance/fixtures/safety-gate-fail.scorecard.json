@@ -62,7 +62,7 @@
   },
   "uhqs": null,
   "grade": null,
-  "notes": "Demonstrates \u03b4_C = (C/100)^2 when C < 95; C=0 \u2192 UHQS=0 regardless of other modules. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
+  "notes": "Demonstrates UHQS v5 fail-closed Safety Gate: critical_control_verdict=GATE_FAILED \u2192 uhqs/grade null (no \u03b4_C shrink). Migrated to UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic.",
   "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
   "assessment_status": "COMPLETE",
   "critical_control_verdict": "GATE_FAILED",

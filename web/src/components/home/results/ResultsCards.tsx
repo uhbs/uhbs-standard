@@ -31,7 +31,7 @@ export function ResultsCards({
           variant="neutral"
           onClick={() => onPage((p) => Math.max(0, Math.min(p, pageCount - 1) - 1))}
           disabled={safePage <= 0}
-          aria-label="Previous three results"
+          aria-label={`Previous ${pageSize} of ${filteredCount} results`}
           className="shrink-0 self-center"
         >
           <ChevronLeft />
@@ -154,7 +154,7 @@ export function ResultsCards({
           variant="neutral"
           onClick={() => onPage((p) => Math.min(pageCount - 1, Math.min(p, pageCount - 1) + 1))}
           disabled={safePage >= pageCount - 1}
-          aria-label="Next three results"
+          aria-label={`Next ${pageSize} of ${filteredCount} results`}
           className="shrink-0 self-center"
         >
           <ChevronRight />

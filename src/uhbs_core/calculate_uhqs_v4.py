@@ -32,7 +32,10 @@ def main() -> int:
     scores = {}
     payload = {}
     if args.input:
-        payload = json.loads(Path(args.input).read_text(encoding="utf-8"))
+        # Explicit local CLI input; this command is not a remote file API.
+        payload = json.loads(
+            Path(args.input).read_text(encoding="utf-8")  # NOSONAR
+        )
         if "scores" in payload:
             scores = {k: float(v) for k, v in payload["scores"].items()}
         elif "modules" in payload:
@@ -64,7 +67,10 @@ def main() -> int:
 
     uhqs = compute_uhqs(scores, target=args.target, profile_class=args.profile_class)
     out = {**payload, "scores": scores, "uhqs": uhqs.to_dict()}
-    Path(args.output).write_text(json.dumps(out, indent=2), encoding="utf-8")
+    # Explicit local CLI output; the invoking OS user owns this path choice.
+    Path(args.output).write_text(  # NOSONAR
+        json.dumps(out, indent=2), encoding="utf-8"
+    )
     from uhbs_core.termui import echo_ok
 
     echo_ok(

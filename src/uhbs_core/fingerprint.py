@@ -57,13 +57,10 @@ JA3S/JA4S therefore requires packet capture (e.g. scapy/tshark) and is
 **out of scope for a userspace-only implementation** — this module does
 not claim to produce a JA3S/JA4S hash. What it does instead is a
 best-effort *approximation*: it records what ``ssl`` will tell us about a
-single default handshake, and — for a little more signal without a full
-capture — makes a couple of additional handshake attempts with a
-restricted client cipher policy to see whether the server will accept
-something outside a modern default set. That tells us "does this server's
-TLS stack accept X" via repeated client-driven probing, not "what order
-did the server list its ciphers in" — a materially different, weaker
-signal that is labelled as such throughout.
+single certificate-verified handshake using TLS 1.2 or newer. An
+**opt-in** lab diagnostic (:func:`probe_tls_weak_cipher_acceptance`) can
+additionally test whether the peer accepts intentionally weak ciphers
+under TLS 1.2+; it is off by default and never changes UHQS.
 
 Everything below is designed to be **opt-in**: :func:`fingerprint_host`
 returns a single ``CheckResult``-shaped dict that a protocol plugin *could*
@@ -273,6 +270,9 @@ KNOWN_TLS_PROFILES: tuple[dict, ...] = (
 # Cipher-name substrings considered legacy/weak enough to be a mild anomaly
 # signal if a server accepts them outside a deliberate legacy-compat test.
 _WEAK_CIPHER_MARKERS = ("RC4", "3DES", "DES-", "NULL", "EXPORT", "MD5")
+# OpenSSL cipher list used only by the opt-in weak-acceptance diagnostic.
+# TLS 1.2+ only — never re-enable SSLv3 / TLSv1.0 / TLSv1.1.
+_WEAK_CIPHER_OPENSSL = "RC4-SHA:DES-CBC3-SHA:NULL-SHA:EXP"
 
 # Certificate CN/SAN substrings that read as obvious lab/placeholder values
 # rather than a real hostname — a soft anomaly signal only.
@@ -344,16 +344,16 @@ def probe_tls(
     port: int,
     timeout: float = 5.0,
     server_hostname: str | None = None,
+    ca_file: str | None = None,
 ) -> TLSFingerprint:
     """Negotiate one TLS handshake and record what ``ssl`` will tell us.
 
-    Does not validate the peer certificate (honeypots commonly present
-    self-signed certs) — we want to *observe* the cert, not reject it.
+    Certificate and hostname verification are mandatory. A lab-specific CA
+    bundle may be supplied for self-signed honeypot certificates.
     """
     fp = TLSFingerprint(host=host, port=port, ok=False)
-    ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
-    ctx.check_hostname = False
-    ctx.verify_mode = ssl.CERT_NONE
+    ctx = ssl.create_default_context(cafile=ca_file)
+    ctx.minimum_version = ssl.TLSVersion.TLSv1_2
     with contextlib.suppress(NotImplementedError, ssl.SSLError):
         ctx.set_alpn_protocols(["h2", "http/1.1"])
     try:
@@ -388,34 +388,43 @@ def probe_tls(
     if fp.cert_self_signed:
         fp.anomaly_flags.append("self-signed certificate (subject == issuer)")
 
-    # Best-effort weak-cipher acceptance probe: a handful of additional
-    # handshakes with a client cipher list restricted to legacy/weak names.
-    # This tells us "does the server's TLS stack accept legacy crypto when
-    # offered," which is weaker than and different from a captured
-    # ServerHello cipher-order fingerprint — see class docstring `note`.
-    try:
-        weak_ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
-        weak_ctx.check_hostname = False
-        weak_ctx.verify_mode = ssl.CERT_NONE
-        weak_ctx.set_ciphers("ALL:@SECLEVEL=0")
-        weak_ctx.minimum_version = ssl.TLSVersion.MINIMUM_SUPPORTED
-        with (
-            socket.create_connection((host, port), timeout=timeout) as raw_sock2,
-            weak_ctx.wrap_socket(raw_sock2, server_hostname=server_hostname or host) as weak_sock,
-        ):
-            weak_cipher = weak_sock.cipher()
-            name = weak_cipher[0] if weak_cipher else ""
-            fp.accepts_weak_cipher_probe = any(m in name.upper() for m in _WEAK_CIPHER_MARKERS)
-    except (OSError, ssl.SSLError, ValueError):
-        fp.accepts_weak_cipher_probe = False
-
-    if fp.accepts_weak_cipher_probe:
-        fp.anomaly_flags.append(
-            "server accepted a legacy/weak cipher when explicitly offered "
-            "(observational only — real hardened daemons vary widely here too)"
-        )
-
     return fp
+
+
+def probe_tls_weak_cipher_acceptance(
+    host: str,
+    port: int,
+    timeout: float = 5.0,
+    server_hostname: str | None = None,
+) -> bool | None:
+    """Lab-only diagnostic: does the peer accept intentionally weak ciphers?
+
+    Opt-in observation path (not used by default UHQS scoring). Certificate
+    verification is disabled **only** for this acceptance probe so self-signed
+    honeypot labs can still be tested; protocol floor remains TLS 1.2+.
+
+    Returns ``True`` if a weak cipher was negotiated, ``False`` if the peer
+    refused the weak offer, or ``None`` if the probe could not run (e.g.
+    OpenSSL build lacks the weak suite list).
+    """
+    ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+    ctx.minimum_version = ssl.TLSVersion.TLSv1_2
+    ctx.check_hostname = False  # NOSONAR intentional lab observation
+    ctx.verify_mode = ssl.CERT_NONE  # NOSONAR intentional lab observation
+    try:
+        ctx.set_ciphers(_WEAK_CIPHER_OPENSSL)
+    except ssl.SSLError:
+        return None
+    try:
+        with (
+            socket.create_connection((host, port), timeout=timeout) as raw_sock,
+            ctx.wrap_socket(raw_sock, server_hostname=server_hostname or host) as tls_sock,
+        ):
+            cipher = tls_sock.cipher()
+            name = cipher[0] if cipher else ""
+            return bool(name) and any(m in name.upper() for m in _WEAK_CIPHER_MARKERS)
+    except (OSError, ssl.SSLError):
+        return False
 
 
 def fingerprint_host(
@@ -425,6 +434,9 @@ def fingerprint_host(
     *,
     tcp_samples: int = 5,
     timeout: float = 4.0,
+    tls_server_hostname: str | None = None,
+    tls_ca_file: str | None = None,
+    probe_weak_ciphers: bool = False,
 ) -> dict:
     """Run the TCP-stack probe (+ optional TLS probe) and return one
     ``CheckResult``-shaped dict any plugin *could* opt into calling.
@@ -435,6 +447,10 @@ def fingerprint_host(
     scoring rule) to interpret — this probe intentionally does not gate
     pass/fail on any single heuristic above, per this module's honesty
     requirement.
+
+    Set ``probe_weak_ciphers=True`` to also run the lab-only weak-cipher
+    acceptance diagnostic (TLS ≥ 1.2, cert verification off for that probe
+    only). It never changes ``passed``; results land in ``evidence``.
     """
     tcp_sig = probe_tcp_stack(host, port, samples=tcp_samples, timeout=timeout)
     evidence: list[str] = []
@@ -470,7 +486,13 @@ def fingerprint_host(
 
     tls_fp: TLSFingerprint | None = None
     if use_tls:
-        tls_fp = probe_tls(host, port, timeout=timeout)
+        tls_fp = probe_tls(
+            host,
+            port,
+            timeout=timeout,
+            server_hostname=tls_server_hostname,
+            ca_file=tls_ca_file,
+        )
         if tls_fp.ok:
             notes.append(
                 f"tls={tls_fp.tls_version} cipher={tls_fp.cipher_name} "
@@ -480,6 +502,20 @@ def fingerprint_host(
                 evidence.extend(tls_fp.anomaly_flags)
         else:
             notes.append(f"tls probe failed: {tls_fp.error}")
+        if probe_weak_ciphers:
+            weak = probe_tls_weak_cipher_acceptance(
+                host, port, timeout=timeout, server_hostname=tls_server_hostname
+            )
+            if tls_fp is not None:
+                tls_fp.accepts_weak_cipher_probe = weak
+            if weak is True:
+                evidence.append("lab diagnostic: peer accepted a weak TLS cipher offer")
+            elif weak is False:
+                evidence.append("lab diagnostic: peer refused weak TLS cipher offer")
+            else:
+                evidence.append(
+                    "lab diagnostic: weak TLS cipher probe unavailable on this OpenSSL build"
+                )
 
     return CheckResult(
         id="fingerprint.tcp_stack" + (".tls" if use_tls else ""),

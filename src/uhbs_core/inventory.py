@@ -62,11 +62,14 @@ def _site_to_spec(name: str, raw: dict[str, Any]) -> TargetSpec:
         "mcp_transport",
         "mcp_sse_path",
         "mcp_custom_allowlist_tools",
+        "ssh_known_hosts",
     ):
         if key in raw and raw[key] is not None:
             annotations[key] = raw[key]
         elif key in meta and meta[key] is not None:
             annotations[key] = meta[key]
+
+    ssh_known_hosts = raw.get("ssh_known_hosts") or annotations.get("ssh_known_hosts")
 
     if "mcp" in proto_l and "mcp" not in ports_map:
         ports_map["mcp"] = primary
@@ -92,6 +95,7 @@ def _site_to_spec(name: str, raw: dict[str, Any]) -> TargetSpec:
         profile_class=str(raw.get("class") or raw.get("profile_class") or "POSIX-Shell"),
         ports_map=ports_map,
         annotations=annotations,
+        ssh_known_hosts=str(ssh_known_hosts) if ssh_known_hosts else None,
     )
 
     tps_ref = t.tps_path or raw.get("tps")
@@ -107,7 +111,9 @@ def _site_to_spec(name: str, raw: dict[str, Any]) -> TargetSpec:
 def load_inventory(path: Path) -> dict[str, TargetSpec]:
     if yaml is None:
         raise RuntimeError("PyYAML required: pip install pyyaml")
-    data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    # Inventory is an explicit local CLI/library input, not an agent-created
+    # path or remotely exposed file API.
+    data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}  # NOSONAR
     sites = data.get("sites") or {}
     return {name: _site_to_spec(name, raw or {}) for name, raw in sites.items()}
 

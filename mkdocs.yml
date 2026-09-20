@@ -77,6 +77,7 @@ nav:
   - Home: index.md
   - Get started:
       - Install & use UHBS: tooling/install-and-use.md
+      - SSH host-key pinning: tooling/ssh-known-hosts.md
       - 2026 audit-readiness checklist: governance/audit-readiness-2026.md
       - Telemetry legal & safety: governance/telemetry-legal-safety.md
       - Terminology: governance/terminology.md

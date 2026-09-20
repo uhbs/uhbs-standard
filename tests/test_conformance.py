@@ -26,10 +26,10 @@ def _load(name: str) -> dict:
         ("cowrie-low-interaction.scorecard.json", 61.37, "D"),
         ("posix-shell-lab.scorecard.json", 80.33, "B"),
         ("echidra-low-interaction.scorecard.json", 43.45, "F"),
-        ("v5-gate-passed-graded.scorecard.json", 90.0, "A"),
+        ("v5/gate-passed-graded.scorecard.json", 90.0, "A"),
         ("safety-gate-fail.scorecard.json", None, None),
-        ("v5-gate-failed-ungraded.scorecard.json", None, None),
-        ("v5-incomplete-ungraded.scorecard.json", None, None),
+        ("v5/gate-failed-ungraded.scorecard.json", None, None),
+        ("v5/incomplete-ungraded.scorecard.json", None, None),
     ],
 )
 def test_conformance_fixture_integrity(
@@ -44,11 +44,11 @@ def test_conformance_fixture_integrity(
 
 def test_all_fixtures_integrity() -> None:
     failures: list[str] = []
-    for path in sorted(FIXTURES.glob("*.scorecard.json")):
+    for path in sorted(FIXTURES.rglob("*.scorecard.json")):
         data = json.loads(path.read_text(encoding="utf-8"))
         errors = assert_scorecard_integrity(data)
         if errors:
-            failures.append(f"{path.name}: {errors}")
+            failures.append(f"{path.relative_to(FIXTURES)}: {errors}")
     assert failures == [], "\n".join(failures)
 
 
@@ -68,8 +68,8 @@ def test_posix_lab_meets_production_baseline() -> None:
 
 def test_ungraded_fixtures_have_no_letter_grade() -> None:
     for name in (
-        "v5-incomplete-ungraded.scorecard.json",
-        "v5-gate-failed-ungraded.scorecard.json",
+        "v5/incomplete-ungraded.scorecard.json",
+        "v5/gate-failed-ungraded.scorecard.json",
         "safety-gate-fail.scorecard.json",
     ):
         data = _load(name)

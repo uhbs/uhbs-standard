@@ -161,7 +161,8 @@ python3 - <<'"'"'PY'"'"'
 import paramiko, time
 for i in range(15):
     c = paramiko.SSHClient()
-    c.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    # Seed script only — UHBS harness uses RejectPolicy + UHBS_SSH_KNOWN_HOSTS.
+    c.set_missing_host_key_policy(paramiko.AutoAddPolicy())  # noqa: B507 lab seed
     c.connect("echidra-lab", 2222, username="root", password=f"admin{i}",
               timeout=10, allow_agent=False, look_for_keys=False, banner_timeout=10)
     for cmd in ("whoami", "uname -a", "ls /", "id"):

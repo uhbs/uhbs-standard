@@ -49,12 +49,23 @@ python3 -c "import paramiko; t=paramiko.Transport(('cowrie-lab',2222)); t.connec
 
 ## 3. Quick + full — SSH {#ssh}
 
+!!! warning "Pin SSH host keys"
+    UHBS rejects unknown host keys. Before grading, follow
+    [SSH host-key pinning](../../../tooling/ssh-known-hosts.md). Missing keys
+    yield Module D **INCOMPLETE**, not a false GATE_PASSED.
+
 ```bash
-mkdir -p docs/conformance/reports/cowrie/ssh/{quick,full}
+mkdir -p docs/conformance/reports/cowrie/ssh/{quick,full} .local
+# Pin against the Docker DNS name used in inventory (cowrie-lab:2222).
+docker run --rm --network uhbs-lab instrumentisto/openssh-client \
+  ssh-keyscan -p 2222 cowrie-lab > .local/uhbs_known_hosts
+ssh-keygen -lf .local/uhbs_known_hosts
+chmod 600 .local/uhbs_known_hosts
 
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/cowrie:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
+  -e UHBS_SSH_KNOWN_HOSTS=/work/.local/uhbs_known_hosts \
   uhbs:5.0.0 lab \
     --inventory /work/docs/conformance/labs/cowrie/inventory.yaml \
     --target cowrie-ssh \
@@ -69,6 +80,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/cowrie-telemetry:/telemetry:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
+  -e UHBS_SSH_KNOWN_HOSTS=/work/.local/uhbs_known_hosts \
   uhbs:5.0.0-full lab \
     --inventory /work/docs/conformance/labs/cowrie/inventory.yaml \
     --target cowrie-ssh \

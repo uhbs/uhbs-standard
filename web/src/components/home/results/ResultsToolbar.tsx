@@ -72,7 +72,7 @@ export function ResultsToolbar({
               onClick={() => onViewMode("cards")}
               aria-pressed={viewMode === "cards"}
               className={cn(
-                "inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 border-r-2 border-border transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2",
+                "inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 border-r-2 border-border transition-colors focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-black focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2",
                 viewMode === "cards"
                   ? "bg-background text-black"
                   : "bg-secondary-background text-muted-foreground hover:text-foreground",
@@ -86,7 +86,7 @@ export function ResultsToolbar({
               onClick={() => onViewMode("list")}
               aria-pressed={viewMode === "list"}
               className={cn(
-                "inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2",
+                "inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 transition-colors focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-black focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2",
                 viewMode === "list"
                   ? "bg-background text-black"
                   : "bg-secondary-background text-muted-foreground hover:text-foreground",

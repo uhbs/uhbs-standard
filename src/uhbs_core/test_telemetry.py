@@ -328,7 +328,13 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
         for pid, cmd in injection_payloads(run_id):
             payload_ids.append(pid)
             out = run_ssh_command(
-                target.host, port, target.user, target.password, cmd, timeout=15
+                target.host,
+                port,
+                target.user,
+                target.password,
+                cmd,
+                timeout=15,
+                known_hosts=target.known_hosts_path(),
             )
             # Shell acceptance is evidence of delivery attempt, not the score.
             _ = out

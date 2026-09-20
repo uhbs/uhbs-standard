@@ -62,7 +62,10 @@ Published quick + full Docker grades, reproduce recipes, and provenance:
 | [`fixtures/opencanary-redis.scorecard.json`](fixtures/opencanary-redis.scorecard.json) | OpenCanary (Redis, **full**) | 53.72 | D |
 | [`fixtures/endlessh-low-interaction.scorecard.json`](fixtures/endlessh-low-interaction.scorecard.json) | Endlessh (SSH tarpit / `ssh_tarpit`, **full**) | 54.07 | D |
 | [`fixtures/echidra-low-interaction.scorecard.json`](fixtures/echidra-low-interaction.scorecard.json) | EchidraOSS (SSH / Low-Interaction, **full**) | 43.45 | F |
-| [`fixtures/safety-gate-fail.scorecard.json`](fixtures/safety-gate-fail.scorecard.json) | Synthetic δ_C penalty case | 0.0 | F |
+| [`fixtures/safety-gate-fail.scorecard.json`](fixtures/safety-gate-fail.scorecard.json) | Synthetic GATE_FAILED (ungraded) | null | null |
+| [`fixtures/v5/gate-passed-graded.scorecard.json`](fixtures/v5/gate-passed-graded.scorecard.json) | Synthetic GATE_PASSED graded | 90.0 | A |
+| [`fixtures/v5/gate-failed-ungraded.scorecard.json`](fixtures/v5/gate-failed-ungraded.scorecard.json) | Synthetic GATE_FAILED | null | null |
+| [`fixtures/v5/incomplete-ungraded.scorecard.json`](fixtures/v5/incomplete-ungraded.scorecard.json) | Synthetic INCOMPLETE | null | null |
 
 ## How to run
 

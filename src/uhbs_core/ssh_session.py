@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import contextlib
+import os
 import socket
 import time
 from dataclasses import dataclass
@@ -15,6 +16,30 @@ class ExecOutcome:
     stderr: str
     latency_ms: float
     error: str = ""
+
+
+def resolve_known_hosts_path(known_hosts: str | None = None) -> str | None:
+    """Prefer an explicit path, then ``UHBS_SSH_KNOWN_HOSTS``."""
+    if known_hosts and str(known_hosts).strip():
+        return str(known_hosts).strip()
+    env = os.environ.get("UHBS_SSH_KNOWN_HOSTS", "").strip()
+    return env or None
+
+
+def secure_ssh_client(paramiko, known_hosts: str | None = None):
+    """Create an SSH client that rejects unknown or changed host keys.
+
+    Paramiko's system/user known-hosts are loaded by default. Lab operators
+    may pass ``known_hosts`` or set ``UHBS_SSH_KNOWN_HOSTS`` to a run-specific
+    file (for example from inventory ``ssh_known_hosts``).
+    """
+    client = paramiko.SSHClient()
+    client.load_system_host_keys()
+    path = resolve_known_hosts_path(known_hosts)
+    if path:
+        client.load_host_keys(path)
+    client.set_missing_host_key_policy(paramiko.RejectPolicy())
+    return client
 
 
 def tcp_connect(host: str, port: int, timeout: float = 5.0) -> tuple[bool, float, str]:
@@ -47,6 +72,7 @@ def run_ssh_command(
     password: str,
     command: str,
     timeout: float = 15.0,
+    known_hosts: str | None = None,
 ) -> ExecOutcome:
     """Run a remote command over SSH. Requires paramiko.
 
@@ -64,8 +90,7 @@ def run_ssh_command(
             error="paramiko not installed (pip install paramiko)",
         )
 
-    client = paramiko.SSHClient()
-    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    client = secure_ssh_client(paramiko, known_hosts=known_hosts)
     t0 = time.perf_counter()
     try:
         client.connect(
@@ -91,7 +116,13 @@ def run_ssh_command(
             if "channel closed" not in msg and "channel open" not in msg:
                 raise
             shell = run_ssh_shell_commands(
-                host, port, user, password, [command], timeout=timeout
+                host,
+                port,
+                user,
+                password,
+                [command],
+                timeout=timeout,
+                known_hosts=known_hosts,
             )
             if shell.ok or shell.stdout:
                 return shell
@@ -119,6 +150,7 @@ def run_ssh_shell_commands(
     password: str,
     commands: list[str],
     timeout: float = 20.0,
+    known_hosts: str | None = None,
 ) -> ExecOutcome:
     """Open an interactive shell channel and send commands sequentially."""
     try:
@@ -132,8 +164,7 @@ def run_ssh_shell_commands(
             error="paramiko not installed (pip install paramiko)",
         )
 
-    client = paramiko.SSHClient()
-    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    client = secure_ssh_client(paramiko, known_hosts=known_hosts)
     t0 = time.perf_counter()
     chunks: list[str] = []
     try:

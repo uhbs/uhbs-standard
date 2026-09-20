@@ -4,6 +4,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
+
 from uhbs_cli.scoring import assert_scorecard_integrity
 from uhbs_core.attack_validate import resolve_technique
 from uhbs_core.check_scoring import score_checks
@@ -249,3 +251,137 @@ def test_evidence_redaction_scrubs_secrets() -> None:
     )
     evidence = pack["modules"][0]["checks"][0]["evidence"][0]
     assert "supersecret" not in evidence
+
+
+def test_module_d_ssh_failure_is_incomplete_not_gate_passed(
+    tmp_path: Path, monkeypatch
+) -> None:
+    """Unpinned/failed SSH must never be inferred as egress-blocked PASS."""
+    from uhbs_core import test_safety
+    from uhbs_core.models import TargetSpec
+
+    class _Fail:
+        ok = False
+        stdout = ""
+        stderr = ""
+        error = "Server '127.0.0.1' not found in known_hosts"
+
+    target = TargetSpec(
+        name="ssh",
+        host="127.0.0.1",
+        protocol="ssh",
+        protocols=["ssh"],
+        ports_map={"ssh": 2222},
+        ssh_port=2222,
+    )
+    monkeypatch.delenv("UHBS_EGRESS_GATEWAY_LOG", raising=False)
+    monkeypatch.setattr(test_safety, "run_ssh_command", lambda *_a, **_k: _Fail())
+    monkeypatch.setattr(test_safety, "run_ssh_shell_commands", lambda *_a, **_k: _Fail())
+    result = test_safety.run(target)
+    assert result.critical_control_verdict == ContainmentVerdict.INCOMPLETE.value
+    assert result.complete is False
+    assert any(c.outcome == CheckOutcome.ERROR and c.mandatory for c in result.checks)
+
+
+def test_classify_ssh_algorithms_flags_legacy_offers() -> None:
+    from uhbs_core.hassh import classify_ssh_algorithms
+
+    weak = classify_ssh_algorithms(
+        "diffie-hellman-group1-sha1,curve25519-sha256;"
+        "3des-cbc,aes128-ctr;"
+        "hmac-md5,hmac-sha2-256;"
+        "none"
+    )
+    assert "diffie-hellman-group1-sha1" in weak["weak"]
+    assert "3des-cbc" in weak["weak"]
+    assert "hmac-md5" in weak["weak"]
+    # AES-CBC remains widely advertised alongside CTR/GCM — not scored as weak.
+    clean_modernish = classify_ssh_algorithms(
+        "curve25519-sha256;aes128-cbc,aes128-ctr;hmac-sha2-256;none"
+    )
+    assert clean_modernish["weak"] == []
+    clean = classify_ssh_algorithms(
+        "curve25519-sha256;aes128-ctr;hmac-sha2-256;none"
+    )
+    assert clean["weak"] == []
+
+
+def test_ssh_nego_weak_algorithms_check_penalizes_legacy_only(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from uhbs_core.models import TargetSpec
+    from uhbs_core.protocols.ssh import SSHPlugin
+    from uhbs_core.rfc_probes.types import RFCSuiteResult
+
+    monkeypatch.setattr(
+        "uhbs_core.protocols.ssh.probe_ssh_rfc4253",
+        lambda *_a, **_k: RFCSuiteResult(protocol="ssh", rfc="RFC 4253"),
+    )
+    monkeypatch.setattr(
+        "uhbs_core.protocols.ssh.parse_server_hassh",
+        lambda *_a, **_k: (
+            "deadbeef",
+            "diffie-hellman-group1-sha1;3des-cbc;hmac-md5;none",
+            "SSH-2.0-test",
+        ),
+    )
+    checks = SSHPlugin().probe_negotiation(
+        "127.0.0.1", 22, TargetSpec(name="t", host="127.0.0.1"), None
+    )
+    by_id = {c.id: c for c in checks}
+    assert by_id["ssh.nego.hassh"].passed is True
+    assert by_id["ssh.nego.hassh"].score == 100.0
+    weak = by_id["ssh.nego.weak_algorithms"]
+    assert weak.passed is False
+    assert weak.score < 100.0
+
+
+def test_module_d_keeps_gateway_mandatory_when_ssh_errors(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from uhbs_core import test_safety
+    from uhbs_core.models import TargetSpec
+
+    class _Fail:
+        ok = False
+        stdout = ""
+        stderr = ""
+        error = "Server not found in known_hosts"
+
+    target = TargetSpec(
+        name="ssh",
+        host="127.0.0.1",
+        protocol="ssh",
+        protocols=["ssh"],
+        ports_map={"ssh": 2222},
+        ssh_port=2222,
+    )
+    monkeypatch.delenv("UHBS_EGRESS_GATEWAY_LOG", raising=False)
+    monkeypatch.setattr(test_safety, "run_ssh_command", lambda *_a, **_k: _Fail())
+    monkeypatch.setattr(test_safety, "run_ssh_shell_commands", lambda *_a, **_k: _Fail())
+    result = test_safety.run(target)
+    gw = next(c for c in result.checks if c.id == "d1.egress_gateway_log")
+    assert gw.outcome == CheckOutcome.NOT_TESTED
+    assert gw.mandatory is True
+
+
+def test_inventory_loads_ssh_known_hosts(tmp_path: Path) -> None:
+    from uhbs_core.inventory import load_inventory
+
+    inv = tmp_path / "inv.yaml"
+    kh = tmp_path / "known_hosts"
+    kh.write_text("host key line\n", encoding="utf-8")
+    inv.write_text(
+        f"""
+sites:
+  lab:
+    host: 127.0.0.1
+    protocol: ssh
+    ports: {{ssh: 2222}}
+    ssh_known_hosts: {kh}
+""",
+        encoding="utf-8",
+    )
+    sites = load_inventory(inv)
+    assert sites["lab"].ssh_known_hosts == str(kh)
+    assert sites["lab"].known_hosts_path() == str(kh)

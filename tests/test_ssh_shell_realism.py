@@ -106,7 +106,7 @@ def test_duplicate_outputs_would_be_flagged_as_generic(monkeypatch) -> None:
     command — the strongest, vendor-neutral "not a real shell" tell —
     by monkeypatching the recon-shell runner directly (no live daemon)."""
 
-    def _fake_recon(host, port, user, password, timeout=20.0):
+    def _fake_recon(host, port, user, password, timeout=20.0, known_hosts=None):
         same_text = "CANNED OUTPUT\n"
         return {
             "ok": True,

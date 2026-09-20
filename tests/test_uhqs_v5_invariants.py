@@ -167,7 +167,7 @@ def test_mutation_restoring_skip_credit_would_fail_contract() -> None:
 
 def test_v5_golden_incomplete_fixture() -> None:
     root = Path(__file__).resolve().parents[1]
-    path = root / "docs" / "conformance" / "fixtures" / "v5-incomplete-ungraded.scorecard.json"
+    path = root / "docs" / "conformance" / "fixtures" / "v5" / "incomplete-ungraded.scorecard.json"
     if not path.is_file():
         pytest.skip("v5 incomplete fixture not present")
     data = json.loads(path.read_text(encoding="utf-8"))

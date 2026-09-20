@@ -6,6 +6,58 @@ import hashlib
 import socket
 import struct
 
+# Legacy / weak algorithm name markers (substring match, case-sensitive SSH ids).
+_WEAK_KEX = (
+    "diffie-hellman-group1-sha1",
+    "diffie-hellman-group14-sha1",
+    "diffie-hellman-group-exchange-sha1",
+)
+_WEAK_ENC = (
+    "3des-cbc",
+    "blowfish-cbc",
+    "cast128-cbc",
+    "arcfour",
+    "arcfour128",
+    "arcfour256",
+)
+_WEAK_MAC = (
+    "hmac-md5",
+    "hmac-md5-96",
+    "hmac-sha1-96",
+    "hmac-ripemd160",
+)
+
+
+def classify_ssh_algorithms(algo: str) -> dict[str, list[str]]:
+    """Classify a HASSH algorithm string for weak KEX/cipher/MAC offers.
+
+    ``algo`` uses the HASSH layout ``kex;enc_c2s;mac_c2s;comp_c2s`` (comma-
+    separated name-lists inside each field).
+    """
+    parts = (algo or "").split(";")
+    kex = parts[0].split(",") if parts else []
+    enc = parts[1].split(",") if len(parts) > 1 else []
+    mac = parts[2].split(",") if len(parts) > 2 else []
+    weak: list[str] = []
+    for name in kex:
+        n = name.strip()
+        if n and any(n == w or n.startswith(w) for w in _WEAK_KEX):
+            weak.append(n)
+    for name in enc:
+        n = name.strip()
+        if n and any(n == w or n.startswith(w) for w in _WEAK_ENC):
+            weak.append(n)
+    for name in mac:
+        n = name.strip()
+        if n and any(n == w or n.startswith(w) for w in _WEAK_MAC):
+            weak.append(n)
+    return {
+        "weak": weak,
+        "kex": [x for x in kex if x],
+        "enc": [x for x in enc if x],
+        "mac": [x for x in mac if x],
+    }
+
 
 def _read_name_list(buf: bytes, off: int) -> tuple[str, int]:
     if off + 4 > len(buf):
@@ -101,5 +153,9 @@ def parse_server_hassh(host: str, port: int, timeout: float = 5.0) -> tuple[str,
         return "", "", ban
     # Server HASSH set: kex;enc_c2s;mac_c2s;comp_c2s (common convention)
     algo = f"{kex};{enc_c2s};{mac_c2s};{comp_c2s}"
-    hassh = hashlib.md5(algo.encode("utf-8")).hexdigest()
+    # HASSH specifies MD5 as a wire-compatible identifier. It is not used
+    # for signatures, passwords, integrity, or any other security decision.
+    hassh = hashlib.md5(
+        algo.encode("utf-8"), usedforsecurity=False
+    ).hexdigest()  # NOSONAR
     return hassh, algo, ban

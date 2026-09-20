@@ -1135,7 +1135,9 @@ def test_sast_tool_wrappers(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> 
     assert all(c.score == 0 for c in missing[:3])
 
 
-def test_ssh_session_helpers(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_ssh_session_helpers(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
     from uhbs_core import ssh_session
 
     class Sock:
@@ -1186,6 +1188,14 @@ def test_ssh_session_helpers(monkeypatch: pytest.MonkeyPatch) -> None:
             pass
 
     class Client:
+        loaded_host_key_files: list[str] = []
+
+        def load_system_host_keys(self):
+            pass
+
+        def load_host_keys(self, path):
+            self.loaded_host_key_files.append(path)
+
         def set_missing_host_key_policy(self, _p):
             pass
 
@@ -1202,11 +1212,15 @@ def test_ssh_session_helpers(monkeypatch: pytest.MonkeyPatch) -> None:
             pass
 
     fake_paramiko = types.SimpleNamespace(
-        SSHClient=Client, AutoAddPolicy=lambda: object()
+        SSHClient=Client, RejectPolicy=lambda: object()
     )
     monkeypatch.setitem(sys.modules, "paramiko", fake_paramiko)
+    known_hosts = tmp_path / "known_hosts"
+    known_hosts.write_text("pinned in real runs", encoding="utf-8")
+    monkeypatch.setenv("UHBS_SSH_KNOWN_HOSTS", str(known_hosts))
     result = ssh_session.run_ssh_command("x", 22, "u", "p", "id")
     assert result.ok and result.stdout == "out"
+    assert Client.loaded_host_key_files == [str(known_hosts)]
     monkeypatch.setattr(ssh_session.time, "sleep", lambda _s: None)
     shell = ssh_session.run_ssh_shell_commands("x", 22, "u", "p", ["id", "pwd"])
     assert shell.ok and "prompt output" in shell.stdout
