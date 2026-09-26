@@ -4,19 +4,19 @@
 **UHBS:** 5.0.0 · **Class:** Low-Interaction · **Protocol:** `ssh`  
 **Target id:** `heralding-ssh` · **Evaluated:** 2026-09-26  
 **Upstream:** `master` @ `ac12724ab38c4e2fe78f07d1bc35e6e586ba69c0`  
-**Verdict:** INCOMPLETE / INCOMPLETE / ungraded (`uhqs-v5.0-critical-gate-diagnostic`)
+**Verdict:** INCOMPLETE / INCOMPLETE / UHQS=22.23 grade=F (`uhqs-v5.1-always-grade`)
 
 | Run | UHQS | Grade | δ_C | Artifacts |
 | --- | ---: | --- | --- | --- |
-| [Quick](quick/README.md) | ungraded | — | 0.0 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
-| [Full](full/README.md) | ungraded | — | 0.0 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) · [`proof/full-run.cast`](full/proof/full-run.cast) |
+| [Quick](quick/README.md) | UHQS=22.23 grade=F | — | 0.0 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
+| [Full](full/README.md) | UHQS=22.23 grade=F | — | 0.0 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) · [`proof/full-run.cast`](full/proof/full-run.cast) |
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../../fixtures/heralding-ssh.scorecard.json`](../../../../fixtures/heralding-ssh.scorecard.json)  
 Archive: [`../../../../archive/v5.0.0/heralding/ssh/`](../../../../archive/v5.0.0/heralding/ssh/)  
 Replication: [`EXECUTION-STEPS.md`](EXECUTION-STEPS.md)
 
-INCOMPLETE / ungraded (Module D critical controls). Do not cite archived 4.x letter grades.
+INCOMPLETE / UHQS=22.23 grade=F (Module D critical controls). Do not cite archived 4.x letter grades.
 
 ## Full run — module breakdown (analyst view)
 
@@ -28,7 +28,7 @@ INCOMPLETE / ungraded (Module D critical controls). Do not cite archived 4.x let
 | Module D: Safety & Containment (C) | 0.0 | GATE | INCOMPLETE | UHBS v5: containment verdict from critical controls; defense-in-depth score is diagnostic only; no 95-point floor |
 | Module E: Scalability & Latency | 20.0 | 0.10 | PARTIAL | P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=ssh |
 | Module F: Static Code Audit | 66.9 | 0.20 | PARTIAL | bandit HIGH=11 |
-| Safety Gate δ_C | 0.0 | GATE | — | Ungraded when INCOMPLETE/GATE_FAILED |
+| Safety Gate δ_C | 0.0 | GATE | — | UHQS=22.23 grade=F when INCOMPLETE/GATE_FAILED |
 
 ## Full scorecard (verbatim)
 
@@ -38,7 +38,7 @@ INCOMPLETE / ungraded (Module D critical controls). Do not cite archived 4.x let
 ====================================================================================
 Target System         : heralding-ssh
 System Profile Class  : Low-Interaction
-Scoring Model         : uhqs-v5.0-critical-gate-diagnostic
+Scoring Model         : uhqs-v5.1-always-grade
 Assessment Status     : INCOMPLETE
 Critical Controls     : INCOMPLETE
 Protocols             : ssh
@@ -56,10 +56,10 @@ Module D: Safety & Containment (C)  :   0.0/100       GATE     INCOMPLETE (UHBS 
 Module E: Scalability & Latency     :  20.0/100       0.10     PARTIAL (P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=ssh)
 Module F: Static Code Audit         :  66.9/100       0.20     PARTIAL (bandit HIGH=11)
 ------------------------------------------------------------------------------------
-SAFETY GATE / CRITICAL CONTROLS        : Ungraded — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (Ungraded — no composite UHQS)
+SAFETY GATE / CRITICAL CONTROLS        : UHQS=22.23 grade=F — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
+FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (UHQS=22.23 grade=F — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
-scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
+scoring_model_id                      : uhqs-v5.1-always-grade
 ====================================================================================
 ```
 

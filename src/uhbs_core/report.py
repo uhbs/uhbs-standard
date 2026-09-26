@@ -60,7 +60,6 @@ def render_card(
             by_dim[m.dimension] = m
 
     weights = uhqs.weights
-    ungraded = uhqs.uhqs is None
     lines = [
         "====================================================================================",
         f"                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v{__version__}",
@@ -109,15 +108,21 @@ def render_card(
         status = _status_line(by_dim.get(dim), score)
         lines.append(f"{label:<36}: {_score_cell(score)}       {wtxt:<6}   {status}")
     if uhqs.assessment_status == "INCOMPLETE":
-        gate = "Ungraded — assessment incomplete (mandatory checks NOT_TESTED/ERROR)"
+        gate = (
+            f"INCOMPLETE (δ_C={uhqs.delta_c}; defense-in-depth C={uhqs.C}; "
+            "composite still published)"
+        )
     elif uhqs.critical_control_verdict == "GATE_FAILED":
-        gate = f"GATE_FAILED (defense-in-depth C={uhqs.C}; no composite UHQS)"
+        gate = (
+            f"GATE_FAILED (δ_C={uhqs.delta_c}; defense-in-depth C={uhqs.C}; "
+            "composite still published)"
+        )
     elif uhqs.critical_control_verdict == "GATE_PASSED":
         gate = f"GATE_PASSED (δ_C={uhqs.delta_c}; defense-in-depth C={uhqs.C})"
     else:
         gate = f"verdict={uhqs.critical_control_verdict} δ_C={uhqs.delta_c}"
-    if ungraded:
-        uhqs_txt = "null (Ungraded — no composite UHQS)"
+    if uhqs.uhqs is None:
+        uhqs_txt = "null (no composite UHQS)"
         grade_txt = "— (no letter grade)"
     else:
         uhqs_txt = f"{uhqs.uhqs} / 100"

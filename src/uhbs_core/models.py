@@ -2,7 +2,8 @@
 
 Check outcomes: PASS | FAIL | NOT_APPLICABLE | NOT_TESTED | ERROR.
 Only NOT_APPLICABLE leaves the scoring denominator. Incomplete mandatory
-applicable checks yield an Ungraded assessment (uhqs=null, no letter grade).
+checks and containment verdicts adjust δ_C; they never null the composite UHQS
+under scoring_model_id uhqs-v5.1-always-grade.
 """
 
 from __future__ import annotations

@@ -9,14 +9,14 @@
 
 | Mode | UHQS | Grade | δ_C | Safety Gate | Folder |
 | --- | --- | --- | --- | --- | --- |
-| **Quick** | **ungraded** | — | 0.0 | INCOMPLETE | [`quick/`](quick/README.md) |
-| **Full** | **ungraded** | — | 0.0 | INCOMPLETE | [`full/`](full/README.md) |
+| **Quick** | **UHQS=47.26 grade=F** | — | 0.0 | INCOMPLETE | [`quick/`](quick/README.md) |
+| **Full** | **UHQS=47.26 grade=F** | — | 0.0 | INCOMPLETE | [`full/`](full/README.md) |
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../fixtures/espot-web-api.scorecard.json`](../../../fixtures/espot-web-api.scorecard.json)  
 Archive: [`../../../archive/v5.0.0/espot/`](../../../archive/v5.0.0/espot/)
 
-v5 Safety Gate leaves this HTTP decoy **ungraded** (Module C declared-format + Module D non-SSH gateway/packet evidence). Do not cite archived 4.x 63.33 / D as the current result.
+v5 Safety Gate leaves this HTTP decoy **UHQS=47.26 grade=F** (Module C declared-format + Module D non-SSH gateway/packet evidence). Do not cite archived 4.x 63.33 / D as the current result.
 
 ## Contents
 

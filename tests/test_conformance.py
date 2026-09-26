@@ -1,4 +1,4 @@
-"""Conformance fixtures — UHQS v5 golden vectors + migrated historical proofs."""
+"""Conformance fixtures — UHQS always-grade golden vectors + migrated proofs."""
 
 from __future__ import annotations
 
@@ -11,6 +11,7 @@ from uhbs_cli.scoring import (
     PROFILE_WEIGHTS,
     assert_scorecard_integrity,
 )
+from uhbs_core.uhqs_math import SCORING_MODEL_ID
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURES = ROOT / "docs" / "conformance" / "fixtures"
@@ -25,11 +26,11 @@ def _load(name: str) -> dict:
     [
         ("cowrie-low-interaction.scorecard.json", 61.37, "D"),
         ("posix-shell-lab.scorecard.json", 80.33, "B"),
-        ("echidra-low-interaction.scorecard.json", 43.45, "F"),
+        ("echidra-low-interaction.scorecard.json", 36.58, "F"),
         ("v5/gate-passed-graded.scorecard.json", 90.0, "A"),
-        ("safety-gate-fail.scorecard.json", None, None),
-        ("v5/gate-failed-ungraded.scorecard.json", None, None),
-        ("v5/incomplete-ungraded.scorecard.json", None, None),
+        ("safety-gate-fail.scorecard.json", 23.49, "F"),
+        ("v5/gate-failed-ungraded.scorecard.json", 50.0, "D"),
+        ("v5/incomplete-ungraded.scorecard.json", 42.75, "F"),
     ],
 )
 def test_conformance_fixture_integrity(
@@ -38,6 +39,7 @@ def test_conformance_fixture_integrity(
     data = _load(name)
     assert data["uhqs"] == expected_uhqs
     assert data["grade"] == expected_grade
+    assert data["scoring_model_id"] == SCORING_MODEL_ID
     errors = assert_scorecard_integrity(data)
     assert errors == [], errors
 
@@ -66,12 +68,12 @@ def test_posix_lab_meets_production_baseline() -> None:
     assert data["critical_control_verdict"] == "GATE_PASSED"
 
 
-def test_ungraded_fixtures_have_no_letter_grade() -> None:
+def test_gate_factor_fixtures_still_have_letter_grade() -> None:
     for name in (
         "v5/incomplete-ungraded.scorecard.json",
         "v5/gate-failed-ungraded.scorecard.json",
         "safety-gate-fail.scorecard.json",
     ):
         data = _load(name)
-        assert data["uhqs"] is None
-        assert data["grade"] is None
+        assert data["uhqs"] is not None
+        assert data["grade"] in {"A", "B", "C", "D", "F"}

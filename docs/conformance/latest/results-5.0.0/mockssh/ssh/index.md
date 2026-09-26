@@ -8,7 +8,7 @@
 
 | Mode | UHQS | Grade | δ_C | Safety Gate | Folder |
 | --- | --- | --- | --- | --- | --- |
-| **Quick** | **ungraded** | — | 1.0 | INCOMPLETE (F skipped) | [`quick/`](quick/README.md) |
+| **Quick** | **UHQS=41.75 grade=F** | — | 1.0 | INCOMPLETE (F skipped) | [`quick/`](quick/README.md) |
 | **Full** | **41.75** | **F** | 1.0 | GATE_PASSED | [`full/`](full/README.md) |
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  

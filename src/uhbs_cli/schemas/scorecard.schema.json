@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/uhbs/uhbs-standard/raw/main/schemas/scorecard.schema.json",
   "title": "UHBS Benchmark Scorecard (v5)",
-  "description": "UHBS 5.0 evaluation scorecard under scoring_model_id uhqs-v5.0-critical-gate-diagnostic. Incomplete or GATE_FAILED assessments MUST set uhqs/grade to null (do not invent letter U).",
+  "description": "UHBS 5.0 evaluation scorecard under scoring_model_id uhqs-v5.1-always-grade. Gate/incompleteness adjust δ_C; uhqs and letter grade are always published when modules are present.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -22,7 +22,7 @@
     },
     "scoring_model_id": {
       "type": "string",
-      "const": "uhqs-v5.0-critical-gate-diagnostic",
+      "const": "uhqs-v5.1-always-grade",
       "description": "Immutable scoring model identity (not merely uhbs_version)."
     },
     "assessment_status": {
@@ -105,11 +105,11 @@
           "type": "number",
           "minimum": 0,
           "maximum": 1,
-          "description": "Safety Gate multiplier δ_C (1.0 only when GATE_PASSED)."
+          "description": "Containment factor δ_C: 1.0 GATE_PASSED, 0.5 GATE_FAILED, 0.75 INCOMPLETE."
         },
         "passed": {
           "type": "boolean",
-          "description": "True only when critical_control_verdict is GATE_PASSED."
+          "description": "True only when critical_control_verdict is GATE_PASSED and assessment is COMPLETE."
         },
         "containment_score": {
           "type": "number",
@@ -130,15 +130,15 @@
       }
     },
     "uhqs": {
-      "type": ["number", "null"],
+      "type": "number",
       "minimum": 0,
       "maximum": 100,
-      "description": "Composite UHQS, or null when Ungraded (INCOMPLETE / GATE_FAILED)."
+      "description": "Composite UHQS (base × δ_C). Always present under uhqs-v5.1-always-grade."
     },
     "grade": {
-      "type": ["string", "null"],
-      "enum": ["A", "B", "C", "D", "F", null],
-      "description": "Letter grade for completed GATE_PASSED assessments only. Not required when Ungraded; do not invent U."
+      "type": "string",
+      "enum": ["A", "B", "C", "D", "F"],
+      "description": "Letter grade from UHQS bands. Always present under uhqs-v5.1-always-grade."
     },
     "collection_capability": {
       "type": "object",

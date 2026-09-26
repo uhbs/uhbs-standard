@@ -1,6 +1,6 @@
 # qeeqbox/honeypots (telnet)
 
-**UHQS ungraded / —** · Safety Gate `INCOMPLETE` · UHBS 5.0.0
+**UHQS UHQS=11.11 grade=F / —** · Safety Gate `INCOMPLETE` · UHBS 5.0.0
 
 - Quick: [quick/](quick/)
 - Full: [full/](full/)

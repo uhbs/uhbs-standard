@@ -3,7 +3,7 @@
 ====================================================================================
 Target System         : mockssh-ssh
 System Profile Class  : Low-Interaction
-Scoring Model         : uhqs-v5.0-critical-gate-diagnostic
+Scoring Model         : uhqs-v5.1-always-grade
 Assessment Status     : COMPLETE
 Critical Controls     : GATE_PASSED
 Protocols             : ssh
@@ -24,5 +24,5 @@ Module F: Static Code Audit         :  68.6/100       0.20     PARTIAL (bandit H
 SAFETY GATE / CRITICAL CONTROLS        : GATE_PASSED (δ_C=1.0; defense-in-depth C=0.0)
 FINAL COMPOSITE SCORE (UHQS 5.0.0)      : 41.75 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
-scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
+scoring_model_id                      : uhqs-v5.1-always-grade
 ====================================================================================

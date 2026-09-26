@@ -8,8 +8,8 @@
 
 | Mode | UHQS | Grade | Safety Gate | Folder |
 | --- | --- | --- | --- | --- |
-| **Quick** | **ungraded** | — | INCOMPLETE | [`quick/`](quick/README.md) |
-| **Full** | **ungraded** | — | INCOMPLETE | [`full/`](full/README.md) |
+| **Quick** | **UHQS=42.34 grade=F** | — | INCOMPLETE | [`quick/`](quick/README.md) |
+| **Full** | **UHQS=42.34 grade=F** | — | INCOMPLETE | [`full/`](full/README.md) |
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../fixtures/wordpot-web-api.scorecard.json`](../../../fixtures/wordpot-web-api.scorecard.json)  
@@ -22,4 +22,4 @@ Archive: [`../../../../archive/v5.0.0/wordpot/`](../../../../archive/v5.0.0/word
 | [EXECUTION-STEPS.md](EXECUTION-STEPS.md) | Exact commands |
 | [`full/SCORECARD.txt`](full/SCORECARD.txt) | Authoritative scorecard |
 
-Honest v5 outcome is **ungraded** unless GATE_PASSED. Do not cite archived 4.x letter grades.
+Honest v5 outcome is **UHQS=42.34 grade=F** unless GATE_PASSED. Do not cite archived 4.x letter grades.

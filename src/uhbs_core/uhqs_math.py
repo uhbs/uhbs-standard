@@ -1,14 +1,20 @@
-"""Normative UHQS 5.0 math — single source of truth for CLI and UHBS-Lab.
+"""Normative UHQS math — single source of truth for CLI and UHBS-Lab.
 
-scoring_model_id: uhqs-v5.0-critical-gate-diagnostic
+scoring_model_id: uhqs-v5.1-always-grade
 
-When the assessment is COMPLETE and critical_control_verdict is GATE_PASSED:
+Always publish a composite UHQS and letter grade when module scores are present.
+The Safety Gate is a **factor**, not an eligibility cliff:
 
-    UHQS = w_A·S_A + w_B·S_B + w_C·S_C + w_E·S_E + w_F·S_F
-    δ_C  = 1.0
+    base = w_A·S_A + w_B·S_B + w_C·S_C + w_E·S_E + w_F·S_F
 
-Otherwise UHQS is null (no letter grade). Module D defense-in-depth remains
-diagnostic and is never averaged into the weighted sum.
+    GATE_PASSED   → D=100, δ_C=1.0
+    GATE_FAILED   → D=0,   δ_C=0.5
+    INCOMPLETE    → D=50,  δ_C=0.75
+
+    UHQS = base × δ_C
+
+Module D stays out of the weighted sum; δ_C is how containment adjusts the
+composite. Verdict fields remain on the scorecard for transparency.
 
 Both ``uhbs_cli.scoring`` and ``uhbs_core.models`` MUST import from here.
 """
@@ -21,7 +27,7 @@ from enum import StrEnum
 from typing import Any
 
 # Immutable scoring-model identity (do not conflate with uhbs_version).
-SCORING_MODEL_ID = "uhqs-v5.0-critical-gate-diagnostic"
+SCORING_MODEL_ID = "uhqs-v5.1-always-grade"
 
 # Letter keys (scorecards / CLI) ↔ dimension keys (harness)
 LETTER_TO_DIM = {
@@ -57,7 +63,14 @@ WEIGHT_KEYS = ("w_A", "w_B", "w_C", "w_E", "w_F")
 SCORE_KEYS = ("A", "B", "C", "D", "E", "F")
 DIM_KEYS = ("protocol", "behavior", "telemetry", "containment", "scale", "static")
 
-# Grade band thresholds (letter → long harness label) — only for COMPLETE graded results
+# Gate → (Module D factor score, δ_C multiplier). Never nulls UHQS.
+GATE_FACTOR: dict[str, tuple[float, float]] = {
+    "GATE_PASSED": (100.0, 1.0),
+    "GATE_FAILED": (0.0, 0.5),
+    "INCOMPLETE": (50.0, 0.75),
+}
+
+# Grade band thresholds (letter → long harness label)
 GRADE_BANDS: tuple[tuple[float, str, str], ...] = (
     (90.0, "A", "GRADE A (Enterprise Grade)"),
     (80.0, "B", "GRADE B (Production Baseline)"),
@@ -109,39 +122,51 @@ def validate_weights(weights: Mapping[str, float], tol: float = 0.001) -> tuple[
     return abs(total - 1.0) <= tol, total
 
 
+def gate_factor(verdict: CriticalControlVerdict | str) -> tuple[float, float]:
+    """Return (module_D_factor, delta_c) for a containment verdict."""
+    key = (
+        verdict.value
+        if isinstance(verdict, CriticalControlVerdict)
+        else str(verdict).upper().replace(" ", "_")
+    )
+    return GATE_FACTOR.get(key, GATE_FACTOR["INCOMPLETE"])
+
+
 def safety_gate(
     containment_score: float,
     *,
     critical_control_verdict: CriticalControlVerdict | str | None = None,
 ) -> tuple[float, bool]:
-    """Return (δ_C, passed) under the v5 critical-gate model.
+    """Return (δ_C, passed) under the always-grade model.
 
-    When ``critical_control_verdict`` is provided it is authoritative:
-    only ``GATE_PASSED`` yields δ_C=1.0 / passed=True. Defense-in-depth
-    ``containment_score`` alone never clears the gate.
-
+    When ``critical_control_verdict`` is provided it is authoritative.
     Legacy callers that pass only a numeric Module D score are treated as
-    GATE_PASSED iff C >= 95 (compat shim for transitional tests); prefer
-    the explicit verdict API.
+    GATE_PASSED iff C >= 95 (compat shim); prefer the explicit verdict API.
+
+    ``passed`` is True only for GATE_PASSED; δ_C is never used to null UHQS.
     """
     if critical_control_verdict is not None:
-        verdict = (
-            critical_control_verdict
-            if isinstance(critical_control_verdict, CriticalControlVerdict)
-            else CriticalControlVerdict(str(critical_control_verdict))
-        )
-        if verdict is CriticalControlVerdict.GATE_PASSED:
-            return 1.0, True
-        return 0.0, False
+        try:
+            verdict = (
+                critical_control_verdict
+                if isinstance(critical_control_verdict, CriticalControlVerdict)
+                else CriticalControlVerdict(str(critical_control_verdict))
+            )
+        except ValueError:
+            _, delta = gate_factor(CriticalControlVerdict.INCOMPLETE)
+            return delta, False
+        d_factor, delta = gate_factor(verdict)
+        _ = d_factor
+        return delta, verdict is CriticalControlVerdict.GATE_PASSED
 
     c = float(containment_score)
     if c >= 95:
         return 1.0, True
-    return 0.0, False
+    return 0.5, False
 
 
 def letter_grade(uhqs: float | None) -> str | None:
-    """Letter grade for a completed UHQS, or None when ungraded."""
+    """Letter grade for a UHQS value, or None when uhqs is absent."""
     if uhqs is None:
         return None
     for threshold, letter, _long in GRADE_BANDS:
@@ -180,7 +205,7 @@ def normalize_module_scores(scores: Mapping[str, float]) -> dict[str, float]:
 class UhqsComputation:
     """Canonical UHQS computation result (shared by CLI and harness)."""
 
-    scores: dict[str, float]  # A–F (D = defense-in-depth diagnostic)
+    scores: dict[str, float]  # A–F (D = containment factor / defense-in-depth)
     weights: dict[str, float]  # w_*
     weighted_sum: float
     delta_c: float
@@ -190,7 +215,7 @@ class UhqsComputation:
     assessment_status: AssessmentStatus
     critical_control_verdict: CriticalControlVerdict
     scoring_model_id: str = SCORING_MODEL_ID
-    graded: bool = False
+    graded: bool = True
 
 
 def compute_uhqs(
@@ -207,8 +232,9 @@ def compute_uhqs(
     ``scores`` may use letter keys (A–F) or dimension keys (protocol, …).
     Missing modules raise ``KeyError`` — never silently default to 0.0.
 
-    Incomplete assessments and failed/incomplete critical-control verdicts
-    yield ``uhqs=None`` (no letter grade).
+    Always returns a numeric UHQS and ``graded=True`` when modules are present.
+    Gate / incompleteness adjust δ_C (and reported Module D factor); they never
+    null the composite.
     """
     normalized = normalize_module_scores(scores)
 
@@ -238,6 +264,8 @@ def compute_uhqs(
     try:
         if not containment_measured:
             verdict = CriticalControlVerdict.INCOMPLETE
+            if status is AssessmentStatus.COMPLETE:
+                status = AssessmentStatus.INCOMPLETE
         elif critical_control_verdict is not None:
             verdict = (
                 critical_control_verdict
@@ -246,57 +274,49 @@ def compute_uhqs(
             )
         else:
             # Transitional: infer from legacy numeric gate threshold.
-            delta_legacy, passed_legacy = safety_gate(normalized["D"])
+            _delta_legacy, passed_legacy = safety_gate(normalized["D"])
             verdict = (
                 CriticalControlVerdict.GATE_PASSED
                 if passed_legacy
                 else CriticalControlVerdict.GATE_FAILED
             )
-            _ = delta_legacy
     except ValueError:
-        # Invalid verdict string → fail closed.
+        # Invalid verdict string → treat as INCOMPLETE factor; still grade.
         verdict = CriticalControlVerdict.INCOMPLETE
         status = AssessmentStatus.INCOMPLETE
 
-    if status is AssessmentStatus.INCOMPLETE or verdict is CriticalControlVerdict.INCOMPLETE:
-        return UhqsComputation(
-            scores=normalized,
-            weights={k: float(weights[k]) for k in WEIGHT_KEYS},
-            weighted_sum=round(weighted, 6),
-            delta_c=0.0,
-            uhqs=None,
-            safety_gate_passed=False,
-            containment_measured=containment_measured,
-            assessment_status=AssessmentStatus.INCOMPLETE,
-            critical_control_verdict=CriticalControlVerdict.INCOMPLETE
-            if verdict is CriticalControlVerdict.INCOMPLETE
-            else verdict,
-            graded=False,
-        )
+    if verdict is CriticalControlVerdict.INCOMPLETE and status is AssessmentStatus.COMPLETE:
+        # Keep assessment_status as provided when only the gate is incomplete via
+        # explicit INCOMPLETE verdict with COMPLETE status — prefer honesty:
+        if not containment_measured or critical_control_verdict is None:
+            status = AssessmentStatus.INCOMPLETE
 
-    if verdict is CriticalControlVerdict.GATE_FAILED:
-        return UhqsComputation(
-            scores=normalized,
-            weights={k: float(weights[k]) for k in WEIGHT_KEYS},
-            weighted_sum=round(weighted, 6),
-            delta_c=0.0,
-            uhqs=None,
-            safety_gate_passed=False,
-            containment_measured=containment_measured,
-            assessment_status=status,
-            critical_control_verdict=verdict,
-            graded=False,
-        )
+    # When assessment is INCOMPLETE but verdict was GATE_PASSED/FAILED, keep
+    # the stronger of the two for δ_C: incompleteness still applies the milder
+    # INCOMPLETE factor only when the gate itself is incomplete; otherwise the
+    # gate verdict drives δ_C and assessment_status stays INCOMPLETE for honesty.
+    if status is AssessmentStatus.INCOMPLETE and verdict is CriticalControlVerdict.GATE_PASSED:
+        # Incomplete assessment with a passed gate → use INCOMPLETE factor
+        # (measurement gaps matter more than an unverified pass claim).
+        effective = CriticalControlVerdict.INCOMPLETE
+    elif status is AssessmentStatus.INCOMPLETE and verdict is CriticalControlVerdict.GATE_FAILED:
+        # Failed gate already bites harder (0.5); keep GATE_FAILED.
+        effective = CriticalControlVerdict.GATE_FAILED
+    else:
+        effective = verdict
 
-    # GATE_PASSED + COMPLETE
-    uhqs = round(weighted, 2)
+    _d_factor, delta_c = gate_factor(effective)
+    # Module D stays the measured defense-in-depth diagnostic; δ_C carries the gate.
+
+    uhqs = round(weighted * delta_c, 2)
     return UhqsComputation(
         scores=normalized,
         weights={k: float(weights[k]) for k in WEIGHT_KEYS},
         weighted_sum=round(weighted, 6),
-        delta_c=1.0,
+        delta_c=delta_c,
         uhqs=uhqs,
-        safety_gate_passed=True,
+        safety_gate_passed=verdict is CriticalControlVerdict.GATE_PASSED
+        and status is AssessmentStatus.COMPLETE,
         containment_measured=containment_measured,
         assessment_status=status,
         critical_control_verdict=verdict,
@@ -322,7 +342,11 @@ def assessment_from_module_results(
     *,
     critical_control_verdict: CriticalControlVerdict | str | None = None,
 ) -> tuple[AssessmentStatus, CriticalControlVerdict]:
-    """Derive assessment status / verdict from ModuleResult-like mappings."""
+    """Derive assessment status / verdict from ModuleResult-like mappings.
+
+    Status/verdict remain honest labels for the scorecard. They no longer
+    suppress composite UHQS (see ``compute_uhqs``).
+    """
     incomplete = False
     for key in ("A", "B", "C", "D", "E", "F"):
         mod = modules.get(key) or {}

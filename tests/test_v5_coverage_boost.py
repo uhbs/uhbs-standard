@@ -156,11 +156,11 @@ def test_all_not_applicable_scores_zero() -> None:
 # --- uhqs math ----------------------------------------------------------------
 
 
-def test_safety_gate_and_ungraded_paths() -> None:
+def test_safety_gate_and_always_grade_paths() -> None:
     assert safety_gate(99) == (1.0, True)
-    assert safety_gate(50) == (0.0, False)
+    assert safety_gate(50) == (0.5, False)
     assert safety_gate(50, critical_control_verdict="GATE_PASSED") == (1.0, True)
-    assert safety_gate(99, critical_control_verdict="GATE_FAILED") == (0.0, False)
+    assert safety_gate(99, critical_control_verdict="GATE_FAILED") == (0.5, False)
     assert letter_grade(None) is None
     assert grade_for(None) is None
     assert letter_grade(95) == "A"
@@ -171,9 +171,9 @@ def test_safety_gate_and_ungraded_paths() -> None:
         profile_class="Web-API",
         containment_measured=False,
     )
-    assert incomplete.uhqs is None
+    assert incomplete.uhqs == 75.0
     assert incomplete.assessment_status.value == "INCOMPLETE"
-    assert str(incomplete.assessment_status) == "INCOMPLETE" or incomplete.assessment_status.value == "INCOMPLETE"
+    assert incomplete.graded is True
     assert incomplete.scoring_model_id == SCORING_MODEL_ID
 
     failed = compute_uhqs(
@@ -181,7 +181,9 @@ def test_safety_gate_and_ungraded_paths() -> None:
         profile_class="Web-API",
         critical_control_verdict=CriticalControlVerdict.GATE_FAILED,
     )
-    assert failed.uhqs is None
+    assert failed.uhqs == 50.0
+    assert failed.graded is True
+    assert failed.delta_c == 0.5
 
     status, verdict = assessment_from_module_results(
         {

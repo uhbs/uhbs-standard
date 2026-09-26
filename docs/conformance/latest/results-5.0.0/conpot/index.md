@@ -5,8 +5,8 @@
 
 | Mode | UHQS | Grade | Safety Gate | Folder |
 | --- | --- | --- | --- | --- |
-| **Quick** | **ungraded** | — | INCOMPLETE | [`quick/`](quick/README.md) |
-| **Full** | **ungraded** | — | INCOMPLETE | [`full/`](full/README.md) |
+| **Quick** | **UHQS=35.93 grade=F** | — | INCOMPLETE | [`quick/`](quick/README.md) |
+| **Full** | **UHQS=35.93 grade=F** | — | INCOMPLETE | [`full/`](full/README.md) |
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../fixtures/conpot-ics-scada.scorecard.json`](../../../fixtures/conpot-ics-scada.scorecard.json)  

@@ -3,7 +3,7 @@
 ====================================================================================
 Target System         : mysql-honeypotd
 System Profile Class  : Low-Interaction
-Scoring Model         : uhqs-v5.0-critical-gate-diagnostic
+Scoring Model         : uhqs-v5.1-always-grade
 Assessment Status     : INCOMPLETE
 Critical Controls     : INCOMPLETE
 Protocols             : mysql
@@ -22,8 +22,8 @@ Module D: Safety & Containment (C)  :   0.0/100       GATE     INCOMPLETE (Modul
 Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service alive after load (connect 10.0ms))
 Module F: Static Code Audit         :   0.0/100       0.20     INCOMPLETE (Module F white-box audit (keys/prompts/SAST/VFS))
 ------------------------------------------------------------------------------------
-SAFETY GATE / CRITICAL CONTROLS        : Ungraded — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (Ungraded — no composite UHQS)
-OVERALL EVALUATION GRADE              : — (no letter grade)
-scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
+SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=0.75; defense-in-depth C=0.0; composite still published)
+FINAL COMPOSITE SCORE (UHQS 5.0.0)      : 27.96 / 100
+OVERALL EVALUATION GRADE              : GRADE F (Fail)
+scoring_model_id                      : uhqs-v5.1-always-grade
 ====================================================================================

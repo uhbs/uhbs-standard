@@ -8,8 +8,8 @@
 
 | Mode | UHQS | Grade | Safety Gate | Folder |
 | --- | --- | --- | --- | --- |
-| **Quick** | **ungraded** | — | INCOMPLETE | [`quick/`](quick/README.md) |
-| **Full** | **ungraded** | — | INCOMPLETE | [`full/`](full/README.md) |
+| **Quick** | **UHQS=39.93 grade=F** | — | INCOMPLETE | [`quick/`](quick/README.md) |
+| **Full** | **UHQS=39.93 grade=F** | — | INCOMPLETE | [`full/`](full/README.md) |
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../fixtures/miniprint-low-interaction.scorecard.json`](../../../fixtures/miniprint-low-interaction.scorecard.json)  

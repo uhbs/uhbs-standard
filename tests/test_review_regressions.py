@@ -119,8 +119,8 @@ def test_assessment_skipped_module_with_complete_true_ok() -> None:
     assert verdict is CriticalControlVerdict.GATE_FAILED
 
 
-def test_integrity_omitted_uhqs_ok_when_ungraded() -> None:
-    from uhbs_core.uhqs_math import SCORING_MODEL_ID
+def test_integrity_requires_uhqs_under_always_grade() -> None:
+    from uhbs_core.uhqs_math import SCORING_MODEL_ID, compute_uhqs, letter_grade
 
     card = {
         "scoring_model_id": SCORING_MODEL_ID,
@@ -144,11 +144,24 @@ def test_integrity_omitted_uhqs_ok_when_ungraded() -> None:
             "delta_c": 0.0,
             "passed": False,
             "critical_control_verdict": "INCOMPLETE",
+            "containment_score": 0.0,
         },
     }
-    # uhqs key intentionally omitted
     errors = assert_scorecard_integrity(card)
-    assert errors == []
+    assert any("uhqs missing" in e for e in errors)
+
+    scores = {k: float(card["modules"][k]["score"]) for k in "ABCDEF"}
+    result = compute_uhqs(
+        scores,
+        profile_class="POSIX-Shell",
+        assessment_status="INCOMPLETE",
+        critical_control_verdict="INCOMPLETE",
+        containment_measured=False,
+    )
+    card["uhqs"] = result.uhqs
+    card["grade"] = letter_grade(result.uhqs)
+    card["safety_gate"]["delta_c"] = result.delta_c
+    assert assert_scorecard_integrity(card) == []
 
 
 def test_integrity_rejects_complete_when_modules_incomplete() -> None:
@@ -183,15 +196,16 @@ def test_integrity_rejects_complete_when_modules_incomplete() -> None:
     assert any("COMPLETE" in e and "INCOMPLETE" in e for e in errors)
 
 
-def test_invalid_verdict_string_fails_closed() -> None:
+def test_invalid_verdict_string_still_grades() -> None:
     result = compute_uhqs(
         {"A": 80, "B": 80, "C": 80, "D": 99, "E": 80, "F": 80},
         profile_class="POSIX-Shell",
         critical_control_verdict="BOGUS",
     )
-    assert result.graded is False
-    assert result.uhqs is None
+    assert result.graded is True
+    assert result.uhqs == 60.0  # 80 * 0.75
     assert result.critical_control_verdict is CriticalControlVerdict.INCOMPLETE
+    assert result.delta_c == 0.75
 
 
 def test_base_stubs_are_optional_not_tested() -> None:

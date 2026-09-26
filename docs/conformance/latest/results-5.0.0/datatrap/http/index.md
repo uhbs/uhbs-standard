@@ -1,6 +1,6 @@
 # DataTrap (Thales dd-honeypot) (http)
 
-**UHQS ungraded / —** · Safety Gate `INCOMPLETE` · UHBS 5.0.0
+**UHQS UHQS=49.59 grade=F / —** · Safety Gate `INCOMPLETE` · UHBS 5.0.0
 
 - Quick: [quick/](quick/)
 - Full: [full/](full/)

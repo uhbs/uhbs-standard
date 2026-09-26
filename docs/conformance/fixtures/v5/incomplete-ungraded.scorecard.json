@@ -1,6 +1,6 @@
 {
   "uhbs_version": "5.0.0",
-  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+  "scoring_model_id": "uhqs-v5.1-always-grade",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",
   "containment_measured": false,
@@ -58,11 +58,11 @@
   },
   "safety_gate": {
     "containment_score": 0.0,
-    "delta_c": 0.0,
+    "delta_c": 0.75,
     "passed": false,
     "critical_control_verdict": "INCOMPLETE"
   },
-  "uhqs": null,
-  "grade": null,
-  "notes": "v5 golden: incomplete \u2192 Ungraded."
+  "uhqs": 42.75,
+  "grade": "F",
+  "notes": "v5 golden: incomplete \u2192 Ungraded. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor)."
 }

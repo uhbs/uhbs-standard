@@ -1,6 +1,6 @@
 {
   "framework": "Universal Honeypot Benchmarking Standard (UHBS) v5.0.0",
-  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+  "scoring_model_id": "uhqs-v5.1-always-grade",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",
   "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
@@ -27,8 +27,8 @@
     "C": 0.0,
     "S_E": 100.0,
     "S_F": 66.86,
-    "delta_c": 0.0,
-    "uhqs": null,
+    "delta_c": 0.75,
+    "uhqs": 41.14,
     "weights": {
       "protocol": 0.3,
       "behavior": 0.15,
@@ -37,14 +37,14 @@
       "static": 0.2
     },
     "profile_class": "Low-Interaction",
-    "grade": null,
+    "grade": "F",
     "phase": "profile+static+sandbox+dynamic+score",
     "version": "5.0.0",
     "containment_measured": false,
     "assessment_status": "INCOMPLETE",
     "critical_control_verdict": "INCOMPLETE",
-    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
-    "graded": false
+    "scoring_model_id": "uhqs-v5.1-always-grade",
+    "graded": true
   },
   "hqs": {
     "target": "heralding-smtp",
@@ -54,8 +54,8 @@
     "C": 0.0,
     "S_E": 100.0,
     "S_F": 66.86,
-    "delta_c": 0.0,
-    "uhqs": null,
+    "delta_c": 0.75,
+    "uhqs": 41.14,
     "weights": {
       "protocol": 0.3,
       "behavior": 0.15,
@@ -64,14 +64,14 @@
       "static": 0.2
     },
     "profile_class": "Low-Interaction",
-    "grade": null,
+    "grade": "F",
     "phase": "profile+static+sandbox+dynamic+score",
     "version": "5.0.0",
     "containment_measured": false,
     "assessment_status": "INCOMPLETE",
     "critical_control_verdict": "INCOMPLETE",
-    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
-    "graded": false
+    "scoring_model_id": "uhqs-v5.1-always-grade",
+    "graded": true
   },
   "modules": [
     {

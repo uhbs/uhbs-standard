@@ -4,19 +4,19 @@
 **UHBS:** 5.0.0 · **Class:** Low-Interaction · **Protocol:** `telnet`  
 **Target id:** `beelzebub-telnet` · **Evaluated:** 2026-09-26  
 **Upstream:** `main` @ `67d5632a754f39f7b14c703d3009193150440116`  
-**Verdict:** INCOMPLETE / ungraded (`uhqs-v5.0-critical-gate-diagnostic`)
+**Verdict:** INCOMPLETE / UHQS=32.06 grade=F (`uhqs-v5.1-always-grade`)
 
 | Run | UHQS | Grade | δ_C | Artifacts |
 | --- | ---: | --- | --- | --- |
-| [Quick](quick/README.md) | ungraded | — | 0.0 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
-| [Full](full/README.md) | ungraded | — | 0.0 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) · [`proof/full-run.cast`](full/proof/full-run.cast) |
+| [Quick](quick/README.md) | UHQS=32.06 grade=F | — | 0.0 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
+| [Full](full/README.md) | UHQS=32.06 grade=F | — | 0.0 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) · [`proof/full-run.cast`](full/proof/full-run.cast) |
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../../fixtures/beelzebub-telnet.scorecard.json`](../../../../fixtures/beelzebub-telnet.scorecard.json)  
 Archive: [`../../../../archive/v5.0.0/beelzebub/telnet/`](../../../../archive/v5.0.0/beelzebub/telnet/)  
 Replication: [`EXECUTION-STEPS.md`](EXECUTION-STEPS.md)
 
-v5 Safety Gate leaves this unit **ungraded**. Do not cite archived 4.x 47.89 / F.
+v5 Safety Gate leaves this unit **UHQS=32.06 grade=F**. Do not cite archived 4.x 47.89 / F.
 
 ## Full run — module breakdown (analyst view)
 
@@ -28,7 +28,7 @@ v5 Safety Gate leaves this unit **ungraded**. Do not cite archived 4.x 47.89 / F
 | Module D: Safety & Containment (C) | 0.0 | GATE | INCOMPLETE | Module D v5: non-SSH targets need gateway/packet evidence for critical egress an |
 | Module E: Scalability & Latency | 100.0 | 0.10 | PASSED | service alive after load (connect 1.0ms) |
 | Module F: Static Code Audit | 70.0 | 0.20 | PASSED | semgrep error/critical=7 total=41 |
-| Safety Gate δ_C | 0.0 | GATE | — | Ungraded (INCOMPLETE) |
+| Safety Gate δ_C | 0.0 | GATE | — | UHQS=32.06 grade=F (INCOMPLETE) |
 
 ## Full scorecard (verbatim)
 
@@ -38,7 +38,7 @@ v5 Safety Gate leaves this unit **ungraded**. Do not cite archived 4.x 47.89 / F
 ====================================================================================
 Target System         : beelzebub-telnet
 System Profile Class  : Low-Interaction
-Scoring Model         : uhqs-v5.0-critical-gate-diagnostic
+Scoring Model         : uhqs-v5.1-always-grade
 Assessment Status     : INCOMPLETE
 Critical Controls     : INCOMPLETE
 Protocols             : telnet
@@ -56,10 +56,10 @@ Module D: Safety & Containment (C)  :   0.0/100       GATE     INCOMPLETE (Modul
 Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service alive after load (connect 1.0ms))
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (semgrep error/critical=7 total=41)
 ------------------------------------------------------------------------------------
-SAFETY GATE / CRITICAL CONTROLS        : Ungraded — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (Ungraded — no composite UHQS)
+SAFETY GATE / CRITICAL CONTROLS        : UHQS=32.06 grade=F — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
+FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (UHQS=32.06 grade=F — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
-scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
+scoring_model_id                      : uhqs-v5.1-always-grade
 ====================================================================================
 ```
 

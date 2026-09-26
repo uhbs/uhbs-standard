@@ -8,8 +8,8 @@
 
 | Mode | UHQS | Grade | Safety Gate | Folder |
 | --- | --- | --- | --- | --- |
-| **Quick** | **ungraded** | — | INCOMPLETE | [`quick/`](quick/README.md) |
-| **Full** | **ungraded** | — | INCOMPLETE | [`full/`](full/README.md) |
+| **Quick** | **UHQS=36.6 grade=F** | — | INCOMPLETE | [`quick/`](quick/README.md) |
+| **Full** | **UHQS=36.6 grade=F** | — | INCOMPLETE | [`full/`](full/README.md) |
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../../fixtures/mailoney-smtp.scorecard.json`](../../../../fixtures/mailoney-smtp.scorecard.json)
@@ -21,4 +21,4 @@ Fixture: [`../../../../fixtures/mailoney-smtp.scorecard.json`](../../../../fixtu
 | [EXECUTION-STEPS.md](EXECUTION-STEPS.md) | Exact commands |
 | [`full/SCORECARD.txt`](full/SCORECARD.txt) | Authoritative scorecard |
 
-Honest v5 outcome is **ungraded**. Do not cite archived 4.x letter grades.
+Honest v5 outcome is **UHQS=36.6 grade=F**. Do not cite archived 4.x letter grades.

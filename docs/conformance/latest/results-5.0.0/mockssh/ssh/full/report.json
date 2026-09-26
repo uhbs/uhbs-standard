@@ -1,6 +1,6 @@
 {
   "framework": "Universal Honeypot Benchmarking Standard (UHBS) v5.0.0",
-  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+  "scoring_model_id": "uhqs-v5.1-always-grade",
   "assessment_status": "COMPLETE",
   "critical_control_verdict": "GATE_PASSED",
   "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
@@ -37,13 +37,13 @@
       "static": 0.2
     },
     "profile_class": "Low-Interaction",
-    "grade": "GRADE F (Fail)",
+    "grade": "F",
     "phase": "profile+static+sandbox+dynamic+score",
     "version": "5.0.0",
     "containment_measured": true,
     "assessment_status": "COMPLETE",
     "critical_control_verdict": "GATE_PASSED",
-    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "scoring_model_id": "uhqs-v5.1-always-grade",
     "graded": true
   },
   "hqs": {
@@ -64,13 +64,13 @@
       "static": 0.2
     },
     "profile_class": "Low-Interaction",
-    "grade": "GRADE F (Fail)",
+    "grade": "F",
     "phase": "profile+static+sandbox+dynamic+score",
     "version": "5.0.0",
     "containment_measured": true,
     "assessment_status": "COMPLETE",
     "critical_control_verdict": "GATE_PASSED",
-    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "scoring_model_id": "uhqs-v5.1-always-grade",
     "graded": true
   },
   "modules": [

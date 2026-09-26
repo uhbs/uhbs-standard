@@ -4,19 +4,19 @@
 **UHBS:** 5.0.0 · **Class:** Low-Interaction · **Protocol:** `ssh`  
 **Target id:** `beelzebub-ssh` · **Evaluated:** 2026-09-26  
 **Upstream:** `main` @ `67d5632a754f39f7b14c703d3009193150440116`  
-**Verdict:** INCOMPLETE / ungraded (`uhqs-v5.0-critical-gate-diagnostic`)
+**Verdict:** INCOMPLETE / UHQS=25.15 grade=F (`uhqs-v5.1-always-grade`)
 
 | Run | UHQS | Grade | δ_C | Artifacts |
 | --- | ---: | --- | --- | --- |
-| [Quick](quick/README.md) | ungraded | — | 0.0 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
-| [Full](full/README.md) | ungraded | — | 0.0 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) · [`proof/full-run.cast`](full/proof/full-run.cast) |
+| [Quick](quick/README.md) | UHQS=25.15 grade=F | — | 0.0 | [`SCORECARD.txt`](quick/SCORECARD.txt) · [`report.json`](quick/report.json) |
+| [Full](full/README.md) | UHQS=25.15 grade=F | — | 0.0 | [`SCORECARD.txt`](full/SCORECARD.txt) · [`report.json`](full/report.json) · [`proof/full-run.cast`](full/proof/full-run.cast) |
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../../fixtures/beelzebub-ssh.scorecard.json`](../../../../fixtures/beelzebub-ssh.scorecard.json)  
 Archive: [`../../../../archive/v5.0.0/beelzebub/ssh/`](../../../../archive/v5.0.0/beelzebub/ssh/)  
 Replication: [`EXECUTION-STEPS.md`](EXECUTION-STEPS.md)
 
-v5 Safety Gate leaves this unit **ungraded**. Do not cite archived 4.x 59.88 / D.
+v5 Safety Gate leaves this unit **UHQS=25.15 grade=F**. Do not cite archived 4.x 59.88 / D.
 
 ## Full run — module breakdown (analyst view)
 
@@ -28,7 +28,7 @@ v5 Safety Gate leaves this unit **ungraded**. Do not cite archived 4.x 59.88 / D
 | Module D: Safety & Containment (C) | 0.0 | GATE | INCOMPLETE | UHBS v5: containment verdict from critical controls; defense-in-depth score is d |
 | Module E: Scalability & Latency | 20.0 | 0.10 | PARTIAL | P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=ssh |
 | Module F: Static Code Audit | 70.0 | 0.20 | PASSED | semgrep error/critical=7 total=41 |
-| Safety Gate δ_C | 0.0 | GATE | — | Ungraded (INCOMPLETE) |
+| Safety Gate δ_C | 0.0 | GATE | — | UHQS=25.15 grade=F (INCOMPLETE) |
 
 ## Full scorecard (verbatim)
 
@@ -38,7 +38,7 @@ v5 Safety Gate leaves this unit **ungraded**. Do not cite archived 4.x 59.88 / D
 ====================================================================================
 Target System         : beelzebub-ssh
 System Profile Class  : Low-Interaction
-Scoring Model         : uhqs-v5.0-critical-gate-diagnostic
+Scoring Model         : uhqs-v5.1-always-grade
 Assessment Status     : INCOMPLETE
 Critical Controls     : INCOMPLETE
 Protocols             : ssh
@@ -56,10 +56,10 @@ Module D: Safety & Containment (C)  :   0.0/100       GATE     INCOMPLETE (UHBS 
 Module E: Scalability & Latency     :  20.0/100       0.10     PARTIAL (P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=ssh)
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (semgrep error/critical=7 total=41)
 ------------------------------------------------------------------------------------
-SAFETY GATE / CRITICAL CONTROLS        : Ungraded — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (Ungraded — no composite UHQS)
+SAFETY GATE / CRITICAL CONTROLS        : UHQS=25.15 grade=F — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
+FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (UHQS=25.15 grade=F — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
-scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
+scoring_model_id                      : uhqs-v5.1-always-grade
 ====================================================================================
 ```
 

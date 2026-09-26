@@ -27,21 +27,20 @@ FIXTURE = ROOT / "docs" / "conformance" / "fixtures" / "opencanary-web-api.score
 def test_validate_scorecard_fixture() -> None:
     result = validate_scorecard(str(FIXTURE), strict=True)
     assert result["ok"] is True
-    # OpenCanary Web-API: Module D < critical gate → Ungraded under v5.
-    assert result["uhqs"] is None
-    assert result["grade"] is None
+    assert result["uhqs"] is not None
+    assert result["grade"] in {"A", "B", "C", "D", "F"}
 
 
-def test_compute_uhqs_web_api_gate_failed_is_ungraded() -> None:
-    # D=90 without GATE_PASSED verdict → ungraded (binary critical gate).
+def test_compute_uhqs_web_api_gate_failed_is_graded() -> None:
+    # D=90 without GATE_PASSED verdict → GATE_FAILED via numeric shim → δ_C=0.5.
     result = compute_uhqs_tool(
         scores={"A": 21.5, "B": 82.5, "C": 55.0, "D": 90.0, "E": 100.0, "F": 70.0},
         profile_class="Web-API",
     )
     assert result["ok"] is True
-    assert result["uhqs"] is None
-    assert result["grade"] is None
-    assert result["delta_c"] == 0.0
+    assert result["uhqs"] is not None
+    assert result["grade"] in {"A", "B", "C", "D", "F"}
+    assert result["delta_c"] == 0.5
     assert result["safety_gate_passed"] is False
 
 
@@ -66,15 +65,18 @@ def test_list_profile_classes() -> None:
     assert "(C/100)" not in result["delta_c"]
 
 
-def test_compute_uhqs_explicit_gate_failed_despite_high_d() -> None:
+def test_compute_uhqs_explicit_gate_failed_still_graded() -> None:
     result = compute_uhqs_tool(
         scores={"A": 100, "B": 100, "C": 100, "D": 100, "E": 100, "F": 100},
         profile_class="Web-API",
         critical_control_verdict="GATE_FAILED",
     )
     assert result["ok"] is True
-    assert result["uhqs"] is None
-    assert result["graded"] is False
+    assert result["uhqs"] == 50.0
+    assert result["grade"] == "D"
+    assert result["delta_c"] == 0.5
+    assert result["safety_gate_passed"] is False
+    assert result["graded"] is True
     assert result["critical_control_verdict"] == "GATE_FAILED"
 
 
@@ -89,10 +91,9 @@ def test_list_conformance_fixtures() -> None:
 def test_get_scorecard_summary() -> None:
     result = get_scorecard_summary(str(FIXTURE))
     assert result["ok"] is True
-    assert result["uhqs"] is None
-    assert result["grade"] is None
-    assert result["module_scores"]["A"] == 100.0
-    assert result["safety_gate"]["passed"] is False
+    assert result["uhqs"] is not None
+    assert result["grade"] in {"A", "B", "C", "D", "F"}
+    assert "A" in result["module_scores"]
 
 
 def test_list_lab_reports() -> None:

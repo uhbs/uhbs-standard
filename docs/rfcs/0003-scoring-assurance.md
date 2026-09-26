@@ -191,6 +191,27 @@ Independent technical review of this RFC and published responses is **required**
 
 **Accepted for implementation** as the UHBS 5.0.0 scoring and assurance baseline under `scoring_model_id = uhqs-v5.0-critical-gate-diagnostic`. Future normative scoring changes require a new RFC.
 
+## Amendment — always-grade (2026-09-27)
+
+**Supersedes** the eligibility cliff in this RFC for new scorecards.
+
+- **New scoring_model_id:** `uhqs-v5.1-always-grade`
+- **Change:** `GATE_FAILED` / assessment `INCOMPLETE` / unmeasured containment **MUST NOT** set `uhqs = null`. They adjust \(\delta_C\) only:
+
+| Verdict / status | \(\delta_C\) |
+| --- | --- |
+| `GATE_PASSED` + `COMPLETE` | 1.0 |
+| `GATE_FAILED` | 0.5 |
+| `INCOMPLETE` (gate or assessment) | 0.75 |
+
+\[
+\mathrm{UHQS} = \delta_C \cdot (w_A S_A + w_B S_B + w_C S_C + w_E S_E + w_F S_F)
+\]
+
+Letter grade is always assigned from UHQS bands when modules are present. Verdict fields remain on the scorecard for transparency. Do **not** resurrect v4 skip-credit or the D≥95 attestation floor.
+
+Historical artifacts under `uhqs-v5.0-critical-gate-diagnostic` remain valid for their published `scoring_model_id`; do not recalculate them as if they used always-grade unless explicitly regraded.
+
 ## References
 
 - [calibration/v5-sensitivity.md](calibration/v5-sensitivity.md)
