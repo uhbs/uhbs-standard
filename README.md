@@ -184,7 +184,7 @@ Grade **MCP honeypot** surfaces (JSON-RPC over HTTP/SSE) with the in-tree `mcp` 
 docker build -t uhbs:4.6.1 .
 docker run --rm -v "$PWD:/work" -w /work uhbs:4.6.1 \
   validate-scorecard ./docs/conformance/fixtures/cowrie-low-interaction.scorecard.json
-docker run --rm -v "$PWD:/work" -w /work uhbs:4.6.1 lab --list-protocols
+docker run --rm -v "$PWD:/work" -w /work uhbs:4.6.2 lab --list-protocols
 ```
 
 Compose: `docker compose run --rm uhbs validate-profile ./my-honeypot.profile.yaml`.
