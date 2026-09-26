@@ -1,0 +1,74 @@
+{
+  "uhbs_version": "4.0.1",
+  "run_mode": "full",
+  "evaluated_at": "2026-07-27T18:24:21Z",
+  "proof_label": "endlessh (skeeto SSH tarpit)",
+  "target": {
+    "repository": "https://github.com/skeeto/endlessh",
+    "git_commit": "dfe44eb2c5b6fc3c48a39ed826fe0e4459cdf6ef",
+    "class": "Low-Interaction",
+    "protocol": "ssh_tarpit",
+    "host": "endlessh-lab",
+    "port": 2222,
+    "container_image": "ghcr.io/linuxserver/endlessh:latest",
+    "container_image_id": "sha256:9f0dd7c1b4128acd1bf4dfefe910ff39accc5e300ab57df641c51ea74958ad37"
+  },
+  "grader": {
+    "package_version": "4.0.1",
+    "uhbs_git_commit": "c1631a4f0daef5553491017bc9aa44f66d776c58",
+    "docker_image": "uhbs:4.0.1-full",
+    "docker_image_id": "sha256:8caf886c2e6f53a3d2d3a73d2529b018cbdd3dc343cbde10043cc3ac96e87e21",
+    "inventory": "docs/conformance/labs/endlessh/inventory.yaml",
+    "tps": "docs/conformance/labs/endlessh/low_interaction_full.yaml"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "concurrency": 25,
+    "requests": 200,
+    "plugin": "generic",
+    "protocol_id": "ssh_tarpit",
+    "ports_ssh": false,
+    "lab_msdelay_ms": 200
+  },
+  "results": {
+    "uhqs": 54.07,
+    "grade": "D",
+    "delta_c": 0.81,
+    "module_scores": {
+      "A": 65.43,
+      "B": 62.5,
+      "C": 55.0,
+      "D": 90.0,
+      "E": 100.0,
+      "F": 70.0
+    },
+    "safety_gate_passed": false
+  },
+  "limitations": [
+    "Protocol ssh_tarpit (generic TCP) \u2014 Endlessh never completes SSH identification.",
+    "No ports.ssh \u2192 Module D shell egress/LPE probes skipped; Safety Gate not fully cleared (C=90).",
+    "MSDELAY=200 for lab practicality (upstream default often 10000).",
+    "Telemetry is text/Docker logs \u2014 not STIX/OTel/ECS.",
+    "Product name is evaluation proof only."
+  ]
+}

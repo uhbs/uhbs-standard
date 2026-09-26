@@ -1,57 +1,57 @@
 {
   "uhbs_version": "5.0.0",
   "target": {
-    "name": "miniprint (sa7mon PJL printer honeypot)",
+    "name": "miniprint (sa7mon PJL honeypot)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/miniprint/low_interaction_full.yaml"
   },
-  "evaluated_at": "2026-07-27",
-  "auditor": "UHBS-Lab detailed Docker run (PJL/generic :9100 + 1000-sample A3 + SAST + telemetry)",
+  "evaluated_at": "2026-09-26",
+  "auditor": "UHBS-Lab full Docker refresh (results-5.0.0)",
   "modules": {
     "A": {
-      "score": 65.43,
-      "status": "PARTIAL",
-      "weight": 0.3,
-      "notes": "generic TCP/PJL plugin; high IAT jitter vs native-printer expectation; n=1000 timing",
-      "complete": true
+      "score": 80.43,
+      "status": "PASSED",
+      "notes": "UHBS Module A \u2014 plugins=['pjl']; class=Low-Interaction strict_rfc=True",
+      "complete": true,
+      "weight": 0.3
     },
     "B": {
-      "score": 62.5,
+      "score": 65.0,
       "status": "PARTIAL",
-      "weight": 0.15,
-      "notes": "survived binary blast; limited stateful PJL probes in harness",
-      "complete": true
+      "notes": "UHBS Module B class=Low-Interaction",
+      "complete": true,
+      "weight": 0.15
     },
     "C": {
-      "score": 55.0,
-      "status": "PARTIAL",
-      "weight": 0.25,
-      "notes": "miniprint.log text \u2014 no STIX/OTel/ECS (schema-capped)",
-      "complete": true
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4; no native_event_format declared \u2014 validating as native_json only",
+      "complete": false,
+      "weight": 0.25
     },
     "D": {
-      "score": 90.0,
-      "status": "GATE_FAILED",
-      "notes": "no SSH exec surface; airgap+gateway attested; C<95",
-      "critical_control_verdict": "GATE_FAILED",
-      "complete": true
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "notes": "Module D v5: non-SSH targets need gateway/packet evidence for critical egress and runtime inspection \u2014 attestation alone never clears the gate.",
+      "complete": false,
+      "critical_control_verdict": "INCOMPLETE"
     },
     "E": {
       "score": 55.0,
       "status": "PARTIAL",
+      "notes": "",
+      "complete": true,
       "weight": 0.1,
-      "notes": "P95>>100ms under load (single-threaded handler)",
-      "p50_ms": 1055.08,
-      "p95_ms": 1127.1,
-      "p99_ms": 2112.47,
-      "complete": true
+      "p50_ms": 1025.86,
+      "p95_ms": 2051.43,
+      "p99_ms": 2081.16
     },
     "F": {
-      "score": 70.0,
-      "status": "PASSED",
-      "weight": 0.2,
-      "notes": "semgrep 1 error/critical; SAST gate capped F at 70",
-      "complete": true
+      "score": 69.33,
+      "status": "PARTIAL",
+      "notes": "Module F white-box audit (keys/prompts/SAST/VFS)",
+      "complete": true,
+      "weight": 0.2
     }
   },
   "weights": {
@@ -62,17 +62,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 90.0,
+    "containment_score": 0.0,
     "delta_c": 0.0,
     "passed": false,
-    "critical_control_verdict": "GATE_FAILED",
+    "critical_control_verdict": "INCOMPLETE",
     "unauthorized_egress_leaks": 0
   },
   "uhqs": null,
   "grade": null,
-  "notes": "Evaluation proof only. miniprint product name is not a UHBS requirement. PJL spoken over raw :9100 via generic TCP plugin (no first-class PJL RFC suite yet). Artifacts: docs/conformance/reports/miniprint/. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
+  "notes": "Detailed evaluation proof only. Product name is not a UHBS requirement. Full Docker lab artifacts live under docs/conformance/latest/results-5.0.0/miniprint/. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic.",
   "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
-  "assessment_status": "COMPLETE",
-  "critical_control_verdict": "GATE_FAILED",
-  "containment_measured": true
+  "assessment_status": "INCOMPLETE",
+  "critical_control_verdict": "INCOMPLETE",
+  "containment_measured": false
 }

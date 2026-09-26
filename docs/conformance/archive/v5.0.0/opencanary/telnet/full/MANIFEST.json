@@ -1,0 +1,42 @@
+{
+  "uhbs_version": "4.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "f4c2ed15288ab0a46ab52feab145e12542693e0822d34bf92451cb251f03ff69"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "f74a7c8a9e91f70e0139b1e4eff97ed81f9a6cbffe9bff5bcd22246add40e1c2"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "f74a7c8a9e91f70e0139b1e4eff97ed81f9a6cbffe9bff5bcd22246add40e1c2"
+    },
+    {
+      "path": "report.json",
+      "sha256": "f073a5673996fc2bfdc42923daafab747ad1c6dd9ff2f4fe51b3beb7cfc3b596"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "d2a7091ebb009b7c5cfa6452e30c8ee1392b81b07881320f425c91d6a66876d3"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "60ab54cced857b9c154e714543d679e2949d31224fbcce6799b56a9dad1d2249"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "2a09bed24b20fb6f58c9fa1041a3710a464ea12aaf64e0409d48869f89d60267"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "3b10c2f620bc2d4b071a032a6fdb6b009c3a9f2f2b753b9fecd3b2130f06efe7"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-telnet",
+    "uhqs": 64.9,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

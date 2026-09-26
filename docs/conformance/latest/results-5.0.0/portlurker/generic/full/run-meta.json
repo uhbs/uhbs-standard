@@ -1,0 +1,78 @@
+{
+  "uhbs_version": "5.0.0",
+  "run_mode": "full",
+  "evaluated_at": "2026-09-26T21:00:41Z",
+  "proof_label": "portlurker (generic)",
+  "target": {
+    "repository": "https://github.com/bartnv/portlurker.git",
+    "git_branch": "master",
+    "git_commit": "001afa93312749222af4a76bbcfd46ea179dea82",
+    "class": "Low-Interaction",
+    "protocol": "generic",
+    "host": "portlurker-lab",
+    "port": 8080,
+    "container_image": "portlurker:uhbs-lab",
+    "container_image_id": "sha256:0809f50693b51d82ca643b1a96e58707564ffb1e2c8d2b757f5750d01b72a684",
+    "base_image": "debian:bullseye-slim",
+    "base_image_reason": "Upstream Rust portlurker Dockerfile.",
+    "container_runtime_strategy": "upstream-dockerfile"
+  },
+  "grader": {
+    "package_version": "5.0.0",
+    "docker_image": "uhbs:5.0.0-full",
+    "docker_image_id": "sha256:320fb38dcf3ebf69befb2248b75ed32c63dafe6b83f959746209d337c3e7ca9b",
+    "inventory": "docs/conformance/labs/portlurker/inventory.yaml",
+    "tps": "docs/conformance/labs/portlurker/low_interaction_generic_full.yaml",
+    "target_id": "portlurker-generic"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "measured_vs_attested": {
+      "airgap": "attested",
+      "egress_gateway_log": "measured",
+      "telemetry": "measured"
+    }
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "grade_long": null,
+    "delta_c": 0.0,
+    "module_scores": {
+      "A": 79.0,
+      "B": 25.0,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 100.0,
+      "F": 66.0
+    },
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  },
+  "limitations": [
+    "Published UHBS 5.0.0 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1)."
+  ],
+  "docs_reviewed": []
+}

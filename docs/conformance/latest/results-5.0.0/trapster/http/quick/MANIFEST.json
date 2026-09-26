@@ -1,0 +1,42 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "1bc961ca8803ecac513ac4299ef9623e99ca3bdd34ef2ca72bd2300d1005028d"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "1bc961ca8803ecac513ac4299ef9623e99ca3bdd34ef2ca72bd2300d1005028d"
+    },
+    {
+      "path": "report.json",
+      "sha256": "d6dac2f179822f914ccb6851dc51a078db15d19adcf46282e1680ea39fe1ebf1"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "2762c66bb664ba23ab6a8d8dc34215ec7aea9f430f8172a9be1bbf928e720c4b"
+    },
+    {
+      "path": "README.md",
+      "sha256": "256d26c3a5ccfcacb19a5dd3dc7ac493663c72712151634d05a835927342ecb4"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "c47259f4d4afc6d1b20cf592208e6f013091963dd5748dc1c35cb3e5f3457cf8"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "d0c56581d39d5d34719987653668d14855a5a957c7176c1c2610e1c27b697cbf"
+    }
+  ],
+  "extra": {
+    "target": "trapster-http",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE",
+    "evidence_pack": "evidence-pack.json",
+    "evidence_manifest_digest": "af91a0452b1078f4d3d91daa15483779dc7c39c9790fe4b8d5d324f720879718"
+  }
+}

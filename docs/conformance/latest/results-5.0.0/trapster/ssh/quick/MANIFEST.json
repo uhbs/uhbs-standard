@@ -1,0 +1,42 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "39370523ef3c84e7e80277447bc9045792279ed5d7f4af0f353f52600875ee86"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "39370523ef3c84e7e80277447bc9045792279ed5d7f4af0f353f52600875ee86"
+    },
+    {
+      "path": "report.json",
+      "sha256": "1b9b8a7d4e0c087140774a0da873aa87df6a7f740122c66cb6b24abd3ca6eaac"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "3db9469b2541cfb3f62fee6ca8be97b1eda199e29584d3a8577574383922e586"
+    },
+    {
+      "path": "README.md",
+      "sha256": "3165d915a8803e15a71fc4f29b1824a7a4023cb0f67c217d721a3d876a22abf6"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "1355013cf040b5722245f2ae2dba0c1eea3c69939432b51f104087454c39cc52"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "101fccdbcca8f63282fbd46c9e0d9bc69450ddee61eb719e6cbfe20555faace1"
+    }
+  ],
+  "extra": {
+    "target": "trapster-ssh",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE",
+    "evidence_pack": "evidence-pack.json",
+    "evidence_manifest_digest": "bb51d161490f7f98cdbd651c07ccd6a5ead189721d04974a5494491137f3249a"
+  }
+}

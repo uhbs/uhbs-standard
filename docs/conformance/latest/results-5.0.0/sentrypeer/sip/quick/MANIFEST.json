@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "16cdd42552a1a250e5e8a295012ec95b96b8f79ffb2da9bdbb1ae55d34ebd547"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "f15d7f266b9f4de2988b28e0914a0e8872e0f4ca724ec706e2bea1d04222d13d"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "f15d7f266b9f4de2988b28e0914a0e8872e0f4ca724ec706e2bea1d04222d13d"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "7c581611a084f5b67ecafc15e3cf2ec5bbab4cd7025768e5695f40f192b976f5"
+    },
+    {
+      "path": "report.json",
+      "sha256": "1e64661e96cf716a316e795b014cf398dcc7e9aecd11134920b8fe284a04bf73"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "d77d2669c8914882c11b04bf1a977772ad1e186304f9fc23ca1bcbb38640a7dd"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "03cf3596ebfdbdc5f96c98d57feb3ff1d84026ffbe7e80187283a221951acfdd"
+    }
+  ],
+  "extra": {
+    "target": "sentrypeer-sip",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

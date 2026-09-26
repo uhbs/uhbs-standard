@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "01811d4f1be8c8e3586e5ce8b5049399c13a55dfd1385ad6b51c79397e2945f9"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "1b8a6413ef4f2ca5b81982dd99e43ed59ce7398407835435631cdbc3c9270d83"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "1b8a6413ef4f2ca5b81982dd99e43ed59ce7398407835435631cdbc3c9270d83"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "6cab320625ea8a118c3513486045cc1c84e554d84e3b1ff09f903542aa4540bf"
+    },
+    {
+      "path": "report.json",
+      "sha256": "78f60cc57bedb3e806de9b7c57242e5eb40ad3d342fca941a1ddbee601c72db7"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "610ab0af12cb8c8ff3537a2dd48953550880a0c04fc33107fb1a889db9e552e3"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "fecb5ef4c00964b3afd19e14af103645e4a7759b803af57a4f927989b1a57bc2"
+    }
+  ],
+  "extra": {
+    "target": "pghoney-postgres",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

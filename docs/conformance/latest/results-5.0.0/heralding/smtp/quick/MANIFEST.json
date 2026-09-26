@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "54415365b4552334184eba7654b4360e39f24cb967ed6f9fe40355bf5c148639"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "a887a2ebf15775558d5db5e009c59defbee5ec671335a0e8214142291195a0d4"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "a887a2ebf15775558d5db5e009c59defbee5ec671335a0e8214142291195a0d4"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "91e07b7c00fdd08aa797d63c4577a8eb645ef32e70e78e5cc5b6555187575b2d"
+    },
+    {
+      "path": "report.json",
+      "sha256": "a21b29743bb7968006149634e12a6931e3fda81bb312520cc774fe39e0a7dcf1"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "983d2386f515916c2e4b5fa0ad9f77f82b54100d3ef0aa5613c650e472115cae"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "2cd676852cb27eb6f108a939b99cad0e5b5d0a27abc15b439a6ffe55ffbd95a9"
+    }
+  ],
+  "extra": {
+    "target": "heralding-smtp",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

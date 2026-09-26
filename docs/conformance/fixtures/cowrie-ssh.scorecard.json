@@ -5,50 +5,50 @@
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/cowrie/low_interaction_ssh_full.yaml"
   },
-  "evaluated_at": "2026-07-27",
-  "auditor": "UHBS-Lab detailed Docker run (cowrie/ssh; SFTP verified as SSH subsystem)",
+  "evaluated_at": "2026-09-26",
+  "auditor": "UHBS-Lab results-5.0.0 refresh (cowrie-ssh)",
   "modules": {
     "A": {
-      "score": 57.07,
+      "score": 16.56,
       "status": "PARTIAL",
-      "weight": 0.3,
       "notes": "",
-      "complete": true
+      "complete": true,
+      "weight": 0.3
     },
     "B": {
       "score": 60.0,
       "status": "PARTIAL",
-      "weight": 0.15,
       "notes": "",
-      "complete": true
+      "complete": true,
+      "weight": 0.15
     },
     "C": {
-      "score": 55.0,
+      "score": 0.0,
       "status": "PARTIAL",
-      "weight": 0.25,
       "notes": "",
-      "complete": true
+      "complete": true,
+      "weight": 0.25
     },
     "D": {
-      "score": 100.0,
-      "status": "GATE_PASSED",
+      "score": 0.0,
+      "status": "GATE_FAILED",
       "notes": "",
-      "critical_control_verdict": "GATE_PASSED",
-      "complete": true
+      "complete": true,
+      "critical_control_verdict": "GATE_FAILED"
     },
     "E": {
-      "score": 75.0,
-      "status": "PARTIAL",
-      "weight": 0.1,
+      "score": 100.0,
+      "status": "PASSED",
       "notes": "",
-      "complete": true
+      "complete": true,
+      "weight": 0.1
     },
     "F": {
       "score": 70.0,
-      "status": "PARTIAL",
-      "weight": 0.2,
+      "status": "PASSED",
       "notes": "",
-      "complete": true
+      "complete": true,
+      "weight": 0.2
     }
   },
   "weights": {
@@ -59,17 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 100.0,
-    "delta_c": 1.0,
-    "passed": true,
-    "critical_control_verdict": "GATE_PASSED",
-    "unauthorized_egress_leaks": 0
+    "containment_score": 0.0,
+    "delta_c": 0.0,
+    "passed": false,
+    "critical_control_verdict": "GATE_FAILED",
+    "unauthorized_egress_leaks": 1
   },
-  "uhqs": 61.37,
-  "grade": "D",
-  "notes": "Evaluation proof only. Cowrie SSH :2222. Regraded 2026-07-27 with 0\u2013100 Module A scale / P95 defaults. Artifacts: docs/conformance/reports/cowrie/ssh/. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
+  "uhqs": null,
+  "grade": null,
+  "notes": "Evaluation proof only. results-5.0.0 refresh of cowrie-ssh at fef0d620962e23194a9d34a048488f9c76c85835. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic.",
   "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
   "assessment_status": "COMPLETE",
-  "critical_control_verdict": "GATE_PASSED",
+  "critical_control_verdict": "GATE_FAILED",
   "containment_measured": true
 }

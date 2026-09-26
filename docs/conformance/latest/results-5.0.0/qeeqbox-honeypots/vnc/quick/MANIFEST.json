@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "bff3a8f0edd3503f2ff4eb35c2865470c671dae21e13ae0034e039870f3cd02d"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "e5cde67c551ee49829f9d06a3fecbabc8d301fb97c53a73965e8aeb0fc9d0e52"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "e5cde67c551ee49829f9d06a3fecbabc8d301fb97c53a73965e8aeb0fc9d0e52"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "fc3e0d8cce8b3614a0eb77664131049e2787a081d500866925715daa3dbee4c4"
+    },
+    {
+      "path": "report.json",
+      "sha256": "f359066bca7f548dea10a11191727572c42125677b41f03727e87dc90a760b59"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "c0bc0cfc10e72a6cf844494db1193773928a6a276ae9db1681908b816f25c08f"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "e54b8cc0817fcf6407ef559313b0874926073a33767b97ac33cb400a935712de"
+    }
+  ],
+  "extra": {
+    "target": "qeeqbox-vnc",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

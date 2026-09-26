@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "40ee498890d94ccedcf318be5e112e76ec7b9628e6cb370a4bdaa816248dad18"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "e1105faa09998671d84a4c65b8c156e417e2e41a7f565a54b665767a42475013"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "e1105faa09998671d84a4c65b8c156e417e2e41a7f565a54b665767a42475013"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "bb167fb59cfbcfb5f18c918c2462d01bb6704b90aaeb745928f145a41e9e2d4c"
+    },
+    {
+      "path": "report.json",
+      "sha256": "3e0f587326f4da14eb89d644e8311d60d2a9d03ee39524943bb83ad11c461947"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "a0a5b8f8bf3a5ae2f06562ba0e7a68425a9589ea4bd4ad0387d48dcdec3cae3b"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "73acaae065c9296d7bd6c51a24178acf25f502c0454ffb93406207b2453c093f"
+    }
+  ],
+  "extra": {
+    "target": "honeyagents-ssh",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

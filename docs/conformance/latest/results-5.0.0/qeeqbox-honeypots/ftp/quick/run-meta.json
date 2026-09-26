@@ -1,0 +1,78 @@
+{
+  "uhbs_version": "5.0.0",
+  "run_mode": "quick",
+  "evaluated_at": "2026-09-26T18:52:02Z",
+  "proof_label": "qeeqbox/honeypots (ftp)",
+  "target": {
+    "repository": "https://github.com/qeeqbox/honeypots.git",
+    "git_branch": "main",
+    "git_commit": "f337a32e3351e2add3a455a3bcaf1f02ded5744b",
+    "class": "Low-Interaction",
+    "protocol": "ftp",
+    "host": "qeeqbox-lab",
+    "port": 19021,
+    "container_image": "qeeqbox-honeypots:uhbs-lab",
+    "container_image_id": "sha256:5493cc4c89ee7064166304c0edd17087ba47088c34cc023f573bae364f2fece9",
+    "base_image": "python:3.11-slim-bookworm",
+    "base_image_reason": "Upstream qeeqbox/honeypots editable install on python:3.11-slim-bookworm; multi-protocol high ports on uhbs-lab.",
+    "container_runtime_strategy": "lab-dockerfile"
+  },
+  "grader": {
+    "package_version": "5.0.0",
+    "docker_image": "uhbs:5.0.0",
+    "docker_image_id": "sha256:aa436c35214d225126fd90db1dcbe307cbdbda9cad4c831efc068bd8901f6ba6",
+    "inventory": "docs/conformance/labs/qeeqbox-honeypots/inventory.yaml",
+    "tps": "docs/conformance/labs/qeeqbox-honeypots/low_interaction_ftp_quick.yaml",
+    "target_id": "qeeqbox-ftp"
+  },
+  "flags": {
+    "UHBS_QUICK": true,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": true,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "measured_vs_attested": {
+      "airgap": "attested",
+      "egress_gateway_log": "attested-empty-log",
+      "telemetry": "attested-partial"
+    }
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "grade_long": null,
+    "delta_c": 0.0,
+    "module_scores": {
+      "A": 86.43,
+      "B": 37.0,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 100.0,
+      "F": 0.0
+    },
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  },
+  "limitations": [
+    "Published UHBS 5.0.0 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1)."
+  ],
+  "docs_reviewed": []
+}

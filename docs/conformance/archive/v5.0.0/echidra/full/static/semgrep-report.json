@@ -1,0 +1,537 @@
+{
+  "version": "1.177.0",
+  "results": [
+    {
+      "check_id": "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
+      "path": "classifier/alerts.py",
+      "start": {
+        "line": 274,
+        "col": 14,
+        "offset": 10830
+      },
+      "end": {
+        "line": 274,
+        "col": 57,
+        "offset": 10873
+      },
+      "extra": {
+        "message": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.",
+        "metadata": {
+          "cwe": [
+            "CWE-939: Improper Authorization in Handler for Custom URL Scheme"
+          ],
+          "owasp": "A01:2017 - Injection",
+          "source-rule-url": "https://github.com/PyCQA/bandit/blob/b1411bfb43795d3ffd268bef17a839dee954c2b1/bandit/blacklists/calls.py#L163",
+          "bandit-code": "B310",
+          "asvs": {
+            "control_id": "5.2.4 Dynamic Code Execution Features",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing-requirements",
+            "section": "V5: Validation, Sanitization and Encoding Verification Requirements",
+            "version": "4"
+          },
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/939.html"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
+          "shortlink": "https://sg.run/dKZZ"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.compatibility.python37.python37-compatibility-importlib2",
+      "path": "classifier/api/app.py",
+      "start": {
+        "line": 7,
+        "col": 1,
+        "offset": 120
+      },
+      "end": {
+        "line": 7,
+        "col": 27,
+        "offset": 146
+      },
+      "extra": {
+        "message": "Found 'importlib.resources', which is a module only available on Python 3.7+. This does not work in lower versions, and therefore is not backwards compatible. Use importlib_resources instead for older Python versions.",
+        "metadata": {
+          "category": "compatibility",
+          "technology": [
+            "python"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "source": "https://semgrep.dev/r/python.lang.compatibility.python37.python37-compatibility-importlib2",
+          "shortlink": "https://sg.run/eL3y"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.logging.logger-credential-leak.python-logger-credential-disclosure",
+      "path": "classifier/api/app.py",
+      "start": {
+        "line": 1386,
+        "col": 9,
+        "offset": 57395
+      },
+      "end": {
+        "line": 1392,
+        "col": 10,
+        "offset": 57684
+      },
+      "extra": {
+        "message": "Detected a python logger call with a potential hardcoded secret \"Could not persist fallback dashboard session secret to %s; \"\n            \"logins will not survive a process restart. Set %s to fix this \"\n            \"permanently.\" being logged. This may lead to secret credentials being exposed. Make sure that the logger is not logging  sensitive information.",
+        "metadata": {
+          "cwe": [
+            "CWE-532: Insertion of Sensitive Information into Log File"
+          ],
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "owasp": [
+            "A09:2021 - Security Logging and Monitoring Failures",
+            "A09:2025 - Security Logging & Alerting Failures"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.logging.logger-credential-leak.python-logger-credential-disclosure",
+          "shortlink": "https://sg.run/ydNx"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.audit.missing-integrity.missing-integrity",
+      "path": "dashboard/public/index.html",
+      "start": {
+        "line": 8,
+        "col": 3,
+        "offset": 264
+      },
+      "end": {
+        "line": 8,
+        "col": 100,
+        "offset": 361
+      },
+      "extra": {
+        "message": "This tag is missing an 'integrity' subresource integrity attribute. The 'integrity' attribute allows for the browser to verify that externally hosted files (for example from a CDN) are delivered without unexpected manipulation. Without this attribute, if an attacker can modify the externally hosted resource, this could lead to XSS and other types of attacks. To prevent this, include the base64-encoded cryptographic hash of the resource (file) you\u2019re telling the browser to fetch in the 'integrity' attribute for all externally hosted files.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software or Data Integrity Failures"
+          ],
+          "confidence": "LOW",
+          "references": [
+            "https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues"
+          ],
+          "source": "https://semgrep.dev/r/html.security.audit.missing-integrity.missing-integrity",
+          "shortlink": "https://sg.run/krXA"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
+      "path": "echidra/cli.py",
+      "start": {
+        "line": 536,
+        "col": 14,
+        "offset": 19714
+      },
+      "end": {
+        "line": 536,
+        "col": 52,
+        "offset": 19752
+      },
+      "extra": {
+        "message": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.",
+        "metadata": {
+          "cwe": [
+            "CWE-939: Improper Authorization in Handler for Custom URL Scheme"
+          ],
+          "owasp": "A01:2017 - Injection",
+          "source-rule-url": "https://github.com/PyCQA/bandit/blob/b1411bfb43795d3ffd268bef17a839dee954c2b1/bandit/blacklists/calls.py#L163",
+          "bandit-code": "B310",
+          "asvs": {
+            "control_id": "5.2.4 Dynamic Code Execution Features",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing-requirements",
+            "section": "V5: Validation, Sanitization and Encoding Verification Requirements",
+            "version": "4"
+          },
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/939.html"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
+          "shortlink": "https://sg.run/dKZZ"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
+      "path": "scripts/sync_mitre_technique_names.py",
+      "start": {
+        "line": 31,
+        "col": 10,
+        "offset": 985
+      },
+      "end": {
+        "line": 31,
+        "col": 49,
+        "offset": 1024
+      },
+      "extra": {
+        "message": "Detected a dynamic value being used with urllib. urllib supports 'file://' schemes, so a dynamic value controlled by a malicious actor may allow them to read arbitrary files. Audit uses of urllib calls to ensure user data cannot control the URLs, or consider using the 'requests' library instead.",
+        "metadata": {
+          "cwe": [
+            "CWE-939: Improper Authorization in Handler for Custom URL Scheme"
+          ],
+          "owasp": "A01:2017 - Injection",
+          "source-rule-url": "https://github.com/PyCQA/bandit/blob/b1411bfb43795d3ffd268bef17a839dee954c2b1/bandit/blacklists/calls.py#L163",
+          "bandit-code": "B310",
+          "asvs": {
+            "control_id": "5.2.4 Dynamic Code Execution Features",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing-requirements",
+            "section": "V5: Validation, Sanitization and Encoding Verification Requirements",
+            "version": "4"
+          },
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/939.html"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected",
+          "shortlink": "https://sg.run/dKZZ"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      ".dockerignore",
+      ".env",
+      ".env.example",
+      ".gitignore",
+      ".vscode/settings.json",
+      "Dockerfile",
+      "ISSUES.md",
+      "LICENSE.md",
+      "README.md",
+      "SECURITY.md",
+      "assets/__init__.py",
+      "classifier/__init__.py",
+      "classifier/alerts.py",
+      "classifier/api/__init__.py",
+      "classifier/api/app.py",
+      "classifier/cli.py",
+      "classifier/features/__init__.py",
+      "classifier/features/session.py",
+      "classifier/pipeline.py",
+      "classifier/realtime.py",
+      "classifier/rules/__init__.py",
+      "classifier/rules/default_rules.yaml",
+      "classifier/rules/engine.py",
+      "classifier/rules/issue_playbook.py",
+      "classifier/rules/issue_playbook.yaml",
+      "classifier/rules/mitre_playbook.py",
+      "classifier/rules/mitre_playbook.yaml",
+      "classifier/rules/mitre_technique_names.json",
+      "classifier/schemas/__init__.py",
+      "classifier/schemas/session.py",
+      "classifier/scoring/__init__.py",
+      "classifier/scoring/session.py",
+      "classifier/storage/__init__.py",
+      "classifier/storage/cli.py",
+      "classifier/storage/config.py",
+      "classifier/storage/country_centroids.py",
+      "classifier/storage/geolocation.py",
+      "classifier/storage/issue_sync.py",
+      "classifier/storage/models.py",
+      "classifier/storage/repository.py",
+      "classifier/storage/schema.sql",
+      "dashboard/__init__.py",
+      "dashboard/public/alerts.html",
+      "dashboard/public/analytics.html",
+      "dashboard/public/auth.html",
+      "dashboard/public/custom-select.js",
+      "dashboard/public/dashboard.css",
+      "dashboard/public/index.html",
+      "dashboard/public/intelligence.html",
+      "dashboard/public/personas.html",
+      "dashboard/public/sessions.html",
+      "deploy/systemd/echidra-api.service",
+      "deploy/systemd/echidra-honeypot.service",
+      "docker-compose.uhbs-lab.yml",
+      "docker-compose.yml",
+      "docs/CONCEPTS.md",
+      "docs/DEPLOYMENT.md",
+      "docs/TESTING_GUIDE.md",
+      "echidra/__init__.py",
+      "echidra/__main__.py",
+      "echidra/cli.py",
+      "honeypot/core/__init__.py",
+      "honeypot/core/engine.py",
+      "honeypot/core/persona.py",
+      "honeypot/core/session.py",
+      "honeypot/logging/__init__.py",
+      "honeypot/logging/session_logger.py",
+      "honeypot/main.py",
+      "honeypot/network/__init__.py",
+      "honeypot/network/config.py",
+      "honeypot/network/ftp_handler.py",
+      "honeypot/network/http_handler.py",
+      "honeypot/network/protocol_server.py",
+      "honeypot/network/protocol_session.py",
+      "honeypot/network/ssh_keys.py",
+      "honeypot/network/ssh_server.py",
+      "honeypot/network/telnet_handler.py",
+      "pyproject.toml",
+      "requirements.txt",
+      "scripts/sync_mitre_technique_names.py"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.7829380035400391,
+    "profiling_times": {
+      "config_time": 3.0159249305725098,
+      "core_time": 14.32839846611023,
+      "ignores_time": 0.0053632259368896484,
+      "total_time": 17.47550892829895
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 67.25270748138428,
+      "per_file_time": {
+        "mean": 0.3015816478985841,
+        "std_dev": 1.220543617512295
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.7024303181067101,
+        "count_ratio": 0.04484304932735426
+      },
+      "very_slow_files": [
+        {
+          "fpath": "dashboard/public/custom-select.js",
+          "ftime": 2.4411590099334717
+        },
+        {
+          "fpath": "classifier/storage/issue_sync.py",
+          "ftime": 2.8029489517211914
+        },
+        {
+          "fpath": "echidra/cli.py",
+          "ftime": 3.0656039714813232
+        },
+        {
+          "fpath": "honeypot/core/persona.py",
+          "ftime": 3.2046549320220947
+        },
+        {
+          "fpath": "classifier/features/session.py",
+          "ftime": 3.4558210372924805
+        },
+        {
+          "fpath": "classifier/alerts.py",
+          "ftime": 3.626657009124756
+        },
+        {
+          "fpath": "classifier/storage/models.py",
+          "ftime": 4.689646005630493
+        },
+        {
+          "fpath": "honeypot/network/http_handler.py",
+          "ftime": 5.646809816360474
+        },
+        {
+          "fpath": "classifier/api/app.py",
+          "ftime": 8.107839107513428
+        },
+        {
+          "fpath": "classifier/storage/repository.py",
+          "ftime": 10.199200868606567
+        }
+      ]
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at classifier/features/session.py:157:4 [rules: 2, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "classifier/features/session.py",
+          "start": {
+            "line": 157,
+            "col": 5,
+            "offset": 7044
+          },
+          "end": {
+            "line": 157,
+            "col": 29,
+            "offset": 7068
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at honeypot/network/http_handler.py:471:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "honeypot/network/http_handler.py",
+          "start": {
+            "line": 471,
+            "col": 9,
+            "offset": 18387
+          },
+          "end": {
+            "line": 471,
+            "col": 19,
+            "offset": 18397
+          }
+        }
+      }
+    ],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9797721162463193,
+      "rules_selected_ratio": 0.05703495071053642,
+      "rules_matched_ratio": 0.05703495071053642
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 1038336320
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

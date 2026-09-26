@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.0.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "7e613f298780c82ddfe180b18b14720c38c1e3f8ae9a3bc663b0ca95f86b5911"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "7e613f298780c82ddfe180b18b14720c38c1e3f8ae9a3bc663b0ca95f86b5911"
+    },
+    {
+      "path": "report.json",
+      "sha256": "388936484a1cf7ae6e7eeb5c5daa0c25fa4f77b30abee9701eeed2964d468b93"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "7e613f298780c82ddfe180b18b14720c38c1e3f8ae9a3bc663b0ca95f86b5911"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "da4d1d843ad5b250d242dad82d032380c6d648e4daf001897620ad2f981eeb11"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "b5c8fcc219a2d58bd1fe80cd36fbd601be3b256c6c341d92199263a4a2880bee"
+    }
+  ],
+  "extra": {
+    "target": "dionaea-smb",
+    "uhqs": 54.07,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "uhbs_version": "5.0.0",
+  "target": {
+    "name": "flux (http)",
+    "class": "Web-API",
+    "profile_ref": "docs/conformance/labs/flux/web_api_http_full.yaml"
+  },
+  "evaluated_at": "2026-09-26",
+  "auditor": "UHBS-Lab results-5.0.0 refresh (flux-http)",
+  "modules": {
+    "A": {
+      "score": 100.0,
+      "status": "PASSED",
+      "notes": "",
+      "complete": true,
+      "weight": 0.25
+    },
+    "B": {
+      "score": 65.0,
+      "status": "PARTIAL",
+      "notes": "",
+      "complete": true,
+      "weight": 0.2
+    },
+    "C": {
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "notes": "",
+      "complete": false,
+      "weight": 0.2
+    },
+    "D": {
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "notes": "",
+      "complete": false,
+      "critical_control_verdict": "INCOMPLETE"
+    },
+    "E": {
+      "score": 100.0,
+      "status": "PASSED",
+      "notes": "",
+      "complete": true,
+      "weight": 0.15
+    },
+    "F": {
+      "score": 68.14,
+      "status": "PARTIAL",
+      "notes": "",
+      "complete": true,
+      "weight": 0.2
+    }
+  },
+  "weights": {
+    "w_A": 0.25,
+    "w_B": 0.2,
+    "w_C": 0.2,
+    "w_E": 0.15,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 0.0,
+    "delta_c": 0.0,
+    "passed": false,
+    "critical_control_verdict": "INCOMPLETE",
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": null,
+  "grade": null,
+  "notes": "Evaluation proof only. results-5.0.0 refresh of flux-http at 0db4b8b0b87243d2061137212e49311bfbbd38b1. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic.",
+  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+  "assessment_status": "INCOMPLETE",
+  "critical_control_verdict": "INCOMPLETE",
+  "containment_measured": false
+}

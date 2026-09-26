@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "b683c7590f3567d25786fa287a2039fe0a5777ce85ed74dc6e03f22436847067"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "20b0cd5fad2885c474ec90dc2cb276f038ad45d0a3617b60980437f08fe91e57"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "20b0cd5fad2885c474ec90dc2cb276f038ad45d0a3617b60980437f08fe91e57"
+    },
+    {
+      "path": "report.json",
+      "sha256": "32877d2af2e31118384b3d8d84b57a5d5be0bcded70debe4c54cc9002e9357c6"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "c550b19a8757e71343786488c0d3d70f70875acd4446581987c933a8ad0335bc"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "4abef6fe606318e4e118f869acc96bbc7bd33dcee7c0edbdcc633f42ac3b92b3"
+    }
+  ],
+  "extra": {
+    "target": "cowrie-telnet",
+    "uhqs": 53.41,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

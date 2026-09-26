@@ -1,0 +1,75 @@
+{
+  "uhbs_version": "5.0.0",
+  "target": {
+    "name": "sentrypeer (sip)",
+    "class": "Low-Interaction",
+    "profile_ref": "docs/conformance/labs/sentrypeer/low_interaction_sip_full.yaml"
+  },
+  "evaluated_at": "2026-09-26",
+  "auditor": "UHBS-Lab results-5.0.0 refresh (sentrypeer-sip)",
+  "modules": {
+    "A": {
+      "score": 86.43,
+      "status": "PASSED",
+      "notes": "",
+      "complete": true,
+      "weight": 0.3
+    },
+    "B": {
+      "score": 25.0,
+      "status": "PARTIAL",
+      "notes": "",
+      "complete": true,
+      "weight": 0.15
+    },
+    "C": {
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "notes": "",
+      "complete": false,
+      "weight": 0.25
+    },
+    "D": {
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "notes": "",
+      "complete": false,
+      "critical_control_verdict": "INCOMPLETE"
+    },
+    "E": {
+      "score": 100.0,
+      "status": "PASSED",
+      "notes": "",
+      "complete": true,
+      "weight": 0.1
+    },
+    "F": {
+      "score": 66.0,
+      "status": "PARTIAL",
+      "notes": "",
+      "complete": true,
+      "weight": 0.2
+    }
+  },
+  "weights": {
+    "w_A": 0.3,
+    "w_B": 0.15,
+    "w_C": 0.25,
+    "w_E": 0.1,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 0.0,
+    "delta_c": 0.0,
+    "passed": false,
+    "critical_control_verdict": "INCOMPLETE",
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": null,
+  "grade": null,
+  "notes": "Evaluation proof only. results-5.0.0 refresh of sentrypeer-sip at 0340440ef96767cf7ad0f43cf972b2162c327de3. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic.",
+  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+  "assessment_status": "INCOMPLETE",
+  "critical_control_verdict": "INCOMPLETE",
+  "containment_measured": false
+}

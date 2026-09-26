@@ -1,0 +1,70 @@
+{
+  "uhbs_version": "4.0.1",
+  "run_mode": "quick",
+  "evaluated_at": "2026-07-27T18:18:44Z",
+  "proof_label": "miniprint (sa7mon PJL printer honeypot)",
+  "target": {
+    "repository": "https://github.com/sa7mon/miniprint",
+    "git_commit": "494d2fc75b94c19345c2db55d03b5cf74f75e3c2",
+    "class": "Low-Interaction",
+    "protocol": "pjl",
+    "host": "miniprint-lab",
+    "port": 9100,
+    "container_image": "miniprint:lab",
+    "container_image_id": "sha256:49182ecdd8a682f0e72ea83ae3e733ed69930401be34131d876e51794df4b6f4"
+  },
+  "grader": {
+    "package_version": "4.0.1",
+    "uhbs_git_commit": "d0917e31e481078ca95f4e2b1477b6fe0fedaa4f",
+    "docker_image": "uhbs:4.0.1",
+    "docker_image_id": "sha256:3e84c069ad1e343752d5245c7e2189555f6f19db00b8319764fbb08044cd2a16",
+    "tps": "docs/conformance/labs/miniprint/low_interaction_quick.yaml"
+  },
+  "flags": {
+    "UHBS_QUICK": true,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": null,
+    "skip_sast_tools": true,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": null,
+    "plugin": "generic (protocol id pjl)"
+  },
+  "results": {
+    "uhqs": 41.83,
+    "grade": "F",
+    "delta_c": 0.5625,
+    "module_scores": {
+      "A": 65.43,
+      "B": 62.5,
+      "C": 100.0,
+      "D": 75.0,
+      "E": 55.0,
+      "F": 74.33
+    },
+    "safety_gate_passed": false
+  },
+  "limitations": [
+    "No first-class PJL RFC suite \u2014 Module A uses generic TCP connect/banner/timing/fuzz.",
+    "UHBS_QUICK=1 shortens timing samples and lightens Module E.",
+    "telemetry_dir unset \u2192 Module C C1 schema gates largely skipped.",
+    "--skip-sast-tools \u2192 no bandit/semgrep.",
+    "PJL-only decoy (no ports.ssh): Module D skips shell probes; Safety Gate not fully cleared.",
+    "Prefer full/ for claim-grade evaluation.",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement."
+  ]
+}

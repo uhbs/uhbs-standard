@@ -1,0 +1,44 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "0d81ad237e86e54fae50df48f851c5e4fce2ab479aa9fa94122f3523bd1fcbc3"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "3131692705d11f00f944ea77ee433deb390dcb745bd35c0283225e86f2e3480e"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "3131692705d11f00f944ea77ee433deb390dcb745bd35c0283225e86f2e3480e"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "9c9c61fe577a8eb1f0e833f494258226d5a40d73f8bafeeb6af02a92b1ed5ae4"
+    },
+    {
+      "path": "proof/full-run.cast",
+      "sha256": "c8a6a3cfe5f35170243d92af560df50aee56141b0e68115dba3ae1e6f586acec"
+    },
+    {
+      "path": "report.json",
+      "sha256": "bda1ee2d8bdc8d4c7d15fd7eff2ca5cf04d09bbda53967a54a275ae6443e54f2"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "2dd42233b407cba13a874d6ea2e94b80092f5b92e11e57089738583459019ab5"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "9baef1ad11237d871ced1f7aa3ac850811f9c0cd807034264f9fc5b106172770"
+    }
+  ],
+  "extra": {
+    "target": "artillery-generic",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

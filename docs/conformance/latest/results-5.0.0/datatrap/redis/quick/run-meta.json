@@ -1,0 +1,78 @@
+{
+  "uhbs_version": "5.0.0",
+  "run_mode": "quick",
+  "evaluated_at": "2026-09-26T16:37:12Z",
+  "proof_label": "DataTrap (Thales dd-honeypot) (redis)",
+  "target": {
+    "repository": "https://github.com/ThalesGroup/dd-honeypot.git",
+    "git_branch": "main",
+    "git_commit": "c692e8c697647122821f635be2ce362555ce768b",
+    "class": "Low-Interaction",
+    "protocol": "redis",
+    "host": "datatrap-lab",
+    "port": 6379,
+    "container_image": "datatrap:uhbs-lab",
+    "container_image_id": "sha256:c770fa469eac6850e2795447b47c5cd8f26e3051547eaae2f1819ec9774a48e0",
+    "base_image": "python:3.12-alpine",
+    "base_image_reason": "Upstream ThalesGroup/dd-honeypot Dockerfile (python:3.12-alpine); multi-protocol runtime on uhbs-lab without host port publishes.",
+    "container_runtime_strategy": "upstream-dockerfile"
+  },
+  "grader": {
+    "package_version": "5.0.0",
+    "docker_image": "uhbs:5.0.0",
+    "docker_image_id": "sha256:aa436c35214d225126fd90db1dcbe307cbdbda9cad4c831efc068bd8901f6ba6",
+    "inventory": "docs/conformance/labs/datatrap/inventory.yaml",
+    "tps": "docs/conformance/labs/datatrap/low_interaction_redis_quick.yaml",
+    "target_id": "datatrap-redis"
+  },
+  "flags": {
+    "UHBS_QUICK": true,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": true,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "measured_vs_attested": {
+      "airgap": "attested",
+      "egress_gateway_log": "attested-empty-log",
+      "telemetry": "attested-partial"
+    }
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "grade_long": null,
+    "delta_c": 0.0,
+    "module_scores": {
+      "A": 75.19,
+      "B": 75.87,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 100.0,
+      "F": 0.0
+    },
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  },
+  "limitations": [
+    "Published UHBS 5.0.0 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1)."
+  ],
+  "docs_reviewed": []
+}

@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.0.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "61ea315fb02a02ad796c10089d05a4afcdcae092c03f492f22bf511debd6655f"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "61ea315fb02a02ad796c10089d05a4afcdcae092c03f492f22bf511debd6655f"
+    },
+    {
+      "path": "report.json",
+      "sha256": "f6a7c28abc80df070406c54296312ca25b687cb6035fd3ad061354a2516ebefa"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "61ea315fb02a02ad796c10089d05a4afcdcae092c03f492f22bf511debd6655f"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "b95172a32d57591671af261100627712710c9f9a376f76b11815bca2359abd26"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "8ccd7c7506d71cf15a4aeed358dc1d1cfedee7f22bef6180a9c49fe5de91238e"
+    }
+  ],
+  "extra": {
+    "target": "trapster-http",
+    "uhqs": 63.33,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

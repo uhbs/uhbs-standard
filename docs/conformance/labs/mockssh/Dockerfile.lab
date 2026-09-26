@@ -1,0 +1,18 @@
+FROM ubuntu:24.04
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends python3 python3-pip python3-venv ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY . /app
+RUN pip3 install --break-system-packages --no-cache-dir -e .
+
+# Cisco example binds 127.0.0.1:9999; lab entry listens 0.0.0.0:2222 as testadmin/x.
+COPY lab_cisco.py /app/lab_cisco.py
+EXPOSE 2222
+CMD ["python3", "/app/lab_cisco.py"]

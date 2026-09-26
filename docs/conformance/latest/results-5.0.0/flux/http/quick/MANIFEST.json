@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "3dbc970074c7ad5ed84ebb5b23812082a6cdcb3aedcd2fbcfc3278890cc6904e"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "40bb264e6a1193b158b73b0dd0abe0845ef162905d1b2260e4132359d52c9115"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "40bb264e6a1193b158b73b0dd0abe0845ef162905d1b2260e4132359d52c9115"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "368a8149f29f018003beb9e06a5f9bd742080ce3a6a4c8e0f149467a211acbc5"
+    },
+    {
+      "path": "report.json",
+      "sha256": "3f74eeb4976329e5ff1dc1e40b993e4ffa6756d35de78d9feaef3125bf1c660f"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "e605c2abcce30b32a5243b71a6ad80b458ee801bf268ceaa469a968e8079d7b1"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "4a25b8a18bfb62be9b4b0355eb2428beaaeffec43185974f8e0b8b8926f8fc90"
+    }
+  ],
+  "extra": {
+    "target": "flux-http",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

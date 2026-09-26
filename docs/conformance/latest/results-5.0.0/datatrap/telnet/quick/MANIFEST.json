@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "bff89b976e2b6fcd2aa70eb9d14fcd5da6d614661f6cc50f598d0cbc332c262f"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "f2580f72f919f9d7765ebfb8ebe38a0c1f8306c070fcfed75d79fbee42e03233"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "f2580f72f919f9d7765ebfb8ebe38a0c1f8306c070fcfed75d79fbee42e03233"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "cfdb4b777819fd26fa7564a2678bcee0daf84dfc7db51137cb116c049d18e1a2"
+    },
+    {
+      "path": "report.json",
+      "sha256": "748f6c9b1ad58fdefe6c1be257b74df239e411d4210f4d4dba3fadcfd4330170"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "f271a21635f1ee89b488cbddbdb8378867f538e6c2e1be0e3035fb5506b662cb"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "7f39cb3988438ee679bbe3003fdf2555025dd145fbd3dc38351d76753fcef559"
+    }
+  ],
+  "extra": {
+    "target": "datatrap-telnet",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

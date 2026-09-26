@@ -1,0 +1,30 @@
+{
+  "uhbs_version": "4.0.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "4857cceb42b17d927da4d60a72469d25041124e32f5a4186245664c3cf13f689"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "4857cceb42b17d927da4d60a72469d25041124e32f5a4186245664c3cf13f689"
+    },
+    {
+      "path": "report.json",
+      "sha256": "ae598a6937b4a2bc43bab46ca34df46e7ef75b42f2c8046a0be9865b102575b5"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "4857cceb42b17d927da4d60a72469d25041124e32f5a4186245664c3cf13f689"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "d6b6baa88153aa51027e6e03be24defb7400a010ce05c938be3a0b9469f89419"
+    }
+  ],
+  "extra": {
+    "target": "espot",
+    "uhqs": 49.34,
+    "grade": "GRADE F (Fail)"
+  }
+}

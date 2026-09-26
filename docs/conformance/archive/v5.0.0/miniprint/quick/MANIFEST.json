@@ -1,0 +1,30 @@
+{
+  "uhbs_version": "4.0.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "7193e1bd1c953c5bccc9fb12f7e9c8a545cdcdec409bf0c3b514fbc6f4a30ec5"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "7193e1bd1c953c5bccc9fb12f7e9c8a545cdcdec409bf0c3b514fbc6f4a30ec5"
+    },
+    {
+      "path": "report.json",
+      "sha256": "a19b20377d54351a50f2549a3e106c340eef0b119f522675190df9c437642cf3"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "7193e1bd1c953c5bccc9fb12f7e9c8a545cdcdec409bf0c3b514fbc6f4a30ec5"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "901031a620223f7cf40cd8c84f95b313a9436f645cd0c8ce47cf93a9243b2e07"
+    }
+  ],
+  "extra": {
+    "target": "miniprint",
+    "uhqs": 41.83,
+    "grade": "GRADE F (Fail)"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "86ff24def0a3932959d5f776b9e07d6dc05616218b5ac23835b72e540ccee9e2"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "3e7fd642da90e153505eec1b5d54a0df3a1b0cad9285abd9810626cec26ea5d8"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "3e7fd642da90e153505eec1b5d54a0df3a1b0cad9285abd9810626cec26ea5d8"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "96d26cd3d0bca3fc48c0e87d7e9df08d7486345fa8bc8d6f23e47913bf9b7115"
+    },
+    {
+      "path": "report.json",
+      "sha256": "1ea9a275bba9dfad2792f6eee9e37c362eed5e25c6e754f236544a936f1a760d"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "e04acae8e8b3141858463479d18793ebaa9bd1bba5b79f9026ecf43e7630f54c"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "84363a5bc1aa3791ce7f90d1eff8a02c0478159e378a0152de8063ec4aa6fc7b"
+    }
+  ],
+  "extra": {
+    "target": "datatrap-postgres",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}
