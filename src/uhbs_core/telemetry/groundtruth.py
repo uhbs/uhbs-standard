@@ -106,20 +106,37 @@ def match_ground_truth(
     recall = (matched / expected) if expected else 0.0
     late_or_missing = expected - matched
 
-    # Field accuracy: presence of required fields across matched-looking records
+    # Field accuracy: presence of required fields (with common synonyms) across
+    # records. Keep aligned with Module C3 observable heuristics.
     req = required_fields or ["timestamp", "source", "message"]
+    synonyms = {
+        "event_time": ["timestamp", "@timestamp", "event_time", "time", "created"],
+        "timestamp": ["timestamp", "@timestamp", "event_time", "time", "created"],
+        "source_endpoint": ["src", "source", "src_ip", "client_ip", "srcip"],
+        "source": ["src", "source", "src_ip", "client_ip", "srcip"],
+        "destination_endpoint": ["dst", "destination", "dest", "dst_ip"],
+        "protocol_action": [
+            "action",
+            "event.action",
+            "verb",
+            "method",
+            "command",
+            "eventid",
+            "input",
+        ],
+        "message": ["message", "msg", "input", "command"],
+    }
     field_hits = 0
     field_total = 0
     for row in records:
         if not isinstance(row, dict):
             continue
         flat_keys = {str(k).lower() for k in row}
-        # also consider nested common keys
         text = json.dumps(row).lower()
         for f in req:
             field_total += 1
-            fl = f.lower()
-            if fl in flat_keys or fl in text:
+            keys = synonyms.get(f, synonyms.get(f.lower(), [f]))
+            if any(k.lower() in flat_keys or k.lower() in text for k in keys):
                 field_hits += 1
     field_accuracy = (field_hits / field_total) if field_total else 0.0
     duplicate_rate = (dupes / max(matched, 1)) if matched else (float(dupes) if dupes else 0.0)
@@ -135,6 +152,18 @@ def match_ground_truth(
         median_latency_s=None,
         detail=f"matched={matched}/{expected} dups={dupes}",
     )
+
+
+# Family token embedded in each injection command (must match assess lookup).
+# Keys are payload ids; values are the short tokens written into UHBS_INJECT lines.
+INJECT_FAMILY_TOKEN: dict[str, str] = {
+    "ansi": "ANSI",
+    "json_break": "JSON",
+    "null_byte": "NULL",
+    "cr_inject": "CR",
+    "formula": "XLS",
+    "unicode": "UNI",
+}
 
 
 def injection_payloads(run_id: str) -> list[tuple[str, str]]:
@@ -158,16 +187,19 @@ def assess_sink_resilience(
 
     Requires the current ``run_id`` in every credited marker so prior-run
     ``UHBS_INJECT:*`` lines cannot satisfy this assessment.
+
+    Family tokens must match what ``injection_payloads`` embeds (e.g. ``JSON``
+    for payload id ``json_break``), not a naive ``pid.upper()``.
     """
     blob = _blobify(records)
     blob_upper = blob.upper()
     run_token = f"UHBS_INJECT:{run_id}"
     found = []
     for pid in payload_ids:
-        # Prefer family-specific token; fall back to run_id + payload family.
-        family = f"{run_token}:{pid.upper()}"
+        token = INJECT_FAMILY_TOKEN.get(pid, pid.upper())
+        family = f"{run_token}:{token}"
         if family.upper() in blob_upper or (
-            run_token in blob and pid.upper() in blob_upper
+            run_token in blob and token.upper() in blob_upper
         ):
             found.append(pid)
 

@@ -274,13 +274,58 @@ def test_ground_truth_matching_and_injection() -> None:
     assert 0.0 <= metrics.recall <= 1.0
     payloads = injection_payloads(run_id)
     assert len(payloads) >= 4
+    # Family tokens must match what injection_payloads embeds (JSON not JSON_BREAK).
     sink = assess_sink_resilience(
-        [{"msg": f"UHBS_INJECT:{run_id}:ANSI:x"}, {"msg": f"UHBS_INJECT:{run_id}:JSON:y"}],
+        [
+            {"msg": f"UHBS_INJECT:{run_id}:ANSI:x"},
+            {"msg": f"UHBS_INJECT:{run_id}:JSON:y"},
+            {"msg": f"UHBS_INJECT:{run_id}:NULL:z"},
+            {"msg": f"UHBS_INJECT:{run_id}:CR:w"},
+            {"msg": f"UHBS_INJECT:{run_id}:XLS:v"},
+            {"msg": f"UHBS_INJECT:{run_id}:UNI:u"},
+        ],
         run_id,
-        ["ansi", "json_break"],
+        ["ansi", "json_break", "null_byte", "cr_inject", "formula", "unicode"],
     )
     assert sink["json_parse_ok"] is True
     assert "ansi" in sink["markers_found"]
+    assert "json_break" in sink["markers_found"]
+    assert sink["ok"] is True
+
+
+def test_iter_records_prefers_newest_tail(tmp_path: Path) -> None:
+    """Busy append-only sinks must not hide C2 markers behind an 800-record head."""
+    from uhbs_core.test_telemetry import _iter_records
+
+    path = tmp_path / "busy.json"
+    lines = [json.dumps({"seq": i, "msg": f"old-{i}"}) for i in range(1200)]
+    lines.append(json.dumps({"seq": 1200, "msg": "UHBS_INJECT:runX:ANSI:tail"}))
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    rows = _iter_records(path, limit=800)
+    assert len(rows) == 800
+    blob = json.dumps(rows)
+    assert "UHBS_INJECT:runX:ANSI:tail" in blob
+    assert rows[-1]["seq"] == 1200
+    assert "old-0" not in blob
+
+
+def test_iter_records_pins_current_run_markers(tmp_path: Path) -> None:
+    """Markers mid-file are kept when must_include_substr is the current run id."""
+    from uhbs_core.test_telemetry import _iter_records
+
+    path = tmp_path / "busy.json"
+    lines = [json.dumps({"seq": i, "msg": f"old-{i}"}) for i in range(500)]
+    lines.append(json.dumps({"seq": 500, "msg": "UHBS_INJECT:runMid:JSON:x"}))
+    lines.extend(json.dumps({"seq": i, "msg": f"new-{i}"}) for i in range(501, 1400))
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    rows = _iter_records(
+        path,
+        limit=800,
+        must_include_substr="UHBS_INJECT:runMid",
+    )
+    blob = json.dumps(rows)
+    assert "UHBS_INJECT:runMid:JSON:x" in blob
+    assert any(r.get("seq") == 500 for r in rows if isinstance(r, dict))
 
 
 # --- ATT&CK -------------------------------------------------------------------

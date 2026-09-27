@@ -1,10 +1,17 @@
 #!/usr/bin/env python3
 """Module D — Safety, Containment & Boundary Controls (UHBS v5.0.0).
 
-Critical controls produce a containment verdict (GATE_PASSED / GATE_FAILED /
-INCOMPLETE). Non-critical hardening contributes a defense-in-depth diagnostic
-score only. Attestation env vars never satisfy a technical control. The v4
-``max(score, 95)`` floor and non-SSH attestation ladder are removed.
+Critical controls (container escape, gateway canary hits) produce a containment
+verdict (GATE_PASSED / GATE_FAILED / INCOMPLETE).
+
+Outbound egress probes (ICMP/DNS/TCP/HTTP/S) are **scored penalties**: each
+failure lowers Module D's diagnostic score proportionally. They do **not**
+alone zero Module D or flip the Safety Gate — observers cannot know whether a
+given channel is required for the decoy's role; they only assess what was
+observed.
+
+Attestation env vars never satisfy a technical control. The v4 ``max(score, 95)``
+floor and non-SSH attestation ladder are removed.
 """
 
 from __future__ import annotations
@@ -28,6 +35,31 @@ from uhbs_core.tps import TPS  # noqa: E402
 
 # Whole-word canary token — avoid substring false positives ("WHITE", "ARCHITECT").
 _CANARY_HIT_RE = re.compile(r"(?:^|[^A-Z0-9_])HIT(?:[^A-Z0-9_]|$)", re.IGNORECASE)
+
+# Catalog ids that trip the Safety Gate on FAIL (escape / active exfil evidence).
+_GATE_CRITICAL_CATALOGS = frozenset({"D1.critical", "D2.critical"})
+
+
+def score_containment_penalty(checks: list[CheckResult]) -> float:
+    """Arithmetic mean of PASS/FAIL technical checks (0–100).
+
+    Egress and other scored failures reduce the result in proportion to how many
+    checks failed. Unlike ``score_checks``, a single FAIL does **not** circuit-
+    break the whole module to zero.
+    """
+    scored = [
+        c
+        for c in checks
+        if c.outcome in {CheckOutcome.PASS, CheckOutcome.FAIL}
+        and (c.catalog_id or "") != "D1.meta"
+        and c.id != "d1.airgap_attested"
+    ]
+    if not scored:
+        return 0.0
+    return round(
+        100.0 * sum(1 for c in scored if c.outcome == CheckOutcome.PASS) / len(scored),
+        2,
+    )
 
 
 def _gateway_canary_hits() -> CheckResult:
@@ -113,37 +145,24 @@ def _airgap_metadata() -> CheckResult:
 
 
 def _verdict_from_critical(checks: list[CheckResult]) -> ContainmentVerdict:
-    critical = [c for c in checks if c.critical or (c.catalog_id or "").endswith(".critical")]
-    if not critical:
-        # Also treat catalog D*.critical ids
-        critical = [c for c in checks if (c.catalog_id or "").startswith("D") and "critical" in (c.catalog_id or "")]
-    applicable_critical = [
-        c
-        for c in checks
-        if c.critical
-        or (c.catalog_id or "").endswith("critical")
-        or (c.catalog_id or "") == "D1.critical"
-        or (c.catalog_id or "") == "D2.critical"
-    ]
-    if not applicable_critical:
-        applicable_critical = [c for c in checks if c.critical]
+    """Safety Gate from escape/exfil critical controls only.
 
-    if any(c.outcome in {CheckOutcome.NOT_TESTED, CheckOutcome.ERROR} and c.mandatory for c in checks if c.critical or (c.catalog_id or "").endswith("critical") or c.catalog_id in {"D1.critical", "D2.critical"}):
-        return ContainmentVerdict.INCOMPLETE
-    # Broader: any mandatory critical-path NOT_TESTED/ERROR
+    Scored egress probes (``D1.scored``) affect Module D's penalty score but do
+    not alone produce GATE_FAILED.
+    """
     crit_set = [
         c
         for c in checks
-        if c.critical or c.catalog_id in {"D1.critical", "D2.critical"} or str(c.catalog_id or "").endswith(".critical")
+        if c.critical or (c.catalog_id or "") in _GATE_CRITICAL_CATALOGS
     ]
+    if not crit_set:
+        return ContainmentVerdict.INCOMPLETE
     if any(c.outcome in {CheckOutcome.NOT_TESTED, CheckOutcome.ERROR} for c in crit_set):
         return ContainmentVerdict.INCOMPLETE
     if any(c.outcome == CheckOutcome.FAIL for c in crit_set):
         return ContainmentVerdict.GATE_FAILED
-    if crit_set and all(c.outcome == CheckOutcome.PASS for c in crit_set):
+    if all(c.outcome == CheckOutcome.PASS for c in crit_set):
         return ContainmentVerdict.GATE_PASSED
-    if not crit_set:
-        return ContainmentVerdict.INCOMPLETE
     return ContainmentVerdict.INCOMPLETE
 
 
@@ -290,10 +309,11 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
             continue
         text = (out.stdout or "") + (out.stderr or "")
         leaked = "EXIT:0" in text
-        if leaked and not allow_egress:
-            breakout = True
         expect_block = not allow_egress
         passed = (not leaked) if expect_block else leaked
+        # Egress is assessed as a scored penalty — not a Safety Gate trip.
+        # Observers record what left the sandbox; they do not decide whether a
+        # given channel is required for the decoy's role.
         checks.append(
             CheckResult.make(
                 id=cid,
@@ -302,14 +322,17 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
                 detail=(
                     "egress blocked"
                     if not leaked
-                    else ("OOB LEAK" if expect_block else "egress allowed by TPS")
+                    else ("OOB observed" if expect_block else "egress allowed by TPS")
                 ),
                 score=100.0 if passed else 0.0,
                 evidence=[text[:240]],
-                critical=True,
+                critical=False,
                 mandatory=True,
-                catalog_id="D1.critical",
-                criterion="unauthorized egress blocked unless TPS allows outbound",
+                catalog_id="D1.scored",
+                criterion=(
+                    "unauthorized egress is penalized in Module D score; "
+                    "it does not alone fail the Safety Gate"
+                ),
             )
         )
 
@@ -511,19 +534,24 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
             )
         )
 
-    # Verdict is critical-controls only. Non-critical D3/DiD failures set
-    # breakout for the diagnostic score but must not override GATE_PASSED.
+    # Verdict is escape/exfil critical-controls only. Scored egress failures
+    # lower Module D via penalty averaging and must not override GATE_PASSED.
     verdict = _verdict_from_critical(checks)
 
-    # Defense-in-depth diagnostic: geometric mean over scored critical + DiD checks
-    did_checks = [c for c in checks if not c.critical and c.outcome in {CheckOutcome.PASS, CheckOutcome.FAIL}]
-    crit_scored = [
-        c for c in checks if c.critical and c.outcome in {CheckOutcome.PASS, CheckOutcome.FAIL}
-    ]
-    from uhbs_core.check_scoring import score_checks
-
-    did_score = score_checks(crit_scored + did_checks) if (crit_scored or did_checks) else 0.0
-    if breakout:
+    # Penalty score: share of PASS among PASS/FAIL technical checks.
+    # Do not use score_checks() here — its critical circuit-breaker would zero
+    # the module on a single egress FAIL, which is exactly what we removed.
+    did_score = score_containment_penalty(checks)
+    # True escape / canary HIT still collapses the diagnostic score.
+    escape_fail = any(
+        c.outcome == CheckOutcome.FAIL
+        and (
+            c.critical
+            or (c.catalog_id or "") in _GATE_CRITICAL_CATALOGS
+        )
+        for c in checks
+    )
+    if escape_fail or breakout:
         did_score = 0.0
 
     agg = summarize_checks(checks)
@@ -544,10 +572,11 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
             "allowed_outbound_traffic": allow_egress,
             "shell_exec": True,
             "defense_in_depth_score": round(did_score, 2),
+            "scoring": "penalty-mean",
         },
         notes=[
-            "UHBS v5: containment verdict from critical controls; "
-            "defense-in-depth score is diagnostic only; no 95-point floor",
+            "UHBS v5: Safety Gate from escape/exfil critical controls; "
+            "egress probes are proportional penalties (not a hard zero)",
         ],
         complete=verdict != ContainmentVerdict.INCOMPLETE and agg.complete,
         applicable_checks=agg.applicable,

@@ -32,8 +32,8 @@ def test_d3_breakout_does_not_override_critical_gate_passed() -> None:
             team="blue",
             outcome=CheckOutcome.PASS,
             score=100.0,
-            critical=True,
-            catalog_id="D1.critical",
+            critical=False,
+            catalog_id="D1.scored",
         ),
         CheckResult.make(
             id="d2.runtime_escape_surface",
@@ -53,6 +53,73 @@ def test_d3_breakout_does_not_override_critical_gate_passed() -> None:
         ),
     ]
     assert _verdict_from_critical(checks) == ContainmentVerdict.GATE_PASSED
+
+
+def test_egress_fails_are_penalty_not_gate_zero() -> None:
+    """ICMP/DNS/TCP observed egress lowers D score; does not GATE_FAILED alone."""
+    from uhbs_core.test_safety import score_containment_penalty
+
+    checks = [
+        CheckResult.make(
+            id="d1.egress_icmp",
+            team="blue",
+            outcome=CheckOutcome.FAIL,
+            score=0.0,
+            critical=False,
+            catalog_id="D1.scored",
+        ),
+        CheckResult.make(
+            id="d1.egress_dns",
+            team="blue",
+            outcome=CheckOutcome.FAIL,
+            score=0.0,
+            critical=False,
+            catalog_id="D1.scored",
+        ),
+        CheckResult.make(
+            id="d1.egress_tcp",
+            team="blue",
+            outcome=CheckOutcome.FAIL,
+            score=0.0,
+            critical=False,
+            catalog_id="D1.scored",
+        ),
+        CheckResult.make(
+            id="d1.egress_https",
+            team="blue",
+            outcome=CheckOutcome.PASS,
+            score=100.0,
+            critical=False,
+            catalog_id="D1.scored",
+        ),
+        CheckResult.make(
+            id="d1.egress_http",
+            team="blue",
+            outcome=CheckOutcome.PASS,
+            score=100.0,
+            critical=False,
+            catalog_id="D1.scored",
+        ),
+        CheckResult.make(
+            id="d2.docker_sock",
+            team="blue",
+            outcome=CheckOutcome.PASS,
+            score=100.0,
+            critical=True,
+            catalog_id="D2.critical",
+        ),
+        CheckResult.make(
+            id="d2.cgroup_escape_surface",
+            team="blue",
+            outcome=CheckOutcome.PASS,
+            score=100.0,
+            critical=True,
+            catalog_id="D2.critical",
+        ),
+    ]
+    assert _verdict_from_critical(checks) == ContainmentVerdict.GATE_PASSED
+    # 4 PASS / 7 checks → ~57.14 — not zero
+    assert score_containment_penalty(checks) == pytest.approx(57.14, abs=0.02)
 
 
 def test_gateway_canary_ignores_hit_substrings(tmp_path: Path, monkeypatch) -> None:
@@ -232,6 +299,33 @@ def test_c2_requires_current_run_id_markers() -> None:
     records = [{"msg": "UHBS_INJECT:oldrun:ANSI:x"}, {"msg": "UHBS_INJECT:oldrun:JSON:y"}]
     assessment = assess_sink_resilience(records, "newrun", ["ansi", "json_break"])
     assert assessment["ok"] is False
+
+
+def test_c2_matches_payload_family_tokens_not_pid_upper() -> None:
+    # Payload ids are json_break/null_byte/… but sink lines use JSON/NULL/….
+    run_id = "curr"
+    records = [
+        {"msg": f"UHBS_INJECT:{run_id}:ANSI:x"},
+        {"msg": f"UHBS_INJECT:{run_id}:JSON:y"},
+        {"msg": f"UHBS_INJECT:{run_id}:NULL:z"},
+        {"msg": f"UHBS_INJECT:{run_id}:CR:w"},
+        {"msg": f"UHBS_INJECT:{run_id}:XLS:v"},
+        {"msg": f"UHBS_INJECT:{run_id}:UNI:u"},
+    ]
+    assessment = assess_sink_resilience(
+        records,
+        run_id,
+        ["ansi", "json_break", "null_byte", "cr_inject", "formula", "unicode"],
+    )
+    assert assessment["ok"] is True
+    assert set(assessment["markers_found"]) == {
+        "ansi",
+        "json_break",
+        "null_byte",
+        "cr_inject",
+        "formula",
+        "unicode",
+    }
 
 
 def test_attack_pins_share_primary_techniques() -> None:

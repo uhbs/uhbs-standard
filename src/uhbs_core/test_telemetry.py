@@ -58,7 +58,31 @@ def _iter_jsonl_lines(text: str, *, limit: int, rows: list[Any]) -> None:
             return
 
 
-def _iter_records(path: Path, limit: int = 800) -> List[Any]:
+def _record_text(row: Any) -> str:
+    try:
+        return json.dumps(row, sort_keys=True, default=str)
+    except (TypeError, ValueError):
+        return str(row)
+
+
+def _iter_records(
+    path: Path,
+    limit: int = 800,
+    *,
+    prefer_recent: bool = True,
+    must_include_substr: str | None = None,
+) -> List[Any]:
+    """Load telemetry records from a file or directory.
+
+    Append-only honeypot sinks grow at the tail. C2/C4 inject markers during the
+    run and re-read the sink, so the default is to keep the *newest* ``limit``
+    records rather than the oldest head (which permanently misses new events on
+    busy logs).
+
+    When ``must_include_substr`` is set (typically ``UHBS_INJECT:<run_id>``), any
+    matching records from the broader scan are pinned into the returned window
+    so interleaved background traffic cannot drop the current run's markers.
+    """
     rows: List[Any] = []
     files: List[Path]
     if path.is_file():
@@ -67,6 +91,11 @@ def _iter_records(path: Path, limit: int = 800) -> List[Any]:
         files = sorted(path.rglob("*.jsonl")) + sorted(path.rglob("*.json"))
     else:
         return rows
+
+    # Collect beyond ``limit`` when preferring recent so we can slice the tail.
+    # Cap the scan to avoid unbounded memory on multi-GB sinks.
+    scan_cap = max(limit * 20, limit) if prefer_recent or must_include_substr else limit
+
     for fp in files[:60]:
         try:
             text = fp.read_text(encoding="utf-8", errors="replace")
@@ -77,16 +106,45 @@ def _iter_records(path: Path, limit: int = 800) -> List[Any]:
                 rows.append(json.loads(text))
             except json.JSONDecodeError:
                 before = len(rows)
-                _iter_jsonl_lines(text, limit=limit, rows=rows)
+                _iter_jsonl_lines(text, limit=scan_cap - len(rows), rows=rows)
                 if len(rows) == before:
                     rows.append({"__malformed__": str(fp)})
-            if len(rows) >= limit:
-                return rows
+            if len(rows) >= scan_cap:
+                break
             continue
-        _iter_jsonl_lines(text, limit=limit, rows=rows)
-        if len(rows) >= limit:
-            return rows
-    return rows
+        _iter_jsonl_lines(text, limit=scan_cap - len(rows), rows=rows)
+        if len(rows) >= scan_cap:
+            break
+
+    if prefer_recent and len(rows) > limit:
+        window = rows[-limit:]
+    else:
+        window = rows[:limit] if len(rows) > limit else list(rows)
+
+    if not must_include_substr:
+        return window
+
+    pinned = [r for r in rows if must_include_substr in _record_text(r)]
+    if not pinned:
+        return window
+
+    # Preserve order: pinned current-run markers first, then recent window.
+    seen: set[int] = set()
+    out: list[Any] = []
+    for r in pinned + window:
+        key = id(r)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(r)
+    # Keep a bound similar to limit + pinned (pinned is small: a few injects).
+    if len(out) > limit + len(pinned):
+        # Drop oldest non-pinned from the tail of window portion.
+        pinned_ids = {id(r) for r in pinned}
+        extras = [r for r in out if id(r) not in pinned_ids]
+        keep_extras = max(0, limit)
+        out = pinned + extras[-keep_extras:]
+    return out
 
 
 def _flatten(obj: Any) -> List[Any]:
@@ -338,8 +396,12 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
             )
             # Shell acceptance is evidence of delivery attempt, not the score.
             _ = out
-        # Re-read sink after injection — subsequent checks must use this snapshot.
-        rows_after = _iter_records(tdir)  # type: ignore[arg-type]
+        # Re-read sink after injection — pin current run markers so background
+        # traffic cannot push them out of the recent window.
+        rows_after = _iter_records(
+            tdir,  # type: ignore[arg-type]
+            must_include_substr=f"UHBS_INJECT:{run_id}",
+        )
         flat_after: list[Any] = []
         for r in rows_after:
             if isinstance(r, dict) and "__malformed__" not in r:
