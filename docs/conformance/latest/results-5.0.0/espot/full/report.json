@@ -1,6 +1,6 @@
 {
   "framework": "Universal Honeypot Benchmarking Standard (UHBS) v5.0.0",
-  "scoring_model_id": "uhqs-v5.1-always-grade",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",
   "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
@@ -27,8 +27,8 @@
     "C": 0.0,
     "S_E": 100.0,
     "S_F": 66.64,
-    "delta_c": 0.75,
-    "uhqs": 47.26,
+    "delta_c": 1.0,
+    "uhqs": 78.77,
     "weights": {
       "protocol": 0.25,
       "behavior": 0.2,
@@ -37,13 +37,13 @@
       "static": 0.2
     },
     "profile_class": "Web-API",
-    "grade": "F",
+    "grade": "C",
     "phase": "profile+static+sandbox+dynamic+score",
     "version": "5.0.0",
     "containment_measured": false,
     "assessment_status": "INCOMPLETE",
     "critical_control_verdict": "INCOMPLETE",
-    "scoring_model_id": "uhqs-v5.1-always-grade",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
     "graded": true
   },
   "hqs": {
@@ -54,8 +54,8 @@
     "C": 0.0,
     "S_E": 100.0,
     "S_F": 66.64,
-    "delta_c": 0.75,
-    "uhqs": 47.26,
+    "delta_c": 1.0,
+    "uhqs": 78.77,
     "weights": {
       "protocol": 0.25,
       "behavior": 0.2,
@@ -64,13 +64,13 @@
       "static": 0.2
     },
     "profile_class": "Web-API",
-    "grade": "F",
+    "grade": "C",
     "phase": "profile+static+sandbox+dynamic+score",
     "version": "5.0.0",
     "containment_measured": false,
     "assessment_status": "INCOMPLETE",
     "critical_control_verdict": "INCOMPLETE",
-    "scoring_model_id": "uhqs-v5.1-always-grade",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
     "graded": true
   },
   "modules": [

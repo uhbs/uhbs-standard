@@ -60,15 +60,15 @@
   },
   "safety_gate": {
     "containment_score": 0.0,
-    "delta_c": 0.75,
+    "delta_c": 1.0,
     "passed": false,
     "critical_control_verdict": "INCOMPLETE",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 39.61,
-  "grade": "F",
+  "uhqs": 66.01,
+  "grade": "D",
   "notes": "Evaluation proof only. results-5.0.0 refresh of owasp-python-honeypot-http at 5482fdcc0b828a5d3acf354910843b907e92032a. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
-  "scoring_model_id": "uhqs-v5.1-always-grade",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",
   "containment_measured": false

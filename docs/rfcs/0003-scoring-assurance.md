@@ -212,6 +212,15 @@ Letter grade is always assigned from UHQS bands when modules are present. Verdic
 
 Historical artifacts under `uhqs-v5.0-critical-gate-diagnostic` remain valid for their published `scoring_model_id`; do not recalculate them as if they used always-grade unless explicitly regraded.
 
+## Amendment — measured-renorm (2026-09-27)
+
+**Refines** always-grade under `scoring_model_id = uhqs-v5.2-measured-renorm`.
+
+- Unmeasured / incomplete composite modules (A/B/C/E/F) are **excluded** from the weighted sum; remaining weights are renormalized. A harness telemetry gap must not score as product C=0.
+- `INCOMPLETE` assessment/verdict is a **status label only** (\(\delta_C = 1.0\)).
+- Only `GATE_FAILED` applies \(\delta_C = 0.5\).
+- Letter grade always published when module scores exist.
+
 ## References
 
 - [calibration/v5-sensitivity.md](calibration/v5-sensitivity.md)

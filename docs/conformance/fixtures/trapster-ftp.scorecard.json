@@ -1,6 +1,6 @@
 {
   "uhbs_version": "5.0.0",
-  "scoring_model_id": "uhqs-v5.1-always-grade",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",
   "containment_measured": false,
@@ -63,11 +63,11 @@
   },
   "safety_gate": {
     "containment_score": 0.0,
-    "delta_c": 0.75,
+    "delta_c": 1.0,
     "passed": false,
     "critical_control_verdict": "INCOMPLETE"
   },
-  "uhqs": 35.66,
-  "grade": "F",
+  "uhqs": 63.4,
+  "grade": "D",
   "notes": "Evaluation proof only. Upstream https://github.com/0xBallpoint/trapster-community.git@c6cc6638e9cc9fd28e38ec6846f2b92cbf01d2b7. UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Do not transplant archived 4.x letter grades. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor)."
 }

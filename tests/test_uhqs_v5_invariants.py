@@ -27,7 +27,7 @@ def _scores(**overrides: float) -> dict[str, float]:
 
 
 def test_scoring_model_id_is_pinned() -> None:
-    assert SCORING_MODEL_ID == "uhqs-v5.1-always-grade"
+    assert SCORING_MODEL_ID == "uhqs-v5.2-measured-renorm"
 
 
 def test_incomplete_assessment_still_graded() -> None:
@@ -37,10 +37,24 @@ def test_incomplete_assessment_still_graded() -> None:
         assessment_status=AssessmentStatus.INCOMPLETE,
         critical_control_verdict=CriticalControlVerdict.INCOMPLETE,
     )
-    assert result.uhqs == 60.0  # 80 * 0.75
+    # INCOMPLETE no longer discounts δ_C; all modules measured → full weighted sum.
+    assert result.uhqs == 80.0
     assert result.graded is True
-    assert result.delta_c == 0.75
-    assert letter_grade(result.uhqs) == "D"
+    assert result.delta_c == 1.0
+    assert letter_grade(result.uhqs) == "B"
+
+
+def test_unmeasured_module_excluded_from_composite() -> None:
+    result = compute_uhqs(
+        {"A": 100, "B": 65, "C": 0, "D": 0, "E": 100, "F": 70},
+        profile_class="Web-API",
+        assessment_status=AssessmentStatus.INCOMPLETE,
+        critical_control_verdict=CriticalControlVerdict.INCOMPLETE,
+        measured_modules={"A": True, "B": True, "C": False, "E": True, "F": True},
+    )
+    assert result.uhqs == 83.75
+    assert letter_grade(result.uhqs) == "B"
+    assert result.delta_c == 1.0
 
 
 def test_gate_failed_still_graded() -> None:

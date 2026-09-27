@@ -1,20 +1,22 @@
 """Normative UHQS math — single source of truth for CLI and UHBS-Lab.
 
-scoring_model_id: uhqs-v5.1-always-grade
+scoring_model_id: uhqs-v5.2-measured-renorm
 
 Always publish a composite UHQS and letter grade when module scores are present.
-The Safety Gate is a **factor**, not an eligibility cliff:
+The Safety Gate is a **factor**, not an eligibility cliff.
 
-    base = w_A·S_A + w_B·S_B + w_C·S_C + w_E·S_E + w_F·S_F
+Unmeasured / incomplete modules (A/B/C/E/F) are **excluded** from the weighted
+sum and remaining weights are renormalized — a harness gap must not score as 0.
 
-    GATE_PASSED   → D=100, δ_C=1.0
-    GATE_FAILED   → D=0,   δ_C=0.5
-    INCOMPLETE    → D=50,  δ_C=0.75
+    base = Σ (w_i · S_i) / Σ w_i   for measured i ∈ {A,B,C,E,F}
+
+    GATE_PASSED / INCOMPLETE → δ_C = 1.0
+    GATE_FAILED              → δ_C = 0.5
 
     UHQS = base × δ_C
 
-Module D stays out of the weighted sum; δ_C is how containment adjusts the
-composite. Verdict fields remain on the scorecard for transparency.
+Module D stays out of the weighted sum; δ_C is how a failed gate adjusts the
+composite. Verdict / assessment_status remain on the scorecard for transparency.
 
 Both ``uhbs_cli.scoring`` and ``uhbs_core.models`` MUST import from here.
 """
@@ -27,7 +29,7 @@ from enum import StrEnum
 from typing import Any
 
 # Immutable scoring-model identity (do not conflate with uhbs_version).
-SCORING_MODEL_ID = "uhqs-v5.1-always-grade"
+SCORING_MODEL_ID = "uhqs-v5.2-measured-renorm"
 
 # Letter keys (scorecards / CLI) ↔ dimension keys (harness)
 LETTER_TO_DIM = {
@@ -61,13 +63,16 @@ DIM_ALIASES = {
 
 WEIGHT_KEYS = ("w_A", "w_B", "w_C", "w_E", "w_F")
 SCORE_KEYS = ("A", "B", "C", "D", "E", "F")
+# Modules that enter the composite (D is gate/diagnostic only).
+COMPOSITE_KEYS = ("A", "B", "C", "E", "F")
 DIM_KEYS = ("protocol", "behavior", "telemetry", "containment", "scale", "static")
 
 # Gate → (Module D factor score, δ_C multiplier). Never nulls UHQS.
+# INCOMPLETE is a status label only — it does not discount the composite.
 GATE_FACTOR: dict[str, tuple[float, float]] = {
     "GATE_PASSED": (100.0, 1.0),
     "GATE_FAILED": (0.0, 0.5),
-    "INCOMPLETE": (50.0, 0.75),
+    "INCOMPLETE": (50.0, 1.0),
 }
 
 # Grade band thresholds (letter → long harness label)
@@ -137,7 +142,7 @@ def safety_gate(
     *,
     critical_control_verdict: CriticalControlVerdict | str | None = None,
 ) -> tuple[float, bool]:
-    """Return (δ_C, passed) under the always-grade model.
+    """Return (δ_C, passed) under the measured-renorm model.
 
     When ``critical_control_verdict`` is provided it is authoritative.
     Legacy callers that pass only a numeric Module D score are treated as
@@ -201,6 +206,65 @@ def normalize_module_scores(scores: Mapping[str, float]) -> dict[str, float]:
     return {DIM_TO_LETTER[d]: by_dim[d] for d in DIM_KEYS}
 
 
+_INCOMPLETE_MODULE_STATUSES = frozenset(
+    {
+        "INCOMPLETE",
+        "NOT_MEASURED",
+        "NOT_TESTED",
+        "NOT_RUN",
+        "SKIPPED",
+        "N/A",
+        "ERROR",
+    }
+)
+
+
+def measured_modules_from_results(modules: Mapping[str, Any]) -> dict[str, bool]:
+    """Derive which composite modules were actually measured.
+
+    A module counts as unmeasured when ``complete is False`` or its status is
+    an incomplete sentinel. Module D is ignored (not in the composite).
+    """
+    out: dict[str, bool] = {k: True for k in COMPOSITE_KEYS}
+    for key in COMPOSITE_KEYS:
+        mod = modules.get(key) or {}
+        status = str(mod.get("status", "")).upper().replace(" ", "_")
+        if mod.get("complete") is False:
+            out[key] = False
+        elif mod.get("complete") is not True and status in _INCOMPLETE_MODULE_STATUSES:
+            out[key] = False
+        coverage = mod.get("completeness") or {}
+        if coverage.get("complete") is False:
+            out[key] = False
+    return out
+
+
+def composite_base(
+    scores: Mapping[str, float],
+    weights: Mapping[str, float],
+    *,
+    measured_modules: Mapping[str, bool] | None = None,
+) -> float:
+    """Weighted mean over measured composite modules (renormalized)."""
+    measured = {k: True for k in COMPOSITE_KEYS}
+    if measured_modules:
+        for k in COMPOSITE_KEYS:
+            if k in measured_modules:
+                measured[k] = bool(measured_modules[k])
+
+    active = [k for k in COMPOSITE_KEYS if measured[k]]
+    if not active:
+        # Nothing measured — fall back to full set rather than inventing a grade
+        # from an empty set (callers should still pass scores for all modules).
+        active = list(COMPOSITE_KEYS)
+
+    w_sum = sum(float(weights[f"w_{k}"]) for k in active)
+    if w_sum <= 0:
+        raise ValueError("composite weight sum must be > 0")
+    numer = sum(float(weights[f"w_{k}"]) * float(scores[k]) for k in active)
+    return numer / w_sum
+
+
 @dataclass(frozen=True)
 class UhqsComputation:
     """Canonical UHQS computation result (shared by CLI and harness)."""
@@ -216,6 +280,7 @@ class UhqsComputation:
     critical_control_verdict: CriticalControlVerdict
     scoring_model_id: str = SCORING_MODEL_ID
     graded: bool = True
+    measured_modules: dict[str, bool] | None = None
 
 
 def compute_uhqs(
@@ -226,6 +291,7 @@ def compute_uhqs(
     containment_measured: bool = True,
     assessment_status: AssessmentStatus | str = AssessmentStatus.COMPLETE,
     critical_control_verdict: CriticalControlVerdict | str | None = None,
+    measured_modules: Mapping[str, bool] | None = None,
 ) -> UhqsComputation:
     """Compute UHQS from module scores under scoring_model_id.
 
@@ -233,8 +299,8 @@ def compute_uhqs(
     Missing modules raise ``KeyError`` — never silently default to 0.0.
 
     Always returns a numeric UHQS and ``graded=True`` when modules are present.
-    Gate / incompleteness adjust δ_C (and reported Module D factor); they never
-    null the composite.
+    Unmeasured composite modules are excluded and weights renormalized.
+    Only ``GATE_FAILED`` applies δ_C < 1.0.
     """
     normalized = normalize_module_scores(scores)
 
@@ -247,13 +313,13 @@ def compute_uhqs(
     if not ok:
         raise ValueError(f"module_weights must sum to 1.0 (±0.001); got {total}")
 
-    weighted = (
-        float(weights["w_A"]) * normalized["A"]
-        + float(weights["w_B"]) * normalized["B"]
-        + float(weights["w_C"]) * normalized["C"]
-        + float(weights["w_E"]) * normalized["E"]
-        + float(weights["w_F"]) * normalized["F"]
-    )
+    measured = {k: True for k in COMPOSITE_KEYS}
+    if measured_modules:
+        for k in COMPOSITE_KEYS:
+            if k in measured_modules:
+                measured[k] = bool(measured_modules[k])
+
+    weighted = composite_base(normalized, weights, measured_modules=measured)
 
     status = (
         assessment_status
@@ -281,32 +347,24 @@ def compute_uhqs(
                 else CriticalControlVerdict.GATE_FAILED
             )
     except ValueError:
-        # Invalid verdict string → treat as INCOMPLETE factor; still grade.
+        # Invalid verdict string → treat as INCOMPLETE status; still grade.
         verdict = CriticalControlVerdict.INCOMPLETE
         status = AssessmentStatus.INCOMPLETE
 
     if verdict is CriticalControlVerdict.INCOMPLETE and status is AssessmentStatus.COMPLETE:
-        # Keep assessment_status as provided when only the gate is incomplete via
-        # explicit INCOMPLETE verdict with COMPLETE status — prefer honesty:
         if not containment_measured or critical_control_verdict is None:
             status = AssessmentStatus.INCOMPLETE
 
-    # When assessment is INCOMPLETE but verdict was GATE_PASSED/FAILED, keep
-    # the stronger of the two for δ_C: incompleteness still applies the milder
-    # INCOMPLETE factor only when the gate itself is incomplete; otherwise the
-    # gate verdict drives δ_C and assessment_status stays INCOMPLETE for honesty.
-    if status is AssessmentStatus.INCOMPLETE and verdict is CriticalControlVerdict.GATE_PASSED:
-        # Incomplete assessment with a passed gate → use INCOMPLETE factor
-        # (measurement gaps matter more than an unverified pass claim).
-        effective = CriticalControlVerdict.INCOMPLETE
-    elif status is AssessmentStatus.INCOMPLETE and verdict is CriticalControlVerdict.GATE_FAILED:
-        # Failed gate already bites harder (0.5); keep GATE_FAILED.
+    # δ_C follows the containment verdict only. Assessment incompleteness is a
+    # label (and drives measured_modules exclusion) — it must not re-discount.
+    if verdict is CriticalControlVerdict.GATE_FAILED:
         effective = CriticalControlVerdict.GATE_FAILED
+    elif verdict is CriticalControlVerdict.GATE_PASSED:
+        effective = CriticalControlVerdict.GATE_PASSED
     else:
-        effective = verdict
+        effective = CriticalControlVerdict.INCOMPLETE
 
     _d_factor, delta_c = gate_factor(effective)
-    # Module D stays the measured defense-in-depth diagnostic; δ_C carries the gate.
 
     uhqs = round(weighted * delta_c, 2)
     return UhqsComputation(
@@ -321,20 +379,8 @@ def compute_uhqs(
         assessment_status=status,
         critical_control_verdict=verdict,
         graded=True,
+        measured_modules=dict(measured),
     )
-
-
-_INCOMPLETE_MODULE_STATUSES = frozenset(
-    {
-        "INCOMPLETE",
-        "NOT_MEASURED",
-        "NOT_TESTED",
-        "NOT_RUN",
-        "SKIPPED",
-        "N/A",
-        "ERROR",
-    }
-)
 
 
 def assessment_from_module_results(
@@ -354,8 +400,6 @@ def assessment_from_module_results(
         if mod.get("complete") is False:
             incomplete = True
         elif mod.get("complete") is not True and status in _INCOMPLETE_MODULE_STATUSES:
-            # Status alone marks incomplete unless the module explicitly declares
-            # complete=True (e.g. Module F SKIPPED with no source_root).
             incomplete = True
         coverage = mod.get("completeness") or {}
         if coverage.get("complete") is False:
@@ -383,7 +427,6 @@ def assessment_from_module_results(
             }:
                 verdict = CriticalControlVerdict.INCOMPLETE
             else:
-                # Fall back to numeric D score if present
                 try:
                     score = float(d_mod.get("score", 0))
                 except (TypeError, ValueError):

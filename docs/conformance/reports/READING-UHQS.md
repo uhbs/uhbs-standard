@@ -11,16 +11,18 @@
 ## What a published grade is
 
 An always-grade lab run produces a **UHQS** score (0–100) and letter grade under
-a named **class**, protocol, and scoring model (`uhqs-v5.1-always-grade`). Inspect
+a named **class**, protocol, and scoring model (`uhqs-v5.2-measured-renorm`). Inspect
 `assessment_status`, `critical_control_verdict`, and `assurance_level` alongside
-the grade — containment is a **factor** (δ_C), not a veto that deletes the number.
+the grade. Unmeasured modules are **excluded** from the composite (weights
+renormalized). Only `GATE_FAILED` applies δ_C=0.5; incompleteness is a status
+label, not a haircut.
 
 | Module | Question it answers | Blue-team / CTI use |
 | --- | --- | --- |
 | **A — Protocol fidelity** | Does the decoy speak the protocol well enough to look like a real service? | Whether scanners and commodity malware will stay engaged long enough to leave telemetry |
 | **B — Behavioral realism** | Do post-connect behaviors (auth, sessions, payloads) feel plausible? | Whether interactive attackers / bots continue; weak B often means “credential logger only” |
-| **C — Telemetry quality** | Can the harness observe useful session evidence from the lab setup? | Whether *this graded lab* produced analyst-usable logs — not a claim about your production SIEM wiring |
-| **D — Safety & containment** | Do critical containment controls pass with evidence? | Factor via δ_C (1.0 / 0.5 / 0.75); verdict stays on the card; defense-in-depth diagnostics remain visible |
+| **C — Telemetry quality** | Can the harness observe useful session evidence from the lab setup? | When measured: analyst-usable logs for *this* lab. When unmeasured: excluded from UHQS (does not force F) |
+| **D — Safety & containment** | Do critical containment controls pass with evidence? | Factor via δ_C only on `GATE_FAILED` (0.5); verdict stays on the card |
 | **E — Scalability & latency** | Timing vs TPS P95 expectations | Whether the decoy remains responsive under probe load |
 | **F — Static code audit** | Source-level signals from the checkout used in the lab | Hygiene / supply-chain posture of **that** tree — not a full CVE audit |
 

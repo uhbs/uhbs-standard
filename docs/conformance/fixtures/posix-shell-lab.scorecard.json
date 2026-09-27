@@ -65,7 +65,7 @@
   "uhqs": 80.33,
   "grade": "B",
   "notes": "Sanitized UHBS-Lab proof fixture for CyberHalluciNet (POSIX-Shell, post-hardening). Module scores from SCORECARD; UHQS recomputed via normative formula = 80.33. Meets Production Baseline Profile (UHQS > 80). Product name is evaluation proof only \u2014 not a UHBS requirement. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
-  "scoring_model_id": "uhqs-v5.1-always-grade",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "COMPLETE",
   "critical_control_verdict": "GATE_PASSED",
   "containment_measured": true

@@ -203,9 +203,9 @@ def test_invalid_verdict_string_still_grades() -> None:
         critical_control_verdict="BOGUS",
     )
     assert result.graded is True
-    assert result.uhqs == 60.0  # 80 * 0.75
+    assert result.uhqs == 80.0
     assert result.critical_control_verdict is CriticalControlVerdict.INCOMPLETE
-    assert result.delta_c == 0.75
+    assert result.delta_c == 1.0
 
 
 def test_base_stubs_are_optional_not_tested() -> None:

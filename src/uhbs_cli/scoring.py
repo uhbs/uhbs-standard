@@ -18,6 +18,7 @@ from uhbs_core.uhqs_math import (
     CriticalControlVerdict,
     assessment_from_module_results,
     letter_grade,
+    measured_modules_from_results,
     safety_gate,
     validate_weights,
     weights_for_class,
@@ -74,6 +75,7 @@ def compute_uhqs(
     assessment_status: AssessmentStatus | str = AssessmentStatus.COMPLETE,
     critical_control_verdict: CriticalControlVerdict | str | None = None,
     containment_measured: bool = True,
+    measured_modules: Mapping[str, bool] | None = None,
 ) -> UhqsResult:
     result = _compute_uhqs(
         scores,
@@ -81,6 +83,7 @@ def compute_uhqs(
         assessment_status=assessment_status,
         critical_control_verdict=critical_control_verdict,
         containment_measured=containment_measured,
+        measured_modules=measured_modules,
     )
     return UhqsResult(
         weighted_sum=result.weighted_sum,
@@ -196,6 +199,7 @@ def assert_scorecard_integrity(
         containment_measured=containment_measured,
         assessment_status=status,
         critical_control_verdict=verdict,
+        measured_modules=measured_modules_from_results(modules),
     )
 
     if "uhqs" in scorecard:

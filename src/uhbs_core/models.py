@@ -379,8 +379,9 @@ def compute_uhqs(
     containment_measured: bool = True,
     assessment_status: AssessmentStatus | str = AssessmentStatus.COMPLETE,
     critical_control_verdict: CriticalControlVerdict | str | None = None,
+    measured_modules: dict[str, bool] | None = None,
 ) -> UHQSResult:
-    """UHQS under scoring_model_id (critical-gate + diagnostic modules).
+    """UHQS under scoring_model_id (measured-renorm always-grade).
 
     Missing module scores raise ``KeyError`` (never silently default to 0.0).
     Math is delegated to ``uhbs_core.uhqs_math`` (shared with the CLI).
@@ -391,6 +392,7 @@ def compute_uhqs(
         containment_measured=containment_measured,
         assessment_status=assessment_status,
         critical_control_verdict=critical_control_verdict,
+        measured_modules=measured_modules,
     )
     s = result.scores
     uhqs_val = result.uhqs

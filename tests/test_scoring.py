@@ -57,7 +57,7 @@ def test_gate_failed_is_graded_with_delta() -> None:
     assert result.delta_c == 0.5
 
 
-def test_incomplete_is_graded_with_delta() -> None:
+def test_incomplete_is_graded_without_delta_haircut() -> None:
     weights = {"w_A": 0.20, "w_B": 0.25, "w_C": 0.20, "w_E": 0.15, "w_F": 0.20}
     scores = {"A": 100, "B": 100, "C": 100, "D": 100, "E": 100, "F": 100}
     result = compute_uhqs(
@@ -66,7 +66,6 @@ def test_incomplete_is_graded_with_delta() -> None:
         assessment_status="INCOMPLETE",
         critical_control_verdict=CriticalControlVerdict.GATE_PASSED,
     )
-    # Incomplete assessment with GATE_PASSED claim → INCOMPLETE factor (0.75)
-    assert result.uhqs == 75.0
+    assert result.uhqs == 100.0
     assert result.graded
-    assert result.delta_c == 0.75
+    assert result.delta_c == 1.0

@@ -3,7 +3,7 @@
 ====================================================================================
 Target System         : HellPot-http
 System Profile Class  : Web-API
-Scoring Model         : uhqs-v5.1-always-grade
+Scoring Model         : uhqs-v5.2-measured-renorm
 Assessment Status     : INCOMPLETE
 Critical Controls     : INCOMPLETE
 Protocols             : http
@@ -21,8 +21,8 @@ Module D: Safety & Containment (C)  :   0.0/100       GATE     INCOMPLETE (Modul
 Module E: Scalability & Latency     : 100.0/100       0.15     PASSED (service alive after load (connect 0.4ms))
 Module F: Static Code Audit         :  73.2/100       0.20     PASSED (trivy not installed — not tested (zero credit))
 ------------------------------------------------------------------------------------
-SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=0.75; defense-in-depth C=0.0; composite still published)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : 45.7 / 100
-OVERALL EVALUATION GRADE              : GRADE F (Fail)
-scoring_model_id                      : uhqs-v5.1-always-grade
+SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=1.0; unmeasured modules excluded from composite)
+FINAL COMPOSITE SCORE (UHQS 5.0.0)      : 76.17 / 100
+OVERALL EVALUATION GRADE              : GRADE C (Conditional — not approved for production)
+scoring_model_id                      : uhqs-v5.2-measured-renorm
 ====================================================================================

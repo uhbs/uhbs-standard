@@ -1,6 +1,6 @@
 {
   "framework": "Universal Honeypot Benchmarking Standard (UHBS) v5.0.0",
-  "scoring_model_id": "uhqs-v5.1-always-grade",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "GATE_FAILED",
   "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
@@ -28,7 +28,7 @@
     "S_E": 100.0,
     "S_F": 0.0,
     "delta_c": 0.5,
-    "uhqs": 11.99,
+    "uhqs": 14.98,
     "weights": {
       "protocol": 0.3,
       "behavior": 0.15,
@@ -43,7 +43,7 @@
     "containment_measured": true,
     "assessment_status": "INCOMPLETE",
     "critical_control_verdict": "GATE_FAILED",
-    "scoring_model_id": "uhqs-v5.1-always-grade",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
     "graded": true
   },
   "hqs": {
@@ -55,7 +55,7 @@
     "S_E": 100.0,
     "S_F": 0.0,
     "delta_c": 0.5,
-    "uhqs": 11.99,
+    "uhqs": 14.98,
     "weights": {
       "protocol": 0.3,
       "behavior": 0.15,
@@ -70,7 +70,7 @@
     "containment_measured": true,
     "assessment_status": "INCOMPLETE",
     "critical_control_verdict": "GATE_FAILED",
-    "scoring_model_id": "uhqs-v5.1-always-grade",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
     "graded": true
   },
   "modules": [

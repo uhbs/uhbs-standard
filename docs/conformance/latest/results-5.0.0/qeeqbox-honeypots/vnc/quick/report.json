@@ -1,6 +1,6 @@
 {
   "framework": "Universal Honeypot Benchmarking Standard (UHBS) v5.0.0",
-  "scoring_model_id": "uhqs-v5.1-always-grade",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",
   "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
@@ -27,8 +27,8 @@
     "C": 0.0,
     "S_E": 20.0,
     "S_F": 0.0,
-    "delta_c": 0.75,
-    "uhqs": 2.51,
+    "delta_c": 1.0,
+    "uhqs": 6.09,
     "weights": {
       "protocol": 0.3,
       "behavior": 0.15,
@@ -43,7 +43,7 @@
     "containment_measured": false,
     "assessment_status": "INCOMPLETE",
     "critical_control_verdict": "INCOMPLETE",
-    "scoring_model_id": "uhqs-v5.1-always-grade",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
     "graded": true
   },
   "hqs": {
@@ -54,8 +54,8 @@
     "C": 0.0,
     "S_E": 20.0,
     "S_F": 0.0,
-    "delta_c": 0.75,
-    "uhqs": 2.51,
+    "delta_c": 1.0,
+    "uhqs": 6.09,
     "weights": {
       "protocol": 0.3,
       "behavior": 0.15,
@@ -70,7 +70,7 @@
     "containment_measured": false,
     "assessment_status": "INCOMPLETE",
     "critical_control_verdict": "INCOMPLETE",
-    "scoring_model_id": "uhqs-v5.1-always-grade",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
     "graded": true
   },
   "modules": [

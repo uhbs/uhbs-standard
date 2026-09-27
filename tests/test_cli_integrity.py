@@ -40,7 +40,7 @@ def test_cli_and_core_uhqs_agree() -> None:
     weights = weights_for_class("Low-Interaction")
     cli = cli_compute(LI_WORKED_SCORES, weights)
     core = core_compute(LI_WORKED_DIMS, target="x", profile_class="Low-Interaction")
-    assert cli.uhqs == core.uhqs == 46.97
+    assert cli.uhqs == core.uhqs == 46.98
     assert cli.delta_c == pytest.approx(core.delta_c)
     assert shared_letter(cli.uhqs) == letter_grade(cli.uhqs) == "F"
     assert grade_for(cli.uhqs).startswith("GRADE F")
@@ -73,7 +73,7 @@ def test_containment_not_measured_still_graded() -> None:
     assert gated.uhqs is not None
     assert gated.delta_c == 0.5
     assert unmeasured.uhqs is not None
-    assert unmeasured.delta_c == 0.75
+    assert unmeasured.delta_c == 1.0
     assert unmeasured.graded
     assert gated.graded
 
@@ -170,7 +170,7 @@ def test_cli_score_command() -> None:
     json_start = result.output.index("{")
     json_end = result.output.rindex("}") + 1
     payload = json.loads(result.output[json_start:json_end])
-    assert payload["uhqs"] == 46.97
+    assert payload["uhqs"] == 46.98
     assert payload["grade"] == "F"
 
 

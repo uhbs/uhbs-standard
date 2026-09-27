@@ -3,7 +3,7 @@
 ====================================================================================
 Target System         : portlurker-generic
 System Profile Class  : Low-Interaction
-Scoring Model         : uhqs-v5.1-always-grade
+Scoring Model         : uhqs-v5.2-measured-renorm
 Assessment Status     : INCOMPLETE
 Critical Controls     : INCOMPLETE
 Protocols             : generic
@@ -21,8 +21,8 @@ Module D: Safety & Containment (C)  :   0.0/100       GATE     INCOMPLETE (Modul
 Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service alive after load (connect 7.1ms))
 Module F: Static Code Audit         :   0.0/100       0.20     INCOMPLETE (Module F white-box audit (keys/prompts/SAST/VFS))
 ------------------------------------------------------------------------------------
-SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=0.75; defense-in-depth C=0.0; composite still published)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : 25.03 / 100
-OVERALL EVALUATION GRADE              : GRADE F (Fail)
-scoring_model_id                      : uhqs-v5.1-always-grade
+SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=1.0; unmeasured modules excluded from composite)
+FINAL COMPOSITE SCORE (UHQS 5.0.0)      : 60.69 / 100
+OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
+scoring_model_id                      : uhqs-v5.2-measured-renorm
 ====================================================================================

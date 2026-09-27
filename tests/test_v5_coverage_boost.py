@@ -171,7 +171,7 @@ def test_safety_gate_and_always_grade_paths() -> None:
         profile_class="Web-API",
         containment_measured=False,
     )
-    assert incomplete.uhqs == 75.0
+    assert incomplete.uhqs == 100.0
     assert incomplete.assessment_status.value == "INCOMPLETE"
     assert incomplete.graded is True
     assert incomplete.scoring_model_id == SCORING_MODEL_ID

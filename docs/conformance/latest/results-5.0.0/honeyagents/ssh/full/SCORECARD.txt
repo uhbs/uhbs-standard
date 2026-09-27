@@ -3,7 +3,7 @@
 ====================================================================================
 Target System         : honeyagents-ssh
 System Profile Class  : Low-Interaction
-Scoring Model         : uhqs-v5.1-always-grade
+Scoring Model         : uhqs-v5.2-measured-renorm
 Assessment Status     : INCOMPLETE
 Critical Controls     : INCOMPLETE
 Protocols             : ssh
@@ -21,8 +21,8 @@ Module D: Safety & Containment (C)  :   0.0/100       GATE     INCOMPLETE (UHBS 
 Module E: Scalability & Latency     :  20.0/100       0.10     PARTIAL (P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=ssh)
 Module F: Static Code Audit         :  66.0/100       0.20     PARTIAL (trivy not installed — not tested (zero credit))
 ------------------------------------------------------------------------------------
-SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=0.75; defense-in-depth C=0.0; composite still published)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : 15.83 / 100
+SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=1.0; unmeasured modules excluded from composite)
+FINAL COMPOSITE SCORE (UHQS 5.0.0)      : 28.14 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
-scoring_model_id                      : uhqs-v5.1-always-grade
+scoring_model_id                      : uhqs-v5.2-measured-renorm
 ====================================================================================

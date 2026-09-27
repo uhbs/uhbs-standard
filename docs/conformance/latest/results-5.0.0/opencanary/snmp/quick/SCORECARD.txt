@@ -3,7 +3,7 @@
 ====================================================================================
 Target System         : opencanary-snmp
 System Profile Class  : Low-Interaction
-Scoring Model         : uhqs-v5.1-always-grade
+Scoring Model         : uhqs-v5.2-measured-renorm
 Assessment Status     : INCOMPLETE
 Critical Controls     : INCOMPLETE
 Protocols             : snmp
@@ -21,8 +21,8 @@ Module D: Safety & Containment (C)  :   0.0/100       GATE     INCOMPLETE (Modul
 Module E: Scalability & Latency     :  35.0/100       0.10     PARTIAL (P50=1511.1ms P95=1518.6ms P99=1519.7ms TPS_limit=150.0ms proto=snmp)
 Module F: Static Code Audit         :   0.0/100       0.20     INCOMPLETE (Module F white-box audit (keys/prompts/SAST/VFS))
 ------------------------------------------------------------------------------------
-SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=0.75; defense-in-depth C=0.0; composite still published)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : 5.44 / 100
+SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=1.0; unmeasured modules excluded from composite)
+FINAL COMPOSITE SCORE (UHQS 5.0.0)      : 29.0 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
-scoring_model_id                      : uhqs-v5.1-always-grade
+scoring_model_id                      : uhqs-v5.2-measured-renorm
 ====================================================================================

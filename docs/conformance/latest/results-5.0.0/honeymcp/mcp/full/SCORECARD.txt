@@ -3,7 +3,7 @@
 ====================================================================================
 Target System         : honeymcp-mcp
 System Profile Class  : Web-API
-Scoring Model         : uhqs-v5.1-always-grade
+Scoring Model         : uhqs-v5.2-measured-renorm
 Assessment Status     : INCOMPLETE
 Critical Controls     : INCOMPLETE
 Protocols             : mcp
@@ -22,8 +22,8 @@ Module D: Safety & Containment (C)  :   0.0/100       GATE     INCOMPLETE (Modul
 Module E: Scalability & Latency     :  75.0/100       0.15     PASSED (P50=927.0ms P95=3928.8ms P99=4238.0ms TPS_limit=3000.0ms proto=mcp)
 Module F: Static Code Audit         :  65.5/100       0.20     PARTIAL (3 static private keys: personas/filesystem-admin.yaml, src/detect/secret_exfil.rs, src/bin/probes.rs)
 ------------------------------------------------------------------------------------
-SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=0.75; defense-in-depth C=0.0; composite still published)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : 41.13 / 100
-OVERALL EVALUATION GRADE              : GRADE F (Fail)
-scoring_model_id                      : uhqs-v5.1-always-grade
+SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=1.0; unmeasured modules excluded from composite)
+FINAL COMPOSITE SCORE (UHQS 5.0.0)      : 68.55 / 100
+OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
+scoring_model_id                      : uhqs-v5.2-measured-renorm
 ====================================================================================

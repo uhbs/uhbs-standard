@@ -30,7 +30,7 @@ def _load(name: str) -> dict:
         ("v5/gate-passed-graded.scorecard.json", 90.0, "A"),
         ("safety-gate-fail.scorecard.json", 23.49, "F"),
         ("v5/gate-failed-ungraded.scorecard.json", 50.0, "D"),
-        ("v5/incomplete-ungraded.scorecard.json", 42.75, "F"),
+        ("v5/incomplete-ungraded.scorecard.json", 76.0, "C"),
     ],
 )
 def test_conformance_fixture_integrity(
