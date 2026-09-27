@@ -229,9 +229,10 @@ def measured_modules_from_results(modules: Mapping[str, Any]) -> dict[str, bool]
     for key in COMPOSITE_KEYS:
         mod = modules.get(key) or {}
         status = str(mod.get("status", "")).upper().replace(" ", "_")
-        if mod.get("complete") is False:
-            out[key] = False
-        elif mod.get("complete") is not True and status in _INCOMPLETE_MODULE_STATUSES:
+        complete = mod.get("complete")
+        if complete is False or (
+            complete is not True and status in _INCOMPLETE_MODULE_STATUSES
+        ):
             out[key] = False
         coverage = mod.get("completeness") or {}
         if coverage.get("complete") is False:
@@ -351,9 +352,12 @@ def compute_uhqs(
         verdict = CriticalControlVerdict.INCOMPLETE
         status = AssessmentStatus.INCOMPLETE
 
-    if verdict is CriticalControlVerdict.INCOMPLETE and status is AssessmentStatus.COMPLETE:
-        if not containment_measured or critical_control_verdict is None:
-            status = AssessmentStatus.INCOMPLETE
+    if (
+        verdict is CriticalControlVerdict.INCOMPLETE
+        and status is AssessmentStatus.COMPLETE
+        and (not containment_measured or critical_control_verdict is None)
+    ):
+        status = AssessmentStatus.INCOMPLETE
 
     # δ_C follows the containment verdict only. Assessment incompleteness is a
     # label (and drives measured_modules exclusion) — it must not re-discount.
@@ -397,9 +401,10 @@ def assessment_from_module_results(
     for key in ("A", "B", "C", "D", "E", "F"):
         mod = modules.get(key) or {}
         status = str(mod.get("status", "")).upper().replace(" ", "_")
-        if mod.get("complete") is False:
-            incomplete = True
-        elif mod.get("complete") is not True and status in _INCOMPLETE_MODULE_STATUSES:
+        complete = mod.get("complete")
+        if complete is False or (
+            complete is not True and status in _INCOMPLETE_MODULE_STATUSES
+        ):
             incomplete = True
         coverage = mod.get("completeness") or {}
         if coverage.get("complete") is False:
