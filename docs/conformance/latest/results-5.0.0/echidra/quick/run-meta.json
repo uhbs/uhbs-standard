@@ -1,0 +1,58 @@
+{
+  "uhbs_version": "5.0.0",
+  "run_mode": "quick",
+  "evaluated_at": "2026-09-26T15:06:17Z",
+  "proof_label": "EchidraOSS (SSH)",
+  "target": {
+    "repository": "https://github.com/Qyleron/EchidraOSS.git",
+    "git_commit": "50305356ffe49a20459b89b071dc30bb2598e88b",
+    "git_branch": "main",
+    "class": "Low-Interaction",
+    "protocol": "ssh",
+    "host": "echidra-lab",
+    "port": 2222,
+    "container_image": "echidra-uhbs-honeypot:latest",
+    "container_image_id": "sha256:e08cfb5bf936d793f93f12cb5cca008bffa0b617518f6dcc5c206c5075af157a"
+  },
+  "grader": {
+    "package_version": "5.0.0",
+    "uhbs_git_commit": "c2ffcdff1c45f6704dd2646554ff0087064faa28",
+    "docker_image": "uhbs:5.0.0",
+    "docker_image_id": "sha256:aa436c35214d225126fd90db1dcbe307cbdbda9cad4c831efc068bd8901f6ba6",
+    "inventory": "docs/conformance/labs/echidra/inventory.yaml",
+    "tps": "docs/conformance/labs/echidra/low_interaction_ssh_quick.yaml"
+  },
+  "runtime": {
+    "base_image": "python:3.11-slim",
+    "base_image_reason": "Upstream Dockerfile FROM python:3.11-slim (Debian bookworm/trixie slim); Ubuntu latest is not the documented image. Lab runs via documented docker compose + uhbs-lab overlay.",
+    "container_runtime_strategy": "upstream-docker"
+  },
+  "flags": {
+    "UHBS_QUICK": true,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": null,
+    "skip_sast_tools": true,
+    "source_root": "/honeypot",
+    "telemetry_dir": null
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "delta_c": 0.0,
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "GATE_PASSED",
+    "module_scores": {
+      "A": 57.99,
+      "B": 25.0,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 55.0,
+      "F": 0.0
+    }
+  },
+  "limitations": [
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1); this is not a substitute for a physically air-gapped lab.",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement.",
+    "UHBS 5.0.0 Safety Gate: GATE_FAILED assessments publish uhqs/grade as null."
+  ]
+}

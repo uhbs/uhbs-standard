@@ -1,0 +1,39 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "0781af3811391105f848685386d7cd894bc4e503b147da7438a414623f15a638"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "327c55e00e98ceaf7bfdd508c92d9e803533e8ee12fddc327c73a09a5a1f1773"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "327c55e00e98ceaf7bfdd508c92d9e803533e8ee12fddc327c73a09a5a1f1773"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "c733a10c4f0a6302adfb48e1f0a87ca7d3c587303a5e09b66f0e6d45b7b0a2bb"
+    },
+    {
+      "path": "report.json",
+      "sha256": "50484fec5fc1fe9c46a65ab23e899126e6df2802882fc002f27ddca19d1914eb"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "9c38485ff70e46396c6f235d42b30482ef0355fe70c6970071d22155a7759013"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "f97f05ddd17f61d3fdc87f63a8edd24e4e7f5210f324de0a62361f350fef4a2d"
+    }
+  ],
+  "extra": {
+    "target": "conpot",
+    "uhqs": null,
+    "grade": null,
+    "critical_control_verdict": "INCOMPLETE"
+  }
+}

@@ -40,7 +40,7 @@ def test_cli_and_core_uhqs_agree() -> None:
     weights = weights_for_class("Low-Interaction")
     cli = cli_compute(LI_WORKED_SCORES, weights)
     core = core_compute(LI_WORKED_DIMS, target="x", profile_class="Low-Interaction")
-    assert cli.uhqs == core.uhqs == 46.97
+    assert cli.uhqs == core.uhqs == 46.98
     assert cli.delta_c == pytest.approx(core.delta_c)
     assert shared_letter(cli.uhqs) == letter_grade(cli.uhqs) == "F"
     assert grade_for(cli.uhqs).startswith("GRADE F")
@@ -55,8 +55,8 @@ def test_missing_module_score_raises() -> None:
         core_compute({"protocol": 1.0}, target="x")
 
 
-def test_containment_not_measured_is_ungraded() -> None:
-    """v5: unmeasured containment cannot pass the gate or invent a grade."""
+def test_containment_not_measured_still_graded() -> None:
+    """Always-grade: unmeasured containment lowers δ_C; still publishes UHQS."""
     scores = {**LI_WORKED_DIMS, "containment": 10.0}
     gated = core_compute(
         scores,
@@ -70,10 +70,12 @@ def test_containment_not_measured_is_ungraded() -> None:
         profile_class="Low-Interaction",
         containment_measured=False,
     )
-    assert gated.uhqs is None
-    assert unmeasured.uhqs is None
-    assert unmeasured.delta_c == 0.0
-    assert not unmeasured.graded
+    assert gated.uhqs is not None
+    assert gated.delta_c == 0.5
+    assert unmeasured.uhqs is not None
+    assert unmeasured.delta_c == 1.0
+    assert unmeasured.graded
+    assert gated.graded
 
 
 def test_integrity_detects_tampered_uhqs() -> None:
@@ -90,7 +92,7 @@ def test_integrity_detects_tampered_grade() -> None:
     assert any("grade=" in e for e in errors)
 
 
-def test_integrity_skipped_module_d_is_ungraded() -> None:
+def test_integrity_skipped_module_d_still_graded() -> None:
     data = json.loads((FIXTURES / "cowrie-low-interaction.scorecard.json").read_text())
     data["modules"]["D"] = {
         "score": 10.0,
@@ -101,17 +103,30 @@ def test_integrity_skipped_module_d_is_ungraded() -> None:
     data["assessment_status"] = "INCOMPLETE"
     data["critical_control_verdict"] = "INCOMPLETE"
     data["containment_measured"] = False
+    # Low-Interaction base from remaining modules × δ_C 0.75
+    from uhbs_core.uhqs_math import compute_uhqs, letter_grade
+
+    scores = {k: float(data["modules"][k]["score"]) for k in "ABCDEF"}
+    result = compute_uhqs(
+        scores,
+        data["weights"],
+        assessment_status="INCOMPLETE",
+        critical_control_verdict="INCOMPLETE",
+        containment_measured=False,
+    )
     data["safety_gate"] = {
         "containment_score": 10.0,
-        "delta_c": 0.0,
+        "delta_c": result.delta_c,
         "passed": False,
         "critical_control_verdict": "INCOMPLETE",
         "unauthorized_egress_leaks": 0,
     }
-    data["uhqs"] = None
-    data["grade"] = None
+    data["uhqs"] = result.uhqs
+    data["grade"] = letter_grade(result.uhqs)
     errors = assert_scorecard_integrity(data)
     assert errors == [], errors
+    assert data["uhqs"] is not None
+    assert data["grade"] is not None
 
 
 def test_cli_validate_scorecard_ok() -> None:
@@ -155,7 +170,7 @@ def test_cli_score_command() -> None:
     json_start = result.output.index("{")
     json_end = result.output.rindex("}") + 1
     payload = json.loads(result.output[json_start:json_end])
-    assert payload["uhqs"] == 46.97
+    assert payload["uhqs"] == 46.98
     assert payload["grade"] == "F"
 
 

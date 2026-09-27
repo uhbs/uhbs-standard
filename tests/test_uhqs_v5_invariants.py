@@ -1,4 +1,4 @@
-"""UHQS v5 scoring integrity invariants and regression guards."""
+"""UHQS always-grade invariants and regression guards."""
 
 from __future__ import annotations
 
@@ -27,29 +27,47 @@ def _scores(**overrides: float) -> dict[str, float]:
 
 
 def test_scoring_model_id_is_pinned() -> None:
-    assert SCORING_MODEL_ID == "uhqs-v5.0-critical-gate-diagnostic"
+    assert SCORING_MODEL_ID == "uhqs-v5.2-measured-renorm"
 
 
-def test_incomplete_assessment_is_ungraded() -> None:
+def test_incomplete_assessment_still_graded() -> None:
     result = compute_uhqs(
         _scores(),
         profile_class="POSIX-Shell",
         assessment_status=AssessmentStatus.INCOMPLETE,
+        critical_control_verdict=CriticalControlVerdict.INCOMPLETE,
     )
-    assert result.uhqs is None
-    assert result.graded is False
-    assert letter_grade(result.uhqs) is None
+    # INCOMPLETE no longer discounts δ_C; all modules measured → full weighted sum.
+    assert result.uhqs == 80.0
+    assert result.graded is True
+    assert result.delta_c == 1.0
+    assert letter_grade(result.uhqs) == "B"
 
 
-def test_gate_failed_is_ungraded() -> None:
+def test_unmeasured_module_excluded_from_composite() -> None:
+    result = compute_uhqs(
+        {"A": 100, "B": 65, "C": 0, "D": 0, "E": 100, "F": 70},
+        profile_class="Web-API",
+        assessment_status=AssessmentStatus.INCOMPLETE,
+        critical_control_verdict=CriticalControlVerdict.INCOMPLETE,
+        measured_modules={"A": True, "B": True, "C": False, "E": True, "F": True},
+    )
+    assert result.uhqs == 83.75
+    assert letter_grade(result.uhqs) == "B"
+    assert result.delta_c == 1.0
+
+
+def test_gate_failed_still_graded() -> None:
     result = compute_uhqs(
         _scores(D=0.0),
         profile_class="POSIX-Shell",
         critical_control_verdict=CriticalControlVerdict.GATE_FAILED,
     )
-    assert result.uhqs is None
+    assert result.uhqs == 40.0  # 80 * 0.5
     assert result.safety_gate_passed is False
     assert result.critical_control_verdict is CriticalControlVerdict.GATE_FAILED
+    assert result.graded is True
+    assert letter_grade(result.uhqs) == "F"
 
 
 def test_gate_passed_publishes_weighted_sum() -> None:
@@ -118,7 +136,7 @@ def test_not_tested_never_earns_credit() -> None:
         id="x",
         team="blue",
         outcome=CheckOutcome.NOT_TESTED,
-        score=50.0,  # forced to 0 in __post_init__
+        score=50.0,
     )
     assert c.score == 0.0
 
@@ -144,7 +162,6 @@ def test_stix_accepts_minimal_indicator() -> None:
 
 
 def test_attack_word_alone_is_not_a_technique() -> None:
-    # validate_technique_id requires T#### shape
     rec = validate_technique_id("attack")
     assert rec.valid is False
 
@@ -155,7 +172,6 @@ def test_attack_known_technique_validates() -> None:
 
 
 def test_mutation_restoring_skip_credit_would_fail_contract() -> None:
-    """Guard: NOT_TESTED with positive score cannot survive CheckResult construction."""
     c = CheckResult(
         id="skip",
         team="white",
@@ -165,12 +181,13 @@ def test_mutation_restoring_skip_credit_would_fail_contract() -> None:
     assert c.score == 0.0
 
 
-def test_v5_golden_incomplete_fixture() -> None:
+def test_v5_golden_incomplete_fixture_is_graded() -> None:
     root = Path(__file__).resolve().parents[1]
     path = root / "docs" / "conformance" / "fixtures" / "v5" / "incomplete-ungraded.scorecard.json"
     if not path.is_file():
         pytest.skip("v5 incomplete fixture not present")
     data = json.loads(path.read_text(encoding="utf-8"))
-    assert data.get("uhqs") is None
-    assert data.get("grade") is None
+    assert data.get("uhqs") is not None
+    assert data.get("grade") is not None
     assert data.get("assessment_status") == "INCOMPLETE"
+    assert data.get("scoring_model_id") == SCORING_MODEL_ID

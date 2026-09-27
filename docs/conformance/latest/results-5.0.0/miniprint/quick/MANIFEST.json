@@ -1,0 +1,39 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "a889ccc5da3a6290ccfcb1c6e82db82b612d4570a87714bf95241b9ab21db510"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "78b6b194e51b6d7f2a6cccc66cf6cf223e3140fe3de75d1bb7a44f6c5e9b708a"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "78b6b194e51b6d7f2a6cccc66cf6cf223e3140fe3de75d1bb7a44f6c5e9b708a"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "23565b514c845bafd0fda6290bf9915c8591e8f74a6ef4525e29c0a86adddbe0"
+    },
+    {
+      "path": "report.json",
+      "sha256": "1826b9247e4637ba9fe3079ca929a63b7b46549d425994e6af5d804f981e5766"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "54aca8084c5a991629455ad085eb3056b810721e0f01d63db0a68d379c668e2c"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "4d5ba838b0ee67a315b729e6472821143a2d480dc9887a675e39956378d0f957"
+    }
+  ],
+  "extra": {
+    "target": "miniprint",
+    "uhqs": null,
+    "grade": null,
+    "critical_control_verdict": "INCOMPLETE"
+  }
+}

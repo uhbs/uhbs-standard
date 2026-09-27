@@ -1,0 +1,38 @@
+{
+  "uhbs_version": "4.0.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "2bf8e4c6483d2f4ec2304762414005173f4cd0e32402a3abe878624fc6470875"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "2bf8e4c6483d2f4ec2304762414005173f4cd0e32402a3abe878624fc6470875"
+    },
+    {
+      "path": "report.json",
+      "sha256": "d42c9a2292c2dd132799f6040c0564dac1bd74d8abb4815310fdaad9ebf7a18e"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "2bf8e4c6483d2f4ec2304762414005173f4cd0e32402a3abe878624fc6470875"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "1b7cead3a120c2b79ab863ccbc5a7f2239b7bd3e537930c3b7cf9508311a0345"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "e06848e31680874ec159531371a322bfd55e33d9079c5ec85ea6533ef79b8774"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "975468b78f32d54be291418159be3613861936f7325c14601e75d7442f813137"
+    }
+  ],
+  "extra": {
+    "target": "miniprint",
+    "uhqs": 50.43,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

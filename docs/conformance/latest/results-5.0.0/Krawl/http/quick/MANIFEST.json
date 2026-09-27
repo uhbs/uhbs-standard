@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "6a37bc79bc3bc2950dba3a64822273e26f1d52f29921339d604b0dd91ce8a930"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "864c889dd3c3498015a28e9e93e2a82048a19ebd6ab18be1e4e5d060efdaf021"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "864c889dd3c3498015a28e9e93e2a82048a19ebd6ab18be1e4e5d060efdaf021"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "af5800f9dc403a72db10bb4934fe220ba244ca3e05804442fcaf7ecebb203b09"
+    },
+    {
+      "path": "report.json",
+      "sha256": "7c242592cb28d772feecd5b8909a05e6c404bb504fe14d695f86e01e2159add0"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "577a17c8ac7d0948018d9e55f69084705b95715186c5125423b202c334a62390"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "5a9cad2d0c8a77987f08576cae76c971b19e3978e3222a8df4965d0da550171c"
+    }
+  ],
+  "extra": {
+    "target": "Krawl-http",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

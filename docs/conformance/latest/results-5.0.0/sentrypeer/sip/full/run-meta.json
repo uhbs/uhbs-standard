@@ -1,0 +1,78 @@
+{
+  "uhbs_version": "5.0.0",
+  "run_mode": "full",
+  "evaluated_at": "2026-09-26T19:16:08Z",
+  "proof_label": "sentrypeer (sip)",
+  "target": {
+    "repository": "https://github.com/SentryPeer/SentryPeer.git",
+    "git_branch": "main",
+    "git_commit": "0340440ef96767cf7ad0f43cf972b2162c327de3",
+    "class": "Low-Interaction",
+    "protocol": "sip",
+    "host": "sentrypeer-lab",
+    "port": 5060,
+    "container_image": "sentrypeer/sentrypeer:latest",
+    "container_image_id": "sha256:1231fe2ba842e6fcd2c1c9fdd63213441a8f1a285c68f51d858220a3102f6b27",
+    "base_image": "sentrypeer/sentrypeer:latest",
+    "base_image_reason": "Upstream Docker Hub image sentrypeer/sentrypeer.",
+    "container_runtime_strategy": "upstream-image"
+  },
+  "grader": {
+    "package_version": "5.0.0",
+    "docker_image": "uhbs:5.0.0-full",
+    "docker_image_id": "sha256:320fb38dcf3ebf69befb2248b75ed32c63dafe6b83f959746209d337c3e7ca9b",
+    "inventory": "docs/conformance/labs/sentrypeer/inventory.yaml",
+    "tps": "docs/conformance/labs/sentrypeer/low_interaction_sip_full.yaml",
+    "target_id": "sentrypeer-sip"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "measured_vs_attested": {
+      "airgap": "attested",
+      "egress_gateway_log": "measured",
+      "telemetry": "measured"
+    }
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "grade_long": null,
+    "delta_c": 0.0,
+    "module_scores": {
+      "A": 86.43,
+      "B": 25.0,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 100.0,
+      "F": 66.0
+    },
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  },
+  "limitations": [
+    "Published UHBS 5.0.0 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1)."
+  ],
+  "docs_reviewed": []
+}

@@ -18,7 +18,16 @@ head, _, _ = text.partition("\nnav:\n")
 if not head.endswith("\n"):
     head += "\n"
 
-reports = ROOT / "docs" / "conformance" / "reports"
+# Active published grades live under latest/results-5.0.0 after the results-5.0.0 refresh.
+# Fall back to the historical reports tree only when the latest skeleton is absent.
+_latest = ROOT / "docs" / "conformance" / "latest" / "results-5.0.0"
+_legacy_reports = ROOT / "docs" / "conformance" / "reports"
+if _latest.is_dir() and any(p.is_dir() and (p / "index.md").exists() for p in _latest.iterdir()):
+    reports = _latest
+    reports_nav_prefix = "conformance/latest/results-5.0.0"
+else:
+    reports = _legacy_reports
+    reports_nav_prefix = "conformance/reports"
 scorecards_dir = ROOT / "docs" / "scorecards"
 
 featured = [
@@ -310,7 +319,7 @@ lines += [
 for d in ordered:
     name = d.name
     kids: list[tuple[str, str]] = []
-    rel = f"conformance/reports/{name}"
+    rel = f"{reports_nav_prefix}/{name}"
     kids.append(("Report hub", f"{rel}/index.md"))
     for sub in sorted(p for p in d.iterdir() if p.is_dir() and (p / "index.md").exists()):
         kids.append((f"{sub.name.upper() if len(sub.name) <= 6 else sub.name.capitalize()} hub", f"{rel}/{sub.name}/index.md"))

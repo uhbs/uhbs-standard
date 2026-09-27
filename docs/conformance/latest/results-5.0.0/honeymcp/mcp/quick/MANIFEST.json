@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "306b0df6ef52e2209353c9c6ae41de554fb8bac2e268284a8e99a1c99be3d39f"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "1d9fa1e56a21e64db716fa6fddf5aca9cefcdfc97d0ea60dd8230a022adb41b8"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "1d9fa1e56a21e64db716fa6fddf5aca9cefcdfc97d0ea60dd8230a022adb41b8"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "9a9f9a743f545032402701b972e9c3ce416f1c687e4fd9b405032151534dc236"
+    },
+    {
+      "path": "report.json",
+      "sha256": "66eaf2e3039858b344d3bb60c2eda46cc467a08d82b5b51c86e081b412ba5047"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "8e3c2d2cd5adecfa74880c2e8fe7047a46832ed6056115c2242736e0124ca3d2"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "5f66b2270a529c8a0e9e02deb038418302b1bfd4d5387090c7a4155ce1998599"
+    }
+  ],
+  "extra": {
+    "target": "honeymcp-mcp",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

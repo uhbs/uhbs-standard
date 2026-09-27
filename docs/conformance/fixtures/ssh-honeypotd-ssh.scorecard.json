@@ -1,0 +1,75 @@
+{
+  "uhbs_version": "5.0.0",
+  "target": {
+    "name": "ssh-honeypotd (sjinks) (ssh)",
+    "class": "Low-Interaction",
+    "profile_ref": "docs/conformance/labs/ssh-honeypotd/low_interaction_ssh_full.yaml"
+  },
+  "evaluated_at": "2026-09-26",
+  "auditor": "UHBS-Lab results-5.0.0 refresh (ssh-honeypotd-ssh)",
+  "modules": {
+    "A": {
+      "score": 46.5,
+      "status": "PARTIAL",
+      "notes": "",
+      "complete": true,
+      "weight": 0.3
+    },
+    "B": {
+      "score": 6.25,
+      "status": "PARTIAL",
+      "notes": "",
+      "complete": true,
+      "weight": 0.15
+    },
+    "C": {
+      "score": 0.0,
+      "status": "FAILED",
+      "notes": "",
+      "complete": true,
+      "weight": 0.25
+    },
+    "D": {
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "notes": "",
+      "complete": false,
+      "critical_control_verdict": "INCOMPLETE"
+    },
+    "E": {
+      "score": 20.0,
+      "status": "PARTIAL",
+      "notes": "",
+      "complete": true,
+      "weight": 0.1
+    },
+    "F": {
+      "score": 66.0,
+      "status": "PARTIAL",
+      "notes": "",
+      "complete": true,
+      "weight": 0.2
+    }
+  },
+  "weights": {
+    "w_A": 0.3,
+    "w_B": 0.15,
+    "w_C": 0.25,
+    "w_E": 0.1,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 0.0,
+    "delta_c": 1.0,
+    "passed": false,
+    "critical_control_verdict": "INCOMPLETE",
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 30.09,
+  "grade": "F",
+  "notes": "Evaluation proof only. results-5.0.0 refresh of ssh-honeypotd-ssh at 080d43e81f152e26f8e441741e34b36df505c1e7. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "assessment_status": "INCOMPLETE",
+  "critical_control_verdict": "INCOMPLETE",
+  "containment_measured": false
+}

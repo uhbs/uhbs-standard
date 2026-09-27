@@ -1,0 +1,84 @@
+{
+  "uhbs_version": "5.0.0",
+  "run_mode": "full",
+  "evaluated_at": "2026-09-26T14:41:51Z",
+  "proof_label": "mysql-honeypotd (MySQL :3306)",
+  "target": {
+    "repository": "https://github.com/sjinks/mysql-honeypotd.git",
+    "git_branch": "master",
+    "git_commit": "955ecce4ce22c8588da1f023dfd790099755d575",
+    "class": "Low-Interaction",
+    "protocol": "mysql",
+    "host": "mysql-honeypotd-lab",
+    "port": 3306,
+    "container_image": "mysql-honeypotd:uhbs-lab",
+    "container_image_id": "sha256:9445e1b2ea7b16061cb3218a56ce374f3bf401155aa83e32980078da5736e9b1",
+    "base_image": "scratch",
+    "base_image_reason": "upstream-docker: alpine:3.24 build, scratch static release (MINIMALISTIC_BUILD). Do not pass -f/-x; those flags are unrecognized in the minimal binary.",
+    "container_runtime_strategy": "upstream-docker"
+  },
+  "grader": {
+    "package_version": "5.0.0",
+    "docker_image": "uhbs:5.0.0-full",
+    "docker_image_id": "sha256:320fb38dcf3ebf69befb2248b75ed32c63dafe6b83f959746209d337c3e7ca9b",
+    "inventory": "docs/conformance/labs/mysql-honeypotd/inventory.yaml",
+    "tps": "docs/conformance/labs/mysql-honeypotd/low_interaction_mysql_full.yaml",
+    "target_id": "mysql-honeypotd-mysql"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "measured_vs_attested": {
+      "airgap": "attested",
+      "egress_gateway_log": "attested-empty-log",
+      "telemetry": "attested-partial"
+    }
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "grade_long": null,
+    "delta_c": 0.0,
+    "module_scores": {
+      "A": 78.43,
+      "B": 25.0,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 100.0,
+      "F": 70.0
+    },
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  },
+  "limitations": [
+    "Published UHBS 5.0.0 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1); Docker Desktop lab, not a physical air-gap.",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement.",
+    "Do not transplant archived 4.x letter grades.",
+    "upstream-docker: alpine:3.24 build, scratch static release (MINIMALISTIC_BUILD). Do not pass -f/-x; those flags are unrecognized in the minimal binary."
+  ],
+  "docs_reviewed": [
+    "README.md",
+    "Dockerfile"
+  ]
+}

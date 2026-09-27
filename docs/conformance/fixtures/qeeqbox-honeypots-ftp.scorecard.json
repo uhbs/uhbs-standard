@@ -1,0 +1,75 @@
+{
+  "uhbs_version": "5.0.0",
+  "target": {
+    "name": "qeeqbox/honeypots (ftp)",
+    "class": "Low-Interaction",
+    "profile_ref": "docs/conformance/labs/qeeqbox-honeypots/low_interaction_ftp_full.yaml"
+  },
+  "evaluated_at": "2026-09-26",
+  "auditor": "UHBS-Lab results-5.0.0 refresh (qeeqbox-honeypots-ftp)",
+  "modules": {
+    "A": {
+      "score": 86.43,
+      "status": "PASSED",
+      "notes": "",
+      "complete": true,
+      "weight": 0.3
+    },
+    "B": {
+      "score": 37.0,
+      "status": "PARTIAL",
+      "notes": "",
+      "complete": true,
+      "weight": 0.15
+    },
+    "C": {
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "notes": "",
+      "complete": false,
+      "weight": 0.25
+    },
+    "D": {
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "notes": "",
+      "complete": false,
+      "critical_control_verdict": "INCOMPLETE"
+    },
+    "E": {
+      "score": 100.0,
+      "status": "PASSED",
+      "notes": "",
+      "complete": true,
+      "weight": 0.1
+    },
+    "F": {
+      "score": 60.34,
+      "status": "PARTIAL",
+      "notes": "",
+      "complete": true,
+      "weight": 0.2
+    }
+  },
+  "weights": {
+    "w_A": 0.3,
+    "w_B": 0.15,
+    "w_C": 0.25,
+    "w_E": 0.1,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 0.0,
+    "delta_c": 1.0,
+    "passed": false,
+    "critical_control_verdict": "INCOMPLETE",
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 71.4,
+  "grade": "C",
+  "notes": "Evaluation proof only. results-5.0.0 refresh of qeeqbox-honeypots-ftp at f337a32e3351e2add3a455a3bcaf1f02ded5744b. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "assessment_status": "INCOMPLETE",
+  "critical_control_verdict": "INCOMPLETE",
+  "containment_measured": false
+}

@@ -13,6 +13,7 @@ from uhbs_cli.cli import _schema_dir, main
 
 FIXTURES = Path(__file__).resolve().parents[1] / "docs" / "conformance" / "fixtures"
 HELLPOT = FIXTURES / "hellpot-web-api.scorecard.json"
+COWRIE = FIXTURES / "cowrie-low-interaction.scorecard.json"
 
 
 def _scorecard_schema() -> dict:
@@ -23,18 +24,17 @@ def test_tagged_hellpot_fixture_validates_strict() -> None:
     runner = CliRunner()
     result = runner.invoke(main, ["validate-scorecard", str(HELLPOT), "--strict"])
     assert result.exit_code == 0, result.output
-    # Hellpot is Ungraded under v5 critical-gate (historical D < gate).
-    assert "UHQS=None" in result.output or "UHQS=null" in result.output or "ungraded" in result.output.lower() or "OK" in result.output
+    assert "OK" in result.output
 
 
 def test_framework_refs_accepts_valid_tags() -> None:
-    data = json.loads(HELLPOT.read_text(encoding="utf-8"))
+    data = json.loads(COWRIE.read_text(encoding="utf-8"))
     assert "framework_refs" in data
     Draft202012Validator(_scorecard_schema()).validate(data)
 
 
 def test_framework_refs_rejects_bad_d3fend_id() -> None:
-    data = copy.deepcopy(json.loads(HELLPOT.read_text(encoding="utf-8")))
+    data = copy.deepcopy(json.loads(COWRIE.read_text(encoding="utf-8")))
     data["framework_refs"] = {"d3fend": ["NOT-A-D3-ID"]}
     errors = list(Draft202012Validator(_scorecard_schema()).iter_errors(data))
     assert errors
@@ -42,20 +42,20 @@ def test_framework_refs_rejects_bad_d3fend_id() -> None:
 
 
 def test_framework_refs_rejects_unknown_engage_goal() -> None:
-    data = copy.deepcopy(json.loads(HELLPOT.read_text(encoding="utf-8")))
+    data = copy.deepcopy(json.loads(COWRIE.read_text(encoding="utf-8")))
     data["framework_refs"] = {"engage_goals": ["HackBack"]}
     errors = list(Draft202012Validator(_scorecard_schema()).iter_errors(data))
     assert errors
 
 
 def test_framework_refs_accepts_attack_technique_and_subtechnique() -> None:
-    data = copy.deepcopy(json.loads(HELLPOT.read_text(encoding="utf-8")))
+    data = copy.deepcopy(json.loads(COWRIE.read_text(encoding="utf-8")))
     data["framework_refs"]["attack"] = ["T1595", "T1059.004"]
     Draft202012Validator(_scorecard_schema()).validate(data)
 
 
 def test_framework_refs_rejects_bad_attack_id() -> None:
-    data = copy.deepcopy(json.loads(HELLPOT.read_text(encoding="utf-8")))
+    data = copy.deepcopy(json.loads(COWRIE.read_text(encoding="utf-8")))
     data["framework_refs"] = {"attack": ["TA0011"]}
     errors = list(Draft202012Validator(_scorecard_schema()).iter_errors(data))
     assert errors

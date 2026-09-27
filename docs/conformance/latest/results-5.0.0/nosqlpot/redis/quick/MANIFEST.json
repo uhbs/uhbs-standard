@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "5b1d1958f5773e2dfc5fade6b18f32009761eb9e26c678629f8f190eae8c3962"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "bccd52b25b0c78c9d480f0b60934b35ccbff9a00c56ef5f9d6881a9cdebd35c6"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "bccd52b25b0c78c9d480f0b60934b35ccbff9a00c56ef5f9d6881a9cdebd35c6"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "71280fd35ec47de2bd696b07ca0c2f0673787c153df370747c7720fecfaf04d1"
+    },
+    {
+      "path": "report.json",
+      "sha256": "b10f39fe98f6d7e9208e0c4808647a9e32df53dedf6eba4d07106e8044b7c7db"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "fbeb33b0ea39db52f17c3bb06a250fe7e24ed70615289a0ad32b6e8ff8c97ea9"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "cb5f6b6430b19788888cb5e883488dfde9d1f7676be61f7a5bd840a7e51d48bb"
+    }
+  ],
+  "extra": {
+    "target": "nosqlpot-redis",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

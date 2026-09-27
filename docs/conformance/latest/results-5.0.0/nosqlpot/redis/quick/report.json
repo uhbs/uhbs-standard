@@ -1,0 +1,705 @@
+{
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v5.0.0",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "assessment_status": "INCOMPLETE",
+  "critical_control_verdict": "INCOMPLETE",
+  "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
+  "target": {
+    "name": "nosqlpot-redis",
+    "kind": "generic",
+    "host": "nosqlpot-lab",
+    "port": 6379,
+    "source_root": "/app",
+    "profile_class": "Low-Interaction",
+    "protocols": [
+      "redis"
+    ],
+    "ports_map": {
+      "redis": 6379
+    }
+  },
+  "baseline": null,
+  "uhqs": {
+    "target": "nosqlpot-redis",
+    "S_A": 27.64,
+    "S_B": 5.0,
+    "S_C": 0.0,
+    "C": 0.0,
+    "S_E": 20.0,
+    "S_F": 0.0,
+    "delta_c": 1.0,
+    "uhqs": 20.08,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "F",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "5.0.0",
+    "containment_measured": false,
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
+    "graded": true
+  },
+  "hqs": {
+    "target": "nosqlpot-redis",
+    "S_A": 27.64,
+    "S_B": 5.0,
+    "S_C": 0.0,
+    "C": 0.0,
+    "S_E": 20.0,
+    "S_F": 0.0,
+    "delta_c": 1.0,
+    "uhqs": 20.08,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "F",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "5.0.0",
+    "containment_measured": false,
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
+    "graded": true
+  },
+  "modules": [
+    {
+      "module": "SANDBOX",
+      "dimension": "sandbox",
+      "score": 45.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "sandbox.reach.redis",
+          "team": "blue",
+          "passed": false,
+          "detail": "[Errno -2] Name or service not known",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "sandbox.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "operator attested air-gapped sandbox (UHBS_AIRGAP_ATTESTED=1)",
+          "score": 25.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "sandbox.egress_deny_tooling",
+          "team": "blue",
+          "passed": false,
+          "detail": "host-egress-deny.sh not found",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "sandbox.gateway_log_configured",
+          "team": "blue",
+          "passed": false,
+          "detail": "gateway log path not set",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "reachable_protocols": 0
+      },
+      "notes": [
+        "Phase 3 preflight \u2014 does not replace real air-gap deployment"
+      ],
+      "error": null,
+      "complete": true,
+      "applicable_checks": 0,
+      "scored_checks": 0,
+      "critical_control_verdict": null
+    },
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 0.0,
+      "status": "FAILED",
+      "checks": [],
+      "metrics": {},
+      "notes": [],
+      "error": "source_root not found: /app",
+      "complete": false,
+      "applicable_checks": 0,
+      "scored_checks": 0,
+      "critical_control_verdict": null
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 27.64,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "redis.fsm.invalid_verb",
+          "team": "blue",
+          "passed": false,
+          "detail": "[Errno -2] Name or service not known",
+          "score": 60.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "redis.fsm.wrong_arity",
+          "team": "red",
+          "passed": false,
+          "detail": "[Errno -2] Name or service not known",
+          "score": 55.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "redis.fsm.truncated_array",
+          "team": "red",
+          "passed": true,
+          "detail": "[Errno -2] Name or service not known",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "redis.nego.ping",
+          "team": "blue",
+          "passed": false,
+          "detail": "[Errno -2] Name or service not known",
+          "score": 0.0,
+          "evidence": [],
+          "critical": true,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "redis.nego.echo",
+          "team": "blue",
+          "passed": false,
+          "detail": "[Errno -2] Name or service not known",
+          "score": 20.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "redis.nego.info_server",
+          "team": "blue",
+          "passed": false,
+          "detail": "[Errno -2] Name or service not known",
+          "score": 25.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "redis.timing.unreachable",
+          "team": "red",
+          "passed": false,
+          "detail": "no successful connects",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "redis.module_a.composite",
+          "team": "blue",
+          "passed": false,
+          "detail": "fsm=69 nego=0 timing=0",
+          "score": 27.641680000000004,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "redis": 27.64
+        },
+        "protocols": [
+          "redis"
+        ],
+        "timing_samples": 50,
+        "available_plugins": [
+          "bacnet",
+          "bluetooth",
+          "coap",
+          "dhcp",
+          "dns",
+          "elasticsearch",
+          "ftp",
+          "generic",
+          "git",
+          "http",
+          "httpproxy",
+          "imap",
+          "ipp",
+          "irc",
+          "kubernetes",
+          "ldap",
+          "mcp",
+          "memcache",
+          "modbus",
+          "mongodb",
+          "mqtt",
+          "mssql",
+          "mysql",
+          "ntp",
+          "oracle",
+          "pjl",
+          "pop3",
+          "postgres",
+          "rdp",
+          "redis",
+          "s7comm",
+          "sip",
+          "smb",
+          "smtp",
+          "snmp",
+          "socks5",
+          "ssh",
+          "telnet",
+          "tftp",
+          "vnc"
+        ],
+        "coverage": 1.0,
+        "not_tested": 0
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['redis']",
+        "class=Low-Interaction strict_rfc=True"
+      ],
+      "error": null,
+      "complete": true,
+      "applicable_checks": 8,
+      "scored_checks": 8,
+      "critical_control_verdict": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 5.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "redis.state.set_get",
+          "team": "blue",
+          "passed": false,
+          "detail": "[Errno -2] Name or service not known",
+          "score": 20.0,
+          "evidence": [],
+          "critical": true,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "redis.state.incr",
+          "team": "blue",
+          "passed": false,
+          "detail": "[Errno -2] Name or service not known",
+          "score": 25.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "redis.state.del_exists",
+          "team": "blue",
+          "passed": false,
+          "detail": "[Errno -2] Name or service not known",
+          "score": 25.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "redis.payload.cross_conn_get",
+          "team": "red",
+          "passed": false,
+          "detail": "[Errno -2] Name or service not known",
+          "score": 10.0,
+          "evidence": [],
+          "critical": true,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "redis.fuzz.binary",
+          "team": "red",
+          "passed": false,
+          "detail": "[Errno -2] Name or service not known",
+          "score": 20.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "redis": 5.0
+        },
+        "class": "Low-Interaction",
+        "surface_depth": "unknown",
+        "coverage": 1.0,
+        "not_tested": 0
+      },
+      "notes": [
+        "UHBS Module B class=Low-Interaction"
+      ],
+      "error": null,
+      "complete": true,
+      "applicable_checks": 5,
+      "scored_checks": 5,
+      "critical_control_verdict": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "checks": [
+        {
+          "id": "c1.telemetry_dir",
+          "team": "blue",
+          "passed": false,
+          "detail": "telemetry_dir missing \u2014 Module C incomplete until sink is provided",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "NOT_TESTED",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C1",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c4.ground_truth",
+          "team": "blue",
+          "passed": false,
+          "detail": "no telemetry sink for ground-truth matching",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "NOT_TESTED",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C4",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "collection_capability": {
+          "status": "INCOMPLETE",
+          "reason": "no_telemetry_dir"
+        },
+        "coverage": 0.0,
+        "not_tested": 2
+      },
+      "notes": [
+        "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4"
+      ],
+      "error": null,
+      "complete": false,
+      "applicable_checks": 2,
+      "scored_checks": 0,
+      "critical_control_verdict": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "checks": [
+        {
+          "id": "d1.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_AIRGAP_ATTESTED set (metadata only; zero scoring weight)",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D1.meta",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "passed": false,
+          "detail": "UHBS_EGRESS_GATEWAY_LOG unset \u2014 gateway evidence not attached",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "NOT_TESTED",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D1.critical",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.shell_egress_probes",
+          "team": "blue",
+          "passed": false,
+          "detail": "no explicit SSH listener \u2014 shell egress/LPE critical probes not executed; provide UHBS_EGRESS_GATEWAY_LOG or SSH for a complete assessment",
+          "score": 0.0,
+          "evidence": [],
+          "critical": true,
+          "outcome": "NOT_TESTED",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D1.critical",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.runtime_escape_surface",
+          "team": "blue",
+          "passed": false,
+          "detail": "runtime escape surface not inspected without shell exec",
+          "score": 0.0,
+          "evidence": [],
+          "critical": true,
+          "outcome": "NOT_TESTED",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "breakout": false,
+        "allowed_outbound_traffic": false,
+        "shell_exec": false,
+        "protocols": [
+          "redis"
+        ],
+        "defense_in_depth_score": 0.0
+      },
+      "notes": [
+        "Module D v5: non-SSH targets need gateway/packet evidence for critical egress and runtime inspection \u2014 attestation alone never clears the gate."
+      ],
+      "error": null,
+      "complete": false,
+      "applicable_checks": 4,
+      "scored_checks": 1,
+      "critical_control_verdict": "INCOMPLETE"
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 20.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "passed": false,
+          "detail": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=redis",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "passed": false,
+          "detail": "errors=15/15 rate=100.00%",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "passed": true,
+          "detail": "completed exhaustion/fuzz blast",
+          "score": 15.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "passed": false,
+          "detail": "connect failed",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "p50_ms": 0.0,
+        "p95_ms": 0.0,
+        "p99_ms": 0.0,
+        "p95_limit_ms": 3000.0,
+        "errors": 15,
+        "concurrency": 5,
+        "requests": 15,
+        "wall_s": 0.12,
+        "protocol": "redis"
+      },
+      "notes": [],
+      "error": null,
+      "complete": true,
+      "applicable_checks": 0,
+      "scored_checks": 0,
+      "critical_control_verdict": null
+    }
+  ],
+  "extras": {
+    "target_scores": {
+      "protocol": 27.64,
+      "behavior": 5.0,
+      "telemetry": 0.0,
+      "containment": 0.0,
+      "scale": 20.0,
+      "static": 0.0
+    },
+    "uhqs_version": "5.0.0",
+    "tps": {
+      "name": "nosqlpot-redis-quick",
+      "class": "Low-Interaction",
+      "protocols": [
+        "redis"
+      ],
+      "expected_p95_latency_ms": 3000.0
+    },
+    "surface_depth": "unknown"
+  }
+}

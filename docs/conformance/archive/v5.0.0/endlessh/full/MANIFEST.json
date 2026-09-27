@@ -1,0 +1,38 @@
+{
+  "uhbs_version": "4.0.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "0437934fcc6bdb964f7e4bffe77ab9dc8770c767460ad8f3b2a1b52ea9cc63f8"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "0437934fcc6bdb964f7e4bffe77ab9dc8770c767460ad8f3b2a1b52ea9cc63f8"
+    },
+    {
+      "path": "report.json",
+      "sha256": "a9c2bbeb8e6da9b40c7f4f53221c5122b36cda98e11d0c39ff1ba1d64685952c"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "0437934fcc6bdb964f7e4bffe77ab9dc8770c767460ad8f3b2a1b52ea9cc63f8"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "63610003d1f11652a06e2248a92356e0539c0c3141af95fd112bfcd87bcd97b7"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "3739682812814365832f8653cfc94f844cd6dafda68c93e89f6719cfcc4ed58c"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "ee744bce904b7655f36f63f50965e64e5342d03b03a9403f4567cb09da68b3f5"
+    }
+  ],
+  "extra": {
+    "target": "endlessh",
+    "uhqs": 54.07,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

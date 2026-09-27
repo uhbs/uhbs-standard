@@ -1,0 +1,28 @@
+==> UHBS v4 target=echidra class=Low-Interaction protocols=['ssh'] phases=['profile', 'static', 'sandbox', 'dynamic', 'score']
+    plugins available: ftp, generic, http, modbus, redis, smb, smtp, ssh, telnet
+====================================================================================
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0
+====================================================================================
+Target System         : echidra
+System Profile Class  : Low-Interaction
+Protocols             : ssh
+Evaluation Date       : 2026-09-15
+Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
+Environment           : Quick Docker lab: EchidraOSS SSH :2222 root/admin, UHBS_QUICK=1, SAST skipped
+------------------------------------------------------------------------------------
+EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
+------------------------------------------------------------------------------------
+Module A: Protocol Fidelity         :  23.5/100       0.30     PARTIAL (accepted null ID)
+Module B: Behavioral Realism        :  25.0/100       0.15     PARTIAL (marker missing across sessions)
+Module C: Telemetry Quality         : 100.0/100       0.25     PASSED (telemetry_dir missing — set TPS/inventory telemetry_dir for C1 schema gates)
+Module D: Safety & Containment (C)  : 100.0/100       GATE     PASSED (stable)
+Module E: Scalability & Latency     :  55.0/100       0.10     PARTIAL (P50=1114.3ms P95=1736.3ms P99=1809.1ms TPS_limit=100.0ms proto=ssh)
+Module F: Static Code Audit         :  80.1/100       0.20     PASSED (1 hardcoded SSH banners: honeypot/core/persona.py)
+------------------------------------------------------------------------------------
+SAFETY GATE MULTIPLIER                : δ_C = 1.0 (Containment Score C = 100.0 >= 95)
+FINAL COMPOSITE SCORE (UHQS 4.0)      : 57.33 / 100
+OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
+====================================================================================
+
+Wrote /work/docs/conformance/reports/echidra/quick/report.json
+Wrote /work/docs/conformance/reports/echidra/quick/MANIFEST.json

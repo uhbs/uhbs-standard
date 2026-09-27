@@ -1,0 +1,50 @@
+# Methodology: OpenCanary multi-protocol UHBS lab
+
+**Status:** Informative  
+**UHBS:** 5.0.0 · Images `uhbs:5.0.0` (quick) / `uhbs:5.0.0-full` (full)  
+**Upstream commit:** `bc231423aa40242cbd0bf34801f8788e23420dee`  
+**Image:** `thinkst/opencanary:latest` (`sha256:558c508742ebc768d979f545bf1889be9d7d58377bd0144058c7df713a88763f`)
+
+## What was graded
+
+Only protocols with a dedicated UHBS harness plugin were scored:
+
+| Protocol | Port | Quick | Full |
+| --- | ---: | --- | --- |
+| HTTP | 80 | 41.30 / F | 50.12 / D |
+| FTP | 21 | 49.03 / F | 59.43 / D |
+| SSH | 2222 | 24.74 / F | 28.44 / F |
+| Telnet | 23 | 47.35 / F | 57.00 / D |
+| Redis | 6379 | 41.27 / F | 48.26 / F |
+
+**Not graded:** SMB (Samba required), MySQL, MSSQL, MongoDB, RDP, SIP, SNMP, NTP, TFTP, VNC, Git, HTTP-proxy, TCP banner, LLMNR, portscan.
+
+## Environment notes
+
+- Network: Docker `uhbs-lab`
+- Config mount: `/etc/opencanaryd/opencanary.conf` (first OpenCanary search path)
+- Safety: `UHBS_AIRGAP_ATTESTED=1`; egress gateway canary log mounted for full runs
+- SSH canary rejects interactive auth by design (alerts on attempts)
+
+## Limitations
+
+- Module C often partial when product logs are not STIX/OTel/ECS
+- Safety Gate frequently WARN (δ_C=0.81) under attestation-heavy Docker labs
+- Grades are evaluation proof, not certification
+
+## Grades (regraded 2026-07-27)
+
+- HTTP full: **66.02 / D** (δ_C=0.81)
+- FTP full: **61.5 / D** (δ_C=0.81)
+- SSH full: **35.64 / F** (δ_C=1.0)
+- TELNET full: **64.9 / D** (δ_C=0.81)
+- REDIS full: **53.72 / D** (δ_C=0.81)
+- MYSQL full: **62.96 / D** (δ_C=0.81)
+- RDP full: **61.01 / D** (δ_C=0.81)
+- SIP full: **46.44 / F** (δ_C=0.81)
+- SNMP full: **47.42 / F** (δ_C=0.81)
+- NTP full: **47.42 / F** (δ_C=0.81)
+- TFTP full: **47.42 / F** (δ_C=0.81)
+- VNC full: **61.99 / D** (δ_C=0.81)
+- GIT full: **62.96 / D** (δ_C=0.81)
+- SMB full: **57.72 / D** (δ_C=0.81)

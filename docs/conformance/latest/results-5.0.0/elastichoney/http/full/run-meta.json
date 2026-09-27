@@ -1,0 +1,83 @@
+{
+  "uhbs_version": "5.0.0",
+  "run_mode": "full",
+  "evaluated_at": "2026-09-26T13:34:46Z",
+  "proof_label": "Elastichoney (jordan-wright) (http)",
+  "target": {
+    "repository": "https://github.com/jordan-wright/elastichoney.git",
+    "git_branch": "master",
+    "git_commit": "1b03740e34c6a60991432d53c237773d484571eb",
+    "class": "Web-API",
+    "protocol": "http",
+    "host": "elastichoney-lab",
+    "port": 9200,
+    "container_image": "elastichoney:uhbs-lab",
+    "container_image_id": "sha256:29d8630b508560341bd10a47640200c0f4afa344e201265986ace634e6811214",
+    "base_image": "ubuntu:latest",
+    "base_image_reason": "Upstream Dockerfile is golang:1.3-onbuild (unusable). Built with golang:1.22 and ran on ubuntu:latest; anonymous=true avoids outbound IP lookup.",
+    "container_runtime_strategy": "ubuntu-wrapper"
+  },
+  "grader": {
+    "package_version": "5.0.0",
+    "docker_image": "uhbs:5.0.0-full",
+    "docker_image_id": "sha256:320fb38dcf3ebf69befb2248b75ed32c63dafe6b83f959746209d337c3e7ca9b",
+    "inventory": "docs/conformance/labs/elastichoney/inventory.yaml",
+    "tps": "docs/conformance/labs/elastichoney/web_api_http_full.yaml",
+    "target_id": "elastichoney-http"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "measured_vs_attested": {
+      "airgap": "attested",
+      "egress_gateway_log": "measured",
+      "telemetry": "measured"
+    }
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "grade_long": null,
+    "delta_c": 0.0,
+    "module_scores": {
+      "A": 100.0,
+      "B": 65.0,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 100.0,
+      "F": 63.88
+    },
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  },
+  "limitations": [
+    "Published UHBS 5.0.0 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1)."
+  ],
+  "docs_reviewed": [
+    "README.md",
+    "Dockerfile",
+    "docker-compose.yml",
+    "config.json"
+  ]
+}

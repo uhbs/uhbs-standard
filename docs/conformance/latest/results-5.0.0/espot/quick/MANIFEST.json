@@ -1,0 +1,39 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "fa52a780f9fc212c3ffaeecfb8293c085c43a87a249fdc9998d85693375052da"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "812fd0c18a5b5eb656030c6a716447ae982f853291e7f967cbd41bbdfe6534ae"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "812fd0c18a5b5eb656030c6a716447ae982f853291e7f967cbd41bbdfe6534ae"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "8edca2b8ba76a7814fd77995cdbf4b6e7358d31f521ab1fe3b7b33b9bd089408"
+    },
+    {
+      "path": "report.json",
+      "sha256": "dc45d3989482b55cab23a92617bcacf94ac653d171ee3673312d8eb0a1bfd700"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "25095fa6f1a9ccf4dff01f196da8e33b78bfdf5b5405e83bc662fc1d804d0db3"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "66e356e7c94ac2a1d2dd59bb0269fadbdf41f4a04a7e032c2387354be3e8c088"
+    }
+  ],
+  "extra": {
+    "target": "espot",
+    "uhqs": null,
+    "grade": null,
+    "critical_control_verdict": "INCOMPLETE"
+  }
+}

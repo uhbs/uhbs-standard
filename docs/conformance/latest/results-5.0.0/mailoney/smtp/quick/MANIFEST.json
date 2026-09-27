@@ -1,0 +1,39 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "28271737cd5b1c6afbe3d1e557b24274bfcd8bae49e2e70429297faed0763091"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "e8834c544e8ae2df61555fe784ef1835e662c76552558b0e2d31c3cd589301a8"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "e8834c544e8ae2df61555fe784ef1835e662c76552558b0e2d31c3cd589301a8"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "f6f6ea75f36983ee3daae97e469db77374bac276232b9037b129177972fe0f97"
+    },
+    {
+      "path": "report.json",
+      "sha256": "ad971b0158ef785ba262e66a9891f6e85a3ed71a95b11ef81d314d9fe0732832"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "ed3e4a359399eba3a4ace0f459f4f0d0f0743163ad4ddba1b2c9bfca75133a57"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "64fdc5827f5193d11dd581214ca75c7148d3c5fdc0ecde04b86dcd0d2d2fbb0a"
+    }
+  ],
+  "extra": {
+    "target": "mailoney-smtp",
+    "uhqs": null,
+    "grade": null,
+    "critical_control_verdict": "INCOMPLETE"
+  }
+}

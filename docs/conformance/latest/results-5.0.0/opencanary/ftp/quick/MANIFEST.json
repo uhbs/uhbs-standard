@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "0c86e8c10615d07591b1600b3de19e48e33213d526a51d9c034e34b3710b01c1"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "96502fde0fda2ad84b3c6cb12ea584b0d03ee00f872bef730c3dc7eeb7644326"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "96502fde0fda2ad84b3c6cb12ea584b0d03ee00f872bef730c3dc7eeb7644326"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "efba36135fb3b0b42a2899381041e1bac8a1fd475281db5f6118dc9c9a43d64b"
+    },
+    {
+      "path": "report.json",
+      "sha256": "ace448fa8eb03e863a52d89cea6e66876c6d32524617ac29f805cfc86e6f8fc3"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "0cc796debab296f047b5b4fa76e50d9e66bf1736442aef3b31c41ba5f6278f69"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "cbe741c835e286ee6356a9029728eb598f8d74498df65fe28200f972821ce8d1"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-ftp",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

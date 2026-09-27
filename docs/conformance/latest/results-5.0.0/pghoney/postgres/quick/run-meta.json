@@ -1,0 +1,85 @@
+{
+  "uhbs_version": "5.0.0",
+  "run_mode": "quick",
+  "evaluated_at": "2026-09-26T14:41:51Z",
+  "proof_label": "pghoney (Postgres :5432)",
+  "target": {
+    "repository": "https://github.com/betheroot/pghoney.git",
+    "git_branch": "master",
+    "git_commit": "f5d367f749f7e9353421aaf44dad856df490c441",
+    "class": "Low-Interaction",
+    "protocol": "postgres",
+    "host": "pghoney-lab",
+    "port": 5432,
+    "container_image": "pghoney:uhbs-lab",
+    "container_image_id": "sha256:09367f266cf3fde5bd31d367e5d3b26d6637329d587bcde9b935490c5ee7bc4e",
+    "base_image": "ubuntu:latest",
+    "base_image_reason": "ubuntu-wrapper Go build; hpfeeds disabled; bind 0.0.0.0; go get github.com/lib/pq.",
+    "container_runtime_strategy": "ubuntu-wrapper"
+  },
+  "grader": {
+    "package_version": "5.0.0",
+    "docker_image": "uhbs:5.0.0",
+    "docker_image_id": "sha256:aa436c35214d225126fd90db1dcbe307cbdbda9cad4c831efc068bd8901f6ba6",
+    "inventory": "docs/conformance/labs/pghoney/inventory.yaml",
+    "tps": "docs/conformance/labs/pghoney/database_postgres_quick.yaml",
+    "target_id": "pghoney-postgres"
+  },
+  "flags": {
+    "UHBS_QUICK": true,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": true,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "measured_vs_attested": {
+      "airgap": "attested",
+      "egress_gateway_log": "attested-empty-log",
+      "telemetry": "measured"
+    }
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "grade_long": null,
+    "delta_c": 0.0,
+    "module_scores": {
+      "A": 78.43,
+      "B": 65.0,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 100.0,
+      "F": 0.0
+    },
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  },
+  "limitations": [
+    "Published UHBS 5.0.0 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1); Docker Desktop lab, not a physical air-gap.",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement.",
+    "Do not transplant archived 4.x letter grades.",
+    "ubuntu-wrapper Go build; hpfeeds disabled; bind 0.0.0.0; go get github.com/lib/pq."
+  ],
+  "docs_reviewed": [
+    "README.md",
+    "pghoney.go",
+    "pghoney.conf"
+  ]
+}

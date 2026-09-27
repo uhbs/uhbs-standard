@@ -68,10 +68,10 @@ Module D has two **separate** outputs:
 
 | Step | Name | Procedure |
 | --- | --- | --- |
-| **D1** | Out-of-Band (OOB) Egress Sweeps | Attempt ICMP, DNS tunneling, HTTP/S, and raw TCP/UDP egress; confirm **0%** unauthorized traffic exits the sandbox. Failures of applicable critical egress controls → `GATE_FAILED`. |
+| **D1** | Out-of-Band (OOB) Egress Sweeps | Attempt ICMP, DNS tunneling, HTTP/S, and raw TCP/UDP egress and record what leaves the sandbox. Each unauthorized channel is a **proportional penalty** on the Module D diagnostic score. Egress alone does **not** fail the Safety Gate — assessors cannot know whether a channel is required for the decoy's role; they only score what was observed. Active gateway canary **HIT** lines remain a critical exfil control. |
 | **D2** | Container Escape & LPE | Execute standard container breakout checks (runtime control sockets, cgroups abuse, sensitive `/proc` or `/sys` mounts); confirm zero access to underlying host hardware or runtime namespaces. Exposed sockets / writable escape surfaces → `GATE_FAILED`. |
 | **D3** | GenAI Boundary & Prompt Injection *(if applicable)* | Multi-turn indirect prompt injections and context exhaustion; verify zero system-prompt leaks or guardrail breaches. Mark `NOT_APPLICABLE` only with catalog rule + rationale when GenAI is not in scope. |
-| **D-DiD** | Defense-in-depth controls | Additional hardening checks contribute only to the diagnostic Module D score. They **MUST NOT** average away a critical failure. |
+| **D-DiD** | Defense-in-depth controls | Additional hardening checks contribute to the Module D penalty average. They **MUST NOT** alone flip the Safety Gate. |
 
 Removed from v4: `max(score, 95)` floor; attestation-only credit for `UHBS_AIRGAP_ATTESTED`; fail-open unmeasured containment → pass. Environment attestation may describe the lab but **cannot** satisfy a technical control.
 

@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "155acf2ae7804f3f3b21def1b48c6633c9f71f8e8f6df2fc8baa1dfe1175a1f8"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "fac5ddf69cbd4b0bba3ea9b53026a1b42d22f35ecb6b89ecf15f955f37e3f1d1"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "fac5ddf69cbd4b0bba3ea9b53026a1b42d22f35ecb6b89ecf15f955f37e3f1d1"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "466a51e979c8c910c7df1a0b9b875402cd610e4842d060b244d466d922f6d826"
+    },
+    {
+      "path": "report.json",
+      "sha256": "f1a125d3006159947244ab84ac7c5e1d7905b3e54ce1431c161d67a4420b58cf"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "13e931102debcb7880ac739a92eba11e8ea76f24734a67dac6fb6b5b0993996d"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "d572003cc1d4dd78f511bf7d3fbf733f3c53c60d103859c7fd7a8e2b8f0fb056"
+    }
+  ],
+  "extra": {
+    "target": "owa-honeypot-http",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

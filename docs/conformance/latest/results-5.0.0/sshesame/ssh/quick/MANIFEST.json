@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "9cebaeabb8fc72d0506aeb714af9ee8c4c8ca78e75d328c578dda9a8cf1e911f"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "6a2e09947bdd28cae26bd61a4e306b834b438e2320a4975eadb9a88eeb7aa579"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "6a2e09947bdd28cae26bd61a4e306b834b438e2320a4975eadb9a88eeb7aa579"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "c0faf0cda76292667a57fba3b1ad10d7602c280855abd7e85ac5a893223e575e"
+    },
+    {
+      "path": "report.json",
+      "sha256": "f9a95fb1c8619b3e8355c80688e5f2a4b9bf6b89be4a9aa264061bafd2eaab5f"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "8162884e2c9dd21f7ad717e113498d210dfeca6c7b2ea31f8a1497553a31e613"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "cfe964f03b3b11dd51e3bfef67b7bee36f8270df8616a49dc8a0837521c2ce9f"
+    }
+  ],
+  "extra": {
+    "target": "sshesame-ssh",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

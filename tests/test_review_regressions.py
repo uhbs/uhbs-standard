@@ -32,8 +32,8 @@ def test_d3_breakout_does_not_override_critical_gate_passed() -> None:
             team="blue",
             outcome=CheckOutcome.PASS,
             score=100.0,
-            critical=True,
-            catalog_id="D1.critical",
+            critical=False,
+            catalog_id="D1.scored",
         ),
         CheckResult.make(
             id="d2.runtime_escape_surface",
@@ -53,6 +53,73 @@ def test_d3_breakout_does_not_override_critical_gate_passed() -> None:
         ),
     ]
     assert _verdict_from_critical(checks) == ContainmentVerdict.GATE_PASSED
+
+
+def test_egress_fails_are_penalty_not_gate_zero() -> None:
+    """ICMP/DNS/TCP observed egress lowers D score; does not GATE_FAILED alone."""
+    from uhbs_core.test_safety import score_containment_penalty
+
+    checks = [
+        CheckResult.make(
+            id="d1.egress_icmp",
+            team="blue",
+            outcome=CheckOutcome.FAIL,
+            score=0.0,
+            critical=False,
+            catalog_id="D1.scored",
+        ),
+        CheckResult.make(
+            id="d1.egress_dns",
+            team="blue",
+            outcome=CheckOutcome.FAIL,
+            score=0.0,
+            critical=False,
+            catalog_id="D1.scored",
+        ),
+        CheckResult.make(
+            id="d1.egress_tcp",
+            team="blue",
+            outcome=CheckOutcome.FAIL,
+            score=0.0,
+            critical=False,
+            catalog_id="D1.scored",
+        ),
+        CheckResult.make(
+            id="d1.egress_https",
+            team="blue",
+            outcome=CheckOutcome.PASS,
+            score=100.0,
+            critical=False,
+            catalog_id="D1.scored",
+        ),
+        CheckResult.make(
+            id="d1.egress_http",
+            team="blue",
+            outcome=CheckOutcome.PASS,
+            score=100.0,
+            critical=False,
+            catalog_id="D1.scored",
+        ),
+        CheckResult.make(
+            id="d2.docker_sock",
+            team="blue",
+            outcome=CheckOutcome.PASS,
+            score=100.0,
+            critical=True,
+            catalog_id="D2.critical",
+        ),
+        CheckResult.make(
+            id="d2.cgroup_escape_surface",
+            team="blue",
+            outcome=CheckOutcome.PASS,
+            score=100.0,
+            critical=True,
+            catalog_id="D2.critical",
+        ),
+    ]
+    assert _verdict_from_critical(checks) == ContainmentVerdict.GATE_PASSED
+    # 4 PASS / 7 checks → ~57.14 — not zero
+    assert score_containment_penalty(checks) == pytest.approx(57.14, abs=0.02)
 
 
 def test_gateway_canary_ignores_hit_substrings(tmp_path: Path, monkeypatch) -> None:
@@ -119,8 +186,8 @@ def test_assessment_skipped_module_with_complete_true_ok() -> None:
     assert verdict is CriticalControlVerdict.GATE_FAILED
 
 
-def test_integrity_omitted_uhqs_ok_when_ungraded() -> None:
-    from uhbs_core.uhqs_math import SCORING_MODEL_ID
+def test_integrity_requires_uhqs_under_always_grade() -> None:
+    from uhbs_core.uhqs_math import SCORING_MODEL_ID, compute_uhqs, letter_grade
 
     card = {
         "scoring_model_id": SCORING_MODEL_ID,
@@ -144,11 +211,24 @@ def test_integrity_omitted_uhqs_ok_when_ungraded() -> None:
             "delta_c": 0.0,
             "passed": False,
             "critical_control_verdict": "INCOMPLETE",
+            "containment_score": 0.0,
         },
     }
-    # uhqs key intentionally omitted
     errors = assert_scorecard_integrity(card)
-    assert errors == []
+    assert any("uhqs missing" in e for e in errors)
+
+    scores = {k: float(card["modules"][k]["score"]) for k in "ABCDEF"}
+    result = compute_uhqs(
+        scores,
+        profile_class="POSIX-Shell",
+        assessment_status="INCOMPLETE",
+        critical_control_verdict="INCOMPLETE",
+        containment_measured=False,
+    )
+    card["uhqs"] = result.uhqs
+    card["grade"] = letter_grade(result.uhqs)
+    card["safety_gate"]["delta_c"] = result.delta_c
+    assert assert_scorecard_integrity(card) == []
 
 
 def test_integrity_rejects_complete_when_modules_incomplete() -> None:
@@ -183,15 +263,16 @@ def test_integrity_rejects_complete_when_modules_incomplete() -> None:
     assert any("COMPLETE" in e and "INCOMPLETE" in e for e in errors)
 
 
-def test_invalid_verdict_string_fails_closed() -> None:
+def test_invalid_verdict_string_still_grades() -> None:
     result = compute_uhqs(
         {"A": 80, "B": 80, "C": 80, "D": 99, "E": 80, "F": 80},
         profile_class="POSIX-Shell",
         critical_control_verdict="BOGUS",
     )
-    assert result.graded is False
-    assert result.uhqs is None
+    assert result.graded is True
+    assert result.uhqs == 80.0
     assert result.critical_control_verdict is CriticalControlVerdict.INCOMPLETE
+    assert result.delta_c == 1.0
 
 
 def test_base_stubs_are_optional_not_tested() -> None:
@@ -218,6 +299,33 @@ def test_c2_requires_current_run_id_markers() -> None:
     records = [{"msg": "UHBS_INJECT:oldrun:ANSI:x"}, {"msg": "UHBS_INJECT:oldrun:JSON:y"}]
     assessment = assess_sink_resilience(records, "newrun", ["ansi", "json_break"])
     assert assessment["ok"] is False
+
+
+def test_c2_matches_payload_family_tokens_not_pid_upper() -> None:
+    # Payload ids are json_break/null_byte/… but sink lines use JSON/NULL/….
+    run_id = "curr"
+    records = [
+        {"msg": f"UHBS_INJECT:{run_id}:ANSI:x"},
+        {"msg": f"UHBS_INJECT:{run_id}:JSON:y"},
+        {"msg": f"UHBS_INJECT:{run_id}:NULL:z"},
+        {"msg": f"UHBS_INJECT:{run_id}:CR:w"},
+        {"msg": f"UHBS_INJECT:{run_id}:XLS:v"},
+        {"msg": f"UHBS_INJECT:{run_id}:UNI:u"},
+    ]
+    assessment = assess_sink_resilience(
+        records,
+        run_id,
+        ["ansi", "json_break", "null_byte", "cr_inject", "formula", "unicode"],
+    )
+    assert assessment["ok"] is True
+    assert set(assessment["markers_found"]) == {
+        "ansi",
+        "json_break",
+        "null_byte",
+        "cr_inject",
+        "formula",
+        "unicode",
+    }
 
 
 def test_attack_pins_share_primary_techniques() -> None:

@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "2108463c4668ac1dde21d4400c26222b262cbd90913a5a4d1253beb007a2278c"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "44b62bdc42539f5450d726f38d18fa56ebdc7e7771d1dc8d6de30a66f132dc18"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "44b62bdc42539f5450d726f38d18fa56ebdc7e7771d1dc8d6de30a66f132dc18"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "13dfe3e416f65dd95dcb5e9106fd8c73c6c6116c5ceea0b1c3e6fea58ab768aa"
+    },
+    {
+      "path": "report.json",
+      "sha256": "7414cb234bc55122cfcfdfaa07b82e564894e34cb9a8e20058bd00708ee942ef"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "54dffd64b5a5979de289ab34c8302b7a419d85f5b63e0dd429e43c24003de9ba"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "9f72fefca51b2840e948a95075e3b29ea0a0027c64b0f8674546362bf16b512b"
+    }
+  ],
+  "extra": {
+    "target": "honeyhttpd-http",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

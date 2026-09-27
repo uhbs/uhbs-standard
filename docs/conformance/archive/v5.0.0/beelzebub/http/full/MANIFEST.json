@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.0.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "627a60969b457b3f33db0be1709101f378eb98712faf9493e1985913f4efca04"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "627a60969b457b3f33db0be1709101f378eb98712faf9493e1985913f4efca04"
+    },
+    {
+      "path": "report.json",
+      "sha256": "7e8d311bf4aa7f459bb89b1bf4af5ab0a6c097d1b80b4ad1b6a05efe9b485c54"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "627a60969b457b3f33db0be1709101f378eb98712faf9493e1985913f4efca04"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "0f72b958b3fd140a7963cba06bfa4d3df8768e1dea9d8e2b8495423046b2e850"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "ba344b4ad766bfbabbcebdaf4ce08cc8bed447b73b1d17dbe719cff0d8ff5029"
+    }
+  ],
+  "extra": {
+    "target": "beelzebub-http",
+    "uhqs": 66.02,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

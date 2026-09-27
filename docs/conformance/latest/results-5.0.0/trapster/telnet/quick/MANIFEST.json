@@ -1,0 +1,42 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "8f73ca66681e1b2ac30c2a7c7a0fbbac4a638cd819e19a5d98673cc2f2e2dd4b"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "8f73ca66681e1b2ac30c2a7c7a0fbbac4a638cd819e19a5d98673cc2f2e2dd4b"
+    },
+    {
+      "path": "report.json",
+      "sha256": "db15ae20b0e3c3ddb18fabd454e0546ba6b44a9d92c1cb6fbf41a82d0c80b2b7"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "9ed39d219475c966956d7c04670389358f4bcceb6ef4bdd74cc1789cace04cb9"
+    },
+    {
+      "path": "README.md",
+      "sha256": "bbe614f17e7164beb0127bdfeaad20f9e82f3935d9960b777bd13f7e6aba5412"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "c35608e7a8e227eaa57f7a064d18d4a5d0be8215b1bbfe1a5aefa3eac5ad5c8a"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "b029d28174d48bc4cbc4768f641dfee1d1f971945f943275b24e4105170eb1c6"
+    }
+  ],
+  "extra": {
+    "target": "trapster-telnet",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE",
+    "evidence_pack": "evidence-pack.json",
+    "evidence_manifest_digest": "5260ce9d027962c8724fc076427c9954719e754ffa7c26b24370fcc5206b4ffb"
+  }
+}

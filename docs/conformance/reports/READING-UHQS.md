@@ -10,18 +10,19 @@
 
 ## What a published grade is
 
-An eligible v5 lab run produces a **UHQS** score (0–100) and letter grade under
-a named **class**, protocol, and scoring model. First inspect
-`assessment_status`, `critical_control_verdict`, and `assurance_level`. A v5
-result is scored only when it is `COMPLETE + GATE_PASSED`; otherwise it is
-**Ungraded** (`uhqs = null`, no grade).
+An always-grade lab run produces a **UHQS** score (0–100) and letter grade under
+a named **class**, protocol, and scoring model (`uhqs-v5.2-measured-renorm`). Inspect
+`assessment_status`, `critical_control_verdict`, and `assurance_level` alongside
+the grade. Unmeasured modules are **excluded** from the composite (weights
+renormalized). Only `GATE_FAILED` applies δ_C=0.5; incompleteness is a status
+label, not a haircut.
 
 | Module | Question it answers | Blue-team / CTI use |
 | --- | --- | --- |
 | **A — Protocol fidelity** | Does the decoy speak the protocol well enough to look like a real service? | Whether scanners and commodity malware will stay engaged long enough to leave telemetry |
 | **B — Behavioral realism** | Do post-connect behaviors (auth, sessions, payloads) feel plausible? | Whether interactive attackers / bots continue; weak B often means “credential logger only” |
-| **C — Telemetry quality** | Can the harness observe useful session evidence from the lab setup? | Whether *this graded lab* produced analyst-usable logs — not a claim about your production SIEM wiring |
-| **D — Safety & containment** | Do all critical containment controls pass with evidence? | Eligibility gate; failure or missing evidence is Ungraded, while defense-in-depth diagnostics remain visible |
+| **C — Telemetry quality** | Can the harness observe useful session evidence from the lab setup? | When measured: analyst-usable logs for *this* lab. When unmeasured: excluded from UHQS (does not force F) |
+| **D — Safety & containment** | Do critical containment controls pass with evidence? | Factor via δ_C only on `GATE_FAILED` (0.5); verdict stays on the card |
 | **E — Scalability & latency** | Timing vs TPS P95 expectations | Whether the decoy remains responsive under probe load |
 | **F — Static code audit** | Source-level signals from the checkout used in the lab | Hygiene / supply-chain posture of **that** tree — not a full CVE audit |
 
@@ -51,7 +52,7 @@ result is scored only when it is `COMPLETE + GATE_PASSED`; otherwise it is
 
 ## Grade and outcome
 
-For an eligible assessment, letter bands are **A ≥ 90**, **B ≥ 80**,
-**C ≥ 70**, **D ≥ 60**, else **F**. F is a completed, gate-passed assessment
-with a low composite; it is not the same as `INCOMPLETE`, `GATE_FAILED`, or
-Ungraded. No outcome is production authorization or proof of compliance.
+Letter bands are **A ≥ 90**, **B ≥ 80**, **C ≥ 70**, **D ≥ 50**, else **F**.
+`GATE_FAILED` and `INCOMPLETE` still publish a letter grade with a lower δ_C
+(0.5 / 0.75). F is a low composite, not “refused to grade.” No outcome is
+production authorization or proof of compliance.

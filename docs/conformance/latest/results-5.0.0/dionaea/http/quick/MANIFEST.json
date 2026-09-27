@@ -1,0 +1,42 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "8fe91a9e650c044feb35f24caefe824d340103de0f3eb4e4cb12b7e49f6493a8"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "08444af3eba6acbcdb2b32f97704fc14ba0563b37733b08499c399f5dca4ceda"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "08444af3eba6acbcdb2b32f97704fc14ba0563b37733b08499c399f5dca4ceda"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "d9a878890e15faee0f5b4a8014db69120ad8378bffed36f736f2ba8d7ce212c1"
+    },
+    {
+      "path": "report.json",
+      "sha256": "957929364363a410174299670abb43083375abef921e28a59e56625187b02826"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "0b1dc8e22bf4261f55d180770799e1ebe821e8dfd4c75066fbddf215a3600366"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "d4007b26708eeb1486e736c8ee1cac758a437a9e9ae9cb78607734aa6b0dc8ec"
+    }
+  ],
+  "extra": {
+    "target": "dionaea-http",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE",
+    "evidence_pack": "evidence-pack.json",
+    "evidence_manifest_digest": "d9a878890e15faee0f5b4a8014db69120ad8378bffed36f736f2ba8d7ce212c1"
+  }
+}

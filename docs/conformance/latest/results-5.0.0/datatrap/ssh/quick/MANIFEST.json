@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "b549e4ebfe3768cd5d0a9d40ea8e902c59f3df8995f19366650714075bcd0764"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "ea6a144f4748e8eb3774ea7a7b7a1a32bf7ce101506c5b7a2e543f8687804f03"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "ea6a144f4748e8eb3774ea7a7b7a1a32bf7ce101506c5b7a2e543f8687804f03"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "5d960b87fc30871dba86f2bf6aae0555f403cdc3e0b35cf7e560f9e7153dbce8"
+    },
+    {
+      "path": "report.json",
+      "sha256": "ea8bb0802f40aa35bf12a643d966a2093b787c3333e6700be52d3478ac937060"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "c1a7892637438b7b9de6b76f7aeee36f01bafe2959d3a128d166a60be4e9f909"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "787a8b8e5a076af1232d1e4671b13844804d10d733243ecd99111a0897a6f919"
+    }
+  ],
+  "extra": {
+    "target": "datatrap-ssh",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

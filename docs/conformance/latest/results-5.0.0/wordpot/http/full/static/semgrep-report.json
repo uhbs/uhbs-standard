@@ -1,0 +1,2064 @@
+{
+  "version": "1.178.0",
+  "results": [
+    {
+      "check_id": "html.security.audit.missing-integrity.missing-integrity",
+      "path": "wordpot/templates/dummy.html",
+      "start": {
+        "line": 18,
+        "col": 1,
+        "offset": 466
+      },
+      "end": {
+        "line": 18,
+        "col": 53,
+        "offset": 518
+      },
+      "extra": {
+        "message": "This tag is missing an 'integrity' subresource integrity attribute. The 'integrity' attribute allows for the browser to verify that externally hosted files (for example from a CDN) are delivered without unexpected manipulation. Without this attribute, if an attacker can modify the externally hosted resource, this could lead to XSS and other types of attacks. To prevent this, include the base64-encoded cryptographic hash of the resource (file) you\u2019re telling the browser to fetch in the 'integrity' attribute for all externally hosted files.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software or Data Integrity Failures"
+          ],
+          "confidence": "LOW",
+          "references": [
+            "https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues"
+          ],
+          "source": "https://semgrep.dev/r/html.security.audit.missing-integrity.missing-integrity",
+          "shortlink": "https://sg.run/krXA"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/dummy.html",
+      "start": {
+        "line": 104,
+        "col": 175,
+        "offset": 5500
+      },
+      "end": {
+        "line": 104,
+        "col": 259,
+        "offset": 5584
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/dummy.html",
+      "start": {
+        "line": 115,
+        "col": 8,
+        "offset": 6511
+      },
+      "end": {
+        "line": 115,
+        "col": 143,
+        "offset": 6646
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/dummy.html",
+      "start": {
+        "line": 126,
+        "col": 9,
+        "offset": 6823
+      },
+      "end": {
+        "line": 126,
+        "col": 135,
+        "offset": 6949
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 10,
+        "col": 2,
+        "offset": 435
+      },
+      "end": {
+        "line": 10,
+        "col": 155,
+        "offset": 588
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 29,
+        "col": 228,
+        "offset": 2154
+      },
+      "end": {
+        "line": 29,
+        "col": 312,
+        "offset": 2238
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 54,
+        "col": 18,
+        "offset": 3656
+      },
+      "end": {
+        "line": 54,
+        "col": 108,
+        "offset": 3746
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 58,
+        "col": 6,
+        "offset": 3959
+      },
+      "end": {
+        "line": 58,
+        "col": 39,
+        "offset": 3992
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 59,
+        "col": 6,
+        "offset": 4045
+      },
+      "end": {
+        "line": 59,
+        "col": 47,
+        "offset": 4086
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 64,
+        "col": 10,
+        "offset": 4185
+      },
+      "end": {
+        "line": 64,
+        "col": 89,
+        "offset": 4264
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 65,
+        "col": 16,
+        "offset": 4300
+      },
+      "end": {
+        "line": 65,
+        "col": 72,
+        "offset": 4356
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 71,
+        "col": 6,
+        "offset": 4555
+      },
+      "end": {
+        "line": 71,
+        "col": 67,
+        "offset": 4616
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 73,
+        "col": 6,
+        "offset": 4769
+      },
+      "end": {
+        "line": 73,
+        "col": 65,
+        "offset": 4828
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 75,
+        "col": 6,
+        "offset": 5001
+      },
+      "end": {
+        "line": 75,
+        "col": 65,
+        "offset": 5060
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 77,
+        "col": 6,
+        "offset": 5188
+      },
+      "end": {
+        "line": 77,
+        "col": 74,
+        "offset": 5256
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 79,
+        "col": 6,
+        "offset": 5537
+      },
+      "end": {
+        "line": 79,
+        "col": 113,
+        "offset": 5644
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 84,
+        "col": 56,
+        "offset": 6112
+      },
+      "end": {
+        "line": 84,
+        "col": 121,
+        "offset": 6177
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 84,
+        "col": 123,
+        "offset": 6179
+      },
+      "end": {
+        "line": 84,
+        "col": 168,
+        "offset": 6224
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 84,
+        "col": 170,
+        "offset": 6226
+      },
+      "end": {
+        "line": 84,
+        "col": 213,
+        "offset": 6269
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 84,
+        "col": 215,
+        "offset": 6271
+      },
+      "end": {
+        "line": 84,
+        "col": 270,
+        "offset": 6326
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 84,
+        "col": 328,
+        "offset": 6384
+      },
+      "end": {
+        "line": 84,
+        "col": 381,
+        "offset": 6437
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 84,
+        "col": 513,
+        "offset": 6569
+      },
+      "end": {
+        "line": 84,
+        "col": 624,
+        "offset": 6680
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 87,
+        "col": 345,
+        "offset": 7055
+      },
+      "end": {
+        "line": 87,
+        "col": 397,
+        "offset": 7107
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 91,
+        "col": 71,
+        "offset": 7627
+      },
+      "end": {
+        "line": 91,
+        "col": 227,
+        "offset": 7783
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 95,
+        "col": 101,
+        "offset": 7916
+      },
+      "end": {
+        "line": 95,
+        "col": 159,
+        "offset": 7974
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 96,
+        "col": 192,
+        "offset": 8172
+      },
+      "end": {
+        "line": 96,
+        "col": 306,
+        "offset": 8286
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 102,
+        "col": 46,
+        "offset": 8724
+      },
+      "end": {
+        "line": 102,
+        "col": 95,
+        "offset": 8773
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 102,
+        "col": 158,
+        "offset": 8836
+      },
+      "end": {
+        "line": 102,
+        "col": 220,
+        "offset": 8898
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/readme.html",
+      "start": {
+        "line": 102,
+        "col": 278,
+        "offset": 8956
+      },
+      "end": {
+        "line": 102,
+        "col": 357,
+        "offset": 9035
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "generic.secrets.security.detected-etc-shadow.detected-etc-shadow",
+      "path": "wordpot/templates/recent-backups.html",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 1,
+        "col": 11,
+        "offset": 10
+      },
+      "extra": {
+        "message": "linux shadow file detected",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "category": "security",
+          "technology": [
+            "secrets"
+          ],
+          "confidence": "LOW",
+          "owasp": [
+            "A07:2021 - Identification and Authentication Failures",
+            "A07:2025 - Authentication Failures"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Hard-coded Secrets"
+          ],
+          "source": "https://semgrep.dev/r/generic.secrets.security.detected-etc-shadow.detected-etc-shadow",
+          "shortlink": "https://sg.run/4ylL"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.audit.missing-integrity.missing-integrity",
+      "path": "wordpot/templates/twentyeleven.html",
+      "start": {
+        "line": 19,
+        "col": 1,
+        "offset": 483
+      },
+      "end": {
+        "line": 19,
+        "col": 53,
+        "offset": 535
+      },
+      "extra": {
+        "message": "This tag is missing an 'integrity' subresource integrity attribute. The 'integrity' attribute allows for the browser to verify that externally hosted files (for example from a CDN) are delivered without unexpected manipulation. Without this attribute, if an attacker can modify the externally hosted resource, this could lead to XSS and other types of attacks. To prevent this, include the base64-encoded cryptographic hash of the resource (file) you\u2019re telling the browser to fetch in the 'integrity' attribute for all externally hosted files.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software or Data Integrity Failures"
+          ],
+          "confidence": "LOW",
+          "references": [
+            "https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues"
+          ],
+          "source": "https://semgrep.dev/r/html.security.audit.missing-integrity.missing-integrity",
+          "shortlink": "https://sg.run/krXA"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/twentyeleven.html",
+      "start": {
+        "line": 105,
+        "col": 175,
+        "offset": 5678
+      },
+      "end": {
+        "line": 105,
+        "col": 259,
+        "offset": 5762
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/twentyeleven.html",
+      "start": {
+        "line": 116,
+        "col": 8,
+        "offset": 6689
+      },
+      "end": {
+        "line": 116,
+        "col": 143,
+        "offset": 6824
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/twentyeleven.html",
+      "start": {
+        "line": 128,
+        "col": 9,
+        "offset": 7055
+      },
+      "end": {
+        "line": 128,
+        "col": 135,
+        "offset": 7181
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "wordpot/templates/wp-login.html",
+      "start": {
+        "line": 21,
+        "col": 7,
+        "offset": 1384
+      },
+      "end": {
+        "line": 21,
+        "col": 76,
+        "offset": 1453
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.django.security.django-no-csrf-token.django-no-csrf-token",
+      "path": "wordpot/templates/wp-login.html",
+      "start": {
+        "line": 26,
+        "col": 1,
+        "offset": 1698
+      },
+      "end": {
+        "line": 41,
+        "col": 8,
+        "offset": 2514
+      },
+      "extra": {
+        "message": "Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks.",
+        "metadata": {
+          "category": "security",
+          "cwe": "CWE-352: Cross-Site Request Forgery (CSRF)",
+          "references": [
+            "https://docs.djangoproject.com/en/4.2/howto/csrf/"
+          ],
+          "confidence": "MEDIUM",
+          "likelihood": "MEDIUM",
+          "impact": "MEDIUM",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "django"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cross-Site Request Forgery (CSRF)"
+          ],
+          "source": "https://semgrep.dev/r/python.django.security.django-no-csrf-token.django-no-csrf-token",
+          "shortlink": "https://sg.run/N0Bp"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": "wordpot/templates/dummy.html",
+            "start": {
+              "line": 20,
+              "col": 28,
+              "offset": 0
+            },
+            "end": {
+              "line": 20,
+              "col": 29,
+              "offset": 1
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line wordpot/templates/dummy.html:20:\n `\"` was unexpected",
+      "path": "wordpot/templates/dummy.html",
+      "spans": [
+        {
+          "file": "wordpot/templates/dummy.html",
+          "start": {
+            "line": 20,
+            "col": 28,
+            "offset": 0
+          },
+          "end": {
+            "line": 20,
+            "col": 29,
+            "offset": 1
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": "wordpot/templates/twentyeleven.html",
+            "start": {
+              "line": 21,
+              "col": 28,
+              "offset": 0
+            },
+            "end": {
+              "line": 21,
+              "col": 29,
+              "offset": 1
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line wordpot/templates/twentyeleven.html:21:\n `\"` was unexpected",
+      "path": "wordpot/templates/twentyeleven.html",
+      "spans": [
+        {
+          "file": "wordpot/templates/twentyeleven.html",
+          "start": {
+            "line": 21,
+            "col": 28,
+            "offset": 0
+          },
+          "end": {
+            "line": 21,
+            "col": 29,
+            "offset": 1
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": "wordpot/templates/wp-login.html",
+            "start": {
+              "line": 38,
+              "col": 59,
+              "offset": 0
+            },
+            "end": {
+              "line": 38,
+              "col": 60,
+              "offset": 1
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line wordpot/templates/wp-login.html:38:\n `\"` was unexpected",
+      "path": "wordpot/templates/wp-login.html",
+      "spans": [
+        {
+          "file": "wordpot/templates/wp-login.html",
+          "start": {
+            "line": 38,
+            "col": 59,
+            "offset": 0
+          },
+          "end": {
+            "line": 38,
+            "col": 60,
+            "offset": 1
+          }
+        }
+      ]
+    }
+  ],
+  "paths": {
+    "scanned": [
+      ".gitignore",
+      "Dockerfile.lab",
+      "README.md",
+      "logs/.gitignore",
+      "requirements.txt",
+      "wordpot/__init__.py",
+      "wordpot/helpers.py",
+      "wordpot/logger.py",
+      "wordpot/plugins/__init__.py",
+      "wordpot/plugins/badlogin.ini",
+      "wordpot/plugins/badlogin.py",
+      "wordpot/plugins/commonfiles.ini",
+      "wordpot/plugins/commonfiles.py",
+      "wordpot/plugins/recent-backups.ini",
+      "wordpot/plugins/recent-backups.py",
+      "wordpot/plugins/timthumb.ini",
+      "wordpot/plugins/timthumb.py",
+      "wordpot/plugins/userenumeration.ini",
+      "wordpot/plugins/userenumeration.py",
+      "wordpot/plugins_manager.py",
+      "wordpot/static/wp-admin/css/colors-fresh.css",
+      "wordpot/static/wp-admin/css/install.css",
+      "wordpot/static/wp-admin/css/wp-admin.css",
+      "wordpot/static/wp-content/themes/twentyeleven/js/html5.js",
+      "wordpot/static/wp-content/themes/twentyeleven/style.css",
+      "wordpot/templates/dummy.html",
+      "wordpot/templates/readme.html",
+      "wordpot/templates/recent-backups.html",
+      "wordpot/templates/timthumb.html",
+      "wordpot/templates/twentyeleven.html",
+      "wordpot/templates/wp-login.html",
+      "wordpot/templates/xmlrpc.html",
+      "wordpot/views.py",
+      "wordpot.conf",
+      "wordpot.py"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.6243979930877686,
+    "profiling_times": {
+      "config_time": 5.698929786682129,
+      "core_time": 4.496220350265503,
+      "ignores_time": 0.002966165542602539,
+      "total_time": 10.267297506332397
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 4.675719261169434,
+      "per_file_time": {
+        "mean": 0.05138153034252124,
+        "std_dev": 0.01074768106918375
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9904623678208584,
+      "rules_selected_ratio": 0.04022392701637985,
+      "rules_matched_ratio": 0.04022392701637985
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 817849408
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "02df97a24da6f4b3b8db8985e796a615cd67ffd638ac474ede002960aff3ef84"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "4e819b6383f280070452a0cdcea4f952e5e20571d9303300f0642f8ea21b03fb"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "4e819b6383f280070452a0cdcea4f952e5e20571d9303300f0642f8ea21b03fb"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "e0aab126966a5cacaea62a0011cf6be86ef568390e35cb8681cc332351f45d0a"
+    },
+    {
+      "path": "report.json",
+      "sha256": "af37847f88404280825b7f35e126e7349b2123e92b4050043fa74f2e238c708b"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "5ad3a100b1bed65fc7555f5e4f7b8af112fddbf9f9c016f96ca68dd08a8e7d30"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "308fe43437477e4517c30a61444f0c50d0f5d64a1d4a208f27c21a6765590777"
+    }
+  ],
+  "extra": {
+    "target": "datatrap-mysql",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

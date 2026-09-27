@@ -1,0 +1,158 @@
+{
+  "version": "1.178.0",
+  "results": [],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      ".gitignore",
+      "Dockerfile.lab",
+      "LICENSE.txt",
+      "README.md",
+      "config-test.json",
+      "config.json.default",
+      "config.lab.json",
+      "docs/Makefile",
+      "docs/source/conf.py",
+      "docs/source/honeyhttpd.lib.rst",
+      "docs/source/honeyhttpd.loggers.rst",
+      "docs/source/honeyhttpd.rst",
+      "docs/source/index.rst",
+      "docs/source/modules.rst",
+      "honeyhttpd/__init__.py",
+      "honeyhttpd/lib/__init__.py",
+      "honeyhttpd/lib/encode.py",
+      "honeyhttpd/lib/module_util.py",
+      "honeyhttpd/lib/server.py",
+      "honeyhttpd/loggers/ElasticSearchLogger.py",
+      "honeyhttpd/loggers/FileLogger.py",
+      "honeyhttpd/loggers/S3Logger.py",
+      "honeyhttpd/loggers/StdoutLogger.py",
+      "honeyhttpd/loggers/__init__.py",
+      "honeyhttpd/start.py",
+      "logs/.gitkeep",
+      "requirements.txt",
+      "servers/ApachePasswordServer.py",
+      "servers/ApacheServer.py",
+      "servers/TestServer.py",
+      "servers/Tomcat7Server.py",
+      "servers/UploadServer.py",
+      "servers/__init__.py",
+      "start.py",
+      "util/__init__.py"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 2.1964540481567383,
+    "profiling_times": {
+      "config_time": 7.127779006958008,
+      "core_time": 28.644140005111694,
+      "ignores_time": 0.4067997932434082,
+      "total_time": 40.618032693862915
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 101.7250645160675,
+      "per_file_time": {
+        "mean": 1.1057072230007339,
+        "std_dev": 8.104180706596551
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.8335897193739518,
+        "count_ratio": 0.11956521739130435
+      },
+      "very_slow_files": [
+        {
+          "fpath": "honeyhttpd/loggers/S3Logger.py",
+          "ftime": 3.9189929962158203
+        },
+        {
+          "fpath": "honeyhttpd/start.py",
+          "ftime": 4.121169090270996
+        },
+        {
+          "fpath": "docs/source/conf.py",
+          "ftime": 4.8217689990997314
+        },
+        {
+          "fpath": "honeyhttpd/loggers/ElasticSearchLogger.py",
+          "ftime": 4.846620082855225
+        },
+        {
+          "fpath": "honeyhttpd/loggers/FileLogger.py",
+          "ftime": 6.119865894317627
+        },
+        {
+          "fpath": "servers/Tomcat7Server.py",
+          "ftime": 9.105500936508179
+        },
+        {
+          "fpath": "servers/TestServer.py",
+          "ftime": 9.18279504776001
+        },
+        {
+          "fpath": "servers/UploadServer.py",
+          "ftime": 9.699198007583618
+        },
+        {
+          "fpath": "servers/ApacheServer.py",
+          "ftime": 15.087018966674805
+        },
+        {
+          "fpath": "honeyhttpd/lib/server.py",
+          "ftime": 15.260528087615967
+        }
+      ]
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9898664210041456,
+      "rules_selected_ratio": 0.035006909258406264,
+      "rules_matched_ratio": 0.035006909258406264
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 782227456
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

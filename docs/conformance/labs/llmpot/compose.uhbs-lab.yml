@@ -1,0 +1,21 @@
+# UHBS lab overlay: no host port publishes; build from repo clone under this tree.
+services:
+  mongo:
+    volumes:
+      - llmpot_mongo_data:/data/db
+  web_app:
+    build:
+      context: ../../../.local/labs/llmpot
+      dockerfile: emulator/web.Dockerfile
+      args:
+        MONGO_PWD: "m0m@l@b202$"
+    ports: !override []
+    networks:
+      - uhbs-lab
+
+volumes:
+  llmpot_mongo_data:
+
+networks:
+  uhbs-lab:
+    external: true

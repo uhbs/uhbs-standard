@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "bbed544c86575f7c4580964e9b59170e902d1b3dc7d688250edb58eac2638a2f"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "589d1ed0ca670e7f8289b12d84987703072dd0e025953099fd51002abf095449"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "589d1ed0ca670e7f8289b12d84987703072dd0e025953099fd51002abf095449"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "fe0bcfe5da765c50415a2202cb6d9d938ce16c170a584a6842a1bcfde98b41f3"
+    },
+    {
+      "path": "report.json",
+      "sha256": "7e1b7e85d1d58ff9c077f481e5dd56333577b62af3751ce4bb222097b923dcbc"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "34a4a80436d5238b64f16b51e796fb1851a4babb84396faaa79ef5cd2a9ba702"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "bc7b8f976c218b7e16c0bc34c1e3a1bcd5d3310e5dc348201c04b411b8fc583d"
+    }
+  ],
+  "extra": {
+    "target": "kippo-ssh",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

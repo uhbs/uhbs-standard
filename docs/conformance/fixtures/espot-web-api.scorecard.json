@@ -5,53 +5,53 @@
     "class": "Web-API",
     "profile_ref": "docs/conformance/labs/espot/web_api_full.yaml"
   },
-  "evaluated_at": "2026-07-27",
-  "auditor": "UHBS-Lab detailed Docker run (RFC9110 + 1000-sample A3 + SAST + telemetry)",
+  "evaluated_at": "2026-09-26",
+  "auditor": "UHBS-Lab full Docker refresh (results-5.0.0)",
   "modules": {
     "A": {
       "score": 86.75,
       "status": "PASSED",
-      "weight": 0.25,
-      "notes": "RFC9110 unknown HTTP/9.9 still returns 200; 1000-sample timing OK; CheckResult scores on 0\u2013100 scale",
-      "complete": true
+      "notes": "UHBS Module A \u2014 plugins=['http']; class=Web-API strict_rfc=True",
+      "complete": true,
+      "weight": 0.25
     },
     "B": {
-      "score": 82.5,
-      "status": "PASSED",
-      "weight": 0.2,
-      "notes": "survived binary blast; consistent GET",
-      "complete": true
+      "score": 65.0,
+      "status": "PARTIAL",
+      "notes": "UHBS Module B class=Web-API",
+      "complete": true,
+      "weight": 0.2
     },
     "C": {
-      "score": 55.0,
-      "status": "PARTIAL",
-      "weight": 0.2,
-      "notes": "access.log only \u2014 no STIX/OTel/ECS schema evidence (capped)",
-      "complete": true
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4; no native_event_format declared \u2014 validating as native_json only",
+      "complete": false,
+      "weight": 0.2
     },
     "D": {
-      "score": 90.0,
-      "status": "GATE_FAILED",
-      "notes": "HTTP-only: no SSH exec surface; airgap+gateway attested; Safety Gate not fully cleared (C<95)",
-      "critical_control_verdict": "GATE_FAILED",
-      "complete": true
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "notes": "Module D v5: non-SSH targets need gateway/packet evidence for critical egress and runtime inspection \u2014 attestation alone never clears the gate.",
+      "complete": false,
+      "critical_control_verdict": "INCOMPLETE"
     },
     "E": {
       "score": 100.0,
       "status": "PASSED",
+      "notes": "",
+      "complete": true,
       "weight": 0.15,
-      "notes": "200 req @25 concurrency; P95=8.8ms",
-      "p50_ms": 2.97,
-      "p95_ms": 8.28,
-      "p99_ms": 10.31,
-      "complete": true
+      "p50_ms": 3.16,
+      "p95_ms": 15.54,
+      "p99_ms": 21.39
     },
     "F": {
-      "score": 70.0,
-      "status": "PASSED",
-      "weight": 0.2,
-      "notes": "semgrep 2 error/critical of 6; SAST gate capped Module F at 70",
-      "complete": true
+      "score": 66.64,
+      "status": "PARTIAL",
+      "notes": "Module F white-box audit (keys/prompts/SAST/VFS)",
+      "complete": true,
+      "weight": 0.2
     }
   },
   "weights": {
@@ -62,17 +62,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 90.0,
-    "delta_c": 0.0,
+    "containment_score": 0.0,
+    "delta_c": 1.0,
     "passed": false,
-    "critical_control_verdict": "GATE_FAILED",
+    "critical_control_verdict": "INCOMPLETE",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": null,
-  "grade": null,
-  "notes": "Detailed evaluation proof only. ESPot product name is not a UHBS requirement. Full Docker lab artifacts (scorecard, report.json, SAST, logs, tutorial) live under docs/conformance/reports/espot/. Ran without --quick; source-root + telemetry_dir + bandit/semgrep enabled. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
-  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
-  "assessment_status": "COMPLETE",
-  "critical_control_verdict": "GATE_FAILED",
-  "containment_measured": true
+  "uhqs": 78.77,
+  "grade": "C",
+  "notes": "Detailed evaluation proof only. Product name is not a UHBS requirement. Full Docker lab artifacts live under docs/conformance/latest/results-5.0.0/espot/. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "assessment_status": "INCOMPLETE",
+  "critical_control_verdict": "INCOMPLETE",
+  "containment_measured": false
 }

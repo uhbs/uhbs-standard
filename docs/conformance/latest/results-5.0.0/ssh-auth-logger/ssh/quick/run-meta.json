@@ -1,0 +1,78 @@
+{
+  "uhbs_version": "5.0.0",
+  "run_mode": "quick",
+  "evaluated_at": "2026-09-26T19:10:14Z",
+  "proof_label": "ssh-auth-logger (JustinAzoff) (ssh)",
+  "target": {
+    "repository": "https://github.com/JustinAzoff/ssh-auth-logger.git",
+    "git_branch": "master",
+    "git_commit": "f53dddcb78d9ce46ecd9eada499435ccce2bfc2f",
+    "class": "Low-Interaction",
+    "protocol": "ssh",
+    "host": "ssh-auth-logger-lab",
+    "port": 2222,
+    "container_image": "justinazoff/ssh-auth-logger:latest",
+    "container_image_id": "sha256:5741d6672aaa078810f6d6f1bc6e138029a194b43acc5ca43d2354c314d255e1",
+    "base_image": "justinazoff/ssh-auth-logger:latest",
+    "base_image_reason": "Upstream Docker Hub image justinazoff/ssh-auth-logger.",
+    "container_runtime_strategy": "upstream-image"
+  },
+  "grader": {
+    "package_version": "5.0.0",
+    "docker_image": "uhbs:5.0.0",
+    "docker_image_id": "sha256:aa436c35214d225126fd90db1dcbe307cbdbda9cad4c831efc068bd8901f6ba6",
+    "inventory": "docs/conformance/labs/ssh-auth-logger/inventory.yaml",
+    "tps": "docs/conformance/labs/ssh-auth-logger/low_interaction_ssh_quick.yaml",
+    "target_id": "ssh-auth-logger-ssh"
+  },
+  "flags": {
+    "UHBS_QUICK": true,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": true,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "measured_vs_attested": {
+      "airgap": "attested",
+      "egress_gateway_log": "attested-empty-log",
+      "telemetry": "attested-partial"
+    }
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "grade_long": null,
+    "delta_c": 0.0,
+    "module_scores": {
+      "A": 55.3,
+      "B": 6.25,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 20.0,
+      "F": 0.0
+    },
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  },
+  "limitations": [
+    "Published UHBS 5.0.0 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1)."
+  ],
+  "docs_reviewed": []
+}

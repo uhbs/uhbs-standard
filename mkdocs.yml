@@ -77,10 +77,6 @@ nav:
   - Home: index.md
   - Get started:
       - Install & use UHBS: tooling/install-and-use.md
-      - SSH host-key pinning: tooling/ssh-known-hosts.md
-      - 2026 audit-readiness checklist: governance/audit-readiness-2026.md
-      - Telemetry legal & safety: governance/telemetry-legal-safety.md
-      - Terminology: governance/terminology.md
       - CLI & Validator: tooling/cli.md
       - Lab harness: reference-implementation.md
       - MCP server (AI hosts): tooling/mcp.md
@@ -99,367 +95,370 @@ nav:
       - Awesome honeypots triage: conformance/awesome-honeypots/TRIAGE.md
       - Awesome deferred protocols: conformance/awesome-honeypots/DEFERRED-PROTOCOLS.md
       - ESPot:
-          - Report hub: conformance/reports/espot/index.md
-          - Reproduce grade: conformance/reports/espot/TUTORIAL.md
-          - Methodology: conformance/reports/espot/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/espot/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/espot/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/espot/METHODOLOGY.md
       - miniprint:
-          - Report hub: conformance/reports/miniprint/index.md
-          - Reproduce grade: conformance/reports/miniprint/TUTORIAL.md
-          - Methodology: conformance/reports/miniprint/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/miniprint/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/miniprint/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/miniprint/METHODOLOGY.md
       - Conpot:
-          - Report hub: conformance/reports/conpot/index.md
-          - Reproduce grade: conformance/reports/conpot/TUTORIAL.md
-          - Methodology: conformance/reports/conpot/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/conpot/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/conpot/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/conpot/METHODOLOGY.md
       - Cowrie:
-          - Report hub: conformance/reports/cowrie/index.md
-          - SSH hub: conformance/reports/cowrie/ssh/index.md
-          - TELNET hub: conformance/reports/cowrie/telnet/index.md
-          - Reproduce grade: conformance/reports/cowrie/TUTORIAL.md
-          - Methodology: conformance/reports/cowrie/METHODOLOGY.md
-      - EchidraOSS:
-          - Report hub: conformance/reports/echidra/index.md
-          - Reproduce grade: conformance/reports/echidra/TUTORIAL.md
-          - Methodology: conformance/reports/echidra/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/cowrie/index.md
+          - SSH hub: conformance/latest/results-5.0.0/cowrie/ssh/index.md
+          - TELNET hub: conformance/latest/results-5.0.0/cowrie/telnet/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/cowrie/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/cowrie/METHODOLOGY.md
       - Endlessh:
-          - Report hub: conformance/reports/endlessh/index.md
-          - Reproduce grade: conformance/reports/endlessh/TUTORIAL.md
-          - Methodology: conformance/reports/endlessh/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/endlessh/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/endlessh/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/endlessh/METHODOLOGY.md
       - OpenCanary:
-          - Report hub: conformance/reports/opencanary/index.md
-          - FTP hub: conformance/reports/opencanary/ftp/index.md
-          - GIT hub: conformance/reports/opencanary/git/index.md
-          - HTTP hub: conformance/reports/opencanary/http/index.md
-          - MYSQL hub: conformance/reports/opencanary/mysql/index.md
-          - NTP hub: conformance/reports/opencanary/ntp/index.md
-          - RDP hub: conformance/reports/opencanary/rdp/index.md
-          - REDIS hub: conformance/reports/opencanary/redis/index.md
-          - SIP hub: conformance/reports/opencanary/sip/index.md
-          - SMB hub: conformance/reports/opencanary/smb/index.md
-          - SNMP hub: conformance/reports/opencanary/snmp/index.md
-          - SSH hub: conformance/reports/opencanary/ssh/index.md
-          - TELNET hub: conformance/reports/opencanary/telnet/index.md
-          - TFTP hub: conformance/reports/opencanary/tftp/index.md
-          - VNC hub: conformance/reports/opencanary/vnc/index.md
-          - Reproduce grade: conformance/reports/opencanary/TUTORIAL.md
-          - Methodology: conformance/reports/opencanary/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/opencanary/index.md
+          - FTP hub: conformance/latest/results-5.0.0/opencanary/ftp/index.md
+          - GIT hub: conformance/latest/results-5.0.0/opencanary/git/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/opencanary/http/index.md
+          - MYSQL hub: conformance/latest/results-5.0.0/opencanary/mysql/index.md
+          - NTP hub: conformance/latest/results-5.0.0/opencanary/ntp/index.md
+          - RDP hub: conformance/latest/results-5.0.0/opencanary/rdp/index.md
+          - REDIS hub: conformance/latest/results-5.0.0/opencanary/redis/index.md
+          - SIP hub: conformance/latest/results-5.0.0/opencanary/sip/index.md
+          - SMB hub: conformance/latest/results-5.0.0/opencanary/smb/index.md
+          - SNMP hub: conformance/latest/results-5.0.0/opencanary/snmp/index.md
+          - SSH hub: conformance/latest/results-5.0.0/opencanary/ssh/index.md
+          - TELNET hub: conformance/latest/results-5.0.0/opencanary/telnet/index.md
+          - TFTP hub: conformance/latest/results-5.0.0/opencanary/tftp/index.md
+          - VNC hub: conformance/latest/results-5.0.0/opencanary/vnc/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/opencanary/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/opencanary/METHODOLOGY.md
       - Beelzebub:
-          - Report hub: conformance/reports/beelzebub/index.md
-          - HTTP hub: conformance/reports/beelzebub/http/index.md
-          - MCP hub: conformance/reports/beelzebub/mcp/index.md
-          - REDIS hub: conformance/reports/beelzebub/redis/index.md
-          - SSH hub: conformance/reports/beelzebub/ssh/index.md
-          - TELNET hub: conformance/reports/beelzebub/telnet/index.md
-          - Reproduce grade: conformance/reports/beelzebub/TUTORIAL.md
-          - Methodology: conformance/reports/beelzebub/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/beelzebub/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/beelzebub/http/index.md
+          - MCP hub: conformance/latest/results-5.0.0/beelzebub/mcp/index.md
+          - REDIS hub: conformance/latest/results-5.0.0/beelzebub/redis/index.md
+          - SSH hub: conformance/latest/results-5.0.0/beelzebub/ssh/index.md
+          - TELNET hub: conformance/latest/results-5.0.0/beelzebub/telnet/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/beelzebub/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/beelzebub/METHODOLOGY.md
       - HellPot:
-          - Report hub: conformance/reports/HellPot/index.md
-          - HTTP hub: conformance/reports/HellPot/http/index.md
-          - Reproduce grade: conformance/reports/HellPot/TUTORIAL.md
-          - Methodology: conformance/reports/HellPot/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/HellPot/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/HellPot/http/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/HellPot/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/HellPot/METHODOLOGY.md
       - HoneyWire:
-          - Report hub: conformance/reports/HoneyWire/index.md
-          - HTTP hub: conformance/reports/HoneyWire/http/index.md
-          - Reproduce grade: conformance/reports/HoneyWire/TUTORIAL.md
-          - Methodology: conformance/reports/HoneyWire/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/HoneyWire/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/HoneyWire/http/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/HoneyWire/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/HoneyWire/METHODOLOGY.md
       - LLM Honeypot:
-          - Report hub: conformance/reports/llm-honeypot/index.md
-          - SSH hub: conformance/reports/llm-honeypot/ssh/index.md
-          - Reproduce grade: conformance/reports/llm-honeypot/TUTORIAL.md
-          - Methodology: conformance/reports/llm-honeypot/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/llm-honeypot/index.md
+          - SSH hub: conformance/latest/results-5.0.0/llm-honeypot/ssh/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/llm-honeypot/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/llm-honeypot/METHODOLOGY.md
       - HoneyAgents:
-          - Report hub: conformance/reports/honeyagents/index.md
-          - SSH hub: conformance/reports/honeyagents/ssh/index.md
-          - Reproduce grade: conformance/reports/honeyagents/TUTORIAL.md
-          - Methodology: conformance/reports/honeyagents/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/honeyagents/index.md
+          - SSH hub: conformance/latest/results-5.0.0/honeyagents/ssh/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/honeyagents/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/honeyagents/METHODOLOGY.md
       - LLMPot:
-          - Report hub: conformance/reports/llmpot/index.md
-          - HTTP hub: conformance/reports/llmpot/http/index.md
-          - MODBUS hub: conformance/reports/llmpot/modbus/index.md
-          - S7COMM hub: conformance/reports/llmpot/s7comm/index.md
-          - Reproduce grade: conformance/reports/llmpot/TUTORIAL.md
-          - Methodology: conformance/reports/llmpot/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/llmpot/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/llmpot/http/index.md
+          - MODBUS hub: conformance/latest/results-5.0.0/llmpot/modbus/index.md
+          - S7COMM hub: conformance/latest/results-5.0.0/llmpot/s7comm/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/llmpot/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/llmpot/METHODOLOGY.md
       - DataTrap:
-          - Report hub: conformance/reports/datatrap/index.md
-          - HTTP hub: conformance/reports/datatrap/http/index.md
-          - MYSQL hub: conformance/reports/datatrap/mysql/index.md
-          - Postgres hub: conformance/reports/datatrap/postgres/index.md
-          - REDIS hub: conformance/reports/datatrap/redis/index.md
-          - SSH hub: conformance/reports/datatrap/ssh/index.md
-          - TELNET hub: conformance/reports/datatrap/telnet/index.md
-          - Reproduce grade: conformance/reports/datatrap/TUTORIAL.md
-          - Methodology: conformance/reports/datatrap/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/datatrap/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/datatrap/http/index.md
+          - MYSQL hub: conformance/latest/results-5.0.0/datatrap/mysql/index.md
+          - Postgres hub: conformance/latest/results-5.0.0/datatrap/postgres/index.md
+          - REDIS hub: conformance/latest/results-5.0.0/datatrap/redis/index.md
+          - SSH hub: conformance/latest/results-5.0.0/datatrap/ssh/index.md
+          - TELNET hub: conformance/latest/results-5.0.0/datatrap/telnet/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/datatrap/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/datatrap/METHODOLOGY.md
       - HoneyMCP:
-          - Report hub: conformance/reports/honeymcp/index.md
-          - MCP hub: conformance/reports/honeymcp/mcp/index.md
-          - Reproduce grade: conformance/reports/honeymcp/TUTORIAL.md
-          - Methodology: conformance/reports/honeymcp/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/honeymcp/index.md
+          - MCP hub: conformance/latest/results-5.0.0/honeymcp/mcp/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/honeymcp/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/honeymcp/METHODOLOGY.md
       - GenAIPot:
-          - Report hub: conformance/reports/genaipot/index.md
-          - POP3 hub: conformance/reports/genaipot/pop3/index.md
-          - SMTP hub: conformance/reports/genaipot/smtp/index.md
-          - Reproduce grade: conformance/reports/genaipot/TUTORIAL.md
-          - Methodology: conformance/reports/genaipot/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/genaipot/index.md
+          - POP3 hub: conformance/latest/results-5.0.0/genaipot/pop3/index.md
+          - SMTP hub: conformance/latest/results-5.0.0/genaipot/smtp/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/genaipot/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/genaipot/METHODOLOGY.md
       - MQTT decoy A:
-          - Report hub: conformance/reports/mqtt-decoy-a/index.md
-          - MQTT hub: conformance/reports/mqtt-decoy-a/mqtt/index.md
-          - Reproduce grade: conformance/reports/mqtt-decoy-a/TUTORIAL.md
-          - Methodology: conformance/reports/mqtt-decoy-a/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/mqtt-decoy-a/index.md
+          - MQTT hub: conformance/latest/results-5.0.0/mqtt-decoy-a/mqtt/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/mqtt-decoy-a/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/mqtt-decoy-a/METHODOLOGY.md
       - MQTT decoy B:
-          - Report hub: conformance/reports/mqtt-decoy-b/index.md
-          - MQTT hub: conformance/reports/mqtt-decoy-b/mqtt/index.md
-          - Reproduce grade: conformance/reports/mqtt-decoy-b/TUTORIAL.md
-          - Methodology: conformance/reports/mqtt-decoy-b/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/mqtt-decoy-b/index.md
+          - MQTT hub: conformance/latest/results-5.0.0/mqtt-decoy-b/mqtt/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/mqtt-decoy-b/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/mqtt-decoy-b/METHODOLOGY.md
       - Acra (skipped):
-          - Report hub: conformance/reports/acra/index.md
-          - Reproduce grade: conformance/reports/acra/TUTORIAL.md
-          - Methodology: conformance/reports/acra/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/acra/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/acra/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/acra/METHODOLOGY.md
       - Artillery:
-          - Report hub: conformance/reports/artillery/index.md
-          - Generic hub: conformance/reports/artillery/generic/index.md
-          - Reproduce grade: conformance/reports/artillery/TUTORIAL.md
-          - Methodology: conformance/reports/artillery/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/artillery/index.md
+          - Generic hub: conformance/latest/results-5.0.0/artillery/generic/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/artillery/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/artillery/METHODOLOGY.md
       - blacknet (skipped):
-          - Report hub: conformance/reports/blacknet/index.md
-          - Reproduce grade: conformance/reports/blacknet/TUTORIAL.md
-          - Methodology: conformance/reports/blacknet/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/blacknet/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/blacknet/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/blacknet/METHODOLOGY.md
       - Dionaea:
-          - Report hub: conformance/reports/dionaea/index.md
-          - FTP hub: conformance/reports/dionaea/ftp/index.md
-          - HTTP hub: conformance/reports/dionaea/http/index.md
-          - SMB hub: conformance/reports/dionaea/smb/index.md
-          - Reproduce grade: conformance/reports/dionaea/TUTORIAL.md
-          - Methodology: conformance/reports/dionaea/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/dionaea/index.md
+          - FTP hub: conformance/latest/results-5.0.0/dionaea/ftp/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/dionaea/http/index.md
+          - SMB hub: conformance/latest/results-5.0.0/dionaea/smb/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/dionaea/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/dionaea/METHODOLOGY.md
+      - echidra:
+          - Report hub: conformance/latest/results-5.0.0/echidra/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/echidra/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/echidra/METHODOLOGY.md
       - Elastichoney:
-          - Report hub: conformance/reports/elastichoney/index.md
-          - HTTP hub: conformance/reports/elastichoney/http/index.md
-          - Reproduce grade: conformance/reports/elastichoney/TUTORIAL.md
-          - Methodology: conformance/reports/elastichoney/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/elastichoney/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/elastichoney/http/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/elastichoney/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/elastichoney/METHODOLOGY.md
       - Ensnare (skipped):
-          - Report hub: conformance/reports/ensnare/index.md
-          - Reproduce grade: conformance/reports/ensnare/TUTORIAL.md
-          - Methodology: conformance/reports/ensnare/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/ensnare/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/ensnare/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/ensnare/METHODOLOGY.md
       - express-honeypot:
-          - Report hub: conformance/reports/express-honeypot/index.md
-          - HTTP hub: conformance/reports/express-honeypot/http/index.md
-          - Reproduce grade: conformance/reports/express-honeypot/TUTORIAL.md
-          - Methodology: conformance/reports/express-honeypot/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/express-honeypot/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/express-honeypot/http/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/express-honeypot/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/express-honeypot/METHODOLOGY.md
       - FaPro (skipped):
-          - Report hub: conformance/reports/fapro/index.md
-          - Reproduce grade: conformance/reports/fapro/TUTORIAL.md
-          - Methodology: conformance/reports/fapro/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/fapro/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/fapro/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/fapro/METHODOLOGY.md
       - flux:
-          - Report hub: conformance/reports/flux/index.md
-          - HTTP hub: conformance/reports/flux/http/index.md
-          - Reproduce grade: conformance/reports/flux/TUTORIAL.md
-          - Methodology: conformance/reports/flux/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/flux/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/flux/http/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/flux/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/flux/METHODOLOGY.md
       - fortigate-vpn-ssl:
-          - Report hub: conformance/reports/fortigate-vpn-ssl/index.md
-          - HTTP hub: conformance/reports/fortigate-vpn-ssl/http/index.md
-          - Reproduce grade: conformance/reports/fortigate-vpn-ssl/TUTORIAL.md
-          - Methodology: conformance/reports/fortigate-vpn-ssl/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/fortigate-vpn-ssl/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/fortigate-vpn-ssl/http/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/fortigate-vpn-ssl/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/fortigate-vpn-ssl/METHODOLOGY.md
       - galah (skipped):
-          - Report hub: conformance/reports/galah/index.md
-          - Reproduce grade: conformance/reports/galah/TUTORIAL.md
-          - Methodology: conformance/reports/galah/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/galah/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/galah/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/galah/METHODOLOGY.md
       - glastopf (skipped):
-          - Report hub: conformance/reports/glastopf/index.md
-          - Reproduce grade: conformance/reports/glastopf/TUTORIAL.md
-          - Methodology: conformance/reports/glastopf/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/glastopf/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/glastopf/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/glastopf/METHODOLOGY.md
       - glutton (skipped):
-          - Report hub: conformance/reports/glutton/index.md
-          - Reproduce grade: conformance/reports/glutton/TUTORIAL.md
-          - Methodology: conformance/reports/glutton/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/glutton/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/glutton/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/glutton/METHODOLOGY.md
       - Heralding:
-          - Report hub: conformance/reports/heralding/index.md
-          - FTP hub: conformance/reports/heralding/ftp/index.md
-          - SMTP hub: conformance/reports/heralding/smtp/index.md
-          - SSH hub: conformance/reports/heralding/ssh/index.md
-          - Reproduce grade: conformance/reports/heralding/TUTORIAL.md
-          - Methodology: conformance/reports/heralding/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/heralding/index.md
+          - FTP hub: conformance/latest/results-5.0.0/heralding/ftp/index.md
+          - SMTP hub: conformance/latest/results-5.0.0/heralding/smtp/index.md
+          - SSH hub: conformance/latest/results-5.0.0/heralding/ssh/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/heralding/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/heralding/METHODOLOGY.md
       - HoneyHTTPD:
-          - Report hub: conformance/reports/honeyhttpd/index.md
-          - HTTP hub: conformance/reports/honeyhttpd/http/index.md
-          - Reproduce grade: conformance/reports/honeyhttpd/TUTORIAL.md
-          - Methodology: conformance/reports/honeyhttpd/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/honeyhttpd/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/honeyhttpd/http/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/honeyhttpd/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/honeyhttpd/METHODOLOGY.md
       - HoneyPLC (skipped):
-          - Report hub: conformance/reports/honeyplc/index.md
-          - Reproduce grade: conformance/reports/honeyplc/TUTORIAL.md
-          - Methodology: conformance/reports/honeyplc/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/honeyplc/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/honeyplc/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/honeyplc/METHODOLOGY.md
       - honeypot-ftp:
-          - Report hub: conformance/reports/honeypot-ftp/index.md
-          - FTP hub: conformance/reports/honeypot-ftp/ftp/index.md
-          - Reproduce grade: conformance/reports/honeypot-ftp/TUTORIAL.md
-          - Methodology: conformance/reports/honeypot-ftp/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/honeypot-ftp/index.md
+          - FTP hub: conformance/latest/results-5.0.0/honeypot-ftp/ftp/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/honeypot-ftp/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/honeypot-ftp/METHODOLOGY.md
       - HoneyPy (skipped):
-          - Report hub: conformance/reports/HoneyPy/index.md
-          - Reproduce grade: conformance/reports/HoneyPy/TUTORIAL.md
-          - Methodology: conformance/reports/HoneyPy/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/HoneyPy/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/HoneyPy/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/HoneyPy/METHODOLOGY.md
       - honeytrap:
-          - Report hub: conformance/reports/honeytrap/index.md
-          - SSH hub: conformance/reports/honeytrap/ssh/index.md
-          - Reproduce grade: conformance/reports/honeytrap/TUTORIAL.md
-          - Methodology: conformance/reports/honeytrap/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/honeytrap/index.md
+          - SSH hub: conformance/latest/results-5.0.0/honeytrap/ssh/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/honeytrap/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/honeytrap/METHODOLOGY.md
       - honeyup:
-          - Report hub: conformance/reports/honeyup/index.md
-          - HTTP hub: conformance/reports/honeyup/http/index.md
-          - Reproduce grade: conformance/reports/honeyup/TUTORIAL.md
-          - Methodology: conformance/reports/honeyup/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/honeyup/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/honeyup/http/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/honeyup/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/honeyup/METHODOLOGY.md
       - kippo:
-          - Report hub: conformance/reports/kippo/index.md
-          - SSH hub: conformance/reports/kippo/ssh/index.md
-          - Reproduce grade: conformance/reports/kippo/TUTORIAL.md
-          - Methodology: conformance/reports/kippo/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/kippo/index.md
+          - SSH hub: conformance/latest/results-5.0.0/kippo/ssh/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/kippo/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/kippo/METHODOLOGY.md
       - Krawl:
-          - Report hub: conformance/reports/Krawl/index.md
-          - HTTP hub: conformance/reports/Krawl/http/index.md
-          - Reproduce grade: conformance/reports/Krawl/TUTORIAL.md
-          - Methodology: conformance/reports/Krawl/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/Krawl/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/Krawl/http/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/Krawl/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/Krawl/METHODOLOGY.md
       - Log4Pot:
-          - Report hub: conformance/reports/Log4Pot/index.md
-          - HTTP hub: conformance/reports/Log4Pot/http/index.md
-          - Reproduce grade: conformance/reports/Log4Pot/TUTORIAL.md
-          - Methodology: conformance/reports/Log4Pot/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/Log4Pot/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/Log4Pot/http/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/Log4Pot/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/Log4Pot/METHODOLOGY.md
       - lophiid (skipped):
-          - Report hub: conformance/reports/lophiid/index.md
-          - Reproduce grade: conformance/reports/lophiid/TUTORIAL.md
-          - Methodology: conformance/reports/lophiid/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/lophiid/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/lophiid/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/lophiid/METHODOLOGY.md
       - mailoney:
-          - Report hub: conformance/reports/mailoney/index.md
-          - SMTP hub: conformance/reports/mailoney/smtp/index.md
-          - Reproduce grade: conformance/reports/mailoney/TUTORIAL.md
-          - Methodology: conformance/reports/mailoney/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/mailoney/index.md
+          - SMTP hub: conformance/latest/results-5.0.0/mailoney/smtp/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/mailoney/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/mailoney/METHODOLOGY.md
       - Malbait (skipped):
-          - Report hub: conformance/reports/Malbait/index.md
-          - Reproduce grade: conformance/reports/Malbait/TUTORIAL.md
-          - Methodology: conformance/reports/Malbait/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/Malbait/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/Malbait/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/Malbait/METHODOLOGY.md
       - masscanned (skipped):
-          - Report hub: conformance/reports/masscanned/index.md
-          - Reproduce grade: conformance/reports/masscanned/TUTORIAL.md
-          - Methodology: conformance/reports/masscanned/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/masscanned/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/masscanned/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/masscanned/METHODOLOGY.md
       - MockSSH:
-          - Report hub: conformance/reports/mockssh/index.md
-          - SSH hub: conformance/reports/mockssh/ssh/index.md
-          - Reproduce grade: conformance/reports/mockssh/TUTORIAL.md
-          - Methodology: conformance/reports/mockssh/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/mockssh/index.md
+          - SSH hub: conformance/latest/results-5.0.0/mockssh/ssh/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/mockssh/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/mockssh/METHODOLOGY.md
       - modpot:
-          - Report hub: conformance/reports/modpot/index.md
-          - HTTP hub: conformance/reports/modpot/http/index.md
-          - Reproduce grade: conformance/reports/modpot/TUTORIAL.md
-          - Methodology: conformance/reports/modpot/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/modpot/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/modpot/http/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/modpot/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/modpot/METHODOLOGY.md
       - mysql-honeypotd:
-          - Report hub: conformance/reports/mysql-honeypotd/index.md
-          - MYSQL hub: conformance/reports/mysql-honeypotd/mysql/index.md
-          - Reproduce grade: conformance/reports/mysql-honeypotd/TUTORIAL.md
-          - Methodology: conformance/reports/mysql-honeypotd/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/mysql-honeypotd/index.md
+          - MYSQL hub: conformance/latest/results-5.0.0/mysql-honeypotd/mysql/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/mysql-honeypotd/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/mysql-honeypotd/METHODOLOGY.md
       - node-ftp-honeypot:
-          - Report hub: conformance/reports/node-ftp-honeypot/index.md
-          - FTP hub: conformance/reports/node-ftp-honeypot/ftp/index.md
-          - Reproduce grade: conformance/reports/node-ftp-honeypot/TUTORIAL.md
-          - Methodology: conformance/reports/node-ftp-honeypot/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/node-ftp-honeypot/index.md
+          - FTP hub: conformance/latest/results-5.0.0/node-ftp-honeypot/ftp/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/node-ftp-honeypot/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/node-ftp-honeypot/METHODOLOGY.md
       - nosqlpot:
-          - Report hub: conformance/reports/nosqlpot/index.md
-          - REDIS hub: conformance/reports/nosqlpot/redis/index.md
-          - Reproduce grade: conformance/reports/nosqlpot/TUTORIAL.md
-          - Methodology: conformance/reports/nosqlpot/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/nosqlpot/index.md
+          - REDIS hub: conformance/latest/results-5.0.0/nosqlpot/redis/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/nosqlpot/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/nosqlpot/METHODOLOGY.md
       - owa-honeypot:
-          - Report hub: conformance/reports/owa-honeypot/index.md
-          - HTTP hub: conformance/reports/owa-honeypot/http/index.md
-          - Reproduce grade: conformance/reports/owa-honeypot/TUTORIAL.md
-          - Methodology: conformance/reports/owa-honeypot/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/owa-honeypot/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/owa-honeypot/http/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/owa-honeypot/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/owa-honeypot/METHODOLOGY.md
       - OWASP Python-Honeypot:
-          - Report hub: conformance/reports/owasp-python-honeypot/index.md
-          - HTTP hub: conformance/reports/owasp-python-honeypot/http/index.md
-          - Reproduce grade: conformance/reports/owasp-python-honeypot/TUTORIAL.md
-          - Methodology: conformance/reports/owasp-python-honeypot/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/owasp-python-honeypot/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/owasp-python-honeypot/http/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/owasp-python-honeypot/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/owasp-python-honeypot/METHODOLOGY.md
       - pghoney:
-          - Report hub: conformance/reports/pghoney/index.md
-          - Postgres hub: conformance/reports/pghoney/postgres/index.md
-          - Reproduce grade: conformance/reports/pghoney/TUTORIAL.md
-          - Methodology: conformance/reports/pghoney/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/pghoney/index.md
+          - Postgres hub: conformance/latest/results-5.0.0/pghoney/postgres/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/pghoney/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/pghoney/METHODOLOGY.md
       - portlurker:
-          - Report hub: conformance/reports/portlurker/index.md
-          - Generic hub: conformance/reports/portlurker/generic/index.md
-          - Reproduce grade: conformance/reports/portlurker/TUTORIAL.md
-          - Methodology: conformance/reports/portlurker/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/portlurker/index.md
+          - Generic hub: conformance/latest/results-5.0.0/portlurker/generic/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/portlurker/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/portlurker/METHODOLOGY.md
       - pyRDP:
-          - Report hub: conformance/reports/pyrdp/index.md
-          - RDP hub: conformance/reports/pyrdp/rdp/index.md
-          - Reproduce grade: conformance/reports/pyrdp/TUTORIAL.md
-          - Methodology: conformance/reports/pyrdp/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/pyrdp/index.md
+          - RDP hub: conformance/latest/results-5.0.0/pyrdp/rdp/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/pyrdp/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/pyrdp/METHODOLOGY.md
       - qeeqbox:
-          - Report hub: conformance/reports/qeeqbox-honeypots/index.md
-          - FTP hub: conformance/reports/qeeqbox-honeypots/ftp/index.md
-          - HTTP hub: conformance/reports/qeeqbox-honeypots/http/index.md
-          - MYSQL hub: conformance/reports/qeeqbox-honeypots/mysql/index.md
-          - POP3 hub: conformance/reports/qeeqbox-honeypots/pop3/index.md
-          - Postgres hub: conformance/reports/qeeqbox-honeypots/postgres/index.md
-          - REDIS hub: conformance/reports/qeeqbox-honeypots/redis/index.md
-          - SMTP hub: conformance/reports/qeeqbox-honeypots/smtp/index.md
-          - SSH hub: conformance/reports/qeeqbox-honeypots/ssh/index.md
-          - TELNET hub: conformance/reports/qeeqbox-honeypots/telnet/index.md
-          - VNC hub: conformance/reports/qeeqbox-honeypots/vnc/index.md
-          - Reproduce grade: conformance/reports/qeeqbox-honeypots/TUTORIAL.md
-          - Methodology: conformance/reports/qeeqbox-honeypots/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/qeeqbox-honeypots/index.md
+          - FTP hub: conformance/latest/results-5.0.0/qeeqbox-honeypots/ftp/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/qeeqbox-honeypots/http/index.md
+          - MYSQL hub: conformance/latest/results-5.0.0/qeeqbox-honeypots/mysql/index.md
+          - POP3 hub: conformance/latest/results-5.0.0/qeeqbox-honeypots/pop3/index.md
+          - Postgres hub: conformance/latest/results-5.0.0/qeeqbox-honeypots/postgres/index.md
+          - REDIS hub: conformance/latest/results-5.0.0/qeeqbox-honeypots/redis/index.md
+          - SMTP hub: conformance/latest/results-5.0.0/qeeqbox-honeypots/smtp/index.md
+          - SSH hub: conformance/latest/results-5.0.0/qeeqbox-honeypots/ssh/index.md
+          - TELNET hub: conformance/latest/results-5.0.0/qeeqbox-honeypots/telnet/index.md
+          - VNC hub: conformance/latest/results-5.0.0/qeeqbox-honeypots/vnc/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/qeeqbox-honeypots/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/qeeqbox-honeypots/METHODOLOGY.md
       - SentryPeer:
-          - Report hub: conformance/reports/sentrypeer/index.md
-          - SIP hub: conformance/reports/sentrypeer/sip/index.md
-          - Reproduce grade: conformance/reports/sentrypeer/TUTORIAL.md
-          - Methodology: conformance/reports/sentrypeer/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/sentrypeer/index.md
+          - SIP hub: conformance/latest/results-5.0.0/sentrypeer/sip/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/sentrypeer/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/sentrypeer/METHODOLOGY.md
       - SHIVA:
-          - Report hub: conformance/reports/shiva/index.md
-          - SMTP hub: conformance/reports/shiva/smtp/index.md
-          - Reproduce grade: conformance/reports/shiva/TUTORIAL.md
-          - Methodology: conformance/reports/shiva/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/shiva/index.md
+          - SMTP hub: conformance/latest/results-5.0.0/shiva/smtp/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/shiva/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/shiva/METHODOLOGY.md
       - SMTPLLMPot (skipped):
-          - Report hub: conformance/reports/SMTPLLMPot/index.md
-          - Reproduce grade: conformance/reports/SMTPLLMPot/TUTORIAL.md
-          - Methodology: conformance/reports/SMTPLLMPot/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/SMTPLLMPot/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/SMTPLLMPot/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/SMTPLLMPot/METHODOLOGY.md
       - snare (skipped):
-          - Report hub: conformance/reports/snare/index.md
-          - Reproduce grade: conformance/reports/snare/TUTORIAL.md
+          - Report hub: conformance/latest/results-5.0.0/snare/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/snare/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/snare/METHODOLOGY.md
       - ssh-auth-logger:
-          - Report hub: conformance/reports/ssh-auth-logger/index.md
-          - SSH hub: conformance/reports/ssh-auth-logger/ssh/index.md
-          - Reproduce grade: conformance/reports/ssh-auth-logger/TUTORIAL.md
-          - Methodology: conformance/reports/ssh-auth-logger/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/ssh-auth-logger/index.md
+          - SSH hub: conformance/latest/results-5.0.0/ssh-auth-logger/ssh/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/ssh-auth-logger/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/ssh-auth-logger/METHODOLOGY.md
       - ssh-honeypot (skipped):
-          - Report hub: conformance/reports/ssh-honeypot/index.md
+          - Report hub: conformance/latest/results-5.0.0/ssh-honeypot/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/ssh-honeypot/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/ssh-honeypot/METHODOLOGY.md
       - ssh-honeypotd:
-          - Report hub: conformance/reports/ssh-honeypotd/index.md
-          - SSH hub: conformance/reports/ssh-honeypotd/ssh/index.md
-          - Reproduce grade: conformance/reports/ssh-honeypotd/TUTORIAL.md
-          - Methodology: conformance/reports/ssh-honeypotd/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/ssh-honeypotd/index.md
+          - SSH hub: conformance/latest/results-5.0.0/ssh-honeypotd/ssh/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/ssh-honeypotd/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/ssh-honeypotd/METHODOLOGY.md
       - sshesame:
-          - Report hub: conformance/reports/sshesame/index.md
-          - SSH hub: conformance/reports/sshesame/ssh/index.md
-          - Reproduce grade: conformance/reports/sshesame/TUTORIAL.md
-          - Methodology: conformance/reports/sshesame/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/sshesame/index.md
+          - SSH hub: conformance/latest/results-5.0.0/sshesame/ssh/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/sshesame/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/sshesame/METHODOLOGY.md
       - sticky_elephant:
-          - Report hub: conformance/reports/sticky_elephant/index.md
-          - Postgres hub: conformance/reports/sticky_elephant/postgres/index.md
-          - Reproduce grade: conformance/reports/sticky_elephant/TUTORIAL.md
-          - Methodology: conformance/reports/sticky_elephant/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/sticky_elephant/index.md
+          - Postgres hub: conformance/latest/results-5.0.0/sticky_elephant/postgres/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/sticky_elephant/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/sticky_elephant/METHODOLOGY.md
       - tanner (skipped):
-          - Report hub: conformance/reports/tanner/index.md
-          - Reproduce grade: conformance/reports/tanner/TUTORIAL.md
-          - Methodology: conformance/reports/tanner/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/tanner/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/tanner/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/tanner/METHODOLOGY.md
       - telnet-iot-honeypot (skipped):
-          - Report hub: conformance/reports/telnet-iot-honeypot/index.md
-          - Reproduce grade: conformance/reports/telnet-iot-honeypot/TUTORIAL.md
-          - Methodology: conformance/reports/telnet-iot-honeypot/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/telnet-iot-honeypot/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/telnet-iot-honeypot/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/telnet-iot-honeypot/METHODOLOGY.md
       - Trapster:
-          - Report hub: conformance/reports/trapster/index.md
-          - FTP hub: conformance/reports/trapster/ftp/index.md
-          - HTTP hub: conformance/reports/trapster/http/index.md
-          - SSH hub: conformance/reports/trapster/ssh/index.md
-          - TELNET hub: conformance/reports/trapster/telnet/index.md
-          - Reproduce grade: conformance/reports/trapster/TUTORIAL.md
-          - Methodology: conformance/reports/trapster/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/trapster/index.md
+          - FTP hub: conformance/latest/results-5.0.0/trapster/ftp/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/trapster/http/index.md
+          - SSH hub: conformance/latest/results-5.0.0/trapster/ssh/index.md
+          - TELNET hub: conformance/latest/results-5.0.0/trapster/telnet/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/trapster/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/trapster/METHODOLOGY.md
       - wordpot:
-          - Report hub: conformance/reports/wordpot/index.md
-          - HTTP hub: conformance/reports/wordpot/http/index.md
-          - Reproduce grade: conformance/reports/wordpot/TUTORIAL.md
-          - Methodology: conformance/reports/wordpot/METHODOLOGY.md
+          - Report hub: conformance/latest/results-5.0.0/wordpot/index.md
+          - HTTP hub: conformance/latest/results-5.0.0/wordpot/http/index.md
+          - Reproduce grade: conformance/latest/results-5.0.0/wordpot/TUTORIAL.md
+          - Methodology: conformance/latest/results-5.0.0/wordpot/METHODOLOGY.md
   - Scorecards:
       - Overview: scorecards/index.md
       - ESPot:
@@ -471,8 +470,6 @@ nav:
       - Cowrie:
           - SSH: scorecards/cowrie-ssh.md
           - TELNET: scorecards/cowrie-telnet.md
-      - EchidraOSS:
-          - SSH: scorecards/echidra-ssh.md
       - Endlessh:
           - SSH tarpit: scorecards/endlessh-ssh-tarpit.md
       - OpenCanary:
@@ -492,12 +489,18 @@ nav:
           - VNC: scorecards/opencanary-vnc.md
       - Beelzebub:
           - HTTP: scorecards/beelzebub-http.md
+          - Http.scorecard: scorecards/beelzebub-http.scorecard.md
           - MCP: scorecards/beelzebub-mcp.md
+          - Mcp.scorecard: scorecards/beelzebub-mcp.scorecard.md
           - REDIS: scorecards/beelzebub-redis.md
+          - Redis.scorecard: scorecards/beelzebub-redis.scorecard.md
           - SSH: scorecards/beelzebub-ssh.md
+          - Ssh.scorecard: scorecards/beelzebub-ssh.scorecard.md
           - TELNET: scorecards/beelzebub-telnet.md
+          - Telnet.scorecard: scorecards/beelzebub-telnet.scorecard.md
       - HellPot:
           - HTTP: scorecards/hellpot-http.md
+          - HTTP: scorecards/hellpot-web-api.md
       - HoneyWire:
           - HTTP: scorecards/honeywire-http.md
       - LLM Honeypot:
@@ -528,14 +531,24 @@ nav:
           - Generic: scorecards/artillery-generic.md
       - Dionaea:
           - FTP: scorecards/dionaea-ftp.md
+          - Ftp.scorecard: scorecards/dionaea-ftp.scorecard.md
           - HTTP: scorecards/dionaea-http.md
+          - Http.scorecard: scorecards/dionaea-http.scorecard.md
           - SMB: scorecards/dionaea-smb.md
+          - Smb.scorecard: scorecards/dionaea-smb.scorecard.md
+      - echidra:
+          - SSH: scorecards/echidra-ssh.md
+      - echidra-low:
+          - Interaction: scorecards/echidra-low-interaction.md
       - Elastichoney:
           - HTTP: scorecards/elastichoney-http.md
+          - HTTP: scorecards/elastichoney-web-api.md
       - express-honeypot:
           - HTTP: scorecards/express-honeypot-http.md
+          - HTTP: scorecards/express-honeypot-web-api.md
       - flux:
           - HTTP: scorecards/flux-http.md
+          - HTTP: scorecards/flux-web-api.md
       - fortigate-vpn-ssl:
           - HTTP: scorecards/fortigate-vpn-ssl-http.md
       - Heralding:
@@ -544,12 +557,14 @@ nav:
           - SSH: scorecards/heralding-ssh.md
       - HoneyHTTPD:
           - HTTP: scorecards/honeyhttpd-http.md
+          - HTTP: scorecards/honeyhttpd-web-api.md
       - honeypot-ftp:
           - FTP: scorecards/honeypot-ftp.md
       - honeytrap:
           - SSH: scorecards/honeytrap-ssh.md
       - honeyup:
           - HTTP: scorecards/honeyup-http.md
+          - HTTP: scorecards/honeyup-web-api.md
       - Illustrative:
           - POSIX / GenAI: scorecards/illustrative-posix-genai.md
       - kippo:
@@ -558,6 +573,7 @@ nav:
           - HTTP: scorecards/krawl-http.md
       - Log4Pot:
           - HTTP: scorecards/log4pot-http.md
+          - HTTP: scorecards/log4pot-web-api.md
       - mailoney:
           - SMTP: scorecards/mailoney-smtp.md
       - MockSSH:
@@ -610,6 +626,7 @@ nav:
           - TELNET: scorecards/trapster-telnet.md
       - wordpot:
           - HTTP: scorecards/wordpot-http.md
+          - HTTP: scorecards/wordpot-web-api.md
   - Mappings:
       - Overview: mappings/index.md
       - ATT&CK: mappings/attack.md
@@ -617,7 +634,6 @@ nav:
       - Engage: mappings/engage.md
       - NIST: mappings/nist.md
       - IEC 62443: mappings/iec-62443.md
-      - 2026 regulatory context: mappings/regulatory-context.md
       - Related frameworks: mappings/related-frameworks.md
   - Advanced Evidence (optional):
       - Overview: advanced-evidence/index.md
@@ -644,9 +660,7 @@ nav:
       - Architecture: architecture/experimental-benchmarks.md
       - RFC 0002: rfcs/0002-experimental-benchmark-extensions.md
   - Governance:
-      - Framework crosswalk governance: governance/framework-crosswalks.md
       - Roadmap: roadmap.md
       - RFCs: rfcs/README.md
       - RFC-0001 Baseline: rfcs/0001-uhbs-4.0-baseline.md
-      - RFC-0003 Scoring assurance: rfcs/0003-scoring-assurance.md
       - RFC Template: rfcs/0000-template.md

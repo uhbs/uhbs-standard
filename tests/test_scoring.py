@@ -24,7 +24,7 @@ def test_safety_gate_fail_binary() -> None:
         70, critical_control_verdict=CriticalControlVerdict.GATE_FAILED
     )
     assert not passed
-    assert delta == 0.0
+    assert delta == 0.5
 
 
 def test_gate_passed_uhqs_is_weighted_sum() -> None:
@@ -43,7 +43,7 @@ def test_gate_passed_uhqs_is_weighted_sum() -> None:
     assert result.scoring_model_id == SCORING_MODEL_ID
 
 
-def test_gate_failed_is_ungraded() -> None:
+def test_gate_failed_is_graded_with_delta() -> None:
     weights = {"w_A": 0.20, "w_B": 0.25, "w_C": 0.20, "w_E": 0.15, "w_F": 0.20}
     scores = {"A": 100, "B": 100, "C": 100, "D": 70, "E": 100, "F": 100}
     result = compute_uhqs(
@@ -51,12 +51,13 @@ def test_gate_failed_is_ungraded() -> None:
         weights,
         critical_control_verdict=CriticalControlVerdict.GATE_FAILED,
     )
-    assert result.uhqs is None
-    assert letter_grade(result.uhqs) is None
-    assert not result.graded
+    assert result.uhqs == 50.0
+    assert letter_grade(result.uhqs) == "D"
+    assert result.graded
+    assert result.delta_c == 0.5
 
 
-def test_incomplete_is_ungraded() -> None:
+def test_incomplete_is_graded_without_delta_haircut() -> None:
     weights = {"w_A": 0.20, "w_B": 0.25, "w_C": 0.20, "w_E": 0.15, "w_F": 0.20}
     scores = {"A": 100, "B": 100, "C": 100, "D": 100, "E": 100, "F": 100}
     result = compute_uhqs(
@@ -65,5 +66,6 @@ def test_incomplete_is_ungraded() -> None:
         assessment_status="INCOMPLETE",
         critical_control_verdict=CriticalControlVerdict.GATE_PASSED,
     )
-    assert result.uhqs is None
-    assert not result.graded
+    assert result.uhqs == 100.0
+    assert result.graded
+    assert result.delta_c == 1.0

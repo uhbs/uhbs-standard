@@ -1,0 +1,14 @@
+honeypots:
+  - id: 1
+    name: "UHBSLabPot"
+    cve: ""
+    application: "FakeWebApp"
+    port: 8080
+    enabled: true
+    template_html_file: "index1.html"
+    detection_endpoint: "/"
+    request_regex: ".*"
+    redirect_url: "/"
+    date_created: "2026-01-01"
+    date_updated: "2026-01-01"
+    responders: []

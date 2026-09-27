@@ -1,57 +1,58 @@
 {
   "uhbs_version": "5.0.0",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "assessment_status": "INCOMPLETE",
+  "critical_control_verdict": "INCOMPLETE",
+  "containment_measured": false,
   "target": {
     "name": "Beelzebub (SSH :2222)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/beelzebub/low_interaction_ssh_full.yaml"
   },
-  "evaluated_at": "2026-07-27",
-  "auditor": "UHBS-Lab detailed Docker run (beelzebub/ssh)",
+  "evaluated_at": "2026-09-26",
+  "auditor": "UHBS-Lab results-5.0.0 refresh (beelzebub-ssh)",
   "modules": {
     "A": {
-      "score": 70.64,
-      "status": "PASSED",
+      "score": 55.3,
+      "status": "PARTIAL",
+      "complete": true,
       "weight": 0.3,
-      "notes": "accepted null ID",
-      "complete": true
+      "notes": "accepted null ID"
     },
     "B": {
       "score": 6.25,
       "status": "PARTIAL",
+      "complete": true,
       "weight": 0.15,
-      "notes": "marker missing across sessions",
-      "complete": true
+      "notes": "Server '[beelzebub-lab]:2222' not found in known_hosts"
     },
     "C": {
-      "score": 55.0,
-      "status": "PARTIAL",
+      "score": 0.0,
+      "status": "FAILED",
+      "complete": true,
       "weight": 0.25,
-      "notes": "no STIX objects found",
-      "complete": true
+      "notes": "declared native_json but no matching records"
     },
     "D": {
-      "score": 100.0,
-      "status": "GATE_PASSED",
-      "notes": "stable",
-      "critical_control_verdict": "GATE_PASSED",
-      "complete": true
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "complete": false,
+      "notes": "UHBS v5: containment verdict from critical controls; defense-in-depth score is diagnostic only; no 95-point floor",
+      "critical_control_verdict": "INCOMPLETE"
     },
     "E": {
-      "score": 100.0,
-      "status": "PASSED",
+      "score": 20.0,
+      "status": "PARTIAL",
+      "complete": true,
       "weight": 0.1,
-      "notes": "service alive after load (connect 0.3ms",
-      "p50_ms": 121.16,
-      "p95_ms": 412.32,
-      "p99_ms": 444.51,
-      "complete": true
+      "notes": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=ssh"
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
+      "complete": true,
       "weight": 0.2,
-      "notes": "semgrep error/critical=7 total=36",
-      "complete": true
+      "notes": "no prompt corpus (N/A for non-LLM)"
     }
   },
   "weights": {
@@ -62,17 +63,12 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 100.0,
+    "containment_score": 0.0,
     "delta_c": 1.0,
-    "passed": true,
-    "critical_control_verdict": "GATE_PASSED",
-    "unauthorized_egress_leaks": 0
+    "passed": false,
+    "critical_control_verdict": "INCOMPLETE"
   },
-  "uhqs": 59.88,
-  "grade": "D",
-  "notes": "Evaluation proof only. Graded SSH :2222 on Beelzebub. Artifacts under docs/conformance/reports/beelzebub/ssh/. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
-  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
-  "assessment_status": "COMPLETE",
-  "critical_control_verdict": "GATE_PASSED",
-  "containment_measured": true
+  "uhqs": 33.53,
+  "grade": "F",
+  "notes": "Evaluation proof only. Upstream https://github.com/beelzebub-labs/beelzebub.git@67d5632a754f39f7b14c703d3009193150440116. UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Do not transplant archived 4.x letter grades. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor)."
 }

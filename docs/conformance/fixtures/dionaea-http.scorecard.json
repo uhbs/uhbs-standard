@@ -1,57 +1,58 @@
 {
   "uhbs_version": "5.0.0",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "assessment_status": "INCOMPLETE",
+  "critical_control_verdict": "INCOMPLETE",
+  "containment_measured": false,
   "target": {
     "name": "Dionaea (HTTP :80)",
     "class": "Web-API",
     "profile_ref": "docs/conformance/labs/dionaea/web_api_http_full.yaml"
   },
-  "evaluated_at": "2026-07-27",
-  "auditor": "UHBS-Lab detailed Docker run (dionaea/http)",
+  "evaluated_at": "2026-09-26",
+  "auditor": "UHBS-Lab results-5.0.0 refresh (dionaea-http)",
   "modules": {
     "A": {
-      "score": 53.54,
+      "score": 46.48,
       "status": "PARTIAL",
+      "complete": true,
       "weight": 0.25,
-      "notes": "status=200",
-      "complete": true
+      "notes": "status=200"
     },
     "B": {
-      "score": 82.5,
-      "status": "PASSED",
+      "score": 65.0,
+      "status": "PARTIAL",
+      "complete": true,
       "weight": 0.2,
-      "notes": "survived binary blast",
-      "complete": true
+      "notes": "no payload probe implemented"
     },
     "C": {
-      "score": 55.0,
-      "status": "PARTIAL",
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "complete": false,
       "weight": 0.2,
-      "notes": "no STIX objects found",
-      "complete": true
+      "notes": "declared native_json but no matching records"
     },
     "D": {
-      "score": 90.0,
-      "status": "GATE_FAILED",
-      "notes": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes",
-      "critical_control_verdict": "GATE_FAILED",
-      "complete": true
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "complete": false,
+      "notes": "UHBS v5: containment verdict from critical controls; defense-in-depth score is diagnostic only; no 95-point floor",
+      "critical_control_verdict": "INCOMPLETE"
     },
     "E": {
       "score": 55.0,
       "status": "PARTIAL",
+      "complete": true,
       "weight": 0.15,
-      "notes": "P50=1023.8ms P95=1050.0ms P99=1052.8ms TPS_limit=150.0ms proto=http",
-      "p50_ms": 1025.61,
-      "p95_ms": 1148.84,
-      "p99_ms": 1162.06,
-      "complete": true
+      "notes": "P50=1021.9ms P95=1367.4ms P99=1510.4ms TPS_limit=150.0ms proto=http"
     },
     "F": {
-      "score": 70.0,
-      "status": "PASSED",
+      "score": 66.35,
+      "status": "PARTIAL",
+      "complete": true,
       "weight": 0.2,
-      "notes": "bandit HIGH=9",
-      "complete": true
+      "notes": "no prompt corpus (N/A for non-LLM)"
     }
   },
   "weights": {
@@ -62,17 +63,12 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 90.0,
-    "delta_c": 0.0,
+    "containment_score": 0.0,
+    "delta_c": 1.0,
     "passed": false,
-    "critical_control_verdict": "GATE_FAILED",
-    "unauthorized_egress_leaks": 0
+    "critical_control_verdict": "INCOMPLETE"
   },
-  "uhqs": null,
-  "grade": null,
-  "notes": "Evaluation proof only. Graded HTTP :80 on Dionaea. Artifacts under docs/conformance/reports/dionaea/http/. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
-  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
-  "assessment_status": "COMPLETE",
-  "critical_control_verdict": "GATE_FAILED",
-  "containment_measured": true
+  "uhqs": 57.67,
+  "grade": "D",
+  "notes": "Evaluation proof only. Upstream https://github.com/dinotools/dionaea.git@4e459f1b672a5b4c1e8335c0bff1b93738019215. UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Do not transplant archived 4.x letter grades. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor)."
 }

@@ -18,6 +18,7 @@ from uhbs_core.uhqs_math import (
     CriticalControlVerdict,
     assessment_from_module_results,
     letter_grade,
+    measured_modules_from_results,
     safety_gate,
     validate_weights,
     weights_for_class,
@@ -74,6 +75,7 @@ def compute_uhqs(
     assessment_status: AssessmentStatus | str = AssessmentStatus.COMPLETE,
     critical_control_verdict: CriticalControlVerdict | str | None = None,
     containment_measured: bool = True,
+    measured_modules: Mapping[str, bool] | None = None,
 ) -> UhqsResult:
     result = _compute_uhqs(
         scores,
@@ -81,6 +83,7 @@ def compute_uhqs(
         assessment_status=assessment_status,
         critical_control_verdict=critical_control_verdict,
         containment_measured=containment_measured,
+        measured_modules=measured_modules,
     )
     return UhqsResult(
         weighted_sum=result.weighted_sum,
@@ -196,6 +199,7 @@ def assert_scorecard_integrity(
         containment_measured=containment_measured,
         assessment_status=status,
         critical_control_verdict=verdict,
+        measured_modules=measured_modules_from_results(modules),
     )
 
     if "uhqs" in scorecard:
@@ -203,20 +207,13 @@ def assert_scorecard_integrity(
     else:
         declared_uhqs = None if result.uhqs is None else -1
 
+    # Always-grade model: uhqs/grade are required whenever recomputation yields a number.
     if result.uhqs is None:
-        # Ungraded: INCOMPLETE or GATE_FAILED — uhqs/grade must be null or omitted.
         if "uhqs" in scorecard and declared_uhqs is not None:
-            errors.append(f"uhqs={declared_uhqs!r} but recomputed ungraded (null)")
-        declared_grade = scorecard.get("grade", None)
-        if declared_grade is not None:
-            errors.append(
-                f"grade={declared_grade!r} present but assessment is ungraded "
-                f"(status={result.assessment_status.value}, "
-                f"verdict={result.critical_control_verdict.value})"
-            )
+            errors.append(f"uhqs={declared_uhqs!r} but recomputed null")
     else:
         if "uhqs" not in scorecard:
-            errors.append("uhqs missing for graded UHQS")
+            errors.append("uhqs missing (always-grade model requires a composite)")
         else:
             try:
                 declared_f = float(declared_uhqs)  # type: ignore[arg-type]
@@ -229,7 +226,7 @@ def assert_scorecard_integrity(
         declared_grade = scorecard.get("grade", None)
         expected_grade = letter_grade(result.uhqs)
         if declared_grade is None:
-            errors.append(f"grade missing for graded UHQS (expected {expected_grade})")
+            errors.append(f"grade missing (expected {expected_grade})")
         elif expected_grade and str(declared_grade) != expected_grade:
             errors.append(f"grade={declared_grade} != recomputed {expected_grade}")
 
@@ -241,8 +238,7 @@ def assert_scorecard_integrity(
             f"safety_gate.passed={gate['passed']} != recomputed {result.safety_gate_passed}"
         )
     if (
-        result.graded
-        and "containment_score" in gate
+        "containment_score" in gate
         and abs(float(gate["containment_score"]) - scores["D"]) > 0.01
     ):
         errors.append("safety_gate.containment_score != modules.D.score")
@@ -254,19 +250,6 @@ def assert_scorecard_integrity(
             f"recomputed {result.critical_control_verdict.value}"
         )
 
-    # Graded scorecards must not claim a grade while modules / critical verdict are incomplete.
-    if result.graded:
-        if result.critical_control_verdict is CriticalControlVerdict.INCOMPLETE:
-            errors.append("graded scorecard with INCOMPLETE critical_control_verdict")
-        if result.assessment_status is AssessmentStatus.INCOMPLETE:
-            errors.append("graded scorecard with assessment_status=INCOMPLETE")
-        for key in SCORE_KEYS:
-            mod = modules.get(key) or {}
-            status_s = str(mod.get("status", "")).upper().replace(" ", "_")
-            if mod.get("complete") is False or status_s in _INCOMPLETE_MODULE_STATUSES:
-                errors.append(f"graded scorecard with incomplete module {key}")
-                break
-        if str(d_mod.get("critical_control_verdict", "")).upper() == "INCOMPLETE":
-            errors.append("graded scorecard with Module D critical_control_verdict=INCOMPLETE")
+    # Status/verdict remain honest labels; they no longer suppress the grade.
 
     return errors

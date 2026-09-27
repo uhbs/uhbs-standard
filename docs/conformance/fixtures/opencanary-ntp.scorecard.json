@@ -1,54 +1,54 @@
 {
   "uhbs_version": "5.0.0",
   "target": {
-    "name": "OpenCanary (NTP :123)",
+    "name": "OpenCanary (UHBS multi-protocol proof) (ntp)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/opencanary/low_interaction_ntp_full.yaml"
   },
-  "evaluated_at": "2026-07-27",
-  "auditor": "UHBS-Lab detailed Docker run (opencanary/ntp)",
+  "evaluated_at": "2026-09-26",
+  "auditor": "UHBS-Lab results-5.0.0 refresh (opencanary-ntp)",
   "modules": {
     "A": {
-      "score": 55.71,
-      "status": "PARTIAL",
-      "weight": 0.3,
+      "score": 0.0,
+      "status": "INCOMPLETE",
       "notes": "",
-      "complete": true
+      "complete": false,
+      "weight": 0.3
     },
     "B": {
-      "score": 70.5,
+      "score": 53.0,
       "status": "PARTIAL",
-      "weight": 0.15,
       "notes": "",
-      "complete": true
+      "complete": true,
+      "weight": 0.15
     },
     "C": {
-      "score": 55.0,
-      "status": "PARTIAL",
-      "weight": 0.25,
+      "score": 0.0,
+      "status": "INCOMPLETE",
       "notes": "",
-      "complete": true
+      "complete": false,
+      "weight": 0.25
     },
     "D": {
-      "score": 90.0,
-      "status": "GATE_FAILED",
+      "score": 0.0,
+      "status": "INCOMPLETE",
       "notes": "",
-      "critical_control_verdict": "GATE_FAILED",
-      "complete": true
+      "complete": false,
+      "critical_control_verdict": "INCOMPLETE"
     },
     "E": {
       "score": 35.0,
-      "status": "FAILED",
-      "weight": 0.1,
+      "status": "PARTIAL",
       "notes": "",
-      "complete": true
+      "complete": true,
+      "weight": 0.1
     },
     "F": {
-      "score": 70.0,
+      "score": 67.46,
       "status": "PARTIAL",
-      "weight": 0.2,
       "notes": "",
-      "complete": true
+      "complete": true,
+      "weight": 0.2
     }
   },
   "weights": {
@@ -59,17 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 90.0,
-    "delta_c": 0.0,
+    "containment_score": 0.0,
+    "delta_c": 1.0,
     "passed": false,
-    "critical_control_verdict": "GATE_FAILED",
+    "critical_control_verdict": "INCOMPLETE",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": null,
-  "grade": null,
-  "notes": "Evaluation proof only. OpenCanary ntp. Regraded 2026-07-27. Artifacts: docs/conformance/reports/opencanary/ntp/. Migrated to UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Historical v5.0.0 copy archived under docs/conformance/archive/v5.0.0/.",
-  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
-  "assessment_status": "COMPLETE",
-  "critical_control_verdict": "GATE_FAILED",
-  "containment_measured": true
+  "uhqs": 55.43,
+  "grade": "D",
+  "notes": "Evaluation proof only. results-5.0.0 refresh of opencanary-ntp at fb12e4fefbdb1b9acd1e5561a2614f827ab639ff. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "assessment_status": "INCOMPLETE",
+  "critical_control_verdict": "INCOMPLETE",
+  "containment_measured": false
 }

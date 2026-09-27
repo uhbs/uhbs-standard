@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "1d12d906ade6a2c16356b194da49b04037ff6574b1923492667d51386123b10e"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "bd241b35615415b868c6ace0be4a356149fad4f028bff38ac61b84a84e09ffd3"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "bd241b35615415b868c6ace0be4a356149fad4f028bff38ac61b84a84e09ffd3"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "03161426a3816d4cb48df63e7eee9e9fd331cac2e63993c564a9a55e997692a2"
+    },
+    {
+      "path": "report.json",
+      "sha256": "52aa7ce8d0c3c6e549088144978b5be1acd2a65b12001bf8ed9eec808d258d54"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "9ad1778c9383eca84189efa97a7688498110535fdc71956cdbc7683009044260"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "9c4982aeaea896071709de7f1f936577dbcfbdabac17effd4ba3bab6f5ab6865"
+    }
+  ],
+  "extra": {
+    "target": "honeytrap-ssh",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

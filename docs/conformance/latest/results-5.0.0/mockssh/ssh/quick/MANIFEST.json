@@ -1,0 +1,39 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "7dd2ee527bb5f7ddf2cfe3ff895e6a0681522ad6844865617c3d55bd5e094285"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "1acd78bc03ce440e7871d373703d99fefe75c2f5bedd587865844f99e046e880"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "1acd78bc03ce440e7871d373703d99fefe75c2f5bedd587865844f99e046e880"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "26b2e4059d66574e8d414eee7fbd835da488ccd98d5ad69c7daf6444f6da3ca2"
+    },
+    {
+      "path": "report.json",
+      "sha256": "87fc8cee817551cdf93de78f5f982ebcde096f96a41e87d0c43b56f5611e404a"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "400c99a4e922c2c91d2c70de32d52539b81ec47dbb5bb0e9efd2a7486f17d4a0"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "340972e4e591f612e44edcc46fa86b08de20744bb0986028af0fc58f1a95c665"
+    }
+  ],
+  "extra": {
+    "target": "mockssh-ssh",
+    "uhqs": null,
+    "grade": null,
+    "critical_control_verdict": "GATE_PASSED"
+  }
+}

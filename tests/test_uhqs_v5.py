@@ -93,14 +93,15 @@ def test_attack_resolves_pinned_id() -> None:
     assert not r.revoked
 
 
-def test_gate_failed_null_uhqs_invariant() -> None:
+def test_gate_failed_still_graded_invariant() -> None:
     result = compute_uhqs(
         {"A": 100, "B": 100, "C": 100, "D": 0, "E": 100, "F": 100},
         profile_class="POSIX-Shell",
         critical_control_verdict=CriticalControlVerdict.GATE_FAILED,
     )
-    assert result.uhqs is None
-    assert letter_grade(result.uhqs) is None
+    assert result.uhqs == 50.0  # 100 * 0.5
+    assert result.graded is True
+    assert letter_grade(result.uhqs) == "D"
 
 
 def test_mutation_no_95_floor_in_safety_source() -> None:

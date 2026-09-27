@@ -1,0 +1,645 @@
+{
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v5.0.0",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "assessment_status": "INCOMPLETE",
+  "critical_control_verdict": "INCOMPLETE",
+  "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
+  "target": {
+    "name": "sticky_elephant-postgres",
+    "kind": "generic",
+    "host": "sticky_elephant-lab",
+    "port": 5432,
+    "source_root": "/app",
+    "profile_class": "Low-Interaction",
+    "protocols": [
+      "postgres"
+    ],
+    "ports_map": {
+      "postgres": 5432
+    }
+  },
+  "baseline": null,
+  "uhqs": {
+    "target": "sticky_elephant-postgres",
+    "S_A": 92.0,
+    "S_B": 25.0,
+    "S_C": 0.0,
+    "C": 0.0,
+    "S_E": 100.0,
+    "S_F": 0.0,
+    "delta_c": 1.0,
+    "uhqs": 75.18,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "C",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "5.0.0",
+    "containment_measured": false,
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
+    "graded": true
+  },
+  "hqs": {
+    "target": "sticky_elephant-postgres",
+    "S_A": 92.0,
+    "S_B": 25.0,
+    "S_C": 0.0,
+    "C": 0.0,
+    "S_E": 100.0,
+    "S_F": 0.0,
+    "delta_c": 1.0,
+    "uhqs": 75.18,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "C",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "5.0.0",
+    "containment_measured": false,
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
+    "graded": true
+  },
+  "modules": [
+    {
+      "module": "SANDBOX",
+      "dimension": "sandbox",
+      "score": 70.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "sandbox.reach.postgres",
+          "team": "blue",
+          "passed": true,
+          "detail": "sticky_elephant-lab:5432 open",
+          "score": 25.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "sandbox.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "operator attested air-gapped sandbox (UHBS_AIRGAP_ATTESTED=1)",
+          "score": 25.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "sandbox.egress_deny_tooling",
+          "team": "blue",
+          "passed": false,
+          "detail": "host-egress-deny.sh not found",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "sandbox.gateway_log_configured",
+          "team": "blue",
+          "passed": false,
+          "detail": "gateway log path not set",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "reachable_protocols": 1
+      },
+      "notes": [
+        "Phase 3 preflight \u2014 does not replace real air-gap deployment"
+      ],
+      "error": null,
+      "complete": true,
+      "applicable_checks": 0,
+      "scored_checks": 0,
+      "critical_control_verdict": null
+    },
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 0.0,
+      "status": "FAILED",
+      "checks": [],
+      "metrics": {},
+      "notes": [],
+      "error": "source_root not found: /app",
+      "complete": false,
+      "applicable_checks": 0,
+      "scored_checks": 0,
+      "critical_control_verdict": null
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 92.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "postgres.fsm.truncated_startup",
+          "team": "blue",
+          "passed": true,
+          "detail": "type=b'E' len=133",
+          "score": 80.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "postgres.nego.ssl_request",
+          "team": "blue",
+          "passed": true,
+          "detail": "reply=b'N'",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "postgres.nego.startup",
+          "team": "blue",
+          "passed": true,
+          "detail": "Authentication type=3",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "postgres.timing.sample_size",
+          "team": "blue",
+          "passed": true,
+          "detail": "n=50 requested=50 errors=0",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "postgres.timing.iat_jitter",
+          "team": "red",
+          "passed": true,
+          "detail": "median=0.922ms pstdev=0.640ms (target jitter often <2ms vs native)",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "postgres.module_a.composite",
+          "team": "blue",
+          "passed": true,
+          "detail": "fsm=80 nego=100 timing=100",
+          "score": 92.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "postgres": 92.0
+        },
+        "protocols": [
+          "postgres"
+        ],
+        "timing_samples": 50,
+        "available_plugins": [
+          "bacnet",
+          "bluetooth",
+          "coap",
+          "dhcp",
+          "dns",
+          "elasticsearch",
+          "ftp",
+          "generic",
+          "git",
+          "http",
+          "httpproxy",
+          "imap",
+          "ipp",
+          "irc",
+          "kubernetes",
+          "ldap",
+          "mcp",
+          "memcache",
+          "modbus",
+          "mongodb",
+          "mqtt",
+          "mssql",
+          "mysql",
+          "ntp",
+          "oracle",
+          "pjl",
+          "pop3",
+          "postgres",
+          "rdp",
+          "redis",
+          "s7comm",
+          "sip",
+          "smb",
+          "smtp",
+          "snmp",
+          "socks5",
+          "ssh",
+          "telnet",
+          "tftp",
+          "vnc"
+        ],
+        "coverage": 1.0,
+        "not_tested": 0
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['postgres']",
+        "class=Low-Interaction strict_rfc=True"
+      ],
+      "error": null,
+      "complete": true,
+      "applicable_checks": 6,
+      "scored_checks": 6,
+      "critical_control_verdict": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 25.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "postgres.state.auth_deny",
+          "team": "blue",
+          "passed": false,
+          "detail": "52",
+          "score": 0.0,
+          "evidence": [],
+          "critical": true,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "postgres.payload.unsupported",
+          "team": "red",
+          "passed": false,
+          "detail": "no payload probe implemented",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "NOT_TESTED",
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "postgres.fuzz.binary",
+          "team": "red",
+          "passed": true,
+          "detail": "survived binary blast",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "postgres": 25.0
+        },
+        "class": "Low-Interaction",
+        "surface_depth": "unknown",
+        "coverage": 0.6667,
+        "not_tested": 1
+      },
+      "notes": [
+        "UHBS Module B class=Low-Interaction"
+      ],
+      "error": null,
+      "complete": true,
+      "applicable_checks": 3,
+      "scored_checks": 2,
+      "critical_control_verdict": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "checks": [
+        {
+          "id": "c1.telemetry_dir",
+          "team": "blue",
+          "passed": false,
+          "detail": "telemetry_dir missing \u2014 Module C incomplete until sink is provided",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "NOT_TESTED",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C1",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c4.ground_truth",
+          "team": "blue",
+          "passed": false,
+          "detail": "no telemetry sink for ground-truth matching",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "NOT_TESTED",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C4",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "collection_capability": {
+          "status": "INCOMPLETE",
+          "reason": "no_telemetry_dir"
+        },
+        "coverage": 0.0,
+        "not_tested": 2
+      },
+      "notes": [
+        "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4"
+      ],
+      "error": null,
+      "complete": false,
+      "applicable_checks": 2,
+      "scored_checks": 0,
+      "critical_control_verdict": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "checks": [
+        {
+          "id": "d1.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_AIRGAP_ATTESTED set (metadata only; zero scoring weight)",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D1.meta",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "passed": false,
+          "detail": "UHBS_EGRESS_GATEWAY_LOG unset \u2014 gateway evidence not attached",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "NOT_TESTED",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D1.critical",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.shell_egress_probes",
+          "team": "blue",
+          "passed": false,
+          "detail": "no explicit SSH listener \u2014 shell egress/LPE critical probes not executed; provide UHBS_EGRESS_GATEWAY_LOG or SSH for a complete assessment",
+          "score": 0.0,
+          "evidence": [],
+          "critical": true,
+          "outcome": "NOT_TESTED",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D1.critical",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.runtime_escape_surface",
+          "team": "blue",
+          "passed": false,
+          "detail": "runtime escape surface not inspected without shell exec",
+          "score": 0.0,
+          "evidence": [],
+          "critical": true,
+          "outcome": "NOT_TESTED",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "breakout": false,
+        "allowed_outbound_traffic": false,
+        "shell_exec": false,
+        "protocols": [
+          "postgres"
+        ],
+        "defense_in_depth_score": 0.0
+      },
+      "notes": [
+        "Module D v5: non-SSH targets need gateway/packet evidence for critical egress and runtime inspection \u2014 attestation alone never clears the gate."
+      ],
+      "error": null,
+      "complete": false,
+      "applicable_checks": 4,
+      "scored_checks": 1,
+      "critical_control_verdict": "INCOMPLETE"
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 100.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "passed": true,
+          "detail": "P50=0.7ms P95=1.3ms P99=1.4ms TPS_limit=3000.0ms proto=postgres",
+          "score": 45.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "passed": true,
+          "detail": "errors=0/15 rate=0.00%",
+          "score": 20.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "passed": true,
+          "detail": "completed exhaustion/fuzz blast",
+          "score": 15.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "passed": true,
+          "detail": "service alive after load (connect 1.5ms)",
+          "score": 20.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "p50_ms": 0.75,
+        "p95_ms": 1.26,
+        "p99_ms": 1.38,
+        "p95_limit_ms": 3000.0,
+        "errors": 0,
+        "concurrency": 5,
+        "requests": 15,
+        "wall_s": 0.01,
+        "protocol": "postgres"
+      },
+      "notes": [],
+      "error": null,
+      "complete": true,
+      "applicable_checks": 0,
+      "scored_checks": 0,
+      "critical_control_verdict": null
+    }
+  ],
+  "extras": {
+    "target_scores": {
+      "protocol": 92.0,
+      "behavior": 25.0,
+      "telemetry": 0.0,
+      "containment": 0.0,
+      "scale": 100.0,
+      "static": 0.0
+    },
+    "uhqs_version": "5.0.0",
+    "tps": {
+      "name": "database_postgres-quick",
+      "class": "Low-Interaction",
+      "protocols": [
+        "postgres"
+      ],
+      "expected_p95_latency_ms": 3000.0
+    },
+    "surface_depth": "unknown"
+  }
+}

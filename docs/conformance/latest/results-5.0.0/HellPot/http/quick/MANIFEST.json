@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "5c626239a185ecd0faea16bb7712563825d96de786f6ffd9b22d80419646b3fd"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "294f5c552d0f17f2ce9f7c77d3e5f4a01dd4c74f62f87aed0fbd18c26d6bb6fd"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "294f5c552d0f17f2ce9f7c77d3e5f4a01dd4c74f62f87aed0fbd18c26d6bb6fd"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "00dfdbca4747edd47e293561b9da2715cb93c43ce4a748ef4dbe9f920056d66c"
+    },
+    {
+      "path": "report.json",
+      "sha256": "ac614c8e692eca9179009d1dec150f7101adad60e031a56a9a7dff2b9ee7b40f"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "4a7c96b568a80c7a899d45f6ab84d66067ee7caeeee43728c8ab5ae397b17d5d"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "24aab7c75c1500d5a0895dd85187c6f59d16c33549603e791903f91af897cc63"
+    }
+  ],
+  "extra": {
+    "target": "HellPot-http",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

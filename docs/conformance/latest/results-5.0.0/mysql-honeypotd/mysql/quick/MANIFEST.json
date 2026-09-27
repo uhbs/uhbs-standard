@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "38ae30dfe2eddf450f2a748b3c34dabeadbc29f3694c4ae535399f7abf530480"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "cf7ceb3f1cbddf2d7f47353e9fc72153743de3078ed695ceca6f99305963d5cc"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "cf7ceb3f1cbddf2d7f47353e9fc72153743de3078ed695ceca6f99305963d5cc"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "6f1f457a92b998249b28bb6db5b3a9c810fabd7cf5bd867dcd35fed4ecfcc721"
+    },
+    {
+      "path": "report.json",
+      "sha256": "38fb088a510de0dfcc357e9a0e1161df6547f218a51e06b26ab3a4cc28fc399e"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "b520db2ef004561c4e0a4980650ac3eb042bed511ab8aa1917531d0d228f30eb"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "893a37b1caef2c63d75f6962e70033bac2be57edd4179769695c59bc69f4fde8"
+    }
+  ],
+  "extra": {
+    "target": "mysql-honeypotd-mysql",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

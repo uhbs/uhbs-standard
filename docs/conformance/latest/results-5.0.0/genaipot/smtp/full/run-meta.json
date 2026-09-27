@@ -1,0 +1,85 @@
+{
+  "uhbs_version": "5.0.0",
+  "run_mode": "full",
+  "evaluated_at": "2026-09-26T14:41:50Z",
+  "proof_label": "GenAIPot (SMTP :25)",
+  "target": {
+    "repository": "https://github.com/eduardobsg/GenAIPot.git",
+    "git_branch": "main",
+    "git_commit": "205ffe40008f2e76e0decdb01bc19bf8e00acd8a",
+    "class": "Low-Interaction",
+    "protocol": "smtp",
+    "host": "genaipot-lab",
+    "port": 25,
+    "container_image": "annls/genaipot:latest",
+    "container_image_id": "sha256:627d7fde6d4a6f937fde3b3366fb55605a90cea6370e1f5beac9c39d8ecfeeac",
+    "base_image": "python:3.9-slim",
+    "base_image_reason": "upstream-docker Hub image annls/genaipot:latest (Dockerfile FROM python:3.9-slim). ls1911/GenAIPot clone required auth; SHA matches eduardobsg/GenAIPot@205ffe4.",
+    "container_runtime_strategy": "upstream-docker"
+  },
+  "grader": {
+    "package_version": "5.0.0",
+    "docker_image": "uhbs:5.0.0-full",
+    "docker_image_id": "sha256:320fb38dcf3ebf69befb2248b75ed32c63dafe6b83f959746209d337c3e7ca9b",
+    "inventory": "docs/conformance/labs/genaipot/inventory.yaml",
+    "tps": "docs/conformance/labs/genaipot/low_interaction_smtp_full.yaml",
+    "target_id": "genaipot-smtp"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "measured_vs_attested": {
+      "airgap": "attested",
+      "egress_gateway_log": "attested-empty-log",
+      "telemetry": "measured"
+    }
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "grade_long": null,
+    "delta_c": 0.0,
+    "module_scores": {
+      "A": 16.43,
+      "B": 37.0,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 100.0,
+      "F": 70.0
+    },
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  },
+  "limitations": [
+    "Published UHBS 5.0.0 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1); Docker Desktop lab, not a physical air-gap.",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement.",
+    "Do not transplant archived 4.x letter grades.",
+    "upstream-docker Hub image annls/genaipot:latest (Dockerfile FROM python:3.9-slim). ls1911/GenAIPot clone required auth; SHA matches eduardobsg/GenAIPot@205ffe4."
+  ],
+  "docs_reviewed": [
+    "README.md",
+    "Dockerfile",
+    "app.py"
+  ]
+}
