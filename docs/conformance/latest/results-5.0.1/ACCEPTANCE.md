@@ -1,10 +1,10 @@
 # Unit acceptance — results-5.0.1 (Gate A+)
 
 Machine-checkable checklist for “unit finished.” Agents and operators use
-[`scripts/validate_unit.py`](../../../scripts/validate_unit.py) — exit **0** =
+[`scripts/validate_unit.py`](https://github.com/uhbs/uhbs-standard/blob/main/scripts/validate_unit.py) — exit **0** =
 `ACCEPT`, non-zero = `REJECT` with missing paths printed.
 
-Schema: [`schemas/results-unit-acceptance.schema.json`](../../../schemas/results-unit-acceptance.schema.json)
+Schema: [`schemas/results-unit-acceptance.schema.json`](https://github.com/uhbs/uhbs-standard/blob/main/schemas/results-unit-acceptance.schema.json)
 
 ## Product hub (`results-5.0.1/<product>/`)
 

@@ -5,7 +5,7 @@
 
 | Run | UHQS | Grade | Proof |
 | --- | ---: | --- | --- |
-| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.1/elastichoney/http/quick/SCORECARD.txt) |
+| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.1/elastichoney/http/index.md) |
 | **Full** | **ungraded** | **—** | Verbatim SCORECARD below |
 
 **Hub:** [elastichoney](../conformance/latest/results-5.0.1/elastichoney/http/index.md) · [Tutorial](../conformance/latest/results-5.0.1/elastichoney/http/../TUTORIAL.md) · [Execution steps](../conformance/latest/results-5.0.1/elastichoney/http/EXECUTION-STEPS.md)

@@ -6,6 +6,12 @@ repo_name: uhbs/uhbs-standard
 edit_uri: edit/main/docs/
 copyright: UHBS v5.0.1 — evaluation framework (Apache-2.0)
 
+# Archive + superseded result trees emit hundreds of strict-mode link warnings
+# (stale READING-UHQS / fixture paths). Keep them in git; omit from MkDocs.
+exclude_docs: |
+  conformance/archive/**
+  conformance/latest/results-5.0.0/**
+
 theme:
   name: material
   custom_dir: docs/overrides

@@ -5,7 +5,7 @@
 
 | Run | UHQS | Grade | Proof |
 | --- | ---: | --- | --- |
-| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.1/express-honeypot/http/quick/SCORECARD.txt) |
+| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.1/express-honeypot/http/index.md) |
 | **Full** | **ungraded** | **—** | Verbatim SCORECARD below |
 
 **Hub:** [express-honeypot](../conformance/latest/results-5.0.1/express-honeypot/http/index.md) · [Tutorial](../conformance/latest/results-5.0.1/express-honeypot/http/../TUTORIAL.md) · [Execution steps](../conformance/latest/results-5.0.1/express-honeypot/http/EXECUTION-STEPS.md)

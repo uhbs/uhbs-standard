@@ -5,7 +5,7 @@
 
 | Run | UHQS | Grade | Proof |
 | --- | ---: | --- | --- |
-| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.1/flux/http/quick/SCORECARD.txt) |
+| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.1/flux/http/index.md) |
 | **Full** | **ungraded** | **—** | Verbatim SCORECARD below |
 
 **Hub:** [flux](../conformance/latest/results-5.0.1/flux/http/index.md) · [Tutorial](../conformance/latest/results-5.0.1/flux/http/../TUTORIAL.md) · [Execution steps](../conformance/latest/results-5.0.1/flux/http/EXECUTION-STEPS.md)

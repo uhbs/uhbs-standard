@@ -5,7 +5,7 @@
 
 | Run | UHQS | Grade | Proof |
 | --- | ---: | --- | --- |
-| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.1/wordpot/http/quick/SCORECARD.txt) |
+| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.1/wordpot/http/index.md) |
 | **Full** | **ungraded** | **—** | Verbatim SCORECARD below |
 
 **Hub:** [wordpot](../conformance/latest/results-5.0.1/wordpot/http/index.md) · [Tutorial](../conformance/latest/results-5.0.1/wordpot/http/../TUTORIAL.md) · [Execution steps](../conformance/latest/results-5.0.1/wordpot/http/EXECUTION-STEPS.md)

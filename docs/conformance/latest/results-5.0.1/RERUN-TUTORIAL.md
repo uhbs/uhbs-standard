@@ -1,7 +1,7 @@
 # RERUN-TUTORIAL — fixing and re-grading the unreachable-target units (results-5.0.1)
 
 **Status:** Operative runbook · **Audience:** operators re-running the 63 broken units
-**Related:** [`rerun-runbook.yaml`](rerun-runbook.yaml) · [`scripts/preflight_unit.py`](../../../scripts/preflight_unit.py) · [`scripts/rerun_unit.py`](../../../scripts/rerun_unit.py)
+**Related:** [`rerun-runbook.yaml`](rerun-runbook.yaml) · [`scripts/preflight_unit.py`](https://github.com/uhbs/uhbs-standard/blob/main/scripts/preflight_unit.py) · [`scripts/rerun_unit.py`](https://github.com/uhbs/uhbs-standard/blob/main/scripts/rerun_unit.py)
 
 ## What broke (30-second version)
 
