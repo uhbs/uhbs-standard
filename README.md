@@ -25,7 +25,6 @@ Open-source evaluation framework for **lab / sandbox**evaluation of honeypots an
 
 ## Table of contents
 
-- [Project status](#project-status)
 - [What you get](#what-you-get)
 - [Install](#install)
 - [Quickstart](#quickstart)
@@ -38,17 +37,6 @@ Open-source evaluation framework for **lab / sandbox**evaluation of honeypots an
 - [Security](#security)
 - [Citation](#citation)
 - [License](#license)
-
-## Project status
-
-**Status:** Experimental — [specification status](https://uhbs.github.io/uhbs-standard/mkdocs/specification/status/)
-
-| Topic | Reality today |
-| --- | --- |
-| Maintainer | [@mziqudhd92](https://github.com/mziqudhd92) — [MAINTAINERS.md](https://github.com/uhbs/uhbs-standard/blob/main/MAINTAINERS.md) |
-| Governance | Single maintainer; no Steering Committee yet — [Phase 6 roadmap](https://github.com/uhbs/uhbs-standard/blob/main/ROADMAP.md#phase-6--community-maturity-aspirational--not-done) |
-| Evaluation scope | **Laboratory / sandbox only** |
-| Suggested internal gate | After lab grading, orgs **MAY** use **UHQS > 80** + passing Safety Gate before *they* deploy a decoy — not a standards-body mandate |
 
 ## What you get
 
