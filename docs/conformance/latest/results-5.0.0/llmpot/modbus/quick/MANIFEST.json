@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "bfe15006941eee02716887dab951bc82ff600b578d5e139dcd234fc50faf31cd"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "6a305792ea2c3cfe3bb9d2ab6031ae005eeb662f494e30251d2de9cbeff2f3a4"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "6a305792ea2c3cfe3bb9d2ab6031ae005eeb662f494e30251d2de9cbeff2f3a4"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "96464fde420618bdd5c79f71cdda6fcd5fe6b8175d25c40cc90eb410a2db27db"
+    },
+    {
+      "path": "report.json",
+      "sha256": "d32f11f084784234940c9b74f6bcb57bfef69e425f5b5b32b3d44d5a8a286acc"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "88533218df4d970a07bed95e3290ccf518e9abe0a9c5a0d4be2b53d88261c22e"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "9bd028f5688a83c43f47ef14a1825b9bbc9874f3db8d88b5c0adcaa0dafca817"
+    }
+  ],
+  "extra": {
+    "target": "llmpot-modbus",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

@@ -1,0 +1,1317 @@
+{
+  "version": "1.178.0",
+  "results": [
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/ci.yml",
+      "start": {
+        "line": 48,
+        "col": 9,
+        "offset": 825
+      },
+      "end": {
+        "line": 48,
+        "col": 34,
+        "offset": 850
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/ci.yml",
+      "start": {
+        "line": 50,
+        "col": 9,
+        "offset": 916
+      },
+      "end": {
+        "line": 50,
+        "col": 38,
+        "offset": 945
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.network.bind.avoid-bind-to-all-interfaces",
+      "path": "core/load.py",
+      "start": {
+        "line": 488,
+        "col": 9,
+        "offset": 16749
+      },
+      "end": {
+        "line": 494,
+        "col": 10,
+        "offset": 16921
+      },
+      "extra": {
+        "message": "Running `socket.bind` to 0.0.0.0, or empty string could unexpectedly expose the server publicly as it binds to all available interfaces. Consider instead getting correct address from an environment variable or configuration file.",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A01_2021-Broken_Access_Control"
+          ],
+          "cwe2021-top25": true,
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "HIGH",
+          "impact": "MEDIUM",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.network.bind.avoid-bind-to-all-interfaces",
+          "shortlink": "https://sg.run/rdln"
+        },
+        "severity": "INFO",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.docker-compose.security.no-new-privileges.no-new-privileges",
+      "path": "docker-compose.yml",
+      "start": {
+        "line": 4,
+        "col": 3,
+        "offset": 26
+      },
+      "end": {
+        "line": 4,
+        "col": 16,
+        "offset": 39
+      },
+      "extra": {
+        "message": "Service 'elasticsearch' allows for privilege escalation via setuid or setgid binaries. Add 'no-new-privileges:true' in 'security_opt' to prevent this.",
+        "metadata": {
+          "cwe": [
+            "CWE-732: Incorrect Permission Assignment for Critical Resource"
+          ],
+          "owasp": [
+            "A05:2021 - Security Misconfiguration",
+            "A06:2017 - Security Misconfiguration",
+            "A02:2025 - Security Misconfiguration"
+          ],
+          "references": [
+            "https://raesene.github.io/blog/2019/06/01/docker-capabilities-and-no-new-privs/",
+            "https://www.kernel.org/doc/Documentation/prctl/no_new_privs.txt",
+            "https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html#rule-4-add-no-new-privileges-flag"
+          ],
+          "category": "security",
+          "technology": [
+            "docker-compose"
+          ],
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/yaml.docker-compose.security.no-new-privileges.no-new-privileges",
+          "shortlink": "https://sg.run/0n8q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service",
+      "path": "docker-compose.yml",
+      "start": {
+        "line": 4,
+        "col": 3,
+        "offset": 26
+      },
+      "end": {
+        "line": 4,
+        "col": 16,
+        "offset": 39
+      },
+      "extra": {
+        "message": "Service 'elasticsearch' is running with a writable root filesystem. This may allow malicious applications to download and run additional payloads, or modify container files. If an application inside a container has to save something temporarily consider using a tmpfs. Add 'read_only: true' to this service to prevent this.",
+        "metadata": {
+          "cwe": [
+            "CWE-732: Incorrect Permission Assignment for Critical Resource"
+          ],
+          "owasp": [
+            "A05:2021 - Security Misconfiguration",
+            "A06:2017 - Security Misconfiguration",
+            "A02:2025 - Security Misconfiguration"
+          ],
+          "references": [
+            "https://docs.docker.com/compose/compose-file/compose-file-v3/#domainname-hostname-ipc-mac_address-privileged-read_only-shm_size-stdin_open-tty-user-working_dir",
+            "https://blog.atomist.com/security-of-docker-kubernetes/",
+            "https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html#rule-8-set-filesystem-and-volumes-to-read-only"
+          ],
+          "category": "security",
+          "technology": [
+            "docker-compose"
+          ],
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service",
+          "shortlink": "https://sg.run/e4JE"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.docker-compose.security.no-new-privileges.no-new-privileges",
+      "path": "docker-compose.yml",
+      "start": {
+        "line": 34,
+        "col": 3,
+        "offset": 897
+      },
+      "end": {
+        "line": 34,
+        "col": 10,
+        "offset": 904
+      },
+      "extra": {
+        "message": "Service 'grafana' allows for privilege escalation via setuid or setgid binaries. Add 'no-new-privileges:true' in 'security_opt' to prevent this.",
+        "metadata": {
+          "cwe": [
+            "CWE-732: Incorrect Permission Assignment for Critical Resource"
+          ],
+          "owasp": [
+            "A05:2021 - Security Misconfiguration",
+            "A06:2017 - Security Misconfiguration",
+            "A02:2025 - Security Misconfiguration"
+          ],
+          "references": [
+            "https://raesene.github.io/blog/2019/06/01/docker-capabilities-and-no-new-privs/",
+            "https://www.kernel.org/doc/Documentation/prctl/no_new_privs.txt",
+            "https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html#rule-4-add-no-new-privileges-flag"
+          ],
+          "category": "security",
+          "technology": [
+            "docker-compose"
+          ],
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/yaml.docker-compose.security.no-new-privileges.no-new-privileges",
+          "shortlink": "https://sg.run/0n8q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service",
+      "path": "docker-compose.yml",
+      "start": {
+        "line": 34,
+        "col": 3,
+        "offset": 897
+      },
+      "end": {
+        "line": 34,
+        "col": 10,
+        "offset": 904
+      },
+      "extra": {
+        "message": "Service 'grafana' is running with a writable root filesystem. This may allow malicious applications to download and run additional payloads, or modify container files. If an application inside a container has to save something temporarily consider using a tmpfs. Add 'read_only: true' to this service to prevent this.",
+        "metadata": {
+          "cwe": [
+            "CWE-732: Incorrect Permission Assignment for Critical Resource"
+          ],
+          "owasp": [
+            "A05:2021 - Security Misconfiguration",
+            "A06:2017 - Security Misconfiguration",
+            "A02:2025 - Security Misconfiguration"
+          ],
+          "references": [
+            "https://docs.docker.com/compose/compose-file/compose-file-v3/#domainname-hostname-ipc-mac_address-privileged-read_only-shm_size-stdin_open-tty-user-working_dir",
+            "https://blog.atomist.com/security-of-docker-kubernetes/",
+            "https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html#rule-8-set-filesystem-and-volumes-to-read-only"
+          ],
+          "category": "security",
+          "technology": [
+            "docker-compose"
+          ],
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service",
+          "shortlink": "https://sg.run/e4JE"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "dockerfile.security.missing-user.missing-user",
+      "path": "modules/ftp/strong_password/Dockerfile",
+      "start": {
+        "line": 5,
+        "col": 1,
+        "offset": 97
+      },
+      "end": {
+        "line": 5,
+        "col": 22,
+        "offset": 118
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nCMD [\"/sbin/my_init\"]",
+        "metadata": {
+          "cwe": [
+            "CWE-250: Execution with Unnecessary Privileges"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user.missing-user",
+          "shortlink": "https://sg.run/Gbvn"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+      "path": "modules/ftp/strong_password/Dockerfile",
+      "start": {
+        "line": 22,
+        "col": 1,
+        "offset": 583
+      },
+      "end": {
+        "line": 22,
+        "col": 40,
+        "offset": 622
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nENTRYPOINT python3 /root/ftp_sniffer.py",
+        "metadata": {
+          "cwe": [
+            "CWE-269: Improper Privilege Management"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+          "shortlink": "https://sg.run/k281"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "dockerfile.security.missing-user.missing-user",
+      "path": "modules/ftp/weak_password/Dockerfile",
+      "start": {
+        "line": 5,
+        "col": 1,
+        "offset": 109
+      },
+      "end": {
+        "line": 5,
+        "col": 22,
+        "offset": 130
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nCMD [\"/sbin/my_init\"]",
+        "metadata": {
+          "cwe": [
+            "CWE-250: Execution with Unnecessary Privileges"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user.missing-user",
+          "shortlink": "https://sg.run/Gbvn"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+      "path": "modules/ftp/weak_password/Dockerfile",
+      "start": {
+        "line": 38,
+        "col": 1,
+        "offset": 1313
+      },
+      "end": {
+        "line": 38,
+        "col": 76,
+        "offset": 1388
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nENTRYPOINT service vsftpd restart & chmod +x /root/history_append.sh & tail",
+        "metadata": {
+          "cwe": [
+            "CWE-269: Improper Privilege Management"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+          "shortlink": "https://sg.run/k281"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+      "path": "modules/http/basic_auth_strong_password/Dockerfile",
+      "start": {
+        "line": 19,
+        "col": 1,
+        "offset": 587
+      },
+      "end": {
+        "line": 19,
+        "col": 43,
+        "offset": 629
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nENTRYPOINT service apache2 restart && tail",
+        "metadata": {
+          "cwe": [
+            "CWE-269: Improper Privilege Management"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+          "shortlink": "https://sg.run/k281"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+      "path": "modules/http/basic_auth_weak_password/Dockerfile",
+      "start": {
+        "line": 20,
+        "col": 1,
+        "offset": 692
+      },
+      "end": {
+        "line": 20,
+        "col": 43,
+        "offset": 734
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nENTRYPOINT service apache2 restart && tail",
+        "metadata": {
+          "cwe": [
+            "CWE-269: Improper Privilege Management"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+          "shortlink": "https://sg.run/k281"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+      "path": "modules/ics/veeder_root_guardian_ast/Dockerfile",
+      "start": {
+        "line": 12,
+        "col": 1,
+        "offset": 390
+      },
+      "end": {
+        "line": 12,
+        "col": 192,
+        "offset": 581
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nENTRYPOINT cd /root; virtual_machine_port_number={virtual_machine_port_number} company_name_address=\"{company_name_address}\" nohup python veeder_root_guardian_ast_service.py &> log.txt & tail",
+        "metadata": {
+          "cwe": [
+            "CWE-269: Improper Privilege Management"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+          "shortlink": "https://sg.run/k281"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.network.bind.avoid-bind-to-all-interfaces",
+      "path": "modules/ics/veeder_root_guardian_ast/files/veeder_root_guardian_ast_service.py",
+      "start": {
+        "line": 18,
+        "col": 1,
+        "offset": 304
+      },
+      "end": {
+        "line": 25,
+        "col": 2,
+        "offset": 510
+      },
+      "extra": {
+        "message": "Running `socket.bind` to 0.0.0.0, or empty string could unexpectedly expose the server publicly as it binds to all available interfaces. Consider instead getting correct address from an environment variable or configuration file.",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A01_2021-Broken_Access_Control"
+          ],
+          "cwe2021-top25": true,
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "HIGH",
+          "impact": "MEDIUM",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.network.bind.avoid-bind-to-all-interfaces",
+          "shortlink": "https://sg.run/rdln"
+        },
+        "severity": "INFO",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+      "path": "modules/smtp/strong_password/Dockerfile",
+      "start": {
+        "line": 11,
+        "col": 1,
+        "offset": 332
+      },
+      "end": {
+        "line": 11,
+        "col": 62,
+        "offset": 393
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nENTRYPOINT cd /root/smtpd_server/ && python3 smtp_honeypot.py",
+        "metadata": {
+          "cwe": [
+            "CWE-269: Improper Privilege Management"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+          "shortlink": "https://sg.run/k281"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.ssl-wrap-socket-is-deprecated.ssl-wrap-socket-is-deprecated",
+      "path": "modules/smtp/strong_password/files/smtpd_server/secure_smtpd/smtp_server.py",
+      "start": {
+        "line": 55,
+        "col": 37,
+        "offset": 1952
+      },
+      "end": {
+        "line": 61,
+        "col": 26,
+        "offset": 2239
+      },
+      "extra": {
+        "message": "'ssl.wrap_socket()' is deprecated. This function creates an insecure socket without server name indication or hostname matching. Instead, create an SSL context using 'ssl.SSLContext()' and use that to wrap a socket.",
+        "metadata": {
+          "cwe": [
+            "CWE-326: Inadequate Encryption Strength"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "references": [
+            "https://docs.python.org/3/library/ssl.html#ssl.wrap_socket",
+            "https://docs.python.org/3/library/ssl.html#ssl.SSLContext.wrap_socket"
+          ],
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.ssl-wrap-socket-is-deprecated.ssl-wrap-socket-is-deprecated",
+          "shortlink": "https://sg.run/PJOY"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+      "path": "modules/ssh/strong_password/Dockerfile",
+      "start": {
+        "line": 18,
+        "col": 1,
+        "offset": 479
+      },
+      "end": {
+        "line": 18,
+        "col": 101,
+        "offset": 579
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nENTRYPOINT ssh-keygen -t rsa -N \"\" -f /root/.ssh/id_rsa >/dev/null && python3 /root/ssh_listener.py",
+        "metadata": {
+          "cwe": [
+            "CWE-269: Improper Privilege Management"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+          "shortlink": "https://sg.run/k281"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.network.bind.avoid-bind-to-all-interfaces",
+      "path": "modules/ssh/strong_password/files/ssh_listener.py",
+      "start": {
+        "line": 60,
+        "col": 9,
+        "offset": 1582
+      },
+      "end": {
+        "line": 62,
+        "col": 43,
+        "offset": 1766
+      },
+      "extra": {
+        "message": "Running `socket.bind` to 0.0.0.0, or empty string could unexpectedly expose the server publicly as it binds to all available interfaces. Consider instead getting correct address from an environment variable or configuration file.",
+        "metadata": {
+          "cwe": [
+            "CWE-200: Exposure of Sensitive Information to an Unauthorized Actor"
+          ],
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A01_2021-Broken_Access_Control"
+          ],
+          "cwe2021-top25": true,
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "HIGH",
+          "impact": "MEDIUM",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.network.bind.avoid-bind-to-all-interfaces",
+          "shortlink": "https://sg.run/rdln"
+        },
+        "severity": "INFO",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+      "path": "modules/ssh/weak_password/Dockerfile",
+      "start": {
+        "line": 21,
+        "col": 1,
+        "offset": 730
+      },
+      "end": {
+        "line": 21,
+        "col": 39,
+        "offset": 768
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nENTRYPOINT service ssh restart && tail",
+        "metadata": {
+          "cwe": [
+            "CWE-269: Improper Privilege Management"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+          "shortlink": "https://sg.run/k281"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 2,
+      "level": "warn",
+      "type": "Other syntax error",
+      "message": "Other syntax error at line lib/messages/fr_FR.yaml:27:\n (approximate error location; error nearby after) error calling parser: found character that cannot start any token character 0 position 0 returned: 0",
+      "path": "lib/messages/fr_FR.yaml"
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": "web/static/index.html",
+            "start": {
+              "line": 85,
+              "col": 96,
+              "offset": 0
+            },
+            "end": {
+              "line": 85,
+              "col": 97,
+              "offset": 1
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line web/static/index.html:85:\n `=` was unexpected",
+      "path": "web/static/index.html",
+      "spans": [
+        {
+          "file": "web/static/index.html",
+          "start": {
+            "line": 85,
+            "col": 96,
+            "offset": 0
+          },
+          "end": {
+            "line": 85,
+            "col": 97,
+            "offset": 1
+          }
+        }
+      ]
+    }
+  ],
+  "paths": {
+    "scanned": [
+      ".flake8",
+      ".github/FUNDING.yml",
+      ".github/workflows/ci.yml",
+      ".gitignore",
+      ".owasp_honeypot",
+      "CONTRIBUTING.md",
+      "Dockerfile.api",
+      "Dockerfile.lab",
+      "ISSUE_TEMPLATE.md",
+      "LICENSE",
+      "PULL_REQUEST_TEMPLATE.md",
+      "api/__init__.py",
+      "api/database_queries.py",
+      "api/server.py",
+      "api/utility.py",
+      "config.py",
+      "core/__init__.py",
+      "core/alert.py",
+      "core/color.py",
+      "core/compatible.py",
+      "core/exit_helper.py",
+      "core/file_monitor.py",
+      "core/get_modules.py",
+      "core/load.py",
+      "core/log.py",
+      "core/messages.py",
+      "core/network.py",
+      "core/time_helper.py",
+      "database/__init__.py",
+      "database/connector.py",
+      "database/datatypes.py",
+      "docker-compose-host.yml",
+      "docker-compose.yml",
+      "lib/__init__.py",
+      "lib/ip2location/IP2Location.py",
+      "lib/ip2location/README.md",
+      "lib/ip2location/__init__.py",
+      "lib/messages/__init__.py",
+      "lib/messages/de_DE.yaml",
+      "lib/messages/en_US.yaml",
+      "lib/messages/es_ES.yaml",
+      "lib/messages/fr_FR.yaml",
+      "lib/messages/ru_RU.yaml",
+      "modules/__init__.py",
+      "modules/ftp/__init__.py",
+      "modules/ftp/readme.md",
+      "modules/ftp/strong_password/Dockerfile",
+      "modules/ftp/strong_password/README.md",
+      "modules/ftp/strong_password/__init__.py",
+      "modules/ftp/strong_password/files/ftp_sniffer.py",
+      "modules/ftp/strong_password/files/readme.md",
+      "modules/ftp/strong_password/files/requirements-apt-get.txt",
+      "modules/ftp/strong_password/files/requirements-pip3.txt",
+      "modules/ftp/strong_password/files/server.conf",
+      "modules/ftp/strong_password/files/vsftpd.conf",
+      "modules/ftp/strong_password/files/vsftpd.sh",
+      "modules/ftp/weak_password/Dockerfile",
+      "modules/ftp/weak_password/README.md",
+      "modules/ftp/weak_password/__init__.py",
+      "modules/ftp/weak_password/files/readme.md",
+      "modules/ftp/weak_password/files/requirements-apt-get.txt",
+      "modules/ftp/weak_password/files/vsftpd.conf",
+      "modules/ftp/weak_password/files/vsftpd.sh",
+      "modules/http/__init__.py",
+      "modules/http/basic_auth_strong_password/Dockerfile",
+      "modules/http/basic_auth_strong_password/__init__.py",
+      "modules/http/basic_auth_strong_password/files/.htaccess",
+      "modules/http/basic_auth_strong_password/files/apache2.conf",
+      "modules/http/basic_auth_strong_password/files/readme.md",
+      "modules/http/basic_auth_strong_password/files/requirements-apt-get.txt",
+      "modules/http/basic_auth_strong_password/readme.md",
+      "modules/http/basic_auth_weak_password/Dockerfile",
+      "modules/http/basic_auth_weak_password/__init__.py",
+      "modules/http/basic_auth_weak_password/files/.htaccess",
+      "modules/http/basic_auth_weak_password/files/readme.md",
+      "modules/http/basic_auth_weak_password/files/requirements-apt-get.txt",
+      "modules/http/basic_auth_weak_password/readme.md",
+      "modules/http/readme.md",
+      "modules/ics/__init__.py",
+      "modules/ics/readme.md",
+      "modules/ics/veeder_root_guardian_ast/Dockerfile",
+      "modules/ics/veeder_root_guardian_ast/__init__.py",
+      "modules/ics/veeder_root_guardian_ast/files/readme.md",
+      "modules/ics/veeder_root_guardian_ast/files/requirements-apt-get.txt",
+      "modules/ics/veeder_root_guardian_ast/files/veeder_root_guardian_ast_service.py",
+      "modules/ics/veeder_root_guardian_ast/readme.md",
+      "modules/smtp/__init__.py",
+      "modules/smtp/strong_password/Dockerfile",
+      "modules/smtp/strong_password/__init__.py",
+      "modules/smtp/strong_password/files/requirements-apt-get.txt",
+      "modules/smtp/strong_password/files/smtpd_server/readme.md",
+      "modules/smtp/strong_password/files/smtpd_server/secure_smtpd/__init__.py",
+      "modules/smtp/strong_password/files/smtpd_server/secure_smtpd/config/__init__.py",
+      "modules/smtp/strong_password/files/smtpd_server/secure_smtpd/config/log.py",
+      "modules/smtp/strong_password/files/smtpd_server/secure_smtpd/process_pool.py",
+      "modules/smtp/strong_password/files/smtpd_server/secure_smtpd/smtp_channel.py",
+      "modules/smtp/strong_password/files/smtpd_server/secure_smtpd/smtp_server.py",
+      "modules/smtp/strong_password/files/smtpd_server/smtp_honeypot.py",
+      "modules/ssh/__init__.py",
+      "modules/ssh/readme.md",
+      "modules/ssh/strong_password/Dockerfile",
+      "modules/ssh/strong_password/__init__.py",
+      "modules/ssh/strong_password/files/readme.md",
+      "modules/ssh/strong_password/files/requirements-apt-get.txt",
+      "modules/ssh/strong_password/files/requirements-pip3.txt",
+      "modules/ssh/strong_password/files/ssh_listener.py",
+      "modules/ssh/weak_password/Dockerfile",
+      "modules/ssh/weak_password/__init__.py",
+      "modules/ssh/weak_password/files/readme.md",
+      "modules/ssh/weak_password/files/requirements-apt-get.txt",
+      "ohp.py",
+      "pcapfiles/readme.md",
+      "readme.md",
+      "requirements-dev.txt",
+      "requirements.txt",
+      "tmp/readme.md",
+      "web/static/css/bootstrap.min.css",
+      "web/static/css/bootstrap.min.css.map",
+      "web/static/css/buttons.dataTables.min.css",
+      "web/static/css/dataTables.checkboxes.css",
+      "web/static/css/datatables.min.css",
+      "web/static/css/jquery.dataTables.css",
+      "web/static/css/materialize.min.css",
+      "web/static/css/style.css",
+      "web/static/index.html",
+      "web/static/js/bootstrap.min.js.map",
+      "web/static/js/explore.js",
+      "web/static/js/main.js"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.26563596725463867,
+    "profiling_times": {
+      "config_time": 1.2545912265777588,
+      "core_time": 2.815781593322754,
+      "ignores_time": 0.0007741451263427734,
+      "total_time": 4.079680681228638
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 8.664917945861816,
+      "per_file_time": {
+        "mean": 0.026177999836440542,
+        "std_dev": 0.015173061289285519
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.1904224712670561,
+        "count_ratio": 0.0030211480362537764
+      },
+      "very_slow_files": [
+        {
+          "fpath": "modules/ics/veeder_root_guardian_ast/files/veeder_root_guardian_ast_service.py",
+          "ftime": 1.6499950885772705
+        }
+      ]
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at modules/ftp/strong_password/files/ftp_sniffer.py:45:4 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "modules/ftp/strong_password/files/ftp_sniffer.py",
+          "start": {
+            "line": 45,
+            "col": 5,
+            "offset": 1187
+          },
+          "end": {
+            "line": 45,
+            "col": 17,
+            "offset": 1199
+          }
+        }
+      }
+    ],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9776620308221017,
+      "rules_selected_ratio": 0.04215217741502443,
+      "rules_matched_ratio": 0.04215217741502443
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 958765824
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

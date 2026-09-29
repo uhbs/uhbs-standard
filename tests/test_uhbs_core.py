@@ -57,7 +57,9 @@ def test_protocol_plugins_registered() -> None:
         "mssql",
         "oracle",
         "pjl",
+        "pptp",
         "socks5",
+        "upnp",
         "redis",
         "elasticsearch",
     }.issubset(names)
@@ -89,7 +91,7 @@ def test_uhqs_matches_cli_math() -> None:
         "static": 69.0,
     }
     result = compute_uhqs(scores, target="li-baseline", profile_class="Low-Interaction")
-    assert result.uhqs == 46.97
+    assert result.uhqs == 46.98
     assert result.delta_c == 1.0
 
 

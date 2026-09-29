@@ -1,0 +1,980 @@
+{
+  "uhbs_version": "5.0.1",
+  "specification_version": "5.0.1",
+  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+  "check_catalog_hash": "da1b847db20ce6f8e015959dde7505b9f5f62cc86a4a5bddd6769852fa209833",
+  "check_catalog": {
+    "id": "uhbs-default-v5",
+    "hash": "da1b847db20ce6f8e015959dde7505b9f5f62cc86a4a5bddd6769852fa209833"
+  },
+  "target": {
+    "name": "wordpot-http",
+    "class": "Web-API",
+    "protocols": [
+      "http"
+    ],
+    "profile_ref": "/work/docs/conformance/labs/wordpot/web_api_http_full.yaml",
+    "artifact_digest": null
+  },
+  "environment": {
+    "digest": null
+  },
+  "evaluated_at": "2026-09-26",
+  "harness": {
+    "name": "uhbs-lab",
+    "version": "5.0.1",
+    "plugin_versions": {},
+    "command_digest": null,
+    "config_digest": null,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ]
+  },
+  "modules": [
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 67.16,
+      "status": "PARTIAL",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 12,
+        "scored_checks": 11,
+        "not_applicable": 1,
+        "not_tested": 1,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 12,
+      "scored_checks": 11,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "white.static_private_keys",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 10.0,
+          "detail": "0 static private keys",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.static_private_keys",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.hardcoded_ssh_banners",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 5.0,
+          "detail": "0 hardcoded SSH banners",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.hardcoded_ssh_banners",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.predictable_seeds",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 5.0,
+          "detail": "0 predictable PRNG seeds",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.predictable_seeds",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.hardcoded_macs",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 5.0,
+          "detail": "0 hardcoded MAC addresses",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.hardcoded_macs",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.prompt_corpus_present",
+          "team": "white",
+          "outcome": "NOT_APPLICABLE",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no prompt corpus (N/A for non-LLM)",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": "Non-LLM targets need not ship a prompt corpus",
+          "catalog_id": "white.prompt_corpus_present",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.prompt_boundaries",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 10.0,
+          "detail": "no weak delimiter/extract patterns",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.prompt_boundaries",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.fallback_strings",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 10.0,
+          "detail": "no plain-text LLM fallback artifacts",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.fallback_strings",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.bandit",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 8.0,
+          "detail": "bandit HIGH=0",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.bandit",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.semgrep",
+          "team": "white",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 7.0,
+          "detail": "semgrep error/critical=1 total=36",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.semgrep",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.trivy",
+          "team": "white",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "trivy not installed \u2014 not tested (zero credit)",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "F.sast",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.sast_gate",
+          "team": "white",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "1 high/critical findings",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.sast_gate",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.vfs_posix_coverage",
+          "team": "white",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 2.16,
+          "detail": "POSIX coverage 9% (9/104)",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.vfs_posix_coverage",
+          "evidence": [
+            "env",
+            "file",
+            "git",
+            "id",
+            "more",
+            "pip",
+            "pwd",
+            "python",
+            "which"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "b77349bf1fa9b26d45d545d7d64dad96737e9cfbb3cbb5f5d10fb77b0fcc44ad",
+            "3b9c358f36f0a31b6ad3e14f309c7cf198ac9246e8316f9ce543d5b19ac02b80",
+            "9a881b9b9f23849475296a8cd768ea1965bc3152df7118e60c145975af6aa58a",
+            "a56145270ce6b3bebd1dd012b73948677dd618d496488bc608a3cb43ce3547dd",
+            "187897ce0afcf20b50ba2b37dca84a951b7046f29ed5ab94f010619f69d6e189",
+            "fed5038bf2f427ab2ec84f85881f103c0e946e8d6252b8731f99ab0cb57729d9",
+            "a1159e9df3670d549d04524532629f5477ceb7deec9b45e47e8c009506ecb2c8",
+            "11a4a60b518bf24989d481468076e5d5982884626aed9faeb35b8576fcd223e1",
+            "77bc06c55d29ee3cfa295b4592e4b2a85a16bb06a8974726b7bfa3d4ca36d5ae"
+          ]
+        },
+        {
+          "id": "white.blocking_calls",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 5.0,
+          "detail": "sleep/blocking markers in non-test code\u22480",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.blocking_calls",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "source_root": "/honeypot",
+        "coverage": 0.9167,
+        "not_tested": 1
+      },
+      "notes": [
+        "Module F white-box audit (keys/prompts/SAST/VFS)"
+      ],
+      "error": null
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 60.07,
+      "status": "PARTIAL",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 8,
+        "scored_checks": 8,
+        "not_applicable": 0,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 8,
+      "scored_checks": 8,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "rfc9110.reject_body_before_headers",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "connection closed",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc9110.reject_body_before_headers",
+          "evidence": [
+            "<head>\n<title>Error response</title>\n</head>\n<body>\n<h1>Error response</h1>\n<p>Error code 400.\n<p>Message: Bad request syntax (\"{'oops':true}\").\n<p>Error code explanation: 400 = Bad request syntax or "
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "b9e17b6dbc2a0352e33df8d9d1c49c3e4024763488f9a0df0ae9c46b5ccde09a"
+          ]
+        },
+        {
+          "id": "rfc9112.bare_lf_framing",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "HTTP/1.0 200",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc9112.bare_lf_framing",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc9110.invalid_header_syntax",
+          "team": "red",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "status=200",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc9110.invalid_header_syntax",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc9110.unknown_http_version",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "closed",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc9110.unknown_http_version",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc9110.valid_get_status",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "HTTP/1.0 200",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc9110.valid_get_status",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "http.timing.sample_size",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "n=1000 requested=1000 errors=0",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "http.timing.sample_size",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "http.timing.iat_jitter",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "median=0.363ms pstdev=1.063ms (target jitter often <2ms vs native)",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "http.timing.iat_jitter",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "http.module_a.composite",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 60.07112,
+          "detail": "fsm=0 nego=100 timing=100",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "http.module_a.composite",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "http": 60.07
+        },
+        "protocols": [
+          "http"
+        ],
+        "timing_samples": 1000,
+        "available_plugins": [
+          "bacnet",
+          "bluetooth",
+          "coap",
+          "dhcp",
+          "dns",
+          "elasticsearch",
+          "ftp",
+          "generic",
+          "git",
+          "http",
+          "httpproxy",
+          "imap",
+          "ipp",
+          "irc",
+          "kubernetes",
+          "ldap",
+          "mcp",
+          "memcache",
+          "modbus",
+          "mongodb",
+          "mqtt",
+          "mssql",
+          "mysql",
+          "ntp",
+          "oracle",
+          "pjl",
+          "pop3",
+          "postgres",
+          "rdp",
+          "redis",
+          "s7comm",
+          "sip",
+          "smb",
+          "smtp",
+          "snmp",
+          "socks5",
+          "ssh",
+          "telnet",
+          "tftp",
+          "vnc"
+        ],
+        "coverage": 1.0,
+        "not_tested": 0
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['http']",
+        "class=Web-API strict_rfc=True"
+      ],
+      "error": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 65.0,
+      "status": "PARTIAL",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 3,
+        "scored_checks": 2,
+        "not_applicable": 0,
+        "not_tested": 1,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 3,
+      "scored_checks": 2,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "http.state.consistent_get",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "consistent HTTP responses",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "http.state.consistent_get",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "http.payload.unsupported",
+          "team": "red",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no payload probe implemented",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "http.payload.unsupported",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "http.fuzz.binary",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "survived binary blast",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "http.fuzz.binary",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "http": 65.0
+        },
+        "class": "Web-API",
+        "surface_depth": "unknown",
+        "coverage": 0.6667,
+        "not_tested": 1
+      },
+      "notes": [
+        "UHBS Module B class=Web-API"
+      ],
+      "error": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "complete": false,
+      "completeness": {
+        "complete": false,
+        "applicable_checks": 6,
+        "scored_checks": 5,
+        "not_applicable": 2,
+        "not_tested": 1,
+        "errors": 0,
+        "blocker_ids": [
+          "c2.sink_injection_resilience"
+        ]
+      },
+      "applicable_checks": 6,
+      "scored_checks": 5,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "c1.json_parse_clean",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "0 malformed / 0 records",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C1",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c1.format.native_json",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "declared native_json but no matching records",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C1",
+          "evidence": [
+            "schema=uhbs:format/native_json",
+            "validator=uhbs-telemetry-c1-1.0"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "e82310b98edc7c7720e4a8b70993bec2f79f74094506e54f73d04def03aa6eb9",
+            "4b8a6d9cf000f8ed91cdf9892a2b13679736fe21c44c557322e851d804d14c34"
+          ]
+        },
+        {
+          "id": "c1.stix_not_required",
+          "team": "blue",
+          "outcome": "NOT_APPLICABLE",
+          "passed": false,
+          "score": 0.0,
+          "detail": "STIX not declared \u2014 format credit not claimed for non-STIX logs",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": "STIX 2.1 not in declared native_event_format",
+          "catalog_id": "C1",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c2.sink_injection_resilience",
+          "team": "red",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no SSH exec surface to deliver injection payloads",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C2",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c3.observable_coverage",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "0/3 observables present missing=['event_time', 'source_endpoint', 'protocol_action']",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C3",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c4.ground_truth_recall",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "matched=0/4 dups=0",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C4",
+          "evidence": [
+            "{\"run_id\": \"uhbs-gt-f5cc436141f4\", \"created_at\": \"2026-09-26T13:32:49.157954+00:00\", \"observation_window_s\": 30.0, \"events\": [{\"tag\": \"uhbs-gt-f5cc436141f4:session:0\", \"kind\": \"session\", \"emitted_at\": \"2026-09-26T13:32:49.157954+00:00\", \"payload\": {\"marker\": \"uhbs-gt-f5cc436141f4:session:0\", \"seq\": 0}}, {\"tag\": \"uhbs-gt-f5cc436141f4:credential:1\", \"kind\": \"credential\", \"emitted_at\": \"2026-09-26..."
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "68289d5eb53aae0eb683020482f1e2dce9fe2ed82cdf2a2111e00cae3c1e2cf1"
+          ]
+        },
+        {
+          "id": "c4.field_accuracy",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "field_accuracy=0.0",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "C4",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c5.attack_mapping",
+          "team": "blue",
+          "outcome": "NOT_APPLICABLE",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no ATT&CK technique IDs claimed in telemetry",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": "CTI mapping only evaluated when technique IDs are present",
+          "catalog_id": "C5",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "ground_truth": {
+          "recall": 0.0,
+          "field_accuracy": 0.0,
+          "duplicate_rate": 0.0,
+          "matched": 0,
+          "expected": 4
+        },
+        "collection_capability": {
+          "recall": 0.0,
+          "observable_coverage": 0.0,
+          "duplicate_rate": 0.0,
+          "declared_formats": [
+            "native_json"
+          ],
+          "status": "INCOMPLETE"
+        },
+        "coverage": 0.8333
+      },
+      "notes": [
+        "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4",
+        "no native_event_format declared \u2014 validating as native_json only"
+      ],
+      "error": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "complete": false,
+      "completeness": {
+        "complete": false,
+        "applicable_checks": 4,
+        "scored_checks": 2,
+        "not_applicable": 0,
+        "not_tested": 2,
+        "errors": 0,
+        "blocker_ids": [
+          "d1.shell_egress_probes",
+          "d2.runtime_escape_surface"
+        ]
+      },
+      "applicable_checks": 4,
+      "scored_checks": 2,
+      "critical_control_verdict": "INCOMPLETE",
+      "checks": [
+        {
+          "id": "d1.airgap_attested",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 0.0,
+          "detail": "UHBS_AIRGAP_ATTESTED set (metadata only; zero scoring weight)",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D1.meta",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "0 gateway canary hits",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D1.critical",
+          "evidence": [
+            "mtime=1790429537740824393 size=58"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "98bac8a8de07fda17e4b79a04ab526edf0336742c66c85ee2087762ce004268e"
+          ]
+        },
+        {
+          "id": "d1.shell_egress_probes",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no explicit SSH listener \u2014 shell egress/LPE critical probes not executed; provide UHBS_EGRESS_GATEWAY_LOG or SSH for a complete assessment",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D1.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.runtime_escape_surface",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "runtime escape surface not inspected without shell exec",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "breakout": false,
+        "allowed_outbound_traffic": false,
+        "shell_exec": false,
+        "protocols": [
+          "http"
+        ],
+        "defense_in_depth_score": 0.0
+      },
+      "notes": [
+        "Module D v5: non-SSH targets need gateway/packet evidence for critical egress and runtime inspection \u2014 attestation alone never clears the gate."
+      ],
+      "error": null
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 100.0,
+      "status": "PASSED",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 4,
+        "scored_checks": 4,
+        "not_applicable": 0,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 4,
+      "scored_checks": 4,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 45.0,
+          "detail": "P50=4.4ms P95=12.8ms P99=15.8ms TPS_limit=150.0ms proto=http",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e1.p95_vs_tps",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 20.0,
+          "detail": "errors=0/200 rate=0.00%",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e1.error_rate",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 15.0,
+          "detail": "completed exhaustion/fuzz blast",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e2.exhaustion_input",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 20.0,
+          "detail": "service alive after load (connect 0.1ms)",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e2.circuit_breaker_alive",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "p50_ms": 4.42,
+        "p95_ms": 12.77,
+        "p99_ms": 15.78,
+        "p95_limit_ms": 150.0,
+        "errors": 0,
+        "concurrency": 25,
+        "requests": 200,
+        "wall_s": 0.11,
+        "protocol": "http"
+      },
+      "notes": [],
+      "error": null
+    }
+  ],
+  "assurance_level": "REPRODUCIBLE_LAB",
+  "attestation_ref": null,
+  "manifest": {
+    "artifacts": [
+      {
+        "path": "REPORT.txt",
+        "sha256": "4ff0491f004c5fa0fe821929e0188a4dc50c6aa7c720c4e05d139ba4ad9ba902"
+      },
+      {
+        "path": "SCORECARD.txt",
+        "sha256": "4ff0491f004c5fa0fe821929e0188a4dc50c6aa7c720c4e05d139ba4ad9ba902"
+      },
+      {
+        "path": "proof/full-run.cast",
+        "sha256": "7742d3dde726bfd5b200b9ddb4bea7d975a8ebe0641a48c05cca9373d11057fc"
+      },
+      {
+        "path": "report.json",
+        "sha256": "1b1760717dffc48fca0ab6539a7cf3e51402bd732765655acbd27c4601009818"
+      },
+      {
+        "path": "static/bandit-report.json",
+        "sha256": "9d5f27bce32a1edea051cd4c5d81f28e1159794306ef1727c74dd3d6033868ed"
+      },
+      {
+        "path": "static/semgrep-report.json",
+        "sha256": "85a2204415ef48ec11322ea286bbb517d483986fc934fc4db20343912ab584fc"
+      },
+      {
+        "path": "uhbs-run.log",
+        "sha256": "c58c09454b2d06d4c77bfc89c63058c0987a2d93977dd2cf4397fa4d5a7ea81d"
+      }
+    ],
+    "digest": "91207edc120955679af5eb1b255a10f062609ad8afc0884d2ad935b189ade333"
+  },
+  "uhqs": {
+    "uhqs": null,
+    "grade": null,
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  }
+}

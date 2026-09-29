@@ -1,0 +1,28 @@
+====================================================================================
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
+====================================================================================
+Target System         : dionaea-mssql
+System Profile Class  : Database
+Scoring Model         : uhqs-v5.2-measured-renorm
+Assessment Status     : COMPLETE
+Critical Controls     : GATE_FAILED
+Protocols             : mssql
+Evaluation Date       : 2026-09-27
+Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
+Environment           : Isolated Sandbox
+MCP Surface Depth     : unknown
+------------------------------------------------------------------------------------
+EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
+------------------------------------------------------------------------------------
+Module A: Protocol Fidelity         :  48.4/100       0.25     PARTIAL (type=0x04 len=43 tds_len=43)
+Module B: Behavioral Realism        :  25.0/100       0.25     PARTIAL (no state probe implemented)
+Module C: Telemetry Assurance       :   0.0/100       0.20     INCOMPLETE (UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4)
+Module D: Safety & Containment (C)  :  75.0/100       GATE     PASSED (User=(empty→root) UsernsMode=(empty))
+Module E: Scalability & Latency     :  55.0/100       0.10     PARTIAL (P50=1024.0ms P95=1068.5ms P99=2050.6ms TPS_limit=150.0ms proto=mssql)
+Module F: Static Code Audit         :  66.3/100       0.20     PARTIAL (bandit HIGH=9)
+------------------------------------------------------------------------------------
+SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=0.5; defense-in-depth C=75.0; composite still published)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 23.20 / 100
+OVERALL EVALUATION GRADE              : GRADE F (Fail)
+scoring_model_id                      : uhqs-v5.2-measured-renorm
+====================================================================================

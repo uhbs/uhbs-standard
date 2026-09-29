@@ -1,0 +1,63 @@
+{
+  "uhbs_version": "4.6.1",
+  "target": {
+    "name": "Cowrie (Telnet :2223)",
+    "class": "Low-Interaction",
+    "profile_ref": "docs/conformance/labs/cowrie/low_interaction_telnet_full.yaml"
+  },
+  "evaluated_at": "2026-07-27",
+  "auditor": "UHBS-Lab detailed Docker run (cowrie/telnet; SFTP verified as SSH subsystem)",
+  "modules": {
+    "A": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.3,
+      "notes": ""
+    },
+    "B": {
+      "score": 82.5,
+      "status": "PARTIAL",
+      "weight": 0.15,
+      "notes": ""
+    },
+    "C": {
+      "score": 55.0,
+      "status": "PARTIAL",
+      "weight": 0.25,
+      "notes": ""
+    },
+    "D": {
+      "score": 90.0,
+      "status": "PASSED",
+      "notes": ""
+    },
+    "E": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.1,
+      "notes": ""
+    },
+    "F": {
+      "score": 70.0,
+      "status": "PARTIAL",
+      "weight": 0.2,
+      "notes": ""
+    }
+  },
+  "weights": {
+    "w_A": 0.3,
+    "w_B": 0.15,
+    "w_C": 0.25,
+    "w_E": 0.1,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 90.0,
+    "delta_c": 0.81,
+    "passed": false,
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 64.9,
+  "grade": "D",
+  "notes": "Evaluation proof only. Cowrie Telnet :2223. Regraded 2026-07-27 with 0\u2013100 Module A scale / P95 defaults. Artifacts: docs/conformance/reports/cowrie/telnet/."
+}

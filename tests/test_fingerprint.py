@@ -22,6 +22,7 @@ from uhbs_core.fingerprint import (
     fingerprint_host,
     probe_tcp_stack,
     probe_tls,
+    probe_tls_weak_cipher_acceptance,
 )
 
 
@@ -75,6 +76,19 @@ def test_probe_tls_reports_error_on_non_tls_port_gracefully() -> None:
     fp = probe_tls("127.0.0.1", 1, timeout=0.2)
     assert fp.ok is False
     assert fp.error
+
+
+def test_probe_tls_weak_cipher_acceptance_unreachable_is_false() -> None:
+    # Unreachable peer → refused / failed weak offer, not a crash.
+    assert probe_tls_weak_cipher_acceptance("127.0.0.1", 1, timeout=0.2) is False
+
+
+def test_fingerprint_host_opt_in_weak_cipher_evidence() -> None:
+    # Unreachable TCP → early exit before TLS; still honest failure.
+    result = fingerprint_host(
+        "127.0.0.1", 1, use_tls=True, probe_weak_ciphers=True, tcp_samples=1, timeout=0.2
+    )
+    assert result["passed"] is False
 
 
 # --- live loopback tests -----------------------------------------------------
@@ -188,13 +202,30 @@ def test_probe_tls_against_real_local_self_signed_listener() -> None:
         t = threading.Thread(target=_tls_accept_loop, daemon=True)
         t.start()
         try:
-            fp = probe_tls("127.0.0.1", port, timeout=2.0)
+            fp = probe_tls(
+                "127.0.0.1",
+                port,
+                timeout=2.0,
+                server_hostname="localhost",
+                ca_file=cert_path,
+            )
             assert fp.ok is True
             assert fp.tls_version is not None
             assert fp.cipher_name is not None
             # Self-signed with CN=localhost -> both anomaly signals expected.
             assert fp.cert_self_signed is True
             assert any("self-signed" in a for a in fp.anomaly_flags)
+            result = fingerprint_host(
+                "127.0.0.1",
+                port,
+                use_tls=True,
+                tcp_samples=1,
+                timeout=2.0,
+                tls_server_hostname="localhost",
+                tls_ca_file=cert_path,
+            )
+            assert result["passed"] is True
+            assert "tls=TLSv1." in result["detail"]
         finally:
             stop.set()
             raw_srv.close()

@@ -1,0 +1,35 @@
+NOTICE: UHBS/AEP are for lab/sandbox evaluation of decoys. Do not run them against production or unauthorized real services.
+==> UHBS v4 target=sentrypeer-sip class=Low-Interaction protocols=['sip'] phases=['profile', 'static', 'sandbox', 'dynamic', 'score']
+    plugins available: bacnet, bluetooth, coap, dhcp, dns, elasticsearch, ftp, generic, git, http, httpproxy, imap, ipp, irc, kubernetes, ldap, mcp, memcache, modbus, mongodb, mqtt, mssql, mysql, ntp, oracle, pjl, pop3, postgres, rdp, redis, s7comm, sip, smb, smtp, snmp, socks5, ssh, telnet, tftp, vnc
+====================================================================================
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
+====================================================================================
+Target System         : sentrypeer-sip
+System Profile Class  : Low-Interaction
+Scoring Model         : uhqs-v5.2-measured-renorm
+Assessment Status     : INCOMPLETE
+Critical Controls     : GATE_PASSED
+Protocols             : sip
+Evaluation Date       : 2026-09-27
+Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
+Environment           : Full Docker lab: sentrypeer-sip
+MCP Surface Depth     : unknown
+------------------------------------------------------------------------------------
+EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
+------------------------------------------------------------------------------------
+Module A: Protocol Fidelity         : 100.0/100       0.30     PASSED (fsm=100 nego=100 timing=100)
+Module B: Behavioral Realism        :  25.0/100       0.15     PARTIAL (no state probe implemented)
+Module C: Telemetry Assurance       :   0.0/100       0.25     INCOMPLETE (UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4)
+Module D: Safety & Containment (C)  :  83.3/100       GATE     PASSED (Memory=0 NanoCpus=0 PidsLimit=0)
+Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service alive after load (connect 1.0ms))
+Module F: Static Code Audit         :  79.5/100       0.20     PASSED (trivy not installed — not tested (zero credit))
+------------------------------------------------------------------------------------
+SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=1.0; defense-in-depth C=83.33; composite still published)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 59.64 / 100
+OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
+scoring_model_id                      : uhqs-v5.2-measured-renorm
+====================================================================================
+
+Wrote /work/docs/conformance/latest/results-5.0.1/sentrypeer/sip/full/report.json
+Wrote /work/docs/conformance/latest/results-5.0.1/sentrypeer/sip/full/evidence-pack.json
+Wrote /work/docs/conformance/latest/results-5.0.1/sentrypeer/sip/full/MANIFEST.json

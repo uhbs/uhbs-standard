@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `pghoney-postgres`
+# Image name at grade time: pghoney:uhbs-lab
+FROM sha256:09367f266cf3fde5bd31d367e5d3b26d6637329d587bcde9b935490c5ee7bc4e

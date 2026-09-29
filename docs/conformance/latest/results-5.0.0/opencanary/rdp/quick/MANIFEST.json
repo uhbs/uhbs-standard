@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "8ae5b285db8ad1e29eefe009c9b51d639aaca6a18756e235e809f4a4893f22a8"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "cc3a3341a97ddb121d1317a50b1b527db6b5173fadd61bfcd8a41e29d3293e29"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "cc3a3341a97ddb121d1317a50b1b527db6b5173fadd61bfcd8a41e29d3293e29"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "eb5ba5242d79a0cb12e354206aeb04f04e40b4705737a654c2aca4454df1a26e"
+    },
+    {
+      "path": "report.json",
+      "sha256": "3744ff71bf7584fc0e306e772ccae245704f9aab7e3a04b2c5d159062dcf8a74"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "f6705d8ae3a9549ae533b41d1109854c94198c85c08a6e9a0df58b908fe964d6"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "6b6207c6a5e13479ab1cf463670985190378a9784cfe8043ad7ddd9116cafcc2"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-rdp",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

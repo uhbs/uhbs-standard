@@ -1,0 +1,217 @@
+[
+    {
+        "Id": "35332474d3bd71f21552e68947fca8b502a02dcb90c7346da859e2d62a6d52f6",
+        "Created": "2026-09-28T13:06:14.279280678Z",
+        "Path": "python3",
+        "Args": [
+            "-c",
+            "from owa_pot import create_app; create_app().run(debug=False, port=8080, host='0.0.0.0')"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 27729,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-28T13:06:14.34678922Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:e54c33bc51f77d2780a2e81b8cec4b2a2a9f5e6edda363ad6e2d1fd3c8678dda",
+        "ResolvConfPath": "/var/lib/docker/containers/35332474d3bd71f21552e68947fca8b502a02dcb90c7346da859e2d62a6d52f6/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/35332474d3bd71f21552e68947fca8b502a02dcb90c7346da859e2d62a6d52f6/hostname",
+        "HostsPath": "/var/lib/docker/containers/35332474d3bd71f21552e68947fca8b502a02dcb90c7346da859e2d62a6d52f6/hosts",
+        "LogPath": "/var/lib/docker/containers/35332474d3bd71f21552e68947fca8b502a02dcb90c7346da859e2d62a6d52f6/35332474d3bd71f21552e68947fca8b502a02dcb90c7346da859e2d62a6d52f6-json.log",
+        "Name": "/uhbs-target-owa-honeypot-http",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/owa-honeypot-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "35332474d3bd71f21552e68947fca8b502a02dcb90c7346da859e2d62a6d52f6",
+                "LowerDir": "/var/lib/docker/overlay2/3f6c1620d461505bed6012334d464a33ed07226fbbf4b95103e6339a91d8209b-init/diff:/var/lib/docker/overlay2/mh10ygxd34hvncpua09m4bhff/diff:/var/lib/docker/overlay2/7o2ipb53gvradkoemb51kw69e/diff:/var/lib/docker/overlay2/0zzyfgvi9dkgdk12i6120yqlm/diff:/var/lib/docker/overlay2/7rgcqyyv849kntlfw7yp5zx9w/diff:/var/lib/docker/overlay2/e58151c9478ca8de766666f003d29878043a6762e32ebeea8c574a5545b5c15c/diff:/var/lib/docker/overlay2/ace34ddcee23b4d3160d79720019aee2c65a0e5ac51814eb4f5a2467ee4b1a15/diff:/var/lib/docker/overlay2/def8d7b368876c1cb07ee89587e07d452823e9d830d2e84e6d1cc905fc174362/diff:/var/lib/docker/overlay2/631c886c8cea66e3925a789c50d00b21f00fb2310f2080950cac11d7209f4df7/diff",
+                "MergedDir": "/var/lib/docker/overlay2/3f6c1620d461505bed6012334d464a33ed07226fbbf4b95103e6339a91d8209b/merged",
+                "UpperDir": "/var/lib/docker/overlay2/3f6c1620d461505bed6012334d464a33ed07226fbbf4b95103e6339a91d8209b/diff",
+                "WorkDir": "/var/lib/docker/overlay2/3f6c1620d461505bed6012334d464a33ed07226fbbf4b95103e6339a91d8209b/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/owa-honeypot-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "35332474d3bd",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568",
+                "PYTHON_VERSION=3.8.20",
+                "FLASK_RUN_PORT=8080"
+            ],
+            "Cmd": [
+                "python3",
+                "-c",
+                "from owa_pot import create_app; create_app().run(debug=False, port=8080, host='0.0.0.0')"
+            ],
+            "Image": "owa-honeypot:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "uhbs.unit": "owa-honeypot-http"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "c71b50670858589bf126480cf13aa6cb87e53f0b587d780aab2e74ff5db9f6c7",
+            "SandboxKey": "/var/run/docker/netns/c71b50670858",
+            "Ports": {
+                "8080/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "owa-honeypot-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "32e30599036a0e66246af607b32ad7647fbdb893784a1073f4b6446963dd63b1",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.5",
+                    "MacAddress": "72:90:2e:e5:23:f9",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-owa-honeypot-http",
+                        "owa-honeypot-lab",
+                        "35332474d3bd"
+                    ]
+                }
+            }
+        }
+    }
+]

@@ -1,0 +1,218 @@
+[
+    {
+        "Id": "3f1310668c92847234f3bd1335ddd8f43413416e4cb7afa36b18a3ca4fdfe6c3",
+        "Created": "2026-09-27T20:29:35.164670753Z",
+        "Path": "python",
+        "Args": [
+            "main.py"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 87382,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:29:35.231936878Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:f6939f6ea1d449d4a839a7ba9ed42070656369389516ce647422e8801c89833a",
+        "ResolvConfPath": "/var/lib/docker/containers/3f1310668c92847234f3bd1335ddd8f43413416e4cb7afa36b18a3ca4fdfe6c3/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/3f1310668c92847234f3bd1335ddd8f43413416e4cb7afa36b18a3ca4fdfe6c3/hostname",
+        "HostsPath": "/var/lib/docker/containers/3f1310668c92847234f3bd1335ddd8f43413416e4cb7afa36b18a3ca4fdfe6c3/hosts",
+        "LogPath": "/var/lib/docker/containers/3f1310668c92847234f3bd1335ddd8f43413416e4cb7afa36b18a3ca4fdfe6c3/3f1310668c92847234f3bd1335ddd8f43413416e4cb7afa36b18a3ca4fdfe6c3-json.log",
+        "Name": "/uhbs-target-mailoney-smtp",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/mailoney-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "3f1310668c92847234f3bd1335ddd8f43413416e4cb7afa36b18a3ca4fdfe6c3",
+                "LowerDir": "/var/lib/docker/overlay2/bbcbf74a7f5e727bac727912d51cc82c18408d248dd79c9acf56238266a490f5-init/diff:/var/lib/docker/overlay2/q0xkwcwsyjwtst1ki7qprqqau/diff:/var/lib/docker/overlay2/tcm3bnb4s539czvrizvia7l7s/diff:/var/lib/docker/overlay2/1qda7s6dmv76e89p6i2x1moh6/diff:/var/lib/docker/overlay2/lm6ohucufrmmtam6tsn0zzmaa/diff:/var/lib/docker/overlay2/p1gzciz9liw5uvcj3it6ilr5g/diff:/var/lib/docker/overlay2/1bc10da2c83ffa907789d72f07e940723580a3eaf8d0415f65bd0b49430d82e8/diff:/var/lib/docker/overlay2/593b8f48dcbb550b3e80462deb478c2c65af7c5f266de4de0a325244e3a17876/diff:/var/lib/docker/overlay2/cefb4d444af68c1e70aa6ed8401b6a14269225c2de10d934e2a855a9877bbe26/diff:/var/lib/docker/overlay2/3d772b5f1c41b01474bb805f6b84098f0c3b101e01d7c3e401e6028ae8791295/diff",
+                "MergedDir": "/var/lib/docker/overlay2/bbcbf74a7f5e727bac727912d51cc82c18408d248dd79c9acf56238266a490f5/merged",
+                "UpperDir": "/var/lib/docker/overlay2/bbcbf74a7f5e727bac727912d51cc82c18408d248dd79c9acf56238266a490f5/diff",
+                "WorkDir": "/var/lib/docker/overlay2/bbcbf74a7f5e727bac727912d51cc82c18408d248dd79c9acf56238266a490f5/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/mailoney-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "3f1310668c92",
+            "Domainname": "",
+            "User": "mailoney",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "25/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+                "PYTHON_VERSION=3.11.16",
+                "PYTHON_SHA256=91bcdebfdde239a003ae93738a7fce0f9230fee5c4bc2b86f6e6e8c6f98aabe8",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1",
+                "MAILONEY_DB_URL=sqlite:///mailoney.db"
+            ],
+            "Cmd": null,
+            "Image": "mailoney:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": [
+                "python",
+                "main.py"
+            ],
+            "Labels": {
+                "uhbs.unit": "mailoney-smtp"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "0fa6a3ac944565aa17791f6cac79ce27a9ea1d2e4303e700b9c8ab390306778c",
+            "SandboxKey": "/var/run/docker/netns/0fa6a3ac9445",
+            "Ports": {
+                "25/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "mailoney-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "6f897f60e14adf4f0c1c33f11282a1b17310aa2dbd0d3195ddca379e5cc6a088",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "ea:ba:d1:fe:b8:b9",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-mailoney-smtp",
+                        "mailoney-lab",
+                        "3f1310668c92"
+                    ]
+                }
+            }
+        }
+    }
+]

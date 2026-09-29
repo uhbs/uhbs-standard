@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "56528408e6d93189c63c9e64895820a2220b5409f645961c313f6a2ce55ffaa6"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "b1b17e36e5744218327abe1e0f854f41c3636495ab9efe143f432533c4e2af10"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "b1b17e36e5744218327abe1e0f854f41c3636495ab9efe143f432533c4e2af10"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "1572545e08951b9e70793bed7920fc9a2bd8bb9dd2433f43955aca3b702ab631"
+    },
+    {
+      "path": "report.json",
+      "sha256": "624f91e6bf88ed88175a424c93e2c9e111d9acffdfa85e344e5c29f2bd850c7d"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "3aeaa1381011faa743a60905ecc471c035a3b533a407f7466ae4ee493487869f"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "305f75c1eee66e49c9a9cfef7ae717d7d7430d2fa3b6c15f7409866a56fa1db4"
+    }
+  ],
+  "extra": {
+    "target": "fortigate-vpn-ssl-http",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

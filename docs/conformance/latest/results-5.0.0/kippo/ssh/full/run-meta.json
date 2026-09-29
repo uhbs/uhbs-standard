@@ -1,0 +1,78 @@
+{
+  "uhbs_version": "5.0.1",
+  "run_mode": "full",
+  "evaluated_at": "2026-09-26T19:34:29Z",
+  "proof_label": "kippo (desaster) (ssh)",
+  "target": {
+    "repository": "https://github.com/desaster/kippo.git",
+    "git_branch": "master",
+    "git_commit": "b9eb06a2830d4bf94702a97ff31da38115ef990b",
+    "class": "Low-Interaction",
+    "protocol": "ssh",
+    "host": "kippo-lab",
+    "port": 2222,
+    "container_image": "kippo:uhbs-lab",
+    "container_image_id": "sha256:9605fc4bd621c7ccff75ba34b77eb33b4c39b36b926a7fa258aedd48b9f11fed",
+    "base_image": "alpine:3.15",
+    "base_image_reason": "Upstream kippo Alpine Dockerfile.",
+    "container_runtime_strategy": "upstream-dockerfile"
+  },
+  "grader": {
+    "package_version": "5.0.1",
+    "docker_image": "uhbs:5.0.1-full",
+    "docker_image_id": "sha256:320fb38dcf3ebf69befb2248b75ed32c63dafe6b83f959746209d337c3e7ca9b",
+    "inventory": "docs/conformance/labs/kippo/inventory.yaml",
+    "tps": "docs/conformance/labs/kippo/low_interaction_ssh_full.yaml",
+    "target_id": "kippo-ssh"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "measured_vs_attested": {
+      "airgap": "attested",
+      "egress_gateway_log": "measured",
+      "telemetry": "measured"
+    }
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "grade_long": null,
+    "delta_c": 0.0,
+    "module_scores": {
+      "A": 0.0,
+      "B": 6.25,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 20.0,
+      "F": 0.0
+    },
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  },
+  "limitations": [
+    "Published UHBS 5.0.1 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1)."
+  ],
+  "docs_reviewed": []
+}

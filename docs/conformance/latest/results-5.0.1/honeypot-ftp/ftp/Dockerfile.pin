@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `honeypot-ftp-ftp`
+# Image name at grade time: honeypot-ftp:uhbs-lab
+FROM sha256:7ef087855d43efbabddee32c56b5ff87db7f29702a33c58af123758571e1a7ff

@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "80739099b3a286aef18af3e56aa286eaa25f5701db3bd46c768ebf84416195f6"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "a4cedeec5ca5ea630c545021ab8dc92897c8f31bc0a405158bf2e2d565219832"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "a4cedeec5ca5ea630c545021ab8dc92897c8f31bc0a405158bf2e2d565219832"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "617301442d50dad3657d94d8a72f1a799a0bfc09ca98cb4732e4ffb35614755b"
+    },
+    {
+      "path": "report.json",
+      "sha256": "ef695852b9bd2812c7c09c2ec84672d236894e8ede04f3ac3ae7cd5a401bd781"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "6e485801d96f9e5d5bc9ba5160677aa60ad9a56afdba47767050216fbb19f66e"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "e5a338c0e536f32df75a899a6d8b32a255ccc411191f8d1e0ba8de2123337118"
+    }
+  ],
+  "extra": {
+    "target": "cowrie-ssh",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

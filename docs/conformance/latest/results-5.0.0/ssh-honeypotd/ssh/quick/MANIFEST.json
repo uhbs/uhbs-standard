@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "7addf66f2b261da6855ca984a049bcbbe1a1a3951905978d62b2a914aff708fd"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "d7269720319bd78bd7450478732811c218a7eaa6ed70b79dc09c35aa81164d63"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "d7269720319bd78bd7450478732811c218a7eaa6ed70b79dc09c35aa81164d63"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "100337f5c73ccbd468a2d1e0a1b9355eb1d0d2210be5c5aa8f87db1813b33e50"
+    },
+    {
+      "path": "report.json",
+      "sha256": "5d7ce77f2b11f402e226de2617d30525025185c6caefffbbc929387c78291d6a"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "582913028b9672c14dbd777be8d5a3f51b176f66270b3448f53f0e0e9e1a15eb"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "6829fb7af422adf4adf668855ed181c67cbeaa4d3d1cde91d5ded7f4a31c2c04"
+    }
+  ],
+  "extra": {
+    "target": "ssh-honeypotd-ssh",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

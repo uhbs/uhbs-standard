@@ -1,0 +1,238 @@
+{
+  "version": "1.178.0",
+  "results": [],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      ".github/workflows/tests.yml",
+      ".gitignore",
+      "BENCH.md",
+      "CONFIG.md",
+      "Dockerfile.lab",
+      "LICENSE",
+      "LOGS.md",
+      "README.md",
+      "_renderers.py",
+      "docs/actuator-surface.md",
+      "docs/agent-card.md",
+      "docs/app-config.md",
+      "docs/aws-credentials-csv.md",
+      "docs/azure-cli-creds.md",
+      "docs/backup-archive.md",
+      "docs/canary-echo.md",
+      "docs/cgi-traversal-rce.md",
+      "docs/ci-cd-config.md",
+      "docs/cicd-deploy-specs.md",
+      "docs/cloud-imds.md",
+      "docs/cmd-injection.md",
+      "docs/code-exec-api.md",
+      "docs/codex-config-toml.md",
+      "docs/dependency-manifests.md",
+      "docs/deploy-sync-config.md",
+      "docs/ds-store.md",
+      "docs/env-vault.md",
+      "docs/environment-dump.md",
+      "docs/fake-3cx.md",
+      "docs/fake-adminer.md",
+      "docs/fake-aspera-faspex.md",
+      "docs/fake-barracuda-vpn.md",
+      "docs/fake-checkpoint.md",
+      "docs/fake-cisco-webvpn.md",
+      "docs/fake-citrix-gateway.md",
+      "docs/fake-coldfusion.md",
+      "docs/fake-confluence.md",
+      "docs/fake-docker-daemon.md",
+      "docs/fake-docker-registry.md",
+      "docs/fake-drupal.md",
+      "docs/fake-exchange.md",
+      "docs/fake-f5-bigip.md",
+      "docs/fake-file-upload.md",
+      "docs/fake-fortigate-vpn.md",
+      "docs/fake-geoserver.md",
+      "docs/fake-globalprotect.md",
+      "docs/fake-graphql.md",
+      "docs/fake-gravity-smtp.md",
+      "docs/fake-hikvision.md",
+      "docs/fake-hnap1.md",
+      "docs/fake-ivanti-vpn.md",
+      "docs/fake-joomla4-config.md",
+      "docs/fake-laravel-telescope.md",
+      "docs/fake-liferay-jsonws.md",
+      "docs/fake-llm-api.md",
+      "docs/fake-nextjs.md",
+      "docs/fake-oidc-discovery.md",
+      "docs/fake-onvif.md",
+      "docs/fake-openapi-swagger.md",
+      "docs/fake-phpmyadmin.md",
+      "docs/fake-rdweb.md",
+      "docs/fake-sap-metadatauploader.md",
+      "docs/fake-server-status.md",
+      "docs/fake-sonicwall.md",
+      "docs/fake-sophos-vpn.md",
+      "docs/fake-spring-gateway.md",
+      "docs/fake-svn.md",
+      "docs/fake-tomcat-manager.md",
+      "docs/fake-trace-axd.md",
+      "docs/fake-weblogic-console.md",
+      "docs/fake-webshell.md",
+      "docs/fake-whm.md",
+      "docs/framework-debug.md",
+      "docs/gcp-credentials-json.md",
+      "docs/heroku-config.md",
+      "docs/htpasswd-canary.md",
+      "docs/interpolation-probe.md",
+      "docs/jenkins-store.md",
+      "docs/jolokia-jmx.md",
+      "docs/k8s-manifest.md",
+      "docs/laravel-debugbar.md",
+      "docs/laravel-log.md",
+      "docs/litellm-admin.md",
+      "docs/magento-env.md",
+      "docs/mail-service-env.md",
+      "docs/mcp-config.md",
+      "docs/mcp-server-endpoint.md",
+      "docs/nextauth.md",
+      "docs/niche-cloud-credentials.md",
+      "docs/node-deps-canary.md",
+      "docs/observability-surface.md",
+      "docs/oidc-endpoints.md",
+      "docs/payment-api.md",
+      "docs/php-filter-lfi.md",
+      "docs/phpinfo-nested.md",
+      "docs/phpinfo-source.md",
+      "docs/pprof-dump.md",
+      "docs/rails-initializers.md",
+      "docs/rails-secrets.md",
+      "docs/rclone-conf.md",
+      "docs/self-referenced-assets.md",
+      "docs/shell-rc.md",
+      "docs/soho-router.md",
+      "docs/spa-build-manifest.md",
+      "docs/ssrf-metadata-relay.md",
+      "docs/system-file-reads.md",
+      "docs/terraform-tfstate.md",
+      "docs/terraform-tfvars.md",
+      "docs/tomcat-path-bypass.md",
+      "docs/trap-path-walk.md",
+      "docs/vercel-json.md",
+      "docs/vite-env.md",
+      "docs/vite-fs.md",
+      "docs/webapp-form.md",
+      "docs/webhook-receiver.md",
+      "docs/webshell-sweep.md",
+      "docs/wp-batch-api.md",
+      "docs/wp-login-canary.md",
+      "docs/wp-plugin-upload.md",
+      "docs/wp-rest-index.md",
+      "docs/wp-rest-route-alias.md",
+      "docs/wp-setup-config.md",
+      "docs/wp-user-enum.md",
+      "flux/__init__.py",
+      "flux/__main__.py",
+      "flux.out",
+      "flux2.out",
+      "pyproject.toml",
+      "requirements-dev.lock",
+      "requirements.lock",
+      "scripts/bench.py"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 8.401620149612427,
+    "profiling_times": {
+      "config_time": 42.590555906295776,
+      "core_time": 25.588868618011475,
+      "ignores_time": 0.010382413864135742,
+      "total_time": 68.56330466270447
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 40.65085172653198,
+      "per_file_time": {
+        "mean": 0.15225038099824703,
+        "std_dev": 0.1418644175120629
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.3203544907940392,
+        "count_ratio": 0.02247191011235955
+      },
+      "very_slow_files": [
+        {
+          "fpath": "flux/__main__.py",
+          "ftime": 1.5221309661865234
+        },
+        {
+          "fpath": "flux/__init__.py",
+          "ftime": 1.5974700450897217
+        },
+        {
+          "fpath": ".github/workflows/tests.yml",
+          "ftime": 1.7450828552246094
+        },
+        {
+          "fpath": "README.md",
+          "ftime": 1.9794580936431885
+        },
+        {
+          "fpath": "_renderers.py",
+          "ftime": 2.7812860012054443
+        },
+        {
+          "fpath": "scripts/bench.py",
+          "ftime": 3.3972549438476562
+        }
+      ]
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9938590369853454,
+      "rules_selected_ratio": 0.032658757850662946,
+      "rules_matched_ratio": 0.032658757850662946
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 891413696
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

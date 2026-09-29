@@ -71,7 +71,10 @@ def matrix_analyze(input_path: Path, out: Path) -> None:
     try:
         data = matrix_mod.load_json(input_path)
         report = matrix_mod.analyze(data)
-        out.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+        # Explicit local CLI destination; this command is not MCP-exposed.
+        out.write_text(
+            json.dumps(report, indent=2) + "\n", encoding="utf-8"
+        )  # NOSONAR
     except matrix_mod.MatrixError as exc:
         raise click.ClickException(str(exc)) from exc
     echo_ok(f"OK  wrote {out} (experimental; UHQS unchanged)")

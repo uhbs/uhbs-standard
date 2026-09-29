@@ -1,0 +1,215 @@
+[
+    {
+        "Id": "1e73613991d6c77ba1979844cb29330afb1b2f6a63af85ce04ed898f370826ce",
+        "Created": "2026-09-27T20:40:58.545741292Z",
+        "Path": "opencanaryd",
+        "Args": [
+            "--dev",
+            "--uid=nobody",
+            "--gid=nogroup"
+        ],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 1,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:40:58.59017675Z",
+            "FinishedAt": "2026-09-27T20:40:59.15664125Z"
+        },
+        "Image": "sha256:c49e213d54b63b7a72975ed962c00bb93dea2d956081e15ac16f71dc6834b7a5",
+        "ResolvConfPath": "/var/lib/docker/containers/1e73613991d6c77ba1979844cb29330afb1b2f6a63af85ce04ed898f370826ce/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/1e73613991d6c77ba1979844cb29330afb1b2f6a63af85ce04ed898f370826ce/hostname",
+        "HostsPath": "/var/lib/docker/containers/1e73613991d6c77ba1979844cb29330afb1b2f6a63af85ce04ed898f370826ce/hosts",
+        "LogPath": "/var/lib/docker/containers/1e73613991d6c77ba1979844cb29330afb1b2f6a63af85ce04ed898f370826ce/1e73613991d6c77ba1979844cb29330afb1b2f6a63af85ce04ed898f370826ce-json.log",
+        "Name": "/uhbs-target-opencanary-tftp",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/opencanary-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "1e73613991d6c77ba1979844cb29330afb1b2f6a63af85ce04ed898f370826ce",
+                "LowerDir": "/var/lib/docker/overlay2/e5e87b519bd681d21786ea0b5eb24d6d34026731021c4ff941457adf07939f39-init/diff:/var/lib/docker/overlay2/289c895ee2949e5b79f6443639775c47d2bb106b50531a60f7ad7f841238ee20/diff:/var/lib/docker/overlay2/8772549156dff16a26e44e6a74e48787dfcc573a5d37f10be6efcb41f526fb22/diff:/var/lib/docker/overlay2/87cd2f363969a02c67256636b6c05d956041a9b764a9ef94d41b6562b6a5f6b1/diff:/var/lib/docker/overlay2/d299963b82429b69f99b345656a6c88b47518072c16d601cbdf5324ae5e0d765/diff:/var/lib/docker/overlay2/5807d4ad0d9a9d7524f943a3fb947fb0556b5f2b536b2c7a17dc9d073b52ea96/diff:/var/lib/docker/overlay2/c1d48122cf16f13b4a66518a253ad6f441f79927358cda0c3309b78fbecab640/diff:/var/lib/docker/overlay2/380fd2c81789c3bfeade2609247605bad251229ab91de362f05e92edd488b51f/diff:/var/lib/docker/overlay2/d53bc9b14b85e28c6d010a939a3e809aa096301cf260dbd3e5c98e8b8fea5026/diff:/var/lib/docker/overlay2/9201ccd3bffdfe817b29fa52a5e5d3687211bde3aebd65298e1ab8aa34225d2a/diff:/var/lib/docker/overlay2/e19fa1d67ea0da25c314b977d8e4a0090dad1272c09b00bb397cbd0fdb96df52/diff:/var/lib/docker/overlay2/131a032485d488531c8efc861c3f73abe39a9651f2fe449715b4f70384b1428a/diff:/var/lib/docker/overlay2/6628509eebb8384b8a4540db22236c171a74804d9c6c66285b71012f2b097122/diff:/var/lib/docker/overlay2/3a56a7dc96fa1e5e0868c0b4ea00869d712ba0e260d8453a2ab80dd3d9b3a5db/diff:/var/lib/docker/overlay2/137352dc85f5ca1c1a49a3fa10cff2c51f7641f786ddc05b149e4fe0f30c69b3/diff",
+                "MergedDir": "/var/lib/docker/overlay2/e5e87b519bd681d21786ea0b5eb24d6d34026731021c4ff941457adf07939f39/merged",
+                "UpperDir": "/var/lib/docker/overlay2/e5e87b519bd681d21786ea0b5eb24d6d34026731021c4ff941457adf07939f39/diff",
+                "WorkDir": "/var/lib/docker/overlay2/e5e87b519bd681d21786ea0b5eb24d6d34026731021c4ff941457adf07939f39/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/opencanary-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "1e73613991d6",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opencanary/.venv/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+                "PYTHON_VERSION=3.10.21",
+                "PYTHON_SHA256=a0da1e72132e950154eca0f6f47d5db828454700de20e5113667940d81e0db04"
+            ],
+            "Cmd": [
+                "--dev",
+                "--uid=nobody",
+                "--gid=nogroup"
+            ],
+            "Image": "thinkst/opencanary:latest",
+            "Volumes": null,
+            "WorkingDir": "/opencanary",
+            "Entrypoint": [
+                "opencanaryd"
+            ],
+            "Labels": {
+                "uhbs.unit": "opencanary-tftp"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "",
+            "SandboxKey": "",
+            "Ports": {},
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "opencanary-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "MacAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-opencanary-tftp",
+                        "opencanary-lab",
+                        "1e73613991d6"
+                    ]
+                }
+            }
+        }
+    }
+]

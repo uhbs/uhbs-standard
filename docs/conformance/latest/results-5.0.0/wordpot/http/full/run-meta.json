@@ -1,0 +1,83 @@
+{
+  "uhbs_version": "5.0.1",
+  "run_mode": "full",
+  "evaluated_at": "2026-09-26T13:32:51Z",
+  "proof_label": "wordpot (gbrindisi) (http)",
+  "target": {
+    "repository": "https://github.com/gbrindisi/wordpot.git",
+    "git_branch": "master",
+    "git_commit": "e96889bd5a35bbdd9fb2dd4cd583475cf7d25962",
+    "class": "Web-API",
+    "protocol": "http",
+    "host": "wordpot-lab",
+    "port": 8080,
+    "container_image": "wordpot:uhbs-lab",
+    "container_image_id": "sha256:0fe5794020a8edaae5a66f92e25e42b35daef19f7d96d64e4bab7712f6006b27",
+    "base_image": "python:2.7-slim",
+    "base_image_reason": "Upstream is Python 2 (print statements) + Flask 0.10. Ubuntu latest has no Python 2, so python:2.7-slim is required.",
+    "container_runtime_strategy": "custom-base"
+  },
+  "grader": {
+    "package_version": "5.0.1",
+    "docker_image": "uhbs:5.0.1-full",
+    "docker_image_id": "sha256:320fb38dcf3ebf69befb2248b75ed32c63dafe6b83f959746209d337c3e7ca9b",
+    "inventory": "docs/conformance/labs/wordpot/inventory.yaml",
+    "tps": "docs/conformance/labs/wordpot/web_api_http_full.yaml",
+    "target_id": "wordpot-http"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "measured_vs_attested": {
+      "airgap": "attested",
+      "egress_gateway_log": "measured",
+      "telemetry": "measured"
+    }
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "grade_long": null,
+    "delta_c": 0.0,
+    "module_scores": {
+      "A": 60.07,
+      "B": 65.0,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 100.0,
+      "F": 67.16
+    },
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  },
+  "limitations": [
+    "Published UHBS 5.0.1 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1)."
+  ],
+  "docs_reviewed": [
+    "README.md",
+    "wordpot.py",
+    "wordpot.conf",
+    "requirements.txt"
+  ]
+}

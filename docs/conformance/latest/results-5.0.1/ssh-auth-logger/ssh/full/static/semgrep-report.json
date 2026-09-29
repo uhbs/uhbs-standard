@@ -1,0 +1,143 @@
+{
+  "version": "1.178.0",
+  "results": [
+    {
+      "check_id": "go.lang.security.audit.crypto.math_random.math-random-used",
+      "path": "main.go",
+      "start": {
+        "line": 10,
+        "col": 3,
+        "offset": 118
+      },
+      "end": {
+        "line": 10,
+        "col": 12,
+        "offset": 127
+      },
+      "extra": {
+        "message": "Do not use `math/rand`. Use `crypto/rand` instead.",
+        "fix": "crypto/rand",
+        "metadata": {
+          "cwe": [
+            "CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)"
+          ],
+          "owasp": [
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "references": [
+            "https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html#secure-random-number-generation"
+          ],
+          "category": "security",
+          "technology": [
+            "go"
+          ],
+          "confidence": "MEDIUM",
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues"
+          ],
+          "source": "https://semgrep.dev/r/go.lang.security.audit.crypto.math_random.math-random-used",
+          "shortlink": "https://sg.run/6nK6"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      ".dockerignore",
+      ".gitignore",
+      "Dockerfile",
+      "LICENSE",
+      "Makefile",
+      "README.md",
+      "go.mod",
+      "go.sum",
+      "main.go"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.5594818592071533,
+    "profiling_times": {
+      "config_time": 2.7410471439361572,
+      "core_time": 1.5243170261383057,
+      "ignores_time": 0.0009393692016601562,
+      "total_time": 4.2800891399383545
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 0.29711341857910156,
+      "per_file_time": {
+        "mean": 0.014855670928955077,
+        "std_dev": 0.002554091731443578
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 1.0,
+      "rules_selected_ratio": 0.03137254901960784,
+      "rules_matched_ratio": 0.03137254901960784
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 890071680
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

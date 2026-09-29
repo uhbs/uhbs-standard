@@ -1,0 +1,5 @@
+source=pin:ghcr.io/andreicscs/honeywire-webrouterdecoy:latest@sha256:da45cae2c217f99fbc3a7094e1d7df9181593a44a4671a2e4f5e08c98ee3501b
+image=ghcr.io/andreicscs/honeywire-webrouterdecoy:latest
+digest=sha256:da45cae2c217f99fbc3a7094e1d7df9181593a44a4671a2e4f5e08c98ee3501b
+dockerfile=docs/conformance/latest/results-5.0.1/HoneyWire/http/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/HoneyWire/http/Dockerfile.pin

@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.0.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "5838b7985c2d9367b6aecfda896e57ca7fa2c815e3b50dc62a777a4426edc28d"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "5838b7985c2d9367b6aecfda896e57ca7fa2c815e3b50dc62a777a4426edc28d"
+    },
+    {
+      "path": "report.json",
+      "sha256": "081de92f49f9cc4ce555aaf027e85b9ad662732e438787974eb09becb6652869"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "5838b7985c2d9367b6aecfda896e57ca7fa2c815e3b50dc62a777a4426edc28d"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "30c01ca6ea4febbd445902b371400f8a72f6963f7dc286465947fa07cb202852"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "8fbc8647647359013830639f4986d9aae0578514aea8fa98bafe236476f8ef93"
+    }
+  ],
+  "extra": {
+    "target": "beelzebub-ssh",
+    "uhqs": 59.88,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

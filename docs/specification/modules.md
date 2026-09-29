@@ -1,6 +1,14 @@
 # Evaluation Modules (A–F)
 
-UHBS v4.6.1 defines six evaluation modules. Module **D** is the **Safety Gate**; a containment score below 95 applies an exponential penalty to the composite UHQS.
+UHBS v5.0.1 defines six evaluation modules under the measured-renorm scoring model
+([RFC 0003](../rfcs/0003-scoring-assurance.md); harness `scoring_model_id`
+`uhqs-v5.2-measured-renorm`). Module **D** is a **critical-control gate** plus a
+separate defense-in-depth diagnostic score. Incomplete or failed containment stays
+visible in `assessment_status` / `critical_control_verdict`; composite UHQS and
+Module D diagnostics remain **numeric** (δ_C adjusts on `GATE_FAILED`).
+
+Check outcomes: `PASS` | `FAIL` | `NOT_APPLICABLE` | `NOT_TESTED` | `ERROR`.
+Only `NOT_APPLICABLE` leaves the denominator (machine rule + written rationale required).
 
 ---
 
@@ -28,17 +36,25 @@ UHBS v4.6.1 defines six evaluation modules. Module **D** is the **Safety Gate**;
 
 ---
 
-## Module C: Telemetry Quality & Pipeline Resilience
+## Module C: Telemetry Assurance & Pipeline Resilience
 
-**Objective:** Ensure the decoy produces clean, structured threat intelligence (CTI) that cannot be corrupted or blinded by an attacker.
+**Objective:** Ensure the decoy produces structured, sink-verified telemetry that matches harness ground truth and resists poisoning. Detection resistance is out of scope for composite UHQS (threat model: poison / pivot are in scope for C/D).
+
+Do **not** require universal STIX emission. The TPS declares `native_event_format` and optional `export_formats`; validators run only for claimed formats.
 
 | Step | Name | Procedure |
 | --- | --- | --- |
-| **C1** | Schema Conformance | Validate 100% compliance against STIX 2.1, OpenTelemetry, or ECS with accurate MITRE ATT&CK mapping. |
-| **C2** | Log Injection & Parser Fuzzing | Inject ANSI escapes, unescaped quotes, nested JSON, newline injections; verify sanitization and SIEM parser stability. |
+| **C1** | Declared-format structural conformance | Validate claimed formats only (native JSON/JSONL against a target schema; ECS/OCSF against pinned schema/version; OTLP JSON against declared version; STIX 2.1 with a standards-aware validator when STIX export is claimed). Record schema URI, version, validator version, and errors. Format conformance alone does not imply semantic quality. |
+| **C2** | Sink-side injection resilience | Inject tagged ANSI, delimiter, control-character, Unicode, multiline, nested-object, oversized, and formula-injection payloads. Read the corresponding event from the **configured sink** and verify: one logical event; hostile content preserved as data without changing record structure; declared framing still parses; no forged fields or second events; downstream test parser remains available. Score the sink, not whether a shell accepted a command. |
+| **C3** | Required observables vs ground truth | Measure per-profile required observables (presence + correctness) against harness ground truth: event/observer time with timezone, endpoints, protocol action, auth result, lawful credential/command content, session ID, file digest linked to retained artifact, outbound destination, and related integrity checks (event-ID stability, ordering, truncation disclosure). Redaction/marking policies are allowed; do not reward unnecessary sensitive-data retention. |
+| **C4** | Ground-truth completeness & timeliness | Emit uniquely tagged interactions with an immutable truth manifest. Match events in an observation window and report recall, required-field accuracy, duplicate rate, delivery latency, late/missing events, and clock offset/uncertainty. Do not label unmatched background events as false positives unless the environment guarantees isolation. |
+| **C5** | ATT&CK / CTI semantics | When ATT&CK mappings are claimed, resolve IDs against a repository-pinned Enterprise/ICS ATT&CK STIX bundle. Record bundle version, mapping basis (`observed` / `inferred` / `analyst_asserted`), confidence, source event references, and revoked/deprecated status. Interoperability tests loss-aware transformation into a declared export — not universal STIX round-trip. OASIS STIX/TAXII 2.1 apply only where CTI exchange is claimed. |
+
+!!! tip "Collection Capability Profile (informative)"
+    An informative **Collection Capability Profile** may summarize event completeness, field richness, artifact retention, and engagement depth. It is **not** “intelligence quality” and **MUST NOT** alter UHQS.
 
 !!! tip "Force multiplier"
-    Telemetry integrity multiplies the value of the entire security stack. Corrupted or injectable logs can blind SIEM/SOAR pipelines — Module C is a critical quality gate independent of deception realism.
+    Telemetry integrity multiplies the value of the entire security stack. Corrupted or injectable logs can blind SIEM/SOAR pipelines — Module C is a critical quality dimension independent of deception realism.
 
 ---
 
@@ -46,14 +62,24 @@ UHBS v4.6.1 defines six evaluation modules. Module **D** is the **Safety Gate**;
 
 **Objective:** Guarantee that the honeypot cannot be exploited to breach underlying infrastructure, escalate privileges, or conduct outbound attacks.
 
+Module D has two **separate** outputs:
+
+1. **Critical-control verdict** (`GATE_PASSED` | `GATE_FAILED` | `INCOMPLETE`) — honest safety status (never silent-pass).
+2. **Defense-in-depth score** (1–100 published; never stub-zero) — diagnostic hardening only; **MUST NOT** clear or weaken the verdict. Not included in the UHQS weighted sum.
+
 | Step | Name | Procedure |
 | --- | --- | --- |
-| **D1** | Out-of-Band (OOB) Egress Sweeps | Attempt ICMP, DNS tunneling, HTTP/S, and raw TCP/UDP egress; confirm **0%** unauthorized traffic exits the sandbox. |
-| **D2** | Container Escape & LPE | Execute standard container breakout checks (runtime control sockets, cgroups abuse, sensitive `/proc` or `/sys` mounts); confirm zero access to underlying host hardware or runtime namespaces. |
-| **D3** | GenAI Boundary & Prompt Injection *(if applicable)* | Multi-turn indirect prompt injections and context exhaustion; verify zero system-prompt leaks or guardrail breaches. |
+| **D1** | Host OOB egress gateway | Critical path is the harness canary log (`UHBS_EGRESS_GATEWAY_LOG`) with a UHBS JSON envelope (or `# UHBS` header) and SHA-256 digest. Valid envelope + 0 canary **HIT** → PASS; any **HIT** → `GATE_FAILED`; missing/corrupt/unreadable/digest-mismatch → `INCOMPLETE`. In-guest ICMP/DNS/HTTP probes (SSH shell) are **DiD only**. |
+| **D2** | Host container inspect | Critical path is host `docker inspect` JSON (`UHBS_CONTAINER_INSPECT_JSON`) + digest. Fail-closed on `Privileged`, host/`container:` network, host PID/IPC, undeclared `CapAdd`, root without userns remap, `seccomp`/`apparmor=unconfined` / `label=disable`, sensitive binds (incl. runtime sockets), and dangerous devices. Resource limits, readonly rootfs (unless TPS requires it), and image-digest mismatch are DiD. In-guest docker.sock / cgroup probes are **DiD only**. |
+| **D3** | GenAI Boundary & Prompt Injection *(if applicable)* | Multi-turn indirect prompt injections and context exhaustion as **DiD** (compromised guest is untrusted for the gate). Mark `NOT_APPLICABLE` only with catalog rule + rationale when GenAI is not in scope. |
+| **D-DiD** | Defense-in-depth controls | SSH/in-guest probes and soft inspect findings contribute to the Module D penalty average. They **MUST NOT** alone flip the Safety Gate. |
 
-!!! danger "Safety Gate"
-    A Module D score **below 95** triggers the exponential multiplier \(\delta_C = (C/100)^2\), degrading the entire UHQS regardless of other module performance.
+**Published scores vs gate:** Composite UHQS and Module D diagnostics are **always numeric** when a run finishes. Do not publish stub Module D `0.0` for unmeasured paths (floor `1.0` when no scored checks ran). `GATE_PASSED` implies Module D diagnostic > 0. Fail/incomplete stay visible in `assessment_status` / `critical_control_verdict`; δ_C applies per measured-renorm math (`GATE_FAILED` → 0.5). Score ≠ approved.
+
+Removed from v4: `max(score, 95)` floor; attestation-only credit for `UHBS_AIRGAP_ATTESTED`; fail-open unmeasured containment → pass. Environment attestation may describe the lab but **cannot** satisfy a technical control.
+
+!!! danger "Critical-control gate"
+    Under the measured-renorm scoring model, incomplete or failed containment does **not** null UHQS. Verdict fields remain honest (`GATE_FAILED` / `INCOMPLETE`); δ_C adjusts the composite when the gate fails. Module D diagnostic is published separately and never clears the gate.
 
 ---
 

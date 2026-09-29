@@ -212,6 +212,58 @@ class RedisPlugin(ProtocolPlugin):
                 score=100.0 if ok else 20.0,
             )
         )
+
+        # 4) SET wrong arity → RESP error (not +OK).
+        raw, err = _transact(host, port, encode_command("SET", "onlykey"), timeout=timeout)
+        text = raw.decode("utf-8", "replace")
+        ok = is_resp_error(raw)
+        stub_smell = is_ok(raw) or is_pong(raw)
+        if ok:
+            score = 100.0
+            detail = text[:120]
+        elif stub_smell:
+            score = 15.0
+            detail = f"stub-like success on SET arity: {text[:80]}"
+        elif raw == b"" or bool(err):
+            score = 55.0
+            detail = err or "closed on wrong-arity SET"
+        else:
+            score = 25.0
+            detail = text[:120]
+        checks.append(
+            CheckResult(
+                id="redis.fsm.set_arity",
+                team="red",
+                passed=ok,
+                detail=detail,
+                score=score,
+            )
+        )
+
+        # 5) QUIT → +OK or clean close (no hang).
+        raw, err = _transact(host, port, encode_command("QUIT"), timeout=timeout)
+        text = raw.decode("utf-8", "replace")
+        if is_ok(raw) or raw == b"":
+            score = 100.0 if (is_ok(raw) or not err) else 70.0
+            detail = text[:80] or (err or "closed after QUIT")
+            passed = True
+        elif is_pong(raw):
+            score = 20.0
+            detail = f"PONG on QUIT: {text[:80]}"
+            passed = False
+        else:
+            score = 50.0
+            detail = text[:80] or (err or "unexpected QUIT reply")
+            passed = False
+        checks.append(
+            CheckResult(
+                id="redis.fsm.quit",
+                team="blue",
+                passed=passed,
+                detail=detail,
+                score=score,
+            )
+        )
         return checks
 
     def probe_negotiation(
@@ -267,6 +319,63 @@ class RedisPlugin(ProtocolPlugin):
                     else (err or "no INFO server body")
                 ),
                 score=100.0 if ok else 25.0,
+            )
+        )
+
+        # 4) TIME → RESP array of two bulk/integer fields (or bulk containing epoch).
+        raw, err = _transact(host, port, encode_command("TIME"), timeout=timeout)
+        text = raw.decode("utf-8", "replace")
+        ok = raw.startswith(b"*2\r\n") or (
+            not is_resp_error(raw) and b"\r\n" in raw and not is_ok(raw) and not is_pong(raw)
+        )
+        if raw.startswith(b"*2\r\n"):
+            score = 100.0
+        elif ok:
+            score = 70.0
+        elif is_ok(raw) or is_pong(raw):
+            score = 15.0
+            ok = False
+        elif raw == b"" or bool(err):
+            score = 40.0
+            ok = False
+        else:
+            score = 25.0
+            ok = False
+        checks.append(
+            CheckResult(
+                id="redis.nego.time",
+                team="blue",
+                passed=ok,
+                detail=text[:100] if text else (err or "no TIME body"),
+                score=score,
+            )
+        )
+
+        # 5) CLIENT SETNAME — +OK on real servers; stubs often still +OK (soft discriminator).
+        raw, err = _transact(
+            host, port, encode_command("CLIENT", "SETNAME", "uhbs"), timeout=timeout
+        )
+        text = raw.decode("utf-8", "replace")
+        ok = is_ok(raw)
+        # Unknown-command error is also acceptable for minimal decoys
+        if is_resp_error(raw) and "unknown" in text.lower():
+            ok = True
+            score = 70.0
+            detail = text[:100]
+        elif ok:
+            score = 100.0
+            detail = text[:80]
+        else:
+            score = 20.0
+            detail = text[:80] if text else (err or "no CLIENT SETNAME reply")
+            ok = False
+        checks.append(
+            CheckResult(
+                id="redis.nego.client_setname",
+                team="blue",
+                passed=ok,
+                detail=detail,
+                score=score,
             )
         )
         return checks

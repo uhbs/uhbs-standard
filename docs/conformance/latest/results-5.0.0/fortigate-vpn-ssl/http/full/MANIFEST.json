@@ -1,0 +1,52 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "8ef43fed8ee0bf16cff8977ce3a42e0fe0a72ed3335232045493cf9299243bca"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "e63025207099987fe932f4876d365048e1b0ad5b66733a20d3771ced4bbe37c1"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "e63025207099987fe932f4876d365048e1b0ad5b66733a20d3771ced4bbe37c1"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "076825fb5f9242f8040288e14970ebdc54087fd5f44d5fd0a0a551a10822b7b8"
+    },
+    {
+      "path": "proof/full-run.cast",
+      "sha256": "e9b33317b88a6acb1556e1ea037fd268a2392ad75afea51d0678275b26df36b9"
+    },
+    {
+      "path": "report.json",
+      "sha256": "e56533be2802cd5efa53e9f813b5457de570caaf1ab14b32e8fda64686972235"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "f7f80ac72d2a14f7dfaadd7140079ea5a9e40fa8e48cd722d1aa3de5f72a45cf"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "65992f453959a745aa317d02d2ce0b1e7341d75da26bfe7613cf947cfe946b75"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "4d453077d777d58d258791c00669df3fb7bb5a64be76f0eddcdc4f53ea0cd272"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "a8546602b9d6a67148cd6e7f70649de9177c39b54890d6b7b293e16f005e1211"
+    }
+  ],
+  "extra": {
+    "target": "fortigate-vpn-ssl-http",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

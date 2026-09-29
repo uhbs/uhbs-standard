@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "b86115a3dd12e9ce88124b6312526f20927c4671753e78cf3d926f5b947e4366"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "191e10bc6c79e0f4cbcfb5f95267fa1b754b7ce40cba6dda68e4991f752d830e"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "191e10bc6c79e0f4cbcfb5f95267fa1b754b7ce40cba6dda68e4991f752d830e"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "db63ff22a8e59ad1f1cac99b4c25b72e9fc004cef317761e3ed92f036a243b25"
+    },
+    {
+      "path": "report.json",
+      "sha256": "b561af44765020b6457c76f89563e45c25551acb1118e0e4b8517ed108a9e771"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "0457dcd653ad98f4b127b09f0461774ed4c482e59a988c1448b9d883876abec1"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "7d2e32c36b05b213ebb336ce6f5ee6a3cbe2c4e5e5f83e3d33b86227ae182449"
+    }
+  ],
+  "extra": {
+    "target": "heralding-ftp",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

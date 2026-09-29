@@ -1,0 +1,45 @@
+version: results-5.0.1
+hub:
+  - path: index.md
+    rule: non-empty
+  - path: TUTORIAL.md
+    rule: non-empty
+  - path: METHODOLOGY.md
+    rule: non-empty
+unit_root:
+  - path: EXECUTION-STEPS.md
+    rule: non-empty
+  - path: Dockerfile
+    rule: non-empty
+  - path: Dockerfile.pin
+    rule: non-empty
+  - path: quick/
+    rule: directory
+  - path: full/
+    rule: directory
+mode_dirs:
+  modes: [quick, full]
+  files:
+    - README.md
+    - SCORECARD.txt
+    - REPORT.txt
+    - report.json
+    - MANIFEST.json
+    - run-meta.json
+    - uhbs-run.log
+full_only:
+  - path: proof/full-run.cast
+    rule: non-empty
+  - path: static/
+    rule: directory
+  - path: sqlite.run_executions.full.cast_path
+    rule: set
+  - path: module_c
+    rule: measured-when-telemetry_required
+tracker:
+  - check: unit_row
+    rule: upstream_commit+fixture_path+latest_path
+  - check: manifest_entry
+    rule: matches unit_id
+  - check: ledgers
+    rule: RUN-LEDGER.md + ALWAYS-GRADE-REGRADE.md after batches

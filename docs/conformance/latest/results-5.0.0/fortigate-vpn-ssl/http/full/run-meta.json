@@ -1,0 +1,78 @@
+{
+  "uhbs_version": "5.0.1",
+  "run_mode": "full",
+  "evaluated_at": "2026-09-26T19:35:43Z",
+  "proof_label": "FortiGate VPN-SSL Honeypot (http)",
+  "target": {
+    "repository": "https://github.com/PeterGabaldon/Fortigate.VPN-SSL.Honeypot.git",
+    "git_branch": "main",
+    "git_commit": "1fea6014337eff79a684877644ff625782f2315d",
+    "class": "Web-API",
+    "protocol": "http",
+    "host": "fortigate-vpn-ssl-lab",
+    "port": 5000,
+    "container_image": "fortigate-vpn-ssl:uhbs-lab",
+    "container_image_id": "sha256:de399484fb7d7568f3595f751c0b3225121c415d6b8f53ea2877861b0ff4c883",
+    "base_image": "python:3.12-slim-bookworm",
+    "base_image_reason": "Upstream honey/ Flask FortiGate VPN-SSL decoy on :5000.",
+    "container_runtime_strategy": "lab-dockerfile"
+  },
+  "grader": {
+    "package_version": "5.0.1",
+    "docker_image": "uhbs:5.0.1-full",
+    "docker_image_id": "sha256:320fb38dcf3ebf69befb2248b75ed32c63dafe6b83f959746209d337c3e7ca9b",
+    "inventory": "docs/conformance/labs/fortigate-vpn-ssl/inventory.yaml",
+    "tps": "docs/conformance/labs/fortigate-vpn-ssl/web_api_http_full.yaml",
+    "target_id": "fortigate-vpn-ssl-http"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "measured_vs_attested": {
+      "airgap": "attested",
+      "egress_gateway_log": "measured",
+      "telemetry": "measured"
+    }
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "grade_long": null,
+    "delta_c": 0.0,
+    "module_scores": {
+      "A": 60.07,
+      "B": 65.0,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 100.0,
+      "F": 66.0
+    },
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  },
+  "limitations": [
+    "Published UHBS 5.0.1 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1)."
+  ],
+  "docs_reviewed": []
+}

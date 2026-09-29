@@ -1,0 +1,47 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "c9c8ff8fe3ab7317ffc3e63de2fc9a5aa6d64a69bbb91a2d8188499b30e0bf11"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "5349661051c8b0a7ba2be29c1e723f813623a28caef3ec099560f05e0d1649cd"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "5349661051c8b0a7ba2be29c1e723f813623a28caef3ec099560f05e0d1649cd"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "df9f1a44ab2f4c2483850bc7cb84dd465ff9cc5c08d0011b5c4c52e96d6e002b"
+    },
+    {
+      "path": "report.json",
+      "sha256": "8bebf870656faffc16271f5e3b1e16a826603cf94e7666d93b1be8cda54e87ec"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "294499aa431034ecd8da72a98e95717f53c2775eff21374bfb3833ee44932000"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "08563e15291ea0a9cad6058d34806dbc1d0c5dc5ecd5db14720831aa7bbc90d7"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "c731f74cdf978855e6a78eb37806f6ef9347565cdd6f875020e7e4764fe8ccdb"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "cd9cd02a6a4807b21719cd2491766b6de1b7259675f336fdd5908604c959e4ae"
+    }
+  ],
+  "extra": {
+    "target": "mockssh-ssh",
+    "uhqs": 41.75,
+    "grade": "GRADE F (Fail)",
+    "critical_control_verdict": "GATE_PASSED"
+  }
+}

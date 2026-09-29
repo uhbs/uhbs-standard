@@ -1,0 +1,200 @@
+{
+  "version": "1.178.0",
+  "results": [
+    {
+      "check_id": "python.flask.security.audit.xss.make-response-with-unknown-content.make-response-with-unknown-content",
+      "path": "owa_pot.py",
+      "start": {
+        "line": 81,
+        "col": 24,
+        "offset": 2415
+      },
+      "end": {
+        "line": 81,
+        "col": 57,
+        "offset": 2448
+      },
+      "extra": {
+        "message": "Be careful with `flask.make_response()`. If this response is rendered onto a webpage, this could create a cross-site scripting (XSS) vulnerability. `flask.make_response()` will not autoescape HTML. If you are rendering HTML, write your HTML in a template file and use `flask.render_template()` which will take care of escaping. If you are returning data from an API, consider using `flask.jsonify()`.",
+        "metadata": {
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "references": [
+            "https://github.com/python-security/pyt//blob/093a077bcf12d1f58ddeb2d73ddc096623985fb0/examples/vulnerable_code/XSS_assign_to_other_var.py#L11",
+            "https://flask.palletsprojects.com/en/1.1.x/api/#flask.Flask.make_response",
+            "https://flask.palletsprojects.com/en/1.1.x/api/#response-objects"
+          ],
+          "category": "security",
+          "technology": [
+            "flask"
+          ],
+          "owasp": [
+            "A07:2017 - Cross-Site Scripting (XSS)",
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cross-Site-Scripting (XSS)"
+          ],
+          "source": "https://semgrep.dev/r/python.flask.security.audit.xss.make-response-with-unknown-content.make-response-with-unknown-content",
+          "shortlink": "https://sg.run/3x3p"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "templates/outlook_web.html",
+      "start": {
+        "line": 1328,
+        "col": 228,
+        "offset": 31551
+      },
+      "end": {
+        "line": 1328,
+        "col": 326,
+        "offset": 31649
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      ".gitignore",
+      "Dockerfile.lab",
+      "LICENSE",
+      "README.md",
+      "owa_pot.py",
+      "requirements.txt",
+      "static/segoeui-regular.eot",
+      "templates/401.html",
+      "templates/403.html",
+      "templates/404.html",
+      "templates/outlook_web.html"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.2387559413909912,
+    "profiling_times": {
+      "config_time": 0.9569070339202881,
+      "core_time": 0.6310131549835205,
+      "ignores_time": 0.0008738040924072266,
+      "total_time": 1.5931527614593506
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 0.26680445671081543,
+      "per_file_time": {
+        "mean": 0.009881646544845015,
+        "std_dev": 0.0004628513628199814
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.991421568627451,
+      "rules_selected_ratio": 0.058823529411764705,
+      "rules_matched_ratio": 0.058823529411764705
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 765602176
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

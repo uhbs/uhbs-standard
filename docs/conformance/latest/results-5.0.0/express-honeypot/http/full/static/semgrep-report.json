@@ -1,0 +1,694 @@
+{
+  "version": "1.178.0",
+  "results": [
+    {
+      "check_id": "yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell",
+      "path": ".github/workflows/cytex.yml",
+      "start": {
+        "line": 14,
+        "col": 9,
+        "offset": 191
+      },
+      "end": {
+        "line": 14,
+        "col": 117,
+        "offset": 299
+      },
+      "extra": {
+        "message": "A `run:` step pipes the output of `curl` or `wget` directly into a shell interpreter. This is the \"curl | bash\" install pattern \u2014 if the remote server is compromised or the URL is hijacked, an attacker can execute arbitrary code in your CI runner. Consider downloading the file first, verifying its checksum or signature, and then executing it.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A03:2025 - Injection"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions",
+            "https://www.idontplaydarts.com/2016/04/detecting-curl-pipe-bash-server-side/"
+          ],
+          "technology": [
+            "github-actions",
+            "bash",
+            "curl"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Command Injection"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell",
+          "shortlink": "https://sg.run/GR8K1"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/cytex.yml",
+      "start": {
+        "line": 18,
+        "col": 9,
+        "offset": 416
+      },
+      "end": {
+        "line": 18,
+        "col": 34,
+        "offset": 441
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal",
+      "path": "express/beekeeper/controller.js",
+      "start": {
+        "line": 19,
+        "col": 62,
+        "offset": 514
+      },
+      "end": {
+        "line": 19,
+        "col": 66,
+        "offset": 518
+      },
+      "extra": {
+        "message": "Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.",
+        "metadata": {
+          "owasp": [
+            "A05:2017 - Broken Access Control",
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "category": "security",
+          "references": [
+            "https://owasp.org/www-community/attacks/Path_Traversal"
+          ],
+          "technology": [
+            "javascript",
+            "node.js"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "HIGH",
+          "impact": "MEDIUM",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Path Traversal"
+          ],
+          "source": "https://semgrep.dev/r/javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal",
+          "shortlink": "https://sg.run/OPqk"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal",
+      "path": "express/beekeeper/controller.js",
+      "start": {
+        "line": 48,
+        "col": 45,
+        "offset": 1175
+      },
+      "end": {
+        "line": 48,
+        "col": 58,
+        "offset": 1188
+      },
+      "extra": {
+        "message": "Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.",
+        "metadata": {
+          "owasp": [
+            "A05:2017 - Broken Access Control",
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "category": "security",
+          "references": [
+            "https://owasp.org/www-community/attacks/Path_Traversal"
+          ],
+          "technology": [
+            "javascript",
+            "node.js"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "HIGH",
+          "impact": "MEDIUM",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Path Traversal"
+          ],
+          "source": "https://semgrep.dev/r/javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal",
+          "shortlink": "https://sg.run/OPqk"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal",
+      "path": "express/beekeeper/controller.js",
+      "start": {
+        "line": 49,
+        "col": 47,
+        "offset": 1238
+      },
+      "end": {
+        "line": 49,
+        "col": 51,
+        "offset": 1242
+      },
+      "extra": {
+        "message": "Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.",
+        "metadata": {
+          "owasp": [
+            "A05:2017 - Broken Access Control",
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "category": "security",
+          "references": [
+            "https://owasp.org/www-community/attacks/Path_Traversal"
+          ],
+          "technology": [
+            "javascript",
+            "node.js"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "HIGH",
+          "impact": "MEDIUM",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Path Traversal"
+          ],
+          "source": "https://semgrep.dev/r/javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal",
+          "shortlink": "https://sg.run/OPqk"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+      "path": "express/beekeeper/router.js",
+      "start": {
+        "line": 45,
+        "col": 12,
+        "offset": 1050
+      },
+      "end": {
+        "line": 45,
+        "col": 50,
+        "offset": 1088
+      },
+      "extra": {
+        "message": "Detected directly writing to a Response object from user-defined input. This bypasses any HTML escaping and may expose your application to a Cross-Site-scripting (XSS) vulnerability. Instead, use 'resp.render()' to render safely escaped HTML.",
+        "metadata": {
+          "interfile": true,
+          "references": [
+            "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+          ],
+          "owasp": [
+            "A07:2017 - Cross-Site Scripting (XSS)",
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "category": "security",
+          "technology": [
+            "express"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "vulnerability_class": [
+            "Cross-Site-Scripting (XSS)"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "source": "https://semgrep.dev/r/javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+          "shortlink": "https://sg.run/vzGl"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal",
+      "path": "express/honey/report/reportMaker.js",
+      "start": {
+        "line": 32,
+        "col": 65,
+        "offset": 1029
+      },
+      "end": {
+        "line": 32,
+        "col": 73,
+        "offset": 1037
+      },
+      "extra": {
+        "message": "Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.",
+        "metadata": {
+          "owasp": [
+            "A05:2017 - Broken Access Control",
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "cwe": [
+            "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+          ],
+          "category": "security",
+          "references": [
+            "https://owasp.org/www-community/attacks/Path_Traversal"
+          ],
+          "technology": [
+            "javascript",
+            "node.js"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "HIGH",
+          "impact": "MEDIUM",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Path Traversal"
+          ],
+          "source": "https://semgrep.dev/r/javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal",
+          "shortlink": "https://sg.run/OPqk"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.lang.security.audit.incomplete-sanitization.incomplete-sanitization",
+      "path": "express/honey/report/reportMaker.js",
+      "start": {
+        "line": 49,
+        "col": 12,
+        "offset": 1495
+      },
+      "end": {
+        "line": 49,
+        "col": 43,
+        "offset": 1526
+      },
+      "extra": {
+        "message": "`response.data.replace` method will only replace the first occurrence when used with a string argument (\"\\n\"). If this method is used for escaping of dangerous data then there is a possibility for a bypass. Try to use sanitization library instead or use a Regex with a global flag.",
+        "metadata": {
+          "cwe": [
+            "CWE-116: Improper Encoding or Escaping of Output"
+          ],
+          "category": "security",
+          "technology": [
+            "javascript"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Encoding"
+          ],
+          "source": "https://semgrep.dev/r/javascript.lang.security.audit.incomplete-sanitization.incomplete-sanitization",
+          "shortlink": "https://sg.run/1GbQ"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage",
+      "path": "express/server.js",
+      "start": {
+        "line": 9,
+        "col": 7,
+        "offset": 299
+      },
+      "end": {
+        "line": 9,
+        "col": 22,
+        "offset": 314
+      },
+      "extra": {
+        "message": "A CSRF middleware was not detected in your express application. Ensure you are either using one such as `csurf` or `csrf` (see rule references) and/or you are properly doing CSRF validation in your routes with a token or cookies.",
+        "metadata": {
+          "category": "security",
+          "references": [
+            "https://www.npmjs.com/package/csurf",
+            "https://www.npmjs.com/package/csrf",
+            "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+          ],
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "technology": [
+            "javascript",
+            "typescript",
+            "express"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cross-Site Request Forgery (CSRF)"
+          ],
+          "source": "https://semgrep.dev/r/javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage",
+          "shortlink": "https://sg.run/BxzR"
+        },
+        "severity": "INFO",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.audit.missing-integrity.missing-integrity",
+      "path": "express/views/beekeeper/index.html",
+      "start": {
+        "line": 8,
+        "col": 5,
+        "offset": 145
+      },
+      "end": {
+        "line": 11,
+        "col": 7,
+        "offset": 274
+      },
+      "extra": {
+        "message": "This tag is missing an 'integrity' subresource integrity attribute. The 'integrity' attribute allows for the browser to verify that externally hosted files (for example from a CDN) are delivered without unexpected manipulation. Without this attribute, if an attacker can modify the externally hosted resource, this could lead to XSS and other types of attacks. To prevent this, include the base64-encoded cryptographic hash of the resource (file) you\u2019re telling the browser to fetch in the 'integrity' attribute for all externally hosted files.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software or Data Integrity Failures"
+          ],
+          "confidence": "LOW",
+          "references": [
+            "https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues"
+          ],
+          "source": "https://semgrep.dev/r/html.security.audit.missing-integrity.missing-integrity",
+          "shortlink": "https://sg.run/krXA"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.audit.missing-integrity.missing-integrity",
+      "path": "express/views/beekeeper/index.html",
+      "start": {
+        "line": 26,
+        "col": 5,
+        "offset": 694
+      },
+      "end": {
+        "line": 26,
+        "col": 107,
+        "offset": 796
+      },
+      "extra": {
+        "message": "This tag is missing an 'integrity' subresource integrity attribute. The 'integrity' attribute allows for the browser to verify that externally hosted files (for example from a CDN) are delivered without unexpected manipulation. Without this attribute, if an attacker can modify the externally hosted resource, this could lead to XSS and other types of attacks. To prevent this, include the base64-encoded cryptographic hash of the resource (file) you\u2019re telling the browser to fetch in the 'integrity' attribute for all externally hosted files.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software or Data Integrity Failures"
+          ],
+          "confidence": "LOW",
+          "references": [
+            "https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues"
+          ],
+          "source": "https://semgrep.dev/r/html.security.audit.missing-integrity.missing-integrity",
+          "shortlink": "https://sg.run/krXA"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      ".eslintignore",
+      ".eslintrc",
+      ".github/workflows/cytex.yml",
+      ".gitignore",
+      ".prettierrc",
+      ".vscode",
+      "Dockerfile.lab",
+      "LICENSE",
+      "express/beekeeper/controller.js",
+      "express/beekeeper/router.js",
+      "express/config.js",
+      "express/hive/files/.gitkeep",
+      "express/hive/logs/.gitkeep",
+      "express/hive/router.js",
+      "express/honey/common/common.js",
+      "express/honey/controller.js",
+      "express/honey/display/beeLanguage.js",
+      "express/honey/display/htmlTemplate.js",
+      "express/honey/report/reportMaker.js",
+      "express/honey/router.js",
+      "express/pages.js",
+      "express/seo/controller.js",
+      "express/seo/router.js",
+      "express/server.js",
+      "express/views/beekeeper/index.html",
+      "express/views/beekeeper/js/index.js",
+      "package.json",
+      "readme.md"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.659088134765625,
+    "profiling_times": {
+      "config_time": 7.829908847808838,
+      "core_time": 4.23643946647644,
+      "ignores_time": 0.001997709274291992,
+      "total_time": 12.1024911403656
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 9.027591705322266,
+      "per_file_time": {
+        "mean": 0.12199448250435492,
+        "std_dev": 0.07884402447055457
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9819721387599016,
+      "rules_selected_ratio": 0.04343075662387326,
+      "rules_matched_ratio": 0.04343075662387326
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 1011364416
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

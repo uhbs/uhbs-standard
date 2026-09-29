@@ -1,0 +1,24 @@
+FROM ubuntu:latest
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV GOPROXY=https://proxy.golang.org,direct
+ENV GO111MODULE=on
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    git \
+    golang-go \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY . /app
+COPY pghoney.lab.conf /app/pghoney.conf
+
+RUN go mod init github.com/betheroot/pghoney \
+    && go get github.com/Sirupsen/logrus@v1.0.6 \
+    && go get github.com/fw42/go-hpfeeds@master \
+    && go get github.com/lib/pq \
+    && go build -o /usr/local/bin/pghoney .
+
+EXPOSE 5432
+CMD ["pghoney", "-config", "/app/pghoney.conf"]

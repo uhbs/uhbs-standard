@@ -1,0 +1,568 @@
+{
+  "uhbs_version": "5.0.1",
+  "specification_version": "5.0.1",
+  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+  "check_catalog_hash": "caab41c5bdb109aac29f89160df8266761269d2b298f8f11e935dd012608d54f",
+  "check_catalog": {
+    "id": "uhbs-default-v5",
+    "hash": "caab41c5bdb109aac29f89160df8266761269d2b298f8f11e935dd012608d54f"
+  },
+  "target": {
+    "name": "pyrdp-rdp",
+    "class": "Low-Interaction",
+    "protocols": [
+      "rdp"
+    ],
+    "profile_ref": "/work/docs/conformance/labs/pyrdp/low_interaction_rdp_quick.yaml",
+    "artifact_digest": null
+  },
+  "environment": {
+    "digest": null
+  },
+  "evaluated_at": "2026-09-26",
+  "harness": {
+    "name": "uhbs-lab",
+    "version": "5.0.1",
+    "plugin_versions": {},
+    "command_digest": null,
+    "config_digest": null,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ]
+  },
+  "modules": [
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 0.0,
+      "status": "FAILED",
+      "complete": false,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 0,
+        "scored_checks": 0,
+        "not_applicable": 0,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 0,
+      "scored_checks": 0,
+      "critical_control_verdict": null,
+      "checks": [],
+      "metrics": {},
+      "notes": [],
+      "error": "source_root not found: /pyrdp"
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 0.0,
+      "status": "FAILED",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 4,
+        "scored_checks": 4,
+        "not_applicable": 0,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 4,
+      "scored_checks": 4,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "rdp.fsm.truncated",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "[Errno -2] Name or service not known",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rdp.fsm.truncated",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rdp.nego.x224",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "[Errno -2] Name or service not known",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rdp.nego.x224",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rdp.timing.unreachable",
+          "team": "red",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no successful connects",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rdp.timing.unreachable",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rdp.module_a.composite",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "fsm=0 nego=0 timing=0",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rdp.module_a.composite",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "rdp": 0.0
+        },
+        "protocols": [
+          "rdp"
+        ],
+        "timing_samples": 50,
+        "available_plugins": [
+          "bacnet",
+          "bluetooth",
+          "coap",
+          "dhcp",
+          "dns",
+          "elasticsearch",
+          "ftp",
+          "generic",
+          "git",
+          "http",
+          "httpproxy",
+          "imap",
+          "ipp",
+          "irc",
+          "kubernetes",
+          "ldap",
+          "mcp",
+          "memcache",
+          "modbus",
+          "mongodb",
+          "mqtt",
+          "mssql",
+          "mysql",
+          "ntp",
+          "oracle",
+          "pjl",
+          "pop3",
+          "postgres",
+          "rdp",
+          "redis",
+          "s7comm",
+          "sip",
+          "smb",
+          "smtp",
+          "snmp",
+          "socks5",
+          "ssh",
+          "telnet",
+          "tftp",
+          "vnc"
+        ],
+        "coverage": 1.0,
+        "not_tested": 0
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['rdp']",
+        "class=Low-Interaction strict_rfc=True"
+      ],
+      "error": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 13.0,
+      "status": "PARTIAL",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 3,
+        "scored_checks": 2,
+        "not_applicable": 0,
+        "not_tested": 1,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 3,
+      "scored_checks": 2,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "rdp.state.nla_fail",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 20.0,
+          "detail": "r1= r2= e=[Errno -2] Name or service not known",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rdp.state.nla_fail",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rdp.payload.unsupported",
+          "team": "red",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no payload probe implemented",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "rdp.payload.unsupported",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rdp.fuzz.binary",
+          "team": "red",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 20.0,
+          "detail": "[Errno -2] Name or service not known",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rdp.fuzz.binary",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "rdp": 13.0
+        },
+        "class": "Low-Interaction",
+        "surface_depth": "unknown",
+        "coverage": 0.6667,
+        "not_tested": 1
+      },
+      "notes": [
+        "UHBS Module B class=Low-Interaction"
+      ],
+      "error": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "complete": false,
+      "completeness": {
+        "complete": false,
+        "applicable_checks": 2,
+        "scored_checks": 0,
+        "not_applicable": 0,
+        "not_tested": 2,
+        "errors": 0,
+        "blocker_ids": [
+          "c1.telemetry_dir",
+          "c4.ground_truth"
+        ]
+      },
+      "applicable_checks": 2,
+      "scored_checks": 0,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "c1.telemetry_dir",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "telemetry_dir missing \u2014 Module C incomplete until sink is provided",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C1",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c4.ground_truth",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no telemetry sink for ground-truth matching",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C4",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "collection_capability": {
+          "status": "INCOMPLETE",
+          "reason": "no_telemetry_dir"
+        },
+        "coverage": 0.0,
+        "not_tested": 2
+      },
+      "notes": [
+        "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4"
+      ],
+      "error": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "complete": false,
+      "completeness": {
+        "complete": false,
+        "applicable_checks": 4,
+        "scored_checks": 1,
+        "not_applicable": 0,
+        "not_tested": 3,
+        "errors": 0,
+        "blocker_ids": [
+          "d1.egress_gateway_log",
+          "d1.shell_egress_probes",
+          "d2.runtime_escape_surface"
+        ]
+      },
+      "applicable_checks": 4,
+      "scored_checks": 1,
+      "critical_control_verdict": "INCOMPLETE",
+      "checks": [
+        {
+          "id": "d1.airgap_attested",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 0.0,
+          "detail": "UHBS_AIRGAP_ATTESTED set (metadata only; zero scoring weight)",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D1.meta",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "UHBS_EGRESS_GATEWAY_LOG unset \u2014 gateway evidence not attached",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D1.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.shell_egress_probes",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no explicit SSH listener \u2014 shell egress/LPE critical probes not executed; provide UHBS_EGRESS_GATEWAY_LOG or SSH for a complete assessment",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D1.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.runtime_escape_surface",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "runtime escape surface not inspected without shell exec",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "breakout": false,
+        "allowed_outbound_traffic": false,
+        "shell_exec": false,
+        "protocols": [
+          "rdp"
+        ],
+        "defense_in_depth_score": 0.0
+      },
+      "notes": [
+        "Module D v5: non-SSH targets need gateway/packet evidence for critical egress and runtime inspection \u2014 attestation alone never clears the gate."
+      ],
+      "error": null
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 20.0,
+      "status": "PARTIAL",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 4,
+        "scored_checks": 4,
+        "not_applicable": 0,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 4,
+      "scored_checks": 4,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=150.0ms proto=rdp",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e1.p95_vs_tps",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 5.0,
+          "detail": "errors=15/15 rate=100.00%",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e1.error_rate",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 15.0,
+          "detail": "completed exhaustion/fuzz blast",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e2.exhaustion_input",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "connect failed",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e2.circuit_breaker_alive",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "p50_ms": 0.0,
+        "p95_ms": 0.0,
+        "p99_ms": 0.0,
+        "p95_limit_ms": 150.0,
+        "errors": 15,
+        "concurrency": 5,
+        "requests": 15,
+        "wall_s": 0.14,
+        "protocol": "rdp"
+      },
+      "notes": [],
+      "error": null
+    }
+  ],
+  "assurance_level": "REPRODUCIBLE_LAB",
+  "attestation_ref": null,
+  "manifest": {
+    "artifacts": [
+      {
+        "path": "REPORT.txt",
+        "sha256": "0cf270ee73752c6aeee945be3f7f89167bb6ca3f8a68bf5c3b073824d25e57b4"
+      },
+      {
+        "path": "SCORECARD.txt",
+        "sha256": "0cf270ee73752c6aeee945be3f7f89167bb6ca3f8a68bf5c3b073824d25e57b4"
+      },
+      {
+        "path": "report.json",
+        "sha256": "3300a03215c7c78062f52870b13e726d38ce8f3645e92ba5005a18502c043e0b"
+      },
+      {
+        "path": "uhbs-run.log",
+        "sha256": "3c44a51aaaee88eaf64e22da21a8616386bbbe610cf59a0988d5e1e9814a3cf7"
+      }
+    ],
+    "digest": "2a9fdd4147fd91d03987ff5f73632088f276ff248b098180bf68f450739c649a"
+  },
+  "uhqs": {
+    "uhqs": null,
+    "grade": null,
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  }
+}

@@ -327,7 +327,9 @@ def aep_report(
                 click.echo(text, nl=False)
                 return
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(text, encoding="utf-8")
+        # The destination is an explicit local CLI argument. These offline
+        # commands are not exposed through MCP or a remote service.
+        target.write_text(text, encoding="utf-8")  # NOSONAR
         echo_ok(f"OK  wrote {target}")
     except aep_mod.AepError as exc:
         raise click.ClickException(str(exc)) from exc

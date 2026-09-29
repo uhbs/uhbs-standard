@@ -1,0 +1,798 @@
+{
+  "uhbs_version": "5.0.1",
+  "specification_version": "5.0.1",
+  "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+  "check_catalog_hash": "55d3323029756cb2d39c32af626d97c22880c4b2dfab77a1515237a718c19605",
+  "check_catalog": {
+    "id": "uhbs-default-v5",
+    "hash": "55d3323029756cb2d39c32af626d97c22880c4b2dfab77a1515237a718c19605"
+  },
+  "target": {
+    "name": "qeeqbox-http",
+    "class": "Web-API",
+    "protocols": [
+      "http"
+    ],
+    "profile_ref": "/work/docs/conformance/labs/qeeqbox-honeypots/web_api_http_quick.yaml",
+    "artifact_digest": null
+  },
+  "environment": {
+    "digest": null
+  },
+  "evaluated_at": "2026-09-26",
+  "harness": {
+    "name": "uhbs-lab",
+    "version": "5.0.1",
+    "plugin_versions": {},
+    "command_digest": null,
+    "config_digest": null,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ]
+  },
+  "modules": [
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "complete": false,
+      "completeness": {
+        "complete": false,
+        "applicable_checks": 9,
+        "scored_checks": 8,
+        "not_applicable": 1,
+        "not_tested": 1,
+        "errors": 0,
+        "blocker_ids": [
+          "white.sast_tools"
+        ]
+      },
+      "applicable_checks": 9,
+      "scored_checks": 8,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "white.static_private_keys",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 10.0,
+          "detail": "0 static private keys",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.static_private_keys",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.hardcoded_ssh_banners",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 5.0,
+          "detail": "0 hardcoded SSH banners",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.hardcoded_ssh_banners",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.predictable_seeds",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 5.0,
+          "detail": "0 predictable PRNG seeds",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.predictable_seeds",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.hardcoded_macs",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 5.0,
+          "detail": "0 hardcoded MAC addresses",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.hardcoded_macs",
+          "evidence": [
+            "tests/test_dhcp_server.py"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "596922b67a2a318f09c8c8b2e4a2cef33d2fc49e36d27341561bfbf26870290d"
+          ]
+        },
+        {
+          "id": "white.prompt_corpus_present",
+          "team": "white",
+          "outcome": "NOT_APPLICABLE",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no prompt corpus (N/A for non-LLM)",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": "Non-LLM targets need not ship a prompt corpus",
+          "catalog_id": "white.prompt_corpus_present",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.prompt_boundaries",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 10.0,
+          "detail": "no weak delimiter/extract patterns",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.prompt_boundaries",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.fallback_strings",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 10.0,
+          "detail": "no plain-text LLM fallback artifacts",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.fallback_strings",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.sast_tools",
+          "team": "white",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "SAST tools skipped by flag \u2014 zero credit",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.sast_tools",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.vfs_posix_coverage",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 10.34,
+          "detail": "POSIX coverage 41% (43/104)",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.vfs_posix_coverage",
+          "evidence": [
+            "apt",
+            "apt-get",
+            "base64",
+            "bash",
+            "cat",
+            "cd",
+            "clear",
+            "date",
+            "docker",
+            "echo",
+            "env",
+            "file",
+            "find",
+            "free",
+            "git",
+            "grep",
+            "gzip",
+            "head",
+            "history",
+            "id",
+            "ip",
+            "iptables",
+            "kill",
+            "ls",
+            "mkdir",
+            "more",
+            "openssl",
+            "passwd",
+            "ping",
+            "pip",
+            "pwd",
+            "python",
+            "python3",
+            "service",
+            "sh",
+            "sleep",
+            "ssh",
+            "stat",
+            "sudo",
+            "type"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "5009a047a11fbd680bb40d2f23cd3fcd626ac2d672c38e16f53bd622c3961534",
+            "09e9edc84caef34aeb47654425a52e55b00fcafd54710079336375ded3907266",
+            "371a286d5872a3730d644327581546ec3e658bbf1a3c7f7f0de2bc19905d4402",
+            "37d2b12d5d9abc2a364ef9448767ee03938e383c0284193477dc7618f4b7c6c2",
+            "77af778b51abd4a3c51c5ddd97204a9c3ae614ebccb75a606c3b6865aed6744e",
+            "21e721c35a5823fdb452fa2f9f0a612c74fb952e06927489c6b27a43b817bed4",
+            "913a4cb91be20332f3559f8070255d7ac3e6228bb423f4441551d3f783e7d4f4",
+            "0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681",
+            "d548c5b83fa61d8e3bd86ad42a7ffea9b7c86e3f9d8095c1577d3e1270bb9420",
+            "092c79e8f80e559e404bcf660c48f3522b67aba9ff1484b0367e1a4ddef7431d",
+            "b77349bf1fa9b26d45d545d7d64dad96737e9cfbb3cbb5f5d10fb77b0fcc44ad",
+            "3b9c358f36f0a31b6ad3e14f309c7cf198ac9246e8316f9ce543d5b19ac02b80",
+            "e6640de835ad09fb0a7367ee2e0ba99d0142c139db0272146e35538bd07479fc",
+            "ad95d5fa651ba86d8923fe1238d24a4f1988a752acfe426ac72ac7c04471bc17",
+            "9a881b9b9f23849475296a8cd768ea1965bc3152df7118e60c145975af6aa58a",
+            "faefbbbf05cb9cfb18112dde743b3eb327b5b26426f4206583a2fb4cb9cc344d",
+            "c8d77bf4d8b1a10dd67a283d0c82bd96c9d5609860f84d7fc77692a36ab9b4c2",
+            "9f2e6d33a3717ee826353a404ba4618d1aeeb6879ad7936bce8ed5f46814924d",
+            "259aa8ef98a8b91de574cd904138ef643240c23080cf24da4793a6f10a43fa9d",
+            "a56145270ce6b3bebd1dd012b73948677dd618d496488bc608a3cb43ce3547dd",
+            "bb9af5d1915da1fbc132ced081325efcd2e63e4804f96890f42e9739677237a4",
+            "0f75ba9658721aa3a185e6ac18b63b7fa3b709a5ec264be07d1f35408e003a8a",
+            "2bda9b4dfbabfdb17cd74d827768da5198ae2b8155002a494524bbeaf6f5cdba",
+            "c7b68ac37f364473e922936708e7f43c293dd07b295171566c07ff5fe024fab9",
+            "95c5007a9af81a5e61624caacc506bb513a476dd6c31d653468154137078246c",
+            "187897ce0afcf20b50ba2b37dca84a951b7046f29ed5ab94f010619f69d6e189",
+            "41ffca929b95c49690ab8815d1d1a134a5bcdd86bde407c0f46b90eabf556b05",
+            "0d6be69b264717f2dd33652e212b173104b4a647b7c11ae72e9885f11cd312fb",
+            "758d61f26a44448384e5c4468a0dcb7a2abe456067b0f7b505bc28b9411fe931",
+            "fed5038bf2f427ab2ec84f85881f103c0e946e8d6252b8731f99ab0cb57729d9",
+            "a1159e9df3670d549d04524532629f5477ceb7deec9b45e47e8c009506ecb2c8",
+            "11a4a60b518bf24989d481468076e5d5982884626aed9faeb35b8576fcd223e1",
+            "c1cc69e61c0f1c7ade8df0f2994e582e7c1f2c57d1ec192a0baf9f96b7739d9d",
+            "9df6b026a8c6c26e3c3acd2370a16e93fffdc0015ff5bd879218788025db0280",
+            "89c4ec9f6b3f1086b158d8ef03dfe8155e6f79d9e66434b8f9b3432fe8720e50",
+            "0afa5bb5d5f1787945e555e91474675beb6f34dd9a490423c4d0460e4d454885",
+            "7f5a55cf3f88be936fb9440249cb449f3067ccee4b525d0027dc9278a29c32c1",
+            "40460da8c882cdc791836fba76009870f960a151287798f1df8af5e963398f84",
+            "24e5e1c2bbef565360c392851175f46821fc21d6725503a600353625b4c9209c",
+            "1303c06b0b014d0ce7b988ab173a13f31227d417058ff4bbe6f8c222b4ad913c"
+          ]
+        },
+        {
+          "id": "white.blocking_calls",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 5.0,
+          "detail": "sleep/blocking markers in non-test code\u22480",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.blocking_calls",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "source_root": "/honeypot",
+        "coverage": 0.8889,
+        "not_tested": 1
+      },
+      "notes": [
+        "Module F white-box audit (keys/prompts/SAST/VFS)"
+      ],
+      "error": null
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 0.0,
+      "status": "FAILED",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 3,
+        "scored_checks": 3,
+        "not_applicable": 0,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 3,
+      "scored_checks": 3,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "http.fsm.skipped",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "http port 19080 closed",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "http.fsm.skipped",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "http.timing.unreachable",
+          "team": "red",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no successful connects",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "http.timing.unreachable",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "http.module_a.composite",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "fsm=0 nego=0 timing=0",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "http.module_a.composite",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "http": 0.0
+        },
+        "protocols": [
+          "http"
+        ],
+        "timing_samples": 50,
+        "available_plugins": [
+          "bacnet",
+          "bluetooth",
+          "coap",
+          "dhcp",
+          "dns",
+          "elasticsearch",
+          "ftp",
+          "generic",
+          "git",
+          "http",
+          "httpproxy",
+          "imap",
+          "ipp",
+          "irc",
+          "kubernetes",
+          "ldap",
+          "mcp",
+          "memcache",
+          "modbus",
+          "mongodb",
+          "mqtt",
+          "mssql",
+          "mysql",
+          "ntp",
+          "oracle",
+          "pjl",
+          "pop3",
+          "postgres",
+          "rdp",
+          "redis",
+          "s7comm",
+          "sip",
+          "smb",
+          "smtp",
+          "snmp",
+          "socks5",
+          "ssh",
+          "telnet",
+          "tftp",
+          "vnc"
+        ],
+        "coverage": 1.0,
+        "not_tested": 0
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['http']",
+        "class=Web-API strict_rfc=True"
+      ],
+      "error": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 13.0,
+      "status": "PARTIAL",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 3,
+        "scored_checks": 2,
+        "not_applicable": 0,
+        "not_tested": 1,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 3,
+      "scored_checks": 2,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "http.state.consistent_get",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 20.0,
+          "detail": "inconsistent/no HTTP",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "http.state.consistent_get",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "http.payload.unsupported",
+          "team": "red",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no payload probe implemented",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "http.payload.unsupported",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "http.fuzz.binary",
+          "team": "red",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 20.0,
+          "detail": "[Errno 111] Connection refused",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "http.fuzz.binary",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "http": 13.0
+        },
+        "class": "Web-API",
+        "surface_depth": "unknown",
+        "coverage": 0.6667,
+        "not_tested": 1
+      },
+      "notes": [
+        "UHBS Module B class=Web-API"
+      ],
+      "error": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "complete": false,
+      "completeness": {
+        "complete": false,
+        "applicable_checks": 2,
+        "scored_checks": 0,
+        "not_applicable": 0,
+        "not_tested": 2,
+        "errors": 0,
+        "blocker_ids": [
+          "c1.telemetry_dir",
+          "c4.ground_truth"
+        ]
+      },
+      "applicable_checks": 2,
+      "scored_checks": 0,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "c1.telemetry_dir",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "telemetry_dir missing \u2014 Module C incomplete until sink is provided",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C1",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c4.ground_truth",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no telemetry sink for ground-truth matching",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C4",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "collection_capability": {
+          "status": "INCOMPLETE",
+          "reason": "no_telemetry_dir"
+        },
+        "coverage": 0.0,
+        "not_tested": 2
+      },
+      "notes": [
+        "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4"
+      ],
+      "error": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "complete": false,
+      "completeness": {
+        "complete": false,
+        "applicable_checks": 4,
+        "scored_checks": 1,
+        "not_applicable": 0,
+        "not_tested": 3,
+        "errors": 0,
+        "blocker_ids": [
+          "d1.egress_gateway_log",
+          "d1.shell_egress_probes",
+          "d2.runtime_escape_surface"
+        ]
+      },
+      "applicable_checks": 4,
+      "scored_checks": 1,
+      "critical_control_verdict": "INCOMPLETE",
+      "checks": [
+        {
+          "id": "d1.airgap_attested",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 0.0,
+          "detail": "UHBS_AIRGAP_ATTESTED set (metadata only; zero scoring weight)",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D1.meta",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "UHBS_EGRESS_GATEWAY_LOG unset \u2014 gateway evidence not attached",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D1.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.shell_egress_probes",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no explicit SSH listener \u2014 shell egress/LPE critical probes not executed; provide UHBS_EGRESS_GATEWAY_LOG or SSH for a complete assessment",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D1.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.runtime_escape_surface",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "runtime escape surface not inspected without shell exec",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "breakout": false,
+        "allowed_outbound_traffic": false,
+        "shell_exec": false,
+        "protocols": [
+          "http"
+        ],
+        "defense_in_depth_score": 0.0
+      },
+      "notes": [
+        "Module D v5: non-SSH targets need gateway/packet evidence for critical egress and runtime inspection \u2014 attestation alone never clears the gate."
+      ],
+      "error": null
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 20.0,
+      "status": "PARTIAL",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 4,
+        "scored_checks": 4,
+        "not_applicable": 0,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 4,
+      "scored_checks": 4,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=http",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e1.p95_vs_tps",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 5.0,
+          "detail": "errors=15/15 rate=100.00%",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e1.error_rate",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 15.0,
+          "detail": "completed exhaustion/fuzz blast",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e2.exhaustion_input",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "connect failed",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e2.circuit_breaker_alive",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "p50_ms": 0.0,
+        "p95_ms": 0.0,
+        "p99_ms": 0.0,
+        "p95_limit_ms": 3000.0,
+        "errors": 15,
+        "concurrency": 5,
+        "requests": 15,
+        "wall_s": 0.03,
+        "protocol": "http"
+      },
+      "notes": [],
+      "error": null
+    }
+  ],
+  "assurance_level": "REPRODUCIBLE_LAB",
+  "attestation_ref": null,
+  "manifest": {
+    "artifacts": [
+      {
+        "path": "REPORT.txt",
+        "sha256": "eb59b7927c17fb20230f092befcafede2f8a9a2f435ddf016b07da6ee572f2d3"
+      },
+      {
+        "path": "SCORECARD.txt",
+        "sha256": "eb59b7927c17fb20230f092befcafede2f8a9a2f435ddf016b07da6ee572f2d3"
+      },
+      {
+        "path": "report.json",
+        "sha256": "d330149b48001a087204fccbf401a88480888530f519fc4a193dd0ae71d21499"
+      },
+      {
+        "path": "uhbs-run.log",
+        "sha256": "72ed34c9468e766b111491bf6124ba003e92ec71752ec4e1d1d3cae8f145617b"
+      }
+    ],
+    "digest": "7e0821bac56e15071142adb4264fd622124bfef866daff731ede6a14a51f4cf3"
+  },
+  "uhqs": {
+    "uhqs": null,
+    "grade": null,
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  }
+}

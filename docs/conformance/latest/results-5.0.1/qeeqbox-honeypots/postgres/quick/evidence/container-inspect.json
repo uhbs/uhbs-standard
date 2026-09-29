@@ -1,0 +1,214 @@
+[
+    {
+        "Id": "fa640c2db6bc3c23409e7ecc0322e5fdfbd3c2d7631492b53f69094281758ee5",
+        "Created": "2026-09-27T20:45:45.739278425Z",
+        "Path": "syslog-ng",
+        "Args": [
+            "-F"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 44293,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:45:45.792648842Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:92ffc59399766a172f37a7ca57f88c9e9dba10081bebc5245d2ab3d9558afcb4",
+        "ResolvConfPath": "/var/lib/docker/containers/fa640c2db6bc3c23409e7ecc0322e5fdfbd3c2d7631492b53f69094281758ee5/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/fa640c2db6bc3c23409e7ecc0322e5fdfbd3c2d7631492b53f69094281758ee5/hostname",
+        "HostsPath": "/var/lib/docker/containers/fa640c2db6bc3c23409e7ecc0322e5fdfbd3c2d7631492b53f69094281758ee5/hosts",
+        "LogPath": "/var/lib/docker/containers/fa640c2db6bc3c23409e7ecc0322e5fdfbd3c2d7631492b53f69094281758ee5/fa640c2db6bc3c23409e7ecc0322e5fdfbd3c2d7631492b53f69094281758ee5-json.log",
+        "Name": "/uhbs-target-qeeqbox-honeypots-postgres",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/qeeqbox-honeypots-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "fa640c2db6bc3c23409e7ecc0322e5fdfbd3c2d7631492b53f69094281758ee5",
+                "LowerDir": "/var/lib/docker/overlay2/7589ac88ebc7cdc919f6ca67f77207e47b76245755369245c66a5f81d6dbb1a7-init/diff:/var/lib/docker/overlay2/p8861zy88ga87dnhivcoxanc4/diff:/var/lib/docker/overlay2/9rfbodf8qoafzzb656x82qwtr/diff:/var/lib/docker/overlay2/mkc5hbzqyva1aq038j56blhpu/diff:/var/lib/docker/overlay2/718ad4c16f134b1d8e22599361412775223917190b4b365f03ad122cb688dfa8/diff",
+                "MergedDir": "/var/lib/docker/overlay2/7589ac88ebc7cdc919f6ca67f77207e47b76245755369245c66a5f81d6dbb1a7/merged",
+                "UpperDir": "/var/lib/docker/overlay2/7589ac88ebc7cdc919f6ca67f77207e47b76245755369245c66a5f81d6dbb1a7/diff",
+                "WorkDir": "/var/lib/docker/overlay2/7589ac88ebc7cdc919f6ca67f77207e47b76245755369245c66a5f81d6dbb1a7/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/qeeqbox-honeypots-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "fa640c2db6bc",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "514/udp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive"
+            ],
+            "Cmd": null,
+            "Image": "qeeqbox-honeypots:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/var/log/syslog-ng/",
+            "Entrypoint": [
+                "syslog-ng",
+                "-F"
+            ],
+            "Labels": {
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "20.04",
+                "uhbs.unit": "qeeqbox-honeypots-postgres"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "b5f34b7404c9be82be3a8d0c0ed44de9f27c732fe7c01209276da3f285be7fcd",
+            "SandboxKey": "/var/run/docker/netns/b5f34b7404c9",
+            "Ports": {
+                "514/udp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "qeeqbox-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "aa47cd07e927c34ecfea799cd7a6d9ea4364fb773b41919affb8627f580f3756",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "ba:a3:7e:84:cf:e3",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-qeeqbox-honeypots-postgres",
+                        "qeeqbox-lab",
+                        "fa640c2db6bc"
+                    ]
+                }
+            }
+        }
+    }
+]

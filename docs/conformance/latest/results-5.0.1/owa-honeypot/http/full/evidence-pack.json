@@ -1,0 +1,1226 @@
+{
+  "uhbs_version": "5.0.1",
+  "specification_version": "5.0.1",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "check_catalog_hash": "b0ee150124759394ecc9fa14039546e71f8ee1e71cbaeb884479985eef560477",
+  "check_catalog": {
+    "id": "uhbs-default-v5",
+    "hash": "b0ee150124759394ecc9fa14039546e71f8ee1e71cbaeb884479985eef560477"
+  },
+  "target": {
+    "name": "owa-honeypot-http",
+    "class": "Web-API",
+    "protocols": [
+      "http"
+    ],
+    "profile_ref": "/work/docs/conformance/labs/owa-honeypot/web_api_http_full.yaml",
+    "artifact_digest": null
+  },
+  "environment": {
+    "digest": null
+  },
+  "evaluated_at": "2026-09-28",
+  "harness": {
+    "name": "uhbs-lab",
+    "version": "5.0.1",
+    "plugin_versions": {},
+    "command_digest": null,
+    "config_digest": null,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ]
+  },
+  "modules": [
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 69.37,
+      "status": "PARTIAL",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 12,
+        "scored_checks": 11,
+        "not_applicable": 1,
+        "not_tested": 1,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 12,
+      "scored_checks": 11,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "white.static_private_keys",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 10.0,
+          "detail": "0 static private keys",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.static_private_keys",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.hardcoded_ssh_banners",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 5.0,
+          "detail": "0 hardcoded SSH banners",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.hardcoded_ssh_banners",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.predictable_seeds",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 5.0,
+          "detail": "0 predictable PRNG seeds",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.predictable_seeds",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.hardcoded_macs",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 5.0,
+          "detail": "0 hardcoded MAC addresses",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.hardcoded_macs",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.prompt_corpus_present",
+          "team": "white",
+          "outcome": "NOT_APPLICABLE",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no prompt corpus (N/A for non-LLM)",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": "Non-LLM targets need not ship a prompt corpus",
+          "catalog_id": "white.prompt_corpus_present",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.prompt_boundaries",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 10.0,
+          "detail": "no weak delimiter/extract patterns",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.prompt_boundaries",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.fallback_strings",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 10.0,
+          "detail": "no plain-text LLM fallback artifacts",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.fallback_strings",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.bandit",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 8.0,
+          "detail": "bandit HIGH=0",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.bandit",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.semgrep",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 8.0,
+          "detail": "semgrep error/critical=0 total=2",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.semgrep",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.trivy",
+          "team": "white",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "trivy not installed \u2014 not tested (zero credit)",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "F.sast",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.sast_gate",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 0.0,
+          "detail": "0 high/critical static findings",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.sast_gate",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.vfs_posix_coverage",
+          "team": "white",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 3.37,
+          "detail": "POSIX coverage 13% (14/104)",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.vfs_posix_coverage",
+          "evidence": [
+            "cd",
+            "date",
+            "env",
+            "file",
+            "find",
+            "free",
+            "git",
+            "ip",
+            "more",
+            "pip",
+            "python",
+            "python3",
+            "service",
+            "which"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "21e721c35a5823fdb452fa2f9f0a612c74fb952e06927489c6b27a43b817bed4",
+            "0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681",
+            "b77349bf1fa9b26d45d545d7d64dad96737e9cfbb3cbb5f5d10fb77b0fcc44ad",
+            "3b9c358f36f0a31b6ad3e14f309c7cf198ac9246e8316f9ce543d5b19ac02b80",
+            "e6640de835ad09fb0a7367ee2e0ba99d0142c139db0272146e35538bd07479fc",
+            "ad95d5fa651ba86d8923fe1238d24a4f1988a752acfe426ac72ac7c04471bc17",
+            "9a881b9b9f23849475296a8cd768ea1965bc3152df7118e60c145975af6aa58a",
+            "bb9af5d1915da1fbc132ced081325efcd2e63e4804f96890f42e9739677237a4",
+            "187897ce0afcf20b50ba2b37dca84a951b7046f29ed5ab94f010619f69d6e189",
+            "fed5038bf2f427ab2ec84f85881f103c0e946e8d6252b8731f99ab0cb57729d9",
+            "11a4a60b518bf24989d481468076e5d5982884626aed9faeb35b8576fcd223e1",
+            "c1cc69e61c0f1c7ade8df0f2994e582e7c1f2c57d1ec192a0baf9f96b7739d9d",
+            "9df6b026a8c6c26e3c3acd2370a16e93fffdc0015ff5bd879218788025db0280",
+            "77bc06c55d29ee3cfa295b4592e4b2a85a16bb06a8974726b7bfa3d4ca36d5ae"
+          ]
+        },
+        {
+          "id": "white.blocking_calls",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 5.0,
+          "detail": "sleep/blocking markers in non-test code\u22480",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.blocking_calls",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "source_root": "/honeypot",
+        "coverage": 0.9167,
+        "not_tested": 1
+      },
+      "notes": [
+        "Module F white-box audit (keys/prompts/SAST/VFS)"
+      ],
+      "error": null
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 60.45,
+      "status": "PARTIAL",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 13,
+        "scored_checks": 13,
+        "not_applicable": 0,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 13,
+      "scored_checks": 13,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "rfc9110.reject_body_before_headers",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "connection closed",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc9110.reject_body_before_headers",
+          "evidence": [
+            "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\"\n        \"http://www.w3.org/TR/html4/strict.dtd\">\n<html>\n    <head>\n        <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n        "
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "834268424920023f5435786e194faffb728ed1d46d9f7b15a5f7498fe4159e75"
+          ]
+        },
+        {
+          "id": "rfc9112.bare_lf_framing",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "HTTP 302",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc9112.bare_lf_framing",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc9110.invalid_header_syntax",
+          "team": "red",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "status=302",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc9110.invalid_header_syntax",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc9110.unknown_http_version",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "closed",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc9110.unknown_http_version",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc9112.missing_host_header",
+          "team": "red",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 20.0,
+          "detail": "status=302",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc9112.missing_host_header",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc9110.unknown_method",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "status=405",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc9110.unknown_method",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc9110.valid_get_status",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "HTTP 302",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc9110.valid_get_status",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc9110.head_status_line",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "HEAD \u2192 HTTP 302",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc9110.head_status_line",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc9110.options_asterisk",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "status=404",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc9110.options_asterisk",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc9112.absolute_form_request_target",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "status=302",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc9112.absolute_form_request_target",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "http.timing.sample_size",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "n=1000 requested=1000 errors=0",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "http.timing.sample_size",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "http.timing.iat_jitter",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "median=0.136ms pstdev=0.060ms (target jitter often <2ms vs native)",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "http.timing.iat_jitter",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "http.module_a.composite",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 60.449,
+          "detail": "fsm=1 nego=100 timing=100",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "http.module_a.composite",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "http": 60.45
+        },
+        "protocols": [
+          "http"
+        ],
+        "timing_samples": 1000,
+        "available_plugins": [
+          "bacnet",
+          "bluetooth",
+          "coap",
+          "dhcp",
+          "dns",
+          "elasticsearch",
+          "ftp",
+          "generic",
+          "git",
+          "http",
+          "httpproxy",
+          "imap",
+          "ipp",
+          "irc",
+          "kubernetes",
+          "ldap",
+          "mcp",
+          "memcache",
+          "modbus",
+          "mongodb",
+          "mqtt",
+          "mssql",
+          "mysql",
+          "ntp",
+          "oracle",
+          "pjl",
+          "pop3",
+          "postgres",
+          "pptp",
+          "rdp",
+          "redis",
+          "s7comm",
+          "sip",
+          "smb",
+          "smtp",
+          "snmp",
+          "socks5",
+          "ssh",
+          "telnet",
+          "tftp",
+          "upnp",
+          "vnc"
+        ],
+        "coverage": 1.0,
+        "not_tested": 0
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['http']",
+        "class=Web-API strict_rfc=True"
+      ],
+      "error": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 65.0,
+      "status": "PARTIAL",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 3,
+        "scored_checks": 2,
+        "not_applicable": 0,
+        "not_tested": 1,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 3,
+      "scored_checks": 2,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "http.state.consistent_get",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "consistent HTTP responses",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "http.state.consistent_get",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "http.payload.unsupported",
+          "team": "red",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no payload probe implemented",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "http.payload.unsupported",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "http.fuzz.binary",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "survived binary blast",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "http.fuzz.binary",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "http": 65.0
+        },
+        "class": "Web-API",
+        "surface_depth": "unknown",
+        "coverage": 0.6667,
+        "not_tested": 1
+      },
+      "notes": [
+        "UHBS Module B class=Web-API"
+      ],
+      "error": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 0.0,
+      "status": "FAILED",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 6,
+        "scored_checks": 6,
+        "not_applicable": 2,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 6,
+      "scored_checks": 6,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "c1.json_parse_clean",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "0 malformed / 0 records",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C1",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c1.format.native_json",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "declared native_json but no matching records",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C1",
+          "evidence": [
+            "schema=uhbs:format/native_json",
+            "validator=uhbs-telemetry-c1-1.0"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "e82310b98edc7c7720e4a8b70993bec2f79f74094506e54f73d04def03aa6eb9",
+            "4b8a6d9cf000f8ed91cdf9892a2b13679736fe21c44c557322e851d804d14c34"
+          ]
+        },
+        {
+          "id": "c1.stix_not_required",
+          "team": "blue",
+          "outcome": "NOT_APPLICABLE",
+          "passed": false,
+          "score": 0.0,
+          "detail": "STIX not declared \u2014 format credit not claimed for non-STIX logs",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": "STIX 2.1 not in declared native_event_format",
+          "catalog_id": "C1",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c2.sink_injection_resilience",
+          "team": "red",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "http_inject markers=[] malformed=0",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C2",
+          "evidence": [
+            "{\"markers_found\": [], \"markers_expected\": [\"ansi\", \"json_break\", \"null_byte\", \"cr_inject\", \"formula\", \"unicode\"], \"malformed_records\": 0, \"json_parse_ok\": true, \"run_id\": \"uhbs-gt-ca7833941036\", \"ok\": false}"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "32d04a16c4e5ba572fadb5d1087546871905beda7befbd6ca4621a92d15eccee"
+          ]
+        },
+        {
+          "id": "c3.observable_coverage",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "0/3 observables present missing=['event_time', 'source_endpoint', 'protocol_action']",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C3",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c4.ground_truth_recall",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "matched=0/6 dups=0",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C4",
+          "evidence": [
+            "{\"run_id\": \"uhbs-gt-ca7833941036\", \"created_at\": \"2026-09-28T13:06:21.689215+00:00\", \"observation_window_s\": 30.0, \"events\": [{\"tag\": \"uhbs-gt-ca7833941036:session:0\", \"kind\": \"session\", \"emitted_at\": \"2026-09-28T13:06:21.689215+00:00\", \"payload\": {\"marker\": \"uhbs-gt-ca7833941036:session:0\", \"seq\": 0}}, {\"tag\": \"uhbs-gt-ca7833941036:credential:1\", \"kind\": \"credential\", \"emitted_at\": \"2026-09-28..."
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "390b60a3204080b554340a15d027a9e69ffae40802aaa295fb8951a7042da97e"
+          ]
+        },
+        {
+          "id": "c4.field_accuracy",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "field_accuracy=0.0",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "C4",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c5.attack_mapping",
+          "team": "blue",
+          "outcome": "NOT_APPLICABLE",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no ATT&CK technique IDs claimed in telemetry",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": "CTI mapping only evaluated when technique IDs are present",
+          "catalog_id": "C5",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "ground_truth": {
+          "recall": 0.0,
+          "field_accuracy": 0.0,
+          "duplicate_rate": 0.0,
+          "matched": 0,
+          "expected": 6
+        },
+        "collection_capability": {
+          "recall": 0.0,
+          "observable_coverage": 0.0,
+          "duplicate_rate": 0.0,
+          "declared_formats": [
+            "native_json"
+          ],
+          "status": "COMPLETE"
+        },
+        "coverage": 1.0
+      },
+      "notes": [
+        "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4",
+        "no native_event_format declared \u2014 validating as native_json only"
+      ],
+      "error": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 75.0,
+      "status": "GATE FAILED",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 13,
+        "scored_checks": 13,
+        "not_applicable": 0,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 13,
+      "scored_checks": 13,
+      "critical_control_verdict": "GATE_FAILED",
+      "checks": [
+        {
+          "id": "d1.airgap_attested",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 0.0,
+          "detail": "UHBS_AIRGAP_ATTESTED set (metadata only; zero scoring weight)",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D1.meta",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "0 gateway canary hits",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D1.critical",
+          "evidence": [
+            "mtime=1790541703853273175 size=165",
+            "sha256=bb2d40368170014e9b4bb5af643bf36156d318c27d7d87420fec662e3418887b"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "d9d66f517b938ef9962d3148eafb409a3735aee584a512f2b8231b426c2f0637",
+            "0df2ec9c44ed810bb084b2f4b91200a41e4381c5a282daacbfbeedc9e752880b"
+          ]
+        },
+        {
+          "id": "d2.container_privileged",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "not privileged",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.network_mode",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "NetworkMode=uhbs-lab",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.pid_mode",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "PidMode=default",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.ipc_mode",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "IpcMode=private",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.capability_whitelist",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "CapAdd empty (whitelist default)",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.non_root_userns",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "User=(empty\u2192root) UsernsMode=(empty)",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.security_profiles",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "SecurityOpt=['(default)']",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.sensitive_binds",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "no sensitive host binds",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.device_exposure",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "no raw host devices",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.resource_limits",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "Memory=0 NanoCpus=0 PidsLimit=0",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D2.did",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.readonly_rootfs",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "ReadonlyRootfs=False (DiD)",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D2.did",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "breakout": true,
+        "allowed_outbound_traffic": false,
+        "shell_exec": false,
+        "defense_in_depth_score": 75.0,
+        "scoring": "penalty-mean-oob-critical",
+        "oob_critical": true
+      },
+      "notes": [
+        "UHBS v5.0.1: Safety Gate from host OOB gateway + container inspect; SSH/in-guest probes are DiD only; diagnostic score always numeric"
+      ],
+      "error": null
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 100.0,
+      "status": "PASSED",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 4,
+        "scored_checks": 4,
+        "not_applicable": 0,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 4,
+      "scored_checks": 4,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 45.0,
+          "detail": "P50=2.7ms P95=7.1ms P99=8.6ms TPS_limit=3000.0ms proto=http",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e1.p95_vs_tps",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 20.0,
+          "detail": "errors=0/200 rate=0.00%",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e1.error_rate",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 15.0,
+          "detail": "completed exhaustion/fuzz blast",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e2.exhaustion_input",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 20.0,
+          "detail": "service alive after load (connect 0.4ms)",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e2.circuit_breaker_alive",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "p50_ms": 2.67,
+        "p95_ms": 7.07,
+        "p99_ms": 8.62,
+        "p95_limit_ms": 3000.0,
+        "errors": 0,
+        "concurrency": 25,
+        "requests": 200,
+        "wall_s": 0.05,
+        "protocol": "http"
+      },
+      "notes": [],
+      "error": null
+    }
+  ],
+  "assurance_level": "REPRODUCIBLE_LAB",
+  "attestation_ref": null,
+  "manifest": {
+    "artifacts": [
+      {
+        "path": "README.md",
+        "sha256": "e08936a83857eedced693fda985035f8b7d5d9cd55584bb82443969098c6b6e5"
+      },
+      {
+        "path": "REPORT.txt",
+        "sha256": "a5b57c5abfd3e11880d00208bf14616427971e164bee2361365e191c0b2d2870"
+      },
+      {
+        "path": "SCORECARD.txt",
+        "sha256": "a5b57c5abfd3e11880d00208bf14616427971e164bee2361365e191c0b2d2870"
+      },
+      {
+        "path": "evidence/container-inspect.json",
+        "sha256": "36391e540b3fc41148a622e897621a7e98d82f151619ab4c3d12f974f7cd88e3"
+      },
+      {
+        "path": "evidence/container-inspect.json.sha256",
+        "sha256": "296b63229be47d81bea2a0b2b8b9b4576ebfc6c141b2aa2e98ec9c49ffa87e44"
+      },
+      {
+        "path": "evidence/egress-gateway.log",
+        "sha256": "bb2d40368170014e9b4bb5af643bf36156d318c27d7d87420fec662e3418887b"
+      },
+      {
+        "path": "evidence/egress-gateway.log.sha256",
+        "sha256": "e53f4e557afb5cd3a4d1e7ca4c7a4a84916fc7fe0336a1c20700392b3780a519"
+      },
+      {
+        "path": "proof/full-run.cast",
+        "sha256": "23a250c0633f5c76826f1685d54666868f1f4822a1ca84d156ca6ef5b89cb5e2"
+      },
+      {
+        "path": "report.json",
+        "sha256": "f9e00eb20718fd0f80e646dec1c22023c5844cb40f088b8b879f4c56ee68abce"
+      },
+      {
+        "path": "run-meta.json",
+        "sha256": "8d9e41dde7497278d28a91b5818734068e494c5b198fb2cb3a674c881f623048"
+      },
+      {
+        "path": "static/bandit-report.json",
+        "sha256": "476994ab06bd7435f0789ca441f02b904375ffd9909c083d74e55ddb3a8b540e"
+      },
+      {
+        "path": "static/semgrep-report.json",
+        "sha256": "f06a8846683721a0b27313c1fbb1986739552b187bd055dfbc22558347a4620d"
+      },
+      {
+        "path": "uhbs-run.log",
+        "sha256": "b97064060c6ae34d4c5efb6aa221458d330f1cda08f16f3d0f231450efe7e600"
+      }
+    ],
+    "digest": "d4a80525e134abd0d1fabb197727f4de1ddd7c4de95d645d989fc0f85416bdab"
+  },
+  "uhqs": {
+    "uhqs": 28.49,
+    "grade": "GRADE F (Fail)",
+    "assessment_status": "COMPLETE",
+    "critical_control_verdict": "GATE_FAILED",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm"
+  }
+}

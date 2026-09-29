@@ -1,0 +1,56 @@
+{
+  "catalog_id": "uhbs-observables-v5.0",
+  "profiles": {
+    "POSIX-Shell": [
+      "event_time_tz",
+      "observer_time",
+      "src_endpoint",
+      "dst_endpoint",
+      "protocol_action",
+      "auth_result",
+      "credentials_attempted",
+      "command_content",
+      "session_id"
+    ],
+    "Low-Interaction": [
+      "event_time_tz",
+      "observer_time",
+      "src_endpoint",
+      "protocol_action",
+      "session_id"
+    ],
+    "Web-API": [
+      "event_time_tz",
+      "observer_time",
+      "src_endpoint",
+      "dst_endpoint",
+      "protocol_action",
+      "session_id",
+      "request_content"
+    ],
+    "Database": [
+      "event_time_tz",
+      "observer_time",
+      "src_endpoint",
+      "protocol_action",
+      "auth_result",
+      "session_id"
+    ],
+    "ICS-SCADA": [
+      "event_time_tz",
+      "observer_time",
+      "src_endpoint",
+      "dst_endpoint",
+      "protocol_action",
+      "session_id"
+    ],
+    "GenAI-Shell": [
+      "event_time_tz",
+      "observer_time",
+      "src_endpoint",
+      "protocol_action",
+      "command_content",
+      "session_id"
+    ]
+  }
+}

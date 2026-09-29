@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.0.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "a605704b7ee74f329fd0e9ba6a48c4f01d65e0db4730471f3229878037c69849"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "a605704b7ee74f329fd0e9ba6a48c4f01d65e0db4730471f3229878037c69849"
+    },
+    {
+      "path": "report.json",
+      "sha256": "786915f7a60621307604e2d6418967b1569db7c96dcc43749b5fc4f655ed0561"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "a605704b7ee74f329fd0e9ba6a48c4f01d65e0db4730471f3229878037c69849"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "511c959f631235f9bba8ac4e88a426293c53adb7a89439b561d6a1fdfe91d1bc"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "d5e9568e3a71dd00a592009ac3215210580833c0862d8bcc950fb3e9549b0738"
+    }
+  ],
+  "extra": {
+    "target": "dionaea-http",
+    "uhqs": 51.14,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

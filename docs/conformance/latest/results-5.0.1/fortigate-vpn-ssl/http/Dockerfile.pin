@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `fortigate-vpn-ssl-http`
+# Image name at grade time: fortigate-vpn-ssl:uhbs-lab
+FROM sha256:0a25874dec879b23806f5444d153100d7658c3f6de93cdfc60824cc33a611f92

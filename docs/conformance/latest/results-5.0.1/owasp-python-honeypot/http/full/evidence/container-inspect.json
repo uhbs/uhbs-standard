@@ -1,0 +1,201 @@
+[
+    {
+        "Id": "e4a025afd054a2422a1d09b37f5a07dfa5a0a8e2d6c47530b88f1bb0f36ff89a",
+        "Created": "2026-09-27T20:41:56.959968805Z",
+        "Path": "python3",
+        "Args": [
+            "/app/uhbs_lab_http.py"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 27173,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:41:57.010645847Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:55b63dfc3b7fee7a649539e5c10e274434ddf337de735eec94508e4482a78065",
+        "ResolvConfPath": "/var/lib/docker/containers/e4a025afd054a2422a1d09b37f5a07dfa5a0a8e2d6c47530b88f1bb0f36ff89a/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/e4a025afd054a2422a1d09b37f5a07dfa5a0a8e2d6c47530b88f1bb0f36ff89a/hostname",
+        "HostsPath": "/var/lib/docker/containers/e4a025afd054a2422a1d09b37f5a07dfa5a0a8e2d6c47530b88f1bb0f36ff89a/hosts",
+        "LogPath": "/var/lib/docker/containers/e4a025afd054a2422a1d09b37f5a07dfa5a0a8e2d6c47530b88f1bb0f36ff89a/e4a025afd054a2422a1d09b37f5a07dfa5a0a8e2d6c47530b88f1bb0f36ff89a-json.log",
+        "Name": "/owasp-python-honeypot-lab",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "e4a025afd054a2422a1d09b37f5a07dfa5a0a8e2d6c47530b88f1bb0f36ff89a",
+                "LowerDir": "/var/lib/docker/overlay2/e5f193d344cc340e1152d477028a65357909c74e28952ba0b46c0ae9caf16060-init/diff:/var/lib/docker/overlay2/7520d5p1yuh0328xwds401q00/diff:/var/lib/docker/overlay2/k4fwm3uh3y5p6qf0g5jokr896/diff:/var/lib/docker/overlay2/qx4nbt5qfl6hswj9iu61kw887/diff:/var/lib/docker/overlay2/31dde0778fa9f08112e61ae8bb15bf748e1234eeb9925120464e5c289f825a52/diff:/var/lib/docker/overlay2/57e5b59b592a43f58455fb282635f3ce97cd58ddb70e2a00e8090fef27ad1f61/diff:/var/lib/docker/overlay2/641ec1e50fcc4006d984c001904f25750c0c5eb5ad58d529c16d4456cf675ffb/diff:/var/lib/docker/overlay2/9226f87fad8a9767d3469a7b90e3c54a0f60047c20d211215a6ea7c525fc114d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/e5f193d344cc340e1152d477028a65357909c74e28952ba0b46c0ae9caf16060/merged",
+                "UpperDir": "/var/lib/docker/overlay2/e5f193d344cc340e1152d477028a65357909c74e28952ba0b46c0ae9caf16060/diff",
+                "WorkDir": "/var/lib/docker/overlay2/e5f193d344cc340e1152d477028a65357909c74e28952ba0b46c0ae9caf16060/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "e4a025afd054",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+                "PYTHON_VERSION=3.11.16",
+                "PYTHON_SHA256=91bcdebfdde239a003ae93738a7fce0f9230fee5c4bc2b86f6e6e8c6f98aabe8"
+            ],
+            "Cmd": [
+                "python3",
+                "/app/uhbs_lab_http.py"
+            ],
+            "Image": "owasp-python-honeypot:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "SandboxID": "77f165c1c3a51a15fa824ba0929a14226cc00e5d27cc0c92e529f25a86ecc6cb",
+            "SandboxKey": "/var/run/docker/netns/77f165c1c3a5",
+            "Ports": {
+                "80/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "owasp-python-honeypot-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "d1ea30c34498be3cc9fe3c52f2eebfd1183dd5dba13a13b88bfda423e436a995",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "26:18:5b:c0:ad:2c",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "owasp-python-honeypot-lab",
+                        "e4a025afd054"
+                    ]
+                }
+            }
+        }
+    }
+]

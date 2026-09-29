@@ -195,8 +195,11 @@ def compute_uhqs_tool(
     scores: dict[str, float],
     profile_class: str | None = None,
     weights: dict[str, float] | None = None,
+    critical_control_verdict: str | None = None,
+    containment_measured: bool = True,
+    assessment_status: str | None = None,
 ) -> dict[str, Any]:
-    """Recompute UHQS from module scores."""
+    """Recompute UHQS from module scores (v5 critical-gate model)."""
     if weights is None:
         if not profile_class:
             return {
@@ -214,7 +217,16 @@ def compute_uhqs_tool(
     missing = sorted(needed - set(scores))
     if missing:
         return {"ok": False, "errors": [f"Missing score keys: {missing}"]}
-    result = compute_uhqs(scores=scores, weights=weights)
+    kwargs: dict[str, Any] = {
+        "scores": scores,
+        "weights": weights,
+        "containment_measured": bool(containment_measured),
+    }
+    if critical_control_verdict is not None:
+        kwargs["critical_control_verdict"] = critical_control_verdict
+    if assessment_status is not None:
+        kwargs["assessment_status"] = assessment_status
+    result = compute_uhqs(**kwargs)
     return {
         "ok": True,
         "uhbs_version": __version__,
@@ -225,6 +237,9 @@ def compute_uhqs_tool(
         "grade": letter_grade(result.uhqs),
         "safety_gate_passed": result.safety_gate_passed,
         "weighted_sum": result.weighted_sum,
+        "assessment_status": result.assessment_status,
+        "critical_control_verdict": result.critical_control_verdict,
+        "graded": result.graded,
     }
 
 
@@ -238,7 +253,10 @@ def list_profile_classes() -> dict[str, Any]:
         "ok": True,
         "classes": {name: dict(w) for name, w in sorted(PROFILE_WEIGHTS.items())},
         "formula": "UHQS = δ_C · (w_A·S_A + w_B·S_B + w_C·S_C + w_E·S_E + w_F·S_F)",
-        "delta_c": "1.0 if containment C ≥ 95 else (C/100)²",
+        "delta_c": (
+            "1.0 when assessment is COMPLETE and critical_control_verdict is "
+            "GATE_PASSED; otherwise 0.0 and UHQS is ungraded (null)"
+        ),
     }
 
 

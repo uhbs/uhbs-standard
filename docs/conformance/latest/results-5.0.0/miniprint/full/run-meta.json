@@ -1,0 +1,58 @@
+{
+  "uhbs_version": "5.0.1",
+  "run_mode": "full",
+  "evaluated_at": "2026-09-26T12:49:35Z",
+  "proof_label": "miniprint (sa7mon PJL honeypot)",
+  "target": {
+    "repository": "https://github.com/sa7mon/miniprint.git",
+    "git_commit": "494d2fc75b94c19345c2db55d03b5cf74f75e3c2",
+    "git_branch": "master",
+    "class": "Low-Interaction",
+    "protocol": "pjl",
+    "host": "miniprint-lab",
+    "port": 9100,
+    "container_image": "miniprint:lab",
+    "container_image_id": "sha256:98d4cf6be313f434372eb225f773860f130b43d374ed376e9701631d088cb1b9"
+  },
+  "grader": {
+    "package_version": "5.0.1",
+    "uhbs_git_commit": "c2ffcdff1c45f6704dd2646554ff0087064faa28",
+    "docker_image": "uhbs:5.0.1-full",
+    "docker_image_id": "sha256:320fb38dcf3ebf69befb2248b75ed32c63dafe6b83f959746209d337c3e7ca9b",
+    "inventory": "docs/conformance/labs/miniprint/inventory.yaml",
+    "tps": "docs/conformance/labs/miniprint/low_interaction_full.yaml"
+  },
+  "runtime": {
+    "base_image": "python:3.7-alpine",
+    "base_image_reason": "Upstream ships a maintained Dockerfile FROM python:3.7-alpine.",
+    "container_runtime_strategy": "upstream-docker"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry"
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "delta_c": 0.0,
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "module_scores": {
+      "A": 80.43,
+      "B": 65.0,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 55.0,
+      "F": 69.33
+    }
+  },
+  "limitations": [
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1); this is not a substitute for a physically air-gapped lab.",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement.",
+    "UHBS 5.0.1 Safety Gate: GATE_FAILED assessments publish uhqs/grade as null."
+  ]
+}

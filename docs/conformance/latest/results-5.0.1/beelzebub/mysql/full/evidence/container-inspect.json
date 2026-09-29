@@ -1,0 +1,215 @@
+[
+    {
+        "Id": "57025a0375314de819ed80b0f668080da51e5414a0e963452df59601687ad30c",
+        "Created": "2026-09-28T12:02:11.598015594Z",
+        "Path": "/main",
+        "Args": [
+            "run"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 31617,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-28T12:02:11.769141469Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:4663259f7336af0895572db5ec697518fc5608846dd54870d0baaec8f70172d3",
+        "ResolvConfPath": "/var/lib/docker/containers/57025a0375314de819ed80b0f668080da51e5414a0e963452df59601687ad30c/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/57025a0375314de819ed80b0f668080da51e5414a0e963452df59601687ad30c/hostname",
+        "HostsPath": "/var/lib/docker/containers/57025a0375314de819ed80b0f668080da51e5414a0e963452df59601687ad30c/hosts",
+        "LogPath": "/var/lib/docker/containers/57025a0375314de819ed80b0f668080da51e5414a0e963452df59601687ad30c/57025a0375314de819ed80b0f668080da51e5414a0e963452df59601687ad30c-json.log",
+        "Name": "/uhbs-target-beelzebub-mysql",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/beelzebub-telemetry:/telemetry:rw",
+                "/Users/mz/Projects/uhbs-standard/.local/labs/beelzebub-runtime/mysql:/configurations:ro"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "57025a0375314de819ed80b0f668080da51e5414a0e963452df59601687ad30c",
+                "LowerDir": "/var/lib/docker/overlay2/95e1580417672991ff36bfa8dbc6d63776bb49f589d69d864f86bf99e1d224b0-init/diff:/var/lib/docker/overlay2/ql86v43tfzea70j2lht4eq138/diff:/var/lib/docker/overlay2/jnx5lmiljr7kjr2r885zppt1f/diff",
+                "MergedDir": "/var/lib/docker/overlay2/95e1580417672991ff36bfa8dbc6d63776bb49f589d69d864f86bf99e1d224b0/merged",
+                "UpperDir": "/var/lib/docker/overlay2/95e1580417672991ff36bfa8dbc6d63776bb49f589d69d864f86bf99e1d224b0/diff",
+                "WorkDir": "/var/lib/docker/overlay2/95e1580417672991ff36bfa8dbc6d63776bb49f589d69d864f86bf99e1d224b0/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/beelzebub-runtime/mysql",
+                "Destination": "/configurations",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/beelzebub-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "57025a037531",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": null,
+            "Image": "beelzebub:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": [
+                "/main",
+                "run"
+            ],
+            "Labels": {
+                "uhbs.unit": "beelzebub-mysql"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "e17c4f2779b688c60343b16c4c676b079c03131dd52ed5190744e341d759f6ea",
+            "SandboxKey": "/var/run/docker/netns/e17c4f2779b6",
+            "Ports": {},
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "beelzebub-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "5d1d393f439085354fdf89fee08a5ff9fca63d5abb820f2a0bbe44c2b7c4f66f",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.5",
+                    "MacAddress": "12:d3:f8:7a:75:9e",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-beelzebub-mysql",
+                        "beelzebub-lab",
+                        "57025a037531"
+                    ]
+                }
+            }
+        }
+    }
+]

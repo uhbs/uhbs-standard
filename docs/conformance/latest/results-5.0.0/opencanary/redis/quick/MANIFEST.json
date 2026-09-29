@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "b7d2f5f398412e54d3ebe3cd8cb3c40caf88345d44071b137ef102a4d830b9dd"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "972292341cf7e6adfa8b3cb1659abc7eabae7e9208f5a3e45fe803f13238b502"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "972292341cf7e6adfa8b3cb1659abc7eabae7e9208f5a3e45fe803f13238b502"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "03082e7ab09a2a20e580842d3647e8b6a648ba5fe577b86d2da0e7b6e9c1a34c"
+    },
+    {
+      "path": "report.json",
+      "sha256": "5db17c2ab6d70966f9055530742db5aaa9efe7a113dcd6370cedabb439341372"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "eacb137efb277838c15eb863ce9cc1fbeff521b4f503a972eaa2489c3dc98ac2"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "03da96191aa61fc8702d7168f8b25448de92da2d01eecc61c522c902520d74d9"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-redis",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

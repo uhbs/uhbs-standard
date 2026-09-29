@@ -1,0 +1,49 @@
+{
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "3d0f7ace15c0a00bc2dd19fe4c45a3b2c3a1e9441985d86405533bf5db19ee43"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "64810f8e21f9ac220a6075e06ce43618b75b20a4cf12cde3390def287f20c6a4"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "64810f8e21f9ac220a6075e06ce43618b75b20a4cf12cde3390def287f20c6a4"
+    },
+    {
+      "path": "evidence/container-inspect.json",
+      "sha256": "a271cb090af224c802d2ae62bd1d7575476645d8b84ee0e3d508643a9548007b"
+    },
+    {
+      "path": "evidence/container-inspect.json.sha256",
+      "sha256": "936e31343b0642950d2a6d8080e19363930adcad82e3cf496e00bdf79efe0fbd"
+    },
+    {
+      "path": "evidence/egress-gateway.log",
+      "sha256": "635f3672e9f43916c7aa1fd9d4a8e97f73d77ecdaeec0246a96953ff878f96ae"
+    },
+    {
+      "path": "evidence/egress-gateway.log.sha256",
+      "sha256": "2d9edc174cec0088ab61493f22263e9d1168e104f650bcffd4c5611a73aedb13"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "116670d70bce373ed7f0ce75d819764edfa99f4db357bcedc96ea608ecf6e9c2"
+    },
+    {
+      "path": "report.json",
+      "sha256": "168603e58248d1014c09608865a3ab4c746b0cebd4b2bc6bb6f336580440cc06"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "aae30eb86c67a9b6a830f1765ccbc260ee56c84a0477625b454843af8ef67edc"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "5f58e5c2eae56cb65ebe887cce7dd2f01a3b80c9887266a7102bca9febf6cdc8"
+    }
+  ],
+  "rescore": "rescored 2026-09-28: measured-renorm exclusion fix (harness never passed measured_modules)"
+}

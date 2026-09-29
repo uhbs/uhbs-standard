@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "9ef481d7a6995715fa5a225439a27be2e4cc59c815c6ebf99031d0fa9be189bf"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "4b00a1172bdef80d4d1302116e0746456d2d8d9583f85553cb0e4d4418a4f897"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "4b00a1172bdef80d4d1302116e0746456d2d8d9583f85553cb0e4d4418a4f897"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "41c02536e7d323a939b8221103c3e2a38d050a6ca60a6612f390aefcf24f2b96"
+    },
+    {
+      "path": "report.json",
+      "sha256": "590c21bc511908678eec25c83f0825ecea9cd0b4ed57b25cfd2e0b55e388eb11"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "253fc276f57af141ed1facf8d22b96cd52dde1328ca6368123ca1bfcc5d03a6a"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "271b5395fe2c991531cae8012b6ca7b39eb6e456c764c17491408a0e375dd3df"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-telnet",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

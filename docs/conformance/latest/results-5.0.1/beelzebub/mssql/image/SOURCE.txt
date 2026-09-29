@@ -1,0 +1,5 @@
+source=.local/labs/beelzebub/Dockerfile
+image=beelzebub:uhbs-lab
+digest=sha256:4663259f7336af0895572db5ec697518fc5608846dd54870d0baaec8f70172d3
+dockerfile=docs/conformance/latest/results-5.0.1/beelzebub/mssql/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/beelzebub/mssql/Dockerfile.pin

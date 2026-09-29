@@ -49,6 +49,25 @@ def _load_schema(name: str) -> dict[str, Any]:
         return json.load(fh)
 
 
+def _schema_for_document(name: str, data: dict[str, Any] | None = None) -> dict[str, Any]:
+    """Load a schema, preferring frozen ``v4/`` copies for UHBS 4.x documents.
+
+    When ``uhbs_version`` starts with ``4.`` and the document does **not**
+    declare a v5 ``scoring_model_id``, validate against ``schemas/v4/<name>``.
+    Documents that already carry ``uhqs-v5*`` use the current (v5) schema even
+    if ``uhbs_version`` has not been bumped yet.
+    """
+    payload = data or {}
+    version = str(payload.get("uhbs_version") or "")
+    model = str(payload.get("scoring_model_id") or "")
+    if version.startswith("4.") and not model.startswith("uhqs-v5"):
+        v4_name = f"v4/{name}"
+        v4_path = _schema_dir() / v4_name
+        if v4_path.is_file():
+            return _load_schema(v4_name)
+    return _load_schema(name)
+
+
 def _load_yaml(path: Path) -> Any:
     with path.open(encoding="utf-8") as fh:
         return yaml.safe_load(fh)

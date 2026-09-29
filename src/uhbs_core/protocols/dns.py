@@ -1,10 +1,10 @@
-"""DNS (UDP/TCP port 53) — RFC 1035 / RFC 7766 probes."""
+"""DNS (UDP/TCP port 53) — RFC 1035 / RFC 7766 probes (10 Module A checks)."""
 
 from __future__ import annotations
 
 import struct
 
-from uhbs_core.models import CheckResult, TargetSpec
+from uhbs_core.models import CheckOutcome, CheckResult, TargetSpec
 from uhbs_core.netutil import tcp_transact, udp_transact
 from uhbs_core.protocols.udp_base import UdpProtocolPlugin
 from uhbs_core.tps import TPS
@@ -44,9 +44,10 @@ def build_dns_query(
     qclass: int = 1,
     txid: int = 0x4D48,
     rd: bool = True,
+    opcode: int = 0,
 ) -> bytes:
-    """Standard query (opcode 0) with QDCOUNT=1."""
-    flags = 0x0100 if rd else 0x0000
+    """Standard query (opcode 0 by default) with QDCOUNT=1."""
+    flags = ((opcode & 0xF) << 11) | (0x0100 if rd else 0x0000)
     header = struct.pack("!HHHHHH", txid & 0xFFFF, flags, 1, 0, 0, 0)
     return header + encode_qname(qname) + struct.pack("!HH", qtype, qclass)
 
@@ -65,6 +66,7 @@ def parse_dns_header(data: bytes) -> dict[str, int] | None:
         "ancount": an,
         "nscount": ns,
         "arcount": ar,
+        "rd": (flags >> 8) & 1,
     }
 
 
@@ -119,7 +121,6 @@ def _score_valid_reply(raw: bytes, err: str, *, txid: int) -> tuple[float, bool,
         return 30.0, False, detail + " (not a response)"
     if hdr["opcode"] != 0:
         return 40.0, False, detail + " (non-query opcode in response)"
-    # NOERROR or NXDOMAIN are normal for an A lookup
     if hdr["rcode"] in (0, 3):
         return 100.0, True, detail
     if hdr["rcode"] in (1, 2, 5):
@@ -151,7 +152,7 @@ _UDP_PROBE = build_dns_query(_NEGO_QNAME, txid=0x0001)
 
 
 class DNSPlugin(UdpProtocolPlugin):
-    """DNS resolver-style UDP/TCP probes (port 53)."""
+    """DNS resolver-style UDP/TCP probes (port 53) — 10 Module A checks."""
 
     name = "dns"
     families = ("it",)
@@ -162,6 +163,7 @@ class DNSPlugin(UdpProtocolPlugin):
     ) -> list[CheckResult]:
         checks: list[CheckResult] = []
 
+        # 1) Truncated header
         truncated = b"\x00\x01"
         raw, _, err = udp_transact(host, port, truncated, timeout=1.5)
         score, passed, detail = _score_malformed_reply(raw, err)
@@ -175,6 +177,7 @@ class DNSPlugin(UdpProtocolPlugin):
             )
         )
 
+        # 2) QDCOUNT inconsistent with body
         bad_qd = struct.pack("!HHHHHH", 0xBEEF, 0x0100, 10, 0, 0, 0)
         raw2, _, err2 = udp_transact(host, port, bad_qd, timeout=1.5)
         score2, passed2, detail2 = _score_malformed_reply(raw2, err2)
@@ -187,15 +190,77 @@ class DNSPlugin(UdpProtocolPlugin):
                 score=score2,
             )
         )
+
+        # 3) Incomplete QNAME (length claims bytes that never arrive)
+        incomplete = struct.pack("!HHHHHH", 0xC0DE, 0x0100, 1, 0, 0, 0) + b"\x07exam"
+        raw3, _, err3 = udp_transact(host, port, incomplete, timeout=1.5)
+        score3, passed3, detail3 = _score_malformed_reply(raw3, err3)
+        checks.append(
+            CheckResult(
+                id="dns.fsm.incomplete_qname",
+                team="blue",
+                passed=passed3,
+                detail=detail3,
+                score=score3,
+            )
+        )
+
+        # 4) QDCOUNT=0 with otherwise-valid header
+        zero_qd = struct.pack("!HHHHHH", 0x0A0A, 0x0100, 0, 0, 0, 0)
+        raw4, _, err4 = udp_transact(host, port, zero_qd, timeout=1.5)
+        score4, passed4, detail4 = _score_malformed_reply(raw4, err4)
+        checks.append(
+            CheckResult(
+                id="dns.fsm.zero_qdcount",
+                team="blue",
+                passed=passed4,
+                detail=detail4,
+                score=score4,
+            )
+        )
+
+        # 5) Non-query opcode (UPDATE=5) — prefer NOTIMP/FORMERR/REFUSED
+        update_q = build_dns_query(_NEGO_QNAME, txid=0x5555, opcode=5)
+        raw5, _, err5 = udp_transact(host, port, update_q, timeout=1.5)
+        if err5:
+            score5, passed5, detail5 = 0.0, False, err5
+        elif not raw5:
+            score5, passed5, detail5 = 50.0, False, "no reply to UPDATE opcode"
+        else:
+            hdr5 = parse_dns_header(raw5)
+            detail5 = _detail_header(raw5)
+            if hdr5 and hdr5["qr"] == 1 and hdr5["rcode"] in (1, 4, 5):
+                score5, passed5 = 100.0, True
+            elif hdr5 and hdr5["qr"] == 1 and hdr5["rcode"] in (0, 3):
+                # Accepted UPDATE-shaped query as a normal lookup — soft fail
+                score5, passed5 = 40.0, False
+                detail5 += " (NOERROR/NXDOMAIN on UPDATE opcode)"
+            elif hdr5 and hdr5["qr"] == 1:
+                score5, passed5 = 55.0, False
+                detail5 += " (unexpected RCODE on UPDATE)"
+            else:
+                score5, passed5 = 30.0, False
+        checks.append(
+            CheckResult(
+                id="dns.fsm.opcode_update",
+                team="red",
+                passed=passed5,
+                detail=detail5,
+                score=score5,
+            )
+        )
         return checks
 
     def probe_negotiation(
         self, host: str, port: int, target: TargetSpec, tps: TPS | None
     ) -> list[CheckResult]:
+        checks: list[CheckResult] = []
+
+        # 6) UDP A query
         query = build_dns_query(_NEGO_QNAME, txid=_NEGO_TXID)
         raw, _, err = udp_transact(host, port, query, timeout=2.0)
         score, passed, detail = _score_valid_reply(raw, err, txid=_NEGO_TXID)
-        checks = [
+        checks.append(
             CheckResult(
                 id="dns.nego.udp_a",
                 team="blue",
@@ -203,18 +268,19 @@ class DNSPlugin(UdpProtocolPlugin):
                 detail=detail,
                 score=score,
             )
-        ]
+        )
 
-        # RFC 7766 TCP when the target accepts it (optional second path).
+        # 7) RFC 7766 TCP (optional)
         tcp_raw, _, tcp_err = tcp_dns_transact(host, port, query, timeout=2.0)
         if tcp_err and not tcp_raw:
             checks.append(
                 CheckResult(
                     id="dns.nego.tcp_a",
                     team="blue",
-                    passed=False,
+                    outcome=CheckOutcome.NOT_TESTED,
                     detail=tcp_err or "no TCP DNS reply",
-                    score=50.0,
+                    score=0.0,
+                    mandatory=False,
                 )
             )
         else:
@@ -230,13 +296,60 @@ class DNSPlugin(UdpProtocolPlugin):
                     score=tcp_score,
                 )
             )
+
+        # 8) Transaction ID echo
+        txid = 0xA11E
+        q_id = build_dns_query(_NEGO_QNAME, txid=txid)
+        raw_id, _, err_id = udp_transact(host, port, q_id, timeout=2.0)
+        hdr_id = parse_dns_header(raw_id) if raw_id else None
+        id_ok = bool(hdr_id) and hdr_id["id"] == txid and hdr_id["qr"] == 1
+        checks.append(
+            CheckResult(
+                id="dns.nego.id_echo",
+                team="blue",
+                passed=id_ok,
+                detail=_detail_header(raw_id) if raw_id else (err_id or "no reply"),
+                score=100.0 if id_ok else 25.0,
+            )
+        )
+
+        # 9) AAAA query still yields a DNS response
+        q_aaaa = build_dns_query(_NEGO_QNAME, qtype=28, txid=_STATE_TXID)
+        raw_aaaa, _, err_aaaa = udp_transact(host, port, q_aaaa, timeout=2.0)
+        score_a, passed_a, detail_a = _score_valid_reply(
+            raw_aaaa, err_aaaa, txid=_STATE_TXID
+        )
+        checks.append(
+            CheckResult(
+                id="dns.nego.aaaa",
+                team="blue",
+                passed=passed_a,
+                detail=detail_a,
+                score=score_a,
+            )
+        )
+
+        # 10) RD bit preserved / response has QR
+        q_rd = build_dns_query(_NEGO_QNAME, txid=0x0D00, rd=True)
+        raw_rd, _, err_rd = udp_transact(host, port, q_rd, timeout=2.0)
+        hdr_rd = parse_dns_header(raw_rd) if raw_rd else None
+        rd_ok = bool(hdr_rd) and hdr_rd["qr"] == 1 and hdr_rd.get("rd") == 1
+        checks.append(
+            CheckResult(
+                id="dns.nego.rd_echo",
+                team="blue",
+                passed=rd_ok,
+                detail=_detail_header(raw_rd) if raw_rd else (err_rd or "no reply"),
+                score=100.0 if rd_ok else 40.0,
+            )
+        )
         return checks
 
     def probe_state(
         self, host: str, port: int, target: TargetSpec, tps: TPS | None
     ) -> list[CheckResult]:
         q1 = build_dns_query(_NEGO_QNAME, qtype=1, txid=_NEGO_TXID)
-        q2 = build_dns_query(_NEGO_QNAME, qtype=28, txid=_STATE_TXID)  # AAAA
+        q2 = build_dns_query(_NEGO_QNAME, qtype=28, txid=_STATE_TXID)
         raw1, _, err1 = udp_transact(host, port, q1, timeout=2.0)
         raw2, _, err2 = udp_transact(host, port, q2, timeout=2.0)
         score1, ok1, detail1 = _score_valid_reply(raw1, err1, txid=_NEGO_TXID)
@@ -246,7 +359,6 @@ class DNSPlugin(UdpProtocolPlugin):
         if ok1 and ok2:
             h1 = parse_dns_header(raw1) or {}
             h2 = parse_dns_header(raw2) or {}
-            # Both answered as DNS responses with sane opcodes
             consistent = h1.get("opcode") == 0 and h2.get("opcode") == 0
 
         combined_score = min(score1, score2) if (raw1 or raw2) else 35.0

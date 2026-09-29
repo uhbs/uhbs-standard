@@ -1,0 +1,5 @@
+source=.local/labs/sshesame/Dockerfile
+image=ghcr.io/jaksi/sshesame:latest
+digest=sha256:4061a777a1e5bf393668f109fd8344de5a1708a12ffd891252ed4fec46b571c5
+dockerfile=docs/conformance/latest/results-5.0.1/sshesame/ssh/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/sshesame/ssh/Dockerfile.pin

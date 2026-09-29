@@ -1,0 +1,4 @@
+twisted
+redis_protocol
+fakeredis
+cherrypy

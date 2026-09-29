@@ -1,0 +1,47 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "f82fc68d5c417c931209396e642980c63624ad9d7ec71799c08f12c60fbf4535"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "76f6aae7982be00827b5b09389602eab670bfa7998abc594090914ce5e2e09a2"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "76f6aae7982be00827b5b09389602eab670bfa7998abc594090914ce5e2e09a2"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "355a6e8180f65ab5a936251bb78c8eb9b66b4ef8096e22f101fdce73f679da49"
+    },
+    {
+      "path": "report.json",
+      "sha256": "3cf3a494c9b5d7efd34dff927026430aacc5236b342cc70efb7151fee4f00983"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "8a92470569223311f1922f15d73030cb5475cda094c200461013faaeb1124e10"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "8e78470046fd4c1f7eecf5c8bf197c00b8f0efb8612537036a4b318deb52a1e9"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "fadab5f58788211208da74f3c58e477c1867faffe42291788b02a5345a2f22bf"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "77b3b0873ae3bf1572ef35b19e2c11f4982092ddf72e3a2ff3ca30a536577fa3"
+    }
+  ],
+  "extra": {
+    "target": "miniprint",
+    "uhqs": null,
+    "grade": null,
+    "critical_control_verdict": "INCOMPLETE"
+  }
+}

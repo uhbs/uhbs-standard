@@ -1,0 +1,22 @@
+diff --git a/src/transport/http.rs b/src/transport/http.rs
+index f2e0b4b..3e708ad 100644
+--- a/src/transport/http.rs
++++ b/src/transport/http.rs
+@@ -254,13 +254,12 @@ impl Transport for HttpTransport {
+             .allow_methods(tower_http::cors::Any)
+             .allow_headers(tower_http::cors::Any);
+ 
+-        // Per-IP token bucket on /message: ~2 req/s sustained with a 20-request
+-        // burst. This is generous enough for any legitimate MCP client (bursts
+-        // during handshake) and hostile enough to blunt a single-source flood.
++        // UHBS lab overlay: raise governor so Module A/B handshake storms
++        // complete. Upstream production default is per_second(2)/burst_size(20).
+         let governor_conf = std::sync::Arc::new(
+             tower_governor::governor::GovernorConfigBuilder::default()
+-                .per_second(2)
+-                .burst_size(20)
++                .per_second(50)
++                .burst_size(500)
+                 .finish()
+                 .expect("valid governor config"),
+         );

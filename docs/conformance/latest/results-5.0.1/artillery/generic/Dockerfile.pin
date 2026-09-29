@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `artillery-generic`
+# Image name at grade time: artillery:uhbs-lab
+FROM sha256:c90c94491bf423553843021eb1176d75c03edd6a078d1efb3cc1db77bc2c32ef

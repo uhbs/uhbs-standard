@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.0.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "b3aede84ac37ca1981e44b94961f23d02bfb8b8ab23d600bca1eb8cec3bd9c43"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "b3aede84ac37ca1981e44b94961f23d02bfb8b8ab23d600bca1eb8cec3bd9c43"
+    },
+    {
+      "path": "report.json",
+      "sha256": "3f63a1dc184b0ddf6bae0b8ceb669a9cabfad100418249827ac38c0f3730a033"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "b3aede84ac37ca1981e44b94961f23d02bfb8b8ab23d600bca1eb8cec3bd9c43"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "0055daa2b1db8a5e8063e201382081978bec9847ffe2a73d6445f91fe2517a14"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "f4f3b6a42b960b4df2b74f63e15c1fa174cd7b6b9882cf1a214a17e59404bc84"
+    }
+  ],
+  "extra": {
+    "target": "beelzebub-redis",
+    "uhqs": 61.01,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

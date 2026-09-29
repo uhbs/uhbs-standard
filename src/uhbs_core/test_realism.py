@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Module B — Behavioral & Stateful Realism (UHBS v4.6.1).
+"""Module B — Behavioral & Stateful Realism (UHBS v5.0.1).
 
 Class/protocol-aware via plugins: B1 state · B2 payload · B3 fuzz.
 """
@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
 from uhbs_core.check_scoring import score_checks as _mean  # noqa: E402
+from uhbs_core.check_scoring import summarize_checks  # noqa: E402
 from uhbs_core.hqs import pass_status  # noqa: E402
 from uhbs_core.models import CheckResult, ModuleResult, TargetSpec  # noqa: E402
 from uhbs_core.protocols import get_plugin  # noqa: E402
@@ -40,6 +41,7 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
             score=0.0,
             status="SKIPPED",
             notes=["no exec host"],
+            complete=False,
         )
 
     if tps is None:
@@ -66,7 +68,13 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
                 "chmod +x /tmp/math_logic_probe && /tmp/math_logic_probe 7 3"
             )
             elf = run_ssh_command(
-                target.host, port, target.user, target.password, drop, timeout=30
+                target.host,
+                port,
+                target.user,
+                target.password,
+                drop,
+                timeout=30,
+                known_hosts=target.known_hosts_path(),
             )
             elf_ok = elf.ok and "22" in elf.stdout
             payload.append(
@@ -92,6 +100,7 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
             score=0.0,
             status="FAILED",
             notes=["no protocol ports available"],
+            complete=False,
         )
 
     score = sum(per_proto.values()) / len(per_proto)
@@ -112,18 +121,25 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
     elif surface == "interactive":
         notes.append("surface_depth=interactive")
 
+    agg = summarize_checks(all_checks)
+    published = round(score, 2) if agg.complete else 0.0
     return ModuleResult(
         module="B",
         dimension="behavior",
-        score=round(score, 2),
-        status=pass_status(score),
+        score=published,
+        status="INCOMPLETE" if not agg.complete else pass_status(published),
         checks=all_checks,
         metrics={
             "per_protocol": per_proto,
             "class": tps.profile_class,
             "surface_depth": surface or "unknown",
+            "coverage": agg.coverage,
+            "not_tested": agg.not_tested,
         },
         notes=notes,
+        complete=agg.complete,
+        applicable_checks=agg.applicable,
+        scored_checks=agg.scored,
     )
 
 

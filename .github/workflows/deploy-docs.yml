@@ -75,7 +75,7 @@ jobs:
           cp web/public/sitemap.xml web/dist/sitemap.xml
           cp web/public/sitemap-landing.xml web/dist/sitemap-landing.xml
 
-      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.1
         with:
           path: ./web/dist
           # Required so /.well-known/security.txt is published (dotdirs are skipped by default).

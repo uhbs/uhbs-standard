@@ -76,7 +76,10 @@ def provenance_summarize(
             aggregation=aggregation,
             platform=platform or (col or {}).get("platform"),
         )
-        out.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+        # Explicit local CLI destination; this command is not MCP-exposed.
+        out.write_text(
+            json.dumps(report, indent=2) + "\n", encoding="utf-8"
+        )  # NOSONAR
     except prov_mod.ProvenanceError as exc:
         raise click.ClickException(str(exc)) from exc
     echo_ok(

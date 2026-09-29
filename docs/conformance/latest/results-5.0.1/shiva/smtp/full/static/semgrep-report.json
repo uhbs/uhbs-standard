@@ -1,0 +1,338 @@
+{
+  "version": "1.178.0",
+  "results": [
+    {
+      "check_id": "python.lang.security.audit.non-literal-import.non-literal-import",
+      "path": "analyzer/src/helpers/factory.py",
+      "start": {
+        "line": 27,
+        "col": 14,
+        "offset": 663
+      },
+      "end": {
+        "line": 27,
+        "col": 50,
+        "offset": 699
+      },
+      "extra": {
+        "message": "Untrusted user input in `importlib.import_module()` function allows an attacker to load arbitrary code. Avoid dynamic values in `importlib.import_module()` or use a whitelist to prevent running untrusted code.",
+        "metadata": {
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "cwe": [
+            "CWE-706: Use of Incorrectly-Resolved Name or Reference"
+          ],
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A01_2021-Broken_Access_Control"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.non-literal-import.non-literal-import",
+          "shortlink": "https://sg.run/y6Jk"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.non-literal-import.non-literal-import",
+      "path": "analyzer/src/helpers/factory.py",
+      "start": {
+        "line": 47,
+        "col": 22,
+        "offset": 1414
+      },
+      "end": {
+        "line": 47,
+        "col": 58,
+        "offset": 1450
+      },
+      "extra": {
+        "message": "Untrusted user input in `importlib.import_module()` function allows an attacker to load arbitrary code. Avoid dynamic values in `importlib.import_module()` or use a whitelist to prevent running untrusted code.",
+        "metadata": {
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "cwe": [
+            "CWE-706: Use of Incorrectly-Resolved Name or Reference"
+          ],
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A01_2021-Broken_Access_Control"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.non-literal-import.non-literal-import",
+          "shortlink": "https://sg.run/y6Jk"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.docker-compose.security.no-new-privileges.no-new-privileges",
+      "path": "docker-compose.yml",
+      "start": {
+        "line": 11,
+        "col": 3,
+        "offset": 127
+      },
+      "end": {
+        "line": 11,
+        "col": 11,
+        "offset": 135
+      },
+      "extra": {
+        "message": "Service 'postgres' allows for privilege escalation via setuid or setgid binaries. Add 'no-new-privileges:true' in 'security_opt' to prevent this.",
+        "metadata": {
+          "cwe": [
+            "CWE-732: Incorrect Permission Assignment for Critical Resource"
+          ],
+          "owasp": [
+            "A05:2021 - Security Misconfiguration",
+            "A06:2017 - Security Misconfiguration",
+            "A02:2025 - Security Misconfiguration"
+          ],
+          "references": [
+            "https://raesene.github.io/blog/2019/06/01/docker-capabilities-and-no-new-privs/",
+            "https://www.kernel.org/doc/Documentation/prctl/no_new_privs.txt",
+            "https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html#rule-4-add-no-new-privileges-flag"
+          ],
+          "category": "security",
+          "technology": [
+            "docker-compose"
+          ],
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/yaml.docker-compose.security.no-new-privileges.no-new-privileges",
+          "shortlink": "https://sg.run/0n8q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service",
+      "path": "docker-compose.yml",
+      "start": {
+        "line": 11,
+        "col": 3,
+        "offset": 127
+      },
+      "end": {
+        "line": 11,
+        "col": 11,
+        "offset": 135
+      },
+      "extra": {
+        "message": "Service 'postgres' is running with a writable root filesystem. This may allow malicious applications to download and run additional payloads, or modify container files. If an application inside a container has to save something temporarily consider using a tmpfs. Add 'read_only: true' to this service to prevent this.",
+        "metadata": {
+          "cwe": [
+            "CWE-732: Incorrect Permission Assignment for Critical Resource"
+          ],
+          "owasp": [
+            "A05:2021 - Security Misconfiguration",
+            "A06:2017 - Security Misconfiguration",
+            "A02:2025 - Security Misconfiguration"
+          ],
+          "references": [
+            "https://docs.docker.com/compose/compose-file/compose-file-v3/#domainname-hostname-ipc-mac_address-privileged-read_only-shm_size-stdin_open-tty-user-working_dir",
+            "https://blog.atomist.com/security-of-docker-kubernetes/",
+            "https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html#rule-8-set-filesystem-and-volumes-to-read-only"
+          ],
+          "category": "security",
+          "technology": [
+            "docker-compose"
+          ],
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service",
+          "shortlink": "https://sg.run/e4JE"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      ".gitignore",
+      "LICENSE",
+      "README.md",
+      "analyzer/src/.dockerignore",
+      "analyzer/src/.env.example",
+      "analyzer/src/Dockerfile",
+      "analyzer/src/analyzer.py",
+      "analyzer/src/attachment_analyzer.py",
+      "analyzer/src/config.ini.example",
+      "analyzer/src/config.py",
+      "analyzer/src/db/session.py",
+      "analyzer/src/email_parser.py",
+      "analyzer/src/helpers/common.py",
+      "analyzer/src/helpers/factory.py",
+      "analyzer/src/integrations/base.py",
+      "analyzer/src/integrations/virustotal.py",
+      "analyzer/src/integrations.ini.example",
+      "analyzer/src/models/__init__.py",
+      "analyzer/src/models/attachment_mapping.py",
+      "analyzer/src/models/attachment_results.py",
+      "analyzer/src/models/attachments.py",
+      "analyzer/src/models/base.py",
+      "analyzer/src/models/campaigns.py",
+      "analyzer/src/models/emails.py",
+      "analyzer/src/models/raw_emails.py",
+      "analyzer/src/models/recipients.py",
+      "analyzer/src/models/recipients_mapping.py",
+      "analyzer/src/models/senders.py",
+      "analyzer/src/models/url_mapping.py",
+      "analyzer/src/models/urls.py",
+      "analyzer/src/requirements.txt",
+      "analyzer/src/run_analyzer.py",
+      "analyzer/src/storages/__init__.py",
+      "analyzer/src/storages/base.py",
+      "analyzer/src/storages/local.py",
+      "analyzer/src/storages/s3.py",
+      "analyzer/src/utils/__init__.py",
+      "docker-compose.yml",
+      "receiver/src/Dockerfile",
+      "receiver/src/config.ini.example",
+      "receiver/src/config.py",
+      "receiver/src/requirements.txt",
+      "receiver/src/run_server.py",
+      "receiver/src/shiva_authenticator.py",
+      "receiver/src/shiva_handler.py",
+      "receiver/src/test_client.py",
+      "receiver/src/utils/__init__.py"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.6253979206085205,
+    "profiling_times": {
+      "config_time": 1.9914779663085938,
+      "core_time": 2.464071273803711,
+      "ignores_time": 0.0022802352905273438,
+      "total_time": 4.4807000160217285
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 7.4874420166015625,
+      "per_file_time": {
+        "mean": 0.0571560459282562,
+        "std_dev": 0.018748427855875466
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9872599353489256,
+      "rules_selected_ratio": 0.0258604297394942,
+      "rules_matched_ratio": 0.0258604297394942
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 759472704
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

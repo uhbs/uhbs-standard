@@ -1,0 +1,220 @@
+[
+    {
+        "Id": "868ff157836dbabf7e4fffeb306526937b7c0060d063b57f6d16d3cbfe3dbcc4",
+        "Created": "2026-09-27T20:42:22.627624678Z",
+        "Path": "pghoney",
+        "Args": [
+            "-config",
+            "/app/pghoney.conf"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 29774,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:42:22.721199553Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:09367f266cf3fde5bd31d367e5d3b26d6637329d587bcde9b935490c5ee7bc4e",
+        "ResolvConfPath": "/var/lib/docker/containers/868ff157836dbabf7e4fffeb306526937b7c0060d063b57f6d16d3cbfe3dbcc4/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/868ff157836dbabf7e4fffeb306526937b7c0060d063b57f6d16d3cbfe3dbcc4/hostname",
+        "HostsPath": "/var/lib/docker/containers/868ff157836dbabf7e4fffeb306526937b7c0060d063b57f6d16d3cbfe3dbcc4/hosts",
+        "LogPath": "/var/lib/docker/containers/868ff157836dbabf7e4fffeb306526937b7c0060d063b57f6d16d3cbfe3dbcc4/868ff157836dbabf7e4fffeb306526937b7c0060d063b57f6d16d3cbfe3dbcc4-json.log",
+        "Name": "/uhbs-target-pghoney-postgres",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/pghoney-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "868ff157836dbabf7e4fffeb306526937b7c0060d063b57f6d16d3cbfe3dbcc4",
+                "LowerDir": "/var/lib/docker/overlay2/bbc4e94e6fd573b17dbe1f2db62e240325b0a5904d3d3457805a39a307b0fd9a-init/diff:/var/lib/docker/overlay2/6otfjsh3jnvi4t2ht6hqon61g/diff:/var/lib/docker/overlay2/x9470m0pj1whdhi3icx5swgo4/diff:/var/lib/docker/overlay2/wa1fzyn4ase2fgc3mt93spfmm/diff:/var/lib/docker/overlay2/stmkaueql5hjix7ejwg4o8teu/diff:/var/lib/docker/overlay2/ygrge6z2t1z043qqowo8m6zru/diff:/var/lib/docker/overlay2/d2c1216eebd0c5478a4f10d14e5a44bdc4b8d7de15d82fffa89662d16f8eaa56/diff:/var/lib/docker/overlay2/5cc35d93811395525d6f2d7564da293528dfbb291417980d830f957b10262b1d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/bbc4e94e6fd573b17dbe1f2db62e240325b0a5904d3d3457805a39a307b0fd9a/merged",
+                "UpperDir": "/var/lib/docker/overlay2/bbc4e94e6fd573b17dbe1f2db62e240325b0a5904d3d3457805a39a307b0fd9a/diff",
+                "WorkDir": "/var/lib/docker/overlay2/bbc4e94e6fd573b17dbe1f2db62e240325b0a5904d3d3457805a39a307b0fd9a/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/pghoney-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "868ff157836d",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "5432/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "GOPROXY=https://proxy.golang.org,direct",
+                "GO111MODULE=on"
+            ],
+            "Cmd": [
+                "pghoney",
+                "-config",
+                "/app/pghoney.conf"
+            ],
+            "Image": "pghoney:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "org.opencontainers.image.created": "2026-09-12T10:29:18.701012+00:00",
+                "org.opencontainers.image.description": "The Ubuntu container image maintained by Canonical\n\nUbuntu is a Debian-based Linux operating system that runs from the desktop to the cloud, to all your internet connected things.\nIt is the world's most popular operating system across public clouds and OpenStack clouds.\nIt is the number one platform for containers; from Docker to Kubernetes to LXD, Ubuntu can run your containers at scale.\nFast, secure and simple, Ubuntu powers millions of PCs worldwide.\n",
+                "org.opencontainers.image.title": "ubuntu",
+                "org.opencontainers.image.version": "26.04",
+                "uhbs.unit": "pghoney-postgres"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "3a3a38915388b5c25c0db9f9b23b29e4813873fca091b409c6a2f914ac62f330",
+            "SandboxKey": "/var/run/docker/netns/3a3a38915388",
+            "Ports": {
+                "5432/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "pghoney-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "cfd192c37d7cd85853d1f9163a4afe6ec3cd609af0761534edd6e2a2beeb416f",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "ae:8b:27:76:a5:cf",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-pghoney-postgres",
+                        "pghoney-lab",
+                        "868ff157836d"
+                    ]
+                }
+            }
+        }
+    }
+]

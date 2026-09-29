@@ -56,3 +56,101 @@ sites:
     telemetry_dir: /telemetry
     tps: /work/docs/conformance/labs/trapster/low_interaction_telnet_full.yaml
     container_image: trapster:uhbs-lab
+
+  trapster-dns:
+    kind: generic
+    class: Low-Interaction
+    host: trapster-lab
+    protocol: dns
+    protocols: [dns]
+    port: 53
+    ports:
+      dns: 53
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/trapster/low_interaction_dns_full.yaml
+    container_image: trapster:uhbs-lab
+
+  trapster-ldap:
+    kind: generic
+    class: Low-Interaction
+    host: trapster-lab
+    protocol: ldap
+    protocols: [ldap]
+    port: 389
+    ports:
+      ldap: 389
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/trapster/low_interaction_ldap_full.yaml
+    container_image: trapster:uhbs-lab
+
+  trapster-mssql:
+    kind: generic
+    class: Database
+    host: trapster-lab
+    protocol: mssql
+    protocols: [mssql]
+    port: 1433
+    ports:
+      mssql: 1433
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/trapster/database_mssql_full.yaml
+    container_image: trapster:uhbs-lab
+
+  trapster-mysql:
+    kind: generic
+    class: Database
+    host: trapster-lab
+    protocol: mysql
+    protocols: [mysql]
+    port: 3306
+    ports:
+      mysql: 3306
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/trapster/database_mysql_full.yaml
+    container_image: trapster:uhbs-lab
+
+  trapster-rdp:
+    kind: generic
+    class: Low-Interaction
+    host: trapster-lab
+    protocol: rdp
+    protocols: [rdp]
+    port: 3389
+    ports:
+      rdp: 3389
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/trapster/low_interaction_rdp_full.yaml
+    container_image: trapster:uhbs-lab
+
+  trapster-snmp:
+    kind: generic
+    class: Low-Interaction
+    host: trapster-lab
+    protocol: snmp
+    protocols: [snmp]
+    port: 161
+    ports:
+      snmp: 161
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/trapster/low_interaction_snmp_full.yaml
+    container_image: trapster:uhbs-lab
+
+  trapster-vnc:
+    kind: generic
+    class: Low-Interaction
+    host: trapster-lab
+    protocol: vnc
+    protocols: [vnc]
+    port: 5900
+    ports:
+      vnc: 5900
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/trapster/low_interaction_vnc_full.yaml
+    container_image: trapster:uhbs-lab

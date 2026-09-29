@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "cb1597b48519a1aca1d2e3be4f9c95325792e8adc434b6aa2e06cfa09841a30f"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "e5fa2d7008a42335d8e4d21b58c3307889ed8440123314bb625af7bbca038d32"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "e5fa2d7008a42335d8e4d21b58c3307889ed8440123314bb625af7bbca038d32"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "5402396dd5660491c5cb3bdbc6ec17811a5bb535fa8b755ae9088677d472dfbc"
+    },
+    {
+      "path": "report.json",
+      "sha256": "8b18342ef42d4339d04a2d064f7acf963085b11b6757b196b159a50f6f5d6855"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "7682de0c34efac02a27ff6e315610bb53611a82de67fc125a8757260fdf80b74"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "29a2db8178966d0cfcd528a88f5c33a6bc6c58da457c2e445bfed4c57d7ef105"
+    }
+  ],
+  "extra": {
+    "target": "artillery-generic",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "3e4ed54d32ded30a1316bcce0062313c58192d0be49b1e94308ed97286f23b47"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "df4bf31143901d5c9aacc17e201304c97a43df56d2445cff694c062bf6eb76f4"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "df4bf31143901d5c9aacc17e201304c97a43df56d2445cff694c062bf6eb76f4"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "d39ae629b58b5f0be0568e928369155a00b1c093e98301523ffcd0f030148128"
+    },
+    {
+      "path": "report.json",
+      "sha256": "7da03a252e6b84fc145aa5752de06ac1774f4c65f4bc1f15e2996c8a0a3ca445"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "e607aad2f2349431619343da946ddbacb3a24e2f5be0de126ff3993bf54f0aeb"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "e00739543954a14dd99d2fcbbda3baf46572bbbcf26dfe11fbbd5437ead9d41f"
+    }
+  ],
+  "extra": {
+    "target": "cowrie-telnet",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

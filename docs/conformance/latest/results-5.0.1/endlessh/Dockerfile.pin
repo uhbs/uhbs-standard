@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `endlessh-ssh_tarpit`
+# Image name at grade time: endlessh:uhbs-lab
+FROM sha256:afb3912dd411adf80907456db7db3058515fe3ca8501f8cc22c3d17c37a70dab

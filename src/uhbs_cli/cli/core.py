@@ -20,7 +20,7 @@ from uhbs_cli.scoring import (
 )
 from uhbs_core.termui import echo_error, echo_ok
 
-from .paths import _load_json, _load_schema, _load_yaml
+from .paths import _load_json, _load_yaml, _schema_for_document
 
 
 @click.group()
@@ -44,7 +44,7 @@ def main(ctx: click.Context) -> None:
 def validate_profile(profile: Path, strict: bool) -> None:
     """Validate a TPS profile.yaml against the official schema."""
     data = _load_yaml(profile)
-    schema = _load_schema("profile.schema.json")
+    schema = _schema_for_document("profile.schema.json", data if isinstance(data, dict) else None)
     validator = Draft202012Validator(schema)
     errors = sorted(validator.iter_errors(data), key=lambda e: list(e.path))
     if errors:
@@ -83,7 +83,9 @@ def validate_profile(profile: Path, strict: bool) -> None:
 def validate_scorecard(scorecard: Path, strict: bool) -> None:
     """Validate a scorecard JSON against the official schema."""
     data = _load_json(scorecard)
-    schema = _load_schema("scorecard.schema.json")
+    schema = _schema_for_document(
+        "scorecard.schema.json", data if isinstance(data, dict) else None
+    )
     validator = Draft202012Validator(schema)
     errors = sorted(validator.iter_errors(data), key=lambda e: list(e.path))
     if errors:
@@ -92,7 +94,14 @@ def validate_scorecard(scorecard: Path, strict: bool) -> None:
             echo_error(f"ERROR {loc}: {err.message}")
         sys.exit(1)
 
-    if strict:
+    version = str(data.get("uhbs_version") or "") if isinstance(data, dict) else ""
+    model = str(data.get("scoring_model_id") or "") if isinstance(data, dict) else ""
+    # Historical 4.x scorecards (no v5 model id): schema-only via schemas/v4/.
+    # v5 model documents always run integrity even before the version bump.
+    run_integrity = strict and (
+        not version.startswith("4.") or model.startswith("uhqs-v5")
+    )
+    if run_integrity:
         integrity = assert_scorecard_integrity(data)
         if integrity:
             for msg in integrity:
@@ -107,7 +116,9 @@ def validate_scorecard(scorecard: Path, strict: bool) -> None:
 def validate_evidence(evidence: Path) -> None:
     """Validate an evidence pack against the official schema."""
     data = _load_json(evidence)
-    schema = _load_schema("evidence-pack.schema.json")
+    schema = _schema_for_document(
+        "evidence-pack.schema.json", data if isinstance(data, dict) else None
+    )
     validator = Draft202012Validator(schema)
     errors = sorted(validator.iter_errors(data), key=lambda e: list(e.path))
     if errors:

@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "f72e8b55aafcb54d704ad05a5d2a8e1cd18c24a741103c4e308ef3ff094805e6"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "faebf648ea15d8d8c990ef9d0581e0bfeaef5b9654d2ec0f0d68cdb269c59906"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "faebf648ea15d8d8c990ef9d0581e0bfeaef5b9654d2ec0f0d68cdb269c59906"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "143994ef8ace5582bc0fa2124784c363d0ee2b69c752e48fb0f35e2e62f3ed88"
+    },
+    {
+      "path": "report.json",
+      "sha256": "b87214479a3df87437361b610db20899fbc4421376a403b296dadb9324c0b312"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "31cc437fcec6600d0939283c740aae8f92677a03512a1799cad3f00cf92e3748"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "f053ec13c68e056d552a3e24429628bddcdaf09fb71965666c72cc8b0135692d"
+    }
+  ],
+  "extra": {
+    "target": "qeeqbox-ftp",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

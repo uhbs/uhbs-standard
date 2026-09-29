@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `honeytrap-ssh`
+# Image name at grade time: honeytrap:uhbs-lab
+FROM sha256:bf9df058337b7be44768d527f10483e653f771e3a54e97c47c56a563219f20a0

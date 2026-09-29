@@ -1,0 +1,212 @@
+[
+    {
+        "Id": "fb401a8285e2d29ea79f1b1a51fd4ed0a1e39a38c08ddfffd1ed8043033e47d8",
+        "Created": "2026-09-28T09:48:47.372796168Z",
+        "Path": "/endlessh",
+        "Args": [
+            "-v"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 86092,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-28T09:48:47.435056293Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:afb3912dd411adf80907456db7db3058515fe3ca8501f8cc22c3d17c37a70dab",
+        "ResolvConfPath": "/var/lib/docker/containers/fb401a8285e2d29ea79f1b1a51fd4ed0a1e39a38c08ddfffd1ed8043033e47d8/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/fb401a8285e2d29ea79f1b1a51fd4ed0a1e39a38c08ddfffd1ed8043033e47d8/hostname",
+        "HostsPath": "/var/lib/docker/containers/fb401a8285e2d29ea79f1b1a51fd4ed0a1e39a38c08ddfffd1ed8043033e47d8/hosts",
+        "LogPath": "/var/lib/docker/containers/fb401a8285e2d29ea79f1b1a51fd4ed0a1e39a38c08ddfffd1ed8043033e47d8/fb401a8285e2d29ea79f1b1a51fd4ed0a1e39a38c08ddfffd1ed8043033e47d8-json.log",
+        "Name": "/uhbs-target-endlessh-ssh_tarpit",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/endlessh-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "fb401a8285e2d29ea79f1b1a51fd4ed0a1e39a38c08ddfffd1ed8043033e47d8",
+                "LowerDir": "/var/lib/docker/overlay2/e5177bb91b41753791a567a1b4f20af143087f7a2cb551ceb311a1e734ef2aea-init/diff:/var/lib/docker/overlay2/atqra2jb4m2d9wiclwcea9bul/diff:/var/lib/docker/overlay2/4b7039a2642f2dd0aaf73edd52d51613bfd6002fa5ffac03d275a5a091874dd2/diff",
+                "MergedDir": "/var/lib/docker/overlay2/e5177bb91b41753791a567a1b4f20af143087f7a2cb551ceb311a1e734ef2aea/merged",
+                "UpperDir": "/var/lib/docker/overlay2/e5177bb91b41753791a567a1b4f20af143087f7a2cb551ceb311a1e734ef2aea/diff",
+                "WorkDir": "/var/lib/docker/overlay2/e5177bb91b41753791a567a1b4f20af143087f7a2cb551ceb311a1e734ef2aea/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/endlessh-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "fb401a8285e2",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "2222/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "-v"
+            ],
+            "Image": "endlessh:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/endlessh"
+            ],
+            "Labels": {
+                "uhbs.unit": "endlessh-ssh_tarpit"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "29d523ebdc7d4acae84ec1d1b8c1b7f6b342edb081bd15b9eac1f92e84b81090",
+            "SandboxKey": "/var/run/docker/netns/29d523ebdc7d",
+            "Ports": {
+                "2222/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "endlessh-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "1c957e1815587bc4877b3268a031cb197d900704fd58009dc7c3c67e6f0d4cf1",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.4",
+                    "MacAddress": "b6:89:c3:a4:7a:ad",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-endlessh-ssh_tarpit",
+                        "endlessh-lab",
+                        "fb401a8285e2"
+                    ]
+                }
+            }
+        }
+    }
+]

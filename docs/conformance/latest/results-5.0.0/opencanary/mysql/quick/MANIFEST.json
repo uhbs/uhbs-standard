@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "8e1e068c6707d5fe7f7e1c8233e2bb017abf292e31fb726ac94e0a5a083ddc41"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "b420579a946826b4df77c61f1c70c2e9d3f88720f162526623c260fdfc05d6dc"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "b420579a946826b4df77c61f1c70c2e9d3f88720f162526623c260fdfc05d6dc"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "547ff4d58bb1eb4b1956c5365980db2068a977bdf588e5463e7aa7dcd2d4ed34"
+    },
+    {
+      "path": "report.json",
+      "sha256": "4eb22902440e2ee7c563c2ec8f8a9c081b6ea65c809067e64581e594d4079b74"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "88caa7e394c976e03f1d61208bfddc60906df56795f1a6cd17982e6de98bcf0d"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "ac80d84de754765a045a9eca3acf5077aa4424c7c99d66af9a33b2ef06a20121"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-mysql",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

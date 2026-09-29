@@ -1,12 +1,14 @@
 """Run and aggregate multi-protocol RFC probe suites."""
 from __future__ import annotations
 
-from uhbs_core.models import CheckResult
+from uhbs_core.models import CheckOutcome, CheckResult
 
+from .ftp import probe_ftp_rfc959
 from .http_probe import probe_http_rfc9110
 from .pop3 import probe_pop3_rfc1939
 from .smtp import probe_smtp_rfc5321
 from .ssh import probe_ssh_rfc4253
+from .telnet import probe_telnet_rfc854
 from .types import ProtoPorts, RFCSuiteResult
 
 
@@ -20,6 +22,10 @@ def run_rfc_suites(host: str, ports: ProtoPorts) -> list[RFCSuiteResult]:
         suites.append(probe_pop3_rfc1939(host, ports.pop3))
     if ports.http:
         suites.append(probe_http_rfc9110(host, ports.http))
+    if getattr(ports, "ftp", None):
+        suites.append(probe_ftp_rfc959(host, ports.ftp))
+    if getattr(ports, "telnet", None):
+        suites.append(probe_telnet_rfc854(host, ports.telnet))
     return suites
 
 
@@ -29,13 +35,16 @@ def aggregate_rfc_score(suites: list[RFCSuiteResult]) -> tuple[float, list[Check
     checks: list[CheckResult] = []
     for s in suites:
         if s.skipped:
+            rationale = s.skip_reason or f"{s.protocol} suite not applicable for this target"
             checks.append(
                 CheckResult(
                     id=f"rfc.{s.protocol}.skipped",
                     team="blue",
-                    passed=True,
-                    detail=s.skip_reason or "skipped",
-                    score=100.0,  # N/A skip — not a fidelity failure
+                    outcome=CheckOutcome.NOT_APPLICABLE,
+                    detail=rationale,
+                    score=0.0,
+                    applicability_rationale=rationale,
+                    mandatory=False,
                 )
             )
             continue

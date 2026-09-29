@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "94d295a24f75ccc44fb6978f42c55a6e11b6c925a62f230e1187960fe7b4674b"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "91c2faa3d150d0a29c5c54f3789a0f895b63fc9c2150ecb183af931ddb242448"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "91c2faa3d150d0a29c5c54f3789a0f895b63fc9c2150ecb183af931ddb242448"
+    },
+    {
+      "path": "report.json",
+      "sha256": "4ca32c613384c43789f16f5bf859affea2bf48c7eb37948c88df312e946ec3f6"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "c60535c0d480cf63493b7ef04798278a20b6fe77791187109f05ae968ac07918"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "398ea6b6efae717ce2454a611990b28d671731da33e7ef55faa31d8f33dd279b"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-ftp",
+    "uhqs": 50.47,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

@@ -1,0 +1,5 @@
+source=.local/labs/kippo/Dockerfile.lab
+image=kippo:uhbs-lab
+digest=sha256:135178322e022b9cbe1e945aeca712b155bf19c7aa538acef5d10c9f180ef296
+dockerfile=docs/conformance/latest/results-5.0.1/kippo/ssh/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/kippo/ssh/Dockerfile.pin

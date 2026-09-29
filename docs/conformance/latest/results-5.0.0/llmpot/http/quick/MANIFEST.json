@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "e1eff0669db2e728cdf7f2171c5ead1939173808d5964bdcbcd92b7b6f6306e4"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "421d5ce4819d84840a68aad3221d5c633effed88e608ca5d712de8bd2c6fc3b3"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "421d5ce4819d84840a68aad3221d5c633effed88e608ca5d712de8bd2c6fc3b3"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "2adaa6e1d396cc9bf9621b44ee43f8ae9f8db8eef1c715c37acde5ac0ff61db9"
+    },
+    {
+      "path": "report.json",
+      "sha256": "20cb4d55d4ddc6b5370fa428efb5547e19619bfc70906081d85671c90848512b"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "acac9f9a8618ee068c996a79549eaa4f97b02d0e34dfa293b1a87558e102d53d"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "d31bb45f486f4659064db9a212ff5063bdda85390722972c51e762c3c4372901"
+    }
+  ],
+  "extra": {
+    "target": "llmpot-http",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

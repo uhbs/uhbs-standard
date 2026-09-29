@@ -41,17 +41,17 @@ const STEPS: { id: StepId; title: string; line: string }[] = [
   {
     id: "mix",
     title: "Those grades become one number",
-    line: "We mix the five grades into a single “everyday quality” score before safety is applied.",
+    line: "We mix the five grades into a single “everyday quality” score — but only after the Safety Gate is measured.",
   },
   {
     id: "safety",
-    title: "Safety can cut the score",
-    line: "If the honeypot can leak or be escaped, the whole score shrinks — even if it looked realistic.",
+    title: "Safety is a pass/fail gate",
+    line: "If containment fails or can’t be measured, UHQS stays ungraded — realism never overrides a broken Safety Gate.",
   },
   {
     id: "result",
     title: "That final number is UHQS",
-    line: "Safe and skilled → high score. Unsafe → low score, so you fix containment first.",
+    line: "Gate passed and skilled → published score. Gate failed or incomplete → fix containment first; no partial credit.",
   },
 ];
 
@@ -208,7 +208,7 @@ function SceneSafety({ reduce }: { reduce: boolean }) {
     <div className="flex flex-col items-center gap-6 py-4">
       <div className="text-center space-y-3">
         <div className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-          Everyday quality
+          Everyday quality ready — gate decides
         </div>
         <div className="relative h-16 flex items-center justify-center">
           <motion.div
@@ -224,12 +224,12 @@ function SceneSafety({ reduce }: { reduce: boolean }) {
             72
           </motion.div>
           <motion.div
-            className="absolute text-5xl font-bold tabular-nums text-danger"
+            className="absolute text-3xl sm:text-4xl font-bold tabular-nums text-danger"
             initial={reduce ? { opacity: 1 } : { opacity: 0, scale: 1.08 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: reduce ? 0 : 1.0, duration: 0.55, ease }}
           >
-            58
+            Ungraded
           </motion.div>
         </div>
       </div>
@@ -239,7 +239,7 @@ function SceneSafety({ reduce }: { reduce: boolean }) {
         animate={{ opacity: 1 }}
         transition={{ delay: reduce ? 0 : 1.25 }}
       >
-        Leak or escape risk? The score drops — realism cannot hide a safety problem.
+        Leak, escape, or unmeasured containment? No UHQS is published — realism cannot bypass the Safety Gate.
       </motion.div>
     </div>
   );
@@ -255,8 +255,8 @@ function SceneResult({ reduce }: { reduce: boolean }) {
         transition={{ duration: 0.6, ease }}
       >
         <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-main mb-2">Final UHQS</div>
-        <div className="text-5xl sm:text-6xl font-bold text-foreground tabular-nums">58.00</div>
-        <div className="mt-2 font-mono text-sm text-muted-foreground">Grade D</div>
+        <div className="text-5xl sm:text-6xl font-bold text-foreground tabular-nums">82.00</div>
+        <div className="mt-2 font-mono text-sm text-muted-foreground">Grade B · gate passed</div>
       </motion.div>
       <motion.p
         className="text-sm text-muted-foreground text-center max-w-sm leading-relaxed"
@@ -264,7 +264,7 @@ function SceneResult({ reduce }: { reduce: boolean }) {
         animate={{ opacity: 1 }}
         transition={{ delay: reduce ? 0 : 0.4 }}
       >
-        That is the number on the Results cards — one comparable quality signal, with safety baked in.
+        Published only when the Safety Gate passes — one comparable quality signal, fail-closed on containment.
       </motion.p>
     </div>
   );

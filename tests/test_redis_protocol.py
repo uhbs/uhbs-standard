@@ -192,6 +192,13 @@ def _realistic_redis(conn: socket.socket) -> None:
                     with _STORE_LOCK:
                         n_exist = sum(1 for k in args if k in _STORE)
                     conn.sendall(f":{n_exist}\r\n".encode())
+            elif cmd == "TIME":
+                conn.sendall(b"*2\r\n$10\r\n1700000000\r\n$1\r\n0\r\n")
+            elif cmd == "CLIENT":
+                conn.sendall(b"+OK\r\n")
+            elif cmd == "QUIT":
+                conn.sendall(b"+OK\r\n")
+                return
             else:
                 conn.sendall(f"-ERR unknown command '{cmd}'\r\n".encode())
 
@@ -221,11 +228,15 @@ def test_redis_realistic_stub_passes_fidelity_suite() -> None:
         assert _by_id(fsm, "redis.fsm.invalid_verb").passed is True
         assert _by_id(fsm, "redis.fsm.wrong_arity").passed is True
         assert _by_id(fsm, "redis.fsm.truncated_array").passed is True
+        assert _by_id(fsm, "redis.fsm.set_arity").passed is True
+        assert _by_id(fsm, "redis.fsm.quit").passed is True
 
         nego = plugin.probe_negotiation(host, port, target, None)
         assert _by_id(nego, "redis.nego.ping").passed is True
         assert _by_id(nego, "redis.nego.echo").passed is True
         assert _by_id(nego, "redis.nego.info_server").passed is True
+        assert _by_id(nego, "redis.nego.time").passed is True
+        assert _by_id(nego, "redis.nego.client_setname").passed is True
 
         state = plugin.probe_state(host, port, target, None)
         assert _by_id(state, "redis.state.set_get").passed is True

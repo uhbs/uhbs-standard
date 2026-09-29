@@ -1,0 +1,655 @@
+# Rerun runbook — unreachable-target units (results-5.0.1 wave)
+#
+# Consumed by:  python scripts/rerun_unit.py --runbook <this-file> --unit <unit_id>
+# Coordinates (inventory/TPS/alias/port) come from the SQLite ledger;
+# this file supplies the TARGET LAUNCHER (image, env, mounts, cmd).
+#
+# status values:
+#   verified            — launcher confirmed against a live container
+#   needs-launcher      — image known/likely; confirm env/mounts/cmd before trusting the grade
+#   needs-config        — product config must enable the protocol (RERUN-TUTORIAL.md §6)
+#   needs-investigation — no known launcher; triage with --preflight-only first
+#
+# TELEMETRY WIRING RULE (apply to every launcher):
+#   All honeypots log somewhere by design. Set `log_path:` to the product's
+#   native log directory INSIDE the container — rerun_unit.py mounts the graded
+#   telemetry sink there (rw) so Module C can actually measure telemetry
+#   (C1 parse/format, C2 injection markers, C4 ground truth). Products with
+#   JSONL output get measured properly; text-only loggers will be measured-zero
+#   (honest: their telemetry is not machine-consumable) — enable structured
+#   logging where the product supports it.
+
+units:
+  Krawl-http:
+    benchmark: Krawl
+    protocol: http
+    alias: Krawl-lab
+    port: 5000
+    status: verified   # 2026-09-28: image built with py-tlsh>=4.5.0 (no arm64 wheel for 5.0.1); ~40s warmup, use --wait 90
+    image: krawl:uhbs-lab
+
+
+  beelzebub-http:
+    benchmark: beelzebub
+    protocol: http
+    alias: beelzebub-lab
+    port: 8080
+    status: verified   # 2026-09-28: per-unit config dir (beelzebub.yaml + services/http-8080.yaml) at /configurations
+    image: beelzebub:uhbs-lab
+    mounts:
+      - .local/labs/beelzebub-runtime/http:/configurations:ro
+
+
+  beelzebub-mcp:
+    benchmark: beelzebub
+    protocol: mcp
+    alias: beelzebub-lab
+    port: 8000
+    status: verified   # 2026-09-28: per-unit config dir (beelzebub.yaml + services/mcp-8000.yaml) at /configurations
+    image: beelzebub:uhbs-lab
+    mounts:
+      - .local/labs/beelzebub-runtime/mcp:/configurations:ro
+
+
+  beelzebub-mysql:
+    benchmark: beelzebub
+    protocol: mysql
+    alias: beelzebub-lab
+    port: 3306
+    status: verified   # 2026-09-28: per-unit config dir (beelzebub.yaml + services/tcp-3306.yaml) at /configurations
+    image: beelzebub:uhbs-lab
+    mounts:
+      - .local/labs/beelzebub-runtime/mysql:/configurations:ro
+
+
+  beelzebub-rdp:
+    benchmark: beelzebub
+    protocol: rdp
+    alias: beelzebub-lab
+    port: 3389
+    status: verified   # 2026-09-28: per-unit config dir (beelzebub.yaml + services/tcp-3389-rdp.yaml) at /configurations
+    image: beelzebub:uhbs-lab
+    mounts:
+      - .local/labs/beelzebub-runtime/rdp:/configurations:ro
+
+
+  beelzebub-smb:
+    benchmark: beelzebub
+    protocol: smb
+    alias: beelzebub-lab
+    port: 445
+    status: verified   # 2026-09-28: per-unit config dir (beelzebub.yaml + services/tcp-445-smb.yaml) at /configurations
+    image: beelzebub:uhbs-lab
+    mounts:
+      - .local/labs/beelzebub-runtime/smb:/configurations:ro
+
+
+  beelzebub-ssh:
+    benchmark: beelzebub
+    protocol: ssh
+    alias: beelzebub-lab
+    port: 2222
+    status: verified   # 2026-09-28: per-unit config dir (beelzebub.yaml + services/ssh-2222.yaml) at /configurations
+    image: beelzebub:uhbs-lab
+    mounts:
+      - .local/labs/beelzebub-runtime/ssh:/configurations:ro
+
+
+  beelzebub-telnet:
+    benchmark: beelzebub
+    protocol: telnet
+    alias: beelzebub-lab
+    port: 23
+    status: verified   # 2026-09-28: per-unit config dir (beelzebub.yaml + services/telnet-23.yaml) at /configurations
+    image: beelzebub:uhbs-lab
+    mounts:
+      - .local/labs/beelzebub-runtime/telnet:/configurations:ro
+
+
+  beelzebub-vnc:
+    benchmark: beelzebub
+    protocol: vnc
+    alias: beelzebub-lab
+    port: 5900
+    status: verified   # 2026-09-28: per-unit config dir (beelzebub.yaml + services/tcp-5900-vnc.yaml) at /configurations
+    image: beelzebub:uhbs-lab
+    mounts:
+      - .local/labs/beelzebub-runtime/vnc:/configurations:ro
+
+
+  conpot-bacnet:
+    benchmark: conpot
+    protocol: bacnet
+    alias: conpot-lab
+    port: 47808
+    status: verified   # 2026-09-28: per-unit template copy (uhbs_bacnet) with inventory port
+    image: conpot:uhbs-lab
+    cmd: --template uhbs_bacnet --logfile /var/log/conpot/conpot.log -f --temp_dir /tmp
+    mounts:
+      - .local/labs/conpot-runtime/uhbs_bacnet:/usr/local/lib/python3.14/site-packages/conpot/templates/uhbs_bacnet:ro
+
+
+  conpot-http:
+    benchmark: conpot
+    protocol: http
+    alias: conpot-lab
+    port: 80
+    status: verified   # 2026-09-28: per-unit template copy (uhbs_http) with inventory port
+    image: conpot:uhbs-lab
+    cmd: --template uhbs_http --logfile /var/log/conpot/conpot.log -f --temp_dir /tmp
+    mounts:
+      - .local/labs/conpot-runtime/uhbs_http:/usr/local/lib/python3.14/site-packages/conpot/templates/uhbs_http:ro
+
+
+  conpot-modbus:
+    benchmark: conpot
+    protocol: modbus
+    alias: conpot-lab
+    port: 5020
+    status: needs-config
+    image: conpot:uhbs-lab
+
+  conpot-s7comm:
+    benchmark: conpot
+    protocol: s7comm
+    alias: conpot-lab
+    port: 102
+    status: verified   # 2026-09-28: per-unit template copy (uhbs_s7comm) with inventory port
+    image: conpot:uhbs-lab
+    cmd: --template uhbs_s7comm --logfile /var/log/conpot/conpot.log -f --temp_dir /tmp
+    mounts:
+      - .local/labs/conpot-runtime/uhbs_s7comm:/usr/local/lib/python3.14/site-packages/conpot/templates/uhbs_s7comm:ro
+
+
+  cowrie-telnet:
+    benchmark: cowrie
+    protocol: telnet
+    alias: cowrie-lab
+    port: 2223
+    status: verified   # 2026-09-28: official image + telnet env + cfg + telemetry at var/log/cowrie (cowrie.json)
+    image: cowrie/cowrie:latest
+    env:
+      COWRIE_TELNET_ENABLED: "yes"
+    telemetry: .local/labs/cowrie-telemetry
+    log_path: /cowrie/cowrie-git/var/log/cowrie
+    mounts:
+      - docs/conformance/labs/cowrie/cowrie.cfg:/cowrie/cowrie-git/etc/cowrie.cfg:ro
+
+
+  datatrap-http:
+    benchmark: datatrap
+    protocol: http
+    alias: datatrap-lab
+    port: 8080
+    status: verified   # 2026-09-28: runtime dir at /data/honeypot; data.jsonl = JSONL sink
+    image: datatrap:uhbs-lab
+    telemetry: .local/labs/datatrap-runtime/http
+    log_path: /data/honeypot
+
+
+  datatrap-mysql:
+    benchmark: datatrap
+    protocol: mysql
+    alias: datatrap-lab
+    port: 3306
+    status: verified   # 2026-09-28: runtime dir at /data/honeypot; data.jsonl = JSONL sink
+    image: datatrap:uhbs-lab
+    telemetry: .local/labs/datatrap-runtime/mysql
+    log_path: /data/honeypot
+
+
+  datatrap-ssh:
+    benchmark: datatrap
+    protocol: ssh
+    alias: datatrap-lab
+    port: 2222
+    status: verified   # 2026-09-28: runtime dir at /data/honeypot; data.jsonl = JSONL sink
+    image: datatrap:uhbs-lab
+    telemetry: .local/labs/datatrap-runtime/ssh
+    log_path: /data/honeypot
+
+
+  datatrap-telnet:
+    benchmark: datatrap
+    protocol: telnet
+    alias: datatrap-lab
+    port: 2323
+    status: verified   # 2026-09-28: runtime dir at /data/honeypot; data.jsonl = JSONL sink
+    image: datatrap:uhbs-lab
+    telemetry: .local/labs/datatrap-runtime/telnet
+    log_path: /data/honeypot
+
+
+  dionaea-sip:
+    benchmark: dionaea
+    protocol: sip
+    alias: dionaea-lab
+    port: 5060
+    status: needs-investigation
+    image: dinotools/dionaea:latest
+
+  echidra-ssh:
+    benchmark: echidra
+    protocol: ssh
+    alias: echidra-lab
+    port: 2222
+    status: needs-launcher
+    image: echidra:uhbs-lab
+
+  endlessh-ssh_tarpit:
+    benchmark: endlessh
+    protocol: ssh_tarpit
+    alias: endlessh-lab
+    port: 2222
+    status: needs-launcher
+    image: endlessh:uhbs-lab
+
+  espot-http:
+    benchmark: espot
+    protocol: http
+    alias: espot-lab
+    port: 9200
+    status: needs-launcher
+    image: espot:uhbs-lab
+
+  honeypot-ftp-ftp:
+    benchmark: honeypot-ftp
+    protocol: ftp
+    alias: honeypot-ftp-lab
+    port: 21
+    status: needs-launcher
+    image: honeypot-ftp:uhbs-lab
+
+  kippo-ssh:
+    benchmark: kippo
+    protocol: ssh
+    alias: kippo-lab
+    port: 2222
+    status: verified   # 2026-09-28: preflight PASS after cfg mount; image /app/kippo.cfg is a broken dir
+    image: kippo:uhbs-lab
+    log_path: /app/log          # kippo text logs land in the graded sink (measured, not excluded)
+    mounts:
+      - .local/labs/kippo/kippo.cfg.dist:/app/kippo.cfg:ro
+      - .local/labs/kippo-data:/app/data:rw
+      - .local/labs/kippo-dl:/app/dl:rw
+
+  mysql-honeypotd-mysql:
+    benchmark: mysql-honeypotd
+    protocol: mysql
+    alias: mysql-honeypotd-lab
+    port: 3306
+    status: needs-launcher
+    image: mysql-honeypotd:uhbs-lab
+
+  opencanary-ftp:
+    benchmark: opencanary
+    protocol: ftp
+    alias: opencanary-lab
+    port: 21
+    status: verified   # 2026-09-28: image built (Dockerfile.latest), conf mounted, telemetry wired
+    image: opencanary:uhbs-lab
+    mounts:
+      - docs/conformance/labs/opencanary/opencanary.conf:/opencanary/opencanary.conf:ro
+
+  opencanary-git:
+    benchmark: opencanary
+    protocol: git
+    alias: opencanary-lab
+    port: 9418
+    status: verified   # 2026-09-28: image built (Dockerfile.latest), conf mounted, telemetry wired
+    image: opencanary:uhbs-lab
+    mounts:
+      - docs/conformance/labs/opencanary/opencanary.conf:/opencanary/opencanary.conf:ro
+
+  opencanary-http:
+    benchmark: opencanary
+    protocol: http
+    alias: opencanary-lab
+    port: 80
+    status: verified   # 2026-09-28: image built (Dockerfile.latest), conf mounted, telemetry wired
+    image: opencanary:uhbs-lab
+    mounts:
+      - docs/conformance/labs/opencanary/opencanary.conf:/opencanary/opencanary.conf:ro
+
+  opencanary-mysql:
+    benchmark: opencanary
+    protocol: mysql
+    alias: opencanary-lab
+    port: 3306
+    status: verified   # 2026-09-28: image built (Dockerfile.latest), conf mounted, telemetry wired
+    image: opencanary:uhbs-lab
+    mounts:
+      - docs/conformance/labs/opencanary/opencanary.conf:/opencanary/opencanary.conf:ro
+
+  opencanary-ntp:
+    benchmark: opencanary
+    protocol: ntp
+    alias: opencanary-lab
+    port: 123
+    status: verified   # 2026-09-28: image built (Dockerfile.latest), conf mounted, telemetry wired
+    image: opencanary:uhbs-lab
+    mounts:
+      - docs/conformance/labs/opencanary/opencanary.conf:/opencanary/opencanary.conf:ro
+
+  opencanary-rdp:
+    benchmark: opencanary
+    protocol: rdp
+    alias: opencanary-lab
+    port: 3389
+    status: verified   # 2026-09-28: image built (Dockerfile.latest), conf mounted, telemetry wired
+    image: opencanary:uhbs-lab
+    mounts:
+      - docs/conformance/labs/opencanary/opencanary.conf:/opencanary/opencanary.conf:ro
+
+  opencanary-sip:
+    benchmark: opencanary
+    protocol: sip
+    alias: opencanary-lab
+    port: 5060
+    status: verified   # 2026-09-28: image built (Dockerfile.latest), conf mounted, telemetry wired
+    image: opencanary:uhbs-lab
+    mounts:
+      - docs/conformance/labs/opencanary/opencanary.conf:/opencanary/opencanary.conf:ro
+
+  opencanary-snmp:
+    benchmark: opencanary
+    protocol: snmp
+    alias: opencanary-lab
+    port: 161
+    status: verified   # 2026-09-28: image built (Dockerfile.latest), conf mounted, telemetry wired
+    image: opencanary:uhbs-lab
+    mounts:
+      - docs/conformance/labs/opencanary/opencanary.conf:/opencanary/opencanary.conf:ro
+
+  opencanary-ssh:
+    benchmark: opencanary
+    protocol: ssh
+    alias: opencanary-lab
+    port: 2222
+    status: verified   # 2026-09-28: image built (Dockerfile.latest), conf mounted, telemetry wired
+    image: opencanary:uhbs-lab
+    mounts:
+      - docs/conformance/labs/opencanary/opencanary.conf:/opencanary/opencanary.conf:ro
+
+  opencanary-telnet:
+    benchmark: opencanary
+    protocol: telnet
+    alias: opencanary-lab
+    port: 23
+    status: verified   # 2026-09-28: image built (Dockerfile.latest), conf mounted, telemetry wired
+    image: opencanary:uhbs-lab
+    mounts:
+      - docs/conformance/labs/opencanary/opencanary.conf:/opencanary/opencanary.conf:ro
+
+  opencanary-tftp:
+    benchmark: opencanary
+    protocol: tftp
+    alias: opencanary-lab
+    port: 69
+    status: verified   # 2026-09-28: image built (Dockerfile.latest), conf mounted, telemetry wired
+    image: opencanary:uhbs-lab
+    mounts:
+      - docs/conformance/labs/opencanary/opencanary.conf:/opencanary/opencanary.conf:ro
+
+  opencanary-vnc:
+    benchmark: opencanary
+    protocol: vnc
+    alias: opencanary-lab
+    port: 5900
+    status: verified   # 2026-09-28: image built (Dockerfile.latest), conf mounted, telemetry wired
+    image: opencanary:uhbs-lab
+    mounts:
+      - docs/conformance/labs/opencanary/opencanary.conf:/opencanary/opencanary.conf:ro
+
+  owa-honeypot-http:
+    benchmark: owa-honeypot
+    protocol: http
+    alias: owa-honeypot-lab
+    port: 8080
+    status: verified   # 2026-09-28: image rebuilt on python:3.8 with pinned flask-1.x deps (2015-era stack)
+    image: owa-honeypot:uhbs-lab
+
+
+  pyrdp-rdp:
+    benchmark: pyrdp
+    protocol: rdp
+    alias: pyrdp-lab
+    port: 3389
+    status: verified   # 2026-09-28: MITM listener mode (dummy forward target); session output -> /telemetry
+    image: pyrdp:uhbs-lab
+    telemetry: .local/labs/pyrdp-telemetry
+    cmd: pyrdp-mitm 127.0.0.1:3390 -l 3389 -o /telemetry
+
+
+  qeeqbox-honeypots-dhcp:
+    benchmark: qeeqbox-honeypots
+    protocol: dhcp
+    alias: qeeqbox-lab
+    port: 67
+    status: verified   # 2026-09-28: image rebuilt from current Dockerfile.lab (old image ran syslog-ng only)
+    image: qeeqbox-honeypots:uhbs-lab
+    cmd: python3 -m honeypots --termination-strategy signal --setup dhcp:67
+
+  qeeqbox-honeypots-dns:
+    benchmark: qeeqbox-honeypots
+    protocol: dns
+    alias: qeeqbox-lab
+    port: 53
+    status: verified   # 2026-09-28: image rebuilt from current Dockerfile.lab (old image ran syslog-ng only)
+    image: qeeqbox-honeypots:uhbs-lab
+    cmd: python3 -m honeypots --termination-strategy signal --setup dns:53
+
+  qeeqbox-honeypots-ftp:
+    benchmark: qeeqbox-honeypots
+    protocol: ftp
+    alias: qeeqbox-lab
+    port: 19021
+    status: verified   # 2026-09-28: image rebuilt from current Dockerfile.lab (old image ran syslog-ng only)
+    image: qeeqbox-honeypots:uhbs-lab
+    # default CMD serves ftp:19021 ssh:19022 telnet:19023 smtp:19025 http:19080 pop3:19110 mysql:19306 postgres:19432 redis:19637 vnc:19900
+
+  qeeqbox-honeypots-http:
+    benchmark: qeeqbox-honeypots
+    protocol: http
+    alias: qeeqbox-lab
+    port: 19080
+    status: verified   # 2026-09-28: image rebuilt from current Dockerfile.lab (old image ran syslog-ng only)
+    image: qeeqbox-honeypots:uhbs-lab
+    # default CMD serves ftp:19021 ssh:19022 telnet:19023 smtp:19025 http:19080 pop3:19110 mysql:19306 postgres:19432 redis:19637 vnc:19900
+
+  qeeqbox-honeypots-httpproxy:
+    benchmark: qeeqbox-honeypots
+    protocol: httpproxy
+    alias: qeeqbox-lab
+    port: 8080
+    status: verified   # 2026-09-28: image rebuilt from current Dockerfile.lab (old image ran syslog-ng only)
+    image: qeeqbox-honeypots:uhbs-lab
+    cmd: python3 -m honeypots --termination-strategy signal --setup httpproxy:8080
+
+  qeeqbox-honeypots-imap:
+    benchmark: qeeqbox-honeypots
+    protocol: imap
+    alias: qeeqbox-lab
+    port: 143
+    status: verified   # 2026-09-28: image rebuilt from current Dockerfile.lab (old image ran syslog-ng only)
+    image: qeeqbox-honeypots:uhbs-lab
+    cmd: python3 -m honeypots --termination-strategy signal --setup imap:143
+
+  qeeqbox-honeypots-ipp:
+    benchmark: qeeqbox-honeypots
+    protocol: ipp
+    alias: qeeqbox-lab
+    port: 631
+    status: verified   # 2026-09-28: image rebuilt from current Dockerfile.lab (old image ran syslog-ng only)
+    image: qeeqbox-honeypots:uhbs-lab
+    cmd: python3 -m honeypots --termination-strategy signal --setup ipp:631
+
+  qeeqbox-honeypots-mysql:
+    benchmark: qeeqbox-honeypots
+    protocol: mysql
+    alias: qeeqbox-lab
+    port: 19306
+    status: verified   # 2026-09-28: image rebuilt from current Dockerfile.lab (old image ran syslog-ng only)
+    image: qeeqbox-honeypots:uhbs-lab
+    # default CMD serves ftp:19021 ssh:19022 telnet:19023 smtp:19025 http:19080 pop3:19110 mysql:19306 postgres:19432 redis:19637 vnc:19900
+
+  qeeqbox-honeypots-ntp:
+    benchmark: qeeqbox-honeypots
+    protocol: ntp
+    alias: qeeqbox-lab
+    port: 123
+    status: verified   # 2026-09-28: image rebuilt from current Dockerfile.lab (old image ran syslog-ng only)
+    image: qeeqbox-honeypots:uhbs-lab
+    cmd: python3 -m honeypots --termination-strategy signal --setup ntp:123
+
+  qeeqbox-honeypots-pop3:
+    benchmark: qeeqbox-honeypots
+    protocol: pop3
+    alias: qeeqbox-lab
+    port: 19110
+    status: verified   # 2026-09-28: image rebuilt from current Dockerfile.lab (old image ran syslog-ng only)
+    image: qeeqbox-honeypots:uhbs-lab
+    # default CMD serves ftp:19021 ssh:19022 telnet:19023 smtp:19025 http:19080 pop3:19110 mysql:19306 postgres:19432 redis:19637 vnc:19900
+
+  qeeqbox-honeypots-rdp:
+    benchmark: qeeqbox-honeypots
+    protocol: rdp
+    alias: qeeqbox-lab
+    port: 3389
+    status: verified   # 2026-09-28: image rebuilt from current Dockerfile.lab (old image ran syslog-ng only)
+    image: qeeqbox-honeypots:uhbs-lab
+    cmd: python3 -m honeypots --termination-strategy signal --setup rdp:3389
+
+  qeeqbox-honeypots-sip:
+    benchmark: qeeqbox-honeypots
+    protocol: sip
+    alias: qeeqbox-lab
+    port: 5060
+    status: verified   # 2026-09-28: image rebuilt from current Dockerfile.lab (old image ran syslog-ng only)
+    image: qeeqbox-honeypots:uhbs-lab
+    cmd: python3 -m honeypots --termination-strategy signal --setup sip:5060
+
+  qeeqbox-honeypots-smb:
+    benchmark: qeeqbox-honeypots
+    protocol: smb
+    alias: qeeqbox-lab
+    port: 445
+    status: verified   # 2026-09-28: image rebuilt from current Dockerfile.lab (old image ran syslog-ng only)
+    image: qeeqbox-honeypots:uhbs-lab
+    cmd: python3 -m honeypots --termination-strategy signal --setup smb:445
+
+  qeeqbox-honeypots-smtp:
+    benchmark: qeeqbox-honeypots
+    protocol: smtp
+    alias: qeeqbox-lab
+    port: 19025
+    status: verified   # 2026-09-28: image rebuilt from current Dockerfile.lab (old image ran syslog-ng only)
+    image: qeeqbox-honeypots:uhbs-lab
+    # default CMD serves ftp:19021 ssh:19022 telnet:19023 smtp:19025 http:19080 pop3:19110 mysql:19306 postgres:19432 redis:19637 vnc:19900
+
+  qeeqbox-honeypots-snmp:
+    benchmark: qeeqbox-honeypots
+    protocol: snmp
+    alias: qeeqbox-lab
+    port: 161
+    status: verified   # 2026-09-28: image rebuilt from current Dockerfile.lab (old image ran syslog-ng only)
+    image: qeeqbox-honeypots:uhbs-lab
+    cmd: python3 -m honeypots --termination-strategy signal --setup snmp:161
+
+  qeeqbox-honeypots-ssh:
+    benchmark: qeeqbox-honeypots
+    protocol: ssh
+    alias: qeeqbox-lab
+    port: 19022
+    status: verified   # 2026-09-28: image rebuilt from current Dockerfile.lab (old image ran syslog-ng only)
+    image: qeeqbox-honeypots:uhbs-lab
+    # default CMD serves ftp:19021 ssh:19022 telnet:19023 smtp:19025 http:19080 pop3:19110 mysql:19306 postgres:19432 redis:19637 vnc:19900
+
+  qeeqbox-honeypots-telnet:
+    benchmark: qeeqbox-honeypots
+    protocol: telnet
+    alias: qeeqbox-lab
+    port: 19023
+    status: verified   # 2026-09-28: image rebuilt from current Dockerfile.lab (old image ran syslog-ng only)
+    image: qeeqbox-honeypots:uhbs-lab
+    # default CMD serves ftp:19021 ssh:19022 telnet:19023 smtp:19025 http:19080 pop3:19110 mysql:19306 postgres:19432 redis:19637 vnc:19900
+
+  qeeqbox-honeypots-vnc:
+    benchmark: qeeqbox-honeypots
+    protocol: vnc
+    alias: qeeqbox-lab
+    port: 19900
+    status: verified   # 2026-09-28: image rebuilt from current Dockerfile.lab (old image ran syslog-ng only)
+    image: qeeqbox-honeypots:uhbs-lab
+    # default CMD serves ftp:19021 ssh:19022 telnet:19023 smtp:19025 http:19080 pop3:19110 mysql:19306 postgres:19432 redis:19637 vnc:19900
+
+  trapster-dns:
+    benchmark: trapster
+    protocol: dns
+    alias: trapster-lab
+    port: 53
+    status: verified   # 2026-09-28: per-unit JSON conf (EcsLogger -> /telemetry/trapster-ecs.jsonl); slow scapy start (~10s) absorbed by preflight retries
+    image: trapster:uhbs-lab
+    mounts:
+      - .local/labs/trapster-runtime/dns:/etc/trapster:ro
+
+
+  trapster-ftp:
+    benchmark: trapster
+    protocol: ftp
+    alias: trapster-lab
+    port: 2121
+    status: verified   # 2026-09-28: per-unit JSON conf (EcsLogger -> /telemetry/trapster-ecs.jsonl); slow scapy start (~10s) absorbed by preflight retries
+    image: trapster:uhbs-lab
+    mounts:
+      - .local/labs/trapster-runtime/ftp:/etc/trapster:ro
+
+
+  trapster-http:
+    benchmark: trapster
+    protocol: http
+    alias: trapster-lab
+    port: 8080
+    status: verified   # 2026-09-28: per-unit JSON conf (EcsLogger -> /telemetry/trapster-ecs.jsonl); slow scapy start (~10s) absorbed by preflight retries
+    image: trapster:uhbs-lab
+    mounts:
+      - .local/labs/trapster-runtime/http:/etc/trapster:ro
+
+
+  trapster-snmp:
+    benchmark: trapster
+    protocol: snmp
+    alias: trapster-lab
+    port: 161
+    status: verified   # 2026-09-28: per-unit JSON conf (EcsLogger -> /telemetry/trapster-ecs.jsonl); slow scapy start (~10s) absorbed by preflight retries
+    image: trapster:uhbs-lab
+    mounts:
+      - .local/labs/trapster-runtime/snmp:/etc/trapster:ro
+
+
+  trapster-ssh:
+    benchmark: trapster
+    protocol: ssh
+    alias: trapster-lab
+    port: 2222
+    status: verified   # 2026-09-28: per-unit JSON conf (EcsLogger -> /telemetry/trapster-ecs.jsonl); slow scapy start (~10s) absorbed by preflight retries
+    image: trapster:uhbs-lab
+    mounts:
+      - .local/labs/trapster-runtime/ssh:/etc/trapster:ro
+
+
+  trapster-telnet:
+    benchmark: trapster
+    protocol: telnet
+    alias: trapster-lab
+    port: 2323
+    status: verified   # 2026-09-28: per-unit JSON conf (EcsLogger -> /telemetry/trapster-ecs.jsonl); slow scapy start (~10s) absorbed by preflight retries
+    image: trapster:uhbs-lab
+    mounts:
+      - .local/labs/trapster-runtime/telnet:/etc/trapster:ro
+
+
+# FINAL STATUS (2026-09-28 end of batch): 124/135 full runs valid (A>0).
+# 11 remaining dead-target/silent units are UDP services (dionaea-sip, trapster-dns/snmp,
+# conpot-bacnet, opencanary-ntp/sip/snmp, qeeqbox dhcp/dns/ntp/sip/snmp) — honest udp_no_reply;
+# see rerun-triage2.log / rerun-triage3.log. Everything else graded quick+full with --track.

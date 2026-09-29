@@ -1,50 +1,57 @@
 {
-  "uhbs_version": "4.6.1",
+  "uhbs_version": "5.0.1",
   "target": {
     "name": "Endlessh (skeeto SSH tarpit)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/endlessh/low_interaction_full.yaml"
   },
-  "evaluated_at": "2026-07-27",
-  "auditor": "UHBS-Lab detailed Docker run (ssh_tarpit/generic :2222 + 1000-sample A3 + SAST + telemetry)",
+  "evaluated_at": "2026-09-26",
+  "auditor": "UHBS-Lab full Docker refresh (results-5.0.1)",
   "modules": {
     "A": {
-      "score": 65.43,
-      "status": "PARTIAL",
-      "weight": 0.3,
-      "notes": "generic TCP connect/banner/timing n=1000; not RFC4253 SSH"
+      "score": 79.0,
+      "status": "PASSED",
+      "notes": "UHBS Module A \u2014 plugins=['ssh_tarpit']; class=Low-Interaction strict_rfc=True",
+      "complete": true,
+      "weight": 0.3
     },
     "B": {
-      "score": 62.5,
+      "score": 25.0,
       "status": "PARTIAL",
-      "weight": 0.15,
-      "notes": "survived binary blast"
+      "notes": "UHBS Module B class=Low-Interaction",
+      "complete": true,
+      "weight": 0.15
     },
     "C": {
-      "score": 55.0,
-      "status": "PARTIAL",
-      "weight": 0.25,
-      "notes": "text/Docker logs only \u2014 no STIX/OTel/ECS (capped)"
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4; no native_event_format declared \u2014 validating as native_json only",
+      "complete": false,
+      "weight": 0.25
     },
     "D": {
-      "score": 90.0,
-      "status": "GATE FAILED",
-      "notes": "No ports.ssh (tarpit-safe); airgap+gateway attested; Safety Gate not fully cleared (C<95)"
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "notes": "Module D v5: non-SSH targets need gateway/packet evidence for critical egress and runtime inspection \u2014 attestation alone never clears the gate.",
+      "complete": false,
+      "critical_control_verdict": "INCOMPLETE"
     },
     "E": {
       "score": 100.0,
       "status": "PASSED",
+      "notes": "",
+      "complete": true,
       "weight": 0.1,
-      "notes": "200 TCP connects @25 concurrency; P95=7.2ms",
-      "p50_ms": 10.71,
-      "p95_ms": 64.34,
-      "p99_ms": 86.71
+      "p50_ms": 11.61,
+      "p95_ms": 43.73,
+      "p99_ms": 62.2
     },
     "F": {
-      "score": 70.0,
-      "status": "PASSED",
-      "weight": 0.2,
-      "notes": "semgrep error/critical present; SAST gate capped Module F at 70"
+      "score": 67.37,
+      "status": "PARTIAL",
+      "notes": "Module F white-box audit (keys/prompts/SAST/VFS)",
+      "complete": true,
+      "weight": 0.2
     }
   },
   "weights": {
@@ -55,12 +62,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 90.0,
-    "delta_c": 0.81,
+    "containment_score": 0.0,
+    "delta_c": 1.0,
     "passed": false,
+    "critical_control_verdict": "INCOMPLETE",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 54.07,
+  "uhqs": 67.9,
   "grade": "D",
-  "notes": "Detailed evaluation proof only. Graded with generic plugin protocol id ssh_tarpit \u2014 not SSH/Paramiko. Full Docker lab artifacts live under docs/conformance/reports/endlessh/."
+  "notes": "Detailed evaluation proof only. Product name is not a UHBS requirement. Full Docker lab artifacts live under docs/conformance/latest/results-5.0.1/endlessh/. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "assessment_status": "INCOMPLETE",
+  "critical_control_verdict": "INCOMPLETE",
+  "containment_measured": false
 }

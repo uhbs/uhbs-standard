@@ -1,0 +1,70 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "1a5ca501c0f80d06ace16c4991834f24d1937a29eefdb3800602cceb2829fedc"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "45885b2af307a0ff592f5b594b95723713d0eac2bf63b3e8c8f8477bd933f314"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "45885b2af307a0ff592f5b594b95723713d0eac2bf63b3e8c8f8477bd933f314"
+    },
+    {
+      "path": "evidence/container-inspect.json",
+      "sha256": "2de0f89142063d8cf2106a31d362f3616129e6cb7391cb9860c671dbb843263f"
+    },
+    {
+      "path": "evidence/container-inspect.json.sha256",
+      "sha256": "429a1ffa65873dc968d60ee4174137010898aea734a5cf74241e9f21784cf608"
+    },
+    {
+      "path": "evidence/egress-gateway.log",
+      "sha256": "df1a7af1211b66014841055bacff5e89e7e63e412699706823c610f71451d8c4"
+    },
+    {
+      "path": "evidence/egress-gateway.log.sha256",
+      "sha256": "7d69e81f89138710adb9bc40848f0b57d187ae2b9ca83b5bc9d154f3c5101c09"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "ec740f4b6667c890a86215e8ad4a4c142c3834458c55830059e3974a1179595f"
+    },
+    {
+      "path": "proof/full-run.cast",
+      "sha256": "5600685e03187da1cf62e0e5bedc856ee0ad85a3946fd194c7e62957312654c7"
+    },
+    {
+      "path": "report.json",
+      "sha256": "e6ef2dfbc13546fadd6d12e4d065a6f6e53ff1025f47709adf7dd3daf11831f3"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "6eaae3555c06610f49ec5ee23d4be5255992c37450c280baf3d449592f5fcb74"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "16c21c3f0e606fc657f2329947351ddbd9cf87611346f8ae949dabad7d1b4a73"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "8f42bf0d15d045e5cdf4563eb52a479ad4c664c481821dc03a0d83dc7ef7bb56"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "51862d2838a2bbb3c926cd118865ba647720c4c718b7243624de47a7f343cad8"
+    }
+  ],
+  "extra": {
+    "target": "beelzebub-ssh",
+    "uhqs": 18.89,
+    "grade": "GRADE F (Fail)",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
+    "assessment_status": "COMPLETE",
+    "evidence_pack": "evidence-pack.json",
+    "evidence_manifest_digest": "ddb6b4e131dae3044091dcddb5eb74547568317cfc89886103571825ae8b409f"
+  }
+}

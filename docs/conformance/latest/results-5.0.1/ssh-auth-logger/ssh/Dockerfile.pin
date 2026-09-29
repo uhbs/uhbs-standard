@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `ssh-auth-logger-ssh`
+# Image name at grade time: justinazoff/ssh-auth-logger:latest
+FROM sha256:5741d6672aaa078810f6d6f1bc6e138029a194b43acc5ca43d2354c314d255e1

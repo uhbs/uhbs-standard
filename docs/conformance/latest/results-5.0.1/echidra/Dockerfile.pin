@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `echidra-ssh`
+# Image name at grade time: echidra:uhbs-lab
+FROM sha256:b77be4a5a0b0defbfb6a540ddf9957521f6da93070a75dd3c7a7a770f4bd48c3

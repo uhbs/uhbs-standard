@@ -1,0 +1,44 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "96b9be151cca2e39baeb95947df922b6bd8ebf3e57fe04c31e655a7ebbefc898"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "5ba2a947ac0f16c5ea676ae174bc8365bcd9462baeb4ea93ac35719c93645075"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "5ba2a947ac0f16c5ea676ae174bc8365bcd9462baeb4ea93ac35719c93645075"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "b668617c9175c15c83e44a366c1ffd079ee0c6eb441edf5914319a02db4a6c03"
+    },
+    {
+      "path": "proof/full-run.cast",
+      "sha256": "4b6cdfb4cb6fc85144bbadaecfbe1927db2f0246458712b62e838ed3e2c50dd0"
+    },
+    {
+      "path": "report.json",
+      "sha256": "330a7d9e1e604ed0d754f123a9d9bd6ef38654380c4ea663023b8a6fb9277407"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "e291e6a7d782b35cc2d14bb9c5020d6b1230f48ccbe773a363eb501cdd90fb2d"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "d7effd1747af8f938161e01387b609c6596a7d4f7adbf1b4a4246ec2e01000b2"
+    }
+  ],
+  "extra": {
+    "target": "node-ftp-honeypot-ftp",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

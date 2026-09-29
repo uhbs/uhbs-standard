@@ -28,14 +28,35 @@ class HTTPPlugin(ProtocolPlugin):
         return [
             c
             for c in suite.checks
-            if "reject" in c.id or "invalid" in c.id or "unknown" in c.id or "bare_lf" in c.id
+            if any(
+                key in c.id
+                for key in (
+                    "reject",
+                    "invalid",
+                    "unknown",
+                    "bare_lf",
+                    "missing_host",
+                )
+            )
         ]
 
     def probe_negotiation(
         self, host: str, port: int, target: TargetSpec, tps: TPS | None
     ) -> list[CheckResult]:
         suite = probe_http_rfc9110(host, port)
-        return [c for c in suite.checks if "valid_get" in c.id]
+        return [
+            c
+            for c in suite.checks
+            if any(
+                key in c.id
+                for key in (
+                    "valid_get",
+                    "head_status",
+                    "options_asterisk",
+                    "absolute_form",
+                )
+            )
+        ]
 
     def probe_state(
         self, host: str, port: int, target: TargetSpec, tps: TPS | None

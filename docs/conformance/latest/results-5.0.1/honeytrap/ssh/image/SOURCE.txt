@@ -1,0 +1,5 @@
+source=.local/labs/honeytrap/Dockerfile.lab
+image=honeytrap:uhbs-lab
+digest=sha256:bf9df058337b7be44768d527f10483e653f771e3a54e97c47c56a563219f20a0
+dockerfile=docs/conformance/latest/results-5.0.1/honeytrap/ssh/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/honeytrap/ssh/Dockerfile.pin

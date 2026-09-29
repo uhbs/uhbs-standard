@@ -1,0 +1,44 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "e9a8012748e6522683ef79cfd73d3f035dd50dc5153ec9be62e940f472a43a0b"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "bccd52b25b0c78c9d480f0b60934b35ccbff9a00c56ef5f9d6881a9cdebd35c6"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "bccd52b25b0c78c9d480f0b60934b35ccbff9a00c56ef5f9d6881a9cdebd35c6"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "bb3c1e8b4ca1fbd135c372012b921ac0904045e7d27f97591aa41bd1f8af3b1e"
+    },
+    {
+      "path": "proof/full-run.cast",
+      "sha256": "c4b4ea4a12d3771523bfcdb5c7a7c45a3587750538d629c69457da3961b0e0f0"
+    },
+    {
+      "path": "report.json",
+      "sha256": "00d18ed0d347b1b887e5143d232921003bfda243bad5743a7855a3f9a28e9198"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "eb88a3552e297d9279274d01affefef3e719b85a0fef5799f7a19b7714061acc"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "a6056922b53e8db7fb999e7d5bd9abcc8f3c32ce7e32a9dc9d2ed3e67e03c513"
+    }
+  ],
+  "extra": {
+    "target": "nosqlpot-redis",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

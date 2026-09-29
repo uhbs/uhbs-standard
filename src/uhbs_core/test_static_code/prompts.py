@@ -4,7 +4,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import List, Set
 
-from uhbs_core.models import CheckResult
+from uhbs_core.models import CheckOutcome, CheckResult
 
 from .fs import FALLBACK_LEAK_RE, WEAK_PROMPT_BOUNDARIES, _iter_files, _read
 
@@ -71,9 +71,21 @@ def _scan_prompts(root: Path) -> List[CheckResult]:
         CheckResult(
             id="white.prompt_corpus_present",
             team="white",
-            passed=True,
-            detail=f"{len(uniq)} prompt/persona files scanned" if has_prompts else "no prompt corpus (N/A for non-LLM)",
-            score=5.0 if has_prompts else 5.0,
+            outcome=(
+                CheckOutcome.PASS
+                if has_prompts
+                else CheckOutcome.NOT_APPLICABLE
+            ),
+            detail=(
+                f"{len(uniq)} prompt/persona files scanned"
+                if has_prompts
+                else "no prompt corpus (N/A for non-LLM)"
+            ),
+            score=5.0 if has_prompts else 0.0,
+            mandatory=False,
+            applicability_rationale=(
+                None if has_prompts else "Non-LLM targets need not ship a prompt corpus"
+            ),
         ),
         CheckResult(
             id="white.prompt_boundaries",

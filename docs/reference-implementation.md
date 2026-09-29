@@ -45,6 +45,14 @@ Point the harness at **any** reachable target and optional source tree:
 ```bash
 export UHBS_QUICK=1
 export UHBS_AIRGAP_ATTESTED=1
+# Pin the lab target's SSH host key before probing. Verify this fingerprint
+# against the target/container console; do not trust ssh-keyscan by itself.
+# Full guide: tooling/ssh-known-hosts.md
+mkdir -p .local
+ssh-keyscan -p 2200 127.0.0.1 > .local/uhbs_known_hosts
+ssh-keygen -lf .local/uhbs_known_hosts
+chmod 600 .local/uhbs_known_hosts
+export UHBS_SSH_KNOWN_HOSTS="$PWD/.local/uhbs_known_hosts"
 
 uhbs lab \
   --tps low_interaction \

@@ -1,0 +1,5 @@
+source=docs/conformance/labs/conpot/Dockerfile.lab
+image=conpot:uhbs-lab
+digest=sha256:af49c2e9b9d8a8f1198375417bcdb809af12d6356810cb8bbd0203df8f3c6a2f
+dockerfile=docs/conformance/latest/results-5.0.1/conpot/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/conpot/Dockerfile.pin

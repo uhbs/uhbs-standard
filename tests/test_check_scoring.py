@@ -46,9 +46,10 @@ def test_geometric_mean_punishes_outlier_harder_than_arithmetic_mean() -> None:
     result = score_checks(checks)
     arithmetic_mean = (0.0 + 100.0 + 100.0) / 3  # == 33.33
     assert result < arithmetic_mean
-    # sanity: matches the documented ~17 ballpark (floor=0.5)
-    expected = math.exp((math.log(0.5) + math.log(100.0) + math.log(100.0)) / 3)
+    # Near-zero floor (1e-9) keeps log defined while collapsing zero-score credit.
+    expected = math.exp((math.log(1e-9) + math.log(100.0) + math.log(100.0)) / 3)
     assert abs(result - expected) < 0.01
+    assert result < 0.1
 
 
 def test_all_pass_scores_full_from_scores() -> None:

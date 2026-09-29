@@ -1,0 +1,1687 @@
+{
+  "uhbs_version": "5.0.1",
+  "specification_version": "5.0.1",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "check_catalog_hash": "6f83083dce516dd8feb35389eb24e14d1396ac36e482cf52f1af28e8dc842e76",
+  "check_catalog": {
+    "id": "uhbs-default-v5",
+    "hash": "6f83083dce516dd8feb35389eb24e14d1396ac36e482cf52f1af28e8dc842e76"
+  },
+  "target": {
+    "name": "echidra",
+    "class": "Low-Interaction",
+    "protocols": [
+      "ssh"
+    ],
+    "profile_ref": "/work/docs/conformance/labs/echidra/low_interaction_ssh_quick.yaml",
+    "artifact_digest": null
+  },
+  "environment": {
+    "digest": null
+  },
+  "evaluated_at": "2026-09-28",
+  "harness": {
+    "name": "uhbs-lab",
+    "version": "5.0.1",
+    "plugin_versions": {},
+    "command_digest": null,
+    "config_digest": null,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ]
+  },
+  "modules": [
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "complete": false,
+      "completeness": {
+        "complete": false,
+        "applicable_checks": 9,
+        "scored_checks": 8,
+        "not_applicable": 1,
+        "not_tested": 1,
+        "errors": 0,
+        "blocker_ids": [
+          "white.sast_tools"
+        ]
+      },
+      "applicable_checks": 9,
+      "scored_checks": 8,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "white.static_private_keys",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 10.0,
+          "detail": "0 static private keys",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.static_private_keys",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.hardcoded_ssh_banners",
+          "team": "white",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "1 hardcoded SSH banners: honeypot/core/persona.py",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.hardcoded_ssh_banners",
+          "evidence": [
+            "honeypot/core/persona.py"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "1d22b5df95cc442451fe3c7870cd9c3c7c13b48b803371987deb9b7c03763f88"
+          ]
+        },
+        {
+          "id": "white.predictable_seeds",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 5.0,
+          "detail": "0 predictable PRNG seeds",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.predictable_seeds",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.hardcoded_macs",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 5.0,
+          "detail": "0 hardcoded MAC addresses",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.hardcoded_macs",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.prompt_corpus_present",
+          "team": "white",
+          "outcome": "NOT_APPLICABLE",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no prompt corpus (N/A for non-LLM)",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": "Non-LLM targets need not ship a prompt corpus",
+          "catalog_id": "white.prompt_corpus_present",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.prompt_boundaries",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 10.0,
+          "detail": "no weak delimiter/extract patterns",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.prompt_boundaries",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.fallback_strings",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 10.0,
+          "detail": "no plain-text LLM fallback artifacts",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.fallback_strings",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.sast_tools",
+          "team": "white",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "SAST tools skipped by flag \u2014 zero credit",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.sast_tools",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.vfs_posix_coverage",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 15.38,
+          "detail": "POSIX coverage 62% (64/104)",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.vfs_posix_coverage",
+          "evidence": [
+            "apt",
+            "apt-get",
+            "awk",
+            "base64",
+            "bash",
+            "busybox",
+            "cat",
+            "cd",
+            "chmod",
+            "chown",
+            "clear",
+            "cp",
+            "curl",
+            "date",
+            "docker",
+            "echo",
+            "env",
+            "export",
+            "file",
+            "find",
+            "free",
+            "git",
+            "head",
+            "history",
+            "id",
+            "ip",
+            "kill",
+            "less",
+            "ls",
+            "mkdir",
+            "more",
+            "mount",
+            "mv",
+            "nc",
+            "netstat",
+            "passwd",
+            "pip",
+            "ps",
+            "pwd",
+            "python"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "5009a047a11fbd680bb40d2f23cd3fcd626ac2d672c38e16f53bd622c3961534",
+            "09e9edc84caef34aeb47654425a52e55b00fcafd54710079336375ded3907266",
+            "7459ffb7709b3e39d53dad3513eb69f1c56cd74d3f17a232ca43575e83041f19",
+            "371a286d5872a3730d644327581546ec3e658bbf1a3c7f7f0de2bc19905d4402",
+            "37d2b12d5d9abc2a364ef9448767ee03938e383c0284193477dc7618f4b7c6c2",
+            "9d75f0d7c398df565d7ac04c6819b62d6d8f9560f5eb4672596ecd8f7e96ae91",
+            "77af778b51abd4a3c51c5ddd97204a9c3ae614ebccb75a606c3b6865aed6744e",
+            "21e721c35a5823fdb452fa2f9f0a612c74fb952e06927489c6b27a43b817bed4",
+            "e0fee4c9a9eddde0ab0cc34cca18bb298b47e042d3654f3abc2385ca39becbc9",
+            "f92b5215aa322cc1e02f2d805b390d62d5ff942c8fa66e53f417a10abbb959cd",
+            "913a4cb91be20332f3559f8070255d7ac3e6228bb423f4441551d3f783e7d4f4",
+            "e44b4bd707c540bca8615b21f850fb41e02029701df241d179c1a5f3acbf5bf1",
+            "427e4b79b1f0fc90306cbe064b1297b21dc6835bfa656d3bf46bc156e3f24bb0",
+            "0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681",
+            "d548c5b83fa61d8e3bd86ad42a7ffea9b7c86e3f9d8095c1577d3e1270bb9420",
+            "092c79e8f80e559e404bcf660c48f3522b67aba9ff1484b0367e1a4ddef7431d",
+            "b77349bf1fa9b26d45d545d7d64dad96737e9cfbb3cbb5f5d10fb77b0fcc44ad",
+            "d46aee08cc49f6d1eb41800c1d6bab4506c960c700cff0efffe490d7cb1de5e3",
+            "3b9c358f36f0a31b6ad3e14f309c7cf198ac9246e8316f9ce543d5b19ac02b80",
+            "e6640de835ad09fb0a7367ee2e0ba99d0142c139db0272146e35538bd07479fc",
+            "ad95d5fa651ba86d8923fe1238d24a4f1988a752acfe426ac72ac7c04471bc17",
+            "9a881b9b9f23849475296a8cd768ea1965bc3152df7118e60c145975af6aa58a",
+            "9f2e6d33a3717ee826353a404ba4618d1aeeb6879ad7936bce8ed5f46814924d",
+            "259aa8ef98a8b91de574cd904138ef643240c23080cf24da4793a6f10a43fa9d",
+            "a56145270ce6b3bebd1dd012b73948677dd618d496488bc608a3cb43ce3547dd",
+            "bb9af5d1915da1fbc132ced081325efcd2e63e4804f96890f42e9739677237a4",
+            "2bda9b4dfbabfdb17cd74d827768da5198ae2b8155002a494524bbeaf6f5cdba",
+            "4fdd3b6201a22c7814d6e67dbb7a17790224ea0fd32ef0a0ccb0a5485eae4c9d",
+            "c7b68ac37f364473e922936708e7f43c293dd07b295171566c07ff5fe024fab9",
+            "95c5007a9af81a5e61624caacc506bb513a476dd6c31d653468154137078246c",
+            "187897ce0afcf20b50ba2b37dca84a951b7046f29ed5ab94f010619f69d6e189",
+            "d4536f2555836b0b1bdc536c56e6f7245a2e89dd20ff8df68ade3cf0e7f39a65",
+            "d1829078fe03f2ec5f692c7a217859409b6822240625c10282bb022888657148",
+            "0be477336d3e1a8d45d820aa54755092e2ec5e0751ccdf93a8fa8fa1e10bd753",
+            "9a990e354cd9648e4a6371a05999dbd45da5831e866917f41b0f966f07bfea86",
+            "0d6be69b264717f2dd33652e212b173104b4a647b7c11ae72e9885f11cd312fb",
+            "fed5038bf2f427ab2ec84f85881f103c0e946e8d6252b8731f99ab0cb57729d9",
+            "6527c9361a2f469c5275afcb5d06e53013367cd231995de13dc7218711388382",
+            "a1159e9df3670d549d04524532629f5477ceb7deec9b45e47e8c009506ecb2c8",
+            "11a4a60b518bf24989d481468076e5d5982884626aed9faeb35b8576fcd223e1"
+          ]
+        },
+        {
+          "id": "white.blocking_calls",
+          "team": "white",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 5.0,
+          "detail": "sleep/blocking markers in non-test code\u22480",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "white.blocking_calls",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "source_root": "/honeypot",
+        "coverage": 0.8889,
+        "not_tested": 1
+      },
+      "notes": [
+        "Module F white-box audit (keys/prompts/SAST/VFS)"
+      ],
+      "error": null
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 70.5,
+      "status": "PASSED",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 34,
+        "scored_checks": 34,
+        "not_applicable": 0,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 34,
+      "scored_checks": 34,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "rfc4253.identification_ssh20_prefix",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.6",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.identification_ssh20_prefix",
+          "evidence": [
+            "5353482d322e302d4f70656e5353485f382e397031205562756e74752d337562756e7475302e360d0a"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "2b12692d9a9773ac5735d89b442591e2975fbcf29920b390d4849f0df0801339"
+          ]
+        },
+        {
+          "id": "rfc4253.identification_crlf",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.6",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.identification_crlf",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.identification_max_255",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "id_len=39",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.identification_max_255",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.identification_no_null",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "no NUL in server ID",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.identification_no_null",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.identification_printable_ascii",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "printable ASCII ID",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.identification_printable_ascii",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.identification_software_token",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.6",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.identification_software_token",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.no_noncomment_preamble",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "clean preamble",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.no_noncomment_preamble",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.kexinit_after_id",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "KEXINIT observed after version exchange",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.kexinit_after_id",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.kexinit_msg_type_20",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "msg_type=20",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.kexinit_msg_type_20",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.kexinit_length_field_sane",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "pkt_len=1492",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.kexinit_length_field_sane",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.legacy_version_handling",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "handled SSH-1.5 probe without hang",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.legacy_version_handling",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.reject_null_in_id",
+          "team": "red",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "accepted null ID",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.reject_null_in_id",
+          "evidence": [
+            "5353482d322e302d4f70656e5353485f382e397031205562756e74752d337562756e7475302e360d"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "50f77c9f5726c6ea8e777ddfbbe220e8ae872160cbf572ad41234017cf7c52ff"
+          ]
+        },
+        {
+          "id": "rfc4253.reject_oversized_client_id",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "oversized client ID did not reach KEX",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.reject_oversized_client_id",
+          "evidence": [
+            "after_len=0"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "8729dd3e3244459af3608f7fb27d6912cf36f981da0b38379f6def4c71b1500c"
+          ]
+        },
+        {
+          "id": "rfc4253.reject_empty_client_id",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "empty client ID did not reach KEX",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.reject_empty_client_id",
+          "evidence": [
+            "5353482d322e302d4f70656e5353485f382e397031205562756e74752d337562756e7475302e360d"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "50f77c9f5726c6ea8e777ddfbbe220e8ae872160cbf572ad41234017cf7c52ff"
+          ]
+        },
+        {
+          "id": "rfc4253.reject_http_probe_as_ssh",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "HTTP probe did not yield HTTP response or SSH KEX",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.reject_http_probe_as_ssh",
+          "evidence": [
+            "5353482d322e302d4f70656e5353485f382e397031205562756e74752d337562756e7475302e360d0a"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "2b12692d9a9773ac5735d89b442591e2975fbcf29920b390d4849f0df0801339"
+          ]
+        },
+        {
+          "id": "rfc4253.reject_binary_prologue",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "binary prologue did not reach KEX",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.reject_binary_prologue",
+          "evidence": [
+            "5353482d322e302d4f70656e5353485f382e397031205562756e74752d337562756e7475302e360d"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "50f77c9f5726c6ea8e777ddfbbe220e8ae872160cbf572ad41234017cf7c52ff"
+          ]
+        },
+        {
+          "id": "rfc4253.ssh21_version_handling",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "handled SSH-2.1 probe without hang",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.ssh21_version_handling",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.lf_only_client_id_no_hang",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "LF-only client ID handled",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.lf_only_client_id_no_hang",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.second_connection_independent",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "two sequential connections both received SSH banners",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.second_connection_independent",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.reconnect_after_bad_id",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "fresh connection ok after bad ID",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.reconnect_after_bad_id",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.identification_ssh20_prefix",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.6",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.identification_ssh20_prefix",
+          "evidence": [
+            "5353482d322e302d4f70656e5353485f382e397031205562756e74752d337562756e7475302e360d0a"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "2b12692d9a9773ac5735d89b442591e2975fbcf29920b390d4849f0df0801339"
+          ]
+        },
+        {
+          "id": "rfc4253.identification_crlf",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.6",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.identification_crlf",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.identification_max_255",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "id_len=39",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.identification_max_255",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.identification_no_null",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "no NUL in server ID",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.identification_no_null",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.identification_printable_ascii",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "printable ASCII ID",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.identification_printable_ascii",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.identification_software_token",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.6",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.identification_software_token",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.kexinit_after_id",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "KEXINIT observed after version exchange",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.kexinit_after_id",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.kexinit_msg_type_20",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "msg_type=20",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.kexinit_msg_type_20",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.kexinit_length_field_sane",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "pkt_len=1492",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "rfc4253.kexinit_length_field_sane",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "ssh.nego.hassh",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "HASSH=efd7813a4bf95ea50ce34dc95be6e814 banner=SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.6",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "ssh.nego.hassh",
+          "evidence": [
+            "mlkem768x25519-sha256,mlkem768nistp256-sha256,mlkem1024nistp384-sha384,curve25519-sha256,curve25519-sha256@libssh.org,curve448-sha512,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,ecdh-sha2"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "0c1bffabe6c2bd20888131de6925af96c13b416ebdcd0c50a8f9050136e37c50"
+          ]
+        },
+        {
+          "id": "ssh.nego.weak_algorithms",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 75.0,
+          "detail": "weak algorithm offers: diffie-hellman-group14-sha1",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "ssh.nego.weak_algorithms",
+          "evidence": [
+            "mlkem768x25519-sha256,mlkem768nistp256-sha256,mlkem1024nistp384-sha384,curve25519-sha256,curve25519-sha256@libssh.org,curve448-sha512,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,ecdh-sha2-1.3.132.0.10,diffie-hellman-group-excha"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "ac3dc598ce2010c6128d0554e34b4050800c6d7878d96589e328922814a500d3"
+          ]
+        },
+        {
+          "id": "ssh.timing.sample_size",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "n=50 requested=50 errors=0",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "ssh.timing.sample_size",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "ssh.timing.iat_jitter",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "median=0.249ms pstdev=0.170ms (target jitter often <2ms vs native)",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "ssh.timing.iat_jitter",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "ssh.module_a.composite",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 70.4991,
+          "detail": "fsm=28 nego=97 timing=100",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "ssh.module_a.composite",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "ssh": 70.5
+        },
+        "protocols": [
+          "ssh"
+        ],
+        "timing_samples": 50,
+        "available_plugins": [
+          "bacnet",
+          "bluetooth",
+          "coap",
+          "dhcp",
+          "dns",
+          "elasticsearch",
+          "ftp",
+          "generic",
+          "git",
+          "http",
+          "httpproxy",
+          "imap",
+          "ipp",
+          "irc",
+          "kubernetes",
+          "ldap",
+          "mcp",
+          "memcache",
+          "modbus",
+          "mongodb",
+          "mqtt",
+          "mssql",
+          "mysql",
+          "ntp",
+          "oracle",
+          "pjl",
+          "pop3",
+          "postgres",
+          "pptp",
+          "rdp",
+          "redis",
+          "s7comm",
+          "sip",
+          "smb",
+          "smtp",
+          "snmp",
+          "socks5",
+          "ssh",
+          "telnet",
+          "tftp",
+          "upnp",
+          "vnc"
+        ],
+        "coverage": 1.0,
+        "not_tested": 0
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['ssh']",
+        "class=Low-Interaction strict_rfc=True"
+      ],
+      "error": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 6.25,
+      "status": "PARTIAL",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 3,
+        "scored_checks": 3,
+        "not_applicable": 0,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 3,
+      "scored_checks": 3,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "ssh.state.cross_session",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "Server '[echidra-lab]:2222' not found in known_hosts",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "ssh.state.cross_session",
+          "evidence": [
+            "",
+            ""
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          ]
+        },
+        {
+          "id": "ssh.payload.echo",
+          "team": "red",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "Server '[echidra-lab]:2222' not found in known_hosts",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "ssh.payload.echo",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "ssh.fuzz.non_utf8",
+          "team": "red",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 25.0,
+          "detail": "Server '[echidra-lab]:2222' not found in known_hosts",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "ssh.fuzz.non_utf8",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "ssh": 6.25
+        },
+        "class": "Low-Interaction",
+        "surface_depth": "unknown",
+        "coverage": 1.0,
+        "not_tested": 0
+      },
+      "notes": [
+        "UHBS Module B class=Low-Interaction"
+      ],
+      "error": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 0.02,
+      "status": "PARTIAL",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 6,
+        "scored_checks": 6,
+        "not_applicable": 2,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 6,
+      "scored_checks": 6,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "c1.json_parse_clean",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "0 malformed / 800 records",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C1",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c1.format.native_json",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "native_json ok=800/800; errors=[]",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C1",
+          "evidence": [
+            "schema=uhbs:format/native_json",
+            "version=uhbs-v5",
+            "validator=uhbs-telemetry-c1-1.0"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "e82310b98edc7c7720e4a8b70993bec2f79f74094506e54f73d04def03aa6eb9",
+            "abd2780f526ebb54b5c4751ca39e722b37b1d9a10448e302590e57d5eae2ceee",
+            "4b8a6d9cf000f8ed91cdf9892a2b13679736fe21c44c557322e851d804d14c34"
+          ]
+        },
+        {
+          "id": "c1.stix_not_required",
+          "team": "blue",
+          "outcome": "NOT_APPLICABLE",
+          "passed": false,
+          "score": 0.0,
+          "detail": "STIX not declared \u2014 format credit not claimed for non-STIX logs",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": "STIX 2.1 not in declared native_event_format",
+          "catalog_id": "C1",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c2.sink_injection_resilience",
+          "team": "red",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "markers=[] malformed=0",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C2",
+          "evidence": [
+            "{\"markers_found\": [], \"markers_expected\": [\"ansi\", \"json_break\", \"null_byte\", \"cr_inject\", \"formula\", \"unicode\"], \"malformed_records\": 0, \"json_parse_ok\": true, \"run_id\": \"uhbs-gt-72b472b143b9\", \"ok\": false}"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "018eb0e68bb4b95b8ffd0dc682e35b1a022f1480b27f071358b7a9ad635b49c1"
+          ]
+        },
+        {
+          "id": "c3.observable_coverage",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 66.66666666666666,
+          "detail": "2/3 observables present missing=['source_endpoint']",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C3",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c4.ground_truth_recall",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "matched=0/6 dups=0",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C4",
+          "evidence": [
+            "{\"run_id\": \"uhbs-gt-72b472b143b9\", \"created_at\": \"2026-09-28T09:48:08.403899+00:00\", \"observation_window_s\": 30.0, \"events\": [{\"tag\": \"uhbs-gt-72b472b143b9:session:0\", \"kind\": \"session\", \"emitted_at\": \"2026-09-28T09:48:08.403899+00:00\", \"payload\": {\"marker\": \"uhbs-gt-72b472b143b9:session:0\", \"seq\": 0}}, {\"tag\": \"uhbs-gt-72b472b143b9:credential:1\", \"kind\": \"credential\", \"emitted_at\": \"2026-09-28..."
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "985c900510de42aaf8f4a75b4e709800674ae89327eb83d3ebcd19b993ebafb6"
+          ]
+        },
+        {
+          "id": "c4.field_accuracy",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 33.96,
+          "detail": "field_accuracy=0.3396",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "C4",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c5.attack_mapping",
+          "team": "blue",
+          "outcome": "NOT_APPLICABLE",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no ATT&CK technique IDs claimed in telemetry",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": "CTI mapping only evaluated when technique IDs are present",
+          "catalog_id": "C5",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "ground_truth": {
+          "recall": 0.0,
+          "field_accuracy": 0.3396,
+          "duplicate_rate": 0.0,
+          "matched": 0,
+          "expected": 6
+        },
+        "collection_capability": {
+          "recall": 0.0,
+          "observable_coverage": 0.6666666666666666,
+          "duplicate_rate": 0.0,
+          "declared_formats": [
+            "native_json"
+          ],
+          "status": "COMPLETE"
+        },
+        "coverage": 1.0
+      },
+      "notes": [
+        "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4",
+        "no native_event_format declared \u2014 validating as native_json only"
+      ],
+      "error": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 83.33,
+      "status": "GATE PASSED",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 20,
+        "scored_checks": 13,
+        "not_applicable": 0,
+        "not_tested": 7,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 20,
+      "scored_checks": 13,
+      "critical_control_verdict": "GATE_PASSED",
+      "checks": [
+        {
+          "id": "d1.airgap_attested",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 0.0,
+          "detail": "UHBS_AIRGAP_ATTESTED set (metadata only; zero scoring weight)",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D1.meta",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "0 gateway canary hits",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D1.critical",
+          "evidence": [
+            "mtime=1790540044544299948 size=159",
+            "sha256=0889bc95d83659833f5c44d60f64f29a0ff3dec5363d80e35c6fc4ff3b713fa2"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "eb9c8c1c5baa4db2af3d2aad98ccda5e1c8a181aaf5bafb8fe4f9fd53e19fcd8",
+            "3f4e0b32ed6eff649dda114b00c22ebe1255928cae3ffc1bbd2d19f66f2c97df"
+          ]
+        },
+        {
+          "id": "d2.container_privileged",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "not privileged",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.network_mode",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "NetworkMode=uhbs-lab",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.pid_mode",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "PidMode=default",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.ipc_mode",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "IpcMode=private",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.capability_whitelist",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "CapAdd empty (whitelist default)",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.non_root_userns",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "User=echidra UsernsMode=(empty)",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.security_profiles",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "SecurityOpt=['(default)']",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.sensitive_binds",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "no sensitive host binds",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.device_exposure",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "no raw host devices",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.resource_limits",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "Memory=0 NanoCpus=0 PidsLimit=0",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D2.did",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.readonly_rootfs",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "ReadonlyRootfs=False (DiD)",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D2.did",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_icmp",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "SSH DiD unavailable: Server '[echidra-lab]:2222' not found in known_hosts",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D1.scored",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_dns",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "SSH DiD skipped: Server '[echidra-lab]:2222' not found in known_hosts",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D1.scored",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_tcp",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "SSH DiD skipped: Server '[echidra-lab]:2222' not found in known_hosts",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D1.scored",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_https",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "SSH DiD skipped: Server '[echidra-lab]:2222' not found in known_hosts",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D1.scored",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_http",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "SSH DiD skipped: Server '[echidra-lab]:2222' not found in known_hosts",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D1.scored",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.guest_docker_sock",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "SSH DiD unavailable: Server '[echidra-lab]:2222' not found in known_hosts",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D2.did",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.guest_cgroup_escape",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "SSH DiD unavailable: Server '[echidra-lab]:2222' not found in known_hosts",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D2.did",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "breakout": false,
+        "allowed_outbound_traffic": false,
+        "shell_exec": true,
+        "defense_in_depth_score": 83.33,
+        "scoring": "penalty-mean-oob-critical",
+        "oob_critical": true
+      },
+      "notes": [
+        "UHBS v5.0.1: Safety Gate from host OOB gateway + container inspect; SSH/in-guest probes are DiD only; diagnostic score always numeric"
+      ],
+      "error": null
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 20.0,
+      "status": "PARTIAL",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 4,
+        "scored_checks": 4,
+        "not_applicable": 0,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 4,
+      "scored_checks": 4,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=100.0ms proto=ssh",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e1.p95_vs_tps",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 5.0,
+          "detail": "errors=15/15 rate=100.00%",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e1.error_rate",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 15.0,
+          "detail": "completed exhaustion/fuzz blast",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e2.exhaustion_input",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "Server '[echidra-lab]:2222' not found in known_hosts",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e2.circuit_breaker_alive",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "p50_ms": 0.0,
+        "p95_ms": 0.0,
+        "p99_ms": 0.0,
+        "p95_limit_ms": 100.0,
+        "errors": 15,
+        "concurrency": 5,
+        "requests": 15,
+        "wall_s": 0.14,
+        "protocol": "ssh"
+      },
+      "notes": [],
+      "error": null
+    }
+  ],
+  "assurance_level": "REPRODUCIBLE_LAB",
+  "attestation_ref": null,
+  "manifest": {
+    "artifacts": [
+      {
+        "path": "README.md",
+        "sha256": "8d655efc000607db9c4503842d5531c794759c0814624ab81d598d9f37e363b8"
+      },
+      {
+        "path": "REPORT.txt",
+        "sha256": "c3e5a5134601d0d88009b551262d966c5ee22d2e95f355d74c1bb4d5497790b4"
+      },
+      {
+        "path": "SCORECARD.txt",
+        "sha256": "c3e5a5134601d0d88009b551262d966c5ee22d2e95f355d74c1bb4d5497790b4"
+      },
+      {
+        "path": "evidence/container-inspect.json",
+        "sha256": "303b72da17bfdbc6e166e8244b3727a43cbd4d41d36609e10601a57af804472f"
+      },
+      {
+        "path": "evidence/container-inspect.json.sha256",
+        "sha256": "57a5f81d1f0160232edbdeab6c63a001ebac4244d7ac593d44259ca48b45da21"
+      },
+      {
+        "path": "evidence/egress-gateway.log",
+        "sha256": "0eee7fcd7567a2ebcac5996c5e3862557571688e1ef7b2492b0455b4363a6609"
+      },
+      {
+        "path": "evidence/egress-gateway.log.sha256",
+        "sha256": "13d98d20479336f21c05ec1e249995507f8c4f52ce49dc420af41e7d8963821e"
+      },
+      {
+        "path": "report.json",
+        "sha256": "06d63c3572c0fe425fde3f5fa4b226bef92e7b930bae1baed64e7e49ce9cb84f"
+      },
+      {
+        "path": "run-meta.json",
+        "sha256": "91354f05b42b965883c9daf5b9c8192c58a7306ebbac7ac91a981a3dc375af7d"
+      },
+      {
+        "path": "uhbs-run.log",
+        "sha256": "0ba4b54bd257779dd3a2412ab004df794de1a0e55ea2bee8f388f3032c71b2e8"
+      }
+    ],
+    "digest": "d44e382669c1922747afde7a043d7bfe9b9d6190d4eca63bd8269a4bc27d01c5"
+  },
+  "uhqs": {
+    "uhqs": 24.09,
+    "grade": "GRADE F (Fail)",
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "GATE_PASSED",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm"
+  }
+}

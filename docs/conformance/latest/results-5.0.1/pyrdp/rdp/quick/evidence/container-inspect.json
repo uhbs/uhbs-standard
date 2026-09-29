@@ -1,0 +1,225 @@
+[
+    {
+        "Id": "3c4d211921c4275c26065ca5df8f519044a278808d190f62e7d3af15933be7cc",
+        "Created": "2026-09-28T13:06:22.763392293Z",
+        "Path": "pyrdp-mitm",
+        "Args": [
+            "127.0.0.1:3390",
+            "-l",
+            "3389",
+            "-o",
+            "/telemetry"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 29843,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-28T13:06:22.982345668Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:3b1b3a09e21459c515125392b72df6c1563b7707e6220fe960ff9fff883943b1",
+        "ResolvConfPath": "/var/lib/docker/containers/3c4d211921c4275c26065ca5df8f519044a278808d190f62e7d3af15933be7cc/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/3c4d211921c4275c26065ca5df8f519044a278808d190f62e7d3af15933be7cc/hostname",
+        "HostsPath": "/var/lib/docker/containers/3c4d211921c4275c26065ca5df8f519044a278808d190f62e7d3af15933be7cc/hosts",
+        "LogPath": "/var/lib/docker/containers/3c4d211921c4275c26065ca5df8f519044a278808d190f62e7d3af15933be7cc/3c4d211921c4275c26065ca5df8f519044a278808d190f62e7d3af15933be7cc-json.log",
+        "Name": "/uhbs-target-pyrdp-rdp",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/pyrdp-telemetry:/home/pyrdp/pyrdp_output:rw",
+                "/Users/mz/Projects/uhbs-standard/.local/labs/pyrdp-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "3c4d211921c4275c26065ca5df8f519044a278808d190f62e7d3af15933be7cc",
+                "LowerDir": "/var/lib/docker/overlay2/5eb925b26263864150ab580b90a7f35d5e5fc4ca9d411366716f5dc7dfab6d34-init/diff:/var/lib/docker/overlay2/cxtdigizw88l5m2zrdvhlv27y/diff:/var/lib/docker/overlay2/63l764vbmfvb1qnimbvgtwlb8/diff:/var/lib/docker/overlay2/dsqfvo5mj2q2w105gb80nn1p1/diff:/var/lib/docker/overlay2/wglbcc7nxvpwv625iooc6dt2w/diff:/var/lib/docker/overlay2/7d0u90s0mrxg1etiiz71plztj/diff:/var/lib/docker/overlay2/b9738c805b6ffb8f75534ff88ee9f32cb87c60bdfd68ef0d465110b2c70bea1e/diff",
+                "MergedDir": "/var/lib/docker/overlay2/5eb925b26263864150ab580b90a7f35d5e5fc4ca9d411366716f5dc7dfab6d34/merged",
+                "UpperDir": "/var/lib/docker/overlay2/5eb925b26263864150ab580b90a7f35d5e5fc4ca9d411366716f5dc7dfab6d34/diff",
+                "WorkDir": "/var/lib/docker/overlay2/5eb925b26263864150ab580b90a7f35d5e5fc4ca9d411366716f5dc7dfab6d34/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/pyrdp-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/pyrdp-telemetry",
+                "Destination": "/home/pyrdp/pyrdp_output",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "3c4d211921c4",
+            "Domainname": "",
+            "User": "pyrdp",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/opt/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "PYTHONIOENCODING=utf-8"
+            ],
+            "Cmd": [
+                "pyrdp-mitm",
+                "127.0.0.1:3390",
+                "-l",
+                "3389",
+                "-o",
+                "/telemetry"
+            ],
+            "Image": "pyrdp:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/home/pyrdp",
+            "Entrypoint": null,
+            "Labels": {
+                "org.opencontainers.image.version": "22.04",
+                "uhbs.unit": "pyrdp-rdp"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "ee16c8dd657ab08d3a59b0721ee6a229e298f78524e98872e9c3bd9f6b14b431",
+            "SandboxKey": "/var/run/docker/netns/ee16c8dd657a",
+            "Ports": {},
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "pyrdp-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "92742f01951bc6719651ac2ee962ab34f70bb172030c5199cebeeda6c951b3d5",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.5",
+                    "MacAddress": "d2:d0:9c:35:e6:d4",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-pyrdp-rdp",
+                        "pyrdp-lab",
+                        "3c4d211921c4"
+                    ]
+                }
+            }
+        }
+    }
+]

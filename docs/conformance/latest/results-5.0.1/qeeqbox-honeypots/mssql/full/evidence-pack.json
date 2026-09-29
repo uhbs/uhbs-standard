@@ -1,0 +1,726 @@
+{
+  "uhbs_version": "5.0.1",
+  "specification_version": "5.0.1",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "check_catalog_hash": "46a7d37d99eea43c3aab81f3da0affa5279bc9dc6d92bbb864c43d675be9240f",
+  "check_catalog": {
+    "id": "uhbs-default-v5",
+    "hash": "46a7d37d99eea43c3aab81f3da0affa5279bc9dc6d92bbb864c43d675be9240f"
+  },
+  "target": {
+    "name": "Database-MSSQL",
+    "class": "Database",
+    "protocols": [
+      "mssql"
+    ],
+    "profile_ref": "/work/docs/conformance/labs/qeeqbox-honeypots/database_mssql_full.yaml",
+    "artifact_digest": null
+  },
+  "environment": {
+    "digest": null
+  },
+  "evaluated_at": "2026-09-27",
+  "harness": {
+    "name": "uhbs-lab",
+    "version": "5.0.1",
+    "plugin_versions": {},
+    "command_digest": null,
+    "config_digest": null,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ]
+  },
+  "modules": [
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 0.0,
+      "status": "SKIPPED",
+      "complete": false,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 0,
+        "scored_checks": 0,
+        "not_applicable": 0,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 0,
+      "scored_checks": 0,
+      "critical_control_verdict": null,
+      "checks": [],
+      "metrics": {},
+      "notes": [
+        "no source_root configured"
+      ],
+      "error": null
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 32.0,
+      "status": "PARTIAL",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 4,
+        "scored_checks": 4,
+        "not_applicable": 0,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 4,
+      "scored_checks": 4,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "mssql.fsm.invalid_framing",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 80.0,
+          "detail": "[Errno -2] Name or service not known",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "mssql.fsm.invalid_framing",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "mssql.nego.prelogin",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "[Errno -2] Name or service not known",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "mssql.nego.prelogin",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "mssql.timing.unreachable",
+          "team": "red",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no successful connects",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "mssql.timing.unreachable",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "mssql.module_a.composite",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 32.0,
+          "detail": "fsm=80 nego=0 timing=0",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "mssql.module_a.composite",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "mssql": 32.0
+        },
+        "protocols": [
+          "mssql"
+        ],
+        "timing_samples": 200,
+        "available_plugins": [
+          "bacnet",
+          "bluetooth",
+          "coap",
+          "dhcp",
+          "dns",
+          "elasticsearch",
+          "ftp",
+          "generic",
+          "git",
+          "http",
+          "httpproxy",
+          "imap",
+          "ipp",
+          "irc",
+          "kubernetes",
+          "ldap",
+          "mcp",
+          "memcache",
+          "modbus",
+          "mongodb",
+          "mqtt",
+          "mssql",
+          "mysql",
+          "ntp",
+          "oracle",
+          "pjl",
+          "pop3",
+          "postgres",
+          "rdp",
+          "redis",
+          "s7comm",
+          "sip",
+          "smb",
+          "smtp",
+          "snmp",
+          "socks5",
+          "ssh",
+          "telnet",
+          "tftp",
+          "vnc"
+        ],
+        "coverage": 1.0,
+        "not_tested": 0
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['mssql']",
+        "class=Database strict_rfc=True"
+      ],
+      "error": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 5.0,
+      "status": "PARTIAL",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 3,
+        "scored_checks": 1,
+        "not_applicable": 0,
+        "not_tested": 2,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 3,
+      "scored_checks": 1,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "mssql.state.unsupported",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no state probe implemented",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "mssql.state.unsupported",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "mssql.payload.unsupported",
+          "team": "red",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no payload probe implemented",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "mssql.payload.unsupported",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "mssql.fuzz.binary",
+          "team": "red",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 20.0,
+          "detail": "[Errno -2] Name or service not known",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "mssql.fuzz.binary",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "mssql": 5.0
+        },
+        "class": "Database",
+        "surface_depth": "unknown",
+        "coverage": 0.3333,
+        "not_tested": 2
+      },
+      "notes": [
+        "UHBS Module B class=Database"
+      ],
+      "error": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "complete": false,
+      "completeness": {
+        "complete": false,
+        "applicable_checks": 2,
+        "scored_checks": 0,
+        "not_applicable": 0,
+        "not_tested": 2,
+        "errors": 0,
+        "blocker_ids": [
+          "c1.telemetry_dir",
+          "c4.ground_truth"
+        ]
+      },
+      "applicable_checks": 2,
+      "scored_checks": 0,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "c1.telemetry_dir",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "telemetry_dir missing \u2014 Module C incomplete until sink is provided",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C1",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c4.ground_truth",
+          "team": "blue",
+          "outcome": "NOT_TESTED",
+          "passed": false,
+          "score": 0.0,
+          "detail": "no telemetry sink for ground-truth matching",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C4",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "collection_capability": {
+          "status": "INCOMPLETE",
+          "reason": "no_telemetry_dir"
+        },
+        "coverage": 0.0,
+        "not_tested": 2
+      },
+      "notes": [
+        "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4"
+      ],
+      "error": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 75.0,
+      "status": "GATE FAILED",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 13,
+        "scored_checks": 13,
+        "not_applicable": 0,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 13,
+      "scored_checks": 13,
+      "critical_control_verdict": "GATE_FAILED",
+      "checks": [
+        {
+          "id": "d1.airgap_attested",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 0.0,
+          "detail": "UHBS_AIRGAP_ATTESTED set (metadata only; zero scoring weight)",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D1.meta",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "0 gateway canary hits",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D1.critical",
+          "evidence": [
+            "mtime=1790548957636681727 size=171",
+            "sha256=8f1d3353a2bcafec165734115a432a7003b0b79c5a8a2ad3b0c5bedeea65f8fe"
+          ],
+          "evidence_refs": [],
+          "evidence_hashes": [
+            "a36607ce46196b1ae9b4cd7394e2cae6065178adb60d949c944d1d23c1d23110",
+            "47f73101d22074ede9d601d4db1dffaf21f55539c60b8fb1579b368ef296a9d0"
+          ]
+        },
+        {
+          "id": "d2.container_privileged",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "not privileged",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.network_mode",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "NetworkMode=uhbs-lab",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.pid_mode",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "PidMode=default",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.ipc_mode",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "IpcMode=private",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.capability_whitelist",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "CapAdd empty (whitelist default)",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.non_root_userns",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "User=(empty\u2192root) UsernsMode=(empty)",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.security_profiles",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "SecurityOpt=['(default)']",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.sensitive_binds",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "no sensitive host binds",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.device_exposure",
+          "team": "blue",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 100.0,
+          "detail": "no raw host devices",
+          "critical": true,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.resource_limits",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "Memory=0 NanoCpus=0 PidsLimit=0",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D2.did",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.readonly_rootfs",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "ReadonlyRootfs=False (DiD)",
+          "critical": false,
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D2.did",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "breakout": true,
+        "allowed_outbound_traffic": false,
+        "shell_exec": false,
+        "defense_in_depth_score": 75.0,
+        "scoring": "penalty-mean-oob-critical",
+        "oob_critical": true
+      },
+      "notes": [
+        "UHBS v5.0.1: Safety Gate from host OOB gateway + container inspect; SSH/in-guest probes are DiD only; diagnostic score always numeric"
+      ],
+      "error": null
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 20.0,
+      "status": "PARTIAL",
+      "complete": true,
+      "completeness": {
+        "complete": true,
+        "applicable_checks": 4,
+        "scored_checks": 4,
+        "not_applicable": 0,
+        "not_tested": 0,
+        "errors": 0,
+        "blocker_ids": []
+      },
+      "applicable_checks": 4,
+      "scored_checks": 4,
+      "critical_control_verdict": null,
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=150.0ms proto=mssql",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e1.p95_vs_tps",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 5.0,
+          "detail": "errors=200/200 rate=100.00%",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e1.error_rate",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "outcome": "PASS",
+          "passed": true,
+          "score": 15.0,
+          "detail": "completed exhaustion/fuzz blast",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e2.exhaustion_input",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "outcome": "FAIL",
+          "passed": false,
+          "score": 0.0,
+          "detail": "connect failed",
+          "critical": false,
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "e2.circuit_breaker_alive",
+          "evidence": [],
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "p50_ms": 0.0,
+        "p95_ms": 0.0,
+        "p99_ms": 0.0,
+        "p95_limit_ms": 150.0,
+        "errors": 200,
+        "concurrency": 25,
+        "requests": 200,
+        "wall_s": 0.35,
+        "protocol": "mssql"
+      },
+      "notes": [],
+      "error": null
+    }
+  ],
+  "assurance_level": "REPRODUCIBLE_LAB",
+  "attestation_ref": null,
+  "manifest": {
+    "artifacts": [
+      {
+        "path": "REPORT.txt",
+        "sha256": "df866e8c8ae62cde5779e748d9cfd7bd23ed3c43e0848eef09e3b0b67ac54ac6"
+      },
+      {
+        "path": "SCORECARD.txt",
+        "sha256": "df866e8c8ae62cde5779e748d9cfd7bd23ed3c43e0848eef09e3b0b67ac54ac6"
+      },
+      {
+        "path": "evidence/container-inspect.json",
+        "sha256": "139f7d3c9a9f7367b5d6e3d62f0fe419c324040c5d4880c82e53824449143be5"
+      },
+      {
+        "path": "evidence/container-inspect.json.sha256",
+        "sha256": "f7471b7f39260bb7877bf55c1690c2a3a7e36f3109a9af8f02b240480a9d74e1"
+      },
+      {
+        "path": "evidence/egress-gateway.log",
+        "sha256": "8f1d3353a2bcafec165734115a432a7003b0b79c5a8a2ad3b0c5bedeea65f8fe"
+      },
+      {
+        "path": "evidence/egress-gateway.log.sha256",
+        "sha256": "f8c4fc7a53c5323f058fd442065de698591c631f6fe5c44a98cdc363e3b3cb69"
+      },
+      {
+        "path": "proof/full-run.cast",
+        "sha256": "3ab259654c130e5dbede7df5ac7270f23082ab147f65184c636337751ed9e221"
+      },
+      {
+        "path": "report.json",
+        "sha256": "758dbbb7cf368c47feef2263af712af3f047ab00676760289e84a911fdc48f2c"
+      },
+      {
+        "path": "uhbs-run.log",
+        "sha256": "7c9bd961b1a3fc97419a21531919f7c95afb93f5f592a38eb99a4605b6451971"
+      }
+    ],
+    "digest": "d1d2552764f983194a10b5d880a317fe9125ac9525eaf8cbc0a4c6c8276bac0d"
+  },
+  "uhqs": {
+    "uhqs": 5.62,
+    "grade": "GRADE F (Fail)",
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "GATE_FAILED",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm"
+  }
+}

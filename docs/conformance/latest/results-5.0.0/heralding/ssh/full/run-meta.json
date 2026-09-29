@@ -1,0 +1,85 @@
+{
+  "uhbs_version": "5.0.1",
+  "run_mode": "full",
+  "evaluated_at": "2026-09-26T14:41:49Z",
+  "proof_label": "Heralding (SSH :22)",
+  "target": {
+    "repository": "https://github.com/johnnykv/heralding.git",
+    "git_branch": "master",
+    "git_commit": "ac12724ab38c4e2fe78f07d1bc35e6e586ba69c0",
+    "class": "Low-Interaction",
+    "protocol": "ssh",
+    "host": "heralding-lab",
+    "port": 22,
+    "container_image": "heralding:uhbs-lab",
+    "container_image_id": "sha256:3acb74f08830ef00aefd5c19bc94697f41317827928c14ac14b09d9c018a37f4",
+    "base_image": "python:3.11-slim-bookworm",
+    "base_image_reason": "Shares uhbs-target-heralding-ftp (alias heralding-lab) SSH :22.",
+    "container_runtime_strategy": "custom-base"
+  },
+  "grader": {
+    "package_version": "5.0.1",
+    "docker_image": "uhbs:5.0.1-full",
+    "docker_image_id": "sha256:320fb38dcf3ebf69befb2248b75ed32c63dafe6b83f959746209d337c3e7ca9b",
+    "inventory": "docs/conformance/labs/heralding/inventory.yaml",
+    "tps": "docs/conformance/labs/heralding/low_interaction_ssh_full.yaml",
+    "target_id": "heralding-ssh"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "measured_vs_attested": {
+      "airgap": "attested",
+      "egress_gateway_log": "attested-empty-log",
+      "telemetry": "measured"
+    }
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "grade_long": null,
+    "delta_c": 0.0,
+    "module_scores": {
+      "A": 44.42,
+      "B": 6.25,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 20.0,
+      "F": 66.86
+    },
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  },
+  "limitations": [
+    "Published UHBS 5.0.1 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1); Docker Desktop lab, not a physical air-gap.",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement.",
+    "Do not transplant archived 4.x letter grades.",
+    "Shares uhbs-target-heralding-ftp (alias heralding-lab) SSH :22."
+  ],
+  "docs_reviewed": [
+    "README.md",
+    "Dockerfile",
+    "heralding/heralding.yaml"
+  ]
+}

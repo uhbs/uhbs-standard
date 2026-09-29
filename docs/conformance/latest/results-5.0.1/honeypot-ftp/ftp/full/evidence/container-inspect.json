@@ -1,0 +1,216 @@
+[
+    {
+        "Id": "72f13ab8e226f7c759bbef5d18a8731d9255aec2eb68490f1cb771c07d7e8c07",
+        "Created": "2026-09-28T09:49:29.640010424Z",
+        "Path": "python3",
+        "Args": [
+            "/app/ftp_lab.py"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 88504,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-28T09:49:29.701747174Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:7ef087855d43efbabddee32c56b5ff87db7f29702a33c58af123758571e1a7ff",
+        "ResolvConfPath": "/var/lib/docker/containers/72f13ab8e226f7c759bbef5d18a8731d9255aec2eb68490f1cb771c07d7e8c07/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/72f13ab8e226f7c759bbef5d18a8731d9255aec2eb68490f1cb771c07d7e8c07/hostname",
+        "HostsPath": "/var/lib/docker/containers/72f13ab8e226f7c759bbef5d18a8731d9255aec2eb68490f1cb771c07d7e8c07/hosts",
+        "LogPath": "/var/lib/docker/containers/72f13ab8e226f7c759bbef5d18a8731d9255aec2eb68490f1cb771c07d7e8c07/72f13ab8e226f7c759bbef5d18a8731d9255aec2eb68490f1cb771c07d7e8c07-json.log",
+        "Name": "/uhbs-target-honeypot-ftp-ftp",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/honeypot-ftp-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "72f13ab8e226f7c759bbef5d18a8731d9255aec2eb68490f1cb771c07d7e8c07",
+                "LowerDir": "/var/lib/docker/overlay2/a40b47c349089f56cc194824b3118e4b4509bf60144339895a6aeddd62f25dcf-init/diff:/var/lib/docker/overlay2/9sjb7gd9srpeheys3mwhidf46/diff:/var/lib/docker/overlay2/wgfpvvbk95va0lsi862nt0g9l/diff:/var/lib/docker/overlay2/i7dxzh1pxbuteej0u9hbvfebf/diff:/var/lib/docker/overlay2/sqfuo476gclwuu3anlon38lwn/diff:/var/lib/docker/overlay2/d2c1216eebd0c5478a4f10d14e5a44bdc4b8d7de15d82fffa89662d16f8eaa56/diff:/var/lib/docker/overlay2/5cc35d93811395525d6f2d7564da293528dfbb291417980d830f957b10262b1d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/a40b47c349089f56cc194824b3118e4b4509bf60144339895a6aeddd62f25dcf/merged",
+                "UpperDir": "/var/lib/docker/overlay2/a40b47c349089f56cc194824b3118e4b4509bf60144339895a6aeddd62f25dcf/diff",
+                "WorkDir": "/var/lib/docker/overlay2/a40b47c349089f56cc194824b3118e4b4509bf60144339895a6aeddd62f25dcf/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/honeypot-ftp-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "72f13ab8e226",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "21/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive"
+            ],
+            "Cmd": [
+                "python3",
+                "/app/ftp_lab.py"
+            ],
+            "Image": "honeypot-ftp:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "org.opencontainers.image.created": "2026-09-12T10:29:18.701012+00:00",
+                "org.opencontainers.image.description": "The Ubuntu container image maintained by Canonical\n\nUbuntu is a Debian-based Linux operating system that runs from the desktop to the cloud, to all your internet connected things.\nIt is the world's most popular operating system across public clouds and OpenStack clouds.\nIt is the number one platform for containers; from Docker to Kubernetes to LXD, Ubuntu can run your containers at scale.\nFast, secure and simple, Ubuntu powers millions of PCs worldwide.\n",
+                "org.opencontainers.image.title": "ubuntu",
+                "org.opencontainers.image.version": "26.04",
+                "uhbs.unit": "honeypot-ftp-ftp"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "8659fcafc69af7a7bd02e712e60f3087d369bd52f1d089c6ce3274318b25a078",
+            "SandboxKey": "/var/run/docker/netns/8659fcafc69a",
+            "Ports": {
+                "21/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "honeypot-ftp-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "02fc1ba21e67c84b1429f4bcdf6b1634aec44b1bdbeb2c7dd71b61c2ce3e6ece",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.4",
+                    "MacAddress": "42:fa:8e:33:a9:0b",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-honeypot-ftp-ftp",
+                        "honeypot-ftp-lab",
+                        "72f13ab8e226"
+                    ]
+                }
+            }
+        }
+    }
+]

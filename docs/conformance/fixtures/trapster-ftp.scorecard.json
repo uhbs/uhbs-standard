@@ -1,50 +1,57 @@
 {
-  "uhbs_version": "4.6.1",
+  "uhbs_version": "5.0.1",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "assessment_status": "INCOMPLETE",
+  "critical_control_verdict": "INCOMPLETE",
+  "containment_measured": false,
   "target": {
     "name": "Trapster Community (FTP :2121)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/trapster/low_interaction_ftp_full.yaml"
   },
-  "evaluated_at": "2026-07-27",
-  "auditor": "UHBS-Lab detailed Docker run (trapster/ftp)",
+  "evaluated_at": "2026-09-26",
+  "auditor": "UHBS-Lab results-5.0.1 refresh (trapster-ftp)",
   "modules": {
     "A": {
       "score": 60.0,
       "status": "PARTIAL",
+      "complete": true,
       "weight": 0.3,
-      "notes": "220 Microsoft FTP Service"
+      "notes": "UHBS Module A \u2014 plugins=['ftp']"
     },
     "B": {
-      "score": 54.5,
+      "score": 37.0,
       "status": "PARTIAL",
+      "complete": true,
       "weight": 0.15,
-      "notes": "survived binary blast"
+      "notes": "UHBS Module B class=Low-Interaction"
     },
     "C": {
-      "score": 55.0,
-      "status": "PARTIAL",
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "complete": false,
       "weight": 0.25,
-      "notes": "no STIX objects found"
+      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4"
     },
     "D": {
-      "score": 90.0,
-      "status": "PASSED",
-      "notes": "UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes"
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "complete": false,
+      "notes": "Module D v5: non-SSH targets need gateway/packet evidence for critical egress and runtime inspection \u2014 attestation alone never clears the gate.",
+      "critical_control_verdict": "INCOMPLETE"
     },
     "E": {
       "score": 100.0,
       "status": "PASSED",
-      "weight": 0.1,
-      "notes": "service alive after load (connect 0.1ms",
-      "p50_ms": 3.05,
-      "p95_ms": 8.63,
-      "p99_ms": 10.93
+      "complete": true,
+      "weight": 0.1
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
+      "complete": true,
       "weight": 0.2,
-      "notes": "1 predictable PRNG seeds: trapster/modules/http.py"
+      "notes": "Module F white-box audit (keys/prompts/SAST/VFS)"
     }
   },
   "weights": {
@@ -55,12 +62,12 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 90.0,
-    "delta_c": 0.81,
+    "containment_score": 0.0,
+    "delta_c": 1.0,
     "passed": false,
-    "unauthorized_egress_leaks": 0
+    "critical_control_verdict": "INCOMPLETE"
   },
-  "uhqs": 51.78,
+  "uhqs": 63.4,
   "grade": "D",
-  "notes": "Evaluation proof only. Graded FTP :2121 on Trapster Community. Artifacts under docs/conformance/reports/trapster/ftp/."
+  "notes": "Evaluation proof only. Upstream https://github.com/0xBallpoint/trapster-community.git@c6cc6638e9cc9fd28e38ec6846f2b92cbf01d2b7. UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Do not transplant archived 4.x letter grades. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor)."
 }

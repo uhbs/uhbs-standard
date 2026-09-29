@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `ssh-honeypotd-ssh`
+# Image name at grade time: wildwildangel/ssh-honeypotd:latest
+FROM sha256:8c6def244b9cfc05030f479d44e7369b6c9766dcf94747f8f77380f7c5e8c78f
