@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `HoneyWire-http`
+# Image name at grade time: ghcr.io/andreicscs/honeywire-webrouterdecoy:latest
+FROM sha256:da45cae2c217f99fbc3a7094e1d7df9181593a44a4671a2e4f5e08c98ee3501b

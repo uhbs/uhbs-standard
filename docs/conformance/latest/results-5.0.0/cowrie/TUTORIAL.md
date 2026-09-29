@@ -1,4 +1,4 @@
-# Tutorial: grade Cowrie with UHBS (results-5.0.0)
+# Tutorial: grade Cowrie with UHBS (results-5.0.1)
 
 **Status:** Informative · evaluation proof  
 **Target:** [https://github.com/cowrie/cowrie](https://github.com/cowrie/cowrie) · `main` @ `fef0d620962e23194a9d34a048488f9c76c85835`  
@@ -7,8 +7,8 @@
 ## 0. Prerequisites
 
 ```bash
-docker build -t uhbs:5.0.0 .
-docker build -f Dockerfile.full -t uhbs:5.0.0-full .
+docker build -t uhbs:5.0.1 .
+docker build -f Dockerfile.full -t uhbs:5.0.1-full .
 docker network create uhbs-lab 2>/dev/null || true
 ```
 
@@ -26,4 +26,4 @@ See [`ssh/EXECUTION-STEPS.md`](ssh/EXECUTION-STEPS.md), [`telnet/EXECUTION-STEPS
 
 Exact commands: [`ssh/EXECUTION-STEPS.md`](ssh/EXECUTION-STEPS.md), [`telnet/EXECUTION-STEPS.md`](telnet/EXECUTION-STEPS.md).
 
-**Published (results-5.0.0):** UHQS null / ungraded under `uhqs-v5.0-critical-gate-diagnostic`.
+**Published (results-5.0.1):** UHQS null / ungraded under `uhqs-v5.0-critical-gate-diagnostic`.

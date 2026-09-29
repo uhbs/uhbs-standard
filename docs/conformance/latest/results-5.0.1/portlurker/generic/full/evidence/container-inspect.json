@@ -1,0 +1,194 @@
+[
+    {
+        "Id": "a166e1717ed37bfab92c33fd8e1a7d0aa821e9c6d439d6696e652d4ee78fc328",
+        "Created": "2026-09-27T20:42:43.524500257Z",
+        "Path": "/opt/portlurker/portlurker",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 30887,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:42:44.166494341Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:0809f50693b51d82ca643b1a96e58707564ffb1e2c8d2b757f5750d01b72a684",
+        "ResolvConfPath": "/var/lib/docker/containers/a166e1717ed37bfab92c33fd8e1a7d0aa821e9c6d439d6696e652d4ee78fc328/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/a166e1717ed37bfab92c33fd8e1a7d0aa821e9c6d439d6696e652d4ee78fc328/hostname",
+        "HostsPath": "/var/lib/docker/containers/a166e1717ed37bfab92c33fd8e1a7d0aa821e9c6d439d6696e652d4ee78fc328/hosts",
+        "LogPath": "/var/lib/docker/containers/a166e1717ed37bfab92c33fd8e1a7d0aa821e9c6d439d6696e652d4ee78fc328/a166e1717ed37bfab92c33fd8e1a7d0aa821e9c6d439d6696e652d4ee78fc328-json.log",
+        "Name": "/portlurker-lab",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "a166e1717ed37bfab92c33fd8e1a7d0aa821e9c6d439d6696e652d4ee78fc328",
+                "LowerDir": "/var/lib/docker/overlay2/4adc9b337a3703573e14b49a9ce96c7420eb61b0ae93cbe774f3f2a363989027-init/diff:/var/lib/docker/overlay2/j22cuv9a4s593dg0cjoglw08o/diff:/var/lib/docker/overlay2/ki3vfub8rgpexwcofikv81xv8/diff:/var/lib/docker/overlay2/nj0cr67nt0r39kwoe9pwrnejl/diff:/var/lib/docker/overlay2/3uhf1q9vi0m1kilgtp4zkxkwp/diff:/var/lib/docker/overlay2/lzxaj4ddewr22erws9rxj9xcs/diff:/var/lib/docker/overlay2/9226f87fad8a9767d3469a7b90e3c54a0f60047c20d211215a6ea7c525fc114d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/4adc9b337a3703573e14b49a9ce96c7420eb61b0ae93cbe774f3f2a363989027/merged",
+                "UpperDir": "/var/lib/docker/overlay2/4adc9b337a3703573e14b49a9ce96c7420eb61b0ae93cbe774f3f2a363989027/diff",
+                "WorkDir": "/var/lib/docker/overlay2/4adc9b337a3703573e14b49a9ce96c7420eb61b0ae93cbe774f3f2a363989027/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "a166e1717ed3",
+            "Domainname": "",
+            "User": "portlurker",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/opt/portlurker/portlurker"
+            ],
+            "Image": "portlurker:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/opt/portlurker",
+            "Entrypoint": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "SandboxID": "be02e4c5230ef7fa1322a2346e9346a02a6dbdee9aace0855981f009895e7f68",
+            "SandboxKey": "/var/run/docker/netns/be02e4c5230e",
+            "Ports": {
+                "8080/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "portlurker-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "9b9f6ed7c7b65f0481a72e3784b998b2fc316b0830b183c1dd17b9e5916fc9ec",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "82:e1:a3:f8:bf:9a",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "portlurker-lab",
+                        "a166e1717ed3"
+                    ]
+                }
+            }
+        }
+    }
+]

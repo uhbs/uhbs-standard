@@ -57,7 +57,9 @@ def test_protocol_plugins_registered() -> None:
         "mssql",
         "oracle",
         "pjl",
+        "pptp",
         "socks5",
+        "upnp",
         "redis",
         "elasticsearch",
     }.issubset(names)

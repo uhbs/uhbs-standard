@@ -364,7 +364,7 @@ def test_evidence_redaction_scrubs_secrets() -> None:
 def test_module_d_ssh_failure_is_incomplete_not_gate_passed(
     tmp_path: Path, monkeypatch
 ) -> None:
-    """Unpinned/failed SSH must never be inferred as egress-blocked PASS."""
+    """Missing OOB evidence → INCOMPLETE; SSH DiD failure must not invent GATE_PASSED."""
     from uhbs_core import test_safety
     from uhbs_core.models import TargetSpec
 
@@ -383,12 +383,17 @@ def test_module_d_ssh_failure_is_incomplete_not_gate_passed(
         ssh_port=2222,
     )
     monkeypatch.delenv("UHBS_EGRESS_GATEWAY_LOG", raising=False)
+    monkeypatch.delenv("UHBS_CONTAINER_INSPECT_JSON", raising=False)
     monkeypatch.setattr(test_safety, "run_ssh_command", lambda *_a, **_k: _Fail())
     monkeypatch.setattr(test_safety, "run_ssh_shell_commands", lambda *_a, **_k: _Fail())
     result = test_safety.run(target)
     assert result.critical_control_verdict == ContainmentVerdict.INCOMPLETE.value
     assert result.complete is False
-    assert any(c.outcome == CheckOutcome.ERROR and c.mandatory for c in result.checks)
+    assert result.score >= 1.0
+    assert any(
+        c.outcome == CheckOutcome.NOT_TESTED and c.mandatory and c.critical
+        for c in result.checks
+    )
 
 
 def test_classify_ssh_algorithms_flags_legacy_offers() -> None:

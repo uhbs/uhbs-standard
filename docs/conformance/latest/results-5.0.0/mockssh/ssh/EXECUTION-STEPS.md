@@ -1,6 +1,6 @@
 # Execution steps — `mockssh-ssh`
 
-Replication log for the UHBS 5.0.0 results-5.0.0 refresh. Commands ran from the UHBS repo root.
+Replication log for the UHBS 5.0.1 results-5.0.1 refresh. Commands ran from the UHBS repo root.
 
 ## Identity
 
@@ -9,7 +9,7 @@ Replication log for the UHBS 5.0.0 results-5.0.0 refresh. Commands ran from the 
 - upstream: `https://github.com/ncouture/MockSSH.git`
 - default branch: `main`
 - commit: `d2d49b6121544818560ce8e56f306ccf75f961b3`
-- latest path: `docs/conformance/latest/results-5.0.0/mockssh/ssh`
+- latest path: `docs/conformance/latest/results-5.0.1/mockssh/ssh`
 - lab credentials: `testadmin` / `x`
 
 ## 1. Clone
@@ -41,7 +41,7 @@ printf '%s\n' '# UHBS egress gateway canary — no HIT lines means clean' \
   > .local/labs/mockssh-telemetry/egress-gateway.log
 ```
 
-## 4. Quick (`uhbs:5.0.0`)
+## 4. Quick (`uhbs:5.0.1`)
 
 ```bash
 UHBS_QUICK=1 UHBS_AIRGAP_ATTESTED=1 docker run --rm --network uhbs-lab \
@@ -49,19 +49,19 @@ UHBS_QUICK=1 UHBS_AIRGAP_ATTESTED=1 docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/mockssh-telemetry:/telemetry:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_SSH_KNOWN_HOSTS=/work/.local/labs/mockssh-telemetry/known_hosts \
-  uhbs:5.0.0 lab \
+  uhbs:5.0.1 lab \
     --inventory /work/docs/conformance/labs/mockssh/inventory.yaml \
     --target mockssh-ssh \
     --tps /work/docs/conformance/labs/mockssh/low_interaction_ssh_quick.yaml \
     --phases profile,static,sandbox,dynamic,score --modules A,B,C,D,E,F \
     --quick --skip-sast-tools \
-    --out /work/docs/conformance/latest/results-5.0.0/mockssh/ssh/quick
+    --out /work/docs/conformance/latest/results-5.0.1/mockssh/ssh/quick
 ```
 
-## 5. Full + asciinema (`uhbs:5.0.0-full`)
+## 5. Full + asciinema (`uhbs:5.0.1-full`)
 
 ```bash
-asciinema rec --overwrite docs/conformance/latest/results-5.0.0/mockssh/ssh/full/proof/full-run.cast \
+asciinema rec --overwrite docs/conformance/latest/results-5.0.1/mockssh/ssh/full/proof/full-run.cast \
   -c .local/benchmark-refresh/mockssh-full.sh
 ```
 
@@ -73,4 +73,4 @@ python scripts/validate_unit.py --unit-id mockssh-ssh
 python scripts/rebuild_mkdocs_nav.py
 ```
 
-Honest UHBS 5.0.0 full outcome: **COMPLETE / GATE_PASSED / UHQS 41.75 / F**. Do not copy archived 4.x 59.0 / D.
+Honest UHBS 5.0.1 full outcome: **COMPLETE / GATE_PASSED / UHQS 41.75 / F**. Do not copy archived 4.x 59.0 / D.

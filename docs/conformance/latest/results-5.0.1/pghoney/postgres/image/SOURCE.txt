@@ -1,0 +1,5 @@
+source=docs/conformance/labs/pghoney/Dockerfile.lab
+image=pghoney:uhbs-lab
+digest=sha256:09367f266cf3fde5bd31d367e5d3b26d6637329d587bcde9b935490c5ee7bc4e
+dockerfile=docs/conformance/latest/results-5.0.1/pghoney/postgres/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/pghoney/postgres/Dockerfile.pin

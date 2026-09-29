@@ -8,4 +8,4 @@ Upstream ships `Dockerfile` (`FROM python:3.7-alpine`, `--bind 0.0.0.0`). That i
 
 Exact commands: [EXECUTION-STEPS.md](EXECUTION-STEPS.md).
 
-**Published results (UHBS 5.0.0):** INCOMPLETE / ungraded — see [`full/SCORECARD.txt`](full/SCORECARD.txt). Archived 4.x 50.43 / D is not reused.
+**Published results (UHBS 5.0.1):** INCOMPLETE / ungraded — see [`full/SCORECARD.txt`](full/SCORECARD.txt). Archived 4.x 50.43 / D is not reused.

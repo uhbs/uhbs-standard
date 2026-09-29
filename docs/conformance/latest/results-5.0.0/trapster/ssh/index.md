@@ -1,7 +1,7 @@
-# trapster — SSH (results-5.0.0)
+# trapster — SSH (results-5.0.1)
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 5.0.0 · **Class:** Low-Interaction · **Protocol:** `ssh`  
+**UHBS:** 5.0.1 · **Class:** Low-Interaction · **Protocol:** `ssh`  
 **Target id:** `trapster-ssh` · **Evaluated:** 2026-09-26  
 **Upstream:** `main` @ `c6cc6638e9cc9fd28e38ec6846f2b92cbf01d2b7`  
 **Verdict:** INCOMPLETE / UHQS=22.7 grade=F (`uhqs-v5.1-always-grade`)
@@ -13,7 +13,7 @@
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../../fixtures/trapster-ssh.scorecard.json`](../../../../fixtures/trapster-ssh.scorecard.json)  
-Archive: [`../../../../archive/v5.0.0/trapster/ssh/`](../../../../archive/v5.0.0/trapster/ssh/)  
+Archive: [`../../../../archive/v5.0.1/trapster/ssh/`](../../../../archive/v5.0.1/trapster/ssh/)  
 Replication: [`EXECUTION-STEPS.md`](EXECUTION-STEPS.md)
 
 v5 Safety Gate leaves this SSH unit **UHQS=22.7 grade=F**. Do not cite archived 4.x 44.38 / F as the current result.
@@ -34,7 +34,7 @@ v5 Safety Gate leaves this SSH unit **UHQS=22.7 grade=F**. Do not cite archived 
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : trapster-ssh
 System Profile Class  : Low-Interaction
@@ -57,7 +57,7 @@ Module E: Scalability & Latency     :  20.0/100       0.10     PARTIAL (P50=0.0m
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (1 predictable PRNG seeds: trapster/modules/http.py)
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : UHQS=22.7 grade=F — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (UHQS=22.7 grade=F — no composite UHQS)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (UHQS=22.7 grade=F — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
 scoring_model_id                      : uhqs-v5.1-always-grade
 ====================================================================================

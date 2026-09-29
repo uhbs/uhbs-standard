@@ -7,4 +7,4 @@ Clone `https://github.com/Qyleron/EchidraOSS.git` at `main` HEAD `50305356ffe49a
 
 Exact commands: [EXECUTION-STEPS.md](ssh/EXECUTION-STEPS.md).
 
-**Published results (UHBS 5.0.0):** INCOMPLETE / INCOMPLETE — ungraded unless the Safety Gate passed. See [`ssh/full/SCORECARD.txt`](ssh/full/SCORECARD.txt).
+**Published results (UHBS 5.0.1):** INCOMPLETE / INCOMPLETE — ungraded unless the Safety Gate passed. See [`ssh/full/SCORECARD.txt`](ssh/full/SCORECARD.txt).

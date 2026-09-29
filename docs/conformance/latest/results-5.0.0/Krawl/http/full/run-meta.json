@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "5.0.0",
+  "uhbs_version": "5.0.1",
   "run_mode": "full",
   "evaluated_at": "2026-09-26T19:31:58Z",
   "proof_label": "Krawl (http)",
@@ -18,8 +18,8 @@
     "container_runtime_strategy": "upstream-image"
   },
   "grader": {
-    "package_version": "5.0.0",
-    "docker_image": "uhbs:5.0.0-full",
+    "package_version": "5.0.1",
+    "docker_image": "uhbs:5.0.1-full",
     "docker_image_id": "sha256:320fb38dcf3ebf69befb2248b75ed32c63dafe6b83f959746209d337c3e7ca9b",
     "inventory": "docs/conformance/labs/Krawl/inventory.yaml",
     "tps": "docs/conformance/labs/Krawl/web_api_http_full.yaml",
@@ -71,7 +71,7 @@
     "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
   },
   "limitations": [
-    "Published UHBS 5.0.0 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Published UHBS 5.0.1 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
     "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1)."
   ],
   "docs_reviewed": []

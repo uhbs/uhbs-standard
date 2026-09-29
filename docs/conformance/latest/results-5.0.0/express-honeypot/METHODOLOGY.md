@@ -1,6 +1,6 @@
-# express-honeypot (christophe77) (http) methodology (results-5.0.0)
+# express-honeypot (christophe77) (http) methodology (results-5.0.1)
 
-**UHBS:** 5.0.0 · strategy `custom-base` · base `node:20-bookworm-slim`
+**UHBS:** 5.0.1 · strategy `custom-base` · base `node:20-bookworm-slim`
 
 No upstream Dockerfile; README is Node/yarn. Ubuntu apt nodejs is a huge package set; official Node 20 image is the documented runtime.
 

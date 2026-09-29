@@ -111,6 +111,9 @@ def test_postgres_nego_and_auth_deny_against_stub() -> None:
         assert {c.id for c in nego} >= {
             "postgres.nego.ssl_request",
             "postgres.nego.startup",
+            "postgres.nego.auth_type_known",
+            "postgres.nego.second_startup",
+            "postgres.nego.empty_user_startup",
         }
         assert all(c.passed for c in nego), nego
 

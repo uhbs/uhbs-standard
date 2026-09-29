@@ -89,9 +89,11 @@ def test_module_d_skips_paramiko_without_ssh_listener() -> None:
     result = run_safety(t)
     assert result.metrics.get("shell_exec") is False
     ids = {c.id for c in result.checks}
-    assert "d1.shell_egress_probes" in ids or "d1.shell_exec_unavailable" in ids
-    assert result.status == "INCOMPLETE" or result.score <= 90.0
-    assert result.critical_control_verdict in {None, "INCOMPLETE"} or result.complete is False
+    # Unified OOB path: gateway + inspect criticals (no Paramiko without SSH).
+    assert "d1.egress_gateway_log" in ids
+    assert any(i.startswith("d2.") for i in ids)
+    assert result.critical_control_verdict == "INCOMPLETE"
+    assert isinstance(result.score, float) and result.score >= 1.0
 
 
 def test_resolve_target_requires_protocol_or_tps_protocols() -> None:

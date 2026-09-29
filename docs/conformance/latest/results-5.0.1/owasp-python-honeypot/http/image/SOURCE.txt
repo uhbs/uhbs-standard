@@ -1,0 +1,5 @@
+source=.local/labs/owasp-python-honeypot/Dockerfile.lab
+image=owasp-python-honeypot:uhbs-lab
+digest=sha256:55b63dfc3b7fee7a649539e5c10e274434ddf337de735eec94508e4482a78065
+dockerfile=docs/conformance/latest/results-5.0.1/owasp-python-honeypot/http/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/owasp-python-honeypot/http/Dockerfile.pin

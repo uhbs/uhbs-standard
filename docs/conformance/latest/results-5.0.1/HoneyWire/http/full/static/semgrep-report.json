@@ -1,0 +1,3919 @@
+{
+  "version": "1.178.0",
+  "results": [
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".gitea/workflows/build-hub-dev.yml",
+      "start": {
+        "line": 14,
+        "col": 9,
+        "offset": 219
+      },
+      "end": {
+        "line": 14,
+        "col": 34,
+        "offset": 244
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".gitea/workflows/build-hub-dev.yml",
+      "start": {
+        "line": 20,
+        "col": 9,
+        "offset": 430
+      },
+      "end": {
+        "line": 20,
+        "col": 34,
+        "offset": 455
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".gitea/workflows/build-hub-dev.yml",
+      "start": {
+        "line": 25,
+        "col": 9,
+        "offset": 536
+      },
+      "end": {
+        "line": 25,
+        "col": 36,
+        "offset": 563
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".gitea/workflows/build-sensor-dev.yml",
+      "start": {
+        "line": 17,
+        "col": 9,
+        "offset": 374
+      },
+      "end": {
+        "line": 17,
+        "col": 34,
+        "offset": 399
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".gitea/workflows/build-sensor-dev.yml",
+      "start": {
+        "line": 24,
+        "col": 9,
+        "offset": 592
+      },
+      "end": {
+        "line": 24,
+        "col": 34,
+        "offset": 617
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".gitea/workflows/build-sensor-dev.yml",
+      "start": {
+        "line": 29,
+        "col": 9,
+        "offset": 754
+      },
+      "end": {
+        "line": 29,
+        "col": 38,
+        "offset": 783
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".gitea/workflows/publish-sensor-registry.yml",
+      "start": {
+        "line": 19,
+        "col": 9,
+        "offset": 494
+      },
+      "end": {
+        "line": 19,
+        "col": 34,
+        "offset": 519
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".gitea/workflows/rollback-sensor-registry.yml",
+      "start": {
+        "line": 17,
+        "col": 9,
+        "offset": 374
+      },
+      "end": {
+        "line": 17,
+        "col": 34,
+        "offset": 399
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".gitea/workflows/security.yml",
+      "start": {
+        "line": 16,
+        "col": 9,
+        "offset": 257
+      },
+      "end": {
+        "line": 16,
+        "col": 34,
+        "offset": 282
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/cleanup-ghcr.yml",
+      "start": {
+        "line": 21,
+        "col": 9,
+        "offset": 539
+      },
+      "end": {
+        "line": 21,
+        "col": 49,
+        "offset": 579
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/publish-hub.yml",
+      "start": {
+        "line": 19,
+        "col": 9,
+        "offset": 266
+      },
+      "end": {
+        "line": 19,
+        "col": 34,
+        "offset": 291
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/publish-hub.yml",
+      "start": {
+        "line": 42,
+        "col": 9,
+        "offset": 1180
+      },
+      "end": {
+        "line": 42,
+        "col": 45,
+        "offset": 1216
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/publish-sensor-registry.yml",
+      "start": {
+        "line": 19,
+        "col": 9,
+        "offset": 293
+      },
+      "end": {
+        "line": 19,
+        "col": 34,
+        "offset": 318
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/publish-wizard.yml",
+      "start": {
+        "line": 19,
+        "col": 9,
+        "offset": 281
+      },
+      "end": {
+        "line": 19,
+        "col": 34,
+        "offset": 306
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/publish-wizard.yml",
+      "start": {
+        "line": 22,
+        "col": 9,
+        "offset": 339
+      },
+      "end": {
+        "line": 22,
+        "col": 34,
+        "offset": 364
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/publish-wizard.yml",
+      "start": {
+        "line": 46,
+        "col": 9,
+        "offset": 1097
+      },
+      "end": {
+        "line": 46,
+        "col": 45,
+        "offset": 1133
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/rollback-sensor-registry.yml",
+      "start": {
+        "line": 20,
+        "col": 9,
+        "offset": 406
+      },
+      "end": {
+        "line": 20,
+        "col": 34,
+        "offset": 431
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/security.yml",
+      "start": {
+        "line": 26,
+        "col": 7,
+        "offset": 416
+      },
+      "end": {
+        "line": 26,
+        "col": 32,
+        "offset": 441
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/security.yml",
+      "start": {
+        "line": 29,
+        "col": 7,
+        "offset": 479
+      },
+      "end": {
+        "line": 29,
+        "col": 41,
+        "offset": 513
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/security.yml",
+      "start": {
+        "line": 34,
+        "col": 7,
+        "offset": 597
+      },
+      "end": {
+        "line": 34,
+        "col": 46,
+        "offset": 636
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/security.yml",
+      "start": {
+        "line": 37,
+        "col": 7,
+        "offset": 680
+      },
+      "end": {
+        "line": 37,
+        "col": 44,
+        "offset": 717
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/security.yml",
+      "start": {
+        "line": 44,
+        "col": 9,
+        "offset": 832
+      },
+      "end": {
+        "line": 44,
+        "col": 34,
+        "offset": 857
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/security.yml",
+      "start": {
+        "line": 47,
+        "col": 9,
+        "offset": 913
+      },
+      "end": {
+        "line": 47,
+        "col": 47,
+        "offset": 951
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "dockerfile.security.missing-user.missing-user",
+      "path": "Hub/Dockerfile",
+      "start": {
+        "line": 39,
+        "col": 1,
+        "offset": 929
+      },
+      "end": {
+        "line": 39,
+        "col": 27,
+        "offset": 955
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nCMD [\"/app/honeywire-hub\"]",
+        "metadata": {
+          "cwe": [
+            "CWE-250: Execution with Unnecessary Privileges"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user.missing-user",
+          "shortlink": "https://sg.run/Gbvn"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "go.lang.security.audit.database.string-formatted-query.string-formatted-query",
+      "path": "Hub/internal/store/migrations.go",
+      "start": {
+        "line": 345,
+        "col": 12,
+        "offset": 11463
+      },
+      "end": {
+        "line": 345,
+        "col": 66,
+        "offset": 11517
+      },
+      "extra": {
+        "message": "String-formatted SQL query detected. This could lead to SQL injection if the string is not sanitized properly. Audit this call to ensure the SQL is not manipulable by external data.",
+        "metadata": {
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "source-rule-url": "https://github.com/securego/gosec",
+          "category": "security",
+          "technology": [
+            "go"
+          ],
+          "confidence": "LOW",
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "SQL Injection"
+          ],
+          "source": "https://semgrep.dev/r/go.lang.security.audit.database.string-formatted-query.string-formatted-query",
+          "shortlink": "https://sg.run/ydEr"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "go.lang.security.audit.sqli.gosql-sqli.gosql-sqli",
+      "path": "Hub/internal/store/migrations.go",
+      "start": {
+        "line": 345,
+        "col": 12,
+        "offset": 11463
+      },
+      "end": {
+        "line": 345,
+        "col": 66,
+        "offset": 11517
+      },
+      "extra": {
+        "message": "Detected string concatenation with a non-literal variable in a \"database/sql\" Go SQL statement. This could lead to SQL injection if the variable is user-controlled and not properly sanitized. In order to prevent SQL injection, use parameterized queries or prepared statements instead. You can use prepared statements with the 'Prepare' and 'PrepareContext' calls.",
+        "metadata": {
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "references": [
+            "https://golang.org/pkg/database/sql/"
+          ],
+          "category": "security",
+          "technology": [
+            "go"
+          ],
+          "confidence": "LOW",
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "SQL Injection"
+          ],
+          "source": "https://semgrep.dev/r/go.lang.security.audit.sqli.gosql-sqli.gosql-sqli",
+          "shortlink": "https://sg.run/YgOX"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "dockerfile.security.missing-user.missing-user",
+      "path": "Sensors/official/IcmpCanary/Dockerfile",
+      "start": {
+        "line": 20,
+        "col": 1,
+        "offset": 574
+      },
+      "end": {
+        "line": 20,
+        "col": 25,
+        "offset": 598
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nCMD [\"/app/icmp-canary\"]",
+        "metadata": {
+          "cwe": [
+            "CWE-250: Execution with Unnecessary Privileges"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user.missing-user",
+          "shortlink": "https://sg.run/Gbvn"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "dockerfile.security.missing-user.missing-user",
+      "path": "Sensors/official/NetworkScanDetector/Dockerfile",
+      "start": {
+        "line": 18,
+        "col": 1,
+        "offset": 503
+      },
+      "end": {
+        "line": 18,
+        "col": 27,
+        "offset": 529
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nCMD [\"/app/scan-detector\"]",
+        "metadata": {
+          "cwe": [
+            "CWE-250: Execution with Unnecessary Privileges"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user.missing-user",
+          "shortlink": "https://sg.run/Gbvn"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 2,
+      "level": "warn",
+      "type": "Other syntax error",
+      "message": "Other syntax error at line .github/ISSUE_TEMPLATE/sensor_idea.yml:59:\n (approximate error location; error nearby after) error calling parser: mapping values are not allowed in this context character 0 position 0 returned: 0",
+      "path": ".github/ISSUE_TEMPLATE/sensor_idea.yml"
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".gitea/workflows/build-hub-dev.yml",
+            "start": {
+              "line": 43,
+              "col": 14,
+              "offset": 819
+            },
+            "end": {
+              "line": 43,
+              "col": 35,
+              "offset": 840
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .gitea/workflows/build-hub-dev.yml:43:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `{ vars.LOCAL_REGISTRY` was unexpected",
+      "path": ".gitea/workflows/build-hub-dev.yml",
+      "spans": [
+        {
+          "file": ".gitea/workflows/build-hub-dev.yml",
+          "start": {
+            "line": 43,
+            "col": 14,
+            "offset": 819
+          },
+          "end": {
+            "line": 43,
+            "col": 35,
+            "offset": 840
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".gitea/workflows/build-hub-dev.yml",
+            "start": {
+              "line": 43,
+              "col": 14,
+              "offset": 819
+            },
+            "end": {
+              "line": 43,
+              "col": 35,
+              "offset": 840
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .gitea/workflows/build-hub-dev.yml:43:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `{ vars.LOCAL_REGISTRY` was unexpected",
+      "path": ".gitea/workflows/build-hub-dev.yml",
+      "spans": [
+        {
+          "file": ".gitea/workflows/build-hub-dev.yml",
+          "start": {
+            "line": 43,
+            "col": 14,
+            "offset": 819
+          },
+          "end": {
+            "line": 43,
+            "col": 35,
+            "offset": 840
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".gitea/workflows/build-sensor-dev.yml",
+            "start": {
+              "line": 71,
+              "col": 18,
+              "offset": 1160
+            },
+            "end": {
+              "line": 71,
+              "col": 39,
+              "offset": 1181
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .gitea/workflows/build-sensor-dev.yml:71:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `{ vars.LOCAL_REGISTRY` was unexpected",
+      "path": ".gitea/workflows/build-sensor-dev.yml",
+      "spans": [
+        {
+          "file": ".gitea/workflows/build-sensor-dev.yml",
+          "start": {
+            "line": 71,
+            "col": 18,
+            "offset": 1160
+          },
+          "end": {
+            "line": 71,
+            "col": 39,
+            "offset": 1181
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".gitea/workflows/build-sensor-dev.yml",
+            "start": {
+              "line": 71,
+              "col": 18,
+              "offset": 1160
+            },
+            "end": {
+              "line": 71,
+              "col": 39,
+              "offset": 1181
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .gitea/workflows/build-sensor-dev.yml:71:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `{ vars.LOCAL_REGISTRY` was unexpected",
+      "path": ".gitea/workflows/build-sensor-dev.yml",
+      "spans": [
+        {
+          "file": ".gitea/workflows/build-sensor-dev.yml",
+          "start": {
+            "line": 71,
+            "col": 18,
+            "offset": 1160
+          },
+          "end": {
+            "line": 71,
+            "col": 39,
+            "offset": 1181
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 62,
+              "col": 40,
+              "offset": 2132
+            },
+            "end": {
+              "line": 62,
+              "col": 72,
+              "offset": 2164
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .gitea/workflows/publish-sensor-registry.yml:62:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `{ steps.vars.outputs.SENSOR_NAME` was unexpected",
+      "path": ".gitea/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 62,
+            "col": 40,
+            "offset": 2132
+          },
+          "end": {
+            "line": 62,
+            "col": 72,
+            "offset": 2164
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 62,
+              "col": 40,
+              "offset": 2132
+            },
+            "end": {
+              "line": 62,
+              "col": 72,
+              "offset": 2164
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .gitea/workflows/publish-sensor-registry.yml:62:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `{ steps.vars.outputs.SENSOR_NAME` was unexpected",
+      "path": ".gitea/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 62,
+            "col": 40,
+            "offset": 2132
+          },
+          "end": {
+            "line": 62,
+            "col": 72,
+            "offset": 2164
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 86,
+              "col": 25,
+              "offset": 2993
+            },
+            "end": {
+              "line": 86,
+              "col": 56,
+              "offset": 3024
+            }
+          },
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 87,
+              "col": 16,
+              "offset": 2993
+            },
+            "end": {
+              "line": 87,
+              "col": 48,
+              "offset": 3025
+            }
+          },
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 88,
+              "col": 12,
+              "offset": 2993
+            },
+            "end": {
+              "line": 88,
+              "col": 40,
+              "offset": 3021
+            }
+          },
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 92,
+              "col": 6,
+              "offset": 2993
+            },
+            "end": {
+              "line": 119,
+              "col": 50,
+              "offset": 4007
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .gitea/workflows/publish-sensor-registry.yml:86:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `{ steps.validate.outputs.SOURCE` was unexpected",
+      "path": ".gitea/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 86,
+            "col": 25,
+            "offset": 2993
+          },
+          "end": {
+            "line": 86,
+            "col": 56,
+            "offset": 3024
+          }
+        },
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 87,
+            "col": 16,
+            "offset": 2993
+          },
+          "end": {
+            "line": 87,
+            "col": 48,
+            "offset": 3025
+          }
+        },
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 88,
+            "col": 12,
+            "offset": 2993
+          },
+          "end": {
+            "line": 88,
+            "col": 40,
+            "offset": 3021
+          }
+        },
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 92,
+            "col": 6,
+            "offset": 2993
+          },
+          "end": {
+            "line": 119,
+            "col": 50,
+            "offset": 4007
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 86,
+              "col": 25,
+              "offset": 2993
+            },
+            "end": {
+              "line": 86,
+              "col": 56,
+              "offset": 3024
+            }
+          },
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 87,
+              "col": 16,
+              "offset": 2993
+            },
+            "end": {
+              "line": 87,
+              "col": 48,
+              "offset": 3025
+            }
+          },
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 88,
+              "col": 12,
+              "offset": 2993
+            },
+            "end": {
+              "line": 88,
+              "col": 40,
+              "offset": 3021
+            }
+          },
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 92,
+              "col": 6,
+              "offset": 2993
+            },
+            "end": {
+              "line": 119,
+              "col": 50,
+              "offset": 4007
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .gitea/workflows/publish-sensor-registry.yml:86:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `{ steps.validate.outputs.SOURCE` was unexpected",
+      "path": ".gitea/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 86,
+            "col": 25,
+            "offset": 2993
+          },
+          "end": {
+            "line": 86,
+            "col": 56,
+            "offset": 3024
+          }
+        },
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 87,
+            "col": 16,
+            "offset": 2993
+          },
+          "end": {
+            "line": 87,
+            "col": 48,
+            "offset": 3025
+          }
+        },
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 88,
+            "col": 12,
+            "offset": 2993
+          },
+          "end": {
+            "line": 88,
+            "col": 40,
+            "offset": 3021
+          }
+        },
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 92,
+            "col": 6,
+            "offset": 2993
+          },
+          "end": {
+            "line": 119,
+            "col": 50,
+            "offset": 4007
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 126,
+              "col": 15,
+              "offset": 4696
+            },
+            "end": {
+              "line": 156,
+              "col": 4,
+              "offset": 6005
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .gitea/workflows/publish-sensor-registry.yml:126:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `SOURCE=\"${{ steps.validate.outputs.SOURCE }}\"\nSENSOR_DIR=$(dirname \"$SOURCE\")\nVERSION=\"${{ steps.vars.outputs.VERSION }}\"\nOUTPUT_FILE=\"${{ steps.build.outputs.OUTPUT_FILE }}\"\n\nIMAGE_REPO=$(jq -r '.deployment.image_repository // empty' \"/tmp/$OUTPUT_FILE\")\n\nif [ -z \"$IMAGE_REPO\" ]; then\n   echo \"D[aQyP No image_repository found in manifest. Skipping Docker build.\"\n   exit 0\nfi\n\nIMAGE_TAG=\"$IMAGE_REPO:v$VERSION\"\necho \"R`Qt Building Docker Image: $IMAGE_TAG in $SENSOR_DIR...\"\n\ndocker build -t \"$IMAGE_TAG\" -f \"$SENSOR_DIR/Dockerfile\" .\n\necho \"R`Qt Pushing Docker Image: $IMAGE_TAG\"\ndocker push \"$IMAGE_TAG\" | tee push_out.log\n\n# Extract the final SHA256 cryptographic digest from Docker's response\nDIGEST=$(grep -o 'sha256:[a-f0-9]\\{64\\}' push_out.log | tail -n 1)\nif [ -n \"$DIGEST\" ]; then\n   echo \"R`Tg Captured Digest: $DIGEST\"\n   OUTPUT_FILE=\"${{ steps.build.outputs.OUTPUT_FILE }}\"\n   jq --arg digest \"$DIGEST\" '.deployment.image_digest = $digest | if .deployment.init_containers then .deployment.init_containers[].image_digest = $digest else . end' \"/tmp/$OUTPUT_FILE\" > \"/tmp/$OUTPUT_FILE.tmp\" && mv \"/tmp/$OUTPUT_FILE.tmp\" \"/tmp/$OUTPUT_FILE\"\n   echo \"D]F Injected digest into manifest and init containers\"\nelse\n   echo \"D[aQyP Error: Could not extract digest from Docker push output!\"\n   exit 1\nfi\n` was unexpected",
+      "path": ".gitea/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 126,
+            "col": 15,
+            "offset": 4696
+          },
+          "end": {
+            "line": 156,
+            "col": 4,
+            "offset": 6005
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 126,
+              "col": 15,
+              "offset": 4696
+            },
+            "end": {
+              "line": 156,
+              "col": 4,
+              "offset": 6005
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .gitea/workflows/publish-sensor-registry.yml:126:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `SOURCE=\"${{ steps.validate.outputs.SOURCE }}\"\nSENSOR_DIR=$(dirname \"$SOURCE\")\nVERSION=\"${{ steps.vars.outputs.VERSION }}\"\nOUTPUT_FILE=\"${{ steps.build.outputs.OUTPUT_FILE }}\"\n\nIMAGE_REPO=$(jq -r '.deployment.image_repository // empty' \"/tmp/$OUTPUT_FILE\")\n\nif [ -z \"$IMAGE_REPO\" ]; then\n   echo \"D[aQyP No image_repository found in manifest. Skipping Docker build.\"\n   exit 0\nfi\n\nIMAGE_TAG=\"$IMAGE_REPO:v$VERSION\"\necho \"R`Qt Building Docker Image: $IMAGE_TAG in $SENSOR_DIR...\"\n\ndocker build -t \"$IMAGE_TAG\" -f \"$SENSOR_DIR/Dockerfile\" .\n\necho \"R`Qt Pushing Docker Image: $IMAGE_TAG\"\ndocker push \"$IMAGE_TAG\" | tee push_out.log\n\n# Extract the final SHA256 cryptographic digest from Docker's response\nDIGEST=$(grep -o 'sha256:[a-f0-9]\\{64\\}' push_out.log | tail -n 1)\nif [ -n \"$DIGEST\" ]; then\n   echo \"R`Tg Captured Digest: $DIGEST\"\n   OUTPUT_FILE=\"${{ steps.build.outputs.OUTPUT_FILE }}\"\n   jq --arg digest \"$DIGEST\" '.deployment.image_digest = $digest | if .deployment.init_containers then .deployment.init_containers[].image_digest = $digest else . end' \"/tmp/$OUTPUT_FILE\" > \"/tmp/$OUTPUT_FILE.tmp\" && mv \"/tmp/$OUTPUT_FILE.tmp\" \"/tmp/$OUTPUT_FILE\"\n   echo \"D]F Injected digest into manifest and init containers\"\nelse\n   echo \"D[aQyP Error: Could not extract digest from Docker push output!\"\n   exit 1\nfi\n` was unexpected",
+      "path": ".gitea/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 126,
+            "col": 15,
+            "offset": 4696
+          },
+          "end": {
+            "line": 156,
+            "col": 4,
+            "offset": 6005
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 192,
+              "col": 30,
+              "offset": 7905
+            },
+            "end": {
+              "line": 192,
+              "col": 63,
+              "offset": 7938
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .gitea/workflows/publish-sensor-registry.yml:192:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `{ steps.build.outputs.OUTPUT_FILE` was unexpected",
+      "path": ".gitea/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 192,
+            "col": 30,
+            "offset": 7905
+          },
+          "end": {
+            "line": 192,
+            "col": 63,
+            "offset": 7938
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 192,
+              "col": 30,
+              "offset": 7905
+            },
+            "end": {
+              "line": 192,
+              "col": 63,
+              "offset": 7938
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .gitea/workflows/publish-sensor-registry.yml:192:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `{ steps.build.outputs.OUTPUT_FILE` was unexpected",
+      "path": ".gitea/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 192,
+            "col": 30,
+            "offset": 7905
+          },
+          "end": {
+            "line": 192,
+            "col": 63,
+            "offset": 7938
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 207,
+              "col": 6,
+              "offset": 8267
+            },
+            "end": {
+              "line": 208,
+              "col": 15,
+              "offset": 8307
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .gitea/workflows/publish-sensor-registry.yml:207:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `\"R`TL Registry contents:\"\nls -la *.json\n` was unexpected",
+      "path": ".gitea/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 207,
+            "col": 6,
+            "offset": 8267
+          },
+          "end": {
+            "line": 208,
+            "col": 15,
+            "offset": 8307
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 207,
+              "col": 6,
+              "offset": 8267
+            },
+            "end": {
+              "line": 208,
+              "col": 15,
+              "offset": 8307
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .gitea/workflows/publish-sensor-registry.yml:207:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `\"R`TL Registry contents:\"\nls -la *.json\n` was unexpected",
+      "path": ".gitea/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 207,
+            "col": 6,
+            "offset": 8267
+          },
+          "end": {
+            "line": 208,
+            "col": 15,
+            "offset": 8307
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 215,
+              "col": 30,
+              "offset": 8686
+            },
+            "end": {
+              "line": 215,
+              "col": 62,
+              "offset": 8718
+            }
+          },
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 216,
+              "col": 12,
+              "offset": 8686
+            },
+            "end": {
+              "line": 216,
+              "col": 40,
+              "offset": 8714
+            }
+          },
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 217,
+              "col": 16,
+              "offset": 8686
+            },
+            "end": {
+              "line": 217,
+              "col": 49,
+              "offset": 8719
+            }
+          },
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 228,
+              "col": 6,
+              "offset": 8686
+            },
+            "end": {
+              "line": 228,
+              "col": 63,
+              "offset": 8743
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .gitea/workflows/publish-sensor-registry.yml:215:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `{ steps.vars.outputs.SENSOR_NAME` was unexpected",
+      "path": ".gitea/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 215,
+            "col": 30,
+            "offset": 8686
+          },
+          "end": {
+            "line": 215,
+            "col": 62,
+            "offset": 8718
+          }
+        },
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 216,
+            "col": 12,
+            "offset": 8686
+          },
+          "end": {
+            "line": 216,
+            "col": 40,
+            "offset": 8714
+          }
+        },
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 217,
+            "col": 16,
+            "offset": 8686
+          },
+          "end": {
+            "line": 217,
+            "col": 49,
+            "offset": 8719
+          }
+        },
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 228,
+            "col": 6,
+            "offset": 8686
+          },
+          "end": {
+            "line": 228,
+            "col": 63,
+            "offset": 8743
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 215,
+              "col": 30,
+              "offset": 8686
+            },
+            "end": {
+              "line": 215,
+              "col": 62,
+              "offset": 8718
+            }
+          },
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 216,
+              "col": 12,
+              "offset": 8686
+            },
+            "end": {
+              "line": 216,
+              "col": 40,
+              "offset": 8714
+            }
+          },
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 217,
+              "col": 16,
+              "offset": 8686
+            },
+            "end": {
+              "line": 217,
+              "col": 49,
+              "offset": 8719
+            }
+          },
+          {
+            "path": ".gitea/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 228,
+              "col": 6,
+              "offset": 8686
+            },
+            "end": {
+              "line": 228,
+              "col": 63,
+              "offset": 8743
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .gitea/workflows/publish-sensor-registry.yml:215:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `{ steps.vars.outputs.SENSOR_NAME` was unexpected",
+      "path": ".gitea/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 215,
+            "col": 30,
+            "offset": 8686
+          },
+          "end": {
+            "line": 215,
+            "col": 62,
+            "offset": 8718
+          }
+        },
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 216,
+            "col": 12,
+            "offset": 8686
+          },
+          "end": {
+            "line": 216,
+            "col": 40,
+            "offset": 8714
+          }
+        },
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 217,
+            "col": 16,
+            "offset": 8686
+          },
+          "end": {
+            "line": 217,
+            "col": 49,
+            "offset": 8719
+          }
+        },
+        {
+          "file": ".gitea/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 228,
+            "col": 6,
+            "offset": 8686
+          },
+          "end": {
+            "line": 228,
+            "col": 63,
+            "offset": 8743
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".gitea/workflows/rollback-sensor-registry.yml",
+            "start": {
+              "line": 101,
+              "col": 6,
+              "offset": 3239
+            },
+            "end": {
+              "line": 101,
+              "col": 32,
+              "offset": 3265
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .gitea/workflows/rollback-sensor-registry.yml:101:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `\"R`OJ Rollback complete!\"\n` was unexpected",
+      "path": ".gitea/workflows/rollback-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".gitea/workflows/rollback-sensor-registry.yml",
+          "start": {
+            "line": 101,
+            "col": 6,
+            "offset": 3239
+          },
+          "end": {
+            "line": 101,
+            "col": 32,
+            "offset": 3265
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".gitea/workflows/rollback-sensor-registry.yml",
+            "start": {
+              "line": 101,
+              "col": 6,
+              "offset": 3239
+            },
+            "end": {
+              "line": 101,
+              "col": 32,
+              "offset": 3265
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .gitea/workflows/rollback-sensor-registry.yml:101:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `\"R`OJ Rollback complete!\"\n` was unexpected",
+      "path": ".gitea/workflows/rollback-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".gitea/workflows/rollback-sensor-registry.yml",
+          "start": {
+            "line": 101,
+            "col": 6,
+            "offset": 3239
+          },
+          "end": {
+            "line": 101,
+            "col": 32,
+            "offset": 3265
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/publish-hub.yml",
+            "start": {
+              "line": 29,
+              "col": 75,
+              "offset": 592
+            },
+            "end": {
+              "line": 29,
+              "col": 78,
+              "offset": 595
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/publish-hub.yml:29:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `${{` was unexpected",
+      "path": ".github/workflows/publish-hub.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/publish-hub.yml",
+          "start": {
+            "line": 29,
+            "col": 75,
+            "offset": 592
+          },
+          "end": {
+            "line": 29,
+            "col": 78,
+            "offset": 595
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/publish-hub.yml",
+            "start": {
+              "line": 29,
+              "col": 75,
+              "offset": 592
+            },
+            "end": {
+              "line": 29,
+              "col": 78,
+              "offset": 595
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/publish-hub.yml:29:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `${{` was unexpected",
+      "path": ".github/workflows/publish-hub.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/publish-hub.yml",
+          "start": {
+            "line": 29,
+            "col": 75,
+            "offset": 592
+          },
+          "end": {
+            "line": 29,
+            "col": 78,
+            "offset": 595
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/publish-hub.yml",
+            "start": {
+              "line": 32,
+              "col": 26,
+              "offset": 751
+            },
+            "end": {
+              "line": 32,
+              "col": 54,
+              "offset": 779
+            }
+          },
+          {
+            "path": ".github/workflows/publish-hub.yml",
+            "start": {
+              "line": 33,
+              "col": 22,
+              "offset": 751
+            },
+            "end": {
+              "line": 33,
+              "col": 47,
+              "offset": 776
+            }
+          },
+          {
+            "path": ".github/workflows/publish-hub.yml",
+            "start": {
+              "line": 34,
+              "col": 23,
+              "offset": 751
+            },
+            "end": {
+              "line": 34,
+              "col": 48,
+              "offset": 776
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/publish-hub.yml:32:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `{ steps.vars.outputs.VERSION` was unexpected",
+      "path": ".github/workflows/publish-hub.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/publish-hub.yml",
+          "start": {
+            "line": 32,
+            "col": 26,
+            "offset": 751
+          },
+          "end": {
+            "line": 32,
+            "col": 54,
+            "offset": 779
+          }
+        },
+        {
+          "file": ".github/workflows/publish-hub.yml",
+          "start": {
+            "line": 33,
+            "col": 22,
+            "offset": 751
+          },
+          "end": {
+            "line": 33,
+            "col": 47,
+            "offset": 776
+          }
+        },
+        {
+          "file": ".github/workflows/publish-hub.yml",
+          "start": {
+            "line": 34,
+            "col": 23,
+            "offset": 751
+          },
+          "end": {
+            "line": 34,
+            "col": 48,
+            "offset": 776
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/publish-hub.yml",
+            "start": {
+              "line": 32,
+              "col": 26,
+              "offset": 751
+            },
+            "end": {
+              "line": 32,
+              "col": 54,
+              "offset": 779
+            }
+          },
+          {
+            "path": ".github/workflows/publish-hub.yml",
+            "start": {
+              "line": 33,
+              "col": 22,
+              "offset": 751
+            },
+            "end": {
+              "line": 33,
+              "col": 47,
+              "offset": 776
+            }
+          },
+          {
+            "path": ".github/workflows/publish-hub.yml",
+            "start": {
+              "line": 34,
+              "col": 23,
+              "offset": 751
+            },
+            "end": {
+              "line": 34,
+              "col": 48,
+              "offset": 776
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/publish-hub.yml:32:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `{ steps.vars.outputs.VERSION` was unexpected",
+      "path": ".github/workflows/publish-hub.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/publish-hub.yml",
+          "start": {
+            "line": 32,
+            "col": 26,
+            "offset": 751
+          },
+          "end": {
+            "line": 32,
+            "col": 54,
+            "offset": 779
+          }
+        },
+        {
+          "file": ".github/workflows/publish-hub.yml",
+          "start": {
+            "line": 33,
+            "col": 22,
+            "offset": 751
+          },
+          "end": {
+            "line": 33,
+            "col": 47,
+            "offset": 776
+          }
+        },
+        {
+          "file": ".github/workflows/publish-hub.yml",
+          "start": {
+            "line": 34,
+            "col": 23,
+            "offset": 751
+          },
+          "end": {
+            "line": 34,
+            "col": 48,
+            "offset": 776
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 39,
+              "col": 40,
+              "offset": 935
+            },
+            "end": {
+              "line": 39,
+              "col": 72,
+              "offset": 967
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/publish-sensor-registry.yml:39:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `{ steps.vars.outputs.SENSOR_NAME` was unexpected",
+      "path": ".github/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 39,
+            "col": 40,
+            "offset": 935
+          },
+          "end": {
+            "line": 39,
+            "col": 72,
+            "offset": 967
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 39,
+              "col": 40,
+              "offset": 935
+            },
+            "end": {
+              "line": 39,
+              "col": 72,
+              "offset": 967
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/publish-sensor-registry.yml:39:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `{ steps.vars.outputs.SENSOR_NAME` was unexpected",
+      "path": ".github/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 39,
+            "col": 40,
+            "offset": 935
+          },
+          "end": {
+            "line": 39,
+            "col": 72,
+            "offset": 967
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 56,
+              "col": 25,
+              "offset": 1485
+            },
+            "end": {
+              "line": 56,
+              "col": 56,
+              "offset": 1516
+            }
+          },
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 57,
+              "col": 16,
+              "offset": 1485
+            },
+            "end": {
+              "line": 57,
+              "col": 48,
+              "offset": 1517
+            }
+          },
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 58,
+              "col": 12,
+              "offset": 1485
+            },
+            "end": {
+              "line": 58,
+              "col": 40,
+              "offset": 1513
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/publish-sensor-registry.yml:56:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `{ steps.validate.outputs.SOURCE` was unexpected",
+      "path": ".github/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 56,
+            "col": 25,
+            "offset": 1485
+          },
+          "end": {
+            "line": 56,
+            "col": 56,
+            "offset": 1516
+          }
+        },
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 57,
+            "col": 16,
+            "offset": 1485
+          },
+          "end": {
+            "line": 57,
+            "col": 48,
+            "offset": 1517
+          }
+        },
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 58,
+            "col": 12,
+            "offset": 1485
+          },
+          "end": {
+            "line": 58,
+            "col": 40,
+            "offset": 1513
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 56,
+              "col": 25,
+              "offset": 1485
+            },
+            "end": {
+              "line": 56,
+              "col": 56,
+              "offset": 1516
+            }
+          },
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 57,
+              "col": 16,
+              "offset": 1485
+            },
+            "end": {
+              "line": 57,
+              "col": 48,
+              "offset": 1517
+            }
+          },
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 58,
+              "col": 12,
+              "offset": 1485
+            },
+            "end": {
+              "line": 58,
+              "col": 40,
+              "offset": 1513
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/publish-sensor-registry.yml:56:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `{ steps.validate.outputs.SOURCE` was unexpected",
+      "path": ".github/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 56,
+            "col": 25,
+            "offset": 1485
+          },
+          "end": {
+            "line": 56,
+            "col": 56,
+            "offset": 1516
+          }
+        },
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 57,
+            "col": 16,
+            "offset": 1485
+          },
+          "end": {
+            "line": 57,
+            "col": 48,
+            "offset": 1517
+          }
+        },
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 58,
+            "col": 12,
+            "offset": 1485
+          },
+          "end": {
+            "line": 58,
+            "col": 40,
+            "offset": 1513
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 75,
+              "col": 75,
+              "offset": 2232
+            },
+            "end": {
+              "line": 75,
+              "col": 78,
+              "offset": 2235
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/publish-sensor-registry.yml:75:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `${{` was unexpected",
+      "path": ".github/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 75,
+            "col": 75,
+            "offset": 2232
+          },
+          "end": {
+            "line": 75,
+            "col": 78,
+            "offset": 2235
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 75,
+              "col": 75,
+              "offset": 2232
+            },
+            "end": {
+              "line": 75,
+              "col": 78,
+              "offset": 2235
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/publish-sensor-registry.yml:75:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `${{` was unexpected",
+      "path": ".github/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 75,
+            "col": 75,
+            "offset": 2232
+          },
+          "end": {
+            "line": 75,
+            "col": 78,
+            "offset": 2235
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 78,
+              "col": 25,
+              "offset": 2387
+            },
+            "end": {
+              "line": 78,
+              "col": 56,
+              "offset": 2418
+            }
+          },
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 80,
+              "col": 12,
+              "offset": 2387
+            },
+            "end": {
+              "line": 80,
+              "col": 40,
+              "offset": 2415
+            }
+          },
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 95,
+              "col": 19,
+              "offset": 2387
+            },
+            "end": {
+              "line": 95,
+              "col": 52,
+              "offset": 2420
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/publish-sensor-registry.yml:78:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `{ steps.validate.outputs.SOURCE` was unexpected",
+      "path": ".github/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 78,
+            "col": 25,
+            "offset": 2387
+          },
+          "end": {
+            "line": 78,
+            "col": 56,
+            "offset": 2418
+          }
+        },
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 80,
+            "col": 12,
+            "offset": 2387
+          },
+          "end": {
+            "line": 80,
+            "col": 40,
+            "offset": 2415
+          }
+        },
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 95,
+            "col": 19,
+            "offset": 2387
+          },
+          "end": {
+            "line": 95,
+            "col": 52,
+            "offset": 2420
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 78,
+              "col": 25,
+              "offset": 2387
+            },
+            "end": {
+              "line": 78,
+              "col": 56,
+              "offset": 2418
+            }
+          },
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 80,
+              "col": 12,
+              "offset": 2387
+            },
+            "end": {
+              "line": 80,
+              "col": 40,
+              "offset": 2415
+            }
+          },
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 95,
+              "col": 19,
+              "offset": 2387
+            },
+            "end": {
+              "line": 95,
+              "col": 52,
+              "offset": 2420
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/publish-sensor-registry.yml:78:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `{ steps.validate.outputs.SOURCE` was unexpected",
+      "path": ".github/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 78,
+            "col": 25,
+            "offset": 2387
+          },
+          "end": {
+            "line": 78,
+            "col": 56,
+            "offset": 2418
+          }
+        },
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 80,
+            "col": 12,
+            "offset": 2387
+          },
+          "end": {
+            "line": 80,
+            "col": 40,
+            "offset": 2415
+          }
+        },
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 95,
+            "col": 19,
+            "offset": 2387
+          },
+          "end": {
+            "line": 95,
+            "col": 52,
+            "offset": 2420
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 122,
+              "col": 30,
+              "offset": 4274
+            },
+            "end": {
+              "line": 122,
+              "col": 63,
+              "offset": 4307
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/publish-sensor-registry.yml:122:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `{ steps.build.outputs.OUTPUT_FILE` was unexpected",
+      "path": ".github/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 122,
+            "col": 30,
+            "offset": 4274
+          },
+          "end": {
+            "line": 122,
+            "col": 63,
+            "offset": 4307
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 122,
+              "col": 30,
+              "offset": 4274
+            },
+            "end": {
+              "line": 122,
+              "col": 63,
+              "offset": 4307
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/publish-sensor-registry.yml:122:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `{ steps.build.outputs.OUTPUT_FILE` was unexpected",
+      "path": ".github/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 122,
+            "col": 30,
+            "offset": 4274
+          },
+          "end": {
+            "line": 122,
+            "col": 63,
+            "offset": 4307
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 130,
+              "col": 30,
+              "offset": 4527
+            },
+            "end": {
+              "line": 130,
+              "col": 62,
+              "offset": 4559
+            }
+          },
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 131,
+              "col": 12,
+              "offset": 4527
+            },
+            "end": {
+              "line": 131,
+              "col": 40,
+              "offset": 4555
+            }
+          },
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 132,
+              "col": 16,
+              "offset": 4527
+            },
+            "end": {
+              "line": 132,
+              "col": 49,
+              "offset": 4560
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/publish-sensor-registry.yml:130:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `{ steps.vars.outputs.SENSOR_NAME` was unexpected",
+      "path": ".github/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 130,
+            "col": 30,
+            "offset": 4527
+          },
+          "end": {
+            "line": 130,
+            "col": 62,
+            "offset": 4559
+          }
+        },
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 131,
+            "col": 12,
+            "offset": 4527
+          },
+          "end": {
+            "line": 131,
+            "col": 40,
+            "offset": 4555
+          }
+        },
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 132,
+            "col": 16,
+            "offset": 4527
+          },
+          "end": {
+            "line": 132,
+            "col": 49,
+            "offset": 4560
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 130,
+              "col": 30,
+              "offset": 4527
+            },
+            "end": {
+              "line": 130,
+              "col": 62,
+              "offset": 4559
+            }
+          },
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 131,
+              "col": 12,
+              "offset": 4527
+            },
+            "end": {
+              "line": 131,
+              "col": 40,
+              "offset": 4555
+            }
+          },
+          {
+            "path": ".github/workflows/publish-sensor-registry.yml",
+            "start": {
+              "line": 132,
+              "col": 16,
+              "offset": 4527
+            },
+            "end": {
+              "line": 132,
+              "col": 49,
+              "offset": 4560
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/publish-sensor-registry.yml:130:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `{ steps.vars.outputs.SENSOR_NAME` was unexpected",
+      "path": ".github/workflows/publish-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 130,
+            "col": 30,
+            "offset": 4527
+          },
+          "end": {
+            "line": 130,
+            "col": 62,
+            "offset": 4559
+          }
+        },
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 131,
+            "col": 12,
+            "offset": 4527
+          },
+          "end": {
+            "line": 131,
+            "col": 40,
+            "offset": 4555
+          }
+        },
+        {
+          "file": ".github/workflows/publish-sensor-registry.yml",
+          "start": {
+            "line": 132,
+            "col": 16,
+            "offset": 4527
+          },
+          "end": {
+            "line": 132,
+            "col": 49,
+            "offset": 4560
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/rollback-sensor-registry.yml",
+            "start": {
+              "line": 104,
+              "col": 6,
+              "offset": 3271
+            },
+            "end": {
+              "line": 104,
+              "col": 32,
+              "offset": 3297
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/rollback-sensor-registry.yml:104:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `\"R`OJ Rollback complete!\"\n` was unexpected",
+      "path": ".github/workflows/rollback-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/rollback-sensor-registry.yml",
+          "start": {
+            "line": 104,
+            "col": 6,
+            "offset": 3271
+          },
+          "end": {
+            "line": 104,
+            "col": 32,
+            "offset": 3297
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/rollback-sensor-registry.yml",
+            "start": {
+              "line": 104,
+              "col": 6,
+              "offset": 3271
+            },
+            "end": {
+              "line": 104,
+              "col": 32,
+              "offset": 3297
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/rollback-sensor-registry.yml:104:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `\"R`OJ Rollback complete!\"\n` was unexpected",
+      "path": ".github/workflows/rollback-sensor-registry.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/rollback-sensor-registry.yml",
+          "start": {
+            "line": 104,
+            "col": 6,
+            "offset": 3271
+          },
+          "end": {
+            "line": 104,
+            "col": 32,
+            "offset": 3297
+          }
+        }
+      ]
+    }
+  ],
+  "paths": {
+    "scanned": [
+      ".codegraph/.gitignore",
+      ".gitea/workflows/build-hub-dev.yml",
+      ".gitea/workflows/build-sensor-dev.yml",
+      ".gitea/workflows/publish-sensor-registry.yml",
+      ".gitea/workflows/rollback-sensor-registry.yml",
+      ".gitea/workflows/security.yml",
+      ".github/ISSUE_TEMPLATE/bug_report.yml",
+      ".github/ISSUE_TEMPLATE/config.yml",
+      ".github/ISSUE_TEMPLATE/feature_request.yml",
+      ".github/ISSUE_TEMPLATE/sensor_idea.yml",
+      ".github/workflows/cleanup-ghcr.yml",
+      ".github/workflows/publish-hub.yml",
+      ".github/workflows/publish-sensor-registry.yml",
+      ".github/workflows/publish-wizard.yml",
+      ".github/workflows/rollback-sensor-registry.yml",
+      ".github/workflows/security.yml",
+      ".gitignore",
+      "CHANGELOG.md",
+      "CONTRIBUTING.md",
+      "Docs/README.md",
+      "Docs/architecture/README.md",
+      "Docs/architecture/dataContracts.md",
+      "Docs/architecture/hub/backend/API.md",
+      "Docs/architecture/hub/backend/README.md",
+      "Docs/architecture/hub/backend/compose.md",
+      "Docs/architecture/hub/backend/projections.md",
+      "Docs/architecture/hub/backend/provisioning.md",
+      "Docs/architecture/hub/backend/services.md",
+      "Docs/architecture/hub/frontend/README.md",
+      "Docs/architecture/hub/frontend/components.md",
+      "Docs/architecture/hub/frontend/store-app.md",
+      "Docs/architecture/hub/frontend/store-events.md",
+      "Docs/architecture/hub/frontend/store-fleet.md",
+      "Docs/architecture/hub/frontend/stores.md",
+      "Docs/architecture/sensors/README.md",
+      "Docs/architecture/wizard/README.md",
+      "Docs/development/README.md",
+      "Docs/development/contributionRules.md",
+      "Docs/development/maintainer-workflow.md",
+      "Docs/development/sensors.md",
+      "Docs/development/setup.md",
+      "Docs/development/structure.md",
+      "Docs/development/wizard.md",
+      "Docs/development/workflows.md",
+      "Docs/operations.md",
+      "Hub/Dockerfile",
+      "Hub/cmd/hub/main.go",
+      "Hub/docker-compose.yml",
+      "Hub/go.mod",
+      "Hub/go.sum",
+      "Hub/internal/api/analytics.go",
+      "Hub/internal/api/auth.go",
+      "Hub/internal/api/compose.go",
+      "Hub/internal/api/config.go",
+      "Hub/internal/api/events.go",
+      "Hub/internal/api/middleware.go",
+      "Hub/internal/api/nodes.go",
+      "Hub/internal/api/router.go",
+      "Hub/internal/api/sensors.go",
+      "Hub/internal/api/utils.go",
+      "Hub/internal/catalog/service.go",
+      "Hub/internal/compose/builder.go",
+      "Hub/internal/compose/env.go",
+      "Hub/internal/compose/security/parse.go",
+      "Hub/internal/compose/security/validate.go",
+      "Hub/internal/compose/types.go",
+      "Hub/internal/models/models.go",
+      "Hub/internal/projections/severity/calculator.go",
+      "Hub/internal/projections/severity/dto.go",
+      "Hub/internal/projections/severity/projection.go",
+      "Hub/internal/projections/summary/calculator.go",
+      "Hub/internal/projections/summary/dto.go",
+      "Hub/internal/projections/summary/projection.go",
+      "Hub/internal/projections/uptime/calculator.go",
+      "Hub/internal/projections/uptime/dto.go",
+      "Hub/internal/projections/uptime/projection.go",
+      "Hub/internal/projections/velocity/calculator.go",
+      "Hub/internal/projections/velocity/dto.go",
+      "Hub/internal/projections/velocity/projection.go",
+      "Hub/internal/services/auth/service.go",
+      "Hub/internal/services/compose/service.go",
+      "Hub/internal/services/config/service.go",
+      "Hub/internal/services/event/service.go",
+      "Hub/internal/services/node/service.go",
+      "Hub/internal/services/notify/service.go",
+      "Hub/internal/services/sensor/service.go",
+      "Hub/internal/services/siem/service.go",
+      "Hub/internal/services/statemonitor/statemonitor.go",
+      "Hub/internal/services/updater/updater.go",
+      "Hub/internal/services/websocket/service.go",
+      "Hub/internal/store/config.go",
+      "Hub/internal/store/events.go",
+      "Hub/internal/store/migrations.go",
+      "Hub/internal/store/nodes.go",
+      "Hub/internal/store/sensors.go",
+      "Hub/internal/store/sqlite.go",
+      "Hub/internal/store/store.go",
+      "Hub/ui/.gitignore",
+      "Hub/ui/embed.go",
+      "Hub/ui/index.html",
+      "Hub/ui/package-lock.json",
+      "Hub/ui/package.json",
+      "Hub/ui/public/favicon.svg",
+      "Hub/ui/src/App.vue",
+      "Hub/ui/src/api/client.ts",
+      "Hub/ui/src/assets/style.css",
+      "Hub/ui/src/components/dashboard/EventTable.vue",
+      "Hub/ui/src/components/dashboard/SeverityChart.vue",
+      "Hub/ui/src/components/dashboard/ThreatVelocity.vue",
+      "Hub/ui/src/components/dashboard/TrafficFilters.vue",
+      "Hub/ui/src/components/dashboard/UptimeHeatmap.vue",
+      "Hub/ui/src/components/fleetmanagement/FleetDeployModal.vue",
+      "Hub/ui/src/components/fleetmanagement/FleetNodeWidget.vue",
+      "Hub/ui/src/components/fleetmanagement/FleetSkeleton.vue",
+      "Hub/ui/src/components/layout/Header.vue",
+      "Hub/ui/src/components/layout/Sidebar.vue",
+      "Hub/ui/src/components/nodedetails/NodeCatalogGrid.vue",
+      "Hub/ui/src/components/nodedetails/NodeDetailHeader.vue",
+      "Hub/ui/src/components/nodedetails/NodeKeyModal.vue",
+      "Hub/ui/src/components/nodedetails/NodeSensorGrid.vue",
+      "Hub/ui/src/components/nodedetails/NodeSensorModal.vue",
+      "Hub/ui/src/components/nodedetails/NodeStatWidgets.vue",
+      "Hub/ui/src/components/nodedetails/NodeSyncModal.vue",
+      "Hub/ui/src/components/ui/branding/BaseLogo.vue",
+      "Hub/ui/src/components/ui/branding/ThemeToggle.vue",
+      "Hub/ui/src/components/ui/feedback/BaseAlert.vue",
+      "Hub/ui/src/components/ui/feedback/BaseLegend.vue",
+      "Hub/ui/src/components/ui/feedback/BaseModal.vue",
+      "Hub/ui/src/components/ui/feedback/BaseStatusDot.vue",
+      "Hub/ui/src/components/ui/forms/BaseButton.vue",
+      "Hub/ui/src/components/ui/forms/BaseInput.vue",
+      "Hub/ui/src/components/ui/forms/BaseNumberStepper.vue",
+      "Hub/ui/src/components/ui/forms/BaseRadioGroup.vue",
+      "Hub/ui/src/components/ui/forms/BaseTimeFilter.vue",
+      "Hub/ui/src/components/ui/layout/BaseCard.vue",
+      "Hub/ui/src/components/ui/layout/BaseDivider.vue",
+      "Hub/ui/src/components/ui/layout/BaseWidget.vue",
+      "Hub/ui/src/components/ui/layout/PageHeader.vue",
+      "Hub/ui/src/components/ui/navigation/BaseMeatballMenu.vue",
+      "Hub/ui/src/components/ui/navigation/BaseVerticalNav.vue",
+      "Hub/ui/src/env.d.ts",
+      "Hub/ui/src/index.ts",
+      "Hub/ui/src/main.ts",
+      "Hub/ui/src/services/ws.ts",
+      "Hub/ui/src/stores/Config/config.ts",
+      "Hub/ui/src/stores/Events/events.ts",
+      "Hub/ui/src/stores/Fleet/fleet.ts",
+      "Hub/ui/src/stores/System/app.ts",
+      "Hub/ui/src/utils/chartConfig.ts",
+      "Hub/ui/src/utils/formatSensorId.ts",
+      "Hub/ui/src/utils/theme.ts",
+      "Hub/ui/src/utils/useClipboard.ts",
+      "Hub/ui/src/utils/useDropdown.ts",
+      "Hub/ui/src/views/Dashboard.vue",
+      "Hub/ui/src/views/FleetManagement.vue",
+      "Hub/ui/src/views/Login.vue",
+      "Hub/ui/src/views/NodeDetails.vue",
+      "Hub/ui/src/views/Settings.vue",
+      "Hub/ui/src/views/Setup.vue",
+      "Hub/ui/tsconfig.json",
+      "Hub/ui/tsconfig.node.json",
+      "Hub/ui/vite.config.ts",
+      "LICENSE",
+      "Makefile",
+      "README.md",
+      "SDKs/go-honeywire/go.mod",
+      "SDKs/go-honeywire/go.sum",
+      "SDKs/go-honeywire/sdk.go",
+      "SDKs/python-honeywire/honeywire/__init__.py",
+      "SDKs/python-honeywire/setup.py",
+      "SECURITY.md",
+      "Sensors/community/README.md",
+      "Sensors/official/FileCanary/Dockerfile",
+      "Sensors/official/FileCanary/file-canary.json",
+      "Sensors/official/FileCanary/go.mod",
+      "Sensors/official/FileCanary/go.sum",
+      "Sensors/official/FileCanary/main.go",
+      "Sensors/official/IcmpCanary/Dockerfile",
+      "Sensors/official/IcmpCanary/go.mod",
+      "Sensors/official/IcmpCanary/go.sum",
+      "Sensors/official/IcmpCanary/icmp-canary.json",
+      "Sensors/official/IcmpCanary/main.go",
+      "Sensors/official/NetworkScanDetector/Dockerfile",
+      "Sensors/official/NetworkScanDetector/go.mod",
+      "Sensors/official/NetworkScanDetector/go.sum",
+      "Sensors/official/NetworkScanDetector/main.go",
+      "Sensors/official/NetworkScanDetector/network-scan-detector.json",
+      "Sensors/official/TcpTarpit/Dockerfile",
+      "Sensors/official/TcpTarpit/go.mod",
+      "Sensors/official/TcpTarpit/go.sum",
+      "Sensors/official/TcpTarpit/main.go",
+      "Sensors/official/TcpTarpit/tcp-tarpit.json",
+      "Sensors/official/WebRouterDecoy/Dockerfile",
+      "Sensors/official/WebRouterDecoy/go.mod",
+      "Sensors/official/WebRouterDecoy/go.sum",
+      "Sensors/official/WebRouterDecoy/main.go",
+      "Sensors/official/WebRouterDecoy/web-router-decoy.json",
+      "Sensors/templates/README.md",
+      "Sensors/templates/go-sensor/Dockerfile",
+      "Sensors/templates/go-sensor/go.mod",
+      "Sensors/templates/go-sensor/go.sum",
+      "Sensors/templates/go-sensor/main.go",
+      "Sensors/templates/go-sensor/manifest.example.json",
+      "Sensors/templates/python-sensor/Dockerfile",
+      "Sensors/templates/python-sensor/manifest.example.json",
+      "Sensors/templates/python-sensor/requirements.txt",
+      "Sensors/templates/python-sensor/sensor.py",
+      "THREATMODEL.md",
+      "install.sh",
+      "scripts/build-registry-index.sh",
+      "scripts/mock_hub.py",
+      "wizard/cmd/wizard/main.go",
+      "wizard/core/api/client.go",
+      "wizard/core/discovery/engine.go",
+      "wizard/core/scanner/proc_scanner.go",
+      "wizard/core/scanner/scanner.go",
+      "wizard/core/schema/manifest.go",
+      "wizard/go.mod",
+      "wizard/go.sum",
+      "wizard/internal/app/config.go",
+      "wizard/internal/app/persistence.go",
+      "wizard/internal/app/session.go",
+      "wizard/internal/cli/onboarding.go",
+      "wizard/internal/cli/prompts.go",
+      "wizard/internal/cli/render.go",
+      "wizard/internal/cli/style.go",
+      "wizard/internal/cli/usage.go",
+      "wizard/internal/commands/apply.go",
+      "wizard/internal/commands/commands.go",
+      "wizard/internal/commands/discover.go",
+      "wizard/internal/commands/firedrill.go",
+      "wizard/internal/commands/linking.go",
+      "wizard/internal/commands/onboarding.go",
+      "wizard/internal/commands/status.go",
+      "wizard/internal/commands/teardown.go",
+      "wizard/internal/deploy/apply.go",
+      "wizard/internal/deploy/docker.go",
+      "wizard/internal/deploy/uninstall.go",
+      "wizard/internal/system/state.go",
+      "wizard/internal/util/files.go"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.374722957611084,
+    "profiling_times": {
+      "config_time": 2.9786484241485596,
+      "core_time": 3.521109104156494,
+      "ignores_time": 0.0009949207305908203,
+      "total_time": 6.513084173202515
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 13.547885656356812,
+      "per_file_time": {
+        "mean": 0.02185142847799487,
+        "std_dev": 0.007059974403652232
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9742302693497065,
+      "rules_selected_ratio": 0.058575718191188994,
+      "rules_matched_ratio": 0.058575718191188994
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 1285661504
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

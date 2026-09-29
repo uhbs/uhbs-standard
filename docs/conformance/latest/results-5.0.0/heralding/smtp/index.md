@@ -1,7 +1,7 @@
-# heralding — smtp (results-5.0.0)
+# heralding — smtp (results-5.0.1)
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 5.0.0 · **Class:** Low-Interaction · **Protocol:** `smtp`  
+**UHBS:** 5.0.1 · **Class:** Low-Interaction · **Protocol:** `smtp`  
 **Target id:** `heralding-smtp` · **Evaluated:** 2026-09-26  
 **Upstream:** `master` @ `ac12724ab38c4e2fe78f07d1bc35e6e586ba69c0`  
 **Verdict:** INCOMPLETE / INCOMPLETE / UHQS=41.14 grade=F (`uhqs-v5.1-always-grade`)
@@ -13,7 +13,7 @@
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../../fixtures/heralding-smtp.scorecard.json`](../../../../fixtures/heralding-smtp.scorecard.json)  
-Archive: [`../../../../archive/v5.0.0/heralding/smtp/`](../../../../archive/v5.0.0/heralding/smtp/)  
+Archive: [`../../../../archive/v5.0.1/heralding/smtp/`](../../../../archive/v5.0.1/heralding/smtp/)  
 Replication: [`EXECUTION-STEPS.md`](EXECUTION-STEPS.md)
 
 INCOMPLETE / UHQS=41.14 grade=F (non-SSH Module D). Do not cite archived 4.x letter grades.
@@ -34,7 +34,7 @@ INCOMPLETE / UHQS=41.14 grade=F (non-SSH Module D). Do not cite archived 4.x let
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : heralding-smtp
 System Profile Class  : Low-Interaction
@@ -57,7 +57,7 @@ Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service a
 Module F: Static Code Audit         :  66.9/100       0.20     PARTIAL (bandit HIGH=11)
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : UHQS=41.14 grade=F — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (UHQS=41.14 grade=F — no composite UHQS)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (UHQS=41.14 grade=F — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
 scoring_model_id                      : uhqs-v5.1-always-grade
 ====================================================================================

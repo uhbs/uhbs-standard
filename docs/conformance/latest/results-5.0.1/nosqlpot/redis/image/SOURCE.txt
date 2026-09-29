@@ -1,0 +1,5 @@
+source=.local/labs/nosqlpot/Dockerfile.lab
+image=nosqlpot:uhbs-lab
+digest=sha256:d83006e9ad8465696cbb0a9f9fa2f017eb72e7779be6eda2fbee572a2b1d8209
+dockerfile=docs/conformance/latest/results-5.0.1/nosqlpot/redis/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/nosqlpot/redis/Dockerfile.pin

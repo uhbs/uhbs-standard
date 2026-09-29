@@ -1,0 +1,261 @@
+[
+    {
+        "Id": "0a35efea59892bdbac7ad7a0fc727811683727ca267b94bafdaa1257f4842224",
+        "Created": "2026-09-27T20:21:53.968931346Z",
+        "Path": "/usr/local/bin/honeymcp",
+        "Args": [
+            "--transport",
+            "http",
+            "--http-addr",
+            "0.0.0.0:8080",
+            "--persona",
+            "aws=/opt/honeymcp/personas/aws-admin.yaml",
+            "--persona",
+            "github=/opt/honeymcp/personas/github-admin.yaml",
+            "--persona",
+            "vercel=/opt/honeymcp/personas/vercel-admin.yaml",
+            "--persona",
+            "stripe=/opt/honeymcp/personas/stripe-finance.yaml",
+            "--default-persona",
+            "aws",
+            "--db",
+            "/var/lib/honeymcp/hive.db",
+            "--jsonl",
+            "/var/lib/honeymcp/hive.jsonl"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 63574,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:21:54.079235804Z",
+            "FinishedAt": "0001-01-01T00:00:00Z",
+            "Health": {
+                "Status": "starting",
+                "FailingStreak": 0,
+                "Log": []
+            }
+        },
+        "Image": "sha256:7110d509ad99de427cc88c0a00a0f8136a51a1c0b9a033b0868cb51954707a83",
+        "ResolvConfPath": "/var/lib/docker/containers/0a35efea59892bdbac7ad7a0fc727811683727ca267b94bafdaa1257f4842224/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/0a35efea59892bdbac7ad7a0fc727811683727ca267b94bafdaa1257f4842224/hostname",
+        "HostsPath": "/var/lib/docker/containers/0a35efea59892bdbac7ad7a0fc727811683727ca267b94bafdaa1257f4842224/hosts",
+        "LogPath": "/var/lib/docker/containers/0a35efea59892bdbac7ad7a0fc727811683727ca267b94bafdaa1257f4842224/0a35efea59892bdbac7ad7a0fc727811683727ca267b94bafdaa1257f4842224-json.log",
+        "Name": "/uhbs-target-honeymcp-mcp",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/honeymcp-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "0a35efea59892bdbac7ad7a0fc727811683727ca267b94bafdaa1257f4842224",
+                "LowerDir": "/var/lib/docker/overlay2/8bcca66b2222b1709361e4aaf05fd61f617f3675d81fb6fe6fd9f480445e542d-init/diff:/var/lib/docker/overlay2/j04ujbc1faa1vk55ebrj5ekpo/diff:/var/lib/docker/overlay2/zm4pnf7zy1w0utcb8mq6oddf1/diff:/var/lib/docker/overlay2/j7fxh78iud8pm9fzgkz2bo298/diff:/var/lib/docker/overlay2/jufo49gkhsyv5q93lgqpoc2l2/diff:/var/lib/docker/overlay2/rqiu3w2x0k83mei8n1e1zphmw/diff:/var/lib/docker/overlay2/xo3pcoy5ekv61iom2cavnepc2/diff:/var/lib/docker/overlay2/9226f87fad8a9767d3469a7b90e3c54a0f60047c20d211215a6ea7c525fc114d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/8bcca66b2222b1709361e4aaf05fd61f617f3675d81fb6fe6fd9f480445e542d/merged",
+                "UpperDir": "/var/lib/docker/overlay2/8bcca66b2222b1709361e4aaf05fd61f617f3675d81fb6fe6fd9f480445e542d/diff",
+                "WorkDir": "/var/lib/docker/overlay2/8bcca66b2222b1709361e4aaf05fd61f617f3675d81fb6fe6fd9f480445e542d/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/honeymcp-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "0a35efea5989",
+            "Domainname": "",
+            "User": "honeymcp",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "--transport",
+                "http",
+                "--http-addr",
+                "0.0.0.0:8080",
+                "--persona",
+                "aws=/opt/honeymcp/personas/aws-admin.yaml",
+                "--persona",
+                "github=/opt/honeymcp/personas/github-admin.yaml",
+                "--persona",
+                "vercel=/opt/honeymcp/personas/vercel-admin.yaml",
+                "--persona",
+                "stripe=/opt/honeymcp/personas/stripe-finance.yaml",
+                "--default-persona",
+                "aws",
+                "--db",
+                "/var/lib/honeymcp/hive.db",
+                "--jsonl",
+                "/var/lib/honeymcp/hive.jsonl"
+            ],
+            "Healthcheck": {
+                "Test": [
+                    "CMD",
+                    "/usr/local/bin/healthz"
+                ],
+                "Interval": 30000000000,
+                "Timeout": 5000000000,
+                "StartPeriod": 10000000000,
+                "Retries": 3
+            },
+            "Image": "honeymcp:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/opt/honeymcp",
+            "Entrypoint": [
+                "/usr/local/bin/honeymcp"
+            ],
+            "Labels": {
+                "uhbs.unit": "honeymcp-mcp"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "53a6800c12f5705a2a0f954f16a20269a0d6358d3395b953c1c3af127202d6da",
+            "SandboxKey": "/var/run/docker/netns/53a6800c12f5",
+            "Ports": {
+                "8080/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "honeymcp-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "c89f5b6caed489ee2a96627dc7ffe153f4dd7446182cc5ace67d2773e4f7cb2d",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "e2:dd:d7:fd:13:2f",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-honeymcp-mcp",
+                        "honeymcp-lab",
+                        "0a35efea5989"
+                    ]
+                }
+            }
+        }
+    }
+]

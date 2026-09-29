@@ -48,6 +48,9 @@ SKIP_FILE_NAMES = {
     "Cargo.lock",
     "poetry.lock",
     "uv.lock",
+    # Third-party pins must not be rewritten when UHBS semver coincides
+    # (e.g. paramiko==5.0.0 → paramiko==5.0.1).
+    "constraints.txt",
 }
 # Binary / non-text — never rewrite
 SKIP_SUFFIXES = {

@@ -1,0 +1,61 @@
+{
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "814dd5f98c5f39121dcb8d34897f792df5e64c27cf17d471edc5b89edc770459"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "e17ac3af19fc475433ebfbb176e7f95e6fe341ceaf604f1cac07afdf54a0bccc"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "e17ac3af19fc475433ebfbb176e7f95e6fe341ceaf604f1cac07afdf54a0bccc"
+    },
+    {
+      "path": "evidence/container-inspect.json",
+      "sha256": "f26f0055f4cdb6ab196e940a2c002aaf87c8849a76745807fa81397af5b3f2ab"
+    },
+    {
+      "path": "evidence/container-inspect.json.sha256",
+      "sha256": "3f7b3b4e979d6fe0f27caee23d2a27dee03809ee46577b736740a67041984b8e"
+    },
+    {
+      "path": "evidence/egress-gateway.log",
+      "sha256": "99c99477082913cd57a949b347fade90c91f70955e89dd3a2cd9ceedb2bab3f6"
+    },
+    {
+      "path": "evidence/egress-gateway.log.sha256",
+      "sha256": "106234050b65c797184bfbf601256d058c7172941e289b09197465d5eb7ff6ef"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "2216182a84c49629304508fe0646b81215a54fd9a4fe4e9a54002067c271a0dd"
+    },
+    {
+      "path": "proof/full-run.cast",
+      "sha256": "abe2cd423efbeef8cd77c1e3cf939951570234bd9e778a28f21fc66016a7480a"
+    },
+    {
+      "path": "report.json",
+      "sha256": "40a327a74880f27bedadc090fc7205d5fbb0f6ce341b02323d34feb1bf3366e5"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "6e18215603d040f98a77560c0c1322852bec04d918bec802b60a47b6d2d673ad"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "b3dd7b5430afa8f59d8d804ce80f42053a8aa9a24912377ed4f5ad28d503fd4b"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "136075448779800d964a2496b50e177809236fd56824fdd774205a02abcffb9b"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "8b741ade857b1c6b7c2a341f670eb2f7c6073b5e8973a5a1637f8c30d6646b75"
+    }
+  ],
+  "rescore": "rescored 2026-09-28: measured-renorm exclusion fix (harness never passed measured_modules)"
+}

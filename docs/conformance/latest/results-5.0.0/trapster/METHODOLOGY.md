@@ -1,7 +1,7 @@
-# Methodology: Trapster Community multi-protocol UHBS lab (results-5.0.0)
+# Methodology: Trapster Community multi-protocol UHBS lab (results-5.0.1)
 
 **Status:** Informative  
-**UHBS:** 5.0.0 · Images `uhbs:5.0.0` (quick) / `uhbs:5.0.0-full` (full)  
+**UHBS:** 5.0.1 · Images `uhbs:5.0.1` (quick) / `uhbs:5.0.1-full` (full)  
 **Upstream commit:** `c6cc6638e9cc9fd28e38ec6846f2b92cbf01d2b7` (`main`)
 
 ## Runtime

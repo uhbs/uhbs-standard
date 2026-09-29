@@ -6,4 +6,4 @@
 
 Exact commands: [smtp/EXECUTION-STEPS.md](smtp/EXECUTION-STEPS.md).
 
-**Published results (UHBS 5.0.0):** **INCOMPLETE / ungraded**. See [`smtp/full/SCORECARD.txt`](smtp/full/SCORECARD.txt).
+**Published results (UHBS 5.0.1):** **INCOMPLETE / ungraded**. See [`smtp/full/SCORECARD.txt`](smtp/full/SCORECARD.txt).

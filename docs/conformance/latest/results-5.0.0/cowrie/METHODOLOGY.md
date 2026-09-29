@@ -1,7 +1,7 @@
-# Methodology: Cowrie UHBS lab (results-5.0.0)
+# Methodology: Cowrie UHBS lab (results-5.0.1)
 
 **Status:** Informative  
-**UHBS:** 5.0.0 · Images `uhbs:5.0.0` (quick) / `uhbs:5.0.0-full` (full)  
+**UHBS:** 5.0.1 · Images `uhbs:5.0.1` (quick) / `uhbs:5.0.1-full` (full)  
 **Upstream commit:** `fef0d620962e23194a9d34a048488f9c76c85835` (`main`)
 
 ## Runtime

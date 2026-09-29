@@ -1,7 +1,7 @@
-# miniprint — UHBS lab reports (results-5.0.0)
+# miniprint — UHBS lab reports (results-5.0.1)
 
 **Class / protocol:** `Low-Interaction` · `pjl` · port `9100`  
-**UHBS:** 5.0.0 · evaluation proof only  
+**UHBS:** 5.0.1 · evaluation proof only  
 **Upstream:** `master` @ `494d2fc75b94c19345c2db55d03b5cf74f75e3c2`
 
 ## Results at a glance
@@ -13,7 +13,7 @@
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../fixtures/miniprint-low-interaction.scorecard.json`](../../../fixtures/miniprint-low-interaction.scorecard.json)  
-Archive: [`../../../archive/v5.0.0/miniprint/`](../../../archive/v5.0.0/miniprint/)
+Archive: [`../../../archive/v5.0.1/miniprint/`](../../../archive/v5.0.1/miniprint/)
 
 | Document | Purpose |
 | --- | --- |

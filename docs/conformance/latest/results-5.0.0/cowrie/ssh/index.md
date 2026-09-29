@@ -1,7 +1,7 @@
-# cowrie — ssh (results-5.0.0)
+# cowrie — ssh (results-5.0.1)
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 5.0.0 · **Class:** Low-Interaction · **Protocol:** `ssh`  
+**UHBS:** 5.0.1 · **Class:** Low-Interaction · **Protocol:** `ssh`  
 **Target id:** `cowrie-ssh` · **Evaluated:** 2026-09-26  
 **Upstream:** `main` @ `fef0d620962e23194a9d34a048488f9c76c85835`  
 **Verdict:** COMPLETE / GATE_FAILED / UHQS=18.98 grade=F (`uhqs-v5.1-always-grade`)
@@ -13,7 +13,7 @@
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../../fixtures/cowrie-ssh.scorecard.json`](../../../../fixtures/cowrie-ssh.scorecard.json)  
-Archive: [`../../../../archive/v5.0.0/cowrie/ssh/`](../../../../archive/v5.0.0/cowrie/ssh/)  
+Archive: [`../../../../archive/v5.0.1/cowrie/ssh/`](../../../../archive/v5.0.1/cowrie/ssh/)  
 Replication: [`EXECUTION-STEPS.md`](EXECUTION-STEPS.md)
 
 COMPLETE / GATE_FAILED (OOB LEAK) / UHQS=18.98 grade=F. Do not cite archived 4.x letter grades.
@@ -34,7 +34,7 @@ COMPLETE / GATE_FAILED (OOB LEAK) / UHQS=18.98 grade=F. Do not cite archived 4.x
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : cowrie-ssh
 System Profile Class  : Low-Interaction
@@ -57,7 +57,7 @@ Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service a
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (1 predictable PRNG seeds: src/backend_pool/util.py)
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : GATE_FAILED (defense-in-depth C=0.0; no composite UHQS)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (UHQS=18.98 grade=F — no composite UHQS)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (UHQS=18.98 grade=F — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
 scoring_model_id                      : uhqs-v5.1-always-grade
 ====================================================================================

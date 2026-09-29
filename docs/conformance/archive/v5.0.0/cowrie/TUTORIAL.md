@@ -11,8 +11,8 @@ Cowrie documentation describes SSH and Telnet frontends; SFTP/SCP are SSH featur
 ```bash
 git clone https://github.com/uhbs/uhbs-standard.git
 cd uhbs-standard
-docker build -t uhbs:5.0.0 .
-docker build -f Dockerfile.full -t uhbs:5.0.0-full .
+docker build -t uhbs:5.0.1 .
+docker build -f Dockerfile.full -t uhbs:5.0.1-full .
 docker network create uhbs-lab 2>/dev/null || true
 ```
 
@@ -66,7 +66,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/cowrie:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
   -e UHBS_SSH_KNOWN_HOSTS=/work/.local/uhbs_known_hosts \
-  uhbs:5.0.0 lab \
+  uhbs:5.0.1 lab \
     --inventory /work/docs/conformance/labs/cowrie/inventory.yaml \
     --target cowrie-ssh \
     --tps /work/docs/conformance/labs/cowrie/low_interaction_ssh_quick.yaml \
@@ -81,7 +81,7 @@ docker run --rm --network uhbs-lab \
   -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
   -e UHBS_SSH_KNOWN_HOSTS=/work/.local/uhbs_known_hosts \
-  uhbs:5.0.0-full lab \
+  uhbs:5.0.1-full lab \
     --inventory /work/docs/conformance/labs/cowrie/inventory.yaml \
     --target cowrie-ssh \
     --tps /work/docs/conformance/labs/cowrie/low_interaction_ssh_full.yaml \
@@ -101,7 +101,7 @@ mkdir -p docs/conformance/reports/cowrie/telnet/{quick,full}
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/cowrie:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 -e PYTHONUNBUFFERED=1 \
-  uhbs:5.0.0 lab \
+  uhbs:5.0.1 lab \
     --inventory /work/docs/conformance/labs/cowrie/inventory.yaml \
     --target cowrie-telnet \
     --tps /work/docs/conformance/labs/cowrie/low_interaction_telnet_quick.yaml \
@@ -115,7 +115,7 @@ docker run --rm --network uhbs-lab \
   -v "$PWD/.local/labs/cowrie-telemetry:/telemetry:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:5.0.0-full lab \
+  uhbs:5.0.1-full lab \
     --inventory /work/docs/conformance/labs/cowrie/inventory.yaml \
     --target cowrie-telnet \
     --tps /work/docs/conformance/labs/cowrie/low_interaction_telnet_full.yaml \

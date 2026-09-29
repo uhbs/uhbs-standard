@@ -1,0 +1,244 @@
+[
+    {
+        "Id": "c1967c37f626c7846081780b5d8e02738493c80791e16d4df4d3a857967197e5",
+        "Created": "2026-09-28T13:29:16.581987304Z",
+        "Path": "python3",
+        "Args": [
+            "-m",
+            "honeypots",
+            "--termination-strategy",
+            "signal",
+            "--setup",
+            "ftp:19021,ssh:19022,telnet:19023,smtp:19025,http:19080,pop3:19110,mysql:19306,postgres:19432,redis:19637,vnc:19900"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1785,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-28T13:29:16.807181679Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:3fecac9a1e37bdaa2bd34e3900e02a5455617d090c12b80617289f2e63f64a28",
+        "ResolvConfPath": "/var/lib/docker/containers/c1967c37f626c7846081780b5d8e02738493c80791e16d4df4d3a857967197e5/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/c1967c37f626c7846081780b5d8e02738493c80791e16d4df4d3a857967197e5/hostname",
+        "HostsPath": "/var/lib/docker/containers/c1967c37f626c7846081780b5d8e02738493c80791e16d4df4d3a857967197e5/hosts",
+        "LogPath": "/var/lib/docker/containers/c1967c37f626c7846081780b5d8e02738493c80791e16d4df4d3a857967197e5/c1967c37f626c7846081780b5d8e02738493c80791e16d4df4d3a857967197e5-json.log",
+        "Name": "/uhbs-target-qeeqbox-honeypots-vnc",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/qeeqbox-honeypots-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "c1967c37f626c7846081780b5d8e02738493c80791e16d4df4d3a857967197e5",
+                "LowerDir": "/var/lib/docker/overlay2/5c834fae241fd1f4f9cf16c6189563ebf0e28909e241dfee45c57994de950753-init/diff:/var/lib/docker/overlay2/3cpb4ranlvg83qoqponkkonwk/diff:/var/lib/docker/overlay2/rpbrnnpdn0z7mkt5z28f059jq/diff:/var/lib/docker/overlay2/7utdxrga5l6sc6if3qxbkd4hc/diff:/var/lib/docker/overlay2/42n5cxmy77a3wz8gsqsa0cpn7/diff:/var/lib/docker/overlay2/31dde0778fa9f08112e61ae8bb15bf748e1234eeb9925120464e5c289f825a52/diff:/var/lib/docker/overlay2/57e5b59b592a43f58455fb282635f3ce97cd58ddb70e2a00e8090fef27ad1f61/diff:/var/lib/docker/overlay2/641ec1e50fcc4006d984c001904f25750c0c5eb5ad58d529c16d4456cf675ffb/diff:/var/lib/docker/overlay2/9226f87fad8a9767d3469a7b90e3c54a0f60047c20d211215a6ea7c525fc114d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/5c834fae241fd1f4f9cf16c6189563ebf0e28909e241dfee45c57994de950753/merged",
+                "UpperDir": "/var/lib/docker/overlay2/5c834fae241fd1f4f9cf16c6189563ebf0e28909e241dfee45c57994de950753/diff",
+                "WorkDir": "/var/lib/docker/overlay2/5c834fae241fd1f4f9cf16c6189563ebf0e28909e241dfee45c57994de950753/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/qeeqbox-honeypots-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "c1967c37f626",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "19021/tcp": {},
+                "19022/tcp": {},
+                "19023/tcp": {},
+                "19025/tcp": {},
+                "19080/tcp": {},
+                "19110/tcp": {},
+                "19306/tcp": {},
+                "19432/tcp": {},
+                "19637/tcp": {},
+                "19900/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+                "PYTHON_VERSION=3.11.16",
+                "PYTHON_SHA256=91bcdebfdde239a003ae93738a7fce0f9230fee5c4bc2b86f6e6e8c6f98aabe8",
+                "DEBIAN_FRONTEND=noninteractive"
+            ],
+            "Cmd": [
+                "python3",
+                "-m",
+                "honeypots",
+                "--termination-strategy",
+                "signal",
+                "--setup",
+                "ftp:19021,ssh:19022,telnet:19023,smtp:19025,http:19080,pop3:19110,mysql:19306,postgres:19432,redis:19637,vnc:19900"
+            ],
+            "Image": "qeeqbox-honeypots:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/opt/honeypots",
+            "Entrypoint": null,
+            "Labels": {
+                "uhbs.unit": "qeeqbox-honeypots-vnc"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "4544954ea2b8f6e5eb8d1ead2a1b179f0cc830f53d5d478beb0ae485a544d4e0",
+            "SandboxKey": "/var/run/docker/netns/4544954ea2b8",
+            "Ports": {
+                "19021/tcp": null,
+                "19022/tcp": null,
+                "19023/tcp": null,
+                "19025/tcp": null,
+                "19080/tcp": null,
+                "19110/tcp": null,
+                "19306/tcp": null,
+                "19432/tcp": null,
+                "19637/tcp": null,
+                "19900/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "qeeqbox-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "53038cd62af7b14a889417b4ccb7d214ad69b47ef667d9dc6a1a61a08be43a86",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.5",
+                    "MacAddress": "a2:5b:14:12:c2:f7",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-qeeqbox-honeypots-vnc",
+                        "qeeqbox-lab",
+                        "c1967c37f626"
+                    ]
+                }
+            }
+        }
+    }
+]

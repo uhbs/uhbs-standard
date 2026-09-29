@@ -1,6 +1,6 @@
-# miniprint methodology (results-5.0.0)
+# miniprint methodology (results-5.0.1)
 
-**UHBS:** 5.0.0 · strategy `upstream-docker` · base `python:3.7-alpine`
+**UHBS:** 5.0.1 · strategy `upstream-docker` · base `python:3.7-alpine`
 
 Upstream Dockerfile is the maintained install path. Ubuntu latest was not used because the documented image already exists.
 

@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `shiva-smtp`
+# Image name at grade time: shiva-receiver:uhbs-lab
+FROM sha256:ba1ef65b29a3a75e9cd30a1f622da91ee5970a17c8f28816b42711b7e5bb4a44

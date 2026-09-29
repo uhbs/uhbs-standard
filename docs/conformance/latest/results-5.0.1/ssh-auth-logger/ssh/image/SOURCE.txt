@@ -1,0 +1,5 @@
+source=.local/labs/ssh-auth-logger/Dockerfile
+image=justinazoff/ssh-auth-logger:latest
+digest=sha256:5741d6672aaa078810f6d6f1bc6e138029a194b43acc5ca43d2354c314d255e1
+dockerfile=docs/conformance/latest/results-5.0.1/ssh-auth-logger/ssh/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/ssh-auth-logger/ssh/Dockerfile.pin

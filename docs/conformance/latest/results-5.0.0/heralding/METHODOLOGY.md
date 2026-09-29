@@ -1,7 +1,7 @@
-# Methodology: heralding UHBS lab (results-5.0.0)
+# Methodology: heralding UHBS lab (results-5.0.1)
 
 **Status:** Informative  
-**UHBS:** 5.0.0 · Images `uhbs:5.0.0` (quick) / `uhbs:5.0.0-full` (full)  
+**UHBS:** 5.0.1 · Images `uhbs:5.0.1` (quick) / `uhbs:5.0.1-full` (full)  
 **Upstream commit:** `ac12724ab38c4e2fe78f07d1bc35e6e586ba69c0` (`master`)
 
 ## Runtime

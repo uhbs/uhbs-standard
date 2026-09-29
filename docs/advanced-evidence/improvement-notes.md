@@ -1,6 +1,6 @@
 # Informative UHBS Improvements (No Normative Scoring Change)
 
-**Status:** Informative RFC-style notes · UHBS 5.0.0 unchanged
+**Status:** Informative RFC-style notes · UHBS 5.0.1 unchanged
 
 These improvements are recommended **without** changing UHQS, weights, δ_C, or
 letter grades. Normative scoring changes require a separate RFC with corpus
@@ -26,6 +26,16 @@ reproduction.
 4. EER against declared budgets  
 5. VoD with explicit utility models (never `delta_uhqs`)  
 6. ICS memory/register consistency probes (lab only)
+
+## Module D Tier-2 (host OOB follow-on)
+
+Tier 1 ships protocol-agnostic gateway + container-inspect criticals with SHA-256
+digests. Defer without changing UHQS weights:
+
+- East-west canary HIT, DNS entropy/tunneling observation
+- Asymmetric signing of gateway/inspect evidence; signed audit packs
+- OCSF/CEF mapping, CWSS labels on DiD soft failures
+- Host nftables/iptables/eBPF policy attestation; live seccomp agents
 
 ## Map only / out of scope for UHQS
 

@@ -167,7 +167,7 @@ INJECT_FAMILY_TOKEN: dict[str, str] = {
 
 
 def injection_payloads(run_id: str) -> list[tuple[str, str]]:
-    """Tagged hostile payloads for sink-side C2 tests."""
+    """Tagged hostile payloads for sink-side C2 tests (SSH/shell delivery)."""
     return [
         ("ansi", f'echo "UHBS_INJECT:{run_id}:ANSI:\\x1b[31mRED\\x1b[0m"'),
         ("json_break", f"echo 'UHBS_INJECT:{run_id}:JSON:{{\"a\": \"unterminated'"),
@@ -176,6 +176,57 @@ def injection_payloads(run_id: str) -> list[tuple[str, str]]:
         ("formula", f"echo 'UHBS_INJECT:{run_id}:XLS:=cmd|\\'/C calc\\'|''"),
         ("unicode", f"echo 'UHBS_INJECT:{run_id}:UNI:\\u202emargin'"),
     ]
+
+
+def http_injection_requests(run_id: str) -> list[tuple[str, str, dict[str, str]]]:
+    """Tagged HTTP GET probes for C2 when no SSH exec surface exists.
+
+    Returns ``(payload_id, path, headers)``. Markers are embedded in the path
+    and ``User-Agent`` so both URL-logging and header-logging HTTP decoys can
+    surface ``UHBS_INJECT:<run_id>:<FAMILY>`` in the sink.
+    """
+    families = [
+        ("ansi", "ANSI", "x1b[31mRED"),
+        ("json_break", "JSON", "%7B%22a%22%3A%22unterminated"),
+        ("null_byte", "NULL", "byte"),
+        ("cr_inject", "CR", "newline%0dinjection"),
+        ("formula", "XLS", "%3Dcmd"),
+        ("unicode", "UNI", "%E2%80%AEmargin"),
+    ]
+    out: list[tuple[str, str, dict[str, str]]] = []
+    for pid, token, tip in families:
+        marker = f"UHBS_INJECT:{run_id}:{token}:{tip}"
+        out.append(
+            (
+                pid,
+                f"/{marker}",
+                {"User-Agent": f"UHBS-C2/{marker}"},
+            )
+        )
+    return out
+
+
+def deliver_http_inject(
+    host: str,
+    port: int,
+    path: str,
+    *,
+    headers: dict[str, str] | None = None,
+    timeout: float = 5.0,
+) -> str:
+    """Best-effort HTTP GET; connection errors still count as a delivery attempt."""
+    from urllib.error import HTTPError, URLError
+    from urllib.request import Request, urlopen
+
+    url = f"http://{host}:{int(port)}{path}"
+    req = Request(url, method="GET", headers=dict(headers or {}))
+    try:
+        with urlopen(req, timeout=timeout) as resp:  # noqa: S310 — lab target only
+            return f"http {getattr(resp, 'status', '?')}"
+    except HTTPError as exc:
+        return f"http {exc.code}"
+    except (URLError, TimeoutError, OSError) as exc:
+        return f"error:{exc}"
 
 
 def assess_sink_resilience(

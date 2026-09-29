@@ -1,7 +1,7 @@
-# Log4Pot (thomaspatzke) (http) — UHBS lab reports (results-5.0.0)
+# Log4Pot (thomaspatzke) (http) — UHBS lab reports (results-5.0.1)
 
 **Class / protocol:** `Web-API` · `http` · port `8080`  
-**UHBS:** 5.0.0 · evaluation proof only  
+**UHBS:** 5.0.1 · evaluation proof only  
 **Upstream:** `master` @ `5002b1fe0f82359ef32dbc3a899e8a701dc3256e`
 
 ## Results at a glance
@@ -13,7 +13,7 @@
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../fixtures/log4pot-web-api.scorecard.json`](../../../fixtures/log4pot-web-api.scorecard.json)  
-Archive: [`../../../../archive/v5.0.0/Log4Pot/`](../../../../archive/v5.0.0/Log4Pot/)
+Archive: [`../../../../archive/v5.0.1/Log4Pot/`](../../../../archive/v5.0.1/Log4Pot/)
 
 | Document | Purpose |
 | --- | --- |

@@ -4,4 +4,4 @@ Status: **legacy-closed**. No Docker lab was run.
 
 Classification: `legacy-not-refreshed` — no usable inventory + quick/full TPS
 
-Historical artifacts (if any) remain under `docs/conformance/archive/v5.0.0/ensnare`. This refresh does not clone, grade, or publish new scores for this hub.
+Historical artifacts (if any) remain under `docs/conformance/archive/v5.0.1/ensnare`. This refresh does not clone, grade, or publish new scores for this hub.

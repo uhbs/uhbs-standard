@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `nosqlpot-redis`
+# Image name at grade time: nosqlpot:uhbs-lab
+FROM sha256:d83006e9ad8465696cbb0a9f9fa2f017eb72e7779be6eda2fbee572a2b1d8209

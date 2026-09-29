@@ -1,7 +1,7 @@
-# Methodology: Dionaea multi-protocol UHBS lab (results-5.0.0)
+# Methodology: Dionaea multi-protocol UHBS lab (results-5.0.1)
 
 **Status:** Informative  
-**UHBS:** 5.0.0 · Images `uhbs:5.0.0` / `uhbs:5.0.0-full`  
+**UHBS:** 5.0.1 · Images `uhbs:5.0.1` / `uhbs:5.0.1-full`  
 **Upstream commit:** `4e459f1b672a5b4c1e8335c0bff1b93738019215` (`master`)
 
 ## Runtime

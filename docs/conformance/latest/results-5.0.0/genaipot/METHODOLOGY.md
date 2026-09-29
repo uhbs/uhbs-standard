@@ -1,7 +1,7 @@
-# Methodology: GenAIPot UHBS lab (results-5.0.0)
+# Methodology: GenAIPot UHBS lab (results-5.0.1)
 
 **Status:** Informative  
-**UHBS:** 5.0.0 · Images `uhbs:5.0.0` (quick) / `uhbs:5.0.0-full` (full)  
+**UHBS:** 5.0.1 · Images `uhbs:5.0.1` (quick) / `uhbs:5.0.1-full` (full)  
 **Upstream commit:** `205ffe40008f2e76e0decdb01bc19bf8e00acd8a` (`main`)
 
 ## Runtime

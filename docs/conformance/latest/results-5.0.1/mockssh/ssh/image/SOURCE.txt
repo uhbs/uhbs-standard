@@ -1,0 +1,5 @@
+source=docs/conformance/labs/mockssh/Dockerfile.lab
+image=mockssh:uhbs-lab
+digest=sha256:c3eb44567ad5b8b4060dd1222ae788e3b9f2b020cedd35591e39f35c81c316be
+dockerfile=docs/conformance/latest/results-5.0.1/mockssh/ssh/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/mockssh/ssh/Dockerfile.pin

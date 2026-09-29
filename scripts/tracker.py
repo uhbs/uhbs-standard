@@ -21,14 +21,14 @@ from typing import Any
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_DB = ROOT / ".local" / "benchmark-refresh" / "results-5.0.0.sqlite3"
-DEFAULT_MANIFEST = ROOT / "docs" / "conformance" / "latest" / "results-5.0.0" / "benchmark-manifest.yaml"
-DEFAULT_LEDGER = ROOT / "docs" / "conformance" / "latest" / "results-5.0.0" / "RUN-LEDGER.md"
+DEFAULT_DB = ROOT / ".local" / "benchmark-refresh" / "results-5.0.1.sqlite3"
+DEFAULT_MANIFEST = ROOT / "docs" / "conformance" / "latest" / "results-5.0.1" / "benchmark-manifest.yaml"
+DEFAULT_LEDGER = ROOT / "docs" / "conformance" / "latest" / "results-5.0.1" / "RUN-LEDGER.md"
 REPORTS = ROOT / "docs" / "conformance" / "reports"
 LABS = ROOT / "docs" / "conformance" / "labs"
 FIXTURES = ROOT / "docs" / "conformance" / "fixtures"
 ARCHIVE_ROOT = ROOT / "docs" / "conformance" / "archive" / "v5.0.0"
-LATEST_ROOT = ROOT / "docs" / "conformance" / "latest" / "results-5.0.0"
+LATEST_ROOT = ROOT / "docs" / "conformance" / "latest" / "results-5.0.1"
 
 SKIP_UPSTREAM_REPOS = frozenset({"uhbs/uhbs-standard", "mziqudhd92/uhbs-standard"})
 
@@ -55,7 +55,8 @@ CREATE TABLE IF NOT EXISTS benchmark_units (
   refreshability_status TEXT NOT NULL,
   assigned_agent TEXT,
   created_at TEXT NOT NULL,
-  updated_at TEXT NOT NULL
+  updated_at TEXT NOT NULL,
+  telemetry_required INTEGER NOT NULL DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS run_executions (
@@ -94,6 +95,7 @@ CREATE TABLE IF NOT EXISTS run_executions (
   module_f REAL,
   validation_status TEXT,
   notes TEXT,
+  raw_s3_uri TEXT,
   FOREIGN KEY (unit_id) REFERENCES benchmark_units(unit_id)
 );
 
@@ -178,6 +180,7 @@ UNIT_COLUMNS = [
     "assigned_agent",
     "created_at",
     "updated_at",
+    "telemetry_required",
 ]
 
 
@@ -235,10 +238,31 @@ def init_db(db_path: Path) -> None:
     conn = connect(db_path)
     try:
         conn.executescript(SCHEMA_SQL)
+        migrate_schema(conn)
         journal = execute(conn, "PRAGMA journal_mode").fetchone()[0]
         emit({"db": str(db_path), "journal_mode": journal, "busy_timeout_ms": 10000})
     finally:
         conn.close()
+
+
+def migrate_schema(conn: sqlite3.Connection) -> None:
+    """Add columns introduced after the initial schema (idempotent)."""
+    unit_cols = {
+        row[1]
+        for row in execute(conn, "PRAGMA table_info(benchmark_units)").fetchall()
+    }
+    if "telemetry_required" not in unit_cols:
+        execute(
+            conn,
+            "ALTER TABLE benchmark_units ADD COLUMN telemetry_required "
+            "INTEGER NOT NULL DEFAULT 0",
+        )
+    run_cols = {
+        row[1]
+        for row in execute(conn, "PRAGMA table_info(run_executions)").fetchall()
+    }
+    if run_cols and "raw_s3_uri" not in run_cols:
+        execute(conn, "ALTER TABLE run_executions ADD COLUMN raw_s3_uri TEXT")
 
 
 def load_yaml(path: Path) -> Any:
@@ -489,8 +513,8 @@ def write_manifest(units: list[dict[str, Any]], dest: Path) -> None:
     blocked = sum(1 for u in units if str(u["refreshability_status"]).startswith("blocked"))
     hubs = sorted({u["benchmark_id"] for u in units})
     payload = {
-        "version": "results-5.0.0",
-        "uhbs_version": "5.0.0",
+        "version": "results-5.0.1",
+        "uhbs_version": "5.0.1",
         "generated_at": now_iso(),
         "counts": {
             "hubs": len(hubs),
@@ -534,7 +558,7 @@ def render_ledger(
         else "**Gate D:** CLOSED — coordinator bootstrap is still in progress. Do not claim units."
     )
     lines = [
-        "# RUN-LEDGER — `docs/conformance/latest/results-5.0.0`",
+        "# RUN-LEDGER — `docs/conformance/latest/results-5.0.1`",
         "",
         f"Updated: {now_iso()}",
         "",
@@ -549,8 +573,8 @@ def render_ledger(
         f"- Blocked: **{len(blocked)}**",
         f"- Assigned: **{len(assigned)}**",
         "",
-        "SQLite: `.local/benchmark-refresh/results-5.0.0.sqlite3`",
-        "Manifest: `docs/conformance/latest/results-5.0.0/benchmark-manifest.yaml`",
+        "SQLite: `.local/benchmark-refresh/results-5.0.1.sqlite3`",
+        "Manifest: `docs/conformance/latest/results-5.0.1/benchmark-manifest.yaml`",
         "",
         "## Units",
         "",
@@ -605,6 +629,7 @@ def render_ledger(
 
 
 def import_manifest(conn: sqlite3.Connection, manifest_path: Path) -> int:
+    migrate_schema(conn)
     data = load_yaml(manifest_path)
     units = data.get("units") or []
     count = 0
@@ -614,6 +639,8 @@ def import_manifest(conn: sqlite3.Connection, manifest_path: Path) -> int:
             val = unit.get(col)
             if col in {"created_at", "updated_at"} and not val:
                 val = now_iso()
+            if col == "telemetry_required":
+                val = 1 if val in (True, 1, "1", "true", "True") else 0
             values.append(val)
         placeholders = ",".join("?" for _ in UNIT_COLUMNS)
         cols = ",".join(UNIT_COLUMNS)
@@ -630,7 +657,9 @@ def get_unit(conn: sqlite3.Connection, unit_id: str) -> sqlite3.Row | None:
     return execute(conn, "SELECT * FROM benchmark_units WHERE unit_id = ?", (unit_id,)).fetchone()
 
 
-def claim_unit(conn: sqlite3.Connection, unit_id: str, agent: str) -> sqlite3.Row | None:
+def claim_unit(
+    conn: sqlite3.Connection, unit_id: str, agent: str, *, force: bool = False
+) -> sqlite3.Row | None:
     ts = now_iso()
     execute(conn, "BEGIN IMMEDIATE")
     try:
@@ -638,22 +667,35 @@ def claim_unit(conn: sqlite3.Connection, unit_id: str, agent: str) -> sqlite3.Ro
         if current is None:
             conn.execute("ROLLBACK")
             return None
-        if current["assigned_agent"] == agent:
+        if current["assigned_agent"] == agent and not force:
             conn.execute("COMMIT")
             return current
-        cur = execute(
-            conn,
-            """
-            UPDATE benchmark_units
-            SET assigned_agent = ?,
-                refreshability_status = 'assigned',
-                updated_at = ?
-            WHERE unit_id = ?
-              AND assigned_agent IS NULL
-              AND refreshability_status IN ('refreshable', 'pending')
-            """,
-            (agent, ts, unit_id),
-        )
+        if force:
+            cur = execute(
+                conn,
+                """
+                UPDATE benchmark_units
+                SET assigned_agent = ?,
+                    refreshability_status = 'assigned',
+                    updated_at = ?
+                WHERE unit_id = ?
+                """,
+                (agent, ts, unit_id),
+            )
+        else:
+            cur = execute(
+                conn,
+                """
+                UPDATE benchmark_units
+                SET assigned_agent = ?,
+                    refreshability_status = 'assigned',
+                    updated_at = ?
+                WHERE unit_id = ?
+                  AND assigned_agent IS NULL
+                  AND refreshability_status IN ('refreshable', 'pending')
+                """,
+                (agent, ts, unit_id),
+            )
         if cur.rowcount != 1:
             conn.execute("ROLLBACK")
             return None
@@ -1031,8 +1073,8 @@ Status: **placeholder**. After claiming this unit, replace this file with the ex
 1. `GIT_TERMINAL_PROMPT=0 git clone --depth 1 <upstream> .local/labs/<benchmark>`
 2. `git rev-parse HEAD` and default branch name
 3. Docker build/run on `uhbs-lab`
-4. Quick grader command (`uhbs:5.0.0`)
-5. Full grader + `asciinema rec` command (`uhbs:5.0.0-full`)
+4. Quick grader command (`uhbs:5.0.1`)
+5. Full grader + `asciinema rec` command (`uhbs:5.0.1-full`)
 6. `python scripts/validate_unit.py --unit-id {unit_id}`
 
 See `.trae/documents/benchmark_refresh_results_v1_plan.md`.
@@ -1082,9 +1124,10 @@ def generate_skeleton(conn: sqlite3.Connection) -> dict[str, int]:
     write_if_missing(
         index,
         (
-            "# Published grades — results-5.0.0\n\n"
-            "Active UHBS 5.0.0 refresh line. Historical proof is preserved under "
-            "`docs/conformance/archive/v5.0.0/`.\n\n"
+            "# Published grades — results-5.0.1\n\n"
+            "Active UHBS 5.0.1 refresh line. Historical proof is preserved under "
+            "`docs/conformance/archive/v5.0.0/` and "
+            "`docs/conformance/latest/results-5.0.0/`.\n\n"
             "See [benchmark-manifest.yaml](benchmark-manifest.yaml) and [RUN-LEDGER.md](RUN-LEDGER.md).\n"
         ),
     )
@@ -1149,7 +1192,7 @@ def cmd_claim_next(args: argparse.Namespace) -> int:
 def cmd_claim_unit(args: argparse.Namespace) -> int:
     conn = connect(Path(args.db))
     try:
-        row = claim_unit(conn, args.unit_id, args.agent)
+        row = claim_unit(conn, args.unit_id, args.agent, force=bool(getattr(args, "force", False)))
         if row is None:
             emit(
                 {"unit_id": args.unit_id, "agent": args.agent, "claimed": False, "message": "claim failed"},
@@ -1254,12 +1297,13 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("claim-unit", help="Atomically claim a specific unit")
     p.add_argument("--unit-id", required=True)
     p.add_argument("--agent", required=True)
+    p.add_argument("--force", action="store_true", help="Re-claim even if already assigned/ran")
     p.set_defaults(func=cmd_claim_unit)
 
     p = sub.add_parser("log-run-start", help="Insert a running execution row")
     p.add_argument("--unit-id", required=True)
     p.add_argument("--mode", required=True, choices=["quick", "full"])
-    p.add_argument("--uhbs-version", default="5.0.0")
+    p.add_argument("--uhbs-version", default="5.0.1")
     p.add_argument("--grader-image", default=None)
     p.add_argument("--target-image", default=None)
     p.add_argument("--base-image", default=None)
@@ -1309,7 +1353,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--declare-gate-d-closed", action="store_true")
     p.set_defaults(func=cmd_sync_ledger)
 
-    p = sub.add_parser("generate-skeleton", help="Create latest/results-5.0.0 placeholder trees")
+    p = sub.add_parser("generate-skeleton", help="Create latest/results-5.0.1 placeholder trees")
     p.set_defaults(func=cmd_generate_skeleton)
     return parser
 

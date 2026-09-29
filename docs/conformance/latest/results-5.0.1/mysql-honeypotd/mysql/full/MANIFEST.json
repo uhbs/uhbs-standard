@@ -1,0 +1,71 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "9d165b7dfbbb1d0045d5e18908c17c96e98859a0a3f25c0e632ea206bdd8abe8"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "36f1b7fa4fad108bfb92569811e283536ae421e9f3cf66be5479c854bf34f322"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "36f1b7fa4fad108bfb92569811e283536ae421e9f3cf66be5479c854bf34f322"
+    },
+    {
+      "path": "evidence/container-inspect.json",
+      "sha256": "74a5ed42ba0e0a146bc99e7d27d9ada5f6d9ea2842239a53e24fef536d2d4333"
+    },
+    {
+      "path": "evidence/container-inspect.json.sha256",
+      "sha256": "a7a61867d472a8c2cbd93d1fa4d680dae45e049d167ea9db8ddac04785ed512a"
+    },
+    {
+      "path": "evidence/egress-gateway.log",
+      "sha256": "84a88691c204de93f4cab48c8608b7052323c76452309196a6f71893bf7417d1"
+    },
+    {
+      "path": "evidence/egress-gateway.log.sha256",
+      "sha256": "af65f8923ec723a57d602e006dbe94148ff4bc310c5569601b40318bd0fd4151"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "fbcc43865b50483c97ef0c04a77da203d8e1c1a26ec57b910c2555edc5f7bf59"
+    },
+    {
+      "path": "proof/full-run.cast",
+      "sha256": "d3c09e712d7afe72ace7c6e98a80460e4395237fd348ebae708ac955b809e0e2"
+    },
+    {
+      "path": "report.json",
+      "sha256": "bffbfd7fb665c24978f1e432039b833b971f69a4203103d4a1342ce8c96fbe5b"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "a0e557f03f9c088cdda2a75eb3c0e97b53a64ba0099df016e96ea4fa2076401c"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "95b9932e1cb83b2cb51f1ada822e1b97be55d482fcedc3be43bd703f937ba636"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "ac626e26342b5700fff653ddbe7b9f94b1c9b423517f8fb534617e8eb2b0b537"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "3721b2a1737678bb2c54f78ddb255d795a037fafdb71d812cca9c96c9e42eaa0"
+    }
+  ],
+  "extra": {
+    "target": "mysql-honeypotd",
+    "uhqs": 27.99,
+    "grade": "GRADE F (Fail)",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
+    "assessment_status": "INCOMPLETE",
+    "evidence_pack": "evidence-pack.json",
+    "evidence_manifest_digest": "55e425e5dd5533fd81071f015816f450196213be22e2bbc30d900d38baebe75d"
+  },
+  "rescore": "rescored 2026-09-28: measured-renorm exclusion fix (harness never passed measured_modules)"
+}

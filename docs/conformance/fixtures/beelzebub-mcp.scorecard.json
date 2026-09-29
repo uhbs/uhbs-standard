@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "5.0.0",
+  "uhbs_version": "5.0.1",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",
@@ -10,7 +10,7 @@
     "profile_ref": "docs/conformance/labs/beelzebub/web_api_mcp_full.yaml"
   },
   "evaluated_at": "2026-09-26",
-  "auditor": "UHBS-Lab results-5.0.0 refresh (beelzebub-mcp)",
+  "auditor": "UHBS-Lab results-5.0.1 refresh (beelzebub-mcp)",
   "modules": {
     "A": {
       "score": 60.07,

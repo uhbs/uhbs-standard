@@ -7,4 +7,4 @@ Clone `https://github.com/LogoiLab/honeyup.git` at `master` HEAD `2d0169da30e76e
 
 Exact commands: [EXECUTION-STEPS.md](http/EXECUTION-STEPS.md).
 
-**Published results (UHBS 5.0.0):** INCOMPLETE / INCOMPLETE — ungraded unless the Safety Gate passed. See [`http/full/SCORECARD.txt`](http/full/SCORECARD.txt).
+**Published results (UHBS 5.0.1):** INCOMPLETE / INCOMPLETE — ungraded unless the Safety Gate passed. See [`http/full/SCORECARD.txt`](http/full/SCORECARD.txt).

@@ -1,6 +1,6 @@
-# MockSSH methodology (results-5.0.0)
+# MockSSH methodology (results-5.0.1)
 
-**UHBS:** 5.0.0 · strategy `ubuntu-wrapper` · base `ubuntu:24.04`
+**UHBS:** 5.0.1 · strategy `ubuntu-wrapper` · base `ubuntu:24.04`
 
 No upstream Docker image. Ubuntu 24.04 wrapper installs the tree with `pip install -e .`. `examples/mock_cisco.py` binds `127.0.0.1:9999`; lab entry listens `0.0.0.0:2222` so the grader on `uhbs-lab` can reach it. Auth is `testadmin` / `x`. Cisco CLI decoy — not a POSIX shell.
 

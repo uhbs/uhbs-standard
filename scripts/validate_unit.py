@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deterministic per-unit verifier for the results-5.0.0 refresh.
+"""Deterministic per-unit verifier for the results-5.0.1 refresh.
 
 Exit 0 only when quick+full artifacts, non-empty full-run.cast, EXECUTION-STEPS.md,
 valid JSON, MANIFEST hashes, fixture status, SQLite rows, upstream SHA, and
@@ -15,7 +15,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_DB = ROOT / ".local" / "benchmark-refresh" / "results-5.0.0.sqlite3"
+DEFAULT_DB = ROOT / ".local" / "benchmark-refresh" / "results-5.0.1.sqlite3"
 
 QUICK_FILES = (
     "README.md",
@@ -29,6 +29,11 @@ QUICK_FILES = (
 FULL_FILES = QUICK_FILES
 JSON_FILES = ("report.json", "MANIFEST.json", "run-meta.json")
 SUCCESS_STATUSES = frozenset({"succeeded", "success", "ok"})
+_EMPTY_SINK_MARKERS = (
+    "0 malformed / 0 records",
+    "telemetry_dir missing",
+    "no telemetry sink",
+)
 
 
 def sha256_file(path: Path) -> str:
@@ -135,6 +140,55 @@ def check_artifact_dir(directory: Path, mode: str, errors: list[str]) -> None:
             errors.append(f"{label}: full-run.cast missing or empty: {cast}")
 
 
+def _module_c_block(report: dict) -> dict | None:
+    for mod in report.get("modules") or []:
+        if mod.get("module") == "C" or mod.get("dimension") == "telemetry":
+            return mod
+    return None
+
+
+def check_module_c_measurement(
+    report_path: Path,
+    *,
+    label: str,
+    errors: list[str],
+) -> None:
+    """Fail when telemetry was required but Module C was not actually measured.
+
+    A measured Module C may still score low (failed inject / weak fields). What we
+    reject is an empty sink or incomplete mandatory C checks published as a full run.
+    """
+    report = check_json(report_path, errors, label)
+    if not report:
+        return
+    mod = _module_c_block(report)
+    if mod is None:
+        errors.append(
+            f"{label}: telemetry_required but report.json has no Module C block"
+        )
+        return
+    if mod.get("complete") is False:
+        errors.append(
+            f"{label}: Module C incomplete (complete=false) — fix telemetry sink "
+            "wiring / inject before publishing a full grade"
+        )
+    details = " ".join(
+        str(c.get("detail") or "") for c in (mod.get("checks") or [])
+    )
+    for marker in _EMPTY_SINK_MARKERS:
+        if marker in details:
+            errors.append(
+                f"{label}: Module C empty/missing telemetry sink ({marker!r})"
+            )
+            break
+    # Survive reports that only expose S_C on the UHQS block.
+    uhqs = report.get("uhqs") if isinstance(report.get("uhqs"), dict) else {}
+    if "complete" not in mod and float(uhqs.get("S_C") or 0) == 0:
+        errors.append(
+            f"{label}: Module C missing complete=true with S_C=0 — treat as unmeasured"
+        )
+
+
 def validate_unit(unit_id: str, db_path: Path, root: Path) -> list[str]:
     errors: list[str] = []
     if not db_path.is_file():
@@ -150,9 +204,40 @@ def validate_unit(unit_id: str, db_path: Path, root: Path) -> list[str]:
         if latest is None:
             errors.append("latest_path is empty")
             latest = root
+
+        # Product hub docs (ACCEPTANCE Gate A+)
+        hub = latest.parent if (latest / "EXECUTION-STEPS.md").exists() or latest.name != unit["benchmark_id"] else latest
+        # Multi-protocol units live under <product>/<protocol>/; hub is parent.
+        if latest.name == unit["protocol_id"] and latest.parent.name == unit["benchmark_id"]:
+            hub = latest.parent
+        elif latest.name == unit["benchmark_id"]:
+            hub = latest
+        else:
+            # fallback: latest_path's first results-5.0.1/<product>
+            parts = Path(unit["latest_path"]).parts
+            try:
+                idx = parts.index("results-5.0.1")
+                hub = root.joinpath(*parts[: idx + 2])
+            except ValueError:
+                hub = latest.parent
+        for hub_doc in ("index.md", "TUTORIAL.md", "METHODOLOGY.md"):
+            path = hub / hub_doc
+            if not path.is_file() or path.stat().st_size == 0:
+                errors.append(f"hub {hub_doc} missing or empty: {path}")
+
         steps = latest / "EXECUTION-STEPS.md"
         if not steps.is_file() or steps.stat().st_size == 0:
             errors.append(f"EXECUTION-STEPS.md missing or empty: {steps}")
+        dockerfile = latest / "Dockerfile"
+        if not dockerfile.is_file() or dockerfile.stat().st_size == 0:
+            errors.append(
+                f"Dockerfile missing or empty (score image recipe): {dockerfile}"
+            )
+        dockerfile_pin = latest / "Dockerfile.pin"
+        if not dockerfile_pin.is_file() or dockerfile_pin.stat().st_size == 0:
+            errors.append(
+                f"Dockerfile.pin missing or empty (exact image digest pin): {dockerfile_pin}"
+            )
         if not (unit["upstream_commit"] or "").strip():
             errors.append("upstream_commit is not recorded on the unit")
         fixture_path = resolve(root, unit["fixture_path"]) if unit["fixture_path"] else None
@@ -164,6 +249,35 @@ def validate_unit(unit_id: str, db_path: Path, root: Path) -> list[str]:
 
         check_artifact_dir(latest / "quick", "quick", errors)
         check_artifact_dir(latest / "full", "full", errors)
+
+        # Dual-vantage fields in run-meta when present (soft until Spot runner fills them).
+        for mode in ("quick", "full"):
+            meta_path = latest / mode / "run-meta.json"
+            if not meta_path.is_file():
+                continue
+            meta = check_json(meta_path, errors, mode)
+            if not meta:
+                continue
+            if "uhbs_version" not in meta:
+                errors.append(f"{mode}: run-meta.json missing uhbs_version")
+            # Prefer explicit vantage keys when Spot dual-path has run.
+            if meta.get("vantage") not in (None, "onbox", "remote", "merged"):
+                errors.append(f"{mode}: run-meta.json vantage={meta.get('vantage')!r} invalid")
+
+        # Module C gate: when the inventory declared a telemetry_dir, a published
+        # full run must show Module C as measured (not an empty/missing sink).
+        # sqlite3.Row: ``"col" in row`` checks values, not column names.
+        telemetry_required = (
+            bool(unit["telemetry_required"])
+            if "telemetry_required" in unit.keys()  # noqa: SIM118
+            else False
+        )
+        if telemetry_required:
+            check_module_c_measurement(
+                latest / "full" / "report.json",
+                label="full",
+                errors=errors,
+            )
 
         quick = latest_run(conn, unit_id, "quick")
         full = latest_run(conn, unit_id, "full")

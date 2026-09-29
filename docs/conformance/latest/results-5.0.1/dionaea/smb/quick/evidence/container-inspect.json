@@ -1,0 +1,211 @@
+[
+    {
+        "Id": "a1bc9d7984618f1f0e73c03a10fe82d3cc3cadfd3110b6b9bec143b56f10df04",
+        "Created": "2026-09-27T20:11:36.829283588Z",
+        "Path": "/usr/local/sbin/entrypoint.sh",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 31242,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:11:37.06137013Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:9e0b7572d5638eacd7ce785ff8f2d776af91f9040c6871926d967defb05a3a22",
+        "ResolvConfPath": "/var/lib/docker/containers/a1bc9d7984618f1f0e73c03a10fe82d3cc3cadfd3110b6b9bec143b56f10df04/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/a1bc9d7984618f1f0e73c03a10fe82d3cc3cadfd3110b6b9bec143b56f10df04/hostname",
+        "HostsPath": "/var/lib/docker/containers/a1bc9d7984618f1f0e73c03a10fe82d3cc3cadfd3110b6b9bec143b56f10df04/hosts",
+        "LogPath": "/var/lib/docker/containers/a1bc9d7984618f1f0e73c03a10fe82d3cc3cadfd3110b6b9bec143b56f10df04/a1bc9d7984618f1f0e73c03a10fe82d3cc3cadfd3110b6b9bec143b56f10df04-json.log",
+        "Name": "/uhbs-target-dionaea-smb",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/dionaea-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "a1bc9d7984618f1f0e73c03a10fe82d3cc3cadfd3110b6b9bec143b56f10df04",
+                "LowerDir": "/var/lib/docker/overlay2/129313a8efc75d568629faf7180a0c8e92ada37742bd44d9ee014b05b43ab636-init/diff:/var/lib/docker/overlay2/2bfc359a2a8921682c30fabdeacc9f911fe1f6064233f7055f12c11b90bbdfb2/diff:/var/lib/docker/overlay2/0dceccedad3a1608aaf3a398f6ad1e2f744ce8afa72258e5a3fdecdcc66cf3ea/diff:/var/lib/docker/overlay2/7f48cac980030e15fb1e462cf7db464b259958ccb257a9512ae9bb1062893f7a/diff:/var/lib/docker/overlay2/761d057fb8400dfe72a6cf8dc21676c88aa96f9ac2c9b76733eb3087f5d21d3a/diff:/var/lib/docker/overlay2/922177d9d242371fe4a5de2e04ff6b405b8e4546b15de2c5ac605ded97a0d025/diff",
+                "MergedDir": "/var/lib/docker/overlay2/129313a8efc75d568629faf7180a0c8e92ada37742bd44d9ee014b05b43ab636/merged",
+                "UpperDir": "/var/lib/docker/overlay2/129313a8efc75d568629faf7180a0c8e92ada37742bd44d9ee014b05b43ab636/diff",
+                "WorkDir": "/var/lib/docker/overlay2/129313a8efc75d568629faf7180a0c8e92ada37742bd44d9ee014b05b43ab636/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/dionaea-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "a1bc9d798461",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": null,
+            "Image": "dinotools/dionaea:latest",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/usr/local/sbin/entrypoint.sh"
+            ],
+            "Labels": {
+                "org.opencontainers.image.created": "2020-11-30T22:08:52Z",
+                "org.opencontainers.image.description": "Home of the dionaea honeypot",
+                "org.opencontainers.image.licenses": "GPL-2.0",
+                "org.opencontainers.image.revision": "fc5d86b7c7456281ec7c0877d3cb80fa58a09283",
+                "org.opencontainers.image.source": "https://github.com/DinoTools/dionaea.git",
+                "org.opencontainers.image.title": "dionaea",
+                "org.opencontainers.image.url": "https://github.com/DinoTools/dionaea",
+                "org.opencontainers.image.version": "0.11.0",
+                "uhbs.unit": "dionaea-smb"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "4d345d55231a80fea152202dc213f7a9a1ccda24db1f17f0b7de06041aff1ddc",
+            "SandboxKey": "/var/run/docker/netns/4d345d55231a",
+            "Ports": {},
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "dionaea-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "091f93d70fb94e5a2e17107ae1ef8eb8424a3b6aff16c86ce87c5d3c907d35c8",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.3",
+                    "MacAddress": "9e:e8:65:a2:db:0a",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-dionaea-smb",
+                        "dionaea-lab",
+                        "a1bc9d798461"
+                    ]
+                }
+            }
+        }
+    }
+]

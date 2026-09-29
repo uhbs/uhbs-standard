@@ -1,0 +1,229 @@
+[
+    {
+        "Id": "6f577e4635768aa39641354acf4f2574a6e5b2a160cb492a984a97d461bed501",
+        "Created": "2026-09-27T19:39:02.627352421Z",
+        "Path": "/usr/local/bin/HellPot",
+        "Args": [
+            "-c",
+            "/config.toml"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 34191,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T19:39:02.686214796Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:844413a1a06a87de1f9d03e0ae550e7074ab7437cf52c1a086e2730d935515ca",
+        "ResolvConfPath": "/var/lib/docker/containers/6f577e4635768aa39641354acf4f2574a6e5b2a160cb492a984a97d461bed501/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/6f577e4635768aa39641354acf4f2574a6e5b2a160cb492a984a97d461bed501/hostname",
+        "HostsPath": "/var/lib/docker/containers/6f577e4635768aa39641354acf4f2574a6e5b2a160cb492a984a97d461bed501/hosts",
+        "LogPath": "/var/lib/docker/containers/6f577e4635768aa39641354acf4f2574a6e5b2a160cb492a984a97d461bed501/6f577e4635768aa39641354acf4f2574a6e5b2a160cb492a984a97d461bed501-json.log",
+        "Name": "/HellPot-lab",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/HellPot-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {
+                "8080/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "18180"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "6f577e4635768aa39641354acf4f2574a6e5b2a160cb492a984a97d461bed501",
+                "LowerDir": "/var/lib/docker/overlay2/aff479b00b5cf9b76dbcc48fd74ed8eadd63498a09aa84032fe50710d3778baf-init/diff:/var/lib/docker/overlay2/2lpzhzj0hyyfcm7ktularslr0/diff:/var/lib/docker/overlay2/690hy7mw0r06ugx6zxwa65txc/diff:/var/lib/docker/overlay2/8jijwdh5ozkhvnnalgq5qneit/diff:/var/lib/docker/overlay2/d2c1216eebd0c5478a4f10d14e5a44bdc4b8d7de15d82fffa89662d16f8eaa56/diff:/var/lib/docker/overlay2/5cc35d93811395525d6f2d7564da293528dfbb291417980d830f957b10262b1d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/aff479b00b5cf9b76dbcc48fd74ed8eadd63498a09aa84032fe50710d3778baf/merged",
+                "UpperDir": "/var/lib/docker/overlay2/aff479b00b5cf9b76dbcc48fd74ed8eadd63498a09aa84032fe50710d3778baf/diff",
+                "WorkDir": "/var/lib/docker/overlay2/aff479b00b5cf9b76dbcc48fd74ed8eadd63498a09aa84032fe50710d3778baf/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/HellPot-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "6f577e463576",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive"
+            ],
+            "Cmd": null,
+            "Image": "hellpot:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/usr/local/bin/HellPot",
+                "-c",
+                "/config.toml"
+            ],
+            "Labels": {
+                "org.opencontainers.image.created": "2026-09-12T10:29:18.701012+00:00",
+                "org.opencontainers.image.description": "The Ubuntu container image maintained by Canonical\n\nUbuntu is a Debian-based Linux operating system that runs from the desktop to the cloud, to all your internet connected things.\nIt is the world's most popular operating system across public clouds and OpenStack clouds.\nIt is the number one platform for containers; from Docker to Kubernetes to LXD, Ubuntu can run your containers at scale.\nFast, secure and simple, Ubuntu powers millions of PCs worldwide.\n",
+                "org.opencontainers.image.title": "ubuntu",
+                "org.opencontainers.image.version": "26.04",
+                "uhbs.unit": "HellPot-http"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "f64ae3e99249604f71f92d2474dc70e651bed421640d87ff5654d9d1730e84d3",
+            "SandboxKey": "/var/run/docker/netns/f64ae3e99249",
+            "Ports": {
+                "8080/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "18180"
+                    }
+                ]
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "HellPot-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "20fcede60d3ccf68df8e8f3d5c152c38c89c942765ce8cdeedf7ee6b54492110",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "2e:fd:8f:a3:4e:18",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "HellPot-lab",
+                        "6f577e463576"
+                    ]
+                }
+            }
+        }
+    }
+]

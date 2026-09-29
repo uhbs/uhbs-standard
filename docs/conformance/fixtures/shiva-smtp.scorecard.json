@@ -1,12 +1,12 @@
 {
-  "uhbs_version": "5.0.0",
+  "uhbs_version": "5.0.1",
   "target": {
     "name": "SHIVA Spampot (shiva-spampot) (smtp)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/shiva/low_interaction_smtp_full.yaml"
   },
   "evaluated_at": "2026-09-26",
-  "auditor": "UHBS-Lab results-5.0.0 refresh (shiva-smtp)",
+  "auditor": "UHBS-Lab results-5.0.1 refresh (shiva-smtp)",
   "modules": {
     "A": {
       "score": 86.43,
@@ -67,7 +67,7 @@
   },
   "uhqs": 78.51,
   "grade": "C",
-  "notes": "Evaluation proof only. results-5.0.0 refresh of shiva-smtp at 6197cd3f7751688a29ec44e6dcef9ff8647e9e15. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 refresh of shiva-smtp at 6197cd3f7751688a29ec44e6dcef9ff8647e9e15. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",

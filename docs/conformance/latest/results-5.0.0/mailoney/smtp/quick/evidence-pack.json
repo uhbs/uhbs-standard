@@ -1,6 +1,6 @@
 {
-  "uhbs_version": "5.0.0",
-  "specification_version": "5.0.0",
+  "uhbs_version": "5.0.1",
+  "specification_version": "5.0.1",
   "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
   "check_catalog_hash": "a3f0b4c532a15fa96164b2f8de17a22bf09f4995abbbdda438ebe5cba57d7ed0",
   "check_catalog": {
@@ -22,7 +22,7 @@
   "evaluated_at": "2026-09-26",
   "harness": {
     "name": "uhbs-lab",
-    "version": "5.0.0",
+    "version": "5.0.1",
     "plugin_versions": {},
     "command_digest": null,
     "config_digest": null,

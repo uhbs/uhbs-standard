@@ -1,12 +1,12 @@
 {
-  "uhbs_version": "5.0.0",
+  "uhbs_version": "5.0.1",
   "target": {
     "name": "HellPot (yunginnanet) (http)",
     "class": "Web-API",
     "profile_ref": "docs/conformance/labs/HellPot/web_api_http_full.yaml"
   },
   "evaluated_at": "2026-09-26",
-  "auditor": "UHBS-Lab results-5.0.0 refresh (HellPot-http)",
+  "auditor": "UHBS-Lab results-5.0.1 refresh (HellPot-http)",
   "modules": {
     "A": {
       "score": 73.18,
@@ -67,7 +67,7 @@
   },
   "uhqs": 76.17,
   "grade": "C",
-  "notes": "Evaluation proof only. results-5.0.0 refresh of HellPot-http at 0ba62c99ea4599ec32474e4982a8ea4d4105c471. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 refresh of HellPot-http at 0ba62c99ea4599ec32474e4982a8ea4d4105c471. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",

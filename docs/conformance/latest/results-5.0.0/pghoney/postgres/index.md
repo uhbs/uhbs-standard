@@ -1,7 +1,7 @@
-# pghoney — postgres (results-5.0.0)
+# pghoney — postgres (results-5.0.1)
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 5.0.0 · **Class:** Low-Interaction · **Protocol:** `postgres`  
+**UHBS:** 5.0.1 · **Class:** Low-Interaction · **Protocol:** `postgres`  
 **Target id:** `pghoney-postgres` · **Evaluated:** 2026-09-26  
 **Upstream:** `master` @ `f5d367f749f7e9353421aaf44dad856df490c441`  
 **Verdict:** INCOMPLETE / INCOMPLETE / UHQS=43.08 grade=F (`uhqs-v5.1-always-grade`)
@@ -13,7 +13,7 @@
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../../fixtures/pghoney-postgres.scorecard.json`](../../../../fixtures/pghoney-postgres.scorecard.json)  
-Archive: [`../../../../archive/v5.0.0/pghoney/postgres/`](../../../../archive/v5.0.0/pghoney/postgres/)  
+Archive: [`../../../../archive/v5.0.1/pghoney/postgres/`](../../../../archive/v5.0.1/pghoney/postgres/)  
 Replication: [`EXECUTION-STEPS.md`](EXECUTION-STEPS.md)
 
 INCOMPLETE / UHQS=43.08 grade=F (non-SSH Module D). Do not cite archived 4.x letter grades.
@@ -34,7 +34,7 @@ INCOMPLETE / UHQS=43.08 grade=F (non-SSH Module D). Do not cite archived 4.x let
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : pghoney-postgres
 System Profile Class  : Low-Interaction
@@ -57,7 +57,7 @@ Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service a
 Module F: Static Code Audit         :  70.8/100       0.20     PASSED (trivy not installed — not tested (zero credit))
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : UHQS=43.08 grade=F — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (UHQS=43.08 grade=F — no composite UHQS)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (UHQS=43.08 grade=F — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
 scoring_model_id                      : uhqs-v5.1-always-grade
 ====================================================================================

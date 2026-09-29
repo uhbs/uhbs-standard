@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `sshesame-ssh`
+# Image name at grade time: ghcr.io/jaksi/sshesame:latest
+FROM sha256:4061a777a1e5bf393668f109fd8344de5a1708a12ffd891252ed4fec46b571c5

@@ -2,7 +2,7 @@
 
 **Status:** Informative · evaluation proof  
 **Upstream:** [https://github.com/beelzebub-labs/beelzebub](https://github.com/beelzebub-labs/beelzebub) · `main` @ `67d5632a754f39f7b14c703d3009193150440116`  
-**UHBS:** 5.0.0 · results-5.0.0 refresh · worker-wave3b
+**UHBS:** 5.0.1 · results-5.0.1 refresh · worker-wave3b
 
 | Protocol | Class / port | Quick | Full | Status |
 | --- | --- | --- | --- | --- |
@@ -13,7 +13,7 @@
 | [Redis](redis/index.md) | Low-Interaction · Redis :6379 | [ungraded](redis/quick/README.md) | [ungraded](redis/full/README.md) | ready-for-review (INCOMPLETE) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
-- Archive: [`../../../archive/v5.0.0/beelzebub/`](../../../archive/v5.0.0/beelzebub/)
+- Archive: [`../../../archive/v5.0.1/beelzebub/`](../../../archive/v5.0.1/beelzebub/)
 
 v5 Safety Gate leaves completed Beelzebub protocol units **ungraded**. Do not cite archived 4.x letter grades.
 

@@ -1,6 +1,6 @@
 # Execution steps — `espot-http`
 
-Replication log for the UHBS 5.0.0 results-5.0.0 refresh. Commands ran from the UHBS repo root. Do not transplant archived 4.x letter grades.
+Replication log for the UHBS 5.0.1 results-5.0.1 refresh. Commands ran from the UHBS repo root. Do not transplant archived 4.x letter grades.
 
 ## Identity
 
@@ -11,7 +11,7 @@ Replication log for the UHBS 5.0.0 results-5.0.0 refresh. Commands ran from the 
 - commit: `0b126a7783da69d543239606df59211c5d21f1db`
 - workspace clone: `.local/labs/espot`
 - telemetry: `.local/labs/espot-telemetry`
-- latest path: `docs/conformance/latest/results-5.0.0/espot`
+- latest path: `docs/conformance/latest/results-5.0.1/espot`
 
 ## 1. Clone
 
@@ -49,26 +49,26 @@ curl -sS -m 5 http://127.0.0.1:9200/
 # expect JSON with "tagline": "You Know, for Search"
 ```
 
-## 4. Quick run (`uhbs:5.0.0`)
+## 4. Quick run (`uhbs:5.0.1`)
 
 ```bash
-python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.0.sqlite3 log-run-start \
-  --unit-id espot-http --mode quick --uhbs-version 5.0.0 \
-  --grader-image uhbs:5.0.0 --target-image espot:lab \
+python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.1.sqlite3 log-run-start \
+  --unit-id espot-http --mode quick --uhbs-version 5.0.1 \
+  --grader-image uhbs:5.0.1 --target-image espot:lab \
   --base-image node:10-buster-slim --strategy custom-base --airgap-attested
 
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/espot:/honeypot:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 \
-  uhbs:5.0.0 lab \
+  uhbs:5.0.1 lab \
     --inventory /work/docs/conformance/labs/espot/inventory.yaml \
     --target espot \
     --tps /work/docs/conformance/labs/espot/web_api_quick.yaml \
     --phases profile,static,sandbox,dynamic,score --modules A,B,C,D,E,F \
     --quick --skip-sast-tools \
-    --out /work/docs/conformance/latest/results-5.0.0/espot/quick \
+    --out /work/docs/conformance/latest/results-5.0.1/espot/quick \
     --environment "Quick Docker lab: ESPot HTTP :9200, UHBS_QUICK=1, SAST skipped" \
-  > docs/conformance/latest/results-5.0.0/espot/quick/uhbs-run.log 2>&1
+  > docs/conformance/latest/results-5.0.1/espot/quick/uhbs-run.log 2>&1
 ```
 
 ## 5. Telemetry seed
@@ -86,15 +86,15 @@ printf '%s\n' '# UHBS egress gateway canary — no HIT lines means clean' \
   > .local/labs/espot-telemetry/egress-gateway.log
 ```
 
-## 6. Full run + asciinema (`uhbs:5.0.0-full`)
+## 6. Full run + asciinema (`uhbs:5.0.1-full`)
 
 ```bash
-python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.0.sqlite3 log-run-start \
-  --unit-id espot-http --mode full --uhbs-version 5.0.0 \
-  --grader-image uhbs:5.0.0-full --target-image espot:lab \
+python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.1.sqlite3 log-run-start \
+  --unit-id espot-http --mode full --uhbs-version 5.0.1 \
+  --grader-image uhbs:5.0.1-full --target-image espot:lab \
   --base-image node:10-buster-slim --strategy custom-base --airgap-attested
 
-asciinema rec --overwrite docs/conformance/latest/results-5.0.0/espot/full/proof/full-run.cast \
+asciinema rec --overwrite docs/conformance/latest/results-5.0.1/espot/full/proof/full-run.cast \
   -c .local/benchmark-refresh/espot-full.sh
 ```
 
@@ -109,13 +109,13 @@ docker run --rm --network uhbs-lab \
   -w /work -e PYTHONUNBUFFERED=1 \
   -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:5.0.0-full lab \
+  uhbs:5.0.1-full lab \
     --inventory /work/docs/conformance/labs/espot/inventory.yaml \
     --target espot \
     --tps /work/docs/conformance/labs/espot/web_api_full.yaml \
     --phases profile,static,sandbox,dynamic,score --modules A,B,C,D,E,F \
     --concurrency 25 --requests 200 \
-    --out /work/docs/conformance/latest/results-5.0.0/espot/full \
+    --out /work/docs/conformance/latest/results-5.0.1/espot/full \
     --environment "Full Docker lab: ESPot HTTP :9200 + 1000-sample A3 + SAST + telemetry"
 ```
 
@@ -129,9 +129,9 @@ python scripts/rebuild_mkdocs_nav.py
 
 ## Output paths
 
-- quick: `docs/conformance/latest/results-5.0.0/espot/quick/`
-- full: `docs/conformance/latest/results-5.0.0/espot/full/`
-- cast: `docs/conformance/latest/results-5.0.0/espot/full/proof/full-run.cast`
+- quick: `docs/conformance/latest/results-5.0.1/espot/quick/`
+- full: `docs/conformance/latest/results-5.0.1/espot/full/`
+- cast: `docs/conformance/latest/results-5.0.1/espot/full/proof/full-run.cast`
 - fixture: `docs/conformance/fixtures/espot-web-api.scorecard.json`
 
-Honest UHBS 5.0.0 outcome: **INCOMPLETE / ungraded** (Module C declared-format + Module D non-SSH gateway/packet evidence not fully measured). Do not copy archived 4.x UHQS 63.33 / D.
+Honest UHBS 5.0.1 outcome: **INCOMPLETE / ungraded** (Module C declared-format + Module D non-SSH gateway/packet evidence not fully measured). Do not copy archived 4.x UHQS 63.33 / D.

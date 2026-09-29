@@ -7,4 +7,4 @@ Clone `https://github.com/skeeto/endlessh.git` at `master` HEAD `dfe44eb2c5b6fc3
 
 Exact commands: [EXECUTION-STEPS.md](EXECUTION-STEPS.md).
 
-**Published results (UHBS 5.0.0):** INCOMPLETE / INCOMPLETE — ungraded unless the Safety Gate passed. See [`full/SCORECARD.txt`](full/SCORECARD.txt).
+**Published results (UHBS 5.0.1):** INCOMPLETE / INCOMPLETE — ungraded unless the Safety Gate passed. See [`full/SCORECARD.txt`](full/SCORECARD.txt).

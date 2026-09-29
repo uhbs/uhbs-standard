@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""UHBS v5.0.0 — Universal Honeypot Benchmarking Standard orchestrator (uhbs-core).
+"""UHBS v5.0.1 — Universal Honeypot Benchmarking Standard orchestrator (uhbs-core).
 
 Phases (§6):
   1) profile  — load TPS
   2) static   — Module F (+ optional capability signals)
   3) sandbox  — air-gap / egress preflight
   4) dynamic  — Modules A–E via protocol plugins
-  5) score    — UHQS 5.0.0 with profile-adaptive weights + δ_C gate
+  5) score    — UHQS 5.0.1 with profile-adaptive weights + δ_C gate
 
 Examples:
   uhbs lab --tps posix_shell_ssh --target 127.0.0.1 --port 2222 \\
@@ -108,6 +108,29 @@ def _want_module_f(modules: Sequence[str]) -> bool:
             "behavior",
         }
     )
+
+
+# Comparability guard: a composite renormalized over fewer measured modules
+# than this is published but stamped assessment_status=INCOMPLETE (partial
+# measurement — not comparable across units). See uhqs_math docstring:
+# unmeasured modules are excluded, never scored as 0.
+MIN_MEASURED_COMPOSITE = 4
+
+
+def composite_measured_flags(mods: Sequence[ModuleResult]) -> dict[str, bool]:
+    """Which composite modules (A/B/C/E/F) were actually measured.
+
+    Thin adapter over ``uhqs_math.measured_modules_from_results`` so the
+    harness (and its tests) share one derivation rule.
+    """
+    from uhbs_core.uhqs_math import measured_modules_from_results
+
+    payload = {
+        m.module: {"status": m.status, "complete": m.complete}
+        for m in mods
+        if m.module in {"A", "B", "C", "E", "F"}
+    }
+    return measured_modules_from_results(payload)
 
 
 def _run_dynamic(
@@ -332,6 +355,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     elif d_measured:
         verdict = CriticalControlVerdict.GATE_PASSED
 
+    t_measured = composite_measured_flags(t_mods)
+    if sum(t_measured.values()) < MIN_MEASURED_COMPOSITE:
+        # Partial measurement — publish, but never present it as comparable.
+        incomplete = True
+
     t_uhqs = compute_uhqs(
         t_scores,
         target=target.label,
@@ -342,6 +370,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             AssessmentStatus.INCOMPLETE if incomplete else AssessmentStatus.COMPLETE
         ),
         critical_control_verdict=verdict,
+        measured_modules=t_measured,
     )
 
     extras = {
@@ -406,6 +435,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 if b_incomplete
                 else AssessmentStatus.COMPLETE
             ),
+            measured_modules=composite_measured_flags(b_mods),
         )
         extras["baseline_scores"] = b_scores
         extras["baseline_uhqs"] = b_uhqs.to_dict()

@@ -1,0 +1,5 @@
+source=pin:dperson/samba@sha256:216f21e9a995109fb6befd2eb7ec811d7ad7b98a030e74dfa4bb1c8dbc2bc103
+image=dperson/samba
+digest=sha256:216f21e9a995109fb6befd2eb7ec811d7ad7b98a030e74dfa4bb1c8dbc2bc103
+dockerfile=docs/conformance/latest/results-5.0.1/opencanary/smb/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/opencanary/smb/Dockerfile.pin

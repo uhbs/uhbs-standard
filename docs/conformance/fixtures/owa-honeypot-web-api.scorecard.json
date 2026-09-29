@@ -1,12 +1,12 @@
 {
-  "uhbs_version": "5.0.0",
+  "uhbs_version": "5.0.1",
   "target": {
     "name": "owa-honeypot (http)",
     "class": "Web-API",
     "profile_ref": "docs/conformance/labs/owa-honeypot/web_api_http_full.yaml"
   },
   "evaluated_at": "2026-09-26",
-  "auditor": "UHBS-Lab results-5.0.0 refresh (owa-honeypot-http)",
+  "auditor": "UHBS-Lab results-5.0.1 refresh (owa-honeypot-http)",
   "modules": {
     "A": {
       "score": 0.0,
@@ -67,7 +67,7 @@
   },
   "uhqs": 23.5,
   "grade": "F",
-  "notes": "Evaluation proof only. results-5.0.0 refresh of owa-honeypot-http at 17d7166c3dc319e6acd9eb7343e9fa9eef225562. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 refresh of owa-honeypot-http at 17d7166c3dc319e6acd9eb7343e9fa9eef225562. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",

@@ -1,6 +1,6 @@
-# Conpot methodology (results-5.0.0)
+# Conpot methodology (results-5.0.1)
 
-**UHBS:** 5.0.0 · strategy `upstream-docker` · base `python:3.14-slim` · target `conpot:lab-fixed`
+**UHBS:** 5.0.1 · strategy `upstream-docker` · base `python:3.14-slim` · target `conpot:lab-fixed`
 
 Upstream Dockerfile is documented. Compatibility shim: pin `setuptools<81` so `pkg_resources` remains available. Not Ubuntu latest because upstream ships a maintained image.
 

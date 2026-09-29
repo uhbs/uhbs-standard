@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `Krawl-http`
+# Image name at grade time: ghcr.io/blessedrebus/krawl:latest
+FROM sha256:26dec4fe66e07e5441831858e4c3ade30f6325f0b9d0f8a4ed05edc4453e3872

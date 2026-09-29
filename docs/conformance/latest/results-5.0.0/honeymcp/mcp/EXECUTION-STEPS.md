@@ -1,6 +1,6 @@
 # Execution steps — `honeymcp-mcp`
 
-Replication log for the UHBS 5.0.0 results-5.0.0 refresh. Commands ran from the UHBS repo root. Do not transplant archived 4.x letter grades.
+Replication log for the UHBS 5.0.1 results-5.0.1 refresh. Commands ran from the UHBS repo root. Do not transplant archived 4.x letter grades.
 
 ## Identity
 
@@ -11,7 +11,7 @@ Replication log for the UHBS 5.0.0 results-5.0.0 refresh. Commands ran from the 
 - commit: `966bb908d140809957ba01e05132631c514ade5d`
 - workspace clone: `.local/labs/honeymcp`
 - telemetry: `.local/labs/honeymcp-telemetry`
-- latest path: `docs/conformance/latest/results-5.0.0/honeymcp/mcp`
+- latest path: `docs/conformance/latest/results-5.0.1/honeymcp/mcp`
 - container: `uhbs-target-honeymcp-mcp` · alias `honeymcp-lab`:8080
 - strategy: `upstream-docker` · base: `debian:bookworm-slim`
 
@@ -48,28 +48,28 @@ docker run -d \
   honeymcp:uhbs-lab
 ```
 
-Smoke from `uhbs:5.0.0` on `uhbs-lab` against `honeymcp-lab:8080`. No host `-p` publish.
+Smoke from `uhbs:5.0.1` on `uhbs-lab` against `honeymcp-lab:8080`. No host `-p` publish.
 
-## 4. Quick run (`uhbs:5.0.0`)
+## 4. Quick run (`uhbs:5.0.1`)
 
 ```bash
-python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.0.sqlite3 log-run-start \
-  --unit-id honeymcp-mcp --mode quick --uhbs-version 5.0.0 \
-  --grader-image uhbs:5.0.0 --target-image honeymcp:uhbs-lab \
+python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.1.sqlite3 log-run-start \
+  --unit-id honeymcp-mcp --mode quick --uhbs-version 5.0.1 \
+  --grader-image uhbs:5.0.1 --target-image honeymcp:uhbs-lab \
   --base-image debian:bookworm-slim --strategy upstream-docker --airgap-attested
 
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/honeymcp:/honeypot:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 \
-  uhbs:5.0.0 lab \
+  uhbs:5.0.1 lab \
     --inventory /work/docs/conformance/labs/honeymcp/inventory.yaml \
     --target honeymcp-mcp \
     --tps /work/docs/conformance/labs/honeymcp/web_api_mcp_quick.yaml \
     --phases profile,static,sandbox,dynamic,score --modules A,B,C,D,E,F \
     --quick --skip-sast-tools --concurrency 10 --requests 50 \
-    --out /work/docs/conformance/latest/results-5.0.0/honeymcp/mcp/quick \
+    --out /work/docs/conformance/latest/results-5.0.1/honeymcp/mcp/quick \
     --environment "Quick Docker lab: honeymcp-mcp" \
-  > docs/conformance/latest/results-5.0.0/honeymcp/mcp/quick/uhbs-run.log 2>&1
+  > docs/conformance/latest/results-5.0.1/honeymcp/mcp/quick/uhbs-run.log 2>&1
 ```
 
 ## 5. Telemetry seed
@@ -80,16 +80,16 @@ printf '%s\n' '# UHBS egress gateway canary — no HIT lines means clean' \
 docker logs uhbs-target-honeymcp-mcp >> .local/labs/honeymcp-telemetry/target.log 2>&1 || true
 ```
 
-## 6. Full run + asciinema (`uhbs:5.0.0-full`)
+## 6. Full run + asciinema (`uhbs:5.0.1-full`)
 
 ```bash
-python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.0.sqlite3 log-run-start \
-  --unit-id honeymcp-mcp --mode full --uhbs-version 5.0.0 \
-  --grader-image uhbs:5.0.0-full --target-image honeymcp:uhbs-lab \
+python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.1.sqlite3 log-run-start \
+  --unit-id honeymcp-mcp --mode full --uhbs-version 5.0.1 \
+  --grader-image uhbs:5.0.1-full --target-image honeymcp:uhbs-lab \
   --base-image debian:bookworm-slim --strategy upstream-docker --airgap-attested
 
 asciinema rec --overwrite \
-  docs/conformance/latest/results-5.0.0/honeymcp/mcp/full/proof/full-run.cast \
+  docs/conformance/latest/results-5.0.1/honeymcp/mcp/full/proof/full-run.cast \
   -c /tmp/uhbs-full-honeymcp-mcp.sh
 ```
 
@@ -103,15 +103,15 @@ docker run --rm --network uhbs-lab \
   -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:5.0.0-full lab \
+  uhbs:5.0.1-full lab \
     --inventory /work/docs/conformance/labs/honeymcp/inventory.yaml \
     --target honeymcp-mcp \
     --tps /work/docs/conformance/labs/honeymcp/web_api_mcp_full.yaml \
     --phases profile,static,sandbox,dynamic,score --modules A,B,C,D,E,F \
     --concurrency 25 --requests 200 \
-    --out /work/docs/conformance/latest/results-5.0.0/honeymcp/mcp/full \
+    --out /work/docs/conformance/latest/results-5.0.1/honeymcp/mcp/full \
     --environment "Full Docker lab: honeymcp-mcp" \
-  2>&1 | tee docs/conformance/latest/results-5.0.0/honeymcp/mcp/full/uhbs-run.log
+  2>&1 | tee docs/conformance/latest/results-5.0.1/honeymcp/mcp/full/uhbs-run.log
 ```
 
 ## 7. Fixture + verifier
@@ -124,9 +124,9 @@ python scripts/rebuild_mkdocs_nav.py
 
 ## Output paths
 
-- quick: `docs/conformance/latest/results-5.0.0/honeymcp/mcp/quick/`
-- full: `docs/conformance/latest/results-5.0.0/honeymcp/mcp/full/`
-- cast: `docs/conformance/latest/results-5.0.0/honeymcp/mcp/full/proof/full-run.cast`
+- quick: `docs/conformance/latest/results-5.0.1/honeymcp/mcp/quick/`
+- full: `docs/conformance/latest/results-5.0.1/honeymcp/mcp/full/`
+- cast: `docs/conformance/latest/results-5.0.1/honeymcp/mcp/full/proof/full-run.cast`
 - fixture: `docs/conformance/fixtures/honeymcp-mcp.scorecard.json`
 
-Honest UHBS 5.0.0 outcome: **INCOMPLETE / ungraded (non-SSH Module D)**. Assessment `INCOMPLETE` · Critical controls `INCOMPLETE`. Do not copy archived 4.x grades.
+Honest UHBS 5.0.1 outcome: **INCOMPLETE / ungraded (non-SSH Module D)**. Assessment `INCOMPLETE` · Critical controls `INCOMPLETE`. Do not copy archived 4.x grades.

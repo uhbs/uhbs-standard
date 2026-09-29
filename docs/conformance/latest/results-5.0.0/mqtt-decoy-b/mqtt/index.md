@@ -4,9 +4,9 @@
 
 - Benchmark: `mqtt-decoy-b`
 - Protocol: `mqtt`
-- Archive (historical proof only): [`docs/conformance/archive/v5.0.0/mqtt-decoy-b/mqtt`](../../../../archive/v5.0.0/mqtt-decoy-b/mqtt)
-- Latest path: `docs/conformance/latest/results-5.0.0/mqtt-decoy-b/mqtt`
+- Archive (historical proof only): [`docs/conformance/archive/v5.0.1/mqtt-decoy-b/mqtt`](../../../../archive/v5.0.1/mqtt-decoy-b/mqtt)
+- Latest path: `docs/conformance/latest/results-5.0.1/mqtt-decoy-b/mqtt`
 
-This hub has no cloneable inventory plus paired `*_quick.yaml` / `*_full.yaml` for the results-5.0.0 refresh. UHBS records the classification only. **No UHQS scores were invented.** Do not treat this page as a published grade.
+This hub has no cloneable inventory plus paired `*_quick.yaml` / `*_full.yaml` for the results-5.0.1 refresh. UHBS records the classification only. **No UHQS scores were invented.** Do not treat this page as a published grade.
 
 Reason: operator-provided MQTT endpoint; no cloneable lab inventory matching the hub name

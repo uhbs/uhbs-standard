@@ -1,6 +1,6 @@
-# EchidraOSS methodology (results-5.0.0)
+# EchidraOSS methodology (results-5.0.1)
 
-**UHBS:** 5.0.0 · strategy `upstream-docker` · base `python:3.11-slim`
+**UHBS:** 5.0.1 · strategy `upstream-docker` · base `python:3.11-slim`
 
 Upstream documents Docker Compose. The honeypot image is built from the repo `Dockerfile` (`FROM python:3.11-slim`). Ubuntu latest is not the documented image. Lab overlay names the listener `echidra-lab` on external network `uhbs-lab` and drops macOS-incompatible timezone binds. Host-key volume must be `chown 1000:1000` or SSH fails with `PermissionError` on `data/ssh_host_key`.
 

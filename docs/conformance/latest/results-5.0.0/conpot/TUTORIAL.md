@@ -5,4 +5,4 @@
 
 Upstream Dockerfile is the documented install path. Lab wrapper `docs/conformance/labs/conpot/Dockerfile.lab` pins `setuptools<81` because `fs` still imports `pkg_resources`. Grade **inside `uhbs-lab` on port 5020** (not host-mapped 502). Full load is `--concurrency 5 --requests 50`.
 
-Exact commands: [EXECUTION-STEPS.md](EXECUTION-STEPS.md). **Published (UHBS 5.0.0):** INCOMPLETE / ungraded.
+Exact commands: [EXECUTION-STEPS.md](EXECUTION-STEPS.md). **Published (UHBS 5.0.1):** INCOMPLETE / ungraded.

@@ -6,4 +6,4 @@
 
 Product name = proof label only. Exact commands: [EXECUTION-STEPS.md](EXECUTION-STEPS.md).
 
-**Published results (UHBS 5.0.0):** full **UHQS 36.58 / F** · Safety Gate **GATE_PASSED** (δ_C=1.0). Quick is incomplete (SAST skipped). See [`full/SCORECARD.txt`](full/SCORECARD.txt).
+**Published results (UHBS 5.0.1):** full **UHQS 36.58 / F** · Safety Gate **GATE_PASSED** (δ_C=1.0). Quick is incomplete (SAST skipped). See [`full/SCORECARD.txt`](full/SCORECARD.txt).

@@ -1,7 +1,7 @@
-# HoneyUp (http) — UHBS lab reports (results-5.0.0)
+# HoneyUp (http) — UHBS lab reports (results-5.0.1)
 
 **Class / protocol:** `Web-API` · `http` · port `4000`  
-**UHBS:** 5.0.0 · evaluation proof only  
+**UHBS:** 5.0.1 · evaluation proof only  
 **Upstream:** `master` @ `2d0169da30e76eed979a9a0950015b90f0454740`
 
 ## Results at a glance
@@ -13,7 +13,7 @@
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../fixtures/honeyup-web-api.scorecard.json`](../../../fixtures/honeyup-web-api.scorecard.json)  
-Archive: [`../../../../archive/v5.0.0/honeyup/`](../../../../archive/v5.0.0/honeyup/)
+Archive: [`../../../../archive/v5.0.1/honeyup/`](../../../../archive/v5.0.1/honeyup/)
 
 | Document | Purpose |
 | --- | --- |

@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `trapster-dns`
+# Image name at grade time: trapster:uhbs-lab
+FROM sha256:fe8aa1c13246549e6c024a4cb3f558e0dfb6ca75e17d845917ef2fbafce90314

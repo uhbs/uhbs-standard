@@ -1,6 +1,6 @@
-# HoneyUp (http) methodology (results-5.0.0)
+# HoneyUp (http) methodology (results-5.0.1)
 
-**UHBS:** 5.0.0 · strategy `ubuntu-wrapper` · base `ubuntu:latest`
+**UHBS:** 5.0.1 · strategy `ubuntu-wrapper` · base `ubuntu:latest`
 
 Upstream docker-compose + Dockerfile.dev reclones GitHub during build. Lab builds the cloned HEAD tree on ubuntu:latest with cargo.
 

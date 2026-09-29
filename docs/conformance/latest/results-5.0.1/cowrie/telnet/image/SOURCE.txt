@@ -1,0 +1,5 @@
+source=pin:cowrie/cowrie:latest@sha256:92b9220978bc6095fb72b1a046240604ed03a5be1344abf6a2dd04eadd4cd330
+image=cowrie/cowrie:latest
+digest=sha256:92b9220978bc6095fb72b1a046240604ed03a5be1344abf6a2dd04eadd4cd330
+dockerfile=docs/conformance/latest/results-5.0.1/cowrie/telnet/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/cowrie/telnet/Dockerfile.pin

@@ -1,14 +1,14 @@
-# Tutorial: grade Beelzebub with UHBS (results-5.0.0)
+# Tutorial: grade Beelzebub with UHBS (results-5.0.1)
 
 **Status:** Informative · evaluation proof  
 **Target:** [https://github.com/beelzebub-labs/beelzebub](https://github.com/beelzebub-labs/beelzebub) · `main` @ `67d5632a754f39f7b14c703d3009193150440116`  
-**Refreshed so far:** SSH, TELNET, HTTP, MCP, REDIS (INCOMPLETE / ungraded under UHBS 5.0.0). All five listeners share `uhbs-target-beelzebub`.
+**Refreshed so far:** SSH, TELNET, HTTP, MCP, REDIS (INCOMPLETE / ungraded under UHBS 5.0.1). All five listeners share `uhbs-target-beelzebub`.
 
 ## 0. Prerequisites
 
 ```bash
-docker build -t uhbs:5.0.0 .
-docker build -f Dockerfile.full -t uhbs:5.0.0-full .
+docker build -t uhbs:5.0.1 .
+docker build -f Dockerfile.full -t uhbs:5.0.1-full .
 docker network create uhbs-lab 2>/dev/null || true
 ```
 
@@ -39,4 +39,4 @@ docker run -d \
 
 ## 3. Per-protocol quick + full
 
-See each protocol `EXECUTION-STEPS.md`. **Published (results-5.0.0):** completed units **ungraded / INCOMPLETE**. Archived 4.x letter grades are not current.
+See each protocol `EXECUTION-STEPS.md`. **Published (results-5.0.1):** completed units **ungraded / INCOMPLETE**. Archived 4.x letter grades are not current.

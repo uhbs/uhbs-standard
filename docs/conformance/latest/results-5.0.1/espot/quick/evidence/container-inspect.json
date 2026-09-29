@@ -1,0 +1,216 @@
+[
+    {
+        "Id": "d3e30ae863a20d4881508c946f8b24dbf064bc156d9664c2afd5e2b38c6a4e82",
+        "Created": "2026-09-28T09:49:16.825214668Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "node",
+            "app.js"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 87466,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-28T09:49:16.928329876Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:353e164df44fef98a94ebd3da59b01bc0b576e757c1b425d954b871f9422b955",
+        "ResolvConfPath": "/var/lib/docker/containers/d3e30ae863a20d4881508c946f8b24dbf064bc156d9664c2afd5e2b38c6a4e82/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/d3e30ae863a20d4881508c946f8b24dbf064bc156d9664c2afd5e2b38c6a4e82/hostname",
+        "HostsPath": "/var/lib/docker/containers/d3e30ae863a20d4881508c946f8b24dbf064bc156d9664c2afd5e2b38c6a4e82/hosts",
+        "LogPath": "/var/lib/docker/containers/d3e30ae863a20d4881508c946f8b24dbf064bc156d9664c2afd5e2b38c6a4e82/d3e30ae863a20d4881508c946f8b24dbf064bc156d9664c2afd5e2b38c6a4e82-json.log",
+        "Name": "/uhbs-target-espot-http",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/espot-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "d3e30ae863a20d4881508c946f8b24dbf064bc156d9664c2afd5e2b38c6a4e82",
+                "LowerDir": "/var/lib/docker/overlay2/24fd54fadacb93be59ad123431514a0021e30f903125772eef6d5802ae1db9ae-init/diff:/var/lib/docker/overlay2/o4y70b5tr597r3p1cc3lnjoor/diff:/var/lib/docker/overlay2/6av275wdfnvfd1hx3jvnhuyrj/diff:/var/lib/docker/overlay2/7gt6yt9po5xxd8yf763kkx6vt/diff:/var/lib/docker/overlay2/14e18c147e6def868b6a96074e994c981d326bf61d5143fb50eb6b5b5e97b2cf/diff:/var/lib/docker/overlay2/e7294932c63937138246297350af1956bb3677a72e71e4e4236cdadea4b5fff6/diff:/var/lib/docker/overlay2/8aa9ebc16ad990d2d516dbdf87b4c55207e7844c6bba611734cb6cc56e202347/diff:/var/lib/docker/overlay2/1917efb6695d81f290b51614fe3f53be8368749a6a7a89172db89d210ae3971e/diff:/var/lib/docker/overlay2/6f78e2bb62e34d1304c9a8beaf7eadc04a9ae436a7601471e76a4f9c8523a484/diff",
+                "MergedDir": "/var/lib/docker/overlay2/24fd54fadacb93be59ad123431514a0021e30f903125772eef6d5802ae1db9ae/merged",
+                "UpperDir": "/var/lib/docker/overlay2/24fd54fadacb93be59ad123431514a0021e30f903125772eef6d5802ae1db9ae/diff",
+                "WorkDir": "/var/lib/docker/overlay2/24fd54fadacb93be59ad123431514a0021e30f903125772eef6d5802ae1db9ae/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/espot-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "d3e30ae863a2",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "9200/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NODE_VERSION=10.24.1",
+                "YARN_VERSION=1.22.5"
+            ],
+            "Cmd": [
+                "node",
+                "app.js"
+            ],
+            "Image": "espot:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/opt/espot",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "Labels": {
+                "uhbs.unit": "espot-http"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "fd8be750ce0338c04c41ac0012eab4223d30644f266c3e5fdb1feb2ccc906bea",
+            "SandboxKey": "/var/run/docker/netns/fd8be750ce03",
+            "Ports": {
+                "9200/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "espot-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "ddd78fdab98cbf3aa1758ccfb74b454bf471e7aff583a59c8bfe3a2a852fcb25",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.4",
+                    "MacAddress": "ea:fe:cb:d1:b3:7b",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-espot-http",
+                        "espot-lab",
+                        "d3e30ae863a2"
+                    ]
+                }
+            }
+        }
+    }
+]

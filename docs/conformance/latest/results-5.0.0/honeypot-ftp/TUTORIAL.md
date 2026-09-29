@@ -1,4 +1,4 @@
-# Tutorial: grade honeypot-ftp with UHBS (results-5.0.0)
+# Tutorial: grade honeypot-ftp with UHBS (results-5.0.1)
 
 **Status:** Informative · evaluation proof  
 **Target:** [https://github.com/alexbredo/honeypot-ftp](https://github.com/alexbredo/honeypot-ftp) · `master` @ `c7b7cbed4c52d3d84b62676dd1a359c6d9da2696`  
@@ -7,8 +7,8 @@
 ## 0. Prerequisites
 
 ```bash
-docker build -t uhbs:5.0.0 .
-docker build -f Dockerfile.full -t uhbs:5.0.0-full .
+docker build -t uhbs:5.0.1 .
+docker build -f Dockerfile.full -t uhbs:5.0.1-full .
 docker network create uhbs-lab 2>/dev/null || true
 ```
 
@@ -26,4 +26,4 @@ See [`ftp/EXECUTION-STEPS.md`](ftp/EXECUTION-STEPS.md) for the exact `docker run
 
 Exact commands: [`ftp/EXECUTION-STEPS.md`](ftp/EXECUTION-STEPS.md).
 
-**Published (results-5.0.0):** UHQS null / ungraded under `uhqs-v5.0-critical-gate-diagnostic`.
+**Published (results-5.0.1):** UHQS null / ungraded under `uhqs-v5.0-critical-gate-diagnostic`.

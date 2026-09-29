@@ -1,0 +1,576 @@
+{
+  "version": "1.178.0",
+  "results": [
+    {
+      "check_id": "dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+      "path": "Dockerfile",
+      "start": {
+        "line": 40,
+        "col": 1,
+        "offset": 1640
+      },
+      "end": {
+        "line": 40,
+        "col": 30,
+        "offset": 1669
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nENTRYPOINT [\"/entrypoint.sh\"]",
+        "metadata": {
+          "cwe": [
+            "CWE-269: Improper Privilege Management"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user-entrypoint.missing-user-entrypoint",
+          "shortlink": "https://sg.run/k281"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "dockerfile.security.missing-user.missing-user",
+      "path": "Dockerfile",
+      "start": {
+        "line": 41,
+        "col": 1,
+        "offset": 1670
+      },
+      "end": {
+        "line": 41,
+        "col": 158,
+        "offset": 1827
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nCMD [\"-k\", \"/etc/ssh-honeypotd/ssh_host_rsa_key\", \"-k\", \"/etc/ssh-honeypotd/ssh_host_ecdsa_key\", \"-k\", \"/etc/ssh-honeypotd/ssh_host_ed25519_key\", \"-f\", \"-x\"]",
+        "metadata": {
+          "cwe": [
+            "CWE-250: Execution with Unnecessary Privileges"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user.missing-user",
+          "shortlink": "https://sg.run/Gbvn"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/build.yml",
+            "start": {
+              "line": 28,
+              "col": 31,
+              "offset": 667
+            },
+            "end": {
+              "line": 28,
+              "col": 48,
+              "offset": 684
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/build.yml:28:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `{ matrix.CPPFLAGS` was unexpected",
+      "path": ".github/workflows/build.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/build.yml",
+          "start": {
+            "line": 28,
+            "col": 31,
+            "offset": 667
+          },
+          "end": {
+            "line": 28,
+            "col": 48,
+            "offset": 684
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/build.yml",
+            "start": {
+              "line": 28,
+              "col": 31,
+              "offset": 667
+            },
+            "end": {
+              "line": 28,
+              "col": 48,
+              "offset": 684
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/build.yml:28:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `{ matrix.CPPFLAGS` was unexpected",
+      "path": ".github/workflows/build.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/build.yml",
+          "start": {
+            "line": 28,
+            "col": 31,
+            "offset": 667
+          },
+          "end": {
+            "line": 28,
+            "col": 48,
+            "offset": 684
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/docker.yml",
+            "start": {
+              "line": 40,
+              "col": 28,
+              "offset": 921
+            },
+            "end": {
+              "line": 40,
+              "col": 31,
+              "offset": 924
+            }
+          },
+          {
+            "path": ".github/workflows/docker.yml",
+            "start": {
+              "line": 42,
+              "col": 9,
+              "offset": 921
+            },
+            "end": {
+              "line": 42,
+              "col": 28,
+              "offset": 940
+            }
+          },
+          {
+            "path": ".github/workflows/docker.yml",
+            "start": {
+              "line": 48,
+              "col": 11,
+              "offset": 921
+            },
+            "end": {
+              "line": 48,
+              "col": 51,
+              "offset": 961
+            }
+          },
+          {
+            "path": ".github/workflows/docker.yml",
+            "start": {
+              "line": 52,
+              "col": 14,
+              "offset": 921
+            },
+            "end": {
+              "line": 52,
+              "col": 17,
+              "offset": 924
+            }
+          },
+          {
+            "path": ".github/workflows/docker.yml",
+            "start": {
+              "line": 59,
+              "col": 11,
+              "offset": 921
+            },
+            "end": {
+              "line": 59,
+              "col": 30,
+              "offset": 940
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/docker.yml:40:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `${{` was unexpected",
+      "path": ".github/workflows/docker.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/docker.yml",
+          "start": {
+            "line": 40,
+            "col": 28,
+            "offset": 921
+          },
+          "end": {
+            "line": 40,
+            "col": 31,
+            "offset": 924
+          }
+        },
+        {
+          "file": ".github/workflows/docker.yml",
+          "start": {
+            "line": 42,
+            "col": 9,
+            "offset": 921
+          },
+          "end": {
+            "line": 42,
+            "col": 28,
+            "offset": 940
+          }
+        },
+        {
+          "file": ".github/workflows/docker.yml",
+          "start": {
+            "line": 48,
+            "col": 11,
+            "offset": 921
+          },
+          "end": {
+            "line": 48,
+            "col": 51,
+            "offset": 961
+          }
+        },
+        {
+          "file": ".github/workflows/docker.yml",
+          "start": {
+            "line": 52,
+            "col": 14,
+            "offset": 921
+          },
+          "end": {
+            "line": 52,
+            "col": 17,
+            "offset": 924
+          }
+        },
+        {
+          "file": ".github/workflows/docker.yml",
+          "start": {
+            "line": 59,
+            "col": 11,
+            "offset": 921
+          },
+          "end": {
+            "line": 59,
+            "col": 30,
+            "offset": 940
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/docker.yml",
+            "start": {
+              "line": 40,
+              "col": 28,
+              "offset": 921
+            },
+            "end": {
+              "line": 40,
+              "col": 31,
+              "offset": 924
+            }
+          },
+          {
+            "path": ".github/workflows/docker.yml",
+            "start": {
+              "line": 42,
+              "col": 9,
+              "offset": 921
+            },
+            "end": {
+              "line": 42,
+              "col": 28,
+              "offset": 940
+            }
+          },
+          {
+            "path": ".github/workflows/docker.yml",
+            "start": {
+              "line": 48,
+              "col": 11,
+              "offset": 921
+            },
+            "end": {
+              "line": 48,
+              "col": 51,
+              "offset": 961
+            }
+          },
+          {
+            "path": ".github/workflows/docker.yml",
+            "start": {
+              "line": 52,
+              "col": 14,
+              "offset": 921
+            },
+            "end": {
+              "line": 52,
+              "col": 17,
+              "offset": 924
+            }
+          },
+          {
+            "path": ".github/workflows/docker.yml",
+            "start": {
+              "line": 59,
+              "col": 11,
+              "offset": 921
+            },
+            "end": {
+              "line": 59,
+              "col": 30,
+              "offset": 940
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/docker.yml:40:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `${{` was unexpected",
+      "path": ".github/workflows/docker.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/docker.yml",
+          "start": {
+            "line": 40,
+            "col": 28,
+            "offset": 921
+          },
+          "end": {
+            "line": 40,
+            "col": 31,
+            "offset": 924
+          }
+        },
+        {
+          "file": ".github/workflows/docker.yml",
+          "start": {
+            "line": 42,
+            "col": 9,
+            "offset": 921
+          },
+          "end": {
+            "line": 42,
+            "col": 28,
+            "offset": 940
+          }
+        },
+        {
+          "file": ".github/workflows/docker.yml",
+          "start": {
+            "line": 48,
+            "col": 11,
+            "offset": 921
+          },
+          "end": {
+            "line": 48,
+            "col": 51,
+            "offset": 961
+          }
+        },
+        {
+          "file": ".github/workflows/docker.yml",
+          "start": {
+            "line": 52,
+            "col": 14,
+            "offset": 921
+          },
+          "end": {
+            "line": 52,
+            "col": 17,
+            "offset": 924
+          }
+        },
+        {
+          "file": ".github/workflows/docker.yml",
+          "start": {
+            "line": 59,
+            "col": 11,
+            "offset": 921
+          },
+          "end": {
+            "line": 59,
+            "col": 30,
+            "offset": 940
+          }
+        }
+      ]
+    }
+  ],
+  "paths": {
+    "scanned": [
+      ".dockerignore",
+      ".github/renovate.json",
+      ".github/workflows/build.yml",
+      ".github/workflows/codeql.yml",
+      ".github/workflows/docker.yml",
+      ".github/workflows/dockerhub-description.yml",
+      ".gitignore",
+      "Dockerfile",
+      "LICENSE",
+      "Makefile",
+      "README.md",
+      "cmdline.c",
+      "cmdline.h",
+      "daemon.c",
+      "daemon.h",
+      "entrypoint.sh",
+      "globals.c",
+      "globals.h",
+      "log.c",
+      "log.h",
+      "main.c",
+      "pidfile.c",
+      "pidfile.h",
+      "toolchain",
+      "worker.c",
+      "worker.h"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.2963111400604248,
+    "profiling_times": {
+      "config_time": 1.9916908740997314,
+      "core_time": 0.8731989860534668,
+      "ignores_time": 0.0008087158203125,
+      "total_time": 2.875994920730591
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 0.7179675102233887,
+      "per_file_time": {
+        "mean": 0.009971770975324843,
+        "std_dev": 0.00025454389668972603
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9070735090152566,
+      "rules_selected_ratio": 0.10263522884882108,
+      "rules_matched_ratio": 0.10263522884882108
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 751358976
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

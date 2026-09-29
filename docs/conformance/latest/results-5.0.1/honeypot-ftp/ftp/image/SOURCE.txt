@@ -1,0 +1,5 @@
+source=docs/conformance/labs/honeypot-ftp/Dockerfile.lab
+image=honeypot-ftp:uhbs-lab
+digest=sha256:7ef087855d43efbabddee32c56b5ff87db7f29702a33c58af123758571e1a7ff
+dockerfile=docs/conformance/latest/results-5.0.1/honeypot-ftp/ftp/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/honeypot-ftp/ftp/Dockerfile.pin

@@ -1,0 +1,12 @@
+# UHBS lab wrapper. README: python log4pot.py without Azure extras.
+# Ubuntu latest + python3 (stdlib http.server; skip payloader/azure).
+FROM ubuntu:latest
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        ca-certificates python3 \
+    && rm -rf /var/lib/apt/lists/*
+WORKDIR /opt/log4pot
+COPY . .
+RUN mkdir -p /telemetry
+EXPOSE 8080
+CMD ["python3", "log4pot-server.py", "--port", "8080", "--log", "/telemetry/log4pot.log", "--response", "responses/default.json"]

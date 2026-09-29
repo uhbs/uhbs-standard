@@ -1,12 +1,12 @@
 {
-  "uhbs_version": "5.0.0",
+  "uhbs_version": "5.0.1",
   "target": {
     "name": "honeypot-ftp (FTP :21)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/honeypot-ftp/low_interaction_ftp_full.yaml"
   },
   "evaluated_at": "2026-09-26",
-  "auditor": "UHBS-Lab results-5.0.0 refresh (honeypot-ftp-ftp)",
+  "auditor": "UHBS-Lab results-5.0.1 refresh (honeypot-ftp-ftp)",
   "modules": {
     "A": {
       "score": 86.43,
@@ -67,7 +67,7 @@
   },
   "uhqs": 70.41,
   "grade": "C",
-  "notes": "Evaluation proof only. results-5.0.0 refresh of honeypot-ftp-ftp at c7b7cbed4c52d3d84b62676dd1a359c6d9da2696. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 refresh of honeypot-ftp-ftp at c7b7cbed4c52d3d84b62676dd1a359c6d9da2696. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",

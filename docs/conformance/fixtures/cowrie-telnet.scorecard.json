@@ -1,12 +1,12 @@
 {
-  "uhbs_version": "5.0.0",
+  "uhbs_version": "5.0.1",
   "target": {
     "name": "Cowrie (Telnet :2223)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/cowrie/low_interaction_telnet_full.yaml"
   },
   "evaluated_at": "2026-09-26",
-  "auditor": "UHBS-Lab results-5.0.0 refresh (cowrie-telnet)",
+  "auditor": "UHBS-Lab results-5.0.1 refresh (cowrie-telnet)",
   "modules": {
     "A": {
       "score": 86.43,
@@ -67,7 +67,7 @@
   },
   "uhqs": 73.57,
   "grade": "C",
-  "notes": "Evaluation proof only. results-5.0.0 refresh of cowrie-telnet at fef0d620962e23194a9d34a048488f9c76c85835. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 refresh of cowrie-telnet at fef0d620962e23194a9d34a048488f9c76c85835. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",

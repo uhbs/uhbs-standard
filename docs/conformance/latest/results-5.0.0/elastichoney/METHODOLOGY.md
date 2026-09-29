@@ -1,6 +1,6 @@
-# Elastichoney (jordan-wright) (http) methodology (results-5.0.0)
+# Elastichoney (jordan-wright) (http) methodology (results-5.0.1)
 
-**UHBS:** 5.0.0 · strategy `ubuntu-wrapper` · base `ubuntu:latest`
+**UHBS:** 5.0.1 · strategy `ubuntu-wrapper` · base `ubuntu:latest`
 
 Upstream Dockerfile is golang:1.3-onbuild (unusable). Built with golang:1.22 and ran on ubuntu:latest; anonymous=true avoids outbound IP lookup.
 

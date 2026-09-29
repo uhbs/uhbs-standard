@@ -9,7 +9,7 @@ export const Footer = () => {
           <Shield className="w-6 h-6" aria-hidden />
         </div>
         <div className="font-mono text-sm text-muted-foreground mb-4">
-          Universal Honeypot Benchmarking Standard <span className="text-main">·</span> v5.0.0{" "}
+          Universal Honeypot Benchmarking Standard <span className="text-main">·</span> v5.0.1{" "}
           <span className="text-main">·</span> 2026
         </div>
         <p className="text-xs text-muted-foreground max-w-lg mx-auto mb-6">

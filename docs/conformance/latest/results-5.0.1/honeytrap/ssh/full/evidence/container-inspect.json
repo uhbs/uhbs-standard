@@ -1,0 +1,205 @@
+[
+    {
+        "Id": "107b50d32c5d58df3fed0959f088cddd0d6e0ca380eb0f67dfba295d8d59ca3a",
+        "Created": "2026-09-27T20:25:47.766070135Z",
+        "Path": "/honeytrap/honeytrap",
+        "Args": [
+            "--config",
+            "/config/config.toml",
+            "--data",
+            "/data/"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 75714,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:25:48.03050951Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:bf9df058337b7be44768d527f10483e653f771e3a54e97c47c56a563219f20a0",
+        "ResolvConfPath": "/var/lib/docker/containers/107b50d32c5d58df3fed0959f088cddd0d6e0ca380eb0f67dfba295d8d59ca3a/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/107b50d32c5d58df3fed0959f088cddd0d6e0ca380eb0f67dfba295d8d59ca3a/hostname",
+        "HostsPath": "/var/lib/docker/containers/107b50d32c5d58df3fed0959f088cddd0d6e0ca380eb0f67dfba295d8d59ca3a/hosts",
+        "LogPath": "/var/lib/docker/containers/107b50d32c5d58df3fed0959f088cddd0d6e0ca380eb0f67dfba295d8d59ca3a/107b50d32c5d58df3fed0959f088cddd0d6e0ca380eb0f67dfba295d8d59ca3a-json.log",
+        "Name": "/honeytrap-lab",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "107b50d32c5d58df3fed0959f088cddd0d6e0ca380eb0f67dfba295d8d59ca3a",
+                "LowerDir": "/var/lib/docker/overlay2/a2bad01e61486a29fe57fec061449100760f5c01404b0b87e2e4f441a3b991ed-init/diff:/var/lib/docker/overlay2/uuuo0pw510owzw3m3m2ia4x7i/diff:/var/lib/docker/overlay2/d91opczwfaelkae7iwanvayle/diff:/var/lib/docker/overlay2/9i1a3nuh40sf8wlxfckdhjsgb/diff:/var/lib/docker/overlay2/ubs0wk83c4qv1fvm18eruppnv/diff:/var/lib/docker/overlay2/88tas46dqlhkxxtegd5y4ea6w/diff:/var/lib/docker/overlay2/53bf7a2c084fc071cf85e74a8402f26eb44df8e0915eeb964026f7d919da4b3f/diff",
+                "MergedDir": "/var/lib/docker/overlay2/a2bad01e61486a29fe57fec061449100760f5c01404b0b87e2e4f441a3b991ed/merged",
+                "UpperDir": "/var/lib/docker/overlay2/a2bad01e61486a29fe57fec061449100760f5c01404b0b87e2e4f441a3b991ed/diff",
+                "WorkDir": "/var/lib/docker/overlay2/a2bad01e61486a29fe57fec061449100760f5c01404b0b87e2e4f441a3b991ed/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "107b50d32c5d",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "5900/tcp": {},
+                "8022/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": null,
+            "Image": "honeytrap:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": [
+                "/honeytrap/honeytrap",
+                "--config",
+                "/config/config.toml",
+                "--data",
+                "/data/"
+            ],
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "SandboxID": "b73f5a516d479abbc6103d4c84e5d2ee8bb94135f598e3eed3eacc1d709b91ec",
+            "SandboxKey": "/var/run/docker/netns/b73f5a516d47",
+            "Ports": {
+                "5900/tcp": null,
+                "8022/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "honeytrap-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "fc20e2c6fa17c337da5314f0a8cd13336430f791fe2dfb90c62350a19ba3eb07",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "3e:a5:2f:9a:cd:1a",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "honeytrap-lab",
+                        "107b50d32c5d"
+                    ]
+                }
+            }
+        }
+    }
+]

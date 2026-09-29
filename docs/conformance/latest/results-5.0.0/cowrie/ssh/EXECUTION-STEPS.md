@@ -1,6 +1,6 @@
 # Execution steps — `cowrie-ssh`
 
-Replication log for the UHBS 5.0.0 results-5.0.0 refresh. Commands ran from the UHBS repo root. Do not transplant archived 4.x letter grades.
+Replication log for the UHBS 5.0.1 results-5.0.1 refresh. Commands ran from the UHBS repo root. Do not transplant archived 4.x letter grades.
 
 ## Identity
 
@@ -11,7 +11,7 @@ Replication log for the UHBS 5.0.0 results-5.0.0 refresh. Commands ran from the 
 - commit: `fef0d620962e23194a9d34a048488f9c76c85835`
 - workspace clone: `.local/labs/cowrie`
 - telemetry: `.local/labs/cowrie-telemetry`
-- latest path: `docs/conformance/latest/results-5.0.0/cowrie/ssh`
+- latest path: `docs/conformance/latest/results-5.0.1/cowrie/ssh`
 - container: `uhbs-target-cowrie-ssh` · alias `cowrie-lab`:2222
 - strategy: `upstream-docker` · base: `gcr.io/distroless/python3-debian13`
 
@@ -50,28 +50,28 @@ docker run -d \
 # known_hosts: docs/conformance/labs/cowrie/known_hosts (mode 644; `[cowrie-lab]:2222`)
 ```
 
-Smoke from `uhbs:5.0.0` on `uhbs-lab` against `cowrie-lab:2222`. No host `-p` publish.
+Smoke from `uhbs:5.0.1` on `uhbs-lab` against `cowrie-lab:2222`. No host `-p` publish.
 
-## 4. Quick run (`uhbs:5.0.0`)
+## 4. Quick run (`uhbs:5.0.1`)
 
 ```bash
-python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.0.sqlite3 log-run-start \
-  --unit-id cowrie-ssh --mode quick --uhbs-version 5.0.0 \
-  --grader-image uhbs:5.0.0 --target-image cowrie/cowrie:latest \
+python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.1.sqlite3 log-run-start \
+  --unit-id cowrie-ssh --mode quick --uhbs-version 5.0.1 \
+  --grader-image uhbs:5.0.1 --target-image cowrie/cowrie:latest \
   --base-image gcr.io/distroless/python3-debian13 --strategy upstream-docker --airgap-attested
 
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/cowrie:/honeypot:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 \
-  uhbs:5.0.0 lab \
+  uhbs:5.0.1 lab \
     --inventory /work/docs/conformance/labs/cowrie/inventory.yaml \
     --target cowrie-ssh \
     --tps /work/docs/conformance/labs/cowrie/low_interaction_ssh_quick.yaml \
     --phases profile,static,sandbox,dynamic,score --modules A,B,C,D,E,F \
     --quick --skip-sast-tools --concurrency 10 --requests 50 \
-    --out /work/docs/conformance/latest/results-5.0.0/cowrie/ssh/quick \
+    --out /work/docs/conformance/latest/results-5.0.1/cowrie/ssh/quick \
     --environment "Quick Docker lab: cowrie-ssh" \
-  > docs/conformance/latest/results-5.0.0/cowrie/ssh/quick/uhbs-run.log 2>&1
+  > docs/conformance/latest/results-5.0.1/cowrie/ssh/quick/uhbs-run.log 2>&1
 ```
 
 ## 5. Telemetry seed
@@ -82,16 +82,16 @@ printf '%s\n' '# UHBS egress gateway canary — no HIT lines means clean' \
 docker logs uhbs-target-cowrie-ssh >> .local/labs/cowrie-telemetry/target.log 2>&1 || true
 ```
 
-## 6. Full run + asciinema (`uhbs:5.0.0-full`)
+## 6. Full run + asciinema (`uhbs:5.0.1-full`)
 
 ```bash
-python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.0.sqlite3 log-run-start \
-  --unit-id cowrie-ssh --mode full --uhbs-version 5.0.0 \
-  --grader-image uhbs:5.0.0-full --target-image cowrie/cowrie:latest \
+python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.1.sqlite3 log-run-start \
+  --unit-id cowrie-ssh --mode full --uhbs-version 5.0.1 \
+  --grader-image uhbs:5.0.1-full --target-image cowrie/cowrie:latest \
   --base-image gcr.io/distroless/python3-debian13 --strategy upstream-docker --airgap-attested
 
 asciinema rec --overwrite \
-  docs/conformance/latest/results-5.0.0/cowrie/ssh/full/proof/full-run.cast \
+  docs/conformance/latest/results-5.0.1/cowrie/ssh/full/proof/full-run.cast \
   -c /tmp/uhbs-full-cowrie-ssh.sh
 ```
 
@@ -106,15 +106,15 @@ docker run --rm --network uhbs-lab \
   -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
   -e UHBS_SSH_KNOWN_HOSTS=/work/docs/conformance/labs/cowrie/known_hosts \
-  uhbs:5.0.0-full lab \
+  uhbs:5.0.1-full lab \
     --inventory /work/docs/conformance/labs/cowrie/inventory.yaml \
     --target cowrie-ssh \
     --tps /work/docs/conformance/labs/cowrie/low_interaction_ssh_full.yaml \
     --phases profile,static,sandbox,dynamic,score --modules A,B,C,D,E,F \
     --concurrency 25 --requests 200 \
-    --out /work/docs/conformance/latest/results-5.0.0/cowrie/ssh/full \
+    --out /work/docs/conformance/latest/results-5.0.1/cowrie/ssh/full \
     --environment "Full Docker lab: cowrie-ssh" \
-  2>&1 | tee docs/conformance/latest/results-5.0.0/cowrie/ssh/full/uhbs-run.log
+  2>&1 | tee docs/conformance/latest/results-5.0.1/cowrie/ssh/full/uhbs-run.log
 ```
 
 ## 7. Fixture + verifier
@@ -127,9 +127,9 @@ python scripts/rebuild_mkdocs_nav.py
 
 ## Output paths
 
-- quick: `docs/conformance/latest/results-5.0.0/cowrie/ssh/quick/`
-- full: `docs/conformance/latest/results-5.0.0/cowrie/ssh/full/`
-- cast: `docs/conformance/latest/results-5.0.0/cowrie/ssh/full/proof/full-run.cast`
+- quick: `docs/conformance/latest/results-5.0.1/cowrie/ssh/quick/`
+- full: `docs/conformance/latest/results-5.0.1/cowrie/ssh/full/`
+- cast: `docs/conformance/latest/results-5.0.1/cowrie/ssh/full/proof/full-run.cast`
 - fixture: `docs/conformance/fixtures/cowrie-ssh.scorecard.json`
 
-Honest UHBS 5.0.0 outcome: **COMPLETE / GATE_FAILED (OOB LEAK) / ungraded**. Assessment `COMPLETE` · Critical controls `GATE_FAILED`. Do not copy archived 4.x grades.
+Honest UHBS 5.0.1 outcome: **COMPLETE / GATE_FAILED (OOB LEAK) / ungraded**. Assessment `COMPLETE` · Critical controls `GATE_FAILED`. Do not copy archived 4.x grades.

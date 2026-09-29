@@ -6,4 +6,4 @@
 
 Exact commands: [ssh/EXECUTION-STEPS.md](ssh/EXECUTION-STEPS.md).
 
-**Published results (UHBS 5.0.0):** full **UHQS 41.75 / F** · Safety Gate **GATE_PASSED**. Quick is incomplete (SAST skipped).
+**Published results (UHBS 5.0.1):** full **UHQS 41.75 / F** · Safety Gate **GATE_PASSED**. Quick is incomplete (SAST skipped).

@@ -7,4 +7,4 @@ Clone `https://github.com/thomaspatzke/Log4Pot.git` at `master` HEAD `5002b1fe0f
 
 Exact commands: [EXECUTION-STEPS.md](http/EXECUTION-STEPS.md).
 
-**Published results (UHBS 5.0.0):** INCOMPLETE / INCOMPLETE — ungraded unless the Safety Gate passed. See [`http/full/SCORECARD.txt`](http/full/SCORECARD.txt).
+**Published results (UHBS 5.0.1):** INCOMPLETE / INCOMPLETE — ungraded unless the Safety Gate passed. See [`http/full/SCORECARD.txt`](http/full/SCORECARD.txt).

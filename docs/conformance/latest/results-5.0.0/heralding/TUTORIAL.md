@@ -1,4 +1,4 @@
-# Tutorial: grade heralding with UHBS (results-5.0.0)
+# Tutorial: grade heralding with UHBS (results-5.0.1)
 
 **Status:** Informative · evaluation proof  
 **Target:** [https://github.com/johnnykv/heralding](https://github.com/johnnykv/heralding) · `master` @ `ac12724ab38c4e2fe78f07d1bc35e6e586ba69c0`  
@@ -7,8 +7,8 @@
 ## 0. Prerequisites
 
 ```bash
-docker build -t uhbs:5.0.0 .
-docker build -f Dockerfile.full -t uhbs:5.0.0-full .
+docker build -t uhbs:5.0.1 .
+docker build -f Dockerfile.full -t uhbs:5.0.1-full .
 docker network create uhbs-lab 2>/dev/null || true
 ```
 
@@ -26,4 +26,4 @@ See [`ftp/EXECUTION-STEPS.md`](ftp/EXECUTION-STEPS.md), [`smtp/EXECUTION-STEPS.m
 
 Exact commands: [`ftp/EXECUTION-STEPS.md`](ftp/EXECUTION-STEPS.md), [`smtp/EXECUTION-STEPS.md`](smtp/EXECUTION-STEPS.md), [`ssh/EXECUTION-STEPS.md`](ssh/EXECUTION-STEPS.md).
 
-**Published (results-5.0.0):** UHQS null / ungraded under `uhqs-v5.0-critical-gate-diagnostic`.
+**Published (results-5.0.1):** UHQS null / ungraded under `uhqs-v5.0-critical-gate-diagnostic`.

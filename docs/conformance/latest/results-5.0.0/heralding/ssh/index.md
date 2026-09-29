@@ -1,7 +1,7 @@
-# heralding — ssh (results-5.0.0)
+# heralding — ssh (results-5.0.1)
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 5.0.0 · **Class:** Low-Interaction · **Protocol:** `ssh`  
+**UHBS:** 5.0.1 · **Class:** Low-Interaction · **Protocol:** `ssh`  
 **Target id:** `heralding-ssh` · **Evaluated:** 2026-09-26  
 **Upstream:** `master` @ `ac12724ab38c4e2fe78f07d1bc35e6e586ba69c0`  
 **Verdict:** INCOMPLETE / INCOMPLETE / UHQS=22.23 grade=F (`uhqs-v5.1-always-grade`)
@@ -13,7 +13,7 @@
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../../fixtures/heralding-ssh.scorecard.json`](../../../../fixtures/heralding-ssh.scorecard.json)  
-Archive: [`../../../../archive/v5.0.0/heralding/ssh/`](../../../../archive/v5.0.0/heralding/ssh/)  
+Archive: [`../../../../archive/v5.0.1/heralding/ssh/`](../../../../archive/v5.0.1/heralding/ssh/)  
 Replication: [`EXECUTION-STEPS.md`](EXECUTION-STEPS.md)
 
 INCOMPLETE / UHQS=22.23 grade=F (Module D critical controls). Do not cite archived 4.x letter grades.
@@ -34,7 +34,7 @@ INCOMPLETE / UHQS=22.23 grade=F (Module D critical controls). Do not cite archiv
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : heralding-ssh
 System Profile Class  : Low-Interaction
@@ -57,7 +57,7 @@ Module E: Scalability & Latency     :  20.0/100       0.10     PARTIAL (P50=0.0m
 Module F: Static Code Audit         :  66.9/100       0.20     PARTIAL (bandit HIGH=11)
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : UHQS=22.23 grade=F — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (UHQS=22.23 grade=F — no composite UHQS)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (UHQS=22.23 grade=F — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
 scoring_model_id                      : uhqs-v5.1-always-grade
 ====================================================================================

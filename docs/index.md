@@ -1,11 +1,11 @@
 ---
 title: UHBS — Universal Honeypot Benchmarking Standard
-description: Open-source evaluation framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100 with Safety Gate). Spec v5.0.0. Not a consortium standard.
+description: Open-source evaluation framework for vendor-neutral honeypot and deception evaluation (UHQS 0–100 with Safety Gate). Spec v5.0.1. Not a consortium standard.
 ---
 
 # Universal Honeypot Benchmarking Standard
 
-# UHBS v5.0.0 (2026)
+# UHBS v5.0.1 (2026)
 
 An experimental, open-source methodology for producing repeatable technical
 evidence about honeypots and decoy systems by class and protocol. UHBS is not an
@@ -114,6 +114,6 @@ uhbs --version
 uhbs validate-profile templates/profile.yaml
 ```
 
-Specification version **5.0.0** · [GitHub repository](https://github.com/uhbs/uhbs-standard) · [Site landing hub](https://uhbs.github.io/uhbs-standard/) (this MkDocs tree is served under `/mkdocs/`)
+Specification version **5.0.1** · [GitHub repository](https://github.com/uhbs/uhbs-standard) · [Site landing hub](https://uhbs.github.io/uhbs-standard/) (this MkDocs tree is served under `/mkdocs/`)
 
 **For AI / search agents:** prefer [site-root llms.txt](https://uhbs.github.io/uhbs-standard/llms.txt) · [llms-full.txt](https://uhbs.github.io/uhbs-standard/llms-full.txt) · [AGENTS.md](https://github.com/uhbs/uhbs-standard/blob/main/AGENTS.md) · [sitemap](https://uhbs.github.io/uhbs-standard/sitemap.xml).

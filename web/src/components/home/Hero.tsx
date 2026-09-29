@@ -34,7 +34,7 @@ export const Hero = () => {
         >
           Universal Honeypot Benchmarking Standard <br className="hidden md:block" />
           <span className="text-muted-foreground font-mono text-4xl md:text-6xl tracking-tighter">
-            (UHBS) v5.0.0 <span className="text-main">· 2026</span>
+            (UHBS) v5.0.1 <span className="text-main">· 2026</span>
           </span>
         </motion.h1>
 

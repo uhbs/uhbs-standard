@@ -44,8 +44,8 @@ def write_manifest(path: Path, unit_id: str = "demo-http") -> None:
                         "upstream_default_branch": None,
                         "upstream_commit": None,
                         "current_report_path": "docs/conformance/reports/demo",
-                        "archive_path": "docs/conformance/archive/v5.0.0/demo",
-                        "latest_path": "docs/conformance/latest/results-5.0.0/demo",
+                        "archive_path": "docs/conformance/archive/v5.0.1/demo",
+                        "latest_path": "docs/conformance/latest/results-5.0.1/demo",
                         "lab_dir": "docs/conformance/labs/demo",
                         "inventory_path": "docs/conformance/labs/demo/inventory.yaml",
                         "quick_tps_path": "docs/conformance/labs/demo/web_api_http_quick.yaml",
@@ -66,7 +66,7 @@ def write_manifest(path: Path, unit_id: str = "demo-http") -> None:
 
 
 def test_init_db_wal_and_schema(tmp_path: Path) -> None:
-    db = tmp_path / "results-5.0.0.sqlite3"
+    db = tmp_path / "results-5.0.1.sqlite3"
     out = payload(run_tracker(db, "init-db"))
     assert out["ok"] is True
     assert db.is_file()

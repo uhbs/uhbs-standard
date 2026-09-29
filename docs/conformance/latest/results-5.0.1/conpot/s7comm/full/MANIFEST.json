@@ -1,0 +1,70 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "b7bdb804e2ddbde92475c8cb85408d16f323bcfff070de31f64a4d2c9f074430"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "939304180fa172052c689ab82aec24cc9269ccfb0db680e51ef9ab24a88b2e40"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "939304180fa172052c689ab82aec24cc9269ccfb0db680e51ef9ab24a88b2e40"
+    },
+    {
+      "path": "evidence/container-inspect.json",
+      "sha256": "74b8c8b015cf46e7b0d43ef0e5d186860e0c179d30be205cf92d8c6e2cc1236b"
+    },
+    {
+      "path": "evidence/container-inspect.json.sha256",
+      "sha256": "28d430b18dd99cc63ece41c7c65d060dbec00d4c77b8e03f640621deb7135af5"
+    },
+    {
+      "path": "evidence/egress-gateway.log",
+      "sha256": "33ad3b3ad7dfae6134b11c72ee8b4721f23118e775c8e6438fc1f5f91ebff2db"
+    },
+    {
+      "path": "evidence/egress-gateway.log.sha256",
+      "sha256": "f06465267b136fefe470fed3b6056a0f8da12dc11a171f4d68f627084f06b6b9"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "b8382fc25d9cef056503743bddfcdbe926e773d209a40b0a1a4aa1ca730ab4ca"
+    },
+    {
+      "path": "proof/full-run.cast",
+      "sha256": "0337feab484eb2a6fa92e25cc2153cf12879cd03b0db49a764d84b09888cf79c"
+    },
+    {
+      "path": "report.json",
+      "sha256": "4bfc85f551533b2693a581bb8467435abf53b207163ba35c7a072e361028a149"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "391bc1680cd7970772def5b1bfa3c97caa5267d84ff70b6f364c01e4fddc1941"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "aa9d55134d609d81b58c3dde0579213823224617bebdf849fefb17d2e909f674"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "2dcfe9081612942ee055db71f6f17c08f1f878b26bf89f1149fd7ffb55917a54"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "e7457fae4923ee6be3a112d5b5d9bf906249769a6fcb45c739528686eb7524d5"
+    }
+  ],
+  "extra": {
+    "target": "conpot-s7comm",
+    "uhqs": 69.2,
+    "grade": "GRADE D (Needs Remediation)",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
+    "assessment_status": "INCOMPLETE",
+    "evidence_pack": "evidence-pack.json",
+    "evidence_manifest_digest": "b6aeacd4a928c47fc8b4bbc46ecfe0078bd5331acbdcc3d5632bc505e3b284c3"
+  }
+}

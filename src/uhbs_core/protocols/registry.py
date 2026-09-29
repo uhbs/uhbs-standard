@@ -35,6 +35,7 @@ from .oracle import OraclePlugin
 from .pjl import PJLPlugin
 from .pop3 import POP3Plugin
 from .postgres import PostgresPlugin
+from .pptp import PPTPPlugin
 from .rdp import RDPPlugin
 from .redis import RedisPlugin
 from .s7comm import S7commPlugin
@@ -46,6 +47,7 @@ from .socks5 import SOCKS5Plugin
 from .ssh import SSHPlugin
 from .telnet import TelnetPlugin
 from .tftp import TFTPPlugin
+from .upnp import UPnPPlugin
 from .vnc import VNCPlugin
 
 _REGISTRY: dict[str, ProtocolPlugin] = {}
@@ -135,6 +137,10 @@ def get_plugin(name: str) -> ProtocolPlugin:
         key = "socks5"
     if key in {"es", "opensearch", "elastic"}:
         key = "elasticsearch"
+    if key in {"ssdp", "upnp-ssdp", "upnp/ssdp"}:
+        key = "upnp"
+    if key in {"pptp-vpn", "gre-pptp"}:
+        key = "pptp"
     if key in _REGISTRY and key != "generic":
         return _REGISTRY[key]
     if key == "generic" and "generic" in _REGISTRY:
@@ -231,7 +237,9 @@ def _bootstrap() -> None:
         MssqlPlugin(),
         OraclePlugin(),
         PJLPlugin(),
+        PPTPPlugin(),
         SOCKS5Plugin(),
+        UPnPPlugin(),
         GenericTCPPlugin(),
     ):
         register(p)

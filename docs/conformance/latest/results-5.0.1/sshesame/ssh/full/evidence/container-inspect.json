@@ -1,0 +1,226 @@
+[
+    {
+        "Id": "8d5b530c682f32ed0073550eaf7c662f2fd785c3abe259cb920919e366af93a7",
+        "Created": "2026-09-27T20:54:01.668795877Z",
+        "Path": "/sshesame",
+        "Args": [
+            "-config",
+            "/config.yaml",
+            "-data_dir",
+            "/data"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 70908,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:54:01.847265168Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:4061a777a1e5bf393668f109fd8344de5a1708a12ffd891252ed4fec46b571c5",
+        "ResolvConfPath": "/var/lib/docker/containers/8d5b530c682f32ed0073550eaf7c662f2fd785c3abe259cb920919e366af93a7/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/8d5b530c682f32ed0073550eaf7c662f2fd785c3abe259cb920919e366af93a7/hostname",
+        "HostsPath": "/var/lib/docker/containers/8d5b530c682f32ed0073550eaf7c662f2fd785c3abe259cb920919e366af93a7/hosts",
+        "LogPath": "/var/lib/docker/containers/8d5b530c682f32ed0073550eaf7c662f2fd785c3abe259cb920919e366af93a7/8d5b530c682f32ed0073550eaf7c662f2fd785c3abe259cb920919e366af93a7-json.log",
+        "Name": "/sshesame-lab",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/sshesame-telemetry:/data"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "8d5b530c682f32ed0073550eaf7c662f2fd785c3abe259cb920919e366af93a7",
+                "LowerDir": "/var/lib/docker/overlay2/1637ae7b4d549b33653fca5d10d79bacc114fd27bb2716688fcfa1f448043a8d-init/diff:/var/lib/docker/overlay2/7419931bc07682059592a47661f5142e518846b3ab58253aef2b706e38a86ca6/diff:/var/lib/docker/overlay2/a20cdbb8e0a32382031440313409877f487581be0bdd166278635326fcd89377/diff:/var/lib/docker/overlay2/d5fb4b92d17861fc9476df99732a21eb3cfab31624e45171a320a089bcc03025/diff:/var/lib/docker/overlay2/d9bb577562ed5af777949aaa91aaffe6de685cd9f5b71f0d53d0c3406cb282e4/diff:/var/lib/docker/overlay2/262277bd9cc7960a50c0382741cd1056d85258d76a1c43a68c93d2efefed7b90/diff:/var/lib/docker/overlay2/44efe30bd6b34e49f3f959f3fdbd27288dcb8be0697a934f55a14b282a05afab/diff:/var/lib/docker/overlay2/ccf668b1fc0d6cf78619ca62aa7161125ba579b31edb8ce4ea1d76a9bd65fe22/diff:/var/lib/docker/overlay2/bc4ac474b06900f4fe08cf78fef31a3bc525e91bbc2bddf29c1ab8876a8cfab4/diff:/var/lib/docker/overlay2/6e32aeb911a8c7fb222d9fef59e680f9275a1b1126828a42984b73b8ebcdecaa/diff:/var/lib/docker/overlay2/86d062d0dfc47e0203cd8f211a5184402a4c4c6bcff2a76aec4e6a9871646d27/diff:/var/lib/docker/overlay2/417d0ecc327258f3f1d8f12319960a7505afcfccec85b11d77914a5a0ee907bd/diff:/var/lib/docker/overlay2/987efc27f0b073f76340c1db8cb84e88749765e415a895418d981f40083dff4f/diff:/var/lib/docker/overlay2/2437806b73ab657e874115a634c62ef0151a3b7cc4361b11f75322c6bb541d98/diff:/var/lib/docker/overlay2/1165d28c610da65fff7520d4b3299bb7bc7228c2a8174dda5dc7d336cb00933e/diff:/var/lib/docker/overlay2/04fae359b4af1e1170f002c1d63a809b078831686a0acb4e378f3a115e07de43/diff",
+                "MergedDir": "/var/lib/docker/overlay2/1637ae7b4d549b33653fca5d10d79bacc114fd27bb2716688fcfa1f448043a8d/merged",
+                "UpperDir": "/var/lib/docker/overlay2/1637ae7b4d549b33653fca5d10d79bacc114fd27bb2716688fcfa1f448043a8d/diff",
+                "WorkDir": "/var/lib/docker/overlay2/1637ae7b4d549b33653fca5d10d79bacc114fd27bb2716688fcfa1f448043a8d/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/sshesame-telemetry",
+                "Destination": "/data",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "8d5b530c682f",
+            "Domainname": "",
+            "User": "0",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "2022/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt"
+            ],
+            "Cmd": [
+                "/sshesame",
+                "-config",
+                "/config.yaml",
+                "-data_dir",
+                "/data"
+            ],
+            "Image": "ghcr.io/jaksi/sshesame:latest",
+            "Volumes": {
+                "/data": {}
+            },
+            "WorkingDir": "/",
+            "Entrypoint": null,
+            "Labels": {
+                "org.opencontainers.image.created": "2024-08-03T17:42:09.633Z",
+                "org.opencontainers.image.description": "An easy to set up and use SSH honeypot, a fake SSH server that lets anyone in and logs their activity",
+                "org.opencontainers.image.licenses": "Apache-2.0",
+                "org.opencontainers.image.revision": "062795684a859d36a06979e39498c476dcd66970",
+                "org.opencontainers.image.source": "https://github.com/jaksi/sshesame",
+                "org.opencontainers.image.title": "sshesame",
+                "org.opencontainers.image.url": "https://github.com/jaksi/sshesame",
+                "org.opencontainers.image.version": "v0.0.39"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "abcd6e0b0bc04f08dbb95a8bb69712fba60a00e121bb58a18d18706158c46af1",
+            "SandboxKey": "/var/run/docker/netns/abcd6e0b0bc0",
+            "Ports": {
+                "2022/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "sshesame-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "500ff1fd9edcc50bce0d221f51e94bf14c922355fa5cec43bdd86f121f248b79",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "82:2e:3e:23:64:15",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "sshesame-lab",
+                        "8d5b530c682f"
+                    ]
+                }
+            }
+        }
+    }
+]

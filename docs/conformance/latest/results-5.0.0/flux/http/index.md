@@ -1,7 +1,7 @@
-# flux (http) — UHBS lab reports (results-5.0.0)
+# flux (http) — UHBS lab reports (results-5.0.1)
 
 **Class / protocol:** `Web-API` · `http` · port `8080`  
-**UHBS:** 5.0.0 · evaluation proof only  
+**UHBS:** 5.0.1 · evaluation proof only  
 **Upstream:** `main` @ `0db4b8b0b87243d2061137212e49311bfbbd38b1`
 
 ## Results at a glance
@@ -13,7 +13,7 @@
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../fixtures/flux-web-api.scorecard.json`](../../../fixtures/flux-web-api.scorecard.json)  
-Archive: [`../../../../archive/v5.0.0/flux/`](../../../../archive/v5.0.0/flux/)
+Archive: [`../../../../archive/v5.0.1/flux/`](../../../../archive/v5.0.1/flux/)
 
 | Document | Purpose |
 | --- | --- |

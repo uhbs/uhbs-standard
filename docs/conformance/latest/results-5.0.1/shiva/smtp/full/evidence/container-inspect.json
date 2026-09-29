@@ -1,0 +1,215 @@
+[
+    {
+        "Id": "ee8dcd06179721b9d0897502b637a508924d3d38d4a55342055e3671f1686d81",
+        "Created": "2026-09-27T20:48:03.217099461Z",
+        "Path": "receiver/bin/python3",
+        "Args": [
+            "receiver/run_server.py"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 52448,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:48:03.451350961Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:ba1ef65b29a3a75e9cd30a1f622da91ee5970a17c8f28816b42711b7e5bb4a44",
+        "ResolvConfPath": "/var/lib/docker/containers/ee8dcd06179721b9d0897502b637a508924d3d38d4a55342055e3671f1686d81/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/ee8dcd06179721b9d0897502b637a508924d3d38d4a55342055e3671f1686d81/hostname",
+        "HostsPath": "/var/lib/docker/containers/ee8dcd06179721b9d0897502b637a508924d3d38d4a55342055e3671f1686d81/hosts",
+        "LogPath": "/var/lib/docker/containers/ee8dcd06179721b9d0897502b637a508924d3d38d4a55342055e3671f1686d81/ee8dcd06179721b9d0897502b637a508924d3d38d4a55342055e3671f1686d81-json.log",
+        "Name": "/shiva-lab",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/shiva/data/mails:/tmp/spam_queue"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "ee8dcd06179721b9d0897502b637a508924d3d38d4a55342055e3671f1686d81",
+                "LowerDir": "/var/lib/docker/overlay2/ce5239052c3c99bebdb36ca4c9cc17a6e65c8c9796cd4f400cd7a3a8812b92cc-init/diff:/var/lib/docker/overlay2/cbwmol28jhtvu5l4xcbennd1q/diff:/var/lib/docker/overlay2/1lujcarjdkocop01jvfy3gcd8/diff:/var/lib/docker/overlay2/kks0q7j4orw2rx2hf553w34x3/diff:/var/lib/docker/overlay2/9azg6hzfb4sccg6hmh4th75ep/diff:/var/lib/docker/overlay2/zq3pmccem50r71uicrrprywa0/diff:/var/lib/docker/overlay2/qa81bz6dgsjdnv3y69b1julma/diff:/var/lib/docker/overlay2/op8uk47h0et5solb608g9qgyq/diff:/var/lib/docker/overlay2/pl68w2p0a08ke40w3vvmiypju/diff:/var/lib/docker/overlay2/ipyghl1c2xzutaxmbo7p8ow9k/diff:/var/lib/docker/overlay2/718ad4c16f134b1d8e22599361412775223917190b4b365f03ad122cb688dfa8/diff",
+                "MergedDir": "/var/lib/docker/overlay2/ce5239052c3c99bebdb36ca4c9cc17a6e65c8c9796cd4f400cd7a3a8812b92cc/merged",
+                "UpperDir": "/var/lib/docker/overlay2/ce5239052c3c99bebdb36ca4c9cc17a6e65c8c9796cd4f400cd7a3a8812b92cc/diff",
+                "WorkDir": "/var/lib/docker/overlay2/ce5239052c3c99bebdb36ca4c9cc17a6e65c8c9796cd4f400cd7a3a8812b92cc/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/shiva/data/mails",
+                "Destination": "/tmp/spam_queue",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "ee8dcd061797",
+            "Domainname": "",
+            "User": "shiva-spampot",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "2525/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "QUEUE_DIR=/tmp/spam_queue/",
+                "SHIVA_HOST=0.0.0.0",
+                "SHIVA_PORT=2525",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "receiver/bin/python3",
+                "receiver/run_server.py"
+            ],
+            "Image": "shiva-receiver:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/home/shiva-spampot",
+            "Entrypoint": null,
+            "Labels": {
+                "maintainer": "c0dist.g4h@gmail.com",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "20.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "741d8771c8c165b3f71948255bf3cc9e8c46b519640e9f171977b0291bdee497",
+            "SandboxKey": "/var/run/docker/netns/741d8771c8c1",
+            "Ports": {
+                "2525/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "shiva-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "4f67928037ef44625ce1de7bb4a68333ee1b0bb589429707b7254131ce8409bf",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "76:51:d5:b3:59:f6",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "shiva-lab",
+                        "ee8dcd061797"
+                    ]
+                }
+            }
+        }
+    }
+]

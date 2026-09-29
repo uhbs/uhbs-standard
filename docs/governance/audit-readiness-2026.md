@@ -1,7 +1,7 @@
 # 2026 Audit-Readiness Checklist
 
 **Status:** Informative  
-**Purpose:** Pre-publication review for a UHBS 5.0.0 assessment
+**Purpose:** Pre-publication review for a UHBS 5.0.1 assessment
 
 ## Scope and authority
 

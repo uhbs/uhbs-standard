@@ -1,7 +1,7 @@
 # Mapping Index
 
 **Status:** Informative<br>
-**UHBS target:** 5.0.0 · `uhqs-v5.0-critical-gate-diagnostic`<br>
+**UHBS target:** 5.0.1 · `uhqs-v5.0-critical-gate-diagnostic`<br>
 **Review date:** 2026-09-18
 
 Informative interoperability mappings for readers evaluating the UHBS framework
@@ -54,5 +54,5 @@ Mappings are **informative**. They do not replace the verbatim SCORECARD /
 `report.json` proof for any graded product under `docs/conformance/`, and they
 do not establish that an external control or legal duty is satisfied. Prefer
 absolute URLs on the published docs site when sharing externally. UHBS remains
-an experimental open-source evaluation framework (Apache-2.0, v5.0.0) — not an
+an experimental open-source evaluation framework (Apache-2.0, v5.0.1) — not an
 adopted industry or academic standard.

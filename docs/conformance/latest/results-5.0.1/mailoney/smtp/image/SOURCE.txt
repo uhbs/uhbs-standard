@@ -1,0 +1,5 @@
+source=.local/labs/mailoney/Dockerfile
+image=mailoney:uhbs-lab
+digest=sha256:f6939f6ea1d449d4a839a7ba9ed42070656369389516ce647422e8801c89833a
+dockerfile=docs/conformance/latest/results-5.0.1/mailoney/smtp/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/mailoney/smtp/Dockerfile.pin

@@ -1,0 +1,260 @@
+[
+    {
+        "Id": "1305c7620b6bc4238c0dd38b2b8d96aa435548eeae5522e0d53d84eb71392ec1",
+        "Created": "2026-09-28T11:06:03.172138591Z",
+        "Path": "twistd",
+        "Args": [
+            "-n",
+            "-y",
+            "kippo.tac",
+            "--pidfile",
+            "kippo.pid"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 42960,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-28T11:06:03.344052799Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:135178322e022b9cbe1e945aeca712b155bf19c7aa538acef5d10c9f180ef296",
+        "ResolvConfPath": "/var/lib/docker/containers/1305c7620b6bc4238c0dd38b2b8d96aa435548eeae5522e0d53d84eb71392ec1/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/1305c7620b6bc4238c0dd38b2b8d96aa435548eeae5522e0d53d84eb71392ec1/hostname",
+        "HostsPath": "/var/lib/docker/containers/1305c7620b6bc4238c0dd38b2b8d96aa435548eeae5522e0d53d84eb71392ec1/hosts",
+        "LogPath": "/var/lib/docker/containers/1305c7620b6bc4238c0dd38b2b8d96aa435548eeae5522e0d53d84eb71392ec1/1305c7620b6bc4238c0dd38b2b8d96aa435548eeae5522e0d53d84eb71392ec1-json.log",
+        "Name": "/uhbs-target-kippo-ssh",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/kippo-dl:/app/dl:rw",
+                "/Users/mz/Projects/uhbs-standard/.local/labs/kippo-telemetry:/app/log:rw",
+                "/Users/mz/Projects/uhbs-standard/.local/labs/kippo-telemetry:/telemetry:rw",
+                "/Users/mz/Projects/uhbs-standard/.local/labs/kippo/kippo.cfg.dist:/app/kippo.cfg:ro",
+                "/Users/mz/Projects/uhbs-standard/.local/labs/kippo-data:/app/data:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "1305c7620b6bc4238c0dd38b2b8d96aa435548eeae5522e0d53d84eb71392ec1",
+                "LowerDir": "/var/lib/docker/overlay2/8ddc77638a4ff9273001b8fb16a15f946d411c2c622aeac45d926321713af384-init/diff:/var/lib/docker/overlay2/hsgom72dsgme3a33e4vm7xezt/diff:/var/lib/docker/overlay2/ssm0opqb6vmmrfi0ada9hbagl/diff:/var/lib/docker/overlay2/n1o5djg5suns2ltcgn7h9ocmm/diff:/var/lib/docker/overlay2/mqs2ntpsmefb9w40enfjn98o8/diff:/var/lib/docker/overlay2/1a56b0fed0537904af990f7cc753ca1e2c511cfbbc367314ef0f85e9856bc73d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/8ddc77638a4ff9273001b8fb16a15f946d411c2c622aeac45d926321713af384/merged",
+                "UpperDir": "/var/lib/docker/overlay2/8ddc77638a4ff9273001b8fb16a15f946d411c2c622aeac45d926321713af384/diff",
+                "WorkDir": "/var/lib/docker/overlay2/8ddc77638a4ff9273001b8fb16a15f946d411c2c622aeac45d926321713af384/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/kippo-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/kippo-data",
+                "Destination": "/app/data",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/kippo-dl",
+                "Destination": "/app/dl",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/kippo/kippo.cfg.dist",
+                "Destination": "/app/kippo.cfg",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/kippo-telemetry",
+                "Destination": "/app/log",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "1305c7620b6b",
+            "Domainname": "",
+            "User": "app",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "2222/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "twistd",
+                "-n",
+                "-y",
+                "kippo.tac",
+                "--pidfile",
+                "kippo.pid"
+            ],
+            "Image": "kippo:uhbs-lab",
+            "Volumes": {
+                "/app/data": {},
+                "/app/dl": {},
+                "/app/kippo.cfg": {},
+                "/app/log": {}
+            },
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "uhbs.unit": "kippo-ssh"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "70a91bb316f4ba2b81bed4dbe1392d2054b725dfa12192215c2ba41d147cc5e3",
+            "SandboxKey": "/var/run/docker/netns/70a91bb316f4",
+            "Ports": {
+                "2222/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "kippo-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "9c47ecc600f16a8cc4e1edc91a0d8630ea7ce30de5e1ac2b3ee45d75ac9fbfe2",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.4",
+                    "MacAddress": "32:34:77:35:42:07",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-kippo-ssh",
+                        "kippo-lab",
+                        "1305c7620b6b"
+                    ]
+                }
+            }
+        }
+    }
+]

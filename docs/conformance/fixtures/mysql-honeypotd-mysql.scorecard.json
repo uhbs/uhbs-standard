@@ -1,12 +1,12 @@
 {
-  "uhbs_version": "5.0.0",
+  "uhbs_version": "5.0.1",
   "target": {
     "name": "mysql-honeypotd (MySQL :3306)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/mysql-honeypotd/low_interaction_mysql_full.yaml"
   },
   "evaluated_at": "2026-09-26",
-  "auditor": "UHBS-Lab results-5.0.0 refresh (mysql-honeypotd-mysql)",
+  "auditor": "UHBS-Lab results-5.0.1 refresh (mysql-honeypotd-mysql)",
   "modules": {
     "A": {
       "score": 78.43,
@@ -67,7 +67,7 @@
   },
   "uhqs": 68.37,
   "grade": "D",
-  "notes": "Evaluation proof only. results-5.0.0 refresh of mysql-honeypotd-mysql at 955ecce4ce22c8588da1f023dfd790099755d575. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 refresh of mysql-honeypotd-mysql at 955ecce4ce22c8588da1f023dfd790099755d575. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",

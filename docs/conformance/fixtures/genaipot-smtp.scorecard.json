@@ -1,12 +1,12 @@
 {
-  "uhbs_version": "5.0.0",
+  "uhbs_version": "5.0.1",
   "target": {
     "name": "GenAIPot (SMTP :25)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/genaipot/low_interaction_smtp_full.yaml"
   },
   "evaluated_at": "2026-09-26",
-  "auditor": "UHBS-Lab results-5.0.0 refresh (genaipot-smtp)",
+  "auditor": "UHBS-Lab results-5.0.1 refresh (genaipot-smtp)",
   "modules": {
     "A": {
       "score": 16.43,
@@ -67,7 +67,7 @@
   },
   "uhqs": 45.97,
   "grade": "F",
-  "notes": "Evaluation proof only. results-5.0.0 refresh of genaipot-smtp at 205ffe40008f2e76e0decdb01bc19bf8e00acd8a. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 refresh of genaipot-smtp at 205ffe40008f2e76e0decdb01bc19bf8e00acd8a. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",

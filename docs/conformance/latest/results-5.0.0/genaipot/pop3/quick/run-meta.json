@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "5.0.0",
+  "uhbs_version": "5.0.1",
   "run_mode": "quick",
   "evaluated_at": "2026-09-26T14:41:50Z",
   "proof_label": "GenAIPot (POP3 :110)",
@@ -18,8 +18,8 @@
     "container_runtime_strategy": "upstream-docker"
   },
   "grader": {
-    "package_version": "5.0.0",
-    "docker_image": "uhbs:5.0.0",
+    "package_version": "5.0.1",
+    "docker_image": "uhbs:5.0.1",
     "docker_image_id": "sha256:aa436c35214d225126fd90db1dcbe307cbdbda9cad4c831efc068bd8901f6ba6",
     "inventory": "docs/conformance/labs/genaipot/inventory.yaml",
     "tps": "docs/conformance/labs/genaipot/low_interaction_pop3_quick.yaml",
@@ -71,7 +71,7 @@
     "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
   },
   "limitations": [
-    "Published UHBS 5.0.0 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Published UHBS 5.0.1 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
     "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1); Docker Desktop lab, not a physical air-gap.",
     "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement.",
     "Do not transplant archived 4.x letter grades.",
