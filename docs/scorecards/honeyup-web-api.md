@@ -5,7 +5,7 @@
 
 | Run | UHQS | Grade | Proof |
 | --- | ---: | --- | --- |
-| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.1/honeyup/http/quick/SCORECARD.txt) |
+| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.1/honeyup/http/index.md) |
 | **Full** | **ungraded** | **—** | Verbatim SCORECARD below |
 
 **Hub:** [honeyup](../conformance/latest/results-5.0.1/honeyup/http/index.md) · [Tutorial](../conformance/latest/results-5.0.1/honeyup/http/../TUTORIAL.md) · [Execution steps](../conformance/latest/results-5.0.1/honeyup/http/EXECUTION-STEPS.md)
