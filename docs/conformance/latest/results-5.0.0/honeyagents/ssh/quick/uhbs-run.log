@@ -2,7 +2,7 @@ NOTICE: UHBS/AEP are for lab/sandbox evaluation of decoys. Do not run them again
 ==> UHBS v4 target=honeyagents-ssh class=Low-Interaction protocols=['ssh'] phases=['profile', 'static', 'sandbox', 'dynamic', 'score']
     plugins available: bacnet, bluetooth, coap, dhcp, dns, elasticsearch, ftp, generic, git, http, httpproxy, imap, ipp, irc, kubernetes, ldap, mcp, memcache, modbus, mongodb, mqtt, mssql, mysql, ntp, oracle, pjl, pop3, postgres, rdp, redis, s7comm, sip, smb, smtp, snmp, socks5, ssh, telnet, tftp, vnc
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : honeyagents-ssh
 System Profile Class  : Low-Interaction
@@ -25,11 +25,11 @@ Module E: Scalability & Latency     :  20.0/100       0.10     PARTIAL (P50=0.0m
 Module F: Static Code Audit         :   0.0/100       0.20     INCOMPLETE (Module F white-box audit (keys/prompts/SAST/VFS))
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : Ungraded — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (Ungraded — no composite UHQS)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (Ungraded — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
 scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
 ====================================================================================
 
-Wrote /work/docs/conformance/latest/results-5.0.0/honeyagents/ssh/quick/report.json
-Wrote /work/docs/conformance/latest/results-5.0.0/honeyagents/ssh/quick/evidence-pack.json
-Wrote /work/docs/conformance/latest/results-5.0.0/honeyagents/ssh/quick/MANIFEST.json
+Wrote /work/docs/conformance/latest/results-5.0.1/honeyagents/ssh/quick/report.json
+Wrote /work/docs/conformance/latest/results-5.0.1/honeyagents/ssh/quick/evidence-pack.json
+Wrote /work/docs/conformance/latest/results-5.0.1/honeyagents/ssh/quick/MANIFEST.json

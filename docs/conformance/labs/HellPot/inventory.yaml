@@ -11,3 +11,17 @@ sites:
     telemetry_dir: /telemetry
     tps: /work/docs/conformance/labs/HellPot/web_api_http_full.yaml
     container_image: hellpot:uhbs-lab
+
+  HellPot-git:
+    kind: generic
+    class: Low-Interaction
+    host: HellPot-lab
+    protocol: git
+    protocols: [git]
+    port: 9418
+    ports:
+      git: 9418
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/HellPot/low_interaction_git_full.yaml
+    container_image: hellpot:uhbs-lab

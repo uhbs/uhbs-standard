@@ -1,20 +1,20 @@
-# Scorecard: HellPot — http (results-5.0.0)
+# Scorecard: HellPot — http (results-5.0.1)
 
-**UHBS:** **5.0.0** · **Class:** Web-API · **Protocol:** `http`  
+**UHBS:** **5.0.1** · **Class:** Web-API · **Protocol:** `http`  
 **Verdict:** INCOMPLETE / INCOMPLETE (ungraded unless GATE_PASSED)
 
 | Run | UHQS | Grade | Proof |
 | --- | ---: | --- | --- |
-| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.0/HellPot/http/quick/SCORECARD.txt) |
+| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.1/HellPot/http/quick/SCORECARD.txt) |
 | **Full** | **ungraded** | **—** | Verbatim SCORECARD below |
 
-**Hub:** [HellPot](../conformance/latest/results-5.0.0/HellPot/http/index.md) · [Tutorial](../conformance/latest/results-5.0.0/HellPot/http/../TUTORIAL.md) · [Execution steps](../conformance/latest/results-5.0.0/HellPot/http/EXECUTION-STEPS.md)
+**Hub:** [HellPot](../conformance/latest/results-5.0.1/HellPot/http/index.md) · [Tutorial](../conformance/latest/results-5.0.1/HellPot/http/../TUTORIAL.md) · [Execution steps](../conformance/latest/results-5.0.1/HellPot/http/EXECUTION-STEPS.md)
 
 ## Verbatim full SCORECARD
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : HellPot-http
 System Profile Class  : Web-API
@@ -37,7 +37,7 @@ Module E: Scalability & Latency     : 100.0/100       0.15     PASSED (service a
 Module F: Static Code Audit         :  73.2/100       0.20     PASSED (trivy not installed — not tested (zero credit))
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : Ungraded — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (Ungraded — no composite UHQS)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (Ungraded — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
 scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
 ====================================================================================

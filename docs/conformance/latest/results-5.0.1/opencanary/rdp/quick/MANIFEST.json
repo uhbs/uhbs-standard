@@ -1,0 +1,58 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "9f3fdbebaff46f4843b013395bf0dcf0b9255561b078078f78d58a93bcdf2631"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "b0d8fc8d5dacff8c98b87ec134aad262f48bb321684800b4f4d4bdf493b85e25"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "b0d8fc8d5dacff8c98b87ec134aad262f48bb321684800b4f4d4bdf493b85e25"
+    },
+    {
+      "path": "evidence/container-inspect.json",
+      "sha256": "ed17eb06c5346989cae43915964dbf4a14afdb9b9dd459d722e17f473ea6e734"
+    },
+    {
+      "path": "evidence/container-inspect.json.sha256",
+      "sha256": "6187bcc480342f745cd2f4029d07cfdfd606b5b7539561c5cf258f877cbe2686"
+    },
+    {
+      "path": "evidence/egress-gateway.log",
+      "sha256": "d8f0b7dc765d396bbd4f8c2e5e49bb06c74de77849322a1ec7c6c8055e7b4d7c"
+    },
+    {
+      "path": "evidence/egress-gateway.log.sha256",
+      "sha256": "c55a8f16afc7901697520d3f2cc5fdc21b103f27108fb0768ccb44eff2e1e66d"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "59891ba0e0bfff7917ce4860c624acf1fae8b002ec71c95b725aebe6abcf6446"
+    },
+    {
+      "path": "report.json",
+      "sha256": "261e11dbccef6766bfdac94c80f71132aa328247c688da69814bfe8aed57bd49"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "3b2d8622653e3466e23083cb7ebf369dadd0d8f212a44447c24121f0445caa26"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "d6dea40f41299a2c56f49f676e3d2001af442dacd2b8a06123164a17ed8408e5"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-rdp",
+    "uhqs": 22.47,
+    "grade": "GRADE F (Fail)",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
+    "assessment_status": "INCOMPLETE",
+    "evidence_pack": "evidence-pack.json",
+    "evidence_manifest_digest": "d451673c60e70ad1cffc2d065d75a2945b357ea9b828ae1d3b55b2a9541191b0"
+  }
+}

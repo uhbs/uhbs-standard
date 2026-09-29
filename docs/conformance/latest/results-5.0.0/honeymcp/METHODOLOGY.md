@@ -1,7 +1,7 @@
-# Methodology: HoneyMCP UHBS lab (results-5.0.0)
+# Methodology: HoneyMCP UHBS lab (results-5.0.1)
 
 **Status:** Informative  
-**UHBS:** 5.0.0 · Images `uhbs:5.0.0` (quick) / `uhbs:5.0.0-full` (full)  
+**UHBS:** 5.0.1 · Images `uhbs:5.0.1` (quick) / `uhbs:5.0.1-full` (full)  
 **Upstream commit:** `966bb908d140809957ba01e05132631c514ade5d` (`main`)
 
 ## Runtime

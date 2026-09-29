@@ -1,6 +1,6 @@
 # Methodology: nosqlpot UHBS lab
 
-**UHBS:** 5.0.0 · Graded **redis** Low-Interaction decoy.  
+**UHBS:** 5.0.1 · Graded **redis** Low-Interaction decoy.  
 Quick **42.37 / F**, full **40.08 / F**.
 
 ## Analyst trust notes

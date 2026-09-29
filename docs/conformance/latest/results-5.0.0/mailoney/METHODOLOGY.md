@@ -1,6 +1,6 @@
-# mailoney methodology (results-5.0.0)
+# mailoney methodology (results-5.0.1)
 
-**UHBS:** 5.0.0 · strategy `upstream-docker` · base `python:3.11-slim`
+**UHBS:** 5.0.1 · strategy `upstream-docker` · base `python:3.11-slim`
 
 Upstream Dockerfile is the documented install path. Lab used SQLite instead of the Compose Postgres sidecar. Alembic may warn that `smtp_sessions` already exists; the listener still starts.
 

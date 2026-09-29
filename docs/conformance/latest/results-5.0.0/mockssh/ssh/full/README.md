@@ -1,6 +1,6 @@
 # Lab artifacts — ssh/full
 
-**UHQS 41.75 / F** · UHBS v5.0.0 · δ_C=1.0
+**UHQS 41.75 / F** · UHBS v5.0.1 · δ_C=1.0
 
 This page is the human-readable landing for the UHBS-Lab run artifacts.
 The authoritative proof is the verbatim scorecard below (same bytes as `SCORECARD.txt`).
@@ -9,7 +9,7 @@ The authoritative proof is the verbatim scorecard below (same bytes as `SCORECAR
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : mockssh-ssh
 System Profile Class  : Low-Interaction
@@ -32,7 +32,7 @@ Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service a
 Module F: Static Code Audit         :  68.6/100       0.20     PARTIAL (bandit HIGH=3)
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : GATE_PASSED (δ_C=1.0; defense-in-depth C=0.0)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : 41.75 / 100
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 41.75 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
 scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
 ====================================================================================

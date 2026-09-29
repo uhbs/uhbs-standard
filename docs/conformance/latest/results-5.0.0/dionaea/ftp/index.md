@@ -1,7 +1,7 @@
-# dionaea — FTP (results-5.0.0)
+# dionaea — FTP (results-5.0.1)
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 5.0.0 · **Class:** Low-Interaction · **Protocol:** `ftp`  
+**UHBS:** 5.0.1 · **Class:** Low-Interaction · **Protocol:** `ftp`  
 **Target id:** `dionaea-ftp` · **Evaluated:** 2026-09-26  
 **Upstream:** `master` @ `4e459f1b672a5b4c1e8335c0bff1b93738019215`  
 **Verdict:** INCOMPLETE / UHQS=40.84 grade=F (`uhqs-v5.1-always-grade`)
@@ -13,7 +13,7 @@
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../../fixtures/dionaea-ftp.scorecard.json`](../../../../fixtures/dionaea-ftp.scorecard.json)  
-Archive: [`../../../../archive/v5.0.0/dionaea/ftp/`](../../../../archive/v5.0.0/dionaea/ftp/)  
+Archive: [`../../../../archive/v5.0.1/dionaea/ftp/`](../../../../archive/v5.0.1/dionaea/ftp/)  
 Replication: [`EXECUTION-STEPS.md`](EXECUTION-STEPS.md)
 
 v5 Safety Gate leaves this unit **UHQS=40.84 grade=F**. Do not cite archived 4.x 57.96 / D.
@@ -34,7 +34,7 @@ v5 Safety Gate leaves this unit **UHQS=40.84 grade=F**. Do not cite archived 4.x
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : dionaea-ftp
 System Profile Class  : Low-Interaction
@@ -57,7 +57,7 @@ Module E: Scalability & Latency     :  55.0/100       0.10     PARTIAL (P50=1023
 Module F: Static Code Audit         :  66.3/100       0.20     PARTIAL (bandit HIGH=9)
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : UHQS=40.84 grade=F — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (UHQS=40.84 grade=F — no composite UHQS)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (UHQS=40.84 grade=F — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
 scoring_model_id                      : uhqs-v5.1-always-grade
 ====================================================================================

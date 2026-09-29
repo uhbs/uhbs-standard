@@ -2,7 +2,7 @@
 
 **Status:** Informative · evaluation proof  
 **Upstream:** [https://github.com/johnnykv/heralding](https://github.com/johnnykv/heralding) · `master` @ `ac12724ab38c4e2fe78f07d1bc35e6e586ba69c0`  
-**UHBS:** 5.0.0 · results-5.0.0 refresh · worker-wave2
+**UHBS:** 5.0.1 · results-5.0.1 refresh · worker-wave2
 
 | Protocol | Class / port | Quick | Full | Status |
 | --- | --- | --- | --- | --- |
@@ -11,7 +11,7 @@
 | [ssh](ssh/index.md) | Low-Interaction · SSH :22 | [ungraded](ssh/quick/README.md) | [ungraded](ssh/full/README.md) | ready-for-review |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
-- Archive: [`../../../archive/v5.0.0/heralding/`](../../../archive/v5.0.0/heralding/)
+- Archive: [`../../../archive/v5.0.1/heralding/`](../../../archive/v5.0.1/heralding/)
 
 Honest v5 Safety Gate: units stay **ungraded** when INCOMPLETE or GATE_FAILED. Do not cite archived 4.x letter grades.
 

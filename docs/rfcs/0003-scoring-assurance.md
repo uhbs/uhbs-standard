@@ -2,7 +2,7 @@
 
 - **Status:** Accepted (for implementation)
 - **Author:** Moran Zavdi
-- **UHBS version affected:** 5.0.0 → 5.0.0 (breaking)
+- **UHBS version affected:** 5.0.1 → 5.0.1 (breaking)
 - **Created:** 2026-09-18
 - **Supersedes:** UHQS 4.x scoring integrity assumptions for Modules C/D and skip-credit paths
 - **scoring_model_id:** `uhqs-v5.0-critical-gate-diagnostic`
@@ -99,7 +99,7 @@ When the gate fails or the assessment is incomplete: `uhqs = null`, no letter gr
 
 Store the choice as immutable `scoring_model_id = uhqs-v5.0-critical-gate-diagnostic`, not merely `uhbs_version`.
 
-Profile-adaptive weights for Modules A/B/C/E/F are unchanged from v5.0.0 unless a later RFC revises them.
+Profile-adaptive weights for Modules A/B/C/E/F are unchanged from v5.0.1 unless a later RFC revises them.
 
 ## Calibration method
 
@@ -149,7 +149,7 @@ Signature/attestation reference is reserved for a follow-up; hashes prove integr
 ## Compatibility / migration
 
 - Breaking change: all v4 fixtures and published grades are **historical** under scoring model UHQS 4.x.
-- Existing conformance **report URLs remain resolvable**; pages gain “UHBS v5.0.0 historical scoring model” metadata and links to v5 methodology.
+- Existing conformance **report URLs remain resolvable**; pages gain “UHBS v5.0.1 historical scoring model” metadata and links to v5 methodology.
 - Parallel validators: v4 schemas retained under `schemas/v4/` for historical scorecards; v5 schemas are authoritative for new evaluations.
 - New synthetic golden vectors live under `docs/conformance/fixtures/v5/` (and corresponding reports); do not silently rewrite historical fixture grades.
 - Grade letter `U` is **not** used.
@@ -189,7 +189,7 @@ Independent technical review of this RFC and published responses is **required**
 
 ## Decision
 
-**Accepted for implementation** as the UHBS 5.0.0 scoring and assurance baseline under `scoring_model_id = uhqs-v5.0-critical-gate-diagnostic`. Future normative scoring changes require a new RFC.
+**Accepted for implementation** as the UHBS 5.0.1 scoring and assurance baseline under `scoring_model_id = uhqs-v5.0-critical-gate-diagnostic`. Future normative scoring changes require a new RFC.
 
 ## Amendment — always-grade (2026-09-27)
 

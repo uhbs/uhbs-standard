@@ -1,7 +1,7 @@
-# mailoney — SMTP lab reports (results-5.0.0)
+# mailoney — SMTP lab reports (results-5.0.1)
 
 **Class / protocol:** `Low-Interaction` · `smtp` · port `25`  
-**UHBS:** 5.0.0 · evaluation proof only  
+**UHBS:** 5.0.1 · evaluation proof only  
 **Upstream:** `main` @ `b8310a7019dd0ba00c666e5185bee3c1dd851e19`
 
 ## Results at a glance

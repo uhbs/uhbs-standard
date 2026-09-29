@@ -1,6 +1,6 @@
 # Lab artifacts — endlessh/full
 
-**UHQS ungraded / —** · UHBS v5.0.0 · δ_C=0.0
+**UHQS ungraded / —** · UHBS v5.0.1 · δ_C=0.0
 
 This page is the human-readable landing for the UHBS-Lab run artifacts.
 The authoritative proof is the verbatim scorecard below (same bytes as `SCORECARD.txt`).
@@ -9,7 +9,7 @@ The authoritative proof is the verbatim scorecard below (same bytes as `SCORECAR
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : endlessh
 System Profile Class  : Low-Interaction
@@ -32,7 +32,7 @@ Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service a
 Module F: Static Code Audit         :  67.4/100       0.20     PARTIAL (semgrep error/critical=2 total=2)
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : Ungraded — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (Ungraded — no composite UHQS)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (Ungraded — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
 scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
 ====================================================================================

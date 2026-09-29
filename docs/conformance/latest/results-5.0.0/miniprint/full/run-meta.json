@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "5.0.0",
+  "uhbs_version": "5.0.1",
   "run_mode": "full",
   "evaluated_at": "2026-09-26T12:49:35Z",
   "proof_label": "miniprint (sa7mon PJL honeypot)",
@@ -15,9 +15,9 @@
     "container_image_id": "sha256:98d4cf6be313f434372eb225f773860f130b43d374ed376e9701631d088cb1b9"
   },
   "grader": {
-    "package_version": "5.0.0",
+    "package_version": "5.0.1",
     "uhbs_git_commit": "c2ffcdff1c45f6704dd2646554ff0087064faa28",
-    "docker_image": "uhbs:5.0.0-full",
+    "docker_image": "uhbs:5.0.1-full",
     "docker_image_id": "sha256:320fb38dcf3ebf69befb2248b75ed32c63dafe6b83f959746209d337c3e7ca9b",
     "inventory": "docs/conformance/labs/miniprint/inventory.yaml",
     "tps": "docs/conformance/labs/miniprint/low_interaction_full.yaml"
@@ -53,6 +53,6 @@
   "limitations": [
     "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1); this is not a substitute for a physically air-gapped lab.",
     "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement.",
-    "UHBS 5.0.0 Safety Gate: GATE_FAILED assessments publish uhqs/grade as null."
+    "UHBS 5.0.1 Safety Gate: GATE_FAILED assessments publish uhqs/grade as null."
   ]
 }

@@ -1,0 +1,215 @@
+[
+    {
+        "Id": "a48e5463e5e28c2b9109d34a6a040512e493f9cd06b615eeeaff5ef716c37873",
+        "Created": "2026-09-27T20:32:13.506809216Z",
+        "Path": "python3",
+        "Args": [
+            "/app/lab_cisco.py"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 96655,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:32:13.796734091Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:c3eb44567ad5b8b4060dd1222ae788e3b9f2b020cedd35591e39f35c81c316be",
+        "ResolvConfPath": "/var/lib/docker/containers/a48e5463e5e28c2b9109d34a6a040512e493f9cd06b615eeeaff5ef716c37873/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/a48e5463e5e28c2b9109d34a6a040512e493f9cd06b615eeeaff5ef716c37873/hostname",
+        "HostsPath": "/var/lib/docker/containers/a48e5463e5e28c2b9109d34a6a040512e493f9cd06b615eeeaff5ef716c37873/hosts",
+        "LogPath": "/var/lib/docker/containers/a48e5463e5e28c2b9109d34a6a040512e493f9cd06b615eeeaff5ef716c37873/a48e5463e5e28c2b9109d34a6a040512e493f9cd06b615eeeaff5ef716c37873-json.log",
+        "Name": "/uhbs-target-mockssh-ssh",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/mockssh-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "a48e5463e5e28c2b9109d34a6a040512e493f9cd06b615eeeaff5ef716c37873",
+                "LowerDir": "/var/lib/docker/overlay2/6c676224d9c2e64023a5996ad5d445996b796c971d14ebe1c14b72c6124a8c49-init/diff:/var/lib/docker/overlay2/u2rwqfj1lsoskv7npumuh5iuc/diff:/var/lib/docker/overlay2/qqbksh8j7h4exz03ja9farg55/diff:/var/lib/docker/overlay2/7b8ffyajydlkmlupq8366p061/diff:/var/lib/docker/overlay2/hygdk1nfop1brxnboe3n010mf/diff:/var/lib/docker/overlay2/794d7xzj4friyxvcq0fgcqp72/diff:/var/lib/docker/overlay2/c19c13168677df2739dbcfd03e7cbb55497eed5b76eac5164e1bb194d78b3053/diff",
+                "MergedDir": "/var/lib/docker/overlay2/6c676224d9c2e64023a5996ad5d445996b796c971d14ebe1c14b72c6124a8c49/merged",
+                "UpperDir": "/var/lib/docker/overlay2/6c676224d9c2e64023a5996ad5d445996b796c971d14ebe1c14b72c6124a8c49/diff",
+                "WorkDir": "/var/lib/docker/overlay2/6c676224d9c2e64023a5996ad5d445996b796c971d14ebe1c14b72c6124a8c49/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/mockssh-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "a48e5463e5e2",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "2222/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1"
+            ],
+            "Cmd": [
+                "python3",
+                "/app/lab_cisco.py"
+            ],
+            "Image": "mockssh:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "org.opencontainers.image.version": "24.04",
+                "uhbs.unit": "mockssh-ssh"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "3c51a0215d93089e182c279a75028c4a94941bf8de0e3dba3ee82e833e1fdba3",
+            "SandboxKey": "/var/run/docker/netns/3c51a0215d93",
+            "Ports": {
+                "2222/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "mockssh-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "335c2e9a46e8319fc76f60b0570fc9b4d75893e1b26f4a6616c4d81799696438",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "5e:6b:43:96:5f:75",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-mockssh-ssh",
+                        "mockssh-lab",
+                        "a48e5463e5e2"
+                    ]
+                }
+            }
+        }
+    }
+]

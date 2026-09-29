@@ -1,5 +1,5 @@
 {
-  "uhbs_version": "5.0.0",
+  "uhbs_version": "5.0.1",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "COMPLETE",
   "critical_control_verdict": "GATE_FAILED",

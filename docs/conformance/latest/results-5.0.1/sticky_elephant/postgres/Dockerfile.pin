@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `sticky_elephant-postgres`
+# Image name at grade time: sticky_elephant:uhbs-lab
+FROM sha256:f4b041ea5aef6145ddb28558ec7f1a05bcd00907331ef1cf9c9e60f7b8403171

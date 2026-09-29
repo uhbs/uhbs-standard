@@ -1,12 +1,12 @@
 {
-  "uhbs_version": "5.0.0",
+  "uhbs_version": "5.0.1",
   "target": {
     "name": "LLMPot (momalab) (modbus)",
     "class": "ICS-SCADA",
     "profile_ref": "docs/conformance/labs/llmpot/ics_modbus_full.yaml"
   },
   "evaluated_at": "2026-09-26",
-  "auditor": "UHBS-Lab results-5.0.0 refresh (llmpot-modbus)",
+  "auditor": "UHBS-Lab results-5.0.1 refresh (llmpot-modbus)",
   "modules": {
     "A": {
       "score": 65.43,
@@ -67,7 +67,7 @@
   },
   "uhqs": 61.06,
   "grade": "D",
-  "notes": "Evaluation proof only. results-5.0.0 refresh of llmpot-modbus at 9568b5ffe6f3626c70078e53eacaac4a9fcf1b9e. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 refresh of llmpot-modbus at 9568b5ffe6f3626c70078e53eacaac4a9fcf1b9e. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",

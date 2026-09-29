@@ -1,12 +1,12 @@
 {
-  "uhbs_version": "5.0.0",
+  "uhbs_version": "5.0.1",
   "target": {
     "name": "HoneyUp (http)",
     "class": "Web-API",
     "profile_ref": "docs/conformance/labs/honeyup/web_api_http_full.yaml"
   },
   "evaluated_at": "2026-09-26",
-  "auditor": "UHBS-Lab results-5.0.0 refresh (honeyup-http)",
+  "auditor": "UHBS-Lab results-5.0.1 refresh (honeyup-http)",
   "modules": {
     "A": {
       "score": 86.43,
@@ -67,7 +67,7 @@
   },
   "uhqs": 79.83,
   "grade": "C",
-  "notes": "Evaluation proof only. results-5.0.0 refresh of honeyup-http at 2d0169da30e76eed979a9a0950015b90f0454740. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 refresh of honeyup-http at 2d0169da30e76eed979a9a0950015b90f0454740. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",

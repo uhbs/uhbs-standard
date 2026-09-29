@@ -41,3 +41,115 @@ sites:
     telemetry_dir: /telemetry
     tps: /work/docs/conformance/labs/dionaea/low_interaction_smb_full.yaml
     container_image: dinotools/dionaea:latest
+
+  dionaea-memcache:
+    kind: generic
+    class: Database
+    host: dionaea-lab
+    protocol: memcache
+    protocols: [memcache]
+    port: 11211
+    ports:
+      memcache: 11211
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/dionaea/database_memcache_full.yaml
+    container_image: dinotools/dionaea:latest
+
+  dionaea-mqtt:
+    kind: generic
+    class: Low-Interaction
+    host: dionaea-lab
+    protocol: mqtt
+    protocols: [mqtt]
+    port: 1883
+    ports:
+      mqtt: 1883
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/dionaea/low_interaction_mqtt_full.yaml
+    container_image: dinotools/dionaea:latest
+
+  dionaea-mssql:
+    kind: generic
+    class: Database
+    host: dionaea-lab
+    protocol: mssql
+    protocols: [mssql]
+    port: 1433
+    ports:
+      mssql: 1433
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/dionaea/database_mssql_full.yaml
+    container_image: dinotools/dionaea:latest
+
+  dionaea-mysql:
+    kind: generic
+    class: Database
+    host: dionaea-lab
+    protocol: mysql
+    protocols: [mysql]
+    port: 3306
+    ports:
+      mysql: 3306
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/dionaea/database_mysql_full.yaml
+    container_image: dinotools/dionaea:latest
+
+  dionaea-sip:
+    kind: generic
+    class: Low-Interaction
+    host: dionaea-lab
+    protocol: sip
+    protocols: [sip]
+    port: 5060
+    ports:
+      sip: 5060
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/dionaea/low_interaction_sip_full.yaml
+    container_image: dinotools/dionaea:latest
+
+  dionaea-tftp:
+    kind: generic
+    class: Low-Interaction
+    host: dionaea-lab
+    protocol: tftp
+    protocols: [tftp]
+    port: 69
+    ports:
+      tftp: 69
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/dionaea/low_interaction_tftp_full.yaml
+    container_image: dinotools/dionaea:latest
+
+  dionaea-pptp:
+    kind: generic
+    class: Low-Interaction
+    host: dionaea-lab
+    protocol: pptp
+    protocols: [pptp]
+    port: 1723
+    ports:
+      pptp: 1723
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/dionaea/low_interaction_pptp_full.yaml
+    container_image: dinotools/dionaea:latest
+
+  dionaea-upnp:
+    kind: generic
+    class: Low-Interaction
+    host: dionaea-lab
+    protocol: upnp
+    protocols: [upnp]
+    port: 1900
+    ports:
+      upnp: 1900
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/dionaea/low_interaction_upnp_full.yaml
+    container_image: dinotools/dionaea:latest

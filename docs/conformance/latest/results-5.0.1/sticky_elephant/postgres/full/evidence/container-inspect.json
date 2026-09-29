@@ -1,0 +1,206 @@
+[
+    {
+        "Id": "15a7d3c286f4f23c99e4269e0c3b2d984cdc4cf98e72115958fa9763e244113b",
+        "Created": "2026-09-27T20:55:56.49270793Z",
+        "Path": "sticky_elephant",
+        "Args": [
+            "-c",
+            "/app/sticky_elephant.conf"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 76823,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:55:56.596548472Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:f4b041ea5aef6145ddb28558ec7f1a05bcd00907331ef1cf9c9e60f7b8403171",
+        "ResolvConfPath": "/var/lib/docker/containers/15a7d3c286f4f23c99e4269e0c3b2d984cdc4cf98e72115958fa9763e244113b/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/15a7d3c286f4f23c99e4269e0c3b2d984cdc4cf98e72115958fa9763e244113b/hostname",
+        "HostsPath": "/var/lib/docker/containers/15a7d3c286f4f23c99e4269e0c3b2d984cdc4cf98e72115958fa9763e244113b/hosts",
+        "LogPath": "/var/lib/docker/containers/15a7d3c286f4f23c99e4269e0c3b2d984cdc4cf98e72115958fa9763e244113b/15a7d3c286f4f23c99e4269e0c3b2d984cdc4cf98e72115958fa9763e244113b-json.log",
+        "Name": "/sticky_elephant-lab",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "15a7d3c286f4f23c99e4269e0c3b2d984cdc4cf98e72115958fa9763e244113b",
+                "LowerDir": "/var/lib/docker/overlay2/a15664af6dc1daee73324513101f3dcd6fcc4a41593c13f5b07aea1af0b6cfbb-init/diff:/var/lib/docker/overlay2/joghxapuq6x7fo83po357o3u0/diff:/var/lib/docker/overlay2/jye6iqa026jzp5lwtcmitkblf/diff:/var/lib/docker/overlay2/lnzn4796vpwdhe9cxo67m5zsr/diff:/var/lib/docker/overlay2/wc6oxf4be5a6e8ohb36npbido/diff:/var/lib/docker/overlay2/9ae719eb774a7577e0cc4ec2928680a37cae92664a235d3bff7a1b11146ac62c/diff:/var/lib/docker/overlay2/60e33bd8de5cbcd904b29efd844479b4d38bf0aac3559c15722846fd5ad7c83c/diff:/var/lib/docker/overlay2/52d69f682983857b0baa2ab449aeff668b23a0913b556c728441058f91ed289c/diff:/var/lib/docker/overlay2/8bb0da3d64de566af0bb867c12a8f633c7726994535ea0351f74ae412aa826bc/diff:/var/lib/docker/overlay2/fadbad112d72396ff0e88fe989ed2396b9970f8934ee4abf27f3ae0a968abd2f/diff:/var/lib/docker/overlay2/85287bcb5d1a5f2c58cf4d3651c7c3e8f8baf2db5e2eb066c7471223e55b4987/diff:/var/lib/docker/overlay2/222be9758cd8a9cf8ac39e7f45715c8d10bf8c539f96c19a2dbb7eab6ac2aa08/diff",
+                "MergedDir": "/var/lib/docker/overlay2/a15664af6dc1daee73324513101f3dcd6fcc4a41593c13f5b07aea1af0b6cfbb/merged",
+                "UpperDir": "/var/lib/docker/overlay2/a15664af6dc1daee73324513101f3dcd6fcc4a41593c13f5b07aea1af0b6cfbb/diff",
+                "WorkDir": "/var/lib/docker/overlay2/a15664af6dc1daee73324513101f3dcd6fcc4a41593c13f5b07aea1af0b6cfbb/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "15a7d3c286f4",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "5432/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "RUBY_VERSION=3.2.11",
+                "RUBY_DOWNLOAD_URL=https://cache.ruby-lang.org/pub/ruby/3.2/ruby-3.2.11.tar.xz",
+                "RUBY_DOWNLOAD_SHA256=c13aec0c206725d5d356acbae6e5fd8bffd92dc325aec14fd5dd7795d4b763d2",
+                "GEM_HOME=/usr/local/bundle",
+                "BUNDLE_SILENCE_ROOT_WARNING=1",
+                "BUNDLE_APP_CONFIG=/usr/local/bundle"
+            ],
+            "Cmd": [
+                "sticky_elephant",
+                "-c",
+                "/app/sticky_elephant.conf"
+            ],
+            "Image": "sticky_elephant:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "SandboxID": "9fcab3e5c4c1c596c43d06262b0a002def9b5b3ed2992f3c782163fcc49bcef2",
+            "SandboxKey": "/var/run/docker/netns/9fcab3e5c4c1",
+            "Ports": {
+                "5432/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "sticky_elephant-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "2c0ea3c74d426c9c8b04fd19e5c4d30a93613f74b6cbc5cf38317b9101b5f96e",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "a6:7d:73:58:f7:1c",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "sticky_elephant-lab",
+                        "15a7d3c286f4"
+                    ]
+                }
+            }
+        }
+    }
+]

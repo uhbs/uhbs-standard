@@ -3,7 +3,7 @@
 **Status:** Informative  
 **Purpose:** Published, reproducible UHBS-Lab outputs for named honeypots / decoys so the community can **audit**, **replicate**, and **compare** grades — not so UHBS can endorse products.
 
-> UHBS is an open-source **evaluation framework** (v5.0.0).  
+> UHBS is an open-source **evaluation framework** (v5.0.1).  
 > Named products appear **only** under `docs/conformance/` as evaluation proof.  
 > A grade is not a certification, badge program, or consortium verdict.
 
@@ -19,7 +19,7 @@
 !!! note "Scorecard banners vs current package"
     Verbatim `SCORECARD.txt` / `REPORT.txt` files keep the harness version
     stamped at **lab run time** (for example `SCORECARD v4.0.1`). That is
-    historical proof. Rebuild recipes and this site use **UHBS 5.0.0** today.
+    historical proof. Rebuild recipes and this site use **UHBS 5.0.1** today.
 
 ## How to use this directory
 

@@ -1,0 +1,5060 @@
+{
+  "errors": [],
+  "generated_at": "2026-09-27T20:42:07Z",
+  "metrics": {
+    "./api/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 1,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./api/database_queries.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 84,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./api/server.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 623,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./api/utility.py": {
+      "CONFIDENCE.HIGH": 2,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 2,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 202,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./config.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 1,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 84,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./core/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 1,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./core/alert.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 128,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./core/color.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 67,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./core/compatible.py": {
+      "CONFIDENCE.HIGH": 5,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 5,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 175,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./core/exit_helper.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 46,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./core/file_monitor.py": {
+      "CONFIDENCE.HIGH": 1,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 1,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 61,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./core/get_modules.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 53,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./core/load.py": {
+      "CONFIDENCE.HIGH": 26,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 1,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 8,
+      "SEVERITY.LOW": 18,
+      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 669,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./core/log.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 27,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./core/messages.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 30,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./core/network.py": {
+      "CONFIDENCE.HIGH": 4,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 2,
+      "SEVERITY.LOW": 2,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 199,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./core/time_helper.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 19,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./database/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 1,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./database/connector.py": {
+      "CONFIDENCE.HIGH": 1,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 1,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 247,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./database/datatypes.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 225,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./lib/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 1,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./lib/ip2location/IP2Location.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 338,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./lib/ip2location/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 1,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./lib/messages/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 1,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 1,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/ftp/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 12,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/ftp/strong_password/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 52,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/ftp/strong_password/files/ftp_sniffer.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 127,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/ftp/weak_password/__init__.py": {
+      "CONFIDENCE.HIGH": 1,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 2,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 2,
+      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 55,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/http/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 12,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/http/basic_auth_strong_password/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 58,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/http/basic_auth_weak_password/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 1,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 1,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 28,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/ics/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 12,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/ics/veeder_root_guardian_ast/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 58,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/ics/veeder_root_guardian_ast/files/veeder_root_guardian_ast_service.py": {
+      "CONFIDENCE.HIGH": 6,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 2,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 6,
+      "SEVERITY.MEDIUM": 2,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 3709,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/smtp/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 12,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/smtp/strong_password/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 53,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/smtp/strong_password/files/smtpd_server/secure_smtpd/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 3,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/smtp/strong_password/files/smtpd_server/secure_smtpd/config/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 2,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/smtp/strong_password/files/smtpd_server/secure_smtpd/config/log.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 27,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/smtp/strong_password/files/smtpd_server/secure_smtpd/process_pool.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 13,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/smtp/strong_password/files/smtpd_server/secure_smtpd/smtp_channel.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 144,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/smtp/strong_password/files/smtpd_server/secure_smtpd/smtp_server.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 89,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/smtp/strong_password/files/smtpd_server/smtp_honeypot.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 1,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 43,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/ssh/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 12,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/ssh/strong_password/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 52,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/ssh/strong_password/files/ssh_listener.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 62,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./modules/ssh/weak_password/__init__.py": {
+      "CONFIDENCE.HIGH": 1,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 2,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 2,
+      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 55,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./ohp.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 4,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./tests/__init__.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 1,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./tests/test_api.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 149,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 149,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 543,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./tests/test_api_utilities.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 55,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./tests/test_connector.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 1,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 1,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 132,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./tests/test_core_alert.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 30,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./tests/test_core_compatible.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 24,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./tests/test_core_get_modules.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 32,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "./tests/test_core_messages.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 20,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "_totals": {
+      "CONFIDENCE.HIGH": 47,
+      "CONFIDENCE.LOW": 149,
+      "CONFIDENCE.MEDIUM": 11,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 11,
+      "SEVERITY.LOW": 40,
+      "SEVERITY.MEDIUM": 156,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 8815,
+      "nosec": 0,
+      "skipped_tests": 0
+    }
+  },
+  "results": [
+    {
+      "code": "171             return int(limit)\n172         except Exception:\n173             pass\n174     return 10\n",
+      "col_offset": 8,
+      "end_col_offset": 16,
+      "filename": "./api/utility.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Pass detected.",
+      "line_number": 172,
+      "line_range": [
+        172,
+        173
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html",
+      "test_id": "B110",
+      "test_name": "try_except_pass"
+    },
+    {
+      "code": "189             return int(skip)\n190         except Exception:\n191             pass\n192     return 0\n",
+      "col_offset": 8,
+      "end_col_offset": 16,
+      "filename": "./api/utility.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Pass detected.",
+      "line_number": 190,
+      "line_range": [
+        190,
+        191
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html",
+      "test_id": "B110",
+      "test_name": "try_except_pass"
+    },
+    {
+      "code": "32     return {  # OWASP Honeypot API Default Configuration\n33         \"api_host\": \"0.0.0.0\",\n34         \"api_port\": 5000,\n35         \"api_debug_mode\": False,\n36         \"api_access_without_key\": True,\n37         \"api_access_key\": generate_token(),  # or any string, or None\n38         \"api_client_white_list\": {\n39             \"enabled\": False,\n40             \"ips\": [\n41                 \"127.0.0.1\",\n42                 \"10.0.0.1\",\n43                 \"192.168.1.1\"\n44             ]\n45         },\n46         \"api_access_log\": {\n47             \"enabled\": False,\n48             \"filename\": \"ohp_api_access.log\"\n49         },\n50         # http://127.0.0.1:9200/ # todo: add SSL support later\n51         \"api_database\": db_url,\n52         \"api_database_http_auth\": ('elastic', 'changeme')\n53     }\n54 \n55 \n",
+      "col_offset": 20,
+      "end_col_offset": 29,
+      "filename": "./config.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 605,
+        "link": "https://cwe.mitre.org/data/definitions/605.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Possible binding to all interfaces.",
+      "line_number": 33,
+      "line_range": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b104_hardcoded_bind_all_interfaces.html",
+      "test_id": "B104",
+      "test_name": "hardcoded_bind_all_interfaces"
+    },
+    {
+      "code": "8 import os\n9 import subprocess\n10 import random\n",
+      "col_offset": 0,
+      "end_col_offset": 17,
+      "filename": "./core/compatible.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Consider possible security implications associated with the subprocess module.",
+      "line_number": 9,
+      "line_range": [
+        9
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess",
+      "test_id": "B404",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "100         try:\n101             subprocess.check_output([\"docker\", \"--help\"],\n102                                     stderr=subprocess.PIPE)\n103         except Exception:\n",
+      "col_offset": 12,
+      "end_col_offset": 59,
+      "filename": "./core/compatible.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a partial executable path",
+      "line_number": 101,
+      "line_range": [
+        101,
+        102
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html",
+      "test_id": "B607",
+      "test_name": "start_process_with_partial_path"
+    },
+    {
+      "code": "100         try:\n101             subprocess.check_output([\"docker\", \"--help\"],\n102                                     stderr=subprocess.PIPE)\n103         except Exception:\n",
+      "col_offset": 12,
+      "end_col_offset": 59,
+      "filename": "./core/compatible.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "subprocess call - check for execution of untrusted input.",
+      "line_number": 101,
+      "line_range": [
+        101,
+        102
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html",
+      "test_id": "B603",
+      "test_name": "subprocess_without_shell_equals_true"
+    },
+    {
+      "code": "133             [\n134                 combined_string[random.randint(0, len(combined_string) - 1)] for _ in range(15)\n135             ]\n",
+      "col_offset": 32,
+      "end_col_offset": 75,
+      "filename": "./core/compatible.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 330,
+        "link": "https://cwe.mitre.org/data/definitions/330.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+      "line_number": 134,
+      "line_range": [
+        134
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random",
+      "test_id": "B311",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "206     \"\"\"\n207     return \"\".join(random.choice(\"0123456789abcdef\") for _ in range(length))\n208 \n",
+      "col_offset": 19,
+      "end_col_offset": 52,
+      "filename": "./core/compatible.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 330,
+        "link": "https://cwe.mitre.org/data/definitions/330.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+      "line_number": 207,
+      "line_range": [
+        207
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random",
+      "test_id": "B311",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "75                 time.sleep(0.1)\n76             except Exception:\n77                 pass\n",
+      "col_offset": 12,
+      "end_col_offset": 20,
+      "filename": "./core/file_monitor.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Pass detected.",
+      "line_number": 76,
+      "line_range": [
+        76,
+        77
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html",
+      "test_id": "B110",
+      "test_name": "try_except_pass"
+    },
+    {
+      "code": "44     return [network_name.rsplit()[1] for network_name in\n45             os.popen(\"docker network ls\").read().rsplit(\"\\n\")[1:-1]]\n46 \n",
+      "col_offset": 12,
+      "end_col_offset": 41,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell",
+      "line_number": 45,
+      "line_range": [
+        45
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "44     return [network_name.rsplit()[1] for network_name in\n45             os.popen(\"docker network ls\").read().rsplit(\"\\n\")[1:-1]]\n46 \n",
+      "col_offset": 12,
+      "end_col_offset": 41,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a partial executable path",
+      "line_number": 45,
+      "line_range": [
+        45
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html",
+      "test_id": "B607",
+      "test_name": "start_process_with_partial_path"
+    },
+    {
+      "code": "56         info(messages[\"creating_ohp_internet\"])\n57         os.popen(\"docker network create ohp_internet  --opt com.docker.network.bridge.enable_icc=true \"\n58                  \"--opt com.docker.network.bridge.enable_ip_masquerade=true \"\n59                  \"--opt com.docker.network.bridge.host_binding_ipv4=0.0.0.0 --opt \"\n60                  \"com.docker.network.driver.mtu=1500\").read()\n61         network_json = json.loads(os.popen(\"docker network inspect ohp_internet\").read())[\n",
+      "col_offset": 8,
+      "end_col_offset": 54,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell",
+      "line_number": 57,
+      "line_range": [
+        57,
+        58,
+        59,
+        60
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "56         info(messages[\"creating_ohp_internet\"])\n57         os.popen(\"docker network create ohp_internet  --opt com.docker.network.bridge.enable_icc=true \"\n58                  \"--opt com.docker.network.bridge.enable_ip_masquerade=true \"\n59                  \"--opt com.docker.network.bridge.host_binding_ipv4=0.0.0.0 --opt \"\n60                  \"com.docker.network.driver.mtu=1500\").read()\n61         network_json = json.loads(os.popen(\"docker network inspect ohp_internet\").read())[\n",
+      "col_offset": 8,
+      "end_col_offset": 54,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a partial executable path",
+      "line_number": 57,
+      "line_range": [
+        57,
+        58,
+        59,
+        60
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html",
+      "test_id": "B607",
+      "test_name": "start_process_with_partial_path"
+    },
+    {
+      "code": "60                  \"com.docker.network.driver.mtu=1500\").read()\n61         network_json = json.loads(os.popen(\"docker network inspect ohp_internet\").read())[\n62             0][\"IPAM\"][\"Config\"][0]\n",
+      "col_offset": 34,
+      "end_col_offset": 81,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell",
+      "line_number": 61,
+      "line_range": [
+        61
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "60                  \"com.docker.network.driver.mtu=1500\").read()\n61         network_json = json.loads(os.popen(\"docker network inspect ohp_internet\").read())[\n62             0][\"IPAM\"][\"Config\"][0]\n",
+      "col_offset": 34,
+      "end_col_offset": 81,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a partial executable path",
+      "line_number": 61,
+      "line_range": [
+        61
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html",
+      "test_id": "B607",
+      "test_name": "start_process_with_partial_path"
+    },
+    {
+      "code": "66         info(messages[\"creating_ohp_no_internet\"])\n67         os.popen(\"docker network create --attachable --internal ohp_no_internet  \"\n68                  \"--opt com.docker.network.bridge.enable_icc=true \"\n69                  \"--opt com.docker.network.bridge.enable_ip_masquerade=true \"\n70                  \"--opt com.docker.network.bridge.host_binding_ipv4=0.0.0.0 \"\n71                  \"--opt com.docker.network.driver.mtu=1500\").read()\n72         network_json = json.loads(os.popen(\"docker network inspect ohp_no_internet\").read())[\n",
+      "col_offset": 8,
+      "end_col_offset": 60,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell",
+      "line_number": 67,
+      "line_range": [
+        67,
+        68,
+        69,
+        70,
+        71
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "66         info(messages[\"creating_ohp_no_internet\"])\n67         os.popen(\"docker network create --attachable --internal ohp_no_internet  \"\n68                  \"--opt com.docker.network.bridge.enable_icc=true \"\n69                  \"--opt com.docker.network.bridge.enable_ip_masquerade=true \"\n70                  \"--opt com.docker.network.bridge.host_binding_ipv4=0.0.0.0 \"\n71                  \"--opt com.docker.network.driver.mtu=1500\").read()\n72         network_json = json.loads(os.popen(\"docker network inspect ohp_no_internet\").read())[\n",
+      "col_offset": 8,
+      "end_col_offset": 60,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a partial executable path",
+      "line_number": 67,
+      "line_range": [
+        67,
+        68,
+        69,
+        70,
+        71
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html",
+      "test_id": "B607",
+      "test_name": "start_process_with_partial_path"
+    },
+    {
+      "code": "71                  \"--opt com.docker.network.driver.mtu=1500\").read()\n72         network_json = json.loads(os.popen(\"docker network inspect ohp_no_internet\").read())[\n73             0][\"IPAM\"][\"Config\"][0]\n",
+      "col_offset": 34,
+      "end_col_offset": 84,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell",
+      "line_number": 72,
+      "line_range": [
+        72
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "71                  \"--opt com.docker.network.driver.mtu=1500\").read()\n72         network_json = json.loads(os.popen(\"docker network inspect ohp_no_internet\").read())[\n73             0][\"IPAM\"][\"Config\"][0]\n",
+      "col_offset": 34,
+      "end_col_offset": 84,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a partial executable path",
+      "line_number": 72,
+      "line_range": [
+        72
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html",
+      "test_id": "B607",
+      "test_name": "start_process_with_partial_path"
+    },
+    {
+      "code": "98     return [container.rsplit()[-1] for container in\n99             os.popen(\"docker ps\").read().rsplit(\"\\n\")[1:-1]]\n100 \n",
+      "col_offset": 12,
+      "end_col_offset": 33,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell",
+      "line_number": 99,
+      "line_range": [
+        99
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "98     return [container.rsplit()[-1] for container in\n99             os.popen(\"docker ps\").read().rsplit(\"\\n\")[1:-1]]\n100 \n",
+      "col_offset": 12,
+      "end_col_offset": 33,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a partial executable path",
+      "line_number": 99,
+      "line_range": [
+        99
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html",
+      "test_id": "B607",
+      "test_name": "start_process_with_partial_path"
+    },
+    {
+      "code": "109     return [container.rsplit()[-1] for container in\n110             os.popen(\"docker ps -a\").read().rsplit(\"\\n\")[1:-1]]\n111 \n",
+      "col_offset": 12,
+      "end_col_offset": 36,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell",
+      "line_number": 110,
+      "line_range": [
+        110
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "109     return [container.rsplit()[-1] for container in\n110             os.popen(\"docker ps -a\").read().rsplit(\"\\n\")[1:-1]]\n111 \n",
+      "col_offset": 12,
+      "end_col_offset": 36,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a partial executable path",
+      "line_number": 110,
+      "line_range": [
+        110
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html",
+      "test_id": "B607",
+      "test_name": "start_process_with_partial_path"
+    },
+    {
+      "code": "121         container.rsplit()[0] for container in\n122         os.popen(\"docker images\").read().rsplit(\"\\n\")[1:-1]\n123     ]\n",
+      "col_offset": 8,
+      "end_col_offset": 33,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell",
+      "line_number": 122,
+      "line_range": [
+        122
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "121         container.rsplit()[0] for container in\n122         os.popen(\"docker images\").read().rsplit(\"\\n\")[1:-1]\n123     ]\n",
+      "col_offset": 8,
+      "end_col_offset": 33,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a partial executable path",
+      "line_number": 122,
+      "line_range": [
+        122
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html",
+      "test_id": "B607",
+      "test_name": "start_process_with_partial_path"
+    },
+    {
+      "code": "142                     \"killing container {0}\".format(\n143                         os.popen(\n144                             \"docker kill {0}\".format(\n145                                 container\n146                             )\n147                         ).read().rsplit()[0]\n148                     )\n",
+      "col_offset": 24,
+      "end_col_offset": 25,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Starting a process with a shell, possible injection detected, security issue.",
+      "line_number": 143,
+      "line_range": [
+        143,
+        144,
+        145,
+        146,
+        147
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "168                 \"removing container {0}\".format(\n169                     os.popen(\n170                         \"docker rm {0}\".format(container)\n171                     ).read().rsplit()[0]\n172                 )\n",
+      "col_offset": 20,
+      "end_col_offset": 21,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Starting a process with a shell, possible injection detected, security issue.",
+      "line_number": 169,
+      "line_range": [
+        169,
+        170,
+        171
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "202             info(messages[\"removing_image\"].format(image))\n203             os.popen(\"docker rmi {0}\".format(image)).read()\n204     return True\n",
+      "col_offset": 12,
+      "end_col_offset": 52,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Starting a process with a shell, possible injection detected, security issue.",
+      "line_number": 203,
+      "line_range": [
+        203
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "245         if is_verbose_mode():\n246             os.system(\"docker build . -t {0}\".format(image_name))\n247         else:\n",
+      "col_offset": 12,
+      "end_col_offset": 65,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Starting a process with a shell, possible injection detected, security issue.",
+      "line_number": 246,
+      "line_range": [
+        246
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "247         else:\n248             os.popen(\"docker build . -t {0}\".format(image_name)).read()\n249 \n",
+      "col_offset": 12,
+      "end_col_offset": 64,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Starting a process with a shell, possible injection detected, security issue.",
+      "line_number": 248,
+      "line_range": [
+        248
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "283         # run the container with internet access\n284         os.popen(\n285             \"docker run {0} --net {4} --name={1} -d -t -p {2}:{3} {1}\".format(\n286                 \" \".join(\n287                     configuration[selected_module][\"extra_docker_options\"]\n288                 ),\n289                 container_name,\n290                 real_machine_port,\n291                 virtual_machine_port,\n292                 'ohp_internet' if configuration[selected_module][\"virtual_machine_internet_access\"]\n293                 else 'ohp_no_internet'\n294             )\n295         ).read()\n296         try:\n",
+      "col_offset": 8,
+      "end_col_offset": 9,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Starting a process with a shell, possible injection detected, security issue.",
+      "line_number": 284,
+      "line_range": [
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "296         try:\n297             virtual_machine_ip_address = os.popen(\n298                 \"docker inspect -f '{{{{range.NetworkSettings.Networks}}}}\"\n299                 \"{{{{.IPAddress}}}}{{{{end}}}}' {0}\".format(\n300                     container_name\n301                 )\n302             ).read().rsplit()[0].replace(\"\\'\", \"\")  # single quotes needs to be removed in windows\n303         except Exception:\n",
+      "col_offset": 41,
+      "end_col_offset": 13,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Starting a process with a shell, possible injection detected, security issue.",
+      "line_number": 297,
+      "line_range": [
+        297,
+        298,
+        299,
+        300,
+        301,
+        302
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "367                     for container in containers_are_unhealthy(configuration):\n368                         os.system(\n369                             \"docker logs {0}\".format(\n370                                 container\n371                             )\n372                         )\n373                 return error(\n",
+      "col_offset": 24,
+      "end_col_offset": 25,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Starting a process with a shell, possible injection detected, security issue.",
+      "line_number": 368,
+      "line_range": [
+        368,
+        369,
+        370,
+        371,
+        372
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "490             (\n491                 \"0.0.0.0\",\n492                 real_machine_port\n493             )\n494         )\n495         tcp.close()\n",
+      "col_offset": 16,
+      "end_col_offset": 25,
+      "filename": "./core/load.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 605,
+        "link": "https://cwe.mitre.org/data/definitions/605.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Possible binding to all interfaces.",
+      "line_number": 491,
+      "line_range": [
+        490,
+        491,
+        492,
+        493
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b104_hardcoded_bind_all_interfaces.html",
+      "test_id": "B104",
+      "test_name": "hardcoded_bind_all_interfaces"
+    },
+    {
+      "code": "524                     return real_machine_port\n525         except Exception:\n526             pass\n527         real_machine_port += 1\n",
+      "col_offset": 8,
+      "end_col_offset": 16,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Pass detected.",
+      "line_number": 525,
+      "line_range": [
+        525,
+        526
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html",
+      "test_id": "B110",
+      "test_name": "try_except_pass"
+    },
+    {
+      "code": "816                 selected_modules.remove(module)\n817             except Exception:\n818                 pass\n819         # if selected modules are zero\n",
+      "col_offset": 12,
+      "end_col_offset": 20,
+      "filename": "./core/load.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Pass detected.",
+      "line_number": 817,
+      "line_range": [
+        817,
+        818
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html",
+      "test_id": "B110",
+      "test_name": "try_except_pass"
+    },
+    {
+      "code": "48         try:\n49             gateway_ip = os.popen(\n50                 \"docker inspect -f '{{{{range.NetworkSettings.Networks}}}}\"\n51                 \"{{{{.Gateway}}}}{{{{end}}}}' {0}\".format(container_name)\n52             ).read().rsplit()[0].replace(\"\\'\", \"\")\n53             gateway_ips.append(gateway_ip)\n",
+      "col_offset": 25,
+      "end_col_offset": 13,
+      "filename": "./core/network.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Starting a process with a shell, possible injection detected, security issue.",
+      "line_number": 49,
+      "line_range": [
+        49,
+        50,
+        51,
+        52
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "63 def force_kill_tshark():\n64     pid = os.popen('ps aux | grep tshark').readline().split()[1]\n65     os.popen('kill -9 {} &> /dev/null'.format(pid)).read()\n",
+      "col_offset": 10,
+      "end_col_offset": 42,
+      "filename": "./core/network.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell",
+      "line_number": 64,
+      "line_range": [
+        64
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "63 def force_kill_tshark():\n64     pid = os.popen('ps aux | grep tshark').readline().split()[1]\n65     os.popen('kill -9 {} &> /dev/null'.format(pid)).read()\n",
+      "col_offset": 10,
+      "end_col_offset": 42,
+      "filename": "./core/network.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Starting a process with a partial executable path",
+      "line_number": 64,
+      "line_range": [
+        64
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html",
+      "test_id": "B607",
+      "test_name": "start_process_with_partial_path"
+    },
+    {
+      "code": "64     pid = os.popen('ps aux | grep tshark').readline().split()[1]\n65     os.popen('kill -9 {} &> /dev/null'.format(pid)).read()\n66     # wait to make sure tshark is gone!\n",
+      "col_offset": 4,
+      "end_col_offset": 51,
+      "filename": "./core/network.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 78,
+        "link": "https://cwe.mitre.org/data/definitions/78.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Starting a process with a shell, possible injection detected, security issue.",
+      "line_number": 65,
+      "line_range": [
+        65
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html",
+      "test_id": "B605",
+      "test_name": "start_process_with_a_shell"
+    },
+    {
+      "code": "305     file_content = binascii.b2a_base64(open(file_archive.file_path, \"rb\").read()).decode()\n306     file_md5 = hashlib.md5(file_content.encode()).hexdigest()\n307     return elasticsearch_events.index(\n",
+      "col_offset": 15,
+      "end_col_offset": 49,
+      "filename": "./database/connector.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 327,
+        "link": "https://cwe.mitre.org/data/definitions/327.html"
+      },
+      "issue_severity": "HIGH",
+      "issue_text": "Use of weak MD5 hash for security. Consider usedforsecurity=False",
+      "line_number": 306,
+      "line_range": [
+        306
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b324_hashlib.html",
+      "test_id": "B324",
+      "test_name": "hashlib"
+    },
+    {
+      "code": "21         self.stop_execution = False\n22         self.DIRECTORY_TO_WATCH = os.getcwd() + \"/tmp/ohp_ftp_weak_container/\"\n23         self.EXCLUDES = ['/dev']\n",
+      "col_offset": 48,
+      "end_col_offset": 78,
+      "filename": "./modules/ftp/weak_password/__init__.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 377,
+        "link": "https://cwe.mitre.org/data/definitions/377.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Probable insecure usage of temp file/directory.",
+      "line_number": 22,
+      "line_range": [
+        22
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b108_hardcoded_tmp_directory.html",
+      "test_id": "B108",
+      "test_name": "hardcoded_tmp_directory"
+    },
+    {
+      "code": "46                 time.sleep(0.1)\n47             except Exception:\n48                 pass\n49         new_file_handler.stop()\n",
+      "col_offset": 12,
+      "end_col_offset": 20,
+      "filename": "./modules/ftp/weak_password/__init__.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Pass detected.",
+      "line_number": 47,
+      "line_range": [
+        47,
+        48
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html",
+      "test_id": "B110",
+      "test_name": "try_except_pass"
+    },
+    {
+      "code": "61         \"username\": \"admin\",\n62         \"password\": \"admin\",\n63         \"extra_docker_options\": [\"--volume {0}/tmp/ohp_ftp_weak_container/:/root:z\".format(os.getcwd())],\n64         \"module_processor\": ModuleProcessor()\n65     }\n",
+      "col_offset": 8,
+      "end_col_offset": 18,
+      "filename": "./modules/ftp/weak_password/__init__.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 259,
+        "link": "https://cwe.mitre.org/data/definitions/259.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Possible hardcoded password: 'admin'",
+      "line_number": 62,
+      "line_range": [
+        60,
+        61,
+        62,
+        63,
+        64,
+        65
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html",
+      "test_id": "B105",
+      "test_name": "hardcoded_password_string"
+    },
+    {
+      "code": "33         \"username\": \"admin\",\n34         \"password\": \"123456\",\n35         \"extra_docker_options\": [],\n36         \"module_processor\": ModuleProcessor()\n37     }\n",
+      "col_offset": 8,
+      "end_col_offset": 18,
+      "filename": "./modules/http/basic_auth_weak_password/__init__.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 259,
+        "link": "https://cwe.mitre.org/data/definitions/259.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Possible hardcoded password: '123456'",
+      "line_number": 34,
+      "line_range": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html",
+      "test_id": "B105",
+      "test_name": "hardcoded_password_string"
+    },
+    {
+      "code": "21     (\n22         \"0.0.0.0\",\n23         int(os.environ.get(\"virtual_machine_port_number\"))\n24     )\n25 )\n26 server_socket.listen(10)\n",
+      "col_offset": 8,
+      "end_col_offset": 17,
+      "filename": "./modules/ics/veeder_root_guardian_ast/files/veeder_root_guardian_ast_service.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 605,
+        "link": "https://cwe.mitre.org/data/definitions/605.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Possible binding to all interfaces.",
+      "line_number": 22,
+      "line_range": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b104_hardcoded_bind_all_interfaces.html",
+      "test_id": "B104",
+      "test_name": "hardcoded_bind_all_interfaces"
+    },
+    {
+      "code": "27 \n28 logs_filename = \"/tmp/ics_veeder_root_guardian_ast.log\"\n29 \n",
+      "col_offset": 16,
+      "end_col_offset": 55,
+      "filename": "./modules/ics/veeder_root_guardian_ast/files/veeder_root_guardian_ast_service.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 377,
+        "link": "https://cwe.mitre.org/data/definitions/377.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Probable insecure usage of temp file/directory.",
+      "line_number": 28,
+      "line_range": [
+        28
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b108_hardcoded_tmp_directory.html",
+      "test_id": "B108",
+      "test_name": "hardcoded_tmp_directory"
+    },
+    {
+      "code": "56 def generate_randomize_float(number, plus, minus):\n57     return \"%.2f\" % random.uniform(number + minus, number + plus)\n58 \n",
+      "col_offset": 20,
+      "end_col_offset": 65,
+      "filename": "./modules/ics/veeder_root_guardian_ast/files/veeder_root_guardian_ast_service.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 330,
+        "link": "https://cwe.mitre.org/data/definitions/330.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+      "line_number": 57,
+      "line_range": [
+        57
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random",
+      "test_id": "B311",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "60 def generate_randomize_int(number, plus, minus):\n61     return \"%d\" % random.randint(number + minus, number + plus)\n62 \n",
+      "col_offset": 18,
+      "end_col_offset": 63,
+      "filename": "./modules/ics/veeder_root_guardian_ast/files/veeder_root_guardian_ast_service.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 330,
+        "link": "https://cwe.mitre.org/data/definitions/330.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+      "line_number": 61,
+      "line_range": [
+        61
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random",
+      "test_id": "B311",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "3974                             conn.send(data)\n3975                             time.sleep(random.choice(([0.01] * 10) + ([0.1] * 10) + ([1] * 3)))\n3976                         print(addr[0], cmd, \"responded\")\n",
+      "col_offset": 39,
+      "end_col_offset": 94,
+      "filename": "./modules/ics/veeder_root_guardian_ast/files/veeder_root_guardian_ast_service.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 330,
+        "link": "https://cwe.mitre.org/data/definitions/330.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+      "line_number": 3975,
+      "line_range": [
+        3975
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random",
+      "test_id": "B311",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "3982                         log_data[\"content\"] = response\n3983                     except Exception:\n3984                         pass\n3985                     save_log(log_data)\n",
+      "col_offset": 20,
+      "end_col_offset": 28,
+      "filename": "./modules/ics/veeder_root_guardian_ast/files/veeder_root_guardian_ast_service.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Pass detected.",
+      "line_number": 3983,
+      "line_range": [
+        3983,
+        3984
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html",
+      "test_id": "B110",
+      "test_name": "try_except_pass"
+    },
+    {
+      "code": "3989                         log_data[\"content\"] = response\n3990                     except Exception:\n3991                         pass\n3992                     save_log(log_data)\n",
+      "col_offset": 20,
+      "end_col_offset": 28,
+      "filename": "./modules/ics/veeder_root_guardian_ast/files/veeder_root_guardian_ast_service.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Pass detected.",
+      "line_number": 3990,
+      "line_range": [
+        3990,
+        3991
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html",
+      "test_id": "B110",
+      "test_name": "try_except_pass"
+    },
+    {
+      "code": "3996                         log_data[\"content\"] = response\n3997                     except Exception:\n3998                         pass\n3999                     save_log(log_data)\n",
+      "col_offset": 20,
+      "end_col_offset": 28,
+      "filename": "./modules/ics/veeder_root_guardian_ast/files/veeder_root_guardian_ast_service.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Pass detected.",
+      "line_number": 3997,
+      "line_range": [
+        3997,
+        3998
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html",
+      "test_id": "B110",
+      "test_name": "try_except_pass"
+    },
+    {
+      "code": "41     SMTPServer(\n42         ('0.0.0.0', 25),\n43         None,\n",
+      "col_offset": 9,
+      "end_col_offset": 18,
+      "filename": "./modules/smtp/strong_password/files/smtpd_server/smtp_honeypot.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 605,
+        "link": "https://cwe.mitre.org/data/definitions/605.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Possible binding to all interfaces.",
+      "line_number": 42,
+      "line_range": [
+        42
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b104_hardcoded_bind_all_interfaces.html",
+      "test_id": "B104",
+      "test_name": "hardcoded_bind_all_interfaces"
+    },
+    {
+      "code": "21         self.stop_execution = False\n22         self.DIRECTORY_TO_WATCH = os.getcwd() + \"/tmp/ohp_ssh_weak_container/\"\n23         self.EXCLUDES = ['/dev']\n",
+      "col_offset": 48,
+      "end_col_offset": 78,
+      "filename": "./modules/ssh/weak_password/__init__.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 377,
+        "link": "https://cwe.mitre.org/data/definitions/377.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Probable insecure usage of temp file/directory.",
+      "line_number": 22,
+      "line_range": [
+        22
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b108_hardcoded_tmp_directory.html",
+      "test_id": "B108",
+      "test_name": "hardcoded_tmp_directory"
+    },
+    {
+      "code": "46                 time.sleep(0.1)\n47             except Exception:\n48                 pass\n49         newFileHandler.stop()\n",
+      "col_offset": 12,
+      "end_col_offset": 20,
+      "filename": "./modules/ssh/weak_password/__init__.py",
+      "issue_confidence": "HIGH",
+      "issue_cwe": {
+        "id": 703,
+        "link": "https://cwe.mitre.org/data/definitions/703.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Try, Except, Pass detected.",
+      "line_number": 47,
+      "line_range": [
+        47,
+        48
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html",
+      "test_id": "B110",
+      "test_name": "try_except_pass"
+    },
+    {
+      "code": "61         \"username\": \"root\",\n62         \"password\": \"123456\",\n63         \"extra_docker_options\": [\"--volume {0}/tmp/ohp_ssh_weak_container:/root:z\".format(os.getcwd())],\n64         \"module_processor\": ModuleProcessor()\n65     }\n",
+      "col_offset": 8,
+      "end_col_offset": 18,
+      "filename": "./modules/ssh/weak_password/__init__.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 259,
+        "link": "https://cwe.mitre.org/data/definitions/259.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Possible hardcoded password: '123456'",
+      "line_number": 62,
+      "line_range": [
+        60,
+        61,
+        62,
+        63,
+        64,
+        65
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html",
+      "test_id": "B105",
+      "test_name": "hardcoded_password_string"
+    },
+    {
+      "code": "15         \"\"\"\n16         response = requests.get(API_URL)\n17         self.assertEqual(response.status_code, 200)\n",
+      "col_offset": 19,
+      "end_col_offset": 40,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 16,
+      "line_range": [
+        16
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "19     def test_count_all_events(self):\n20         response = requests.get(API_URL + \"/api/events/count/all\")\n21         self.assertGreaterEqual(response.json()[\"count\"], 0)\n",
+      "col_offset": 19,
+      "end_col_offset": 66,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 20,
+      "line_range": [
+        20
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "24     def test_count_honeypot_events(self):\n25         response = requests.get(API_URL + \"/api/events/count/honeypot\")\n26         self.assertGreaterEqual(response.json()[\"count\"], 0)\n",
+      "col_offset": 19,
+      "end_col_offset": 71,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 25,
+      "line_range": [
+        25
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "29     def test_count_network_events(self):\n30         response = requests.get(API_URL + \"/api/events/count/network\")\n31         self.assertGreaterEqual(response.json()[\"count\"], 0)\n",
+      "col_offset": 19,
+      "end_col_offset": 70,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 30,
+      "line_range": [
+        30
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "34     def test_count_credential_events(self):\n35         response = requests.get(API_URL + \"/api/events/count/credential\")\n36         self.assertGreaterEqual(response.json()[\"count\"], 0)\n",
+      "col_offset": 19,
+      "end_col_offset": 73,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 35,
+      "line_range": [
+        35
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "39     def test_count_file_events(self):\n40         response = requests.get(API_URL + \"/api/events/count/file\")\n41         self.assertGreaterEqual(response.json()[\"count\"], 0)\n",
+      "col_offset": 19,
+      "end_col_offset": 67,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 40,
+      "line_range": [
+        40
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "44     def test_count_data_events(self):\n45         response = requests.get(API_URL + \"/api/events/count/data\")\n46         self.assertGreaterEqual(response.json()[\"count\"], 0)\n",
+      "col_offset": 19,
+      "end_col_offset": 67,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 45,
+      "line_range": [
+        45
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "48 \n49         response = requests.get(API_URL + \"/api/events/count/data?date=2020-08-14\")\n50         self.assertGreaterEqual(response.json()[\"count\"], 0)\n",
+      "col_offset": 19,
+      "end_col_offset": 83,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 49,
+      "line_range": [
+        49
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "53     def test_top_ten_honeypot_events(self):\n54         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/ip_dest\")\n55         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 92,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 54,
+      "line_range": [
+        54
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "57 \n58         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/ip_dest?country=US\")\n59         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 103,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 58,
+      "line_range": [
+        58
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "61 \n62         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/ip_dest?date=2020-08-14\")\n63         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 108,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 62,
+      "line_range": [
+        62
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "65 \n66         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/ip_dest?country=US&date=2020-08-14\")\n67         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 119,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 66,
+      "line_range": [
+        66
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "69 \n70         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/port_dest\")\n71         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 94,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 70,
+      "line_range": [
+        70
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "73 \n74         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/port_dest?country=US\")\n75         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 105,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 74,
+      "line_range": [
+        74
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "77 \n78         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/port_dest?date=2020-08-14\")\n79         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 110,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 78,
+      "line_range": [
+        78
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "81 \n82         response_port = requests.get(\n83             API_URL + \"/api/events/count/groupby/honeypot/port_dest?country=US&date=2020-08-14\")\n84         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 96,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 82,
+      "line_range": [
+        82,
+        83
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "86 \n87         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/username\")\n88         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 93,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 87,
+      "line_range": [
+        87
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "90 \n91         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/username?country=US\")\n92         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 104,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 91,
+      "line_range": [
+        91
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "94 \n95         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/username?date=2020-08-14\")\n96         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 109,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 95,
+      "line_range": [
+        95
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "98 \n99         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/username?country=US&date=2020-08-14\")\n100         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 120,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 99,
+      "line_range": [
+        99
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "102 \n103         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/password\")\n104         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 93,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 103,
+      "line_range": [
+        103
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "106 \n107         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/password?country=US\")\n108         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 104,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 107,
+      "line_range": [
+        107
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "110 \n111         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/password?date=2020-08-14\")\n112         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 109,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 111,
+      "line_range": [
+        111
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "114 \n115         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/password?country=US&date=2020-08-14\")\n116         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 120,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 115,
+      "line_range": [
+        115
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "118 \n119         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/machine_name\")\n120         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 97,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 119,
+      "line_range": [
+        119
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "122 \n123         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/machine_name?country=US\")\n124         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 108,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 123,
+      "line_range": [
+        123
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "126 \n127         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/machine_name?date=2020-08-14\")\n128         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 113,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 127,
+      "line_range": [
+        127
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "130 \n131         response_port = requests.get(\n132             API_URL + \"/api/events/count/groupby/honeypot/machine_name?country=US&date=2020-08-14\"\n133         )\n134         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 131,
+      "line_range": [
+        131,
+        132,
+        133
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "136 \n137         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/country_ip_dest\")\n138         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 100,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 137,
+      "line_range": [
+        137
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "140 \n141         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/country_ip_dest?country=US\")\n142         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 111,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 141,
+      "line_range": [
+        141
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "144 \n145         response_port = requests.get(API_URL + \"/api/events/count/groupby/honeypot/country_ip_dest?date=2020-08-14\")\n146         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 116,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 145,
+      "line_range": [
+        145
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "148 \n149         response_port = requests.get(\n150             API_URL + \"/api/events/count/groupby/honeypot/country_ip_dest?country_ip_dest=US&date=2020-08-14\"\n151         )\n152         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 149,
+      "line_range": [
+        149,
+        150,
+        151
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "155     def test_top_ten_network_events(self):\n156         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/ip_dest\")\n157         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 91,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 156,
+      "line_range": [
+        156
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "159 \n160         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/ip_dest?country=US\")\n161         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 102,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 160,
+      "line_range": [
+        160
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "163 \n164         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/ip_dest?date=2020-08-14\")\n165         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 107,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 164,
+      "line_range": [
+        164
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "167 \n168         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/ip_dest?country=US&date=2020-08-14\")\n169         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 118,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 168,
+      "line_range": [
+        168
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "171 \n172         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/port_dest\")\n173         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 93,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 172,
+      "line_range": [
+        172
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "175 \n176         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/port_dest?country=US\")\n177         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 104,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 176,
+      "line_range": [
+        176
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "179 \n180         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/port_dest?date=2020-08-14\")\n181         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 109,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 180,
+      "line_range": [
+        180
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "183 \n184         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/port_dest?country=US&date=2020-08-14\")\n185         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 120,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 184,
+      "line_range": [
+        184
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "187 \n188         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/username\")\n189         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 92,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 188,
+      "line_range": [
+        188
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "191 \n192         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/username?country=US\")\n193         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 103,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 192,
+      "line_range": [
+        192
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "195 \n196         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/username?date=2020-08-14\")\n197         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 108,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 196,
+      "line_range": [
+        196
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "199 \n200         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/username?country=US&date=2020-08-14\")\n201         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 119,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 200,
+      "line_range": [
+        200
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "203 \n204         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/password\")\n205         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 92,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 204,
+      "line_range": [
+        204
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "207 \n208         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/password?country=US\")\n209         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 103,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 208,
+      "line_range": [
+        208
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "211 \n212         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/password?date=2020-08-14\")\n213         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 108,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 212,
+      "line_range": [
+        212
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "215 \n216         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/password?country=US&date=2020-08-14\")\n217         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 119,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 216,
+      "line_range": [
+        216
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "219 \n220         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/machine_name\")\n221         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 96,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 220,
+      "line_range": [
+        220
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "223 \n224         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/machine_name?country=US\")\n225         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 107,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 224,
+      "line_range": [
+        224
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "227 \n228         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/machine_name?date=2020-08-14\")\n229         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 112,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 228,
+      "line_range": [
+        228
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "231 \n232         response_port = requests.get(\n233             API_URL + \"/api/events/count/groupby/network/machine_name?country=US&date=2020-08-14\"\n234         )\n235         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 232,
+      "line_range": [
+        232,
+        233,
+        234
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "237 \n238         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/country_ip_dest\")\n239         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 99,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 238,
+      "line_range": [
+        238
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "241 \n242         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/country_ip_dest?country=US\")\n243         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 110,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 242,
+      "line_range": [
+        242
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "245 \n246         response_port = requests.get(API_URL + \"/api/events/count/groupby/network/country_ip_dest?date=2020-08-14\")\n247         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 115,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 246,
+      "line_range": [
+        246
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "249 \n250         response_port = requests.get(\n251             API_URL + \"/api/events/count/groupby/network/country_ip_dest?country_ip_dest=US&date=2020-08-14\"\n252         )\n253         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 250,
+      "line_range": [
+        250,
+        251,
+        252
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "256     def test_top_ten_credential_events(self):\n257         response_port = requests.get(API_URL + \"/api/events/count/groupby/credential/ip_dest\")\n258         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 94,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 257,
+      "line_range": [
+        257
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "260 \n261         response_port = requests.get(API_URL + \"/api/events/count/groupby/credential/ip_dest?country=US\")\n262         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 105,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 261,
+      "line_range": [
+        261
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "264 \n265         response_port = requests.get(API_URL + \"/api/events/count/groupby/credential/ip_dest?date=2020-08-14\")\n266         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 110,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 265,
+      "line_range": [
+        265
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "268 \n269         response_port = requests.get(\n270             API_URL + \"/api/events/count/groupby/credential/ip_dest?country=US&date=2020-08-14\")\n271         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 96,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 269,
+      "line_range": [
+        269,
+        270
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "273 \n274         response_port = requests.get(API_URL + \"/api/events/count/groupby/credential/port_dest\")\n275         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 96,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 274,
+      "line_range": [
+        274
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "277 \n278         response_port = requests.get(API_URL + \"/api/events/count/groupby/credential/port_dest?country=US\")\n279         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 107,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 278,
+      "line_range": [
+        278
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "281 \n282         response_port = requests.get(API_URL + \"/api/events/count/groupby/credential/port_dest?date=2020-08-14\")\n283         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 112,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 282,
+      "line_range": [
+        282
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "285 \n286         response_port = requests.get(\n287             API_URL + \"/api/events/count/groupby/credential/port_dest?country=US&date=2020-08-14\")\n288         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 98,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 286,
+      "line_range": [
+        286,
+        287
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "290 \n291         response_port = requests.get(API_URL + \"/api/events/count/groupby/credential/username\")\n292         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 95,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 291,
+      "line_range": [
+        291
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "294 \n295         response_port = requests.get(API_URL + \"/api/events/count/groupby/credential/username?country=US\")\n296         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 106,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 295,
+      "line_range": [
+        295
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "298 \n299         response_port = requests.get(API_URL + \"/api/events/count/groupby/credential/username?date=2020-08-14\")\n300         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 111,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 299,
+      "line_range": [
+        299
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "302 \n303         response_port = requests.get(\n304             API_URL + \"/api/events/count/groupby/credential/username?country=US&date=2020-08-14\")\n305         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 97,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 303,
+      "line_range": [
+        303,
+        304
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "307 \n308         response_port = requests.get(API_URL + \"/api/events/count/groupby/credential/password\")\n309         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 95,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 308,
+      "line_range": [
+        308
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "311 \n312         response_port = requests.get(API_URL + \"/api/events/count/groupby/credential/password?country=US\")\n313         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 106,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 312,
+      "line_range": [
+        312
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "315 \n316         response_port = requests.get(API_URL + \"/api/events/count/groupby/credential/password?date=2020-08-14\")\n317         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 111,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 316,
+      "line_range": [
+        316
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "319 \n320         response_port = requests.get(\n321             API_URL + \"/api/events/count/groupby/credential/password?country=US&date=2020-08-14\")\n322         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 97,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 320,
+      "line_range": [
+        320,
+        321
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "324 \n325         response_port = requests.get(API_URL + \"/api/events/count/groupby/credential/machine_name\")\n326         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 99,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 325,
+      "line_range": [
+        325
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "328 \n329         response_port = requests.get(API_URL + \"/api/events/count/groupby/credential/machine_name?country=US\")\n330         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 110,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 329,
+      "line_range": [
+        329
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "332 \n333         response_port = requests.get(API_URL + \"/api/events/count/groupby/credential/machine_name?date=2020-08-14\")\n334         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 115,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 333,
+      "line_range": [
+        333
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "336 \n337         response_port = requests.get(\n338             API_URL + \"/api/events/count/groupby/credential/machine_name?country=US&date=2020-08-14\"\n339         )\n340         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 337,
+      "line_range": [
+        337,
+        338,
+        339
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "342 \n343         response_port = requests.get(API_URL + \"/api/events/count/groupby/credential/country_ip_dest\")\n344         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 102,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 343,
+      "line_range": [
+        343
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "346 \n347         response_port = requests.get(API_URL + \"/api/events/count/groupby/credential/country_ip_dest?country=US\")\n348         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 113,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 347,
+      "line_range": [
+        347
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "350 \n351         response_port = requests.get(API_URL + \"/api/events/count/groupby/credential/country_ip_dest?date=2020-08-14\")\n352         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 118,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 351,
+      "line_range": [
+        351
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "354 \n355         response_port = requests.get(\n356             API_URL + \"/api/events/count/groupby/credential/country_ip_dest?country=US&date=2020-08-14\"\n357         )\n358         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 355,
+      "line_range": [
+        355,
+        356,
+        357
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "361     def test_top_ten_file_events(self):\n362         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/ip_dest\")\n363         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 88,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 362,
+      "line_range": [
+        362
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "365 \n366         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/ip_dest?country=US\")\n367         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 99,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 366,
+      "line_range": [
+        366
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "369 \n370         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/ip_dest?date=2020-08-14\")\n371         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 104,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 370,
+      "line_range": [
+        370
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "373 \n374         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/ip_dest?country=US&date=2020-08-14\")\n375         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 115,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 374,
+      "line_range": [
+        374
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "377 \n378         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/port_dest\")\n379         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 90,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 378,
+      "line_range": [
+        378
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "381 \n382         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/port_dest?country=US\")\n383         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 101,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 382,
+      "line_range": [
+        382
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "385 \n386         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/port_dest?date=2020-08-14\")\n387         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 106,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 386,
+      "line_range": [
+        386
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "389 \n390         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/port_dest?country=US&date=2020-08-14\")\n391         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 117,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 390,
+      "line_range": [
+        390
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "393 \n394         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/username\")\n395         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 89,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 394,
+      "line_range": [
+        394
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "397 \n398         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/username?country=US\")\n399         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 100,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 398,
+      "line_range": [
+        398
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "401 \n402         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/username?date=2020-08-14\")\n403         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 105,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 402,
+      "line_range": [
+        402
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "405 \n406         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/username?country=US&date=2020-08-14\")\n407         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 116,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 406,
+      "line_range": [
+        406
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "409 \n410         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/password\")\n411         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 89,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 410,
+      "line_range": [
+        410
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "413 \n414         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/password?country=US\")\n415         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 100,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 414,
+      "line_range": [
+        414
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "417 \n418         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/password?date=2020-08-14\")\n419         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 105,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 418,
+      "line_range": [
+        418
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "421 \n422         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/password?country=US&date=2020-08-14\")\n423         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 116,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 422,
+      "line_range": [
+        422
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "425 \n426         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/machine_name\")\n427         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 93,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 426,
+      "line_range": [
+        426
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "429 \n430         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/machine_name?country=US\")\n431         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 104,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 430,
+      "line_range": [
+        430
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "433 \n434         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/machine_name?date=2020-08-14\")\n435         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 109,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 434,
+      "line_range": [
+        434
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "437 \n438         response_port = requests.get(\n439             API_URL + \"/api/events/count/groupby/file/machine_name?country=US&date=2020-08-14\"\n440         )\n441         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 438,
+      "line_range": [
+        438,
+        439,
+        440
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "443 \n444         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/country_ip_dest\")\n445         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 96,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 444,
+      "line_range": [
+        444
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "447 \n448         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/country_ip_dest?country=US\")\n449         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 107,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 448,
+      "line_range": [
+        448
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "451 \n452         response_port = requests.get(API_URL + \"/api/events/count/groupby/file/country_ip_dest?date=2020-08-14\")\n453         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 112,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 452,
+      "line_range": [
+        452
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "455 \n456         response_port = requests.get(\n457             API_URL + \"/api/events/count/groupby/file/country_ip_dest?country=US&date=2020-08-14\"\n458         )\n459         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 456,
+      "line_range": [
+        456,
+        457,
+        458
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "462     def test_top_ten_data_events(self):\n463         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/ip_dest\")\n464         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 88,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 463,
+      "line_range": [
+        463
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "466 \n467         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/ip_dest?country=US\")\n468         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 99,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 467,
+      "line_range": [
+        467
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "470 \n471         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/ip_dest?date=2020-08-14\")\n472         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 104,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 471,
+      "line_range": [
+        471
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "474 \n475         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/ip_dest?country=US&date=2020-08-14\")\n476         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 115,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 475,
+      "line_range": [
+        475
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "478 \n479         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/port_dest\")\n480         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 90,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 479,
+      "line_range": [
+        479
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "482 \n483         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/port_dest?country=US\")\n484         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 101,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 483,
+      "line_range": [
+        483
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "486 \n487         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/port_dest?date=2020-08-14\")\n488         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 106,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 487,
+      "line_range": [
+        487
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "490 \n491         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/port_dest?country=US&date=2020-08-14\")\n492         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 117,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 491,
+      "line_range": [
+        491
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "494 \n495         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/username\")\n496         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 89,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 495,
+      "line_range": [
+        495
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "498 \n499         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/username?country=US\")\n500         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 100,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 499,
+      "line_range": [
+        499
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "502 \n503         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/username?date=2020-08-14\")\n504         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 105,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 503,
+      "line_range": [
+        503
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "506 \n507         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/username?country=US&date=2020-08-14\")\n508         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 116,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 507,
+      "line_range": [
+        507
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "510 \n511         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/password\")\n512         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 89,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 511,
+      "line_range": [
+        511
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "514 \n515         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/password?country=US\")\n516         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 100,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 515,
+      "line_range": [
+        515
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "518 \n519         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/password?date=2020-08-14\")\n520         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 105,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 519,
+      "line_range": [
+        519
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "522 \n523         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/password?country=US&date=2020-08-14\")\n524         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 116,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 523,
+      "line_range": [
+        523
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "526 \n527         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/machine_name\")\n528         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 93,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 527,
+      "line_range": [
+        527
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "530 \n531         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/machine_name?country=US\")\n532         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 104,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 531,
+      "line_range": [
+        531
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "534 \n535         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/machine_name?date=2020-08-14\")\n536         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 109,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 535,
+      "line_range": [
+        535
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "538 \n539         response_port = requests.get(\n540             API_URL + \"/api/events/count/groupby/data/machine_name?country=US&date=2020-08-14\"\n541         )\n542         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 539,
+      "line_range": [
+        539,
+        540,
+        541
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "544 \n545         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/country_ip_dest\")\n546         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 96,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 545,
+      "line_range": [
+        545
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "548 \n549         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/country_ip_dest?country=US\")\n550         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 107,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 549,
+      "line_range": [
+        549
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "552 \n553         response_port = requests.get(API_URL + \"/api/events/count/groupby/data/country_ip_dest?date=2020-08-14\")\n554         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 112,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 553,
+      "line_range": [
+        553
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "556 \n557         response_port = requests.get(\n558             API_URL + \"/api/events/count/groupby/data/country_ip_dest?country=US&date=2020-08-14\"\n559         )\n560         self.assertGreaterEqual(len(response_port.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 557,
+      "line_range": [
+        557,
+        558,
+        559
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "563     def test_honeypot_events_list(self):\n564         response_honeypot = requests.get(API_URL + \"/api/events/explore/honeypot\")\n565         self.assertGreaterEqual(len(response_honeypot.json()), 0)\n",
+      "col_offset": 28,
+      "end_col_offset": 82,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 564,
+      "line_range": [
+        564
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "567 \n568         response_honeypot_countries = requests.get(\n569             API_URL + \"/api/events/explore/honeypot?module_name=ssh/strong_password\"\n570         )\n571         self.assertGreaterEqual(len(response_honeypot_countries.json()), 0)\n",
+      "col_offset": 38,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 568,
+      "line_range": [
+        568,
+        569,
+        570
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "573 \n574         response_honeypot_countries = requests.get(\n575             API_URL + \"/api/events/explore/honeypot?date=2020-08-14\"\n576         )\n577         self.assertGreaterEqual(len(response_honeypot_countries.json()), 0)\n",
+      "col_offset": 38,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 574,
+      "line_range": [
+        574,
+        575,
+        576
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "579 \n580         response_honeypot_machinenames = requests.get(\n581             API_URL + \"/api/events/explore/honeypot?module_name=ssh/strong_password&date=2020-08-14\"\n582         )\n583         self.assertGreaterEqual(len(response_honeypot_machinenames.json()), 0)\n",
+      "col_offset": 41,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 580,
+      "line_range": [
+        580,
+        581,
+        582
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "586     def test_network_events_list(self):\n587         response_network = requests.get(API_URL + \"/api/events/explore/network\")\n588         self.assertGreaterEqual(len(response_network.json()), 0)\n",
+      "col_offset": 27,
+      "end_col_offset": 80,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 587,
+      "line_range": [
+        587
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "590 \n591         response_network_countries = requests.get(\n592             API_URL + \"/api/events/explore/network?module_name=ssh/strong_password\"\n593         )\n594         self.assertGreaterEqual(len(response_network_countries.json()), 0)\n",
+      "col_offset": 37,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 591,
+      "line_range": [
+        591,
+        592,
+        593
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "596 \n597         response_network_countries = requests.get(\n598             API_URL + \"/api/events/explore/network?date=2020-08-14\"\n599         )\n600         self.assertGreaterEqual(len(response_network_countries.json()), 0)\n",
+      "col_offset": 37,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 597,
+      "line_range": [
+        597,
+        598,
+        599
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "602 \n603         response_network_machinenames = requests.get(\n604             API_URL + \"/api/events/explore/network?module_name=ssh/strong_password&date=2020-08-14\"\n605         )\n606         self.assertGreaterEqual(len(response_network_machinenames.json()), 0)\n",
+      "col_offset": 40,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 603,
+      "line_range": [
+        603,
+        604,
+        605
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "609     def test_credential_events_list(self):\n610         response_credential = requests.get(API_URL + \"/api/events/explore/credential\")\n611         self.assertGreaterEqual(len(response_credential.json()), 0)\n",
+      "col_offset": 30,
+      "end_col_offset": 86,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 610,
+      "line_range": [
+        610
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "613 \n614         response_credential_countries = requests.get(\n615             API_URL + \"/api/events/explore/credential?module_name=ssh/strong_password\"\n616         )\n617         self.assertGreaterEqual(len(response_credential_countries.json()), 0)\n",
+      "col_offset": 40,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 614,
+      "line_range": [
+        614,
+        615,
+        616
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "619 \n620         response_credential_countries = requests.get(\n621             API_URL + \"/api/events/explore/credential?date=2020-08-14\"\n622         )\n623         self.assertGreaterEqual(len(response_credential_countries.json()), 0)\n",
+      "col_offset": 40,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 620,
+      "line_range": [
+        620,
+        621,
+        622
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "625 \n626         response_credential_machinenames = requests.get(\n627             API_URL + \"/api/events/explore/credential?module_name=ssh/strong_password&date=2020-08-14\"\n628         )\n629         self.assertGreaterEqual(len(response_credential_machinenames.json()), 0)\n",
+      "col_offset": 43,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 626,
+      "line_range": [
+        626,
+        627,
+        628
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "632     def test_file_events_list(self):\n633         response_file = requests.get(API_URL + \"/api/events/explore/file\")\n634         self.assertGreaterEqual(len(response_file.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 74,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 633,
+      "line_range": [
+        633
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "636 \n637         response_file_countries = requests.get(\n638             API_URL + \"/api/events/explore/file?module_name=ssh/strong_password\"\n639         )\n640         self.assertGreaterEqual(len(response_file_countries.json()), 0)\n",
+      "col_offset": 34,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 637,
+      "line_range": [
+        637,
+        638,
+        639
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "642 \n643         response_file_countries = requests.get(\n644             API_URL + \"/api/events/explore/file?date=2020-08-14\"\n645         )\n646         self.assertGreaterEqual(len(response_file_countries.json()), 0)\n",
+      "col_offset": 34,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 643,
+      "line_range": [
+        643,
+        644,
+        645
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "648 \n649         response_file_machinenames = requests.get(\n650             API_URL + \"/api/events/explore/file?module_name=ssh/strong_password&date=2020-08-14\"\n651         )\n652         self.assertGreaterEqual(len(response_file_machinenames.json()), 0)\n",
+      "col_offset": 37,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 649,
+      "line_range": [
+        649,
+        650,
+        651
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "655     def test_data_events_list(self):\n656         response_data = requests.get(API_URL + \"/api/events/explore/data\")\n657         self.assertGreaterEqual(len(response_data.json()), 0)\n",
+      "col_offset": 24,
+      "end_col_offset": 74,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 656,
+      "line_range": [
+        656
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "659 \n660         response_data_countries = requests.get(\n661             API_URL + \"/api/events/explore/data?module_name=ssh/strong_password\"\n662         )\n663         self.assertGreaterEqual(len(response_data_countries.json()), 0)\n",
+      "col_offset": 34,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 660,
+      "line_range": [
+        660,
+        661,
+        662
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "665 \n666         response_data_countries = requests.get(\n667             API_URL + \"/api/events/explore/data?date=2020-08-14\"\n668         )\n669         self.assertGreaterEqual(len(response_data_countries.json()), 0)\n",
+      "col_offset": 34,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 666,
+      "line_range": [
+        666,
+        667,
+        668
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "671 \n672         response_data_machinenames = requests.get(\n673             API_URL + \"/api/events/explore/data?module_name=ssh/strong_password&date=2020-08-14\"\n674         )\n675         self.assertGreaterEqual(len(response_data_machinenames.json()), 0)\n",
+      "col_offset": 37,
+      "end_col_offset": 9,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 672,
+      "line_range": [
+        672,
+        673,
+        674
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "682         module_names = load_all_modules()\n683         response = requests.get(API_URL + \"/api/core/list/modules\")\n684         self.assertCountEqual(module_names, response.json())\n",
+      "col_offset": 19,
+      "end_col_offset": 67,
+      "filename": "./tests/test_api.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 683,
+      "line_range": [
+        683
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "96             username=\"admin\",\n97             password=\"password\",\n98             module_name=\"http/basic_auth_weak_password\",\n99             date=datetime.now().strftime(\"%Y-%m-%d %H:%M:%S\")\n100         )\n101 \n102         insert_to_credential_events_collection(credential_event)\n103         # wait for insert\n104         time.sleep(1)\n",
+      "col_offset": 27,
+      "end_col_offset": 9,
+      "filename": "./tests/test_connector.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 259,
+        "link": "https://cwe.mitre.org/data/definitions/259.html"
+      },
+      "issue_severity": "LOW",
+      "issue_text": "Possible hardcoded password: 'password'",
+      "line_number": 97,
+      "line_range": [
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b106_hardcoded_password_funcarg.html",
+      "test_id": "B106",
+      "test_name": "hardcoded_password_funcarg"
+    }
+  ]
+}

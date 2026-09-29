@@ -1,0 +1,5 @@
+source=.local/labs/sticky_elephant/Dockerfile.lab
+image=sticky_elephant:uhbs-lab
+digest=sha256:f4b041ea5aef6145ddb28558ec7f1a05bcd00907331ef1cf9c9e60f7b8403171
+dockerfile=docs/conformance/latest/results-5.0.1/sticky_elephant/postgres/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/sticky_elephant/postgres/Dockerfile.pin

@@ -1,0 +1,5 @@
+source=.local/labs/owa-honeypot/Dockerfile.lab
+image=owa-honeypot:uhbs-lab
+digest=sha256:d06636c5de94af9eff389ece0d559dbb69e97b8840ddd153803687ea1f4c2e1b
+dockerfile=docs/conformance/latest/results-5.0.1/owa-honeypot/http/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/owa-honeypot/http/Dockerfile.pin

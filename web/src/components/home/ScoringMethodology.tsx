@@ -31,7 +31,7 @@ export const ScoringMethodology = () => {
           <Card>
             <CardHeader className="flex flex-row flex-wrap items-center justify-between gap-3">
               <CardTitle className="font-mono text-main text-sm uppercase tracking-wider">
-                The UHQS 5.0.0 Formula
+                The UHQS 5.0.1 Formula
               </CardTitle>
               <UhqsHumanExplainerTrigger />
             </CardHeader>

@@ -1,16 +1,16 @@
-# Scorecard: dionaea — ftp (results-5.0.0)
+# Scorecard: dionaea — ftp (results-5.0.1)
 
 **Status:** Informative · evaluation proof (not an endorsement)  
-**UHBS:** **5.0.0** · **Class:** Low-Interaction · **Protocol / surface:** `ftp`  
+**UHBS:** **5.0.1** · **Class:** Low-Interaction · **Protocol / surface:** `ftp`  
 **Target id (lab):** `dionaea-ftp` · **Evaluation date:** 2026-09-26  
 **Verdict:** INCOMPLETE / ungraded (`uhqs-v5.0-critical-gate-diagnostic`)
 
 | Run | UHQS | Grade | δ_C | Proof artifacts |
 | --- | ---: | --- | --- | --- |
-| Quick | ungraded | — | 0.0 | [quick SCORECARD](../conformance/latest/results-5.0.0/dionaea/ftp/quick/SCORECARD.txt) |
-| **Full (authoritative)** | **ungraded** | **—** | **0.0** | Verbatim SCORECARD below + [`full-run.cast`](../conformance/latest/results-5.0.0/dionaea/ftp/full/proof/full-run.cast) |
+| Quick | ungraded | — | 0.0 | [quick SCORECARD](../conformance/latest/results-5.0.1/dionaea/ftp/quick/SCORECARD.txt) |
+| **Full (authoritative)** | **ungraded** | **—** | **0.0** | Verbatim SCORECARD below + [`full-run.cast`](../conformance/latest/results-5.0.1/dionaea/ftp/full/proof/full-run.cast) |
 
-**Report hub:** [dionaea / ftp](../conformance/latest/results-5.0.0/dionaea/ftp/index.md) · [Tutorial](../conformance/latest/results-5.0.0/dionaea/TUTORIAL.md) · [Methodology](../conformance/latest/results-5.0.0/dionaea/METHODOLOGY.md) · [Execution steps](../conformance/latest/results-5.0.0/dionaea/ftp/EXECUTION-STEPS.md)
+**Report hub:** [dionaea / ftp](../conformance/latest/results-5.0.1/dionaea/ftp/index.md) · [Tutorial](../conformance/latest/results-5.0.1/dionaea/TUTORIAL.md) · [Methodology](../conformance/latest/results-5.0.1/dionaea/METHODOLOGY.md) · [Execution steps](../conformance/latest/results-5.0.1/dionaea/ftp/EXECUTION-STEPS.md)
 
 Archived 4.x 57.96 / D is **not** the current published result.
 
@@ -18,7 +18,7 @@ Archived 4.x 57.96 / D is **not** the current published result.
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : dionaea-ftp
 System Profile Class  : Low-Interaction
@@ -41,7 +41,7 @@ Module E: Scalability & Latency     :  55.0/100       0.10     PARTIAL (P50=1023
 Module F: Static Code Audit         :  66.3/100       0.20     PARTIAL (bandit HIGH=9)
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : Ungraded — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (Ungraded — no composite UHQS)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (Ungraded — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
 scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
 ====================================================================================

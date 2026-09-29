@@ -1,20 +1,20 @@
-# Scorecard: mailoney — smtp (results-5.0.0)
+# Scorecard: mailoney — smtp (results-5.0.1)
 
-**UHBS:** **5.0.0** · **Class:** Low-Interaction · **Protocol:** `smtp`  
+**UHBS:** **5.0.1** · **Class:** Low-Interaction · **Protocol:** `smtp`  
 **Verdict:** INCOMPLETE / INCOMPLETE (ungraded)
 
 | Run | UHQS | Grade | Proof |
 | --- | ---: | --- | --- |
-| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.0/mailoney/smtp/quick/SCORECARD.txt) |
+| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.1/mailoney/smtp/quick/SCORECARD.txt) |
 | **Full** | **ungraded** | **—** | Verbatim SCORECARD below |
 
-**Hub:** [mailoney/smtp](../conformance/latest/results-5.0.0/mailoney/smtp/index.md) · [Tutorial](../conformance/latest/results-5.0.0/mailoney/TUTORIAL.md) · [Execution steps](../conformance/latest/results-5.0.0/mailoney/smtp/EXECUTION-STEPS.md)
+**Hub:** [mailoney/smtp](../conformance/latest/results-5.0.1/mailoney/smtp/index.md) · [Tutorial](../conformance/latest/results-5.0.1/mailoney/TUTORIAL.md) · [Execution steps](../conformance/latest/results-5.0.1/mailoney/smtp/EXECUTION-STEPS.md)
 
 ## Verbatim full SCORECARD
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : mailoney-smtp
 System Profile Class  : Low-Interaction
@@ -37,7 +37,7 @@ Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service a
 Module F: Static Code Audit         :  75.6/100       0.20     PASSED (trivy not installed — not tested (zero credit))
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : Ungraded — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (Ungraded — no composite UHQS)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (Ungraded — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
 scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
 ====================================================================================

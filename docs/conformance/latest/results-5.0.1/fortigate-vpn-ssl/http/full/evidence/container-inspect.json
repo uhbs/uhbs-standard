@@ -1,0 +1,210 @@
+[
+    {
+        "Id": "2d62c568dd4ce3d4e8b2f23a54ebec3cae6a413418d3f15ef64e3bcea18079cd",
+        "Created": "2026-09-27T19:58:53.743648638Z",
+        "Path": "python3",
+        "Args": [
+            "-m",
+            "flask",
+            "run",
+            "--host=0.0.0.0",
+            "--port=5000"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 91803,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T19:58:54.130093597Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:0a25874dec879b23806f5444d153100d7658c3f6de93cdfc60824cc33a611f92",
+        "ResolvConfPath": "/var/lib/docker/containers/2d62c568dd4ce3d4e8b2f23a54ebec3cae6a413418d3f15ef64e3bcea18079cd/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/2d62c568dd4ce3d4e8b2f23a54ebec3cae6a413418d3f15ef64e3bcea18079cd/hostname",
+        "HostsPath": "/var/lib/docker/containers/2d62c568dd4ce3d4e8b2f23a54ebec3cae6a413418d3f15ef64e3bcea18079cd/hosts",
+        "LogPath": "/var/lib/docker/containers/2d62c568dd4ce3d4e8b2f23a54ebec3cae6a413418d3f15ef64e3bcea18079cd/2d62c568dd4ce3d4e8b2f23a54ebec3cae6a413418d3f15ef64e3bcea18079cd-json.log",
+        "Name": "/fortigate-vpn-ssl-lab",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "2d62c568dd4ce3d4e8b2f23a54ebec3cae6a413418d3f15ef64e3bcea18079cd",
+                "LowerDir": "/var/lib/docker/overlay2/5775f6dd0f45728de9d044cbbc29f94ba405b92520882e42eea63d86cbddbc59-init/diff:/var/lib/docker/overlay2/7jvw0sasn5lbi53envpq9grcp/diff:/var/lib/docker/overlay2/h8diurd0spi7ettww2ysqh4vb/diff:/var/lib/docker/overlay2/5c2zjj3pbt98gph3k73ionbnh/diff:/var/lib/docker/overlay2/mncf4ur8dfx91cn226zeq7rwa/diff:/var/lib/docker/overlay2/e64f2b5668730abd99655c08d07b0455b21ff332ce985308c66e91cd953b23d6/diff:/var/lib/docker/overlay2/7832ee9ece66c3e4c4a9a0c3d390cdaa07f996dc0d4d5a57940253c20f705549/diff:/var/lib/docker/overlay2/b5b2adb69859819c1f9ea7197a1a9835988b0da60afcf6fc21a02406f6a99333/diff:/var/lib/docker/overlay2/9226f87fad8a9767d3469a7b90e3c54a0f60047c20d211215a6ea7c525fc114d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/5775f6dd0f45728de9d044cbbc29f94ba405b92520882e42eea63d86cbddbc59/merged",
+                "UpperDir": "/var/lib/docker/overlay2/5775f6dd0f45728de9d044cbbc29f94ba405b92520882e42eea63d86cbddbc59/diff",
+                "WorkDir": "/var/lib/docker/overlay2/5775f6dd0f45728de9d044cbbc29f94ba405b92520882e42eea63d86cbddbc59/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "2d62c568dd4c",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "5000/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.12.14",
+                "PYTHON_SHA256=5c8462af5790baf43a321a1559dbe0db06d1be4300fb85fb53c40060668e548a",
+                "FLASK_APP=honey.py"
+            ],
+            "Cmd": [
+                "python3",
+                "-m",
+                "flask",
+                "run",
+                "--host=0.0.0.0",
+                "--port=5000"
+            ],
+            "Image": "fortigate-vpn-ssl:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/honey",
+            "Entrypoint": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "SandboxID": "886ce17ae734fe89b656081a6218352014374fabbbce6fc0caf0c3f347ede326",
+            "SandboxKey": "/var/run/docker/netns/886ce17ae734",
+            "Ports": {
+                "5000/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "fortigate-vpn-ssl-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "ce99774830e0457a78a8c3927b21e053d9bca16427e422c765a3f361adee35e7",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "e6:8f:e0:f3:fc:d6",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "fortigate-vpn-ssl-lab",
+                        "2d62c568dd4c"
+                    ]
+                }
+            }
+        }
+    }
+]

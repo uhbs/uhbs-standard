@@ -1,14 +1,14 @@
-# Tutorial: grade Trapster Community with UHBS (results-5.0.0)
+# Tutorial: grade Trapster Community with UHBS (results-5.0.1)
 
 **Status:** Informative · evaluation proof  
 **Target:** [https://github.com/0xBallpoint/trapster-community](https://github.com/0xBallpoint/trapster-community) · `main` @ `c6cc6638e9cc9fd28e38ec6846f2b92cbf01d2b7`  
-**Refreshed so far:** SSH `:2222`, HTTP `:8080`, FTP `:2121`, Telnet `:2323` (all INCOMPLETE / ungraded under UHBS 5.0.0)
+**Refreshed so far:** SSH `:2222`, HTTP `:8080`, FTP `:2121`, Telnet `:2323` (all INCOMPLETE / ungraded under UHBS 5.0.1)
 
 ## 0. Prerequisites
 
 ```bash
-docker build -t uhbs:5.0.0 .
-docker build -f Dockerfile.full -t uhbs:5.0.0-full .
+docker build -t uhbs:5.0.1 .
+docker build -f Dockerfile.full -t uhbs:5.0.1-full .
 docker network create uhbs-lab 2>/dev/null || true
 ```
 
@@ -42,4 +42,4 @@ Wait for SSH `:2222` after first-boot host-key generation.
 
 Exact commands for SSH: [`ssh/EXECUTION-STEPS.md`](ssh/EXECUTION-STEPS.md). HTTP: [`http/EXECUTION-STEPS.md`](http/EXECUTION-STEPS.md). FTP: [`ftp/EXECUTION-STEPS.md`](ftp/EXECUTION-STEPS.md). Telnet: [`telnet/EXECUTION-STEPS.md`](telnet/EXECUTION-STEPS.md).
 
-**Published (results-5.0.0):** all four protocols **ungraded / INCOMPLETE**. Archived 4.x letter grades are not current.
+**Published (results-5.0.1):** all four protocols **ungraded / INCOMPLETE**. Archived 4.x letter grades are not current.

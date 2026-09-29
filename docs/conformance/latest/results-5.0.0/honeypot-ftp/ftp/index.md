@@ -1,7 +1,7 @@
-# honeypot-ftp — ftp (results-5.0.0)
+# honeypot-ftp — ftp (results-5.0.1)
 
 **Status:** Informative · evaluation proof  
-**UHBS:** 5.0.0 · **Class:** Low-Interaction · **Protocol:** `ftp`  
+**UHBS:** 5.0.1 · **Class:** Low-Interaction · **Protocol:** `ftp`  
 **Target id:** `honeypot-ftp-ftp` · **Evaluated:** 2026-09-26  
 **Upstream:** `master` @ `c7b7cbed4c52d3d84b62676dd1a359c6d9da2696`  
 **Verdict:** INCOMPLETE / INCOMPLETE / UHQS=39.61 grade=F (`uhqs-v5.1-always-grade`)
@@ -13,7 +13,7 @@
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../../fixtures/honeypot-ftp-ftp.scorecard.json`](../../../../fixtures/honeypot-ftp-ftp.scorecard.json)  
-Archive: [`../../../../archive/v5.0.0/honeypot-ftp/ftp/`](../../../../archive/v5.0.0/honeypot-ftp/ftp/)  
+Archive: [`../../../../archive/v5.0.1/honeypot-ftp/ftp/`](../../../../archive/v5.0.1/honeypot-ftp/ftp/)  
 Replication: [`EXECUTION-STEPS.md`](EXECUTION-STEPS.md)
 
 INCOMPLETE / UHQS=39.61 grade=F (non-SSH Module D). Do not cite archived 4.x letter grades.
@@ -34,7 +34,7 @@ INCOMPLETE / UHQS=39.61 grade=F (non-SSH Module D). Do not cite archived 4.x let
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : honeypot-ftp
 System Profile Class  : Low-Interaction
@@ -58,7 +58,7 @@ Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service a
 Module F: Static Code Audit         :  56.6/100       0.20     PARTIAL (2 static private keys: keys/smtp.private.key, keys/ca.private.key)
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : UHQS=39.61 grade=F — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (UHQS=39.61 grade=F — no composite UHQS)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (UHQS=39.61 grade=F — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
 scoring_model_id                      : uhqs-v5.1-always-grade
 ====================================================================================

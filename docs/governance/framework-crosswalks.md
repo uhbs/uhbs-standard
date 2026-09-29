@@ -1,7 +1,7 @@
 # Framework Crosswalk Governance
 
 **Status:** Informative<br>
-**Applies to:** UHBS 5.0.0 documentation and scorecard `framework_refs`<br>
+**Applies to:** UHBS 5.0.1 documentation and scorecard `framework_refs`<br>
 **Last reviewed:** 2026-09-18
 
 UHBS crosswalks help readers translate evaluation evidence into familiar control,

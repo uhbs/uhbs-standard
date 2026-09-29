@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `datatrap-postgres`
+# Image name at grade time: datatrap:uhbs-lab
+FROM sha256:c770fa469eac6850e2795447b47c5cd8f26e3051547eaae2f1819ec9774a48e0

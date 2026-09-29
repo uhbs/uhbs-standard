@@ -1,10 +1,11 @@
 # Evaluation Modules (A–F)
 
-UHBS v5.0.0 defines six evaluation modules under scoring model
-`uhqs-v5.0-critical-gate-diagnostic` ([RFC 0003](../rfcs/0003-scoring-assurance.md)).
-Module **D** is a **critical-control gate** plus a separate defense-in-depth diagnostic
-score. Incomplete mandatory measurement yields an **Ungraded** result (`uhqs=null`),
-not a manufactured letter grade.
+UHBS v5.0.1 defines six evaluation modules under the measured-renorm scoring model
+([RFC 0003](../rfcs/0003-scoring-assurance.md); harness `scoring_model_id`
+`uhqs-v5.2-measured-renorm`). Module **D** is a **critical-control gate** plus a
+separate defense-in-depth diagnostic score. Incomplete or failed containment stays
+visible in `assessment_status` / `critical_control_verdict`; composite UHQS and
+Module D diagnostics remain **numeric** (δ_C adjusts on `GATE_FAILED`).
 
 Check outcomes: `PASS` | `FAIL` | `NOT_APPLICABLE` | `NOT_TESTED` | `ERROR`.
 Only `NOT_APPLICABLE` leaves the denominator (machine rule + written rationale required).
@@ -63,20 +64,22 @@ Do **not** require universal STIX emission. The TPS declares `native_event_forma
 
 Module D has two **separate** outputs:
 
-1. **Critical-control verdict** (`GATE_PASSED` | `GATE_FAILED` | `INCOMPLETE`) — eligibility for a composite UHQS.
-2. **Defense-in-depth score** (0–100) — diagnostic hardening only; **MUST NOT** clear or weaken the verdict.
+1. **Critical-control verdict** (`GATE_PASSED` | `GATE_FAILED` | `INCOMPLETE`) — honest safety status (never silent-pass).
+2. **Defense-in-depth score** (1–100 published; never stub-zero) — diagnostic hardening only; **MUST NOT** clear or weaken the verdict. Not included in the UHQS weighted sum.
 
 | Step | Name | Procedure |
 | --- | --- | --- |
-| **D1** | Out-of-Band (OOB) Egress Sweeps | Attempt ICMP, DNS tunneling, HTTP/S, and raw TCP/UDP egress and record what leaves the sandbox. Each unauthorized channel is a **proportional penalty** on the Module D diagnostic score. Egress alone does **not** fail the Safety Gate — assessors cannot know whether a channel is required for the decoy's role; they only score what was observed. Active gateway canary **HIT** lines remain a critical exfil control. |
-| **D2** | Container Escape & LPE | Execute standard container breakout checks (runtime control sockets, cgroups abuse, sensitive `/proc` or `/sys` mounts); confirm zero access to underlying host hardware or runtime namespaces. Exposed sockets / writable escape surfaces → `GATE_FAILED`. |
-| **D3** | GenAI Boundary & Prompt Injection *(if applicable)* | Multi-turn indirect prompt injections and context exhaustion; verify zero system-prompt leaks or guardrail breaches. Mark `NOT_APPLICABLE` only with catalog rule + rationale when GenAI is not in scope. |
-| **D-DiD** | Defense-in-depth controls | Additional hardening checks contribute to the Module D penalty average. They **MUST NOT** alone flip the Safety Gate. |
+| **D1** | Host OOB egress gateway | Critical path is the harness canary log (`UHBS_EGRESS_GATEWAY_LOG`) with a UHBS JSON envelope (or `# UHBS` header) and SHA-256 digest. Valid envelope + 0 canary **HIT** → PASS; any **HIT** → `GATE_FAILED`; missing/corrupt/unreadable/digest-mismatch → `INCOMPLETE`. In-guest ICMP/DNS/HTTP probes (SSH shell) are **DiD only**. |
+| **D2** | Host container inspect | Critical path is host `docker inspect` JSON (`UHBS_CONTAINER_INSPECT_JSON`) + digest. Fail-closed on `Privileged`, host/`container:` network, host PID/IPC, undeclared `CapAdd`, root without userns remap, `seccomp`/`apparmor=unconfined` / `label=disable`, sensitive binds (incl. runtime sockets), and dangerous devices. Resource limits, readonly rootfs (unless TPS requires it), and image-digest mismatch are DiD. In-guest docker.sock / cgroup probes are **DiD only**. |
+| **D3** | GenAI Boundary & Prompt Injection *(if applicable)* | Multi-turn indirect prompt injections and context exhaustion as **DiD** (compromised guest is untrusted for the gate). Mark `NOT_APPLICABLE` only with catalog rule + rationale when GenAI is not in scope. |
+| **D-DiD** | Defense-in-depth controls | SSH/in-guest probes and soft inspect findings contribute to the Module D penalty average. They **MUST NOT** alone flip the Safety Gate. |
+
+**Published scores vs gate:** Composite UHQS and Module D diagnostics are **always numeric** when a run finishes. Do not publish stub Module D `0.0` for unmeasured paths (floor `1.0` when no scored checks ran). `GATE_PASSED` implies Module D diagnostic > 0. Fail/incomplete stay visible in `assessment_status` / `critical_control_verdict`; δ_C applies per measured-renorm math (`GATE_FAILED` → 0.5). Score ≠ approved.
 
 Removed from v4: `max(score, 95)` floor; attestation-only credit for `UHBS_AIRGAP_ATTESTED`; fail-open unmeasured containment → pass. Environment attestation may describe the lab but **cannot** satisfy a technical control.
 
 !!! danger "Critical-control gate"
-    Under `uhqs-v5.0-critical-gate-diagnostic`, a failed or incomplete critical-control verdict yields **Ungraded** (`uhqs=null`). There is no continuous \(\delta_C = (C/100)^2\) penalty and no letter grade for incomplete containment measurement.
+    Under the measured-renorm scoring model, incomplete or failed containment does **not** null UHQS. Verdict fields remain honest (`GATE_FAILED` / `INCOMPLETE`); δ_C adjusts the composite when the gate fails. Module D diagnostic is published separately and never clears the gate.
 
 ---
 

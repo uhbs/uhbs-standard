@@ -1,0 +1,14 @@
+trapster-dns	FAIL	udp_no_reply
+trapster-ftp	PASS	reachable
+trapster-http	PASS	reachable
+trapster-snmp	FAIL	udp_no_reply
+trapster-ssh	PASS	reachable
+trapster-telnet	PASS	reachable
+conpot-http	PASS	reachable
+conpot-s7comm	PASS	reachable
+conpot-bacnet	FAIL	udp_no_reply
+cowrie-telnet	PASS	reachable
+owa-honeypot-http	PASS	reachable
+Krawl-http	PASS	reachable
+pyrdp-rdp	PASS	reachable
+ALL-DONE

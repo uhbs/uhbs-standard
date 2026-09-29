@@ -16,7 +16,7 @@ Projects from the awesome-honeypots fresh queue that **are honeypots** but canno
 
 ## Plugins added (re-queue grading)
 
-The following protocol plugins are now built into UHBS **5.0.0**. Matching deferred projects can move to the grade queue when a hermetic lab recipe exists:
+The following protocol plugins are now built into UHBS **5.0.1**. Matching deferred projects can move to the grade queue when a hermetic lab recipe exists:
 
 | Plugin | Previously deferred examples |
 | --- | --- |
@@ -25,6 +25,6 @@ The following protocol plugins are now built into UHBS **5.0.0**. Matching defer
 | `kubernetes` | helix-honeypot |
 | `dns` | UDPot |
 | `bluetooth` | bluepot |
-| `dhcp`, `httpproxy`, `ipp`, `irc`, `ldap`, `memcache`, `mssql`, `oracle`, `pjl`, `socks5` | qeeqbox multi-protocol surfaces and similar |
+| `dhcp`, `httpproxy`, `ipp`, `irc`, `ldap`, `memcache`, `mssql`, `oracle`, `pjl`, `pptp`, `socks5`, `upnp` | qeeqbox / Dionaea multi-protocol surfaces and similar |
 
 When grading, publish reports in the same format as existing labs and update this file if a row is fully closed.

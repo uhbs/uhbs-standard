@@ -1,0 +1,70 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "f91f4c7157355f2fd8074a513befc8c5025d1bb94b7ceab0a2eae93c2234e4e3"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "8d47c23e3357522586fd36f2e1f15cadb0067484dd964dc56ff271df72f706dd"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "8d47c23e3357522586fd36f2e1f15cadb0067484dd964dc56ff271df72f706dd"
+    },
+    {
+      "path": "evidence/container-inspect.json",
+      "sha256": "14d9a30ffc2e13baf1254c746dcdd1db8b93b6e16050403a68ed5e6eafc50f1b"
+    },
+    {
+      "path": "evidence/container-inspect.json.sha256",
+      "sha256": "150768f985a1e596448c772bbe2b947f07a8d5186e0397b7d732c419d1e70e75"
+    },
+    {
+      "path": "evidence/egress-gateway.log",
+      "sha256": "2e2b71fbf7e0e73223f209ef6a77e522c6bbdf045d4e870e88786ba31bd7fd20"
+    },
+    {
+      "path": "evidence/egress-gateway.log.sha256",
+      "sha256": "16ae6e80ad3142f799150ee53b7d6d29fe3d9c51827a59e5b8afbad131c0a281"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "52332e2575932fbfe230c38e4877cf3ce3ddbf4e485230b41368f3851eb0b3f7"
+    },
+    {
+      "path": "proof/full-run.cast",
+      "sha256": "82d8fa9514847bd5103b1d271d462f63b0c58b6e73fd7dccdaacff19bf23f4b1"
+    },
+    {
+      "path": "report.json",
+      "sha256": "8f21473e5b975b2119fe9a1c13982642eaf4df6087444ba533bb9ce8aafc657b"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "915d83e13cd6ca2c6b057ea924b44fc3b62c893a8228fd19d64820e372c8f5c5"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "b4a8717330bf71d1978681961206e58e6aa4894cef256b58ed272f846551537c"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "cdd8c240d8dd4f1d2fb1eb8fbca6dfaa68f3ec91132cebe7aaa03bc7c39661f3"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "eb910ee8b0776294ccefad4805a4f2fae947799c29e86f33827955384c8aa72a"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-mysql",
+    "uhqs": 28.7,
+    "grade": "GRADE F (Fail)",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
+    "assessment_status": "INCOMPLETE",
+    "evidence_pack": "evidence-pack.json",
+    "evidence_manifest_digest": "9218772938ac8cdcc4234203be0bfcf774a2e0b6bf5a7e55f3ad23e8f43489b9"
+  }
+}

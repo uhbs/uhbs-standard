@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `owasp-python-honeypot-http`
+# Image name at grade time: owasp-python-honeypot:uhbs-lab
+FROM sha256:55b63dfc3b7fee7a649539e5c10e274434ddf337de735eec94508e4482a78065

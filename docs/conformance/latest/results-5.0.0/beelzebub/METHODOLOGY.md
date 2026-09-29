@@ -1,7 +1,7 @@
-# Methodology: Beelzebub multi-protocol UHBS lab (results-5.0.0)
+# Methodology: Beelzebub multi-protocol UHBS lab (results-5.0.1)
 
 **Status:** Informative  
-**UHBS:** 5.0.0 · Images `uhbs:5.0.0` (quick) / `uhbs:5.0.0-full` (full)  
+**UHBS:** 5.0.1 · Images `uhbs:5.0.1` (quick) / `uhbs:5.0.1-full` (full)  
 **Upstream commit:** `67d5632a754f39f7b14c703d3009193150440116` (`main`)
 
 ## Runtime
@@ -27,5 +27,5 @@ SSH, TELNET, HTTP, MCP, REDIS — quick and full, **INCOMPLETE / ungraded** (hon
 ## Limitations
 
 - Do not transplant archived 4.x letter grades
-- Scratch final image has no shell; smoke checks run from `uhbs:5.0.0` with `--entrypoint python3`
+- Scratch final image has no shell; smoke checks run from `uhbs:5.0.1` with `--entrypoint python3`
 - Product name is evaluation proof only

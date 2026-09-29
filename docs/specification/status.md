@@ -1,8 +1,8 @@
 # Status of This Document
 
 **Status:** Experimental  
-**Specification version:** 5.0.0  
-**scoring_model_id:** `uhqs-v5.0-critical-gate-diagnostic`  
+**Specification version:** 5.0.1  
+**scoring_model_id:** `uhqs-v5.2-measured-renorm`  
 **Keywords:** The key words **MUST**, **MUST NOT**, **REQUIRED**, **SHALL**, **SHALL NOT**,
 **SHOULD**, **SHOULD NOT**, **RECOMMENDED**, **MAY**, and **OPTIONAL** in this
 document are to be interpreted as described in [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119)
@@ -11,10 +11,13 @@ appear in all capitals, as shown here.
 
 ## Completeness disclosure (v5)
 
-UHBS 5.0.0 requires **assessment completeness** before a letter grade:
+UHBS 5.0.1 requires **honest assessment status** alongside always-numeric scores:
 
 - Applicable mandatory checks that are `NOT_TESTED` or `ERROR` yield
-  `assessment_status = INCOMPLETE`, `uhqs = null`, and **no letter grade** (Ungraded).
+  `assessment_status = INCOMPLETE`. Composite `uhqs` remains numeric; operators
+  **MUST** read verdict/status fields (score ≠ approved).
+- Module D critical failures yield `GATE_FAILED` with δ_C = 0.5; missing OOB
+  evidence yields `INCOMPLETE`. Module D diagnostic **MUST NOT** be stub-zero.
 - Only `NOT_APPLICABLE` may leave a scoring denominator, and only with a machine
   applicability rule plus written rationale.
 - Live known-good/known-bad calibration across profile classes remains **partial at
@@ -40,7 +43,7 @@ An implementation claiming **UHBS-Core** conformance **MUST**:
 1. Accept a TPS `profile.yaml` validating against `schemas/profile.schema.json`
 2. Emit a scorecard validating against `schemas/scorecard.schema.json`
 3. Compute UHQS using the normative formula and critical-control gate under
-   `scoring_model_id = uhqs-v5.0-critical-gate-diagnostic`
+   `scoring_model_id = uhqs-v5.2-measured-renorm`
 4. Apply profile-class weights that match § Profile-Adaptive Weight Distributions
 5. Pass public v5 conformance fixtures under `docs/conformance/fixtures/v5/`
 6. Preserve the ability to validate historical v4 scorecards with `schemas/v4/`
@@ -51,10 +54,10 @@ An implementation claiming **UHBS-Lab** conformance **MUST** satisfy UHBS-Core a
 
 1. Execute Modules A–F with explicit check outcomes (not silent skips)
 2. Emit an evidence pack validating against `schemas/evidence-pack.schema.json`
-3. Record Module D critical-control evidence (attestation alone is insufficient)
+3. Record Module D critical-control evidence (host OOB gateway + container inspect; attestation alone is insufficient)
 4. Include step-level check results with digests, applicability rationales, and
    `assurance_level` for official/registry scorecards
-5. Disclose incomplete modules as Ungraded rather than inventing a letter grade
+5. Keep `assessment_status` / `critical_control_verdict` honest while publishing numeric UHQS and Module D diagnostics
 
 The reference harness that implements UHBS-Lab is described in
 [reference-implementation.md](../reference-implementation.md).

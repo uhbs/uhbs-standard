@@ -1,0 +1,5 @@
+source=.local/labs/mysql-honeypotd/Dockerfile
+image=mysql-honeypotd:uhbs-lab
+digest=sha256:9445e1b2ea7b16061cb3218a56ce374f3bf401155aa83e32980078da5736e9b1
+dockerfile=docs/conformance/latest/results-5.0.1/mysql-honeypotd/mysql/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/mysql-honeypotd/mysql/Dockerfile.pin

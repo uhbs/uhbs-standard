@@ -1,4 +1,4 @@
-# Tutorial: grade GenAIPot with UHBS (results-5.0.0)
+# Tutorial: grade GenAIPot with UHBS (results-5.0.1)
 
 **Status:** Informative · evaluation proof  
 **Target:** [https://github.com/eduardobsg/GenAIPot](https://github.com/eduardobsg/GenAIPot) · `main` @ `205ffe40008f2e76e0decdb01bc19bf8e00acd8a`  
@@ -7,8 +7,8 @@
 ## 0. Prerequisites
 
 ```bash
-docker build -t uhbs:5.0.0 .
-docker build -f Dockerfile.full -t uhbs:5.0.0-full .
+docker build -t uhbs:5.0.1 .
+docker build -f Dockerfile.full -t uhbs:5.0.1-full .
 docker network create uhbs-lab 2>/dev/null || true
 ```
 
@@ -26,4 +26,4 @@ See [`smtp/EXECUTION-STEPS.md`](smtp/EXECUTION-STEPS.md), [`pop3/EXECUTION-STEPS
 
 Exact commands: [`smtp/EXECUTION-STEPS.md`](smtp/EXECUTION-STEPS.md), [`pop3/EXECUTION-STEPS.md`](pop3/EXECUTION-STEPS.md).
 
-**Published (results-5.0.0):** UHQS null / ungraded under `uhqs-v5.0-critical-gate-diagnostic`.
+**Published (results-5.0.1):** UHQS null / ungraded under `uhqs-v5.0-critical-gate-diagnostic`.

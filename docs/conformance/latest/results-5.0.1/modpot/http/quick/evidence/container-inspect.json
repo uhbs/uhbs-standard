@@ -1,0 +1,199 @@
+[
+    {
+        "Id": "284353902ed73f67b14d6ad86a5175cbd61d6b7ca96e983951c62619f2acd514",
+        "Created": "2026-09-27T20:34:22.42557397Z",
+        "Path": "/app/modpot",
+        "Args": [
+            "-config",
+            "/app/config.yaml"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 2883,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:34:22.511290387Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:7f16d47286f81f8a9a90cb91678014952bea5ef78a036c29daf09e42a1ec9dd5",
+        "ResolvConfPath": "/var/lib/docker/containers/284353902ed73f67b14d6ad86a5175cbd61d6b7ca96e983951c62619f2acd514/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/284353902ed73f67b14d6ad86a5175cbd61d6b7ca96e983951c62619f2acd514/hostname",
+        "HostsPath": "/var/lib/docker/containers/284353902ed73f67b14d6ad86a5175cbd61d6b7ca96e983951c62619f2acd514/hosts",
+        "LogPath": "/var/lib/docker/containers/284353902ed73f67b14d6ad86a5175cbd61d6b7ca96e983951c62619f2acd514/284353902ed73f67b14d6ad86a5175cbd61d6b7ca96e983951c62619f2acd514-json.log",
+        "Name": "/modpot-lab",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "284353902ed73f67b14d6ad86a5175cbd61d6b7ca96e983951c62619f2acd514",
+                "LowerDir": "/var/lib/docker/overlay2/7b4abee09a48676cb24419c0a6f7e6894b5d31f1306b5b5b997a9c02b9ac7859-init/diff:/var/lib/docker/overlay2/8p8y0d3opi6zfiwoxh3532d79/diff:/var/lib/docker/overlay2/pz77cpnwfp6vosxi2two3d7fv/diff:/var/lib/docker/overlay2/in263j0rtekq60x07om5d866s/diff:/var/lib/docker/overlay2/kbqnzgb8767talwmugfhqbaot/diff:/var/lib/docker/overlay2/s7r8w44czyrdq19vss03cuw8n/diff:/var/lib/docker/overlay2/wqn1793an81knflvvbmacsdnf/diff:/var/lib/docker/overlay2/9226f87fad8a9767d3469a7b90e3c54a0f60047c20d211215a6ea7c525fc114d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/7b4abee09a48676cb24419c0a6f7e6894b5d31f1306b5b5b997a9c02b9ac7859/merged",
+                "UpperDir": "/var/lib/docker/overlay2/7b4abee09a48676cb24419c0a6f7e6894b5d31f1306b5b5b997a9c02b9ac7859/diff",
+                "WorkDir": "/var/lib/docker/overlay2/7b4abee09a48676cb24419c0a6f7e6894b5d31f1306b5b5b997a9c02b9ac7859/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "284353902ed7",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/app/modpot",
+                "-config",
+                "/app/config.yaml"
+            ],
+            "Image": "modpot:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "SandboxID": "4386fffc36cf827c1f038a5a08979797769167bde55be4b75dbf1a463ca6399b",
+            "SandboxKey": "/var/run/docker/netns/4386fffc36cf",
+            "Ports": {
+                "8080/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "modpot-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "9bb2f2453a602cacbcef7830d75f908b499d7e2f05397b168cbde0e4a52a3b37",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "de:c7:27:a5:60:23",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "modpot-lab",
+                        "284353902ed7"
+                    ]
+                }
+            }
+        }
+    }
+]

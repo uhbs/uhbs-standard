@@ -1,12 +1,12 @@
 {
-  "uhbs_version": "5.0.0",
+  "uhbs_version": "5.0.1",
   "target": {
     "name": "Elastichoney (jordan-wright) (http)",
     "class": "Web-API",
     "profile_ref": "docs/conformance/labs/elastichoney/web_api_http_full.yaml"
   },
   "evaluated_at": "2026-09-26",
-  "auditor": "UHBS-Lab results-5.0.0 refresh (elastichoney-http)",
+  "auditor": "UHBS-Lab results-5.0.1 refresh (elastichoney-http)",
   "modules": {
     "A": {
       "score": 100.0,
@@ -67,7 +67,7 @@
   },
   "uhqs": 82.22,
   "grade": "B",
-  "notes": "Evaluation proof only. results-5.0.0 refresh of elastichoney-http at 1b03740e34c6a60991432d53c237773d484571eb. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 refresh of elastichoney-http at 1b03740e34c6a60991432d53c237773d484571eb. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",

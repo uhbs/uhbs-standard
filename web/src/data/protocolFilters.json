@@ -94,5 +94,13 @@
   {
     "id": "tftp",
     "label": "TFTP"
+  },
+  {
+    "id": "pptp",
+    "label": "PPTP"
+  },
+  {
+    "id": "upnp",
+    "label": "UPnP"
   }
 ]

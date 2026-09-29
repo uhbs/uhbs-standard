@@ -1,6 +1,6 @@
-# flux (http) methodology (results-5.0.0)
+# flux (http) methodology (results-5.0.1)
 
-**UHBS:** 5.0.0 · strategy `custom-base` · base `python:3.12-slim`
+**UHBS:** 5.0.1 · strategy `custom-base` · base `python:3.12-slim`
 
 No upstream Dockerfile. README is pip install aiohttp; python -m flux (Python 3.11+). python:3.12-slim matches documented runtime; bind patched 0.0.0.0:8080; tarpit disabled so grader probes on /login do not hang.
 

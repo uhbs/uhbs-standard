@@ -1,7 +1,7 @@
-# HoneyHTTPD (bocajspear1) (http) — UHBS lab reports (results-5.0.0)
+# HoneyHTTPD (bocajspear1) (http) — UHBS lab reports (results-5.0.1)
 
 **Class / protocol:** `Web-API` · `http` · port `8080`  
-**UHBS:** 5.0.0 · evaluation proof only  
+**UHBS:** 5.0.1 · evaluation proof only  
 **Upstream:** `master` @ `edec2700f3248b73fce00893a9ed6f2833ac05fd`
 
 ## Results at a glance
@@ -13,7 +13,7 @@
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../fixtures/honeyhttpd-web-api.scorecard.json`](../../../fixtures/honeyhttpd-web-api.scorecard.json)  
-Archive: [`../../../../archive/v5.0.0/honeyhttpd/`](../../../../archive/v5.0.0/honeyhttpd/)
+Archive: [`../../../../archive/v5.0.1/honeyhttpd/`](../../../../archive/v5.0.1/honeyhttpd/)
 
 | Document | Purpose |
 | --- | --- |

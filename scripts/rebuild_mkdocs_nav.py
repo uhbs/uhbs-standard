@@ -18,13 +18,13 @@ head, _, _ = text.partition("\nnav:\n")
 if not head.endswith("\n"):
     head += "\n"
 
-# Active published grades live under latest/results-5.0.0 after the results-5.0.0 refresh.
+# Active published grades live under latest/results-5.0.1 after the results-5.0.1 refresh.
 # Fall back to the historical reports tree only when the latest skeleton is absent.
-_latest = ROOT / "docs" / "conformance" / "latest" / "results-5.0.0"
+_latest = ROOT / "docs" / "conformance" / "latest" / "results-5.0.1"
 _legacy_reports = ROOT / "docs" / "conformance" / "reports"
 if _latest.is_dir() and any(p.is_dir() and (p / "index.md").exists() for p in _latest.iterdir()):
     reports = _latest
-    reports_nav_prefix = "conformance/latest/results-5.0.0"
+    reports_nav_prefix = "conformance/latest/results-5.0.1"
 else:
     reports = _legacy_reports
     reports_nav_prefix = "conformance/reports"

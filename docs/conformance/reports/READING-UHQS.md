@@ -1,7 +1,7 @@
 # How to read UHBS lab proof (CTI & blue team)
 
 **Audience:** cyber threat intelligence analysts, detection engineers, and blue-team operators reviewing published UHBS evaluation proof.  
-**Current specification:** UHBS 5.0.0 · **Nature of these pages:** informative lab evidence — **not** product endorsements, certifications, regulatory assessments, or “best honeypot” rankings.
+**Current specification:** UHBS 5.0.1 · **Nature of these pages:** informative lab evidence — **not** product endorsements, certifications, regulatory assessments, or “best honeypot” rankings.
 
 !!! note "Check the scoring model"
     Published report paths include historical v4 artifacts. Preserve and cite the

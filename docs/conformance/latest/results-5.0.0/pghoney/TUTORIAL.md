@@ -1,4 +1,4 @@
-# Tutorial: grade pghoney with UHBS (results-5.0.0)
+# Tutorial: grade pghoney with UHBS (results-5.0.1)
 
 **Status:** Informative · evaluation proof  
 **Target:** [https://github.com/betheroot/pghoney](https://github.com/betheroot/pghoney) · `master` @ `f5d367f749f7e9353421aaf44dad856df490c441`  
@@ -7,8 +7,8 @@
 ## 0. Prerequisites
 
 ```bash
-docker build -t uhbs:5.0.0 .
-docker build -f Dockerfile.full -t uhbs:5.0.0-full .
+docker build -t uhbs:5.0.1 .
+docker build -f Dockerfile.full -t uhbs:5.0.1-full .
 docker network create uhbs-lab 2>/dev/null || true
 ```
 
@@ -26,4 +26,4 @@ See [`postgres/EXECUTION-STEPS.md`](postgres/EXECUTION-STEPS.md) for the exact `
 
 Exact commands: [`postgres/EXECUTION-STEPS.md`](postgres/EXECUTION-STEPS.md).
 
-**Published (results-5.0.0):** UHQS null / ungraded under `uhqs-v5.0-critical-gate-diagnostic`.
+**Published (results-5.0.1):** UHQS null / ungraded under `uhqs-v5.0-critical-gate-diagnostic`.

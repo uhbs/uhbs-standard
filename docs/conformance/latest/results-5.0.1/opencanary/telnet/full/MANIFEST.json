@@ -1,0 +1,70 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "dc4aa953eb3146265881bb82a68e6ebec40e945dddfdd18d5ce41ca3f63e6ce9"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "1b1141d42669c41cdb96cdd26a90164e451b6ad7a25838086e849ce6e7ec43cc"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "1b1141d42669c41cdb96cdd26a90164e451b6ad7a25838086e849ce6e7ec43cc"
+    },
+    {
+      "path": "evidence/container-inspect.json",
+      "sha256": "692f01a5a43f182465a2e356fb073bdb1a69bd934c624f285e27d850b3cbfa21"
+    },
+    {
+      "path": "evidence/container-inspect.json.sha256",
+      "sha256": "5e8bd40f0a800d4312864fbbbf59a50234b0ada40f246cc632909afbfc1e41a1"
+    },
+    {
+      "path": "evidence/egress-gateway.log",
+      "sha256": "830826156e3af9dfa989365080a962b745b008fa2c651688ea0b0a1ad0cfab45"
+    },
+    {
+      "path": "evidence/egress-gateway.log.sha256",
+      "sha256": "5d4afee9951ae6cf136f7839d964ec21f700dcff642e6b70b8668a7718e1b1dd"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "0ac51008c72e19f7def562936fc18e7b02babe46ce2042de472f2431f818c5aa"
+    },
+    {
+      "path": "proof/full-run.cast",
+      "sha256": "9aa5539ae2f8d502ca57368c90d138c88d3913349fbc74120c480209e9cf9483"
+    },
+    {
+      "path": "report.json",
+      "sha256": "776a9058b3e40c790ea407ed5a7fc1cb1b544fcbcd89f654acc9b1c3f08ac999"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "4d2d0c796b618bd1936434df1c386a8d7c5faceb6fb32495d6048273b52a36f8"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "36ec33640a171497054c7072008adfe55ade27b55526f056b0dd7192dfed799b"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "5d14440420ba7baa5e1764886d263308073774161cf40384c410dcf687ddacf3"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "d580f9238ba6458af449ae358aca74c8d9bdfde16ecf763a7f0b96f1af0553b8"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-telnet",
+    "uhqs": 31.24,
+    "grade": "GRADE F (Fail)",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
+    "assessment_status": "INCOMPLETE",
+    "evidence_pack": "evidence-pack.json",
+    "evidence_manifest_digest": "1cd79d723671835b977b75a2d3be88ca6d2145ff365bfdf4a5a6b077ab56a71b"
+  }
+}

@@ -65,12 +65,43 @@ def test_jsonl_content_in_json_extension_parses_events(tmp_path: Path) -> None:
     assert rows[0]["eventid"] == "session.connect"
 
 
+def test_jsonl_content_in_log_extension_parses_events(tmp_path: Path) -> None:
+    """Beelzebub-style sinks write JSONL to a ``.log`` path — still Module C input."""
+    events = [
+        {"event": {"Protocol": "HTTP", "RequestURI": "/"}, "level": "info"},
+        {"event": {"Protocol": "SSH", "Msg": "login"}, "level": "info"},
+    ]
+    tdir = tmp_path / "telemetry"
+    tdir.mkdir()
+    (tdir / "egress-gateway.log").write_text("# canary\n", encoding="utf-8")
+    (tdir / "honeypot.log").write_text(
+        "\n".join(json.dumps(e) for e in events) + "\n", encoding="utf-8"
+    )
+    (tdir / "target-stdout.log").write_text(
+        "plain text startup banner\nanother line\n", encoding="utf-8"
+    )
+    rows = _iter_records(tdir)
+    assert len(rows) == 2
+    assert rows[0]["event"]["Protocol"] == "HTTP"
+
+
 def test_true_single_json_object_still_loads(tmp_path: Path) -> None:
     path = tmp_path / "bundle.json"
     path.write_text(json.dumps({"type": "bundle", "objects": []}), encoding="utf-8")
     rows = _iter_records(path)
     assert len(rows) == 1
     assert rows[0]["type"] == "bundle"
+
+
+def test_http_injection_requests_embed_run_id() -> None:
+    from uhbs_core.telemetry.groundtruth import http_injection_requests
+
+    reqs = http_injection_requests("uhbs-gt-abc123")
+    assert len(reqs) == 6
+    for pid, path, headers in reqs:
+        assert "UHBS_INJECT:uhbs-gt-abc123" in path
+        assert "UHBS_INJECT:uhbs-gt-abc123" in headers["User-Agent"]
+        assert pid
 
 
 def test_ssh_default_p95_is_multi_second_not_100ms() -> None:

@@ -1,0 +1,227 @@
+[
+    {
+        "Id": "2c414c60e1a3723e8c51008fdfc57930025070b018f39d3ffba8ea1bc46aef97",
+        "Created": "2026-09-27T20:52:50.32864951Z",
+        "Path": "/entrypoint.sh",
+        "Args": [
+            "-k",
+            "/etc/ssh-honeypotd/ssh_host_dsa_key",
+            "-k",
+            "/etc/ssh-honeypotd/ssh_host_rsa_key",
+            "-k",
+            "/etc/ssh-honeypotd/ssh_host_ecdsa_key",
+            "-k",
+            "/etc/ssh-honeypotd/ssh_host_ed25519_key",
+            "-f",
+            "-x"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 64929,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:52:50.455287719Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:8c6def244b9cfc05030f479d44e7369b6c9766dcf94747f8f77380f7c5e8c78f",
+        "ResolvConfPath": "/var/lib/docker/containers/2c414c60e1a3723e8c51008fdfc57930025070b018f39d3ffba8ea1bc46aef97/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/2c414c60e1a3723e8c51008fdfc57930025070b018f39d3ffba8ea1bc46aef97/hostname",
+        "HostsPath": "/var/lib/docker/containers/2c414c60e1a3723e8c51008fdfc57930025070b018f39d3ffba8ea1bc46aef97/hosts",
+        "LogPath": "/var/lib/docker/containers/2c414c60e1a3723e8c51008fdfc57930025070b018f39d3ffba8ea1bc46aef97/2c414c60e1a3723e8c51008fdfc57930025070b018f39d3ffba8ea1bc46aef97-json.log",
+        "Name": "/ssh-honeypotd-lab",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "2c414c60e1a3723e8c51008fdfc57930025070b018f39d3ffba8ea1bc46aef97",
+                "LowerDir": "/var/lib/docker/overlay2/f103d8b847ec38992986a7a1801b3abcf334478026c5c1e550cf8f0d857db2f7-init/diff:/var/lib/docker/overlay2/79fc4267095ed3cc33f7423f727e85648d510b579def3907e1e747a8840253f8/diff:/var/lib/docker/overlay2/060a6f5cdda0fc40053454e1e05fd28724c8fcc29228556bb32566b96fb0d585/diff:/var/lib/docker/overlay2/6142b6d11a5983dd0e2afbba44d1e9e01f980a9e047b340119c604cb3879bb1c/diff:/var/lib/docker/overlay2/8a145a4dfad95c418535e4bda98180cbb07b05933b60c40e7063053cff9c47eb/diff:/var/lib/docker/overlay2/515505af24ffc8d51492873ce53d00e7da447d84b0d87afc482e80c0d35b4a40/diff:/var/lib/docker/overlay2/4d7cc5a1e9b7dd9a3d5cf699f923de8e8f9d91c76b90ca5ea8389a0859fadee5/diff",
+                "MergedDir": "/var/lib/docker/overlay2/f103d8b847ec38992986a7a1801b3abcf334478026c5c1e550cf8f0d857db2f7/merged",
+                "UpperDir": "/var/lib/docker/overlay2/f103d8b847ec38992986a7a1801b3abcf334478026c5c1e550cf8f0d857db2f7/diff",
+                "WorkDir": "/var/lib/docker/overlay2/f103d8b847ec38992986a7a1801b3abcf334478026c5c1e550cf8f0d857db2f7/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "2c414c60e1a3",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "22/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "ADDRESS=0.0.0.0",
+                "PORT=22",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "-k",
+                "/etc/ssh-honeypotd/ssh_host_dsa_key",
+                "-k",
+                "/etc/ssh-honeypotd/ssh_host_rsa_key",
+                "-k",
+                "/etc/ssh-honeypotd/ssh_host_ecdsa_key",
+                "-k",
+                "/etc/ssh-honeypotd/ssh_host_ed25519_key",
+                "-f",
+                "-x"
+            ],
+            "Image": "wildwildangel/ssh-honeypotd:latest",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/entrypoint.sh"
+            ],
+            "Labels": {
+                "org.opencontainers.image.created": "2024-06-16T02:31:12Z",
+                "org.opencontainers.image.description": "A low-interaction SSH honeypot written in C",
+                "org.opencontainers.image.licenses": "MIT",
+                "org.opencontainers.image.revision": "630622e22a21de3343b4af612f06369ef4a16e35",
+                "org.opencontainers.image.source": "https://github.com/sjinks/ssh-honeypotd.git",
+                "org.opencontainers.image.title": "ssh-honeypotd",
+                "org.opencontainers.image.url": "https://github.com/sjinks/ssh-honeypotd",
+                "org.opencontainers.image.version": "2.2.0"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "76a2742a65e97f8428079d3ae4f6577d8a8369532561e06213bf64e19a190f39",
+            "SandboxKey": "/var/run/docker/netns/76a2742a65e9",
+            "Ports": {
+                "22/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "ssh-honeypotd-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "0f6899e8f6b55453e6fc0edfaab44d0c157b74f913951a4acf14513a5f103c77",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "ba:75:41:90:c6:18",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "ssh-honeypotd-lab",
+                        "2c414c60e1a3"
+                    ]
+                }
+            }
+        }
+    }
+]

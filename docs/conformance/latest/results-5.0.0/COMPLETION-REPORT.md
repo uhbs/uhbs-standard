@@ -1,4 +1,4 @@
-# results-5.0.0 completion (measured-renorm)
+# results-5.0.1 completion (measured-renorm)
 
 - **Date:** 2026-09-27
 - **Branch:** `benchmark-refresh-results-v1`

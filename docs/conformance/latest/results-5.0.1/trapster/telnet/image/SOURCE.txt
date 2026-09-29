@@ -1,0 +1,5 @@
+source=.local/labs/trapster/Dockerfile
+image=trapster:uhbs-lab
+digest=sha256:fe8aa1c13246549e6c024a4cb3f558e0dfb6ca75e17d845917ef2fbafce90314
+dockerfile=docs/conformance/latest/results-5.0.1/trapster/telnet/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/trapster/telnet/Dockerfile.pin

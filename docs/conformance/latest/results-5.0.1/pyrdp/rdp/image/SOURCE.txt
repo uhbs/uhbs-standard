@@ -1,0 +1,5 @@
+source=.local/labs/pyrdp/Dockerfile.lab
+image=pyrdp:uhbs-lab
+digest=sha256:3b1b3a09e21459c515125392b72df6c1563b7707e6220fe960ff9fff883943b1
+dockerfile=docs/conformance/latest/results-5.0.1/pyrdp/rdp/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/pyrdp/rdp/Dockerfile.pin

@@ -1,16 +1,16 @@
-# Scorecard: honeymcp — mcp (results-5.0.0)
+# Scorecard: honeymcp — mcp (results-5.0.1)
 
 **Status:** Informative · evaluation proof (not an endorsement)  
-**UHBS:** **5.0.0** · **Class:** Web-API · **Protocol:** `mcp`  
+**UHBS:** **5.0.1** · **Class:** Web-API · **Protocol:** `mcp`  
 **Target id (lab):** `honeymcp-mcp` · **Evaluation date:** 2026-09-26  
 **Verdict:** INCOMPLETE / INCOMPLETE / ungraded (`uhqs-v5.0-critical-gate-diagnostic`)
 
 | Run | UHQS | Grade | δ_C | Proof artifacts |
 | --- | ---: | --- | --- | --- |
-| Quick | ungraded | — | 0.0 | [quick SCORECARD](../conformance/latest/results-5.0.0/honeymcp/mcp/quick/SCORECARD.txt) |
+| Quick | ungraded | — | 0.0 | [quick SCORECARD](../conformance/latest/results-5.0.1/honeymcp/mcp/quick/SCORECARD.txt) |
 | **Full (authoritative)** | **ungraded** | **—** | **0.0** | Verbatim SCORECARD below |
 
-**Report hub:** [honeymcp / mcp](../conformance/latest/results-5.0.0/honeymcp/mcp/index.md) · [Tutorial](../conformance/latest/results-5.0.0/honeymcp/TUTORIAL.md) · [Methodology](../conformance/latest/results-5.0.0/honeymcp/METHODOLOGY.md) · [Execution steps](../conformance/latest/results-5.0.0/honeymcp/mcp/EXECUTION-STEPS.md)
+**Report hub:** [honeymcp / mcp](../conformance/latest/results-5.0.1/honeymcp/mcp/index.md) · [Tutorial](../conformance/latest/results-5.0.1/honeymcp/TUTORIAL.md) · [Methodology](../conformance/latest/results-5.0.1/honeymcp/METHODOLOGY.md) · [Execution steps](../conformance/latest/results-5.0.1/honeymcp/mcp/EXECUTION-STEPS.md)
 
 ## Proof: module scores (full run)
 
@@ -30,7 +30,7 @@ Archived 4.x letter grades are **not** the current published result.
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : honeymcp-mcp
 System Profile Class  : Web-API
@@ -54,7 +54,7 @@ Module E: Scalability & Latency     :  75.0/100       0.15     PASSED (P50=927.0
 Module F: Static Code Audit         :  65.5/100       0.20     PARTIAL (3 static private keys: personas/filesystem-admin.yaml, src/detect/secret_exfil.rs, src/bin/probes.rs)
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : Ungraded — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (Ungraded — no composite UHQS)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (Ungraded — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
 scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
 ====================================================================================

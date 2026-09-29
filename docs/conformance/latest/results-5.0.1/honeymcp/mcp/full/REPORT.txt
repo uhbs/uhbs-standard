@@ -1,0 +1,29 @@
+====================================================================================
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
+====================================================================================
+Target System         : honeymcp-mcp
+System Profile Class  : Web-API
+Scoring Model         : uhqs-v5.2-measured-renorm
+Assessment Status     : COMPLETE
+Critical Controls     : GATE_PASSED
+Protocols             : mcp
+Evaluation Date       : 2026-09-27
+Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
+Environment           : Isolated Sandbox
+MCP Surface Depth     : interactive
+MCP Surface Reason    : exercised allowlisted tool get_caller_identity
+------------------------------------------------------------------------------------
+EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
+------------------------------------------------------------------------------------
+Module A: Protocol Fidelity         :  46.5/100       0.25     PARTIAL (allowed tools/list before notifications/initialized)
+Module B: Behavioral Realism        :  94.3/100       0.20     PASSED (survived binary blast)
+Module C: Telemetry Assurance       :   0.0/100       0.20     PARTIAL (http_inject markers=[] malformed=0)
+Module D: Safety & Containment (C)  :  83.3/100       GATE     PASSED (Memory=0 NanoCpus=0 PidsLimit=0)
+Module E: Scalability & Latency     : 100.0/100       0.15     PASSED (service alive after load (connect 0.5ms))
+Module F: Static Code Audit         :  65.5/100       0.20     PARTIAL (3 static private keys: personas/filesystem-admin.yaml, src/detect/secret_exfil.rs, src/bin/probes.rs)
+------------------------------------------------------------------------------------
+SAFETY GATE / CRITICAL CONTROLS        : GATE_PASSED (δ_C=1.0; defense-in-depth C=83.33)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 58.59 / 100
+OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
+scoring_model_id                      : uhqs-v5.2-measured-renorm
+====================================================================================

@@ -1,5 +1,5 @@
 {
-  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v5.0.0",
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v5.0.1",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",
@@ -39,7 +39,7 @@
     "profile_class": "Low-Interaction",
     "grade": "D",
     "phase": "profile+static+sandbox+dynamic+score",
-    "version": "5.0.0",
+    "version": "5.0.1",
     "containment_measured": false,
     "assessment_status": "INCOMPLETE",
     "critical_control_verdict": "INCOMPLETE",
@@ -66,7 +66,7 @@
     "profile_class": "Low-Interaction",
     "grade": "D",
     "phase": "profile+static+sandbox+dynamic+score",
-    "version": "5.0.0",
+    "version": "5.0.1",
     "containment_measured": false,
     "assessment_status": "INCOMPLETE",
     "critical_control_verdict": "INCOMPLETE",
@@ -878,7 +878,7 @@
       "scale": 100.0,
       "static": 0.0
     },
-    "uhqs_version": "5.0.0",
+    "uhqs_version": "5.0.1",
     "tps": {
       "name": "low_interaction_smtp-quick",
       "class": "Low-Interaction",

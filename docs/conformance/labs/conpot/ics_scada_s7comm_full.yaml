@@ -1,0 +1,15 @@
+# Full TPS — ICS-SCADA-S7COMM / ICS-SCADA / s7comm
+target_metadata:
+  name: "ICS-SCADA-S7COMM"
+  class: "ICS-SCADA"
+  protocol: "s7comm"
+  protocols: ["s7comm"]
+
+performance_baseline:
+  expected_p95_latency_ms: 150
+  strict_rfc_enforcement: true
+  timing_samples: 200
+
+safety_boundary:
+  allowed_outbound_traffic: false
+  allow_local_code_execution: false

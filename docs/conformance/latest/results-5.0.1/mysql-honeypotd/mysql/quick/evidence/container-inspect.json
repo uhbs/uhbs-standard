@@ -1,0 +1,208 @@
+[
+    {
+        "Id": "6a3a1fd8d789e1061dc55a5eb20ea70ece583919e4d4059408086f4907374e75",
+        "Created": "2026-09-28T09:50:07.013159302Z",
+        "Path": "/mysql-honeypotd",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 90262,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-28T09:50:07.094213427Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:9445e1b2ea7b16061cb3218a56ce374f3bf401155aa83e32980078da5736e9b1",
+        "ResolvConfPath": "/var/lib/docker/containers/6a3a1fd8d789e1061dc55a5eb20ea70ece583919e4d4059408086f4907374e75/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/6a3a1fd8d789e1061dc55a5eb20ea70ece583919e4d4059408086f4907374e75/hostname",
+        "HostsPath": "/var/lib/docker/containers/6a3a1fd8d789e1061dc55a5eb20ea70ece583919e4d4059408086f4907374e75/hosts",
+        "LogPath": "/var/lib/docker/containers/6a3a1fd8d789e1061dc55a5eb20ea70ece583919e4d4059408086f4907374e75/6a3a1fd8d789e1061dc55a5eb20ea70ece583919e4d4059408086f4907374e75-json.log",
+        "Name": "/uhbs-target-mysql-honeypotd-mysql",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/mysql-honeypotd-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "6a3a1fd8d789e1061dc55a5eb20ea70ece583919e4d4059408086f4907374e75",
+                "LowerDir": "/var/lib/docker/overlay2/e9f2815f749118d2007b664c7d525508f5d3cb10a7afcf4a8c2ac6150b9bab96-init/diff:/var/lib/docker/overlay2/iymlpoyq7ecxzmcaig0h4l9fg/diff",
+                "MergedDir": "/var/lib/docker/overlay2/e9f2815f749118d2007b664c7d525508f5d3cb10a7afcf4a8c2ac6150b9bab96/merged",
+                "UpperDir": "/var/lib/docker/overlay2/e9f2815f749118d2007b664c7d525508f5d3cb10a7afcf4a8c2ac6150b9bab96/diff",
+                "WorkDir": "/var/lib/docker/overlay2/e9f2815f749118d2007b664c7d525508f5d3cb10a7afcf4a8c2ac6150b9bab96/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/mysql-honeypotd-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "6a3a1fd8d789",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "3306/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": null,
+            "Image": "mysql-honeypotd:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": [
+                "/mysql-honeypotd"
+            ],
+            "Labels": {
+                "uhbs.unit": "mysql-honeypotd-mysql"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "bead936e9fca399cc2210990fe705773ee425452a0651fcef78387d16a429140",
+            "SandboxKey": "/var/run/docker/netns/bead936e9fca",
+            "Ports": {
+                "3306/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "mysql-honeypotd-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "890ff2d8d364062569cfd088cec13ca2a574f2a05a176dfd0cf354c52af511bb",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.4",
+                    "MacAddress": "ea:3b:47:38:80:53",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-mysql-honeypotd-mysql",
+                        "mysql-honeypotd-lab",
+                        "6a3a1fd8d789"
+                    ]
+                }
+            }
+        }
+    }
+]

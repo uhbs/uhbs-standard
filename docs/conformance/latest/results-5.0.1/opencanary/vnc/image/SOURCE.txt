@@ -1,0 +1,5 @@
+source=pin:thinkst/opencanary:latest@sha256:c49e213d54b63b7a72975ed962c00bb93dea2d956081e15ac16f71dc6834b7a5
+image=thinkst/opencanary:latest
+digest=sha256:c49e213d54b63b7a72975ed962c00bb93dea2d956081e15ac16f71dc6834b7a5
+dockerfile=docs/conformance/latest/results-5.0.1/opencanary/vnc/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/opencanary/vnc/Dockerfile.pin

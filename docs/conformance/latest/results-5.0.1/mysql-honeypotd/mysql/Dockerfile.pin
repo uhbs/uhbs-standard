@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `mysql-honeypotd-mysql`
+# Image name at grade time: mysql-honeypotd:uhbs-lab
+FROM sha256:9445e1b2ea7b16061cb3218a56ce374f3bf401155aa83e32980078da5736e9b1

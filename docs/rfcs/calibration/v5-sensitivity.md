@@ -7,7 +7,7 @@
 
 ## Scope
 
-Sensitivity over published v5.0.0 conformance fixtures under `docs/conformance/fixtures/` (historical UHQS 4.x math). This is **not** a live known-good/known-bad calibration.
+Sensitivity over published v5.0.1 conformance fixtures under `docs/conformance/fixtures/` (historical UHQS 4.x math). This is **not** a live known-good/known-bad calibration.
 
 ## v4 δ_C cliff
 

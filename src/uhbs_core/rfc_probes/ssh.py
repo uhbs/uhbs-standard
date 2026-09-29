@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from uhbs_core.models import CheckOutcome, CheckResult
 
+from .cache import cached_suite
 from .socket_util import _port_open, _transact
 from .types import RFCSuiteResult
 
@@ -86,7 +87,7 @@ def _chk(
     )
 
 
-def probe_ssh_rfc4253(host: str, port: int) -> RFCSuiteResult:
+def _probe_ssh_rfc4253_uncached(host: str, port: int) -> RFCSuiteResult:
     """Run ~20 basic RFC 4253 wire checks against an SSH listener."""
     suite = RFCSuiteResult(protocol="ssh", rfc="RFC 4253")
     if not _port_open(host, port):
@@ -381,3 +382,10 @@ def probe_ssh_rfc4253(host: str, port: int) -> RFCSuiteResult:
 
     assert len(suite.checks) == 20, f"expected 20 SSH RFC checks, got {len(suite.checks)}"
     return suite
+
+
+def probe_ssh_rfc4253(host: str, port: int) -> RFCSuiteResult:
+    return cached_suite(
+        ("ssh_rfc4253", host, int(port)),
+        lambda: _probe_ssh_rfc4253_uncached(host, port),
+    )

@@ -1,0 +1,511 @@
+{
+  "version": "1.178.0",
+  "results": [
+    {
+      "check_id": "dockerfile.security.missing-user.missing-user",
+      "path": "Dockerfile",
+      "start": {
+        "line": 20,
+        "col": 1,
+        "offset": 430
+      },
+      "end": {
+        "line": 20,
+        "col": 19,
+        "offset": 448
+      },
+      "extra": {
+        "message": "By not specifying a USER, a program in the container may run as 'root'. This is a security hazard. If an attacker can control a process running as root, they may have control over the container. Ensure that the last USER in a Dockerfile is a USER other than 'root'.",
+        "fix": "USER non-root\nCMD [\"heralding\" ]",
+        "metadata": {
+          "cwe": [
+            "CWE-250: Execution with Unnecessary Privileges"
+          ],
+          "category": "security",
+          "technology": [
+            "dockerfile"
+          ],
+          "confidence": "MEDIUM",
+          "owasp": [
+            "A04:2021 - Insecure Design",
+            "A06:2025 - Insecure Design"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A04_2021-Insecure_Design"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/dockerfile.security.missing-user.missing-user",
+          "shortlink": "https://sg.run/Gbvn"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.pycryptodome.security.insufficient-rsa-key-size.insufficient-rsa-key-size",
+      "path": "heralding/capabilities/ssh.py",
+      "start": {
+        "line": 105,
+        "col": 19,
+        "offset": 3490
+      },
+      "end": {
+        "line": 105,
+        "col": 37,
+        "offset": 3508
+      },
+      "extra": {
+        "message": "Detected an insufficient key size for RSA. NIST recommends a key size of 3072 or higher.",
+        "metadata": {
+          "cwe": [
+            "CWE-326: Inadequate Encryption Strength"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "source-rule-url": "https://github.com/PyCQA/bandit/blob/b1411bfb43795d3ffd268bef17a839dee954c2b1/bandit/plugins/weak_cryptographic_key.py",
+          "references": [
+            "https://www.pycryptodome.org/src/public_key/rsa#rsa",
+            "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-57pt1r5.pdf"
+          ],
+          "category": "security",
+          "technology": [
+            "pycryptodome"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "HIGH",
+          "functional-categories": [
+            "crypto::search::key-length::pycryptodome",
+            "crypto::search::key-length::pycryptodomex"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues"
+          ],
+          "source": "https://semgrep.dev/r/python.pycryptodome.security.insufficient-rsa-key-size.insufficient-rsa-key-size",
+          "shortlink": "https://sg.run/PprY"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.pycryptodome.security.insecure-cipher-algorithm-des.insecure-cipher-algorithm-des",
+      "path": "heralding/libs/cracker/vnc.py",
+      "start": {
+        "line": 47,
+        "col": 12,
+        "offset": 2116
+      },
+      "end": {
+        "line": 47,
+        "col": 42,
+        "offset": 2146
+      },
+      "extra": {
+        "message": "Detected DES cipher or Triple DES algorithm which is considered insecure. This algorithm is not cryptographically secure and can be reversed easily. Use a secure symmetric cipher from the cryptodome package instead. Use secure stream ciphers such as ChaCha20, XChaCha20 and Salsa20, or a block cipher such as AES with a block size of 128 bits. When using a block cipher, use a modern mode of operation that also provides authentication, such as GCM.",
+        "metadata": {
+          "source-rule-url": "https://github.com/PyCQA/bandit/blob/d5f8fa0d89d7b11442fc6ec80ca42953974354c8/bandit/blacklists/calls.py#L84",
+          "cwe": [
+            "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "bandit-code": "B304",
+          "references": [
+            "https://cwe.mitre.org/data/definitions/326.html",
+            "https://www.pycryptodome.org/src/cipher/cipher"
+          ],
+          "category": "security",
+          "technology": [
+            "pycryptodome"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "HIGH",
+          "functional-categories": [
+            "crypto::search::symmetric-algorithm::pycryptodome",
+            "crypto::search::symmetric-algorithm::pycryptodomex"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues"
+          ],
+          "source": "https://semgrep.dev/r/python.pycryptodome.security.insecure-cipher-algorithm-des.insecure-cipher-algorithm-des",
+          "shortlink": "https://sg.run/Z5bw"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.weak-ssl-version.weak-ssl-version",
+      "path": "heralding/libs/msrdp/tls.py",
+      "start": {
+        "line": 35,
+        "col": 26,
+        "offset": 1163
+      },
+      "end": {
+        "line": 35,
+        "col": 46,
+        "offset": 1183
+      },
+      "extra": {
+        "message": "An insecure SSL version was detected. TLS versions 1.0, 1.1, and all SSL versions are considered weak encryption and are deprecated. Use 'ssl.PROTOCOL_TLSv1_2' or higher.",
+        "metadata": {
+          "cwe": [
+            "CWE-326: Inadequate Encryption Strength"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "source-rule-url": "https://github.com/PyCQA/bandit/blob/b1411bfb43795d3ffd268bef17a839dee954c2b1/bandit/plugins/insecure_ssl_tls.py#L30",
+          "asvs": {
+            "control_id": "9.1.3 Weak TLS",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x17-V9-Communications.md#v91-client-communications-security-requirements",
+            "section": "V9 Communications Verification Requirements",
+            "version": "4"
+          },
+          "references": [
+            "https://tools.ietf.org/html/rfc7568",
+            "https://tools.ietf.org/id/draft-ietf-tls-oldversions-deprecate-02.html",
+            "https://docs.python.org/3/library/ssl.html#ssl.PROTOCOL_TLSv1_2"
+          ],
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.weak-ssl-version.weak-ssl-version",
+          "shortlink": "https://sg.run/RoZO"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.insecure-transport.ssl.no-set-ciphers.no-set-ciphers",
+      "path": "heralding/libs/msrdp/tls.py",
+      "start": {
+        "line": 36,
+        "col": 5,
+        "offset": 1189
+      },
+      "end": {
+        "line": 36,
+        "col": 34,
+        "offset": 1218
+      },
+      "extra": {
+        "message": "The 'ssl' module disables insecure cipher suites by default. Therefore, use of 'set_ciphers()' should only be used when you have very specialized requirements. Otherwise, you risk lowering the security of the SSL channel.",
+        "metadata": {
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "cwe": [
+            "CWE-326: Inadequate Encryption Strength"
+          ],
+          "asvs": {
+            "control_id": "9.1.3 Weak TLS",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x17-V9-Communications.md#v91-client-communications-security-requirements",
+            "section": "V9 Communications Verification Requirements",
+            "version": "4"
+          },
+          "references": [
+            "https://docs.python.org/3/library/ssl.html#cipher-selection",
+            "https://docs.python.org/3/library/ssl.html#ssl.SSLContext.set_ciphers"
+          ],
+          "category": "security",
+          "technology": [
+            "ssl"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.insecure-transport.ssl.no-set-ciphers.no-set-ciphers",
+          "shortlink": "https://sg.run/0Q0v"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.pycryptodome.security.insufficient-rsa-key-size.insufficient-rsa-key-size",
+      "path": "heralding/misc/common.py",
+      "start": {
+        "line": 53,
+        "col": 13,
+        "offset": 1749
+      },
+      "end": {
+        "line": 53,
+        "col": 31,
+        "offset": 1767
+      },
+      "extra": {
+        "message": "Detected an insufficient key size for RSA. NIST recommends a key size of 3072 or higher.",
+        "metadata": {
+          "cwe": [
+            "CWE-326: Inadequate Encryption Strength"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "source-rule-url": "https://github.com/PyCQA/bandit/blob/b1411bfb43795d3ffd268bef17a839dee954c2b1/bandit/plugins/weak_cryptographic_key.py",
+          "references": [
+            "https://www.pycryptodome.org/src/public_key/rsa#rsa",
+            "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-57pt1r5.pdf"
+          ],
+          "category": "security",
+          "technology": [
+            "pycryptodome"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "HIGH",
+          "functional-categories": [
+            "crypto::search::key-length::pycryptodome",
+            "crypto::search::key-length::pycryptodomex"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues"
+          ],
+          "source": "https://semgrep.dev/r/python.pycryptodome.security.insufficient-rsa-key-size.insufficient-rsa-key-size",
+          "shortlink": "https://sg.run/PprY"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      ".gitignore",
+      ".landscape.yaml",
+      ".style.yapf",
+      ".travis.yml",
+      ".yapfignore",
+      "COPYING.txt",
+      "Dockerfile",
+      "Dockerfile.lab",
+      "INSTALL.md",
+      "LICENSE.txt",
+      "MANIFEST.in",
+      "README.rst",
+      "bin/__init__.py",
+      "bin/heralding",
+      "changelog.txt",
+      "ez_setup.py",
+      "heralding/__init__.py",
+      "heralding/capabilities/__init__.py",
+      "heralding/capabilities/ftp.py",
+      "heralding/capabilities/handlerbase.py",
+      "heralding/capabilities/http.py",
+      "heralding/capabilities/https.py",
+      "heralding/capabilities/imap.py",
+      "heralding/capabilities/imaps.py",
+      "heralding/capabilities/mysql.py",
+      "heralding/capabilities/pop3.py",
+      "heralding/capabilities/pop3s.py",
+      "heralding/capabilities/postgresql.py",
+      "heralding/capabilities/rdp.py",
+      "heralding/capabilities/smtp.py",
+      "heralding/capabilities/smtps.py",
+      "heralding/capabilities/socks5.py",
+      "heralding/capabilities/ssh.py",
+      "heralding/capabilities/telnet.py",
+      "heralding/capabilities/vnc.py",
+      "heralding/heralding.yml",
+      "heralding/honeypot.py",
+      "heralding/libs/__init__.py",
+      "heralding/libs/aiobaserequest.py",
+      "heralding/libs/cracker/vnc.py",
+      "heralding/libs/http/__init__.py",
+      "heralding/libs/http/aioclient.py",
+      "heralding/libs/http/aioserver.py",
+      "heralding/libs/msrdp/__init__.py",
+      "heralding/libs/msrdp/packer.py",
+      "heralding/libs/msrdp/parser.py",
+      "heralding/libs/msrdp/pdu.py",
+      "heralding/libs/msrdp/security.py",
+      "heralding/libs/msrdp/tls.py",
+      "heralding/libs/telnetsrv/__init__.py",
+      "heralding/libs/telnetsrv/telnetsrvlib.py",
+      "heralding/misc/__init__.py",
+      "heralding/misc/common.py",
+      "heralding/misc/session.py",
+      "heralding/misc/socket_names.py",
+      "heralding/reporting/__init__.py",
+      "heralding/reporting/base_logger.py",
+      "heralding/reporting/curiosum_integration.py",
+      "heralding/reporting/file_logger.py",
+      "heralding/reporting/hpfeeds_logger.py",
+      "heralding/reporting/reporting_relay.py",
+      "heralding/reporting/syslog_logger.py",
+      "heralding/wordlist.txt",
+      "heralding-lab.yml",
+      "heralding-smtp-lab.yml",
+      "requirements-test.txt",
+      "requirements.txt",
+      "setup.py"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.3261878490447998,
+    "profiling_times": {
+      "config_time": 1.2421135902404785,
+      "core_time": 1.3853509426116943,
+      "ignores_time": 0.0008563995361328125,
+      "total_time": 2.6328210830688477
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 4.589129209518433,
+      "per_file_time": {
+        "mean": 0.024153311629044383,
+        "std_dev": 0.002992741837063413
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at heralding/honeypot.py:73:6 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "heralding/honeypot.py",
+          "start": {
+            "line": 73,
+            "col": 7,
+            "offset": 2488
+          },
+          "end": {
+            "line": 73,
+            "col": 12,
+            "offset": 2493
+          }
+        }
+      }
+    ],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9797885778871086,
+      "rules_selected_ratio": 0.04009041951997872,
+      "rules_matched_ratio": 0.04009041951997872
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 1010462208
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

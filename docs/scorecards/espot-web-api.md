@@ -1,16 +1,16 @@
-# Scorecard: espot — lab (results-5.0.0)
+# Scorecard: espot — lab (results-5.0.1)
 
 **Status:** Informative · evaluation proof (not an endorsement)  
-**UHBS:** **5.0.0** · **Class:** Web-API · **Protocol:** `http`  
+**UHBS:** **5.0.1** · **Class:** Web-API · **Protocol:** `http`  
 **Target id (lab):** `espot` · **Evaluation date:** 2026-09-26  
 **Verdict:** INCOMPLETE / ungraded (`uhqs-v5.0-critical-gate-diagnostic`)
 
 | Run | UHQS | Grade | δ_C | Proof artifacts |
 | --- | ---: | --- | --- | --- |
-| Quick | ungraded | — | 0.0 | [quick SCORECARD](../conformance/latest/results-5.0.0/espot/quick/SCORECARD.txt) |
+| Quick | ungraded | — | 0.0 | [quick SCORECARD](../conformance/latest/results-5.0.1/espot/quick/SCORECARD.txt) |
 | **Full (authoritative)** | **ungraded** | **—** | **0.0** | Verbatim SCORECARD below |
 
-**Report hub:** [espot](../conformance/latest/results-5.0.0/espot/index.md) · [Tutorial](../conformance/latest/results-5.0.0/espot/TUTORIAL.md) · [Methodology](../conformance/latest/results-5.0.0/espot/METHODOLOGY.md) · [Execution steps](../conformance/latest/results-5.0.0/espot/EXECUTION-STEPS.md)
+**Report hub:** [espot](../conformance/latest/results-5.0.1/espot/index.md) · [Tutorial](../conformance/latest/results-5.0.1/espot/TUTORIAL.md) · [Methodology](../conformance/latest/results-5.0.1/espot/METHODOLOGY.md) · [Execution steps](../conformance/latest/results-5.0.1/espot/EXECUTION-STEPS.md)
 
 ## Proof: module scores (full run)
 
@@ -30,7 +30,7 @@ Archived 4.x 63.33 / D is **not** the current published result.
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : espot
 System Profile Class  : Web-API
@@ -53,7 +53,7 @@ Module E: Scalability & Latency     : 100.0/100       0.15     PASSED (service a
 Module F: Static Code Audit         :  66.6/100       0.20     PARTIAL (semgrep error/critical=2 total=6)
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : Ungraded — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (Ungraded — no composite UHQS)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (Ungraded — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
 scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
 ====================================================================================

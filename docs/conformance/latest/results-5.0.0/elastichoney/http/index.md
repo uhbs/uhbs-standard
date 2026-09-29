@@ -1,7 +1,7 @@
-# Elastichoney (jordan-wright) (http) — UHBS lab reports (results-5.0.0)
+# Elastichoney (jordan-wright) (http) — UHBS lab reports (results-5.0.1)
 
 **Class / protocol:** `Web-API` · `http` · port `9200`  
-**UHBS:** 5.0.0 · evaluation proof only  
+**UHBS:** 5.0.1 · evaluation proof only  
 **Upstream:** `master` @ `1b03740e34c6a60991432d53c237773d484571eb`
 
 ## Results at a glance
@@ -13,7 +13,7 @@
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../fixtures/elastichoney-web-api.scorecard.json`](../../../fixtures/elastichoney-web-api.scorecard.json)  
-Archive: [`../../../../archive/v5.0.0/elastichoney/`](../../../../archive/v5.0.0/elastichoney/)
+Archive: [`../../../../archive/v5.0.1/elastichoney/`](../../../../archive/v5.0.1/elastichoney/)
 
 | Document | Purpose |
 | --- | --- |

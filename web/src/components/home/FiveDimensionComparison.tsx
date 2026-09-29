@@ -76,7 +76,7 @@ export const FiveDimensionComparison = () => {
         <motion.div variants={fadeUpVariant} className="mb-16">
           <h2 className="text-3xl md:text-4xl font-heading mb-4 flex items-center gap-3">
             <GitCommit className="text-main w-8 h-8" aria-hidden />
-            UHBS v5.0.0 vs. 5-Dimension Framework
+            UHBS v5.0.1 vs. 5-Dimension Framework
           </h2>
           <p className="text-muted-foreground max-w-3xl leading-relaxed">
             UHBS turns common honeypot quality ideas into a practical grading system: it checks both
@@ -99,8 +99,8 @@ export const FiveDimensionComparison = () => {
               <thead>
                 <tr className="border-b border-border text-muted-foreground bg-page">
                   <th className="py-3 px-4 font-normal w-1/4">5-Dimension Metric</th>
-                  <th className="py-3 px-4 font-normal w-1/5">UHBS v5.0.0 Module</th>
-                  <th className="py-3 px-4 font-normal">Key Expansion in UHBS v5.0.0</th>
+                  <th className="py-3 px-4 font-normal w-1/5">UHBS v5.0.1 Module</th>
+                  <th className="py-3 px-4 font-normal">Key Expansion in UHBS v5.0.1</th>
                 </tr>
               </thead>
               <tbody>
@@ -152,7 +152,7 @@ export const FiveDimensionComparison = () => {
             <AlertDescription>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Five-dimension proposals provide a useful conceptual lens for categorizing honeypot
-                quality. UHBS v5.0.0 operationalizes overlapping concerns with versioned checks and
+                quality. UHBS v5.0.1 operationalizes overlapping concerns with versioned checks and
                 evidence — adding a static audit plane (Module F), a fail-closed critical-control
                 verdict, and target profiles for GenAI and OT/ICS decoy classes. This remains an
                 experimental framework, not independent certification. See the{" "}

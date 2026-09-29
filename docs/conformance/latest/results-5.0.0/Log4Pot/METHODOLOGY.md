@@ -1,6 +1,6 @@
-# Log4Pot (thomaspatzke) (http) methodology (results-5.0.0)
+# Log4Pot (thomaspatzke) (http) methodology (results-5.0.1)
 
-**UHBS:** 5.0.0 · strategy `ubuntu-wrapper` · base `ubuntu:latest`
+**UHBS:** 5.0.1 · strategy `ubuntu-wrapper` · base `ubuntu:latest`
 
 No upstream Dockerfile. README allows running without Azure extras via python log4pot-server.py. Ubuntu latest + python3 (stdlib HTTP server).
 

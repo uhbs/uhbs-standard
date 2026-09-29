@@ -1,0 +1,195 @@
+[
+    {
+        "Id": "94a9b6601b83069c68109cb3ca0960e8a068a808db130a734214cfbce74657c5",
+        "Created": "2026-09-27T19:52:47.471894178Z",
+        "Path": "/app/web-decoy",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 71094,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T19:52:47.75355372Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:da45cae2c217f99fbc3a7094e1d7df9181593a44a4671a2e4f5e08c98ee3501b",
+        "ResolvConfPath": "/var/lib/docker/containers/94a9b6601b83069c68109cb3ca0960e8a068a808db130a734214cfbce74657c5/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/94a9b6601b83069c68109cb3ca0960e8a068a808db130a734214cfbce74657c5/hostname",
+        "HostsPath": "/var/lib/docker/containers/94a9b6601b83069c68109cb3ca0960e8a068a808db130a734214cfbce74657c5/hosts",
+        "LogPath": "/var/lib/docker/containers/94a9b6601b83069c68109cb3ca0960e8a068a808db130a734214cfbce74657c5/94a9b6601b83069c68109cb3ca0960e8a068a808db130a734214cfbce74657c5-json.log",
+        "Name": "/honeywire-webdecoy",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "94a9b6601b83069c68109cb3ca0960e8a068a808db130a734214cfbce74657c5",
+                "LowerDir": "/var/lib/docker/overlay2/5b8b169945fe57e2db66c78784a196378db230e44fde71dbb28a772df01ee883-init/diff:/var/lib/docker/overlay2/c9b9beafe03905f18da171349abfa387cde28170ff1e3504f692544b008a371e/diff:/var/lib/docker/overlay2/50451fd9f9516a4bc5e03ddbd993be96df3af5bb9bf976f15ecc1605e28159fc/diff:/var/lib/docker/overlay2/40979f5f110864f029c9ca4121fda440142d6467f86fb2022cf4fe075af4553e/diff:/var/lib/docker/overlay2/86a98eff7f7184415b3f85e58498ebbd31d86bac7f1f8a720b3171722f4ff762/diff:/var/lib/docker/overlay2/5b87fd539e6ca0aa14ffb6ca00dde69368abd8ab9cb9601a723e4b36fcf98668/diff:/var/lib/docker/overlay2/5c4d840102612ad62f1f049674a7a0a0ccd4157304bb6775c6310ed1feac09ad/diff:/var/lib/docker/overlay2/8f973c4e7c058167d8c4732215a7a2e044105af61ba7b4f8b339ba9122d90114/diff:/var/lib/docker/overlay2/b4d8106ffebf5b881522c6b1e481caa142817d0d77400399f2f6750b7c27ee7c/diff:/var/lib/docker/overlay2/9e001cffcb59a5ef164cac3cc3b9965ce9370d1b2c04b12996feada2fcf1010b/diff:/var/lib/docker/overlay2/55af3b31b5ec8ea0d9f8c963b45622034c0512dfccc77fc9f2a54c776bec43ee/diff:/var/lib/docker/overlay2/3a7e2fe4f08f91b8a49b39de33312f3dcace240cc4cebd39a78656233af38fe6/diff:/var/lib/docker/overlay2/f13e83bdc06b77121b72cf5447ba43beb3b46a52be80acb555ea0a049213a713/diff:/var/lib/docker/overlay2/8d380d7a4967b3c671c4d275733f9ecdadc2458a9519e0645e7e772e11da7fac/diff",
+                "MergedDir": "/var/lib/docker/overlay2/5b8b169945fe57e2db66c78784a196378db230e44fde71dbb28a772df01ee883/merged",
+                "UpperDir": "/var/lib/docker/overlay2/5b8b169945fe57e2db66c78784a196378db230e44fde71dbb28a772df01ee883/diff",
+                "WorkDir": "/var/lib/docker/overlay2/5b8b169945fe57e2db66c78784a196378db230e44fde71dbb28a772df01ee883/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "94a9b6601b83",
+            "Domainname": "",
+            "User": "65532",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "HW_BIND_PORT=8081",
+                "HW_ROUTER_BRAND=Netgear",
+                "HW_HUB_ENDPOINT=http://127.0.0.1:9",
+                "HW_HUB_KEY=lab",
+                "HW_SENSOR_ID=hw-sensor-web-router-decoy",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt"
+            ],
+            "Cmd": [
+                "/app/web-decoy"
+            ],
+            "Image": "ghcr.io/andreicscs/honeywire-webrouterdecoy:latest",
+            "Volumes": null,
+            "WorkingDir": "/home/nonroot",
+            "Entrypoint": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "SandboxID": "a95e874c0d2dfc948d8097e52fd49b5ea3133aa02b10e282173f387d4974ed87",
+            "SandboxKey": "/var/run/docker/netns/a95e874c0d2d",
+            "Ports": {},
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "honeywire-webdecoy"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "e5a3669bd130027110cd95be0b8bb4f3d77cc570e803cdc3bdbc5008267f10c0",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "82:cc:c9:d9:11:36",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "honeywire-webdecoy",
+                        "94a9b6601b83"
+                    ]
+                }
+            }
+        }
+    }
+]

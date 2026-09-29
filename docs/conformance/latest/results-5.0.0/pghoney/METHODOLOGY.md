@@ -1,7 +1,7 @@
-# Methodology: pghoney UHBS lab (results-5.0.0)
+# Methodology: pghoney UHBS lab (results-5.0.1)
 
 **Status:** Informative  
-**UHBS:** 5.0.0 · Images `uhbs:5.0.0` (quick) / `uhbs:5.0.0-full` (full)  
+**UHBS:** 5.0.1 · Images `uhbs:5.0.1` (quick) / `uhbs:5.0.1-full` (full)  
 **Upstream commit:** `f5d367f749f7e9353421aaf44dad856df490c441` (`master`)
 
 ## Runtime

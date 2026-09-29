@@ -1,6 +1,6 @@
 # Execution steps — `beelzebub-telnet`
 
-Replication log for the UHBS 5.0.0 results-5.0.0 refresh. Commands ran from the UHBS repo root. Do not transplant archived 4.x letter grades.
+Replication log for the UHBS 5.0.1 results-5.0.1 refresh. Commands ran from the UHBS repo root. Do not transplant archived 4.x letter grades.
 
 ## Identity
 
@@ -11,7 +11,7 @@ Replication log for the UHBS 5.0.0 results-5.0.0 refresh. Commands ran from the 
 - commit: `67d5632a754f39f7b14c703d3009193150440116`
 - workspace clone: `.local/labs/beelzebub`
 - telemetry: `.local/labs/beelzebub-telemetry`
-- latest path: `docs/conformance/latest/results-5.0.0/beelzebub/telnet`
+- latest path: `docs/conformance/latest/results-5.0.1/beelzebub/telnet`
 - lab overlay: `docs/conformance/labs/beelzebub/configurations/`
 
 ## 1. Clone
@@ -48,24 +48,24 @@ docker run -d \
   beelzebub:uhbs-lab
 ```
 
-## 4. Quick run (`uhbs:5.0.0`)
+## 4. Quick run (`uhbs:5.0.1`)
 
 ```bash
-python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.0.sqlite3 log-run-start \
-  --unit-id beelzebub-telnet --mode quick --uhbs-version 5.0.0 \
-  --grader-image uhbs:5.0.0 --target-image beelzebub:uhbs-lab \
+python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.1.sqlite3 log-run-start \
+  --unit-id beelzebub-telnet --mode quick --uhbs-version 5.0.1 \
+  --grader-image uhbs:5.0.1 --target-image beelzebub:uhbs-lab \
   --base-image scratch --strategy upstream-docker --airgap-attested
 
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/beelzebub:/honeypot:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 \
-  uhbs:5.0.0 lab \
+  uhbs:5.0.1 lab \
     --inventory /work/docs/conformance/labs/beelzebub/inventory.yaml \
     --target beelzebub-telnet \
     --tps /work/docs/conformance/labs/beelzebub/low_interaction_telnet_quick.yaml \
     --phases profile,static,sandbox,dynamic,score --modules A,B,C,D,E,F \
     --quick --skip-sast-tools --concurrency 10 --requests 50 \
-    --out /work/docs/conformance/latest/results-5.0.0/beelzebub/telnet/quick \
+    --out /work/docs/conformance/latest/results-5.0.1/beelzebub/telnet/quick \
     --environment "Quick Docker lab: beelzebub-telnet"
 ```
 
@@ -77,20 +77,20 @@ printf '%s\n' '# UHBS egress gateway canary — no HIT lines means clean' \
   > .local/labs/beelzebub-telemetry/egress-gateway.log
 ```
 
-## 6. Full run + asciinema (`uhbs:5.0.0-full`)
+## 6. Full run + asciinema (`uhbs:5.0.1-full`)
 
 ```bash
-python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.0.sqlite3 log-run-start \
-  --unit-id beelzebub-telnet --mode full --uhbs-version 5.0.0 \
-  --grader-image uhbs:5.0.0-full --target-image beelzebub:uhbs-lab \
+python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.1.sqlite3 log-run-start \
+  --unit-id beelzebub-telnet --mode full --uhbs-version 5.0.1 \
+  --grader-image uhbs:5.0.1-full --target-image beelzebub:uhbs-lab \
   --base-image scratch --strategy upstream-docker --airgap-attested
 
 asciinema rec --overwrite \
-  docs/conformance/latest/results-5.0.0/beelzebub/telnet/full/proof/full-run.cast \
+  docs/conformance/latest/results-5.0.1/beelzebub/telnet/full/proof/full-run.cast \
   -c .local/benchmark-refresh/run_beelzebub_telnet_full.sh
 ```
 
-Full grader: `uhbs:5.0.0-full`, TPS `docs/conformance/labs/beelzebub/low_interaction_telnet_full.yaml`, `--concurrency 25 --requests 200`, `UHBS_AIRGAP_ATTESTED=1`, `UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log`.
+Full grader: `uhbs:5.0.1-full`, TPS `docs/conformance/labs/beelzebub/low_interaction_telnet_full.yaml`, `--concurrency 25 --requests 200`, `UHBS_AIRGAP_ATTESTED=1`, `UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log`.
 
 ## 7. Fixture + verifier
 
@@ -103,9 +103,9 @@ python scripts/rebuild_mkdocs_nav.py
 
 ## Output paths
 
-- quick: `docs/conformance/latest/results-5.0.0/beelzebub/telnet/quick/`
-- full: `docs/conformance/latest/results-5.0.0/beelzebub/telnet/full/`
-- cast: `docs/conformance/latest/results-5.0.0/beelzebub/telnet/full/proof/full-run.cast`
+- quick: `docs/conformance/latest/results-5.0.1/beelzebub/telnet/quick/`
+- full: `docs/conformance/latest/results-5.0.1/beelzebub/telnet/full/`
+- cast: `docs/conformance/latest/results-5.0.1/beelzebub/telnet/full/proof/full-run.cast`
 - fixture: `docs/conformance/fixtures/beelzebub-telnet.scorecard.json`
 
-Honest UHBS 5.0.0 outcome: **INCOMPLETE / ungraded**. Do not copy archived 4.x 47.89 / F.
+Honest UHBS 5.0.1 outcome: **INCOMPLETE / ungraded**. Do not copy archived 4.x 47.89 / F.

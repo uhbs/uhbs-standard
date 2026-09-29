@@ -159,3 +159,255 @@ sites:
     telemetry_dir: /telemetry
     tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_vnc_full.yaml
     container_image: qeeqbox-honeypots:uhbs-lab
+
+  qeeqbox-honeypots-dhcp:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: dhcp
+    protocols: [dhcp]
+    port: 67
+    ports:
+      dhcp: 67
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_dhcp_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+
+  qeeqbox-honeypots-dns:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: dns
+    protocols: [dns]
+    port: 53
+    ports:
+      dns: 53
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_dns_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+
+  qeeqbox-honeypots-elasticsearch:
+    kind: generic
+    class: Web-API
+    host: qeeqbox-lab
+    protocol: elasticsearch
+    protocols: [elasticsearch]
+    port: 9200
+    ports:
+      elasticsearch: 9200
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/web_api_elasticsearch_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+
+  qeeqbox-honeypots-httpproxy:
+    kind: generic
+    class: Web-API
+    host: qeeqbox-lab
+    protocol: httpproxy
+    protocols: [httpproxy]
+    port: 8080
+    ports:
+      httpproxy: 8080
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/web_api_httpproxy_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+
+  qeeqbox-honeypots-imap:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: imap
+    protocols: [imap]
+    port: 143
+    ports:
+      imap: 143
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_imap_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+
+  qeeqbox-honeypots-ipp:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: ipp
+    protocols: [ipp]
+    port: 631
+    ports:
+      ipp: 631
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_ipp_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+
+  qeeqbox-honeypots-irc:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: irc
+    protocols: [irc]
+    port: 6667
+    ports:
+      irc: 6667
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_irc_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+
+  qeeqbox-honeypots-ldap:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: ldap
+    protocols: [ldap]
+    port: 389
+    ports:
+      ldap: 389
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_ldap_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+
+  qeeqbox-honeypots-memcache:
+    kind: generic
+    class: Database
+    host: qeeqbox-lab
+    protocol: memcache
+    protocols: [memcache]
+    port: 11211
+    ports:
+      memcache: 11211
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/database_memcache_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+
+  qeeqbox-honeypots-mssql:
+    kind: generic
+    class: Database
+    host: qeeqbox-lab
+    protocol: mssql
+    protocols: [mssql]
+    port: 1433
+    ports:
+      mssql: 1433
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/database_mssql_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+
+  qeeqbox-honeypots-ntp:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: ntp
+    protocols: [ntp]
+    port: 123
+    ports:
+      ntp: 123
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_ntp_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+
+  qeeqbox-honeypots-oracle:
+    kind: generic
+    class: Database
+    host: qeeqbox-lab
+    protocol: oracle
+    protocols: [oracle]
+    port: 1521
+    ports:
+      oracle: 1521
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/database_oracle_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+
+  qeeqbox-honeypots-pjl:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: pjl
+    protocols: [pjl]
+    port: 9100
+    ports:
+      pjl: 9100
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_pjl_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+
+  qeeqbox-honeypots-rdp:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: rdp
+    protocols: [rdp]
+    port: 3389
+    ports:
+      rdp: 3389
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_rdp_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+
+  qeeqbox-honeypots-sip:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: sip
+    protocols: [sip]
+    port: 5060
+    ports:
+      sip: 5060
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_sip_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+
+  qeeqbox-honeypots-smb:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: smb
+    protocols: [smb]
+    port: 445
+    ports:
+      smb: 445
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_smb_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+
+  qeeqbox-honeypots-snmp:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: snmp
+    protocols: [snmp]
+    port: 161
+    ports:
+      snmp: 161
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_snmp_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab
+
+  qeeqbox-honeypots-socks5:
+    kind: generic
+    class: Low-Interaction
+    host: qeeqbox-lab
+    protocol: socks5
+    protocols: [socks5]
+    port: 1080
+    ports:
+      socks5: 1080
+    source_root: /honeypot
+    telemetry_dir: /telemetry
+    tps: /work/docs/conformance/labs/qeeqbox-honeypots/low_interaction_socks5_full.yaml
+    container_image: qeeqbox-honeypots:uhbs-lab

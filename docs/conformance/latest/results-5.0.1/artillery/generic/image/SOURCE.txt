@@ -1,0 +1,5 @@
+source=.local/labs/artillery/Dockerfile.lab
+image=artillery:uhbs-lab
+digest=sha256:c90c94491bf423553843021eb1176d75c03edd6a078d1efb3cc1db77bc2c32ef
+dockerfile=docs/conformance/latest/results-5.0.1/artillery/generic/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/artillery/generic/Dockerfile.pin

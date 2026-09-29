@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `kippo-ssh`
+# Image name at grade time: kippo:uhbs-lab
+FROM sha256:135178322e022b9cbe1e945aeca712b155bf19c7aa538acef5d10c9f180ef296

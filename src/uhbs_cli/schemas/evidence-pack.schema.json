@@ -19,8 +19,8 @@
   "properties": {
     "uhbs_version": {
       "type": "string",
-      "pattern": "^5\\.0\\.0$",
-      "description": "UHBS specification version (5.0.0)."
+      "pattern": "^5\\.0\\.1$",
+      "description": "UHBS specification version (5.0.1)."
     },
     "specification_version": {
       "type": "string",

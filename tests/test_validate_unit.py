@@ -64,9 +64,17 @@ def write_manifest(path: Path, latest: str, fixture: str) -> None:
     )
 
 
-def write_artifact_dir(directory: Path, *, cast: bool) -> None:
+def write_artifact_dir(
+    directory: Path,
+    *,
+    cast: bool,
+    module_c: dict | None = None,
+) -> None:
     directory.mkdir(parents=True, exist_ok=True)
     (directory / "static").mkdir(exist_ok=True)
+    modules = []
+    if module_c is not None:
+        modules.append(module_c)
     bodies = {
         "README.md": "# demo\n",
         "SCORECARD.txt": "UHQS 1.0\n",
@@ -79,14 +87,15 @@ def write_artifact_dir(directory: Path, *, cast: bool) -> None:
                     "delta_c": 0.4,
                     "S_A": 10,
                     "S_B": 10,
-                    "S_C": 10,
+                    "S_C": module_c.get("score", 10) if module_c else 10,
                     "C": 10,
                     "S_E": 10,
                     "S_F": 10,
-                }
+                },
+                "modules": modules,
             }
         ),
-        "run-meta.json": json.dumps({"uhbs_version": "5.0.0", "run_mode": directory.name}),
+        "run-meta.json": json.dumps({"uhbs_version": "5.0.1", "run_mode": directory.name}),
         "uhbs-run.log": "ok\n",
     }
     artifacts = []
@@ -100,12 +109,18 @@ def write_artifact_dir(directory: Path, *, cast: bool) -> None:
         (proof / "full-run.cast").write_text(cast_body, encoding="utf-8")
         artifacts.append({"path": "proof/full-run.cast", "sha256": sha256_text(cast_body)})
     (directory / "MANIFEST.json").write_text(
-        json.dumps({"uhbs_version": "5.0.0", "artifacts": artifacts}),
+        json.dumps({"uhbs_version": "5.0.1", "artifacts": artifacts}),
         encoding="utf-8",
     )
 
 
-def seed_complete_unit(tmp_path: Path, *, include_cast: bool) -> tuple[Path, Path]:
+def seed_complete_unit(
+    tmp_path: Path,
+    *,
+    include_cast: bool,
+    telemetry_required: bool = False,
+    module_c: dict | None = None,
+) -> tuple[Path, Path]:
     db = tmp_path / "t.sqlite3"
     latest = tmp_path / "latest" / "demo"
     fixture = tmp_path / "demo.scorecard.json"
@@ -114,6 +129,16 @@ def seed_complete_unit(tmp_path: Path, *, include_cast: bool) -> tuple[Path, Pat
     write_manifest(manifest, str(latest), str(fixture))
     run_py(TRACKER, "--db", str(db), "init-db")
     run_py(TRACKER, "--db", str(db), "import-manifest", "--manifest", str(manifest))
+    if telemetry_required:
+        import sqlite3
+
+        conn = sqlite3.connect(db)
+        conn.execute(
+            "UPDATE benchmark_units SET telemetry_required = 1 WHERE unit_id = ?",
+            ("demo-http",),
+        )
+        conn.commit()
+        conn.close()
     run_py(
         TRACKER,
         "--db",
@@ -129,8 +154,20 @@ def seed_complete_unit(tmp_path: Path, *, include_cast: bool) -> tuple[Path, Pat
     latest.mkdir(parents=True, exist_ok=True)
     (latest / "EXECUTION-STEPS.md").write_text("# steps\n1. clone\n", encoding="utf-8")
     (latest / "index.md").write_text("# demo\n", encoding="utf-8")
-    write_artifact_dir(latest / "quick", cast=False)
-    write_artifact_dir(latest / "full", cast=include_cast)
+    (latest / "TUTORIAL.md").write_text("# tutorial\nReproduce with uhbs lab.\n", encoding="utf-8")
+    (latest / "METHODOLOGY.md").write_text(
+        "# methodology\nDual-vantage onbox C/D + remote A/B.\n", encoding="utf-8"
+    )
+    (latest / "Dockerfile").write_text(
+        "FROM ubuntu:latest\n# UHBS lab score image recipe (test fixture)\n",
+        encoding="utf-8",
+    )
+    (latest / "Dockerfile.pin").write_text(
+        "FROM ubuntu@sha256:" + ("a" * 64) + "\n",
+        encoding="utf-8",
+    )
+    write_artifact_dir(latest / "quick", cast=False, module_c=module_c)
+    write_artifact_dir(latest / "full", cast=include_cast, module_c=module_c)
 
     for mode, out in (("quick", latest / "quick"), ("full", latest / "full")):
         extra = [
@@ -202,3 +239,75 @@ def test_missing_cast_fails(tmp_path: Path) -> None:
     combined = result.stdout + result.stderr
     assert "cast" in combined.lower()
     assert not (latest / "full" / "proof" / "full-run.cast").exists()
+
+
+def test_telemetry_required_incomplete_c_fails(tmp_path: Path) -> None:
+    module_c = {
+        "module": "C",
+        "dimension": "telemetry",
+        "score": 0.0,
+        "status": "PARTIAL",
+        "complete": False,
+        "checks": [
+            {
+                "id": "c1.json_parse_clean",
+                "detail": "0 malformed / 0 records",
+                "outcome": "FAIL",
+                "score": 0.0,
+            }
+        ],
+    }
+    db, _latest = seed_complete_unit(
+        tmp_path,
+        include_cast=True,
+        telemetry_required=True,
+        module_c=module_c,
+    )
+    result = run_py(
+        VALIDATE,
+        "--unit-id",
+        "demo-http",
+        "--db",
+        str(db),
+        "--root",
+        str(tmp_path),
+        check=False,
+    )
+    assert result.returncode != 0
+    combined = result.stdout + result.stderr
+    assert "Module C" in combined
+
+
+def test_telemetry_required_complete_c_passes(tmp_path: Path) -> None:
+    module_c = {
+        "module": "C",
+        "dimension": "telemetry",
+        "score": 80.0,
+        "status": "PASSED",
+        "complete": True,
+        "checks": [
+            {
+                "id": "c1.json_parse_clean",
+                "detail": "0 malformed / 120 records",
+                "outcome": "PASS",
+                "score": 100.0,
+            }
+        ],
+    }
+    db, _latest = seed_complete_unit(
+        tmp_path,
+        include_cast=True,
+        telemetry_required=True,
+        module_c=module_c,
+    )
+    result = run_py(
+        VALIDATE,
+        "--unit-id",
+        "demo-http",
+        "--db",
+        str(db),
+        "--root",
+        str(tmp_path),
+    )
+    assert result.returncode == 0
+    assert "OK demo-http" in result.stdout

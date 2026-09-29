@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `pyrdp-rdp`
+# Image name at grade time: pyrdp:uhbs-lab
+FROM sha256:3b1b3a09e21459c515125392b72df6c1563b7707e6220fe960ff9fff883943b1

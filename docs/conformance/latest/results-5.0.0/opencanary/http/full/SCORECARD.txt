@@ -1,5 +1,5 @@
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : opencanary-http
 System Profile Class  : Web-API
@@ -22,7 +22,7 @@ Module E: Scalability & Latency     :  55.0/100       0.15     PARTIAL (P50=1.0m
 Module F: Static Code Audit         :  67.5/100       0.20     PARTIAL (bandit HIGH=21)
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=1.0; unmeasured modules excluded from composite)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : 74.68 / 100
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 74.68 / 100
 OVERALL EVALUATION GRADE              : GRADE C (Conditional — not approved for production)
 scoring_model_id                      : uhqs-v5.2-measured-renorm
 ====================================================================================

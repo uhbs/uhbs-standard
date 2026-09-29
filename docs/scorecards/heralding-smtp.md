@@ -1,16 +1,16 @@
-# Scorecard: heralding — smtp (results-5.0.0)
+# Scorecard: heralding — smtp (results-5.0.1)
 
 **Status:** Informative · evaluation proof (not an endorsement)  
-**UHBS:** **5.0.0** · **Class:** Low-Interaction · **Protocol:** `smtp`  
+**UHBS:** **5.0.1** · **Class:** Low-Interaction · **Protocol:** `smtp`  
 **Target id (lab):** `heralding-smtp` · **Evaluation date:** 2026-09-26  
 **Verdict:** INCOMPLETE / INCOMPLETE / ungraded (`uhqs-v5.0-critical-gate-diagnostic`)
 
 | Run | UHQS | Grade | δ_C | Proof artifacts |
 | --- | ---: | --- | --- | --- |
-| Quick | ungraded | — | 0.0 | [quick SCORECARD](../conformance/latest/results-5.0.0/heralding/smtp/quick/SCORECARD.txt) |
+| Quick | ungraded | — | 0.0 | [quick SCORECARD](../conformance/latest/results-5.0.1/heralding/smtp/quick/SCORECARD.txt) |
 | **Full (authoritative)** | **ungraded** | **—** | **0.0** | Verbatim SCORECARD below |
 
-**Report hub:** [heralding / smtp](../conformance/latest/results-5.0.0/heralding/smtp/index.md) · [Tutorial](../conformance/latest/results-5.0.0/heralding/TUTORIAL.md) · [Methodology](../conformance/latest/results-5.0.0/heralding/METHODOLOGY.md) · [Execution steps](../conformance/latest/results-5.0.0/heralding/smtp/EXECUTION-STEPS.md)
+**Report hub:** [heralding / smtp](../conformance/latest/results-5.0.1/heralding/smtp/index.md) · [Tutorial](../conformance/latest/results-5.0.1/heralding/TUTORIAL.md) · [Methodology](../conformance/latest/results-5.0.1/heralding/METHODOLOGY.md) · [Execution steps](../conformance/latest/results-5.0.1/heralding/smtp/EXECUTION-STEPS.md)
 
 ## Proof: module scores (full run)
 
@@ -30,7 +30,7 @@ Archived 4.x letter grades are **not** the current published result.
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : heralding-smtp
 System Profile Class  : Low-Interaction
@@ -53,7 +53,7 @@ Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service a
 Module F: Static Code Audit         :  66.9/100       0.20     PARTIAL (bandit HIGH=11)
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : Ungraded — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (Ungraded — no composite UHQS)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (Ungraded — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
 scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
 ====================================================================================

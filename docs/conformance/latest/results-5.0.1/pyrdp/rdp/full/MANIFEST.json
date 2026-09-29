@@ -1,0 +1,62 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "6a8295d0fd149b6cf82700a5a054539dd6ff343c47d906e11a812b836eac6f9d"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "129fb1599ab43e252893012064ca532ea596b623ae8075a3b60f99ac1c10716b"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "129fb1599ab43e252893012064ca532ea596b623ae8075a3b60f99ac1c10716b"
+    },
+    {
+      "path": "evidence/container-inspect.json",
+      "sha256": "d47e6e109aa9b9489a2a13e753cad8bff584345270851484a3af60af9248f6d9"
+    },
+    {
+      "path": "evidence/container-inspect.json.sha256",
+      "sha256": "ec9428f4e71bdab24f7b623f3ac53d9d09cdab27a367950c403d29bbccdfd7af"
+    },
+    {
+      "path": "evidence/egress-gateway.log",
+      "sha256": "33aa4e73aa68c694bf0bfa19e774ce22a83b6cad16bc526e7fcba48386e22c53"
+    },
+    {
+      "path": "evidence/egress-gateway.log.sha256",
+      "sha256": "bb2c1ba3e0f362c8a8e258321fea9e9cefca9d5cf493e3c227ca43c78637cb94"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "0eb311a2acf7d4c71b45bf66c69a7afeed053791045fe2d5be2ddd1dfcfb3952"
+    },
+    {
+      "path": "proof/full-run.cast",
+      "sha256": "479e0d306f382cb5bf39c7a24c09517cf61da015bb44b1dbc95c6bb3550599bf"
+    },
+    {
+      "path": "report.json",
+      "sha256": "52eda5e72f7507657fac46ed7e7053f4cba977b42e3c2b6fe3d7228b10a4f53c"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "6b9c2ee18099ff59ebb0f06deb559e08d7acb70636feceb91660ec0ce87906ac"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "704547dc0870a1219fb054034bdd4f9a073fec1f282e328294ea2918442bb517"
+    }
+  ],
+  "extra": {
+    "target": "pyrdp-rdp",
+    "uhqs": 19.88,
+    "grade": "GRADE F (Fail)",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
+    "assessment_status": "INCOMPLETE",
+    "evidence_pack": "evidence-pack.json",
+    "evidence_manifest_digest": "c740ced3ba834964c6ab870a7ec6409039140c3b5f60756895ae6b8e12227d97"
+  }
+}

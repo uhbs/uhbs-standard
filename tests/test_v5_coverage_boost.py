@@ -985,6 +985,8 @@ class _SSHResult:
 def test_safety_shell_pass_and_fail(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
+    import json
+
     from uhbs_core import test_safety
 
     target = TargetSpec(
@@ -996,8 +998,34 @@ def test_safety_shell_pass_and_fail(
         ssh_port=2222,
     )
     gateway = tmp_path / "gateway.log"
-    gateway.write_text("# clean\n", encoding="utf-8")
+    gateway.write_text(
+        json.dumps({"type": "uhbs_gateway_envelope", "uhbs_version": "5.0.1"}) + "\n",
+        encoding="utf-8",
+    )
     monkeypatch.setenv("UHBS_EGRESS_GATEWAY_LOG", str(gateway))
+    inspect = tmp_path / "inspect.json"
+    inspect.write_text(
+        json.dumps(
+            [
+                {
+                    "Config": {"User": "1000"},
+                    "HostConfig": {
+                        "Privileged": False,
+                        "NetworkMode": "bridge",
+                        "CapAdd": [],
+                        "CapDrop": ["ALL"],
+                        "SecurityOpt": [],
+                        "Binds": [],
+                        "Devices": [],
+                        "Memory": 1,
+                    },
+                    "Mounts": [],
+                }
+            ]
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.setenv("UHBS_CONTAINER_INSPECT_JSON", str(inspect))
 
     def safe_cmd(*args, **kwargs):
         cmd = args[4]
@@ -1014,8 +1042,13 @@ def test_safety_shell_pass_and_fail(
     passed = test_safety.run(target)
     assert passed.critical_control_verdict == "GATE_PASSED"
     assert passed.status == "GATE PASSED"
+    assert passed.score > 0.0
 
-    gateway.write_text("HIT exfil\n", encoding="utf-8")
+    gateway.write_text(
+        json.dumps({"type": "uhbs_gateway_envelope", "uhbs_version": "5.0.1"})
+        + "\nHIT exfil\n",
+        encoding="utf-8",
+    )
 
     def leak_cmd(*args, **kwargs):
         cmd = args[4]
@@ -1031,7 +1064,7 @@ def test_safety_shell_pass_and_fail(
     )
     failed = test_safety.run(target)
     assert failed.critical_control_verdict == "GATE_FAILED"
-    assert failed.score == 0.0
+    assert failed.score >= 1.0
 
 
 def test_run_benchmark_helpers_and_evaluate(

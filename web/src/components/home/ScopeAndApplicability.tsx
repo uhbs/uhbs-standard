@@ -30,7 +30,7 @@ export const ScopeAndApplicability = () => {
             </h2>
             <div className="text-lg text-muted-foreground font-base leading-relaxed space-y-4">
               <p>
-                UHBS v5.0.0 defines a versioned lab method for evaluating selected technical
+                UHBS v5.0.1 defines a versioned lab method for evaluating selected technical
                 properties of a declared deception asset and configuration.
               </p>
               <p>
@@ -49,7 +49,7 @@ export const ScopeAndApplicability = () => {
                     Vendor-Neutral Baseline
                   </h4>
                   <p className="text-muted-foreground text-sm">
-                    UHBS v5.0.0 is an open-source evaluation framework for comparing and grading
+                    UHBS v5.0.1 is an open-source evaluation framework for comparing and grading
                     honeypots by class and protocol. Results are reproducible only to the extent shown
                     by their evidence pack and assurance level.
                   </p>

@@ -1,0 +1,5 @@
+source=.local/labs/Krawl/Dockerfile
+image=ghcr.io/blessedrebus/krawl:latest
+digest=sha256:26dec4fe66e07e5441831858e4c3ade30f6325f0b9d0f8a4ed05edc4453e3872
+dockerfile=docs/conformance/latest/results-5.0.1/Krawl/http/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/Krawl/http/Dockerfile.pin

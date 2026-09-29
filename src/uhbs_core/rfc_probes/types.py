@@ -14,6 +14,8 @@ class ProtoPorts:
     smtp: int | None = None
     pop3: int | None = None
     http: int | None = None
+    ftp: int | None = None
+    telnet: int | None = None
 
 
 @dataclass

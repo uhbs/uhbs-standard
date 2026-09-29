@@ -1,6 +1,6 @@
 # Execution steps — `endlessh-ssh_tarpit`
 
-Replication log for the UHBS 5.0.0 results-5.0.0 refresh. Commands ran from the UHBS repo root.
+Replication log for the UHBS 5.0.1 results-5.0.1 refresh. Commands ran from the UHBS repo root.
 
 ## Identity
 
@@ -9,7 +9,7 @@ Replication log for the UHBS 5.0.0 results-5.0.0 refresh. Commands ran from the 
 - upstream: `https://github.com/skeeto/endlessh.git`
 - default branch: `master`
 - commit: `dfe44eb2c5b6fc3c48a39ed826fe0e4459cdf6ef`
-- latest path: `docs/conformance/latest/results-5.0.0/endlessh`
+- latest path: `docs/conformance/latest/results-5.0.1/endlessh`
 
 ## 1. Clone
 
@@ -33,26 +33,26 @@ docker build -t endlessh:lab .local/labs/endlessh
 docker run -d --name uhbs-target-endlessh-ssh_tarpit --network uhbs-lab --network-alias endlessh-lab endlessh:lab -v -d 200 -p 2222 -l 32 -m 4096
 ```
 
-## 4. Quick (`uhbs:5.0.0`)
+## 4. Quick (`uhbs:5.0.1`)
 
 ```bash
 UHBS_QUICK=1 UHBS_AIRGAP_ATTESTED=1 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/endlessh:/honeypot:ro" -w /work \
   -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 \
-  uhbs:5.0.0 lab \
+  uhbs:5.0.1 lab \
     --inventory /work/docs/conformance/labs/endlessh/inventory.yaml \
     --target endlessh \
     --tps /work/docs/conformance/labs/endlessh/low_interaction_quick.yaml \
     --quick --skip-sast-tools \
-    --out /work/docs/conformance/latest/results-5.0.0/endlessh/quick
+    --out /work/docs/conformance/latest/results-5.0.1/endlessh/quick
 ```
 
 Inventory target id may differ from hostname; this refresh used inventory `--target` as recorded in `run-meta.json`.
 
-## 5. Full + asciinema (`uhbs:5.0.0-full`)
+## 5. Full + asciinema (`uhbs:5.0.1-full`)
 
 ```bash
-asciinema rec --overwrite docs/conformance/latest/results-5.0.0/endlessh/full/proof/full-run.cast \
+asciinema rec --overwrite docs/conformance/latest/results-5.0.1/endlessh/full/proof/full-run.cast \
   -c .local/benchmark-refresh/endlessh-full.sh
 ```
 
@@ -64,4 +64,4 @@ python scripts/validate_unit.py --unit-id endlessh-ssh_tarpit
 python scripts/rebuild_mkdocs_nav.py
 ```
 
-Honest UHBS 5.0.0 outcome: **INCOMPLETE / INCOMPLETE** (ungraded unless GATE_PASSED). Do not copy archived 4.x letter grades.
+Honest UHBS 5.0.1 outcome: **INCOMPLETE / INCOMPLETE** (ungraded unless GATE_PASSED). Do not copy archived 4.x letter grades.

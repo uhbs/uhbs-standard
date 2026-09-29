@@ -1,0 +1,222 @@
+[
+    {
+        "Id": "80356423ba912115be2795641f06e86cd68c12f04d94ffd6e1df7ccf6e85c642",
+        "Created": "2026-09-27T22:23:43.453407339Z",
+        "Path": "conpot",
+        "Args": [
+            "--template",
+            "default",
+            "--logfile",
+            "/var/log/conpot/conpot.log",
+            "-f",
+            "--temp_dir",
+            "/tmp"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 9839,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T22:23:43.554938631Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:af49c2e9b9d8a8f1198375417bcdb809af12d6356810cb8bbd0203df8f3c6a2f",
+        "ResolvConfPath": "/var/lib/docker/containers/80356423ba912115be2795641f06e86cd68c12f04d94ffd6e1df7ccf6e85c642/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/80356423ba912115be2795641f06e86cd68c12f04d94ffd6e1df7ccf6e85c642/hostname",
+        "HostsPath": "/var/lib/docker/containers/80356423ba912115be2795641f06e86cd68c12f04d94ffd6e1df7ccf6e85c642/hosts",
+        "LogPath": "/var/lib/docker/containers/80356423ba912115be2795641f06e86cd68c12f04d94ffd6e1df7ccf6e85c642/80356423ba912115be2795641f06e86cd68c12f04d94ffd6e1df7ccf6e85c642-json.log",
+        "Name": "/uhbs-target-conpot-bacnet",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/conpot-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "80356423ba912115be2795641f06e86cd68c12f04d94ffd6e1df7ccf6e85c642",
+                "LowerDir": "/var/lib/docker/overlay2/86284423d3fbf9e2643b78d79a07f725d8290227a3b3838ee8d05d93b930cbf5-init/diff:/var/lib/docker/overlay2/0uhddgrvabm697ytk2hb0vct0/diff:/var/lib/docker/overlay2/jflqycfrk81jm186rums6hiw7/diff:/var/lib/docker/overlay2/0fy6r08q784xyv6di3234wvsr/diff:/var/lib/docker/overlay2/rcly7l3bmj3m6ttnx4t1t6n4k/diff:/var/lib/docker/overlay2/4aus4k5to6vbdhrzkc1jdkevc/diff:/var/lib/docker/overlay2/1qng03ixs9xgxsarnvva78q8h/diff:/var/lib/docker/overlay2/quajcnlinrym6w92obg155izu/diff:/var/lib/docker/overlay2/pszmqb8iatrntm5qyt6279okd/diff:/var/lib/docker/overlay2/27b98d0051cd6214283f1de87eba573530c934266989d01904487b9aa6678fd0/diff:/var/lib/docker/overlay2/404ed119c093fa96343b1e9f265346543da920003484ec918abc5268753e8d6d/diff:/var/lib/docker/overlay2/63bc64673da4e802b4c75525a39f4fc45c082f66b644a5acc4ba7fad827b12f6/diff:/var/lib/docker/overlay2/3d772b5f1c41b01474bb805f6b84098f0c3b101e01d7c3e401e6028ae8791295/diff",
+                "MergedDir": "/var/lib/docker/overlay2/86284423d3fbf9e2643b78d79a07f725d8290227a3b3838ee8d05d93b930cbf5/merged",
+                "UpperDir": "/var/lib/docker/overlay2/86284423d3fbf9e2643b78d79a07f725d8290227a3b3838ee8d05d93b930cbf5/diff",
+                "WorkDir": "/var/lib/docker/overlay2/86284423d3fbf9e2643b78d79a07f725d8290227a3b3838ee8d05d93b930cbf5/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/conpot-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "80356423ba91",
+            "Domainname": "",
+            "User": "conpot",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/conpot/.local/bin",
+                "PYTHON_VERSION=3.14.7",
+                "PYTHON_SHA256=3b48dac8fb59f62eaa67ac83c1eb12bda1b7a08406dd286e252c11a66be27f81",
+                "USER=conpot"
+            ],
+            "Cmd": [
+                "--template",
+                "default",
+                "--logfile",
+                "/var/log/conpot/conpot.log",
+                "-f",
+                "--temp_dir",
+                "/tmp"
+            ],
+            "Image": "conpot:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/home/conpot",
+            "Entrypoint": [
+                "conpot"
+            ],
+            "Labels": {
+                "uhbs.unit": "conpot-bacnet"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "181edc0b16200943c9aa19dc64fc0a0ee7ea19824954e7546b796f84fd20ffe9",
+            "SandboxKey": "/var/run/docker/netns/181edc0b1620",
+            "Ports": {},
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "conpot-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "de0c38a80c1fdc31a0454b65ec7d858165dc2cfc890ac68fb7f55cd11ef1d4d2",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "0e:00:93:29:68:89",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-conpot-bacnet",
+                        "conpot-lab",
+                        "80356423ba91"
+                    ]
+                }
+            }
+        }
+    }
+]

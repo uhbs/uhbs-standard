@@ -1,0 +1,9 @@
+matplotlib==3.9.1
+openai==0.28.0
+pandas==2.2.2
+prophet==1.1.5
+Twisted
+halo
+art
+service_identity
+pygame # ;-*

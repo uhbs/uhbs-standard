@@ -1,20 +1,20 @@
-# Scorecard: echidra — ssh (results-5.0.0)
+# Scorecard: echidra — ssh (results-5.0.1)
 
-**UHBS:** **5.0.0** · **Class:** Low-Interaction · **Protocol:** `ssh`  
+**UHBS:** **5.0.1** · **Class:** Low-Interaction · **Protocol:** `ssh`  
 **Verdict:** COMPLETE / GATE_PASSED · **UHQS 36.58 / F**
 
 | Run | UHQS | Grade | Proof |
 | --- | ---: | --- | --- |
-| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.0/echidra/quick/SCORECARD.txt) |
+| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.1/echidra/quick/SCORECARD.txt) |
 | **Full** | **36.58** | **F** | Verbatim SCORECARD below |
 
-**Hub:** [echidra](../conformance/latest/results-5.0.0/echidra/index.md) · [Tutorial](../conformance/latest/results-5.0.0/echidra/TUTORIAL.md) · [Execution steps](../conformance/latest/results-5.0.0/echidra/EXECUTION-STEPS.md)
+**Hub:** [echidra](../conformance/latest/results-5.0.1/echidra/index.md) · [Tutorial](../conformance/latest/results-5.0.1/echidra/TUTORIAL.md) · [Execution steps](../conformance/latest/results-5.0.1/echidra/EXECUTION-STEPS.md)
 
 ## Verbatim full SCORECARD
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : echidra
 System Profile Class  : Low-Interaction
@@ -37,7 +37,7 @@ Module E: Scalability & Latency     :  55.0/100       0.10     PARTIAL (P50=1350
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (1 hardcoded SSH banners: honeypot/core/persona.py)
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : GATE_PASSED (δ_C=1.0; defense-in-depth C=0.0)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : 36.58 / 100
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 36.58 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
 scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
 ====================================================================================

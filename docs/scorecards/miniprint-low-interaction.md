@@ -1,20 +1,20 @@
-# Scorecard: miniprint — pjl (results-5.0.0)
+# Scorecard: miniprint — pjl (results-5.0.1)
 
-**UHBS:** **5.0.0** · **Class:** Low-Interaction · **Protocol:** `pjl`  
+**UHBS:** **5.0.1** · **Class:** Low-Interaction · **Protocol:** `pjl`  
 **Verdict:** INCOMPLETE / ungraded
 
 | Run | UHQS | Grade | Proof |
 | --- | ---: | --- | --- |
-| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.0/miniprint/quick/SCORECARD.txt) |
+| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.1/miniprint/quick/SCORECARD.txt) |
 | **Full** | **ungraded** | **—** | Verbatim SCORECARD below |
 
-**Hub:** [miniprint](../conformance/latest/results-5.0.0/miniprint/index.md)
+**Hub:** [miniprint](../conformance/latest/results-5.0.1/miniprint/index.md)
 
 ## Verbatim full SCORECARD
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : miniprint
 System Profile Class  : Low-Interaction
@@ -37,7 +37,7 @@ Module E: Scalability & Latency     :  55.0/100       0.10     PARTIAL (P50=1025
 Module F: Static Code Audit         :  69.3/100       0.20     PARTIAL (semgrep error/critical=1 total=1)
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : Ungraded — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (Ungraded — no composite UHQS)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (Ungraded — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
 scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
 ====================================================================================

@@ -1,0 +1,71 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "f610b83e8e39f02f3ec7d330c15aed648340d0fd2fc1eaff53eb16ea48204a87"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "befce6a9d5be79a536c3d3ede870dd31bb175670a155d194acd142475087956f"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "befce6a9d5be79a536c3d3ede870dd31bb175670a155d194acd142475087956f"
+    },
+    {
+      "path": "evidence/container-inspect.json",
+      "sha256": "bb52aea0412f39dde4f1d32b910417eca9a0f909111318ab45e9c8a4a71d61e1"
+    },
+    {
+      "path": "evidence/container-inspect.json.sha256",
+      "sha256": "bb073b66c70a3b839e9ea4f0da5e66944e3f6413ff02beb6c15da9c704cf72f5"
+    },
+    {
+      "path": "evidence/egress-gateway.log",
+      "sha256": "68db5c6c69454815431d3dddfcd4bdd3a3a88c7c114279785f023a74b6d44529"
+    },
+    {
+      "path": "evidence/egress-gateway.log.sha256",
+      "sha256": "84bd18443e7497b4aa0e6429eb6927475ca573ced73c348f2dba8bf994936f96"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "c6b1b9f204295140c3590a3e70ee31d8f1dd4ce635312c0f737e1c13926a2df0"
+    },
+    {
+      "path": "proof/full-run.cast",
+      "sha256": "64c6e77689494ff8eaa08951801cc4df2b804862ecf26cf4e697a604408a099a"
+    },
+    {
+      "path": "report.json",
+      "sha256": "335e54e6330974460bd24b6713c166cd96ed7785719feebd40e62482575c056b"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "85ffe8a63ab4e02c72d80b285661b7739bf8fb0e7ecd1cba5c4788cc21cb17a3"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "62cf79909ea21e3e358c3732dd70d18ee2216f82e1e0863c63711083f94c4464"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "72b18eb87e77cce1bc43ef110a5ac4e7719b08dde5af36477f5b7c7ab50d262a"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "4bb710d396533573894b053aa3f6cd32425d182aa21e7084f8b1aee2968476c7"
+    }
+  ],
+  "extra": {
+    "target": "conpot",
+    "uhqs": 52.65,
+    "grade": "GRADE D (Needs Remediation)",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
+    "assessment_status": "INCOMPLETE",
+    "evidence_pack": "evidence-pack.json",
+    "evidence_manifest_digest": "8a31c8b3edf4aa43dee3fd313f0dc73fcc6055129b5425ae1faa142464101f19"
+  },
+  "rescore": "rescored 2026-09-28: measured-renorm exclusion fix (harness never passed measured_modules)"
+}

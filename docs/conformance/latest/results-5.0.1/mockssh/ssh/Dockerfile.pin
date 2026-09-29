@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `mockssh-ssh`
+# Image name at grade time: mockssh:uhbs-lab
+FROM sha256:c3eb44567ad5b8b4060dd1222ae788e3b9f2b020cedd35591e39f35c81c316be

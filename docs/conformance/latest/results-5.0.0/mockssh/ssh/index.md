@@ -1,7 +1,7 @@
-# MockSSH — SSH lab reports (results-5.0.0)
+# MockSSH — SSH lab reports (results-5.0.1)
 
 **Class / protocol:** `Low-Interaction` · `ssh` · port `2222`  
-**UHBS:** 5.0.0 · evaluation proof only  
+**UHBS:** 5.0.1 · evaluation proof only  
 **Upstream:** `main` @ `d2d49b6121544818560ce8e56f306ccf75f961b3`
 
 ## Results at a glance

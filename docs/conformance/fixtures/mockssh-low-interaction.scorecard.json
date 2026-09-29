@@ -1,12 +1,12 @@
 {
-  "uhbs_version": "5.0.0",
+  "uhbs_version": "5.0.1",
   "target": {
     "name": "MockSSH (Cisco example SSH)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/mockssh/low_interaction_ssh_full.yaml"
   },
   "evaluated_at": "2026-09-26",
-  "auditor": "UHBS-Lab full Docker refresh (results-5.0.0)",
+  "auditor": "UHBS-Lab full Docker refresh (results-5.0.1)",
   "modules": {
     "A": {
       "score": 30.07,
@@ -70,7 +70,7 @@
   },
   "uhqs": 41.75,
   "grade": "F",
-  "notes": "Detailed evaluation proof only. Product name is not a UHBS requirement. Full Docker lab artifacts live under docs/conformance/latest/results-5.0.0/mockssh/ssh/. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Detailed evaluation proof only. Product name is not a UHBS requirement. Full Docker lab artifacts live under docs/conformance/latest/results-5.0.1/mockssh/ssh/. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "COMPLETE",
   "critical_control_verdict": "GATE_PASSED",

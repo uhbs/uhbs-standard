@@ -1,0 +1,5 @@
+source=.local/labs/genaipot/Dockerfile
+image=annls/genaipot:latest
+digest=sha256:627d7fde6d4a6f937fde3b3366fb55605a90cea6370e1f5beac9c39d8ecfeeac
+dockerfile=docs/conformance/latest/results-5.0.1/genaipot/smtp/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/genaipot/smtp/Dockerfile.pin

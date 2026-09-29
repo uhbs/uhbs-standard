@@ -1,6 +1,6 @@
-# HellPot (yunginnanet) (http) methodology (results-5.0.0)
+# HellPot (yunginnanet) (http) methodology (results-5.0.1)
 
-**UHBS:** 5.0.0 · strategy `ubuntu-wrapper` · base `ubuntu:latest`
+**UHBS:** 5.0.1 · strategy `ubuntu-wrapper` · base `ubuntu:latest`
 
 Upstream Dockerfile is golang:1.23 + distroless; lab uses golang:1.23 builder then ubuntu:latest runtime with catch-all bind and no curl UA blacklist.
 

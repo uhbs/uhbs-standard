@@ -1,7 +1,7 @@
-# Scorecard: trapster — ftp (results-5.0.0)
+# Scorecard: trapster — ftp (results-5.0.1)
 
 **Status:** Informative · evaluation proof  
-**UHBS:** **5.0.0** · **Class:** Low-Interaction · **Protocol:** `ftp`  
+**UHBS:** **5.0.1** · **Class:** Low-Interaction · **Protocol:** `ftp`  
 **Target id:** `trapster-ftp` · **Evaluation date:** 2026-09-26  
 **Verdict:** INCOMPLETE / ungraded
 
@@ -10,7 +10,7 @@
 | Quick | ungraded | — |
 | **Full** | **ungraded** | **—** |
 
-**Hub:** [trapster / ftp](../conformance/latest/results-5.0.0/trapster/ftp/index.md) · [steps](../conformance/latest/results-5.0.0/trapster/ftp/EXECUTION-STEPS.md)
+**Hub:** [trapster / ftp](../conformance/latest/results-5.0.1/trapster/ftp/index.md) · [steps](../conformance/latest/results-5.0.1/trapster/ftp/EXECUTION-STEPS.md)
 
 Archived 4.x 51.78 / D is **not** current.
 
@@ -18,7 +18,7 @@ Archived 4.x 51.78 / D is **not** current.
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : trapster-ftp
 System Profile Class  : Low-Interaction
@@ -44,7 +44,7 @@ Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service a
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (1 predictable PRNG seeds: trapster/modules/http.py)
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : Ungraded — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : null (Ungraded — no composite UHQS)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (Ungraded — no composite UHQS)
 OVERALL EVALUATION GRADE              : — (no letter grade)
 scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
 ====================================================================================

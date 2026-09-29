@@ -1,12 +1,12 @@
 {
-  "uhbs_version": "5.0.0",
+  "uhbs_version": "5.0.1",
   "target": {
     "name": "artillery (BinaryDefense) (generic)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/artillery/low_interaction_generic_full.yaml"
   },
   "evaluated_at": "2026-09-26",
-  "auditor": "UHBS-Lab results-5.0.0 refresh (artillery-generic)",
+  "auditor": "UHBS-Lab results-5.0.1 refresh (artillery-generic)",
   "modules": {
     "A": {
       "score": 65.43,
@@ -67,7 +67,7 @@
   },
   "uhqs": 60.69,
   "grade": "D",
-  "notes": "Evaluation proof only. results-5.0.0 refresh of artillery-generic at 805a5d858bf1cc3f6de5c3a5083b2d0d21136ebb. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 refresh of artillery-generic at 805a5d858bf1cc3f6de5c3a5083b2d0d21136ebb. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",

@@ -1,7 +1,7 @@
-# wordpot (gbrindisi) (http) — UHBS lab reports (results-5.0.0)
+# wordpot (gbrindisi) (http) — UHBS lab reports (results-5.0.1)
 
 **Class / protocol:** `Web-API` · `http` · port `8080`  
-**UHBS:** 5.0.0 · evaluation proof only  
+**UHBS:** 5.0.1 · evaluation proof only  
 **Upstream:** `master` @ `e96889bd5a35bbdd9fb2dd4cd583475cf7d25962`
 
 ## Results at a glance
@@ -13,7 +13,7 @@
 
 Cast: [`full/proof/full-run.cast`](full/proof/full-run.cast)  
 Fixture: [`../../../fixtures/wordpot-web-api.scorecard.json`](../../../fixtures/wordpot-web-api.scorecard.json)  
-Archive: [`../../../../archive/v5.0.0/wordpot/`](../../../../archive/v5.0.0/wordpot/)
+Archive: [`../../../../archive/v5.0.1/wordpot/`](../../../../archive/v5.0.1/wordpot/)
 
 | Document | Purpose |
 | --- | --- |

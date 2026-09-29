@@ -1,6 +1,6 @@
 # Execution steps — `heralding-ftp`
 
-Replication log for the UHBS 5.0.0 results-5.0.0 refresh. Commands ran from the UHBS repo root. Do not transplant archived 4.x letter grades.
+Replication log for the UHBS 5.0.1 results-5.0.1 refresh. Commands ran from the UHBS repo root. Do not transplant archived 4.x letter grades.
 
 ## Identity
 
@@ -11,7 +11,7 @@ Replication log for the UHBS 5.0.0 results-5.0.0 refresh. Commands ran from the 
 - commit: `ac12724ab38c4e2fe78f07d1bc35e6e586ba69c0`
 - workspace clone: `.local/labs/heralding`
 - telemetry: `.local/labs/heralding-telemetry`
-- latest path: `docs/conformance/latest/results-5.0.0/heralding/ftp`
+- latest path: `docs/conformance/latest/results-5.0.1/heralding/ftp`
 - container: `uhbs-target-heralding-ftp` · alias `heralding-lab`:21
 - strategy: `custom-base` · base: `python:3.11-slim-bookworm`
 
@@ -48,28 +48,28 @@ docker run -d \
   heralding:uhbs-lab heralding -c /config/heralding.yml
 ```
 
-Smoke from `uhbs:5.0.0` on `uhbs-lab` against `heralding-lab:21`. No host `-p` publish.
+Smoke from `uhbs:5.0.1` on `uhbs-lab` against `heralding-lab:21`. No host `-p` publish.
 
-## 4. Quick run (`uhbs:5.0.0`)
+## 4. Quick run (`uhbs:5.0.1`)
 
 ```bash
-python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.0.sqlite3 log-run-start \
-  --unit-id heralding-ftp --mode quick --uhbs-version 5.0.0 \
-  --grader-image uhbs:5.0.0 --target-image heralding:uhbs-lab \
+python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.1.sqlite3 log-run-start \
+  --unit-id heralding-ftp --mode quick --uhbs-version 5.0.1 \
+  --grader-image uhbs:5.0.1 --target-image heralding:uhbs-lab \
   --base-image python:3.11-slim-bookworm --strategy custom-base --airgap-attested
 
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/heralding:/honeypot:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 \
-  uhbs:5.0.0 lab \
+  uhbs:5.0.1 lab \
     --inventory /work/docs/conformance/labs/heralding/inventory.yaml \
     --target heralding-ftp \
     --tps /work/docs/conformance/labs/heralding/low_interaction_ftp_quick.yaml \
     --phases profile,static,sandbox,dynamic,score --modules A,B,C,D,E,F \
     --quick --skip-sast-tools --concurrency 10 --requests 50 \
-    --out /work/docs/conformance/latest/results-5.0.0/heralding/ftp/quick \
+    --out /work/docs/conformance/latest/results-5.0.1/heralding/ftp/quick \
     --environment "Quick Docker lab: heralding-ftp" \
-  > docs/conformance/latest/results-5.0.0/heralding/ftp/quick/uhbs-run.log 2>&1
+  > docs/conformance/latest/results-5.0.1/heralding/ftp/quick/uhbs-run.log 2>&1
 ```
 
 ## 5. Telemetry seed
@@ -80,16 +80,16 @@ printf '%s\n' '# UHBS egress gateway canary — no HIT lines means clean' \
 docker logs uhbs-target-heralding-ftp >> .local/labs/heralding-telemetry/target.log 2>&1 || true
 ```
 
-## 6. Full run + asciinema (`uhbs:5.0.0-full`)
+## 6. Full run + asciinema (`uhbs:5.0.1-full`)
 
 ```bash
-python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.0.sqlite3 log-run-start \
-  --unit-id heralding-ftp --mode full --uhbs-version 5.0.0 \
-  --grader-image uhbs:5.0.0-full --target-image heralding:uhbs-lab \
+python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.1.sqlite3 log-run-start \
+  --unit-id heralding-ftp --mode full --uhbs-version 5.0.1 \
+  --grader-image uhbs:5.0.1-full --target-image heralding:uhbs-lab \
   --base-image python:3.11-slim-bookworm --strategy custom-base --airgap-attested
 
 asciinema rec --overwrite \
-  docs/conformance/latest/results-5.0.0/heralding/ftp/full/proof/full-run.cast \
+  docs/conformance/latest/results-5.0.1/heralding/ftp/full/proof/full-run.cast \
   -c /tmp/uhbs-full-heralding-ftp.sh
 ```
 
@@ -103,15 +103,15 @@ docker run --rm --network uhbs-lab \
   -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_AIRGAP_ATTESTED=1 \
   -e UHBS_EGRESS_GATEWAY_LOG=/telemetry/egress-gateway.log \
-  uhbs:5.0.0-full lab \
+  uhbs:5.0.1-full lab \
     --inventory /work/docs/conformance/labs/heralding/inventory.yaml \
     --target heralding-ftp \
     --tps /work/docs/conformance/labs/heralding/low_interaction_ftp_full.yaml \
     --phases profile,static,sandbox,dynamic,score --modules A,B,C,D,E,F \
     --concurrency 25 --requests 200 \
-    --out /work/docs/conformance/latest/results-5.0.0/heralding/ftp/full \
+    --out /work/docs/conformance/latest/results-5.0.1/heralding/ftp/full \
     --environment "Full Docker lab: heralding-ftp" \
-  2>&1 | tee docs/conformance/latest/results-5.0.0/heralding/ftp/full/uhbs-run.log
+  2>&1 | tee docs/conformance/latest/results-5.0.1/heralding/ftp/full/uhbs-run.log
 ```
 
 ## 7. Fixture + verifier
@@ -124,9 +124,9 @@ python scripts/rebuild_mkdocs_nav.py
 
 ## Output paths
 
-- quick: `docs/conformance/latest/results-5.0.0/heralding/ftp/quick/`
-- full: `docs/conformance/latest/results-5.0.0/heralding/ftp/full/`
-- cast: `docs/conformance/latest/results-5.0.0/heralding/ftp/full/proof/full-run.cast`
+- quick: `docs/conformance/latest/results-5.0.1/heralding/ftp/quick/`
+- full: `docs/conformance/latest/results-5.0.1/heralding/ftp/full/`
+- cast: `docs/conformance/latest/results-5.0.1/heralding/ftp/full/proof/full-run.cast`
 - fixture: `docs/conformance/fixtures/heralding-ftp.scorecard.json`
 
-Honest UHBS 5.0.0 outcome: **INCOMPLETE / ungraded (non-SSH Module D)**. Assessment `INCOMPLETE` · Critical controls `INCOMPLETE`. Do not copy archived 4.x grades.
+Honest UHBS 5.0.1 outcome: **INCOMPLETE / ungraded (non-SSH Module D)**. Assessment `INCOMPLETE` · Critical controls `INCOMPLETE`. Do not copy archived 4.x grades.

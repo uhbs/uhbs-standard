@@ -1,0 +1,5 @@
+source=.local/labs/fortigate-vpn-ssl/Dockerfile.lab
+image=fortigate-vpn-ssl:uhbs-lab
+digest=sha256:0a25874dec879b23806f5444d153100d7658c3f6de93cdfc60824cc33a611f92
+dockerfile=docs/conformance/latest/results-5.0.1/fortigate-vpn-ssl/http/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/fortigate-vpn-ssl/http/Dockerfile.pin

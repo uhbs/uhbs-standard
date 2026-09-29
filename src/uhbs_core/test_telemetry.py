@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Module C — Telemetry Assurance (UHBS v5.0.0).
+"""Module C — Telemetry Assurance (UHBS v5.0.1).
 
 C1: Declared-format structural conformance (native JSON / ECS / OCSF / OTLP / STIX)
 C2: Sink-side injection resilience
@@ -35,6 +35,8 @@ from uhbs_core.telemetry.formats import (  # noqa: E402
 )
 from uhbs_core.telemetry.groundtruth import (  # noqa: E402
     assess_sink_resilience,
+    deliver_http_inject,
+    http_injection_requests,
     injection_payloads,
     make_tagged_interactions,
     match_ground_truth,
@@ -48,7 +50,7 @@ _OBS_PATH = Path(__file__).resolve().parent / "data" / "observables" / "required
 def _iter_jsonl_lines(text: str, *, limit: int, rows: list[Any]) -> None:
     for line in text.splitlines():
         line = line.strip()
-        if not line:
+        if not line or line.startswith("#"):
             continue
         try:
             rows.append(json.loads(line))
@@ -56,6 +58,53 @@ def _iter_jsonl_lines(text: str, *, limit: int, rows: list[Any]) -> None:
             rows.append({"__malformed__": line[:120]})
         if len(rows) >= limit:
             return
+
+
+def _looks_like_jsonl(path: Path, *, sample_bytes: int = 12_288) -> bool:
+    """True when a majority of non-empty sample lines parse as JSON objects/arrays.
+
+    Used to pick up honeypot sinks that write JSONL under a ``.log`` extension
+    (e.g. Beelzebub ``logsPath``) without treating plain text docker/stdout
+    dumps as telemetry records.
+    """
+    if path.name == "egress-gateway.log":
+        return False
+    try:
+        head = path.read_bytes()[:sample_bytes].decode("utf-8", errors="replace")
+    except OSError:
+        return False
+    lines = [
+        ln.strip()
+        for ln in head.splitlines()
+        if ln.strip() and not ln.strip().startswith("#")
+    ][:10]
+    if not lines:
+        return False
+    ok = 0
+    for ln in lines:
+        try:
+            obj = json.loads(ln)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(obj, (dict, list)):
+            ok += 1
+    return ok >= max(1, (len(lines) + 1) // 2)
+
+
+def _collect_sink_files(path: Path) -> List[Path]:
+    if path.is_file():
+        if path.suffix == ".log" and not _looks_like_jsonl(path):
+            return []
+        return [path]
+    if not path.is_dir():
+        return []
+    files = sorted(path.rglob("*.jsonl")) + sorted(path.rglob("*.json"))
+    for log in sorted(path.rglob("*.log")):
+        if log in files:
+            continue
+        if _looks_like_jsonl(log):
+            files.append(log)
+    return files
 
 
 def _record_text(row: Any) -> str:
@@ -82,14 +131,13 @@ def _iter_records(
     When ``must_include_substr`` is set (typically ``UHBS_INJECT:<run_id>``), any
     matching records from the broader scan are pinned into the returned window
     so interleaved background traffic cannot drop the current run's markers.
+
+    Directory scans include ``*.json`` / ``*.jsonl`` plus ``*.log`` files that
+    look like JSONL (structured sinks misnamed as logs).
     """
     rows: List[Any] = []
-    files: List[Path]
-    if path.is_file():
-        files = [path]
-    elif path.is_dir():
-        files = sorted(path.rglob("*.jsonl")) + sorted(path.rglob("*.json"))
-    else:
+    files = _collect_sink_files(path)
+    if not files:
         return rows
 
     # Collect beyond ``limit`` when preferring recent so we can slice the tail.
@@ -378,8 +426,19 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
                 )
             )
 
-    # C2 — sink-side injection resilience
+    # C2 — sink-side injection resilience (SSH exec, else HTTP/MCP GET markers)
     port = target.shell_exec_port()
+    http_port = (
+        target.port_for("http")
+        or target.port_for("https")
+        or target.port_for("mcp")
+    )
+    if http_port is None and (target.protocol or "").lower() in {
+        "http",
+        "https",
+        "mcp",
+    }:
+        http_port = int(target.port) if target.port else None
     payload_ids: list[str] = []
     rows_after_flat: list[Any] | None = None
     if target.host and port is not None:
@@ -425,13 +484,49 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
                 evidence=[json.dumps(assessment)[:500]],
             )
         )
+    elif target.host and http_port is not None:
+        for pid, req_path, headers in http_injection_requests(run_id):
+            payload_ids.append(pid)
+            _ = deliver_http_inject(
+                target.host,
+                int(http_port),
+                req_path,
+                headers=headers,
+            )
+        rows_after = _iter_records(
+            tdir,  # type: ignore[arg-type]
+            must_include_substr=f"UHBS_INJECT:{run_id}",
+        )
+        flat_after = []
+        for r in rows_after:
+            if isinstance(r, dict) and "__malformed__" not in r:
+                flat_after.extend(_flatten(r))
+            elif isinstance(r, dict) and "__malformed__" in r:
+                flat_after.append(r)
+        rows_after_flat = flat_after
+        dict_rows = [x for x in flat_after if isinstance(x, dict)]
+        assessment = assess_sink_resilience(flat_after, run_id, payload_ids)
+        checks.append(
+            CheckResult.make(
+                id="c2.sink_injection_resilience",
+                team="red",
+                outcome=CheckOutcome.PASS if assessment["ok"] else CheckOutcome.FAIL,
+                detail=(
+                    f"http_inject markers={assessment['markers_found']} "
+                    f"malformed={assessment['malformed_records']}"
+                ),
+                score=100.0 if assessment["ok"] else 0.0,
+                catalog_id="C2",
+                evidence=[json.dumps(assessment)[:500]],
+            )
+        )
     else:
         checks.append(
             CheckResult.make(
                 id="c2.sink_injection_resilience",
                 team="red",
                 outcome=CheckOutcome.NOT_TESTED,
-                detail="no SSH exec surface to deliver injection payloads",
+                detail="no SSH exec or HTTP surface to deliver injection payloads",
                 mandatory=True,
                 catalog_id="C2",
             )
@@ -459,7 +554,8 @@ def run(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
     # C4 — ground-truth (manifest recorded; match against post-injection sink)
     manifest = make_tagged_interactions(run_id, count=4)
     gt = match_ground_truth(manifest, sink_rows, required_fields=required[:3])
-    if payload_ids and target.host and port is not None:
+    inject_surface = port is not None or http_port is not None
+    if payload_ids and target.host and inject_surface:
         proxy_manifest = make_tagged_interactions(run_id, count=len(payload_ids))
         for i, pid in enumerate(payload_ids):
             if i < len(proxy_manifest.events):

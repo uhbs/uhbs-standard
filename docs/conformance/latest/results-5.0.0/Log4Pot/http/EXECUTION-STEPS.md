@@ -1,6 +1,6 @@
 # Execution steps — `Log4Pot-http`
 
-Replication log for the UHBS 5.0.0 results-5.0.0 refresh. Commands ran from the UHBS repo root.
+Replication log for the UHBS 5.0.1 results-5.0.1 refresh. Commands ran from the UHBS repo root.
 
 ## Identity
 
@@ -9,7 +9,7 @@ Replication log for the UHBS 5.0.0 results-5.0.0 refresh. Commands ran from the 
 - upstream: `https://github.com/thomaspatzke/Log4Pot.git`
 - default branch: `master`
 - commit: `5002b1fe0f82359ef32dbc3a899e8a701dc3256e`
-- latest path: `docs/conformance/latest/results-5.0.0/Log4Pot/http`
+- latest path: `docs/conformance/latest/results-5.0.1/Log4Pot/http`
 
 ## 1. Clone
 
@@ -36,32 +36,32 @@ docker run -d --name Log4Pot-lab --network uhbs-lab --network-alias Log4Pot-lab 
 curl -sS -m 5 http://127.0.0.1:18083/
 ```
 
-## 4. Quick (`uhbs:5.0.0`)
+## 4. Quick (`uhbs:5.0.1`)
 
 ```bash
-python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.0.sqlite3 log-run-start \
-  --unit-id Log4Pot-http --mode quick --uhbs-version 5.0.0 \
-  --grader-image uhbs:5.0.0 --target-image log4pot:uhbs-lab \
+python scripts/tracker.py --db .local/benchmark-refresh/results-5.0.1.sqlite3 log-run-start \
+  --unit-id Log4Pot-http --mode quick --uhbs-version 5.0.1 \
+  --grader-image uhbs:5.0.1 --target-image log4pot:uhbs-lab \
   --base-image ubuntu:latest --strategy ubuntu-wrapper --airgap-attested
 
 docker run --rm --network uhbs-lab \
   -v "$PWD:/work" -v "$PWD/.local/labs/Log4Pot:/honeypot:ro" -w /work \
   -e PYTHONUNBUFFERED=1 -e UHBS_QUICK=1 -e UHBS_AIRGAP_ATTESTED=1 \
-  uhbs:5.0.0 lab \
+  uhbs:5.0.1 lab \
     --inventory /work/docs/conformance/labs/Log4Pot/inventory.yaml \
     --target Log4Pot-http \
     --tps /work/docs/conformance/labs/Log4Pot/web_api_http_quick.yaml \
     --phases profile,static,sandbox,dynamic,score --modules A,B,C,D,E,F \
     --quick --skip-sast-tools \
-    --out /work/docs/conformance/latest/results-5.0.0/Log4Pot/http/quick \
+    --out /work/docs/conformance/latest/results-5.0.1/Log4Pot/http/quick \
     --environment "Quick Docker lab: Log4Pot-http" \
-  > docs/conformance/latest/results-5.0.0/Log4Pot/http/quick/uhbs-run.log 2>&1
+  > docs/conformance/latest/results-5.0.1/Log4Pot/http/quick/uhbs-run.log 2>&1
 ```
 
-## 5. Full + asciinema (`uhbs:5.0.0-full`)
+## 5. Full + asciinema (`uhbs:5.0.1-full`)
 
 ```bash
-asciinema rec --overwrite docs/conformance/latest/results-5.0.0/Log4Pot/http/full/proof/full-run.cast \
+asciinema rec --overwrite docs/conformance/latest/results-5.0.1/Log4Pot/http/full/proof/full-run.cast \
   -c .local/benchmark-refresh/Log4Pot-http-full.sh
 ```
 
@@ -73,4 +73,4 @@ python scripts/validate_unit.py --unit-id Log4Pot-http
 python scripts/rebuild_mkdocs_nav.py
 ```
 
-Honest UHBS 5.0.0 outcome: **INCOMPLETE / INCOMPLETE**. Do not copy archived 4.x letter grades.
+Honest UHBS 5.0.1 outcome: **INCOMPLETE / INCOMPLETE**. Do not copy archived 4.x letter grades.

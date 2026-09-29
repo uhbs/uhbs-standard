@@ -34,7 +34,7 @@
 
 Use narrowly scoped language:
 
-> “This UHBS 5.0.0 evidence pack may support review of [named outcome/control]
+> “This UHBS 5.0.1 evidence pack may support review of [named outcome/control]
 > for [system and period]. The relationship is informative and does not establish
 > compliance, certification, control effectiveness outside the tested scope, or
 > legal authorization.”

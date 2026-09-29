@@ -1,0 +1,5 @@
+source=docs/conformance/labs/Log4Pot/Dockerfile.lab
+image=log4pot:uhbs-lab
+digest=sha256:9bb74bb48640a29a35d8170e05f447befc37f2ab03b1491a1c6d60abdbc4cd71
+dockerfile=docs/conformance/latest/results-5.0.1/Log4Pot/http/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/Log4Pot/http/Dockerfile.pin

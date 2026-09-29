@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `modpot-http`
+# Image name at grade time: modpot:uhbs-lab
+FROM sha256:7f16d47286f81f8a9a90cb91678014952bea5ef78a036c29daf09e42a1ec9dd5

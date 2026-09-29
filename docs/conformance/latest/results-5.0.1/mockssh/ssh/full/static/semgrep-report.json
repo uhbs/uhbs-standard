@@ -1,0 +1,1159 @@
+{
+  "version": "1.178.0",
+  "results": [
+    {
+      "check_id": "yaml.github-actions.security.secrets-inherit.secrets-inherit",
+      "path": ".github/workflows/gemini-dispatch.yml",
+      "start": {
+        "line": 140,
+        "col": 5,
+        "offset": 5657
+      },
+      "end": {
+        "line": 140,
+        "col": 23,
+        "offset": 5675
+      },
+      "extra": {
+        "message": "This workflow uses `secrets: inherit` to pass all of the calling workflow's secrets to a reusable workflow. This violates the principle of least privilege because the called workflow receives access to every secret in the repository, not just the ones it needs. If the called workflow is compromised or sourced from a third party, an attacker gains access to all repository secrets. Instead, explicitly pass only the secrets that the called workflow requires using the `secrets:` map, e.g. `secrets: { MY_SECRET: ${{ secrets.MY_SECRET }} }`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-250: Execution with Unnecessary Privileges"
+          ],
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/sharing-automations/reusing-workflows#passing-inputs-and-secrets-to-a-reusable-workflow",
+            "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.secrets-inherit.secrets-inherit",
+          "shortlink": "https://sg.run/X2PZB"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.secrets-inherit.secrets-inherit",
+      "path": ".github/workflows/gemini-dispatch.yml",
+      "start": {
+        "line": 154,
+        "col": 5,
+        "offset": 6032
+      },
+      "end": {
+        "line": 154,
+        "col": 23,
+        "offset": 6050
+      },
+      "extra": {
+        "message": "This workflow uses `secrets: inherit` to pass all of the calling workflow's secrets to a reusable workflow. This violates the principle of least privilege because the called workflow receives access to every secret in the repository, not just the ones it needs. If the called workflow is compromised or sourced from a third party, an attacker gains access to all repository secrets. Instead, explicitly pass only the secrets that the called workflow requires using the `secrets:` map, e.g. `secrets: { MY_SECRET: ${{ secrets.MY_SECRET }} }`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-250: Execution with Unnecessary Privileges"
+          ],
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/sharing-automations/reusing-workflows#passing-inputs-and-secrets-to-a-reusable-workflow",
+            "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.secrets-inherit.secrets-inherit",
+          "shortlink": "https://sg.run/X2PZB"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.secrets-inherit.secrets-inherit",
+      "path": ".github/workflows/gemini-dispatch.yml",
+      "start": {
+        "line": 168,
+        "col": 5,
+        "offset": 6407
+      },
+      "end": {
+        "line": 168,
+        "col": 23,
+        "offset": 6425
+      },
+      "extra": {
+        "message": "This workflow uses `secrets: inherit` to pass all of the calling workflow's secrets to a reusable workflow. This violates the principle of least privilege because the called workflow receives access to every secret in the repository, not just the ones it needs. If the called workflow is compromised or sourced from a third party, an attacker gains access to all repository secrets. Instead, explicitly pass only the secrets that the called workflow requires using the `secrets:` map, e.g. `secrets: { MY_SECRET: ${{ secrets.MY_SECRET }} }`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-250: Execution with Unnecessary Privileges"
+          ],
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/sharing-automations/reusing-workflows#passing-inputs-and-secrets-to-a-reusable-workflow",
+            "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.secrets-inherit.secrets-inherit",
+          "shortlink": "https://sg.run/X2PZB"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.secrets-inherit.secrets-inherit",
+      "path": ".github/workflows/gemini-dispatch.yml",
+      "start": {
+        "line": 182,
+        "col": 5,
+        "offset": 6796
+      },
+      "end": {
+        "line": 182,
+        "col": 23,
+        "offset": 6814
+      },
+      "extra": {
+        "message": "This workflow uses `secrets: inherit` to pass all of the calling workflow's secrets to a reusable workflow. This violates the principle of least privilege because the called workflow receives access to every secret in the repository, not just the ones it needs. If the called workflow is compromised or sourced from a third party, an attacker gains access to all repository secrets. Instead, explicitly pass only the secrets that the called workflow requires using the `secrets:` map, e.g. `secrets: { MY_SECRET: ${{ secrets.MY_SECRET }} }`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-250: Execution with Unnecessary Privileges"
+          ],
+          "owasp": [
+            "A01:2021 - Broken Access Control",
+            "A01:2025 - Broken Access Control"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/sharing-automations/reusing-workflows#passing-inputs-and-secrets-to-a-reusable-workflow",
+            "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Improper Authorization"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.secrets-inherit.secrets-inherit",
+          "shortlink": "https://sg.run/X2PZB"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/gemini-invoke.yml",
+      "start": {
+        "line": 41,
+        "col": 9,
+        "offset": 1099
+      },
+      "end": {
+        "line": 41,
+        "col": 36,
+        "offset": 1126
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/gemini-invoke.yml",
+      "start": {
+        "line": 45,
+        "col": 9,
+        "offset": 1210
+      },
+      "end": {
+        "line": 45,
+        "col": 56,
+        "offset": 1257
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/gemini-plan-execute.yml",
+      "start": {
+        "line": 43,
+        "col": 9,
+        "offset": 1143
+      },
+      "end": {
+        "line": 43,
+        "col": 36,
+        "offset": 1170
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/gemini-plan-execute.yml",
+      "start": {
+        "line": 47,
+        "col": 9,
+        "offset": 1254
+      },
+      "end": {
+        "line": 47,
+        "col": 56,
+        "offset": 1301
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/gemini-review.yml",
+      "start": {
+        "line": 45,
+        "col": 9,
+        "offset": 1277
+      },
+      "end": {
+        "line": 45,
+        "col": 56,
+        "offset": 1324
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/gemini-scheduled-triage.yml",
+      "start": {
+        "line": 92,
+        "col": 9,
+        "offset": 2957
+      },
+      "end": {
+        "line": 92,
+        "col": 56,
+        "offset": 3004
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/gemini-triage.yml",
+      "start": {
+        "line": 62,
+        "col": 9,
+        "offset": 2062
+      },
+      "end": {
+        "line": 62,
+        "col": 56,
+        "offset": 2109
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/release-please.yml",
+      "start": {
+        "line": 17,
+        "col": 9,
+        "offset": 203
+      },
+      "end": {
+        "line": 17,
+        "col": 50,
+        "offset": 244
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".beads/hooks/post-checkout",
+            "start": {
+              "line": 11,
+              "col": 14,
+              "offset": 0
+            },
+            "end": {
+              "line": 11,
+              "col": 15,
+              "offset": 1
+            }
+          },
+          {
+            "path": ".beads/hooks/post-checkout",
+            "start": {
+              "line": 19,
+              "col": 12,
+              "offset": 0
+            },
+            "end": {
+              "line": 19,
+              "col": 13,
+              "offset": 1
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .beads/hooks/post-checkout:11:\n `2` was unexpected",
+      "path": ".beads/hooks/post-checkout",
+      "spans": [
+        {
+          "file": ".beads/hooks/post-checkout",
+          "start": {
+            "line": 11,
+            "col": 14,
+            "offset": 0
+          },
+          "end": {
+            "line": 11,
+            "col": 15,
+            "offset": 1
+          }
+        },
+        {
+          "file": ".beads/hooks/post-checkout",
+          "start": {
+            "line": 19,
+            "col": 12,
+            "offset": 0
+          },
+          "end": {
+            "line": 19,
+            "col": 13,
+            "offset": 1
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".beads/hooks/post-merge",
+            "start": {
+              "line": 11,
+              "col": 14,
+              "offset": 0
+            },
+            "end": {
+              "line": 11,
+              "col": 15,
+              "offset": 1
+            }
+          },
+          {
+            "path": ".beads/hooks/post-merge",
+            "start": {
+              "line": 19,
+              "col": 12,
+              "offset": 0
+            },
+            "end": {
+              "line": 19,
+              "col": 13,
+              "offset": 1
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .beads/hooks/post-merge:11:\n `2` was unexpected",
+      "path": ".beads/hooks/post-merge",
+      "spans": [
+        {
+          "file": ".beads/hooks/post-merge",
+          "start": {
+            "line": 11,
+            "col": 14,
+            "offset": 0
+          },
+          "end": {
+            "line": 11,
+            "col": 15,
+            "offset": 1
+          }
+        },
+        {
+          "file": ".beads/hooks/post-merge",
+          "start": {
+            "line": 19,
+            "col": 12,
+            "offset": 0
+          },
+          "end": {
+            "line": 19,
+            "col": 13,
+            "offset": 1
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".beads/hooks/pre-commit",
+            "start": {
+              "line": 11,
+              "col": 14,
+              "offset": 0
+            },
+            "end": {
+              "line": 11,
+              "col": 15,
+              "offset": 1
+            }
+          },
+          {
+            "path": ".beads/hooks/pre-commit",
+            "start": {
+              "line": 19,
+              "col": 12,
+              "offset": 0
+            },
+            "end": {
+              "line": 19,
+              "col": 13,
+              "offset": 1
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .beads/hooks/pre-commit:11:\n `2` was unexpected",
+      "path": ".beads/hooks/pre-commit",
+      "spans": [
+        {
+          "file": ".beads/hooks/pre-commit",
+          "start": {
+            "line": 11,
+            "col": 14,
+            "offset": 0
+          },
+          "end": {
+            "line": 11,
+            "col": 15,
+            "offset": 1
+          }
+        },
+        {
+          "file": ".beads/hooks/pre-commit",
+          "start": {
+            "line": 19,
+            "col": 12,
+            "offset": 0
+          },
+          "end": {
+            "line": 19,
+            "col": 13,
+            "offset": 1
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".beads/hooks/pre-push",
+            "start": {
+              "line": 11,
+              "col": 14,
+              "offset": 0
+            },
+            "end": {
+              "line": 11,
+              "col": 15,
+              "offset": 1
+            }
+          },
+          {
+            "path": ".beads/hooks/pre-push",
+            "start": {
+              "line": 19,
+              "col": 12,
+              "offset": 0
+            },
+            "end": {
+              "line": 19,
+              "col": 13,
+              "offset": 1
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .beads/hooks/pre-push:11:\n `2` was unexpected",
+      "path": ".beads/hooks/pre-push",
+      "spans": [
+        {
+          "file": ".beads/hooks/pre-push",
+          "start": {
+            "line": 11,
+            "col": 14,
+            "offset": 0
+          },
+          "end": {
+            "line": 11,
+            "col": 15,
+            "offset": 1
+          }
+        },
+        {
+          "file": ".beads/hooks/pre-push",
+          "start": {
+            "line": 19,
+            "col": 12,
+            "offset": 0
+          },
+          "end": {
+            "line": 19,
+            "col": 13,
+            "offset": 1
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".beads/hooks/prepare-commit-msg",
+            "start": {
+              "line": 11,
+              "col": 14,
+              "offset": 0
+            },
+            "end": {
+              "line": 11,
+              "col": 15,
+              "offset": 1
+            }
+          },
+          {
+            "path": ".beads/hooks/prepare-commit-msg",
+            "start": {
+              "line": 19,
+              "col": 12,
+              "offset": 0
+            },
+            "end": {
+              "line": 19,
+              "col": 13,
+              "offset": 1
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .beads/hooks/prepare-commit-msg:11:\n `2` was unexpected",
+      "path": ".beads/hooks/prepare-commit-msg",
+      "spans": [
+        {
+          "file": ".beads/hooks/prepare-commit-msg",
+          "start": {
+            "line": 11,
+            "col": 14,
+            "offset": 0
+          },
+          "end": {
+            "line": 11,
+            "col": 15,
+            "offset": 1
+          }
+        },
+        {
+          "file": ".beads/hooks/prepare-commit-msg",
+          "start": {
+            "line": 19,
+            "col": 12,
+            "offset": 0
+          },
+          "end": {
+            "line": 19,
+            "col": 13,
+            "offset": 1
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/gemini-scheduled-triage.yml",
+            "start": {
+              "line": 85,
+              "col": 6,
+              "offset": 2206
+            },
+            "end": {
+              "line": 85,
+              "col": 57,
+              "offset": 2257
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/gemini-scheduled-triage.yml:85:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `\"D]F Found ${ISSUE_COUNT} issue(s) to triage! R`Op\"` was unexpected",
+      "path": ".github/workflows/gemini-scheduled-triage.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/gemini-scheduled-triage.yml",
+          "start": {
+            "line": 85,
+            "col": 6,
+            "offset": 2206
+          },
+          "end": {
+            "line": 85,
+            "col": 57,
+            "offset": 2257
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": ".github/workflows/gemini-scheduled-triage.yml",
+            "start": {
+              "line": 85,
+              "col": 6,
+              "offset": 2206
+            },
+            "end": {
+              "line": 85,
+              "col": 57,
+              "offset": 2257
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line .github/workflows/gemini-scheduled-triage.yml:85:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.gha-curl-pipe-shell.gha-curl-pipe-shell', `\"D]F Found ${ISSUE_COUNT} issue(s) to triage! R`Op\"` was unexpected",
+      "path": ".github/workflows/gemini-scheduled-triage.yml",
+      "spans": [
+        {
+          "file": ".github/workflows/gemini-scheduled-triage.yml",
+          "start": {
+            "line": 85,
+            "col": 6,
+            "offset": 2206
+          },
+          "end": {
+            "line": 85,
+            "col": 57,
+            "offset": 2257
+          }
+        }
+      ]
+    }
+  ],
+  "paths": {
+    "scanned": [
+      ".beads/.gitignore",
+      ".beads/README.md",
+      ".beads/config.yaml",
+      ".beads/hooks/post-checkout",
+      ".beads/hooks/post-merge",
+      ".beads/hooks/pre-commit",
+      ".beads/hooks/pre-push",
+      ".beads/hooks/prepare-commit-msg",
+      ".beads/interactions.jsonl",
+      ".beads/metadata.json",
+      ".claude/settings.json",
+      ".coveragerc",
+      ".editorconfig",
+      ".github/commands/gemini-invoke.toml",
+      ".github/commands/gemini-plan-execute.toml",
+      ".github/commands/gemini-review.toml",
+      ".github/commands/gemini-scheduled-triage.toml",
+      ".github/commands/gemini-triage.toml",
+      ".github/workflows/gemini-dispatch.yml",
+      ".github/workflows/gemini-invoke.yml",
+      ".github/workflows/gemini-plan-execute.yml",
+      ".github/workflows/gemini-review.yml",
+      ".github/workflows/gemini-scheduled-triage.yml",
+      ".github/workflows/gemini-triage.yml",
+      ".github/workflows/osv-scanner.yml",
+      ".github/workflows/release-please.yml",
+      ".gitignore",
+      ".gitmodules",
+      ".pre-commit-config.yaml",
+      ".release-please-manifest.json",
+      "AGENTS.md",
+      "CLAUDE.md",
+      "COPYRIGHT",
+      "Dockerfile.lab",
+      "GEMINI.md",
+      "Makefile",
+      "README.md",
+      "TODO.md",
+      "examples/__init__.py",
+      "examples/mock.hy",
+      "examples/mock_F5.py",
+      "examples/mock_cisco.py",
+      "generated-keys/.gitkeep",
+      "lab_cisco.py",
+      "pyproject.toml",
+      "release-please-config.json",
+      "src/MockSSH.py",
+      "src/mocksshy/__init__.py",
+      "src/mocksshy/kwzip.hy",
+      "src/mocksshy/language.hy",
+      "src/version.py",
+      "uv.lock"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.40193796157836914,
+    "profiling_times": {
+      "config_time": 1.9795215129852295,
+      "core_time": 1.6230170726776123,
+      "ignores_time": 0.0008854866027832031,
+      "total_time": 3.6107332706451416
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 1.5102794170379639,
+      "per_file_time": {
+        "mean": 0.011617533977215105,
+        "std_dev": 0.0013658503862461562
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.9199029126213593,
+      "rules_selected_ratio": 0.09377758164165931,
+      "rules_matched_ratio": 0.09377758164165931
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 863960832
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

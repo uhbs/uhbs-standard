@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `miniprint-pjl`
+# Image name at grade time: miniprint:uhbs-lab
+FROM sha256:98d4cf6be313f434372eb225f773860f130b43d374ed376e9701631d088cb1b9

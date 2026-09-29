@@ -1,5 +1,5 @@
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.0
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : fortigate-vpn-ssl-http
 System Profile Class  : Web-API
@@ -22,7 +22,7 @@ Module E: Scalability & Latency     : 100.0/100       0.15     PASSED (service a
 Module F: Static Code Audit         :  66.0/100       0.20     PARTIAL (trivy not installed — not tested (zero credit))
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=1.0; unmeasured modules excluded from composite)
-FINAL COMPOSITE SCORE (UHQS 5.0.0)      : 70.27 / 100
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 70.27 / 100
 OVERALL EVALUATION GRADE              : GRADE C (Conditional — not approved for production)
 scoring_model_id                      : uhqs-v5.2-measured-renorm
 ====================================================================================
