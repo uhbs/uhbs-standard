@@ -1,0 +1,15 @@
+# Full TPS — Web-API-HTTPPROXY / Web-API / httpproxy
+target_metadata:
+  name: "Web-API-HTTPPROXY"
+  class: "Web-API"
+  protocol: "httpproxy"
+  protocols: ["httpproxy"]
+
+performance_baseline:
+  expected_p95_latency_ms: 150
+  strict_rfc_enforcement: true
+  timing_samples: 200
+
+safety_boundary:
+  allowed_outbound_traffic: false
+  allow_local_code_execution: false

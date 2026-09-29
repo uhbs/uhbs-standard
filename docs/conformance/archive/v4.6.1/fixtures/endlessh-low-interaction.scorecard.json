@@ -1,0 +1,66 @@
+{
+  "uhbs_version": "4.6.1",
+  "target": {
+    "name": "Endlessh (skeeto SSH tarpit)",
+    "class": "Low-Interaction",
+    "profile_ref": "docs/conformance/labs/endlessh/low_interaction_full.yaml"
+  },
+  "evaluated_at": "2026-07-27",
+  "auditor": "UHBS-Lab detailed Docker run (ssh_tarpit/generic :2222 + 1000-sample A3 + SAST + telemetry)",
+  "modules": {
+    "A": {
+      "score": 65.43,
+      "status": "PARTIAL",
+      "weight": 0.3,
+      "notes": "generic TCP connect/banner/timing n=1000; not RFC4253 SSH"
+    },
+    "B": {
+      "score": 62.5,
+      "status": "PARTIAL",
+      "weight": 0.15,
+      "notes": "survived binary blast"
+    },
+    "C": {
+      "score": 55.0,
+      "status": "PARTIAL",
+      "weight": 0.25,
+      "notes": "text/Docker logs only \u2014 no STIX/OTel/ECS (capped)"
+    },
+    "D": {
+      "score": 90.0,
+      "status": "GATE FAILED",
+      "notes": "No ports.ssh (tarpit-safe); airgap+gateway attested; Safety Gate not fully cleared (C<95)"
+    },
+    "E": {
+      "score": 100.0,
+      "status": "PASSED",
+      "weight": 0.1,
+      "notes": "200 TCP connects @25 concurrency; P95=7.2ms",
+      "p50_ms": 10.71,
+      "p95_ms": 64.34,
+      "p99_ms": 86.71
+    },
+    "F": {
+      "score": 70.0,
+      "status": "PASSED",
+      "weight": 0.2,
+      "notes": "semgrep error/critical present; SAST gate capped Module F at 70"
+    }
+  },
+  "weights": {
+    "w_A": 0.3,
+    "w_B": 0.15,
+    "w_C": 0.25,
+    "w_E": 0.1,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 90.0,
+    "delta_c": 0.81,
+    "passed": false,
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 54.07,
+  "grade": "D",
+  "notes": "Detailed evaluation proof only. Graded with generic plugin protocol id ssh_tarpit \u2014 not SSH/Paramiko. Full Docker lab artifacts live under docs/conformance/reports/endlessh/."
+}

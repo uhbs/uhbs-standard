@@ -1,0 +1,26 @@
+{
+  "uhbs_version": "4.0.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "af0193c4840dd3a3caf8700d7ca0ad63be8851f3e9de73dd5055514feecd9a32"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "af0193c4840dd3a3caf8700d7ca0ad63be8851f3e9de73dd5055514feecd9a32"
+    },
+    {
+      "path": "report.json",
+      "sha256": "a4372fc6429173a7d2ff87de449aaa42ce5f3503b294917d1dcea042229a0caa"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "af0193c4840dd3a3caf8700d7ca0ad63be8851f3e9de73dd5055514feecd9a32"
+    }
+  ],
+  "extra": {
+    "target": "beelzebub-telnet",
+    "uhqs": 39.16,
+    "grade": "GRADE F (Fail)"
+  }
+}

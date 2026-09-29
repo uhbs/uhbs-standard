@@ -28,14 +28,31 @@ class SMTPPlugin(ProtocolPlugin):
         return [
             c
             for c in suite.checks
-            if "bad_sequence" in c.id or "unknown" in c.id or "bare_lf" in c.id
+            if any(
+                key in c.id
+                for key in ("bad_sequence", "unknown", "bare_lf")
+            )
         ]
 
     def probe_negotiation(
         self, host: str, port: int, target: TargetSpec, tps: TPS | None
     ) -> list[CheckResult]:
         suite = probe_smtp_rfc5321(host, port)
-        return [c for c in suite.checks if "greeting" in c.id or "ehlo" in c.id]
+        return [
+            c
+            for c in suite.checks
+            if any(
+                key in c.id
+                for key in (
+                    "greeting",
+                    "ehlo",
+                    "helo",
+                    "rset",
+                    "mail_from",
+                    "noop",
+                )
+            )
+        ]
 
     def probe_state(
         self, host: str, port: int, target: TargetSpec, tps: TPS | None

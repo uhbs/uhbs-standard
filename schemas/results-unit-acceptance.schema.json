@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://uhbs.github.io/uhbs-standard/schemas/results-unit-acceptance.schema.json",
+  "title": "UHBS results-5.0.1 unit acceptance checklist",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "hub", "unit_root", "mode_dirs", "full_only", "tracker"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "results-5.0.1"
+    },
+    "hub": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "rule"],
+        "properties": {
+          "path": { "type": "string" },
+          "rule": { "type": "string" }
+        }
+      },
+      "minItems": 3
+    },
+    "unit_root": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "rule"],
+        "properties": {
+          "path": { "type": "string" },
+          "rule": { "type": "string" }
+        }
+      }
+    },
+    "mode_dirs": {
+      "type": "object",
+      "required": ["modes", "files"],
+      "properties": {
+        "modes": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["quick", "full"] }
+        },
+        "files": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 7
+        }
+      }
+    },
+    "full_only": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "rule"],
+        "properties": {
+          "path": { "type": "string" },
+          "rule": { "type": "string" }
+        }
+      }
+    },
+    "tracker": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["check", "rule"],
+        "properties": {
+          "check": { "type": "string" },
+          "rule": { "type": "string" }
+        }
+      }
+    }
+  }
+}

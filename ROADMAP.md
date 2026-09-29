@@ -1,7 +1,9 @@
 # UHBS Maturity Roadmap
 
+> **Lock document.** UHQS v5 (`scoring_model_id=uhqs-v5.0-critical-gate-diagnostic`) landed via RFC 0003 — see CHANGELOG.
+>
 > **Lock document.** Execution must follow this roadmap. Do not invent parallel plans.
-> Spec version: **4.6.1** · Status: **Experimental** · Last updated: 2026-08-01
+> Spec version: **5.0.1** · Status: **Experimental** · Last updated: 2026-08-01
 >
 > **What this is today:** an open-source, vendor-neutral
 > **evaluation framework** (spec + schemas + harness + fixtures).
@@ -24,7 +26,7 @@ A mature UHBS would have all five pillars:
 
 | # | Pillar | Current state |
 | --- | --- | --- |
-| 1 | Normative spec (RFC 2119, document status) | Done for v4.6.1 |
+| 1 | Normative spec (RFC 2119, document status) | Done for v5.0.1 |
 | 2 | Machine-readable contracts (profile, scorecard, evidence) | Done |
 | 3 | Reference implementation (runnable harness) | Done — `uhbs_core` / `uhbs[lab]` |
 | 4 | Conformance suite (golden inputs → expected UHQS) | Done — public fixtures |
@@ -42,7 +44,7 @@ lab inventory and product-specific signal overlays stay out of tree.
 
 | Component | Role |
 | --- | --- |
-| `run_benchmark.py` | UHBS v4.6.1 orchestrator (phases 1–5) |
+| `run_benchmark.py` | UHBS v5.0.1 orchestrator (phases 1–5) |
 | `test_stealth.py` | Module A — Protocol & Syntax Fidelity |
 | `test_realism.py` | Module B — Behavioral & Stateful Realism |
 | `test_telemetry.py` | Module C — Telemetry Quality |
@@ -124,6 +126,8 @@ tables only. Do not publish proprietary lab signal overlays or private host path
 - [x] Round UHQS to **2 decimals**
 - [x] Golden fixtures from sanitized lab scorecards (named only under conformance/)
 - [x] Conformance tests in CI
+- [x] UHQS v5 scoring & assurance redesign ([RFC 0003](rfcs/0003-scoring-assurance.md)): outcome contract, completeness gate, critical-control verdict, Module C rebuild, `scoring_model_id`
+- [x] Frozen v4 validators under `schemas/v4/` (historical scorecards remain verifiable)
 - [ ] Pydantic v2 schema validation for `CheckResult`/`ModuleResult`/`ProtocolPlugin`
       (today: phase-1 advisory lint only — `uhbs_core.contract_validation`,
       see `docs/architecture/plugin-contracts.md`; not started as a real migration)
@@ -132,7 +136,7 @@ tables only. Do not publish proprietary lab signal overlays or private host path
 
 - [x] Extract vendor-neutral core (protocols, models, modules)
 - [x] Leave proprietary signals / lab inventory private
-- [x] Package as installable `uhbs[lab]` / `uhbs-lab`, version == spec `4.6.1`
+- [x] Package as installable `uhbs[lab]` / `uhbs-lab`, version == spec `5.0.1`
 - [x] Wire public docs to class-/protocol-based quickstart
 
 ### Phase 4 — Integrity (OpenSSF / SLSA)
@@ -195,6 +199,26 @@ These items are **future goals**. The repo must **not** claim they are complete.
 - [ ] PyPI Trusted Publishing + Sigstore signing
 - [ ] Do **not** claim "industry-mandatory standard" until the above governance and
       adoption bars are met
+
+---
+
+## Module D Tier-2 backlog (follow-on; does not block Tier-1 OOB gate)
+
+Host OOB critical path (gateway envelope + container inspect + SHA-256 digests)
+is Tier 1. Record these for later waves — do not block catalog grading on them:
+
+| Item | Notes |
+| --- | --- |
+| East-west canary (ATT&CK T1021) | Inter-container HIT = `GATE_FAILED` like WAN |
+| DNS tunneling / entropy (T1071.004) | Canary must observe DNS OOB |
+| Asymmetric log signing | Beyond SHA-256 digests (integrity → non-repudiation) |
+| OCSF/CEF export | Map D findings to OCSF Detection Finding |
+| Host nftables/iptables/eBPF verify | Zero Trust runtime policy check |
+| CWSS mapping for DiD | Severity labels on soft failures |
+| Signed audit archive | Package inspect + gateway + verdict for external audit |
+| Live seccomp/eBPF agents | Advanced enforcement attestation |
+
+See also informative notes in `docs/advanced-evidence/improvement-notes.md`.
 
 ---
 

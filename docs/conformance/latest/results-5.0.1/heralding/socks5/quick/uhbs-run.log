@@ -1,0 +1,35 @@
+NOTICE: UHBS/AEP are for lab/sandbox evaluation of decoys. Do not run them against production or unauthorized real services.
+==> UHBS v4 target=heralding-socks5 class=Low-Interaction protocols=['socks5'] phases=['profile', 'static', 'sandbox', 'dynamic', 'score']
+    plugins available: bacnet, bluetooth, coap, dhcp, dns, elasticsearch, ftp, generic, git, http, httpproxy, imap, ipp, irc, kubernetes, ldap, mcp, memcache, modbus, mongodb, mqtt, mssql, mysql, ntp, oracle, pjl, pop3, postgres, rdp, redis, s7comm, sip, smb, smtp, snmp, socks5, ssh, telnet, tftp, vnc
+====================================================================================
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
+====================================================================================
+Target System         : heralding-socks5
+System Profile Class  : Low-Interaction
+Scoring Model         : uhqs-v5.2-measured-renorm
+Assessment Status     : INCOMPLETE
+Critical Controls     : GATE_FAILED
+Protocols             : socks5
+Evaluation Date       : 2026-09-27
+Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
+Environment           : Quick Docker lab: heralding-socks5
+MCP Surface Depth     : unknown
+------------------------------------------------------------------------------------
+EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
+------------------------------------------------------------------------------------
+Module A: Protocol Fidelity         :  39.0/100       0.30     PARTIAL (no SOCKS4-shaped reply)
+Module B: Behavioral Realism        :  33.0/100       0.15     PARTIAL (stopped after method select (no CONNECT reply))
+Module C: Telemetry Assurance       :   0.0/100       0.25     INCOMPLETE (UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4)
+Module D: Safety & Containment (C)  :  75.0/100       GATE     PASSED (User=(empty→root) UsernsMode=(empty))
+Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service alive after load (connect 2.4ms))
+Module F: Static Code Audit         :   0.0/100       0.20     INCOMPLETE (Module F white-box audit (keys/prompts/SAST/VFS))
+------------------------------------------------------------------------------------
+SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=0.5; defense-in-depth C=75.0; composite still published)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 13.33 / 100
+OVERALL EVALUATION GRADE              : GRADE F (Fail)
+scoring_model_id                      : uhqs-v5.2-measured-renorm
+====================================================================================
+
+Wrote /work/docs/conformance/latest/results-5.0.1/heralding/socks5/quick/report.json
+Wrote /work/docs/conformance/latest/results-5.0.1/heralding/socks5/quick/evidence-pack.json
+Wrote /work/docs/conformance/latest/results-5.0.1/heralding/socks5/quick/MANIFEST.json

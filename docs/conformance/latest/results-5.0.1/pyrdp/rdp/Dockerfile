@@ -1,0 +1,75 @@
+# UHBS 5.0.1 score Dockerfile — unit `pyrdp-rdp`
+# Source: .local/labs/pyrdp/Dockerfile.lab
+# Target image: pyrdp:uhbs-lab (sha256:3b1b3a09e21459c515125392b72df6c1563b7707e6220fe960ff9fff883943b1)
+# Rebuild (build context = cloned upstream under .local/labs/pyrdp):
+#   docker build -f Dockerfile -t pyrdp:uhbs-lab .local/labs/pyrdp
+# Exact image without rebuild (see Dockerfile.pin):
+#   docker build -f Dockerfile.pin -t pyrdp:uhbs-lab .
+#
+#
+# This is a slimmer version of our docker image without the graphical player
+# and notification system integration.
+#
+# Handles compiling and package installation
+FROM ubuntu:22.04 AS compile-image
+
+# Install build dependencies
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        python3 python3-pip python3-venv \
+        # Required to build RLE module
+        build-essential python3-dev \
+        # Required for ARM builds (because we need to build cryptography instead of using a prebuilt wheel)
+        libssl-dev libffi-dev
+
+RUN python3 -m venv /opt/venv
+# Make sure we use the virtualenv:
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Required for ARM builds
+# Building dependencies didn't work without an upgraded pip and wheel on ARM
+RUN pip3 --no-cache-dir install -U pip setuptools wheel
+
+# Install dependencies only (speeds repetitive builds)
+COPY requirements-slim.txt /pyrdp/requirements.txt
+RUN cd /pyrdp && pip3 --no-cache-dir install -r requirements.txt
+
+# Compile only our C extension and install
+# This way changes to source tree will not trigger full images rebuilds
+COPY ext/rle.c /pyrdp/ext/
+COPY setup.py /pyrdp/
+COPY README.md /pyrdp/
+COPY pyproject.toml /pyrdp/
+COPY pyrdp/ /pyrdp/pyrdp/
+RUN cd /pyrdp \
+    && pip --no-cache-dir install --no-deps .
+
+
+# Handles runtime only (minimize size for distribution)
+FROM ubuntu:22.04 AS runtime-image
+
+# Install runtime dependencies except pre-built venv
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends python3 \
+        # To generate certificates
+        openssl \
+        # minimize image size
+        && rm -rf /var/lib/apt/lists/*
+
+# Copy preinstalled dependencies from compile image
+COPY --from=compile-image /opt/venv /opt/venv
+
+# Create user
+RUN useradd --create-home --home-dir /home/pyrdp pyrdp
+
+# Copy python source
+COPY --from=compile-image /pyrdp /pyrdp
+
+USER pyrdp
+
+# UTF-8 support on the console output (for pyrdp-player)
+ENV PYTHONIOENCODING=utf-8
+# Make sure we use the virtualenv
+ENV PATH="/opt/venv/bin:$PATH"
+
+WORKDIR /home/pyrdp

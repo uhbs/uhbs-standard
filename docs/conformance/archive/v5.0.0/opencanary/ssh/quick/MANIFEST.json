@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "ee84e6432617bfdaa9371da23d6a207fa2d9793a5002dbf80b05511e96ca0571"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "c8695155720bea8ae0d62b83d4107d752da270f3f3305e673330e478e4619efb"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "c8695155720bea8ae0d62b83d4107d752da270f3f3305e673330e478e4619efb"
+    },
+    {
+      "path": "report.json",
+      "sha256": "f821de2b431dda50941755c3d38d737cf99891c372b381198ce1b0821e381f5e"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "5e9ea8200e435ebdec7c31c55614203874f30a8bdbbbe6f6751cb6d22ce50220"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "c943126c124b6042ec92d95498b85fd65a5979eada534b57a858fa4f0e8af607"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-ssh",
+    "uhqs": 31.94,
+    "grade": "GRADE F (Fail)"
+  }
+}

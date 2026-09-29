@@ -1,0 +1,5 @@
+source=docs/conformance/labs/llm-honeypot/Dockerfile
+image=cowrie/cowrie:latest
+digest=sha256:92b9220978bc6095fb72b1a046240604ed03a5be1344abf6a2dd04eadd4cd330
+dockerfile=docs/conformance/latest/results-5.0.1/llm-honeypot/ssh/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/llm-honeypot/ssh/Dockerfile.pin

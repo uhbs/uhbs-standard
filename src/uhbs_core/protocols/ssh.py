@@ -2,14 +2,15 @@ from __future__ import annotations
 
 import contextlib
 import re
+import secrets
 import time
 
 from uhbs_core.protocols.base import ProtocolPlugin
 
-from ..hassh import parse_server_hassh
+from ..hassh import classify_ssh_algorithms, parse_server_hassh
 from ..models import CheckResult, TargetSpec
 from ..rfc_probes import probe_ssh_rfc4253
-from ..ssh_session import run_ssh_command
+from ..ssh_session import run_ssh_command, secure_ssh_client
 from ..tps import TPS
 
 # Architecture-review item 2 (2026-07-27): read-only recon commands real
@@ -44,7 +45,12 @@ _ARM_CPUINFO_MARKERS = ("CPU architecture", "Features", "model name", "Hardware"
 
 
 def _run_recon_shell(
-    host: str, port: int, user: str, password: str, timeout: float = 20.0
+    host: str,
+    port: int,
+    user: str,
+    password: str,
+    timeout: float = 20.0,
+    known_hosts: str | None = None,
 ) -> dict:
     """Open one interactive shell channel, run the recon battery with a
     unique per-command marker (so outputs can be split reliably even
@@ -66,8 +72,7 @@ def _run_recon_shell(
             "pty_detail": "",
         }
 
-    client = paramiko.SSHClient()
-    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    client = secure_ssh_client(paramiko, known_hosts=known_hosts)
     outputs: dict[str, str] = {}
     pty_ok = True
     pty_detail = ""
@@ -236,6 +241,26 @@ class SSHPlugin(ProtocolPlugin):
                 evidence=[algo[:200]] if algo else [],
             )
         )
+        if algo:
+            weak = classify_ssh_algorithms(algo)
+            weak_hits = weak["weak"]
+            # Parsing alone is not a clean bill of health: flag legacy/weak
+            # algorithm offers so Module A does not award a full 100 solely
+            # because a KEXINIT was observed.
+            checks.append(
+                CheckResult(
+                    id="ssh.nego.weak_algorithms",
+                    team="blue",
+                    passed=not weak_hits,
+                    detail=(
+                        "no weak KEX/cipher/MAC offers detected"
+                        if not weak_hits
+                        else f"weak algorithm offers: {', '.join(weak_hits[:8])}"
+                    ),
+                    score=100.0 if not weak_hits else max(0.0, 100.0 - 25.0 * len(weak_hits)),
+                    evidence=[algo[:240]],
+                )
+            )
         # Optional gold baseline HASSH compare
         gold = (tps.gold_baseline_host if tps else None) or target.baseline_native_host
         if gold and hassh:
@@ -281,7 +306,13 @@ class SSHPlugin(ProtocolPlugin):
               ANSI escape and a tab-completion trigger without a protocol
               violation.
         """
-        result = _run_recon_shell(host, port, target.user, target.password)
+        result = _run_recon_shell(
+            host,
+            port,
+            target.user,
+            target.password,
+            known_hosts=target.known_hosts_path(),
+        )
         if not result["ok"]:
             return [
                 CheckResult(
@@ -349,20 +380,25 @@ class SSHPlugin(ProtocolPlugin):
     ) -> list[CheckResult]:
         # B1: cross-session persistence — write in session 1, read in session 2
         marker = "UHBS_CROSS_SESSION_OK"
-        path = "/tmp/uhbs_cross_session_marker"
+        # Use a private, unpredictable target-side path rather than a fixed
+        # filename in a world-writable directory.
+        path = f"${{TMPDIR:-$HOME}}/uhbs_cross_session_marker_{secrets.token_hex(12)}"
+        kh = target.known_hosts_path()
         s1 = run_ssh_command(
             host,
             port,
             target.user,
             target.password,
-            f"mkdir -p /tmp && echo {marker} > {path} && cat {path}",
+            f'umask 077 && printf "%s\\n" {marker} > "{path}" && cat "{path}"',
+            known_hosts=kh,
         )
         s2 = run_ssh_command(
             host,
             port,
             target.user,
             target.password,
-            f"cat {path}",
+            f'cat "{path}"; status=$?; rm -f "{path}"; exit $status',
+            known_hosts=kh,
         )
         ok = s1.ok and s2.ok and marker in s2.stdout
         return [
@@ -383,7 +419,10 @@ class SSHPlugin(ProtocolPlugin):
     def probe_payload(
         self, host: str, port: int, target: TargetSpec, tps: TPS | None
     ) -> list[CheckResult]:
-        out = run_ssh_command(host, port, target.user, target.password, "echo PAYLOAD_OK")
+        kh = target.known_hosts_path()
+        out = run_ssh_command(
+            host, port, target.user, target.password, "echo PAYLOAD_OK", known_hosts=kh
+        )
         ok = out.ok and "PAYLOAD_OK" in out.stdout
         return [
             CheckResult(
@@ -398,8 +437,14 @@ class SSHPlugin(ProtocolPlugin):
     def probe_fuzz(
         self, host: str, port: int, target: TargetSpec, tps: TPS | None
     ) -> list[CheckResult]:
+        kh = target.known_hosts_path()
         out = run_ssh_command(
-            host, port, target.user, target.password, "head -c 1000 /dev/urandom | wc -c"
+            host,
+            port,
+            target.user,
+            target.password,
+            "head -c 1000 /dev/urandom | wc -c",
+            known_hosts=kh,
         )
         ok = out.ok and any(ch.isdigit() for ch in out.stdout)
         return [
@@ -415,7 +460,15 @@ class SSHPlugin(ProtocolPlugin):
     def probe_load_once(
         self, host: str, port: int, target: TargetSpec, tps: TPS | None
     ) -> float:
-        out = run_ssh_command(host, port, target.user, target.password, "true", timeout=20)
+        out = run_ssh_command(
+            host,
+            port,
+            target.user,
+            target.password,
+            "true",
+            timeout=20,
+            known_hosts=target.known_hosts_path(),
+        )
         if not out.ok:
             raise RuntimeError(out.error or "ssh failed")
         return out.latency_ms

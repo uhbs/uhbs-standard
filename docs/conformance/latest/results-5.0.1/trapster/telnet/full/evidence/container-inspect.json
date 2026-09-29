@@ -1,0 +1,223 @@
+[
+    {
+        "Id": "d259eddbc48d4147529ceafb25596caa548bb25e0e639809fcd92f512fc1883f",
+        "Created": "2026-09-28T13:33:40.360275217Z",
+        "Path": "python3",
+        "Args": [
+            "main.py",
+            "-c",
+            "/etc/trapster/trapster.conf"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 14991,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-28T13:33:40.818592718Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:fe8aa1c13246549e6c024a4cb3f558e0dfb6ca75e17d845917ef2fbafce90314",
+        "ResolvConfPath": "/var/lib/docker/containers/d259eddbc48d4147529ceafb25596caa548bb25e0e639809fcd92f512fc1883f/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/d259eddbc48d4147529ceafb25596caa548bb25e0e639809fcd92f512fc1883f/hostname",
+        "HostsPath": "/var/lib/docker/containers/d259eddbc48d4147529ceafb25596caa548bb25e0e639809fcd92f512fc1883f/hosts",
+        "LogPath": "/var/lib/docker/containers/d259eddbc48d4147529ceafb25596caa548bb25e0e639809fcd92f512fc1883f/d259eddbc48d4147529ceafb25596caa548bb25e0e639809fcd92f512fc1883f-json.log",
+        "Name": "/uhbs-target-trapster-telnet",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/trapster-telemetry:/telemetry:rw",
+                "/Users/mz/Projects/uhbs-standard/.local/labs/trapster-runtime/telnet:/etc/trapster:ro"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "d259eddbc48d4147529ceafb25596caa548bb25e0e639809fcd92f512fc1883f",
+                "LowerDir": "/var/lib/docker/overlay2/6afddaf2b2492ad9e6d1b23431b7b12eb746676a8af7c963a866cfe02ecb3e20-init/diff:/var/lib/docker/overlay2/rzl12olacp5i154graqv3c1ze/diff:/var/lib/docker/overlay2/497wnrx8sn7tgtobvxrq9wxkf/diff:/var/lib/docker/overlay2/fpcavow2nkhpcyo06o51z34ek/diff:/var/lib/docker/overlay2/tfydez0t5vx3alfximrxzyaaa/diff:/var/lib/docker/overlay2/w25ym81sl95tkkaqvrcxo0ded/diff:/var/lib/docker/overlay2/5dfmazfddi24hxu283diuosd6/diff:/var/lib/docker/overlay2/g9tyn1f02mddir21zx9f1f5yl/diff:/var/lib/docker/overlay2/p1gzciz9liw5uvcj3it6ilr5g/diff:/var/lib/docker/overlay2/1bc10da2c83ffa907789d72f07e940723580a3eaf8d0415f65bd0b49430d82e8/diff:/var/lib/docker/overlay2/593b8f48dcbb550b3e80462deb478c2c65af7c5f266de4de0a325244e3a17876/diff:/var/lib/docker/overlay2/cefb4d444af68c1e70aa6ed8401b6a14269225c2de10d934e2a855a9877bbe26/diff:/var/lib/docker/overlay2/3d772b5f1c41b01474bb805f6b84098f0c3b101e01d7c3e401e6028ae8791295/diff",
+                "MergedDir": "/var/lib/docker/overlay2/6afddaf2b2492ad9e6d1b23431b7b12eb746676a8af7c963a866cfe02ecb3e20/merged",
+                "UpperDir": "/var/lib/docker/overlay2/6afddaf2b2492ad9e6d1b23431b7b12eb746676a8af7c963a866cfe02ecb3e20/diff",
+                "WorkDir": "/var/lib/docker/overlay2/6afddaf2b2492ad9e6d1b23431b7b12eb746676a8af7c963a866cfe02ecb3e20/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/trapster-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/trapster-runtime/telnet",
+                "Destination": "/etc/trapster",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "d259eddbc48d",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+                "PYTHON_VERSION=3.11.16",
+                "PYTHON_SHA256=91bcdebfdde239a003ae93738a7fce0f9230fee5c4bc2b86f6e6e8c6f98aabe8"
+            ],
+            "Cmd": null,
+            "Image": "trapster:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": [
+                "python3",
+                "main.py",
+                "-c",
+                "/etc/trapster/trapster.conf"
+            ],
+            "Labels": {
+                "uhbs.unit": "trapster-telnet"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "8825aaaf7139e25fda5a9cd0cf1ef5e00e1798c1f046c54466fa49c870e0943c",
+            "SandboxKey": "/var/run/docker/netns/8825aaaf7139",
+            "Ports": {},
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "trapster-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "54abe2322b948a3b0ad5dd05b9fe0e4f2ca7780d936bed25ec75e4a1cd0e8ba2",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.5",
+                    "MacAddress": "9e:0e:fd:82:0e:09",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-trapster-telnet",
+                        "trapster-lab",
+                        "d259eddbc48d"
+                    ]
+                }
+            }
+        }
+    }
+]

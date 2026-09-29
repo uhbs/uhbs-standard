@@ -1,47 +1,54 @@
 {
-  "uhbs_version": "4.6.1",
+  "uhbs_version": "5.0.1",
   "target": {
-    "name": "OpenCanary (TFTP :69)",
+    "name": "OpenCanary (UHBS multi-protocol proof) (tftp)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/opencanary/low_interaction_tftp_full.yaml"
   },
-  "evaluated_at": "2026-07-27",
-  "auditor": "UHBS-Lab detailed Docker run (opencanary/tftp)",
+  "evaluated_at": "2026-09-26",
+  "auditor": "UHBS-Lab results-5.0.1 refresh (opencanary-tftp)",
   "modules": {
     "A": {
-      "score": 55.71,
-      "status": "PARTIAL",
-      "weight": 0.3,
-      "notes": ""
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "notes": "",
+      "complete": false,
+      "weight": 0.3
     },
     "B": {
-      "score": 70.5,
+      "score": 53.0,
       "status": "PARTIAL",
-      "weight": 0.15,
-      "notes": ""
+      "notes": "",
+      "complete": true,
+      "weight": 0.15
     },
     "C": {
-      "score": 55.0,
-      "status": "PARTIAL",
-      "weight": 0.25,
-      "notes": ""
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "notes": "",
+      "complete": false,
+      "weight": 0.25
     },
     "D": {
-      "score": 90.0,
-      "status": "PASSED",
-      "notes": ""
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "notes": "",
+      "complete": false,
+      "critical_control_verdict": "INCOMPLETE"
     },
     "E": {
       "score": 35.0,
-      "status": "FAILED",
-      "weight": 0.1,
-      "notes": ""
+      "status": "PARTIAL",
+      "notes": "",
+      "complete": true,
+      "weight": 0.1
     },
     "F": {
-      "score": 70.0,
+      "score": 67.46,
       "status": "PARTIAL",
-      "weight": 0.2,
-      "notes": ""
+      "notes": "",
+      "complete": true,
+      "weight": 0.2
     }
   },
   "weights": {
@@ -52,12 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 90.0,
-    "delta_c": 0.81,
+    "containment_score": 0.0,
+    "delta_c": 1.0,
     "passed": false,
+    "critical_control_verdict": "INCOMPLETE",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 47.42,
-  "grade": "F",
-  "notes": "Evaluation proof only. OpenCanary tftp. Regraded 2026-07-27. Artifacts: docs/conformance/reports/opencanary/tftp/."
+  "uhqs": 55.43,
+  "grade": "D",
+  "notes": "Evaluation proof only. results-5.0.1 refresh of opencanary-tftp at fb12e4fefbdb1b9acd1e5561a2614f827ab639ff. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "assessment_status": "INCOMPLETE",
+  "critical_control_verdict": "INCOMPLETE",
+  "containment_measured": false
 }

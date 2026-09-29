@@ -1,0 +1,162 @@
+NOTICE: UHBS/AEP are for lab/sandbox evaluation of decoys. Do not run them against production or unauthorized real services.
+==> UHBS v4 target=ssh-auth-logger-ssh class=Low-Interaction protocols=['ssh'] phases=['profile', 'static', 'sandbox', 'dynamic', 'score']
+    plugins available: bacnet, bluetooth, coap, dhcp, dns, elasticsearch, ftp, generic, git, http, httpproxy, imap, ipp, irc, kubernetes, ldap, mcp, memcache, modbus, mongodb, mqtt, mssql, mysql, ntp, oracle, pjl, pop3, postgres, rdp, redis, s7comm, sip, smb, smtp, snmp, socks5, ssh, telnet, tftp, vnc
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/paramiko/transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/paramiko/packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/paramiko/packet.py", line 670, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/paramiko/transport.py", line 2029, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.12/site-packages/paramiko/transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/paramiko/transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/paramiko/packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/paramiko/packet.py", line 670, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/paramiko/transport.py", line 2029, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.12/site-packages/paramiko/transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/paramiko/transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/paramiko/packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/paramiko/packet.py", line 673, in _read_timeout
+    raise socket.timeout()
+TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/paramiko/transport.py", line 2029, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.12/site-packages/paramiko/transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner[Errno 9] Bad file descriptor
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/paramiko/transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/paramiko/packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/paramiko/packet.py", line 663, in _read_timeout
+    x = self.__socket.recv(128)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 9] Bad file descriptor
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/paramiko/transport.py", line 2029, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.12/site-packages/paramiko/transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 9] Bad file descriptor
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/paramiko/transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/paramiko/packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/paramiko/packet.py", line 673, in _read_timeout
+    raise socket.timeout()
+TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/paramiko/transport.py", line 2029, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.12/site-packages/paramiko/transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/paramiko/transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/paramiko/packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/paramiko/packet.py", line 673, in _read_timeout
+    raise socket.timeout()
+TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/paramiko/transport.py", line 2029, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.12/site-packages/paramiko/transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+====================================================================================
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
+====================================================================================
+Target System         : ssh-auth-logger-ssh
+System Profile Class  : Low-Interaction
+Scoring Model         : uhqs-v5.2-measured-renorm
+Assessment Status     : COMPLETE
+Critical Controls     : GATE_PASSED
+Protocols             : ssh
+Evaluation Date       : 2026-09-27
+Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
+Environment           : Full Docker lab: ssh-auth-logger-ssh
+MCP Surface Depth     : unknown
+------------------------------------------------------------------------------------
+EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
+------------------------------------------------------------------------------------
+Module A: Protocol Fidelity         :  69.4/100       0.30     PARTIAL (accepted null ID)
+Module B: Behavioral Realism        :   6.2/100       0.15     PARTIAL (No existing session)
+Module C: Telemetry Assurance       :   0.0/100       0.25     FAILED (declared native_json but no matching records)
+Module D: Safety & Containment (C)  :  83.3/100       GATE     PASSED (Memory=0 NanoCpus=0 PidsLimit=0)
+Module E: Scalability & Latency     :  20.0/100       0.10     PARTIAL (P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=ssh)
+Module F: Static Code Audit         :  66.8/100       0.20     PARTIAL (1 predictable PRNG seeds: main.go)
+------------------------------------------------------------------------------------
+SAFETY GATE / CRITICAL CONTROLS        : GATE_PASSED (δ_C=1.0; defense-in-depth C=83.33)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 37.12 / 100
+OVERALL EVALUATION GRADE              : GRADE F (Fail)
+scoring_model_id                      : uhqs-v5.2-measured-renorm
+====================================================================================
+
+Wrote /work/docs/conformance/latest/results-5.0.1/ssh-auth-logger/ssh/full/report.json
+Wrote /work/docs/conformance/latest/results-5.0.1/ssh-auth-logger/ssh/full/evidence-pack.json
+Wrote /work/docs/conformance/latest/results-5.0.1/ssh-auth-logger/ssh/full/MANIFEST.json

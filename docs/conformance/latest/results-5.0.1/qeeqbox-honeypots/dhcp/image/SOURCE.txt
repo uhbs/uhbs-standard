@@ -1,0 +1,5 @@
+source=.local/labs/qeeqbox-honeypots/Dockerfile.lab
+image=qeeqbox-honeypots:uhbs-lab
+digest=sha256:92ffc59399766a172f37a7ca57f88c9e9dba10081bebc5245d2ab3d9558afcb4
+dockerfile=docs/conformance/latest/results-5.0.1/qeeqbox-honeypots/dhcp/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/qeeqbox-honeypots/dhcp/Dockerfile.pin

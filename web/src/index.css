@@ -121,8 +121,41 @@
   }
 
   :focus-visible {
-    outline: 2px solid #000;
-    outline-offset: 2px;
+    outline: 3px solid #000;
+    outline-offset: 3px;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  [role="button"]:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  summary:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 3px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100px;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    color: #000;
+    border: 2px solid #000;
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: top 0.15s ease;
+  }
+
+  .skip-link:focus,
+  .skip-link:focus-visible {
+    top: 1rem;
+    outline: 3px solid #000;
+    outline-offset: 3px;
   }
 }
 

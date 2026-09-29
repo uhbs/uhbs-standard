@@ -1,0 +1,28 @@
+====================================================================================
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
+====================================================================================
+Target System         : datatrap-telnet
+System Profile Class  : Low-Interaction
+Scoring Model         : uhqs-v5.2-measured-renorm
+Assessment Status     : INCOMPLETE
+Critical Controls     : GATE_FAILED
+Protocols             : telnet
+Evaluation Date       : 2026-09-28
+Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
+Environment           : Isolated Sandbox
+MCP Surface Depth     : unknown
+------------------------------------------------------------------------------------
+EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
+------------------------------------------------------------------------------------
+Module A: Protocol Fidelity         :  83.9/100       0.30     PASSED (median=0.164ms pstdev=64.011ms (target jitter often <2ms vs native))
+Module B: Behavioral Realism        :  65.0/100       0.15     PARTIAL (no payload probe implemented)
+Module C: Telemetry Assurance       :   0.0/100       0.25     INCOMPLETE (UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4)
+Module D: Safety & Containment (C)  :  75.0/100       GATE     PASSED (User=(empty→root) UsernsMode=(empty))
+Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service alive after load (connect 0.3ms))
+Module F: Static Code Audit         :  65.6/100       0.20     PARTIAL (bandit HIGH=15)
+------------------------------------------------------------------------------------
+SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=0.5; defense-in-depth C=75.0; composite still published)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 29.01 / 100
+OVERALL EVALUATION GRADE              : GRADE F (Fail)
+scoring_model_id                      : uhqs-v5.2-measured-renorm
+====================================================================================

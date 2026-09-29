@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "18fdbb4c57258dd7c44eb4fa2f3becee495f4831197476f0ddbf4df70391f3be"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "b7407734a5c32cb6d4c92ad7f63447691788be9c0c4c00d2098aadc12361ca9c"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "b7407734a5c32cb6d4c92ad7f63447691788be9c0c4c00d2098aadc12361ca9c"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "5cb3843ac9a93985c327d49f8253b4fc1a8efbfd038ca8af67d49f67ff366cc1"
+    },
+    {
+      "path": "report.json",
+      "sha256": "0bdec12c5a4cf3e162ce74818cf4639621d77dd4bd6b444ef6867fa793b06bfa"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "cfe30527e2522f9e7ca99ec57b0b54a596fe3a48a60272133b5db12b4e51d31d"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "43a46d35da1f62d38ab12d52079de5cc443c502c3bfe49d61f181eeb84f69b69"
+    }
+  ],
+  "extra": {
+    "target": "qeeqbox-ssh",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

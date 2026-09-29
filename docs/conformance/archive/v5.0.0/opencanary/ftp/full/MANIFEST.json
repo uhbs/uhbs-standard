@@ -1,0 +1,42 @@
+{
+  "uhbs_version": "4.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "fb6aa420d9348075e0f8ad6e00b235268f22d5f12771da34b20dfda61c6c17e3"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "4e5d596811b75fd0298d72a466185e7a5b4ccd474f007a498ce66f36b9679183"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "4e5d596811b75fd0298d72a466185e7a5b4ccd474f007a498ce66f36b9679183"
+    },
+    {
+      "path": "report.json",
+      "sha256": "769b5fe19ee8755a32b1e69d8ea963e812a0b331b2232e98e3992b481365f5a3"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "f8a645e80245f586ae58527bfb8c7dd33c5170daab114a3f3ac4cf33a69a8ff6"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "16cb54746234c31c79778e6420d5a4e8ba332593ab1b5178256d03b3f7444c4d"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "7bd26a317ffb4502b20ea765f2a796406182b30cb0d1ed037f2bad0cd14c0390"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "a48c9d37122f27195c7c7af2d96585e8c9e50daa7e077094d130a33e4001583b"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-ftp",
+    "uhqs": 61.5,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

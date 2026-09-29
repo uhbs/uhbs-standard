@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "295adc6699cb38fea865b475a5d075054dc0b34463b812ce726cdeb0a15de1d7"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "b5fb81d8a89999e2f8c864b67a37508edd9d7acfe11b38b85f2e454dbee00522"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "b5fb81d8a89999e2f8c864b67a37508edd9d7acfe11b38b85f2e454dbee00522"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "dd18a561ba034bb2d53c20b7b17ca7525a7270f3ad8e86147d4d6d488e8ba173"
+    },
+    {
+      "path": "report.json",
+      "sha256": "228af45fdb64b4474b5939b3d8f2f0a4eb8f34b82462288b730ec3d76a8a3a2d"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "9594b4fb3faec66c05deda6cb1ec4d8f827fb4d193a8f291c9019fdc9dd56bcc"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "ac4fb91c31d184c4e22bf396106d66dd99f8d270a8d6059e40956381cb3e27c6"
+    }
+  ],
+  "extra": {
+    "target": "Log4Pot-http",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

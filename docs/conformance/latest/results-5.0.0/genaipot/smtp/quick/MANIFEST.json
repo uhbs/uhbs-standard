@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "00c0187d6681baf72b7128ec7c5187d355eaeba257077fc5d9165e186085469c"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "3c173ada0f6108cb85a66cfe028caa4cb44b12b85cbef3804cd6191d9c9a0b76"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "3c173ada0f6108cb85a66cfe028caa4cb44b12b85cbef3804cd6191d9c9a0b76"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "e9591d5c9d36fcd2cfae977217e3e631ac252c3eb2995c3e75efbb1b46df65d7"
+    },
+    {
+      "path": "report.json",
+      "sha256": "65ed7f6f7c30847ae195a2d4cc7181a63ae0cb3855d518f997d87a8511c20222"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "9ed1ca692eb1a522003f6e00b89d844972845d18592018af2d42cb681e418a8f"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "92b2c54898ec6b7a01887f38dc4733d8f535bf9c3e0c79c7472f7795df0e30d6"
+    }
+  ],
+  "extra": {
+    "target": "genaipot-smtp",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

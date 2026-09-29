@@ -1,0 +1,288 @@
+[
+    {
+        "Id": "88b3ec8978a44ebe42ff58ed3a0332fb7659a12de77bec2672d21756201845ca",
+        "Created": "2026-09-27T20:02:21.349958137Z",
+        "Path": "/cowrie/cowrie-env/bin/python3",
+        "Args": [
+            "/cowrie/cowrie-env/bin/twistd",
+            "-n",
+            "--umask=0022",
+            "--pidfile=",
+            "--logger",
+            "cowrie.python.logfile.stdoutLogger",
+            "cowrie"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 4316,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:02:21.60775397Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:92b9220978bc6095fb72b1a046240604ed03a5be1344abf6a2dd04eadd4cd330",
+        "ResolvConfPath": "/var/lib/docker/containers/88b3ec8978a44ebe42ff58ed3a0332fb7659a12de77bec2672d21756201845ca/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/88b3ec8978a44ebe42ff58ed3a0332fb7659a12de77bec2672d21756201845ca/hostname",
+        "HostsPath": "/var/lib/docker/containers/88b3ec8978a44ebe42ff58ed3a0332fb7659a12de77bec2672d21756201845ca/hosts",
+        "LogPath": "/var/lib/docker/containers/88b3ec8978a44ebe42ff58ed3a0332fb7659a12de77bec2672d21756201845ca/88b3ec8978a44ebe42ff58ed3a0332fb7659a12de77bec2672d21756201845ca-json.log",
+        "Name": "/uhbs-target-cowrie-ssh",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/docs/conformance/labs/cowrie/cowrie.cfg:/cowrie/cowrie-git/etc/cowrie.cfg:ro",
+                "/Users/mz/Projects/uhbs-standard/.local/labs/cowrie-telemetry:/cowrie/cowrie-git/var/log/cowrie",
+                "/Users/mz/Projects/uhbs-standard/.local/labs/cowrie-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "88b3ec8978a44ebe42ff58ed3a0332fb7659a12de77bec2672d21756201845ca",
+                "LowerDir": "/var/lib/docker/overlay2/daed174fc9c98f497178a9bd95bebae9c117aca76503a2b640979bace314db48-init/diff:/var/lib/docker/overlay2/bacb730247c0a54cff82c5df4b4e089629076fed36d7e91424f8d48f25f141be/diff:/var/lib/docker/overlay2/772fdd55a1db45d3a314e87eaadecf67b5be1de4179d0441b3d3cc380975564a/diff:/var/lib/docker/overlay2/fb3e20f91903046e39bbe811111184673f7790f6e8219ee08bf5ae0b6cec1752/diff:/var/lib/docker/overlay2/3de2a5c55a893fe6afe87f3fa5c9098996c881032c8373b7c31471c22e2fae58/diff:/var/lib/docker/overlay2/21a9440354cfc04f1b9e4018c0dff707852180f279c6d6e6fa13b643c4f0acab/diff:/var/lib/docker/overlay2/9d4414419378fea2c104f350f63767a870c358c7183861acda627286b2b81a5b/diff:/var/lib/docker/overlay2/f2509fc2a057d56cd1330a69e800e3503b15df01ab52c130da2c4d582dcfb146/diff:/var/lib/docker/overlay2/e6b1b488d691104c79e5170669ef0bebdd6d806e55400ca4c82e4239a99d26e9/diff:/var/lib/docker/overlay2/da26692910f39ed24c8de33fa20d48a7b46e0f2e5509762991ff41c790d0905a/diff:/var/lib/docker/overlay2/10cc38ab9a299614b38142d8d9c8975a5ae8699a8dcd5aafeb5bc732012a27cb/diff:/var/lib/docker/overlay2/787ed422b4d7ac71e2c0bc36c4f4c552f0148e219c9dec8665aed07b1d59d6d7/diff:/var/lib/docker/overlay2/0ddf68f99039c72edfcf0337c632316f2784a87b3bf7dc6f4ba6877cc99efa57/diff:/var/lib/docker/overlay2/a0f44a71ee06eda0179193c1bdda770fafb41920bccb38e54e2fd81efcf1cd4b/diff:/var/lib/docker/overlay2/3f5b92fbf1af0bbdd15a77353498c41f04a8dea56873f891eb6cb3014e62efe1/diff:/var/lib/docker/overlay2/cf3e6f6dfd85769852fc9b9e791d842a2aa640456950b8bede13c85cc3fe1077/diff:/var/lib/docker/overlay2/4a3a5ced80f4be480454e969f35975127b2848229ce3932575100b43a0be8046/diff:/var/lib/docker/overlay2/5bde5ba7e649a17a6aacc1969b70d4791b29c851568346a93f61b3e1c8c78a6a/diff:/var/lib/docker/overlay2/834b79235422f1a74b2b6ab19e546ef2b7462f9fabd9cb3b2a36ad0b07fdf51e/diff:/var/lib/docker/overlay2/b0361363205df86a9fb37239d653049ebfeeff165bcee0979754cfb60d7b9ab8/diff:/var/lib/docker/overlay2/5eecbbe0f282079de8d72ce8a93b5acbaf1ed50341b109b5b5731125cb67e11e/diff:/var/lib/docker/overlay2/662ec1bf0ed3c084e1ae4aed2e900c8a99c6602bb1e8ede254a229df63f663fe/diff:/var/lib/docker/overlay2/922437194ca0a905ee20939883c97aff4ff77b1ad56d87a472a27b8a017c8cf2/diff:/var/lib/docker/overlay2/10b6e9f059384bf95ac1916af69d8f48f2d15146df6b207c357c85a30cfa51f1/diff:/var/lib/docker/overlay2/1a40d3c368096637e32bbe9a98e21b9fc3036db51368eff66ef81cd5cffa784b/diff:/var/lib/docker/overlay2/cbd02ee2b033d8f16d42b11c22d826af1b3b024ec8e765f494cdae6ed5e1156f/diff:/var/lib/docker/overlay2/0e5b2e574aa3b66ec818617f45b81a7cead4dd7502646284dd110d6968c2ed47/diff:/var/lib/docker/overlay2/bfaadfe5152c2af1dedfb25a612a6b3d36617e1ce69371578ab014dde4b5042c/diff:/var/lib/docker/overlay2/eb91714e13f9ccbefb480cb31dec1281b45f5e381af53e74cdfcffb83635f94e/diff:/var/lib/docker/overlay2/ee4981ced610fecb12568d0d7bd1f5bbe8f9fb33042a3bc8f501ffd863c76283/diff:/var/lib/docker/overlay2/bdff6e5f09497dcab39c4b1dd20a45caae0f72bb8f9e6670aa6c31ba1143fc5a/diff:/var/lib/docker/overlay2/5aacc161da1009cc0af63a18a1aa452180281404f379f0127ec79b3f919dd0ec/diff:/var/lib/docker/overlay2/d862e3ba061fa0599e593bca9f21c5dd6a3a5c0449e2ba51c756ef35b27f72d2/diff:/var/lib/docker/overlay2/6be100307527b0a850027e7d29de62df480d1ddea1abc99823ec56ae2901a295/diff:/var/lib/docker/overlay2/67d62be62a9a4d59152c51fa90791a8dc394e745cb3870cfe46a93640cd3708f/diff:/var/lib/docker/overlay2/c529779387f8f1b4a696cac70bbfab64a9170fcee653832911b1c5061b45f08e/diff:/var/lib/docker/overlay2/61eda2b1a32b9d91435e650e538e68f9044c2638a2c48e3bf9740939f0c26858/diff:/var/lib/docker/overlay2/689922e549d1adb0d022eb446bb2da815884749164a88d6d75462dc5077d51d0/diff:/var/lib/docker/overlay2/16e05c1fad0ddaca4971e52a3d5cfb9354e54db9101550deb33d51bad10c80c8/diff:/var/lib/docker/overlay2/2134b9f547e8821f61dc63c7f3a04a3a983187ba85ef4b144565b6a0404216e9/diff:/var/lib/docker/overlay2/c35e83be3638ca7495ff93c4c5b0a58762fb9327fd5dc25393bf05b2d43c3e5e/diff:/var/lib/docker/overlay2/73c6dee2fdbdf5e6885972dec7e59e387d3815fe6806dcc5251308f373fd7f85/diff:/var/lib/docker/overlay2/c78a488ec7f293586f87bae087142217eb10c4da8b363adbc802ed974e1f88b0/diff:/var/lib/docker/overlay2/1c3b371a0ecf959679281f94198a354497950f6d7b21c9cb23c334b1db0d0ffb/diff:/var/lib/docker/overlay2/b76a1c1dabd5169d7da0762160e2fc97032588820e95095ff3e379eff7f7adcb/diff:/var/lib/docker/overlay2/6e847cbde666d735763af7b66c2fc3f25c63ec0fa11f9b4d4862176a7d4c3e64/diff:/var/lib/docker/overlay2/3c3644728888bb760b1678244a16debeb89ca70af5d3ddfacf371a324c39b7f9/diff:/var/lib/docker/overlay2/7271d7f35caccd5594bbdc083f250fa5c68575c4b25d025f5afad7da5cdcaa34/diff:/var/lib/docker/overlay2/c7628348625e0c1599cc6dd38b4b2ed05112e9497b6a0348ee7d03e6209d43b9/diff:/var/lib/docker/overlay2/e723f0d255efc060760e8f4589f947ce8a447448de593cf0d89ce4c4545a44a2/diff:/var/lib/docker/overlay2/ca55f6d3e5a7ff7e9fa156603c2de594e307a1d8c3ae30d0e35f281f7dcd6902/diff:/var/lib/docker/overlay2/ecbf498d15d2663c68aa44bf4ef14e81b9007e78548e861bb940fb98caa63df8/diff:/var/lib/docker/overlay2/b08efef244ba305e47e68dd0103e259be23985c5942364a39079990e0ab4e834/diff:/var/lib/docker/overlay2/6b708567f6959e32a1eb94a58e5873cabe452511e6314842d34639b5b4e9e71b/diff",
+                "MergedDir": "/var/lib/docker/overlay2/daed174fc9c98f497178a9bd95bebae9c117aca76503a2b640979bace314db48/merged",
+                "UpperDir": "/var/lib/docker/overlay2/daed174fc9c98f497178a9bd95bebae9c117aca76503a2b640979bace314db48/diff",
+                "WorkDir": "/var/lib/docker/overlay2/daed174fc9c98f497178a9bd95bebae9c117aca76503a2b640979bace314db48/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/cowrie-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "volume",
+                "Name": "7d41f41f95d053ac8c99fbe01f989968e9bb425e00965ec2ceeadff029e04dba",
+                "Source": "/var/lib/docker/volumes/7d41f41f95d053ac8c99fbe01f989968e9bb425e00965ec2ceeadff029e04dba/_data",
+                "Destination": "/cowrie/cowrie-git/etc",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Type": "volume",
+                "Name": "4997c083bb9db794b37e93978fa3ea63f83ec786a3b7f526b215bcad4e1af9ef",
+                "Source": "/var/lib/docker/volumes/4997c083bb9db794b37e93978fa3ea63f83ec786a3b7f526b215bcad4e1af9ef/_data",
+                "Destination": "/cowrie/cowrie-git/var",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/docs/conformance/labs/cowrie/cowrie.cfg",
+                "Destination": "/cowrie/cowrie-git/etc/cowrie.cfg",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/cowrie-telemetry",
+                "Destination": "/cowrie/cowrie-git/var/log/cowrie",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "88b3ec8978a4",
+            "Domainname": "",
+            "User": "999:999",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "2222/tcp": {},
+                "2223/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "COWRIE_TELNET_ENABLED=yes",
+                "PATH=/cowrie/cowrie-env/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt",
+                "LANG=C.UTF-8",
+                "COWRIE_GROUP=cowrie",
+                "COWRIE_USER=cowrie",
+                "COWRIE_HOME=/cowrie",
+                "PYTHONPATH=/cowrie/cowrie-git/src",
+                "PYTHONUNBUFFERED=1"
+            ],
+            "Cmd": [
+                "/cowrie/cowrie-env/bin/twistd",
+                "-n",
+                "--umask=0022",
+                "--pidfile=",
+                "--logger",
+                "cowrie.python.logfile.stdoutLogger",
+                "cowrie"
+            ],
+            "Image": "cowrie/cowrie:latest",
+            "Volumes": {
+                "/cowrie/cowrie-git/etc": {},
+                "/cowrie/cowrie-git/var": {}
+            },
+            "WorkingDir": "/cowrie/cowrie-git",
+            "Entrypoint": [
+                "/cowrie/cowrie-env/bin/python3"
+            ],
+            "Labels": {
+                "org.opencontainers.image.authors": "Michel Oosterhof \u003cmichel@oosterhof.net\u003e",
+                "org.opencontainers.image.base.name": "gcr.io/distroless/python3-debian13",
+                "org.opencontainers.image.created": "2026-09-21T03:13:34.267Z",
+                "org.opencontainers.image.description": "Cowrie SSH/Telnet Honeypot https://docs.cowrie.org/",
+                "org.opencontainers.image.documentation": "https://docs.cowrie.org",
+                "org.opencontainers.image.licenses": "NOASSERTION",
+                "org.opencontainers.image.revision": "ddd97e970d9e40668c7674bac28a91042c894a1d",
+                "org.opencontainers.image.source": "https://github.com/cowrie/cowrie",
+                "org.opencontainers.image.title": "cowrie",
+                "org.opencontainers.image.url": "https://github.com/cowrie/cowrie",
+                "org.opencontainers.image.vendor": "Cowrie",
+                "org.opencontainers.image.version": "v3.0.15",
+                "uhbs.unit": "cowrie-ssh"
+            },
+            "StopSignal": "SIGTERM"
+        },
+        "NetworkSettings": {
+            "SandboxID": "9412aee789e4dc301543f9458aaaea422241b50ffce0bf3ae1df5175c9e18066",
+            "SandboxKey": "/var/run/docker/netns/9412aee789e4",
+            "Ports": {
+                "2222/tcp": null,
+                "2223/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "cowrie-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "3b82b776e2d89fa4feae85201bba05418751a6241885dcb71c4ca4e72de791e5",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.3",
+                    "MacAddress": "a2:2f:38:a1:75:df",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-cowrie-ssh",
+                        "cowrie-lab",
+                        "88b3ec8978a4"
+                    ]
+                }
+            }
+        }
+    }
+]

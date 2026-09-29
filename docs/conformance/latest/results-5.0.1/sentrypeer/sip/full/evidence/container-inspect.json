@@ -1,0 +1,210 @@
+[
+    {
+        "Id": "56ca5d942e9f8c020ece06f1336d65808682c892f7a3f09297311779282534f6",
+        "Created": "2026-09-27T20:47:35.461494962Z",
+        "Path": "./sentrypeer",
+        "Args": [
+            "-rav",
+            "-f",
+            "/var/lib/sentrypeer/sentrypeer.db"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 50420,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:47:35.509530628Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:1231fe2ba842e6fcd2c1c9fdd63213441a8f1a285c68f51d858220a3102f6b27",
+        "ResolvConfPath": "/var/lib/docker/containers/56ca5d942e9f8c020ece06f1336d65808682c892f7a3f09297311779282534f6/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/56ca5d942e9f8c020ece06f1336d65808682c892f7a3f09297311779282534f6/hostname",
+        "HostsPath": "/var/lib/docker/containers/56ca5d942e9f8c020ece06f1336d65808682c892f7a3f09297311779282534f6/hosts",
+        "LogPath": "/var/lib/docker/containers/56ca5d942e9f8c020ece06f1336d65808682c892f7a3f09297311779282534f6/56ca5d942e9f8c020ece06f1336d65808682c892f7a3f09297311779282534f6-json.log",
+        "Name": "/sentrypeer-lab",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "56ca5d942e9f8c020ece06f1336d65808682c892f7a3f09297311779282534f6",
+                "LowerDir": "/var/lib/docker/overlay2/d4904a49296ae2d5acb7035fef399cf8f380851d8eba554b6716a24a21f17e3d-init/diff:/var/lib/docker/overlay2/c35cec3b98da809af74c5fea4d687a97d754259869b48cafb00cacb4a849d188/diff:/var/lib/docker/overlay2/bd33361093279b8bbf6e86656357f2ba41329237d09c5f35a0d4a3059542ed1c/diff:/var/lib/docker/overlay2/b2836f4915caeb005d957930de6019e66da70ac76d63c8defc6ccd2f3aec8e4e/diff:/var/lib/docker/overlay2/982b386a44d6b85a727cf9f26be2ffa3238caf4a0666631ae89c9f181886e1ec/diff",
+                "MergedDir": "/var/lib/docker/overlay2/d4904a49296ae2d5acb7035fef399cf8f380851d8eba554b6716a24a21f17e3d/merged",
+                "UpperDir": "/var/lib/docker/overlay2/d4904a49296ae2d5acb7035fef399cf8f380851d8eba554b6716a24a21f17e3d/diff",
+                "WorkDir": "/var/lib/docker/overlay2/d4904a49296ae2d5acb7035fef399cf8f380851d8eba554b6716a24a21f17e3d/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "56ca5d942e9f",
+            "Domainname": "",
+            "User": "sentrypeer:sentrypeer",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "5060/tcp": {},
+                "5060/udp": {},
+                "5061/tcp": {},
+                "8082/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "./sentrypeer",
+                "-rav",
+                "-f",
+                "/var/lib/sentrypeer/sentrypeer.db"
+            ],
+            "Image": "sentrypeer/sentrypeer:latest",
+            "Volumes": null,
+            "WorkingDir": "/opt/sentrypeer/",
+            "Entrypoint": null,
+            "Labels": {
+                "maintainer": "Gavin Henry, ghenry@sentrypeer.org"
+            },
+            "StopSignal": "SIGKILL"
+        },
+        "NetworkSettings": {
+            "SandboxID": "4292c778b23f09fddcdba42ea240390d46e89e56fcc48417f9b9ca930f46feb4",
+            "SandboxKey": "/var/run/docker/netns/4292c778b23f",
+            "Ports": {
+                "5060/tcp": null,
+                "5060/udp": null,
+                "5061/tcp": null,
+                "8082/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "sentrypeer-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "387f3dcec6d2077c31c0cb3af5c119e1991e4bb368fb6cf21719ef361bc52330",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "06:4d:67:c1:c3:a7",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "sentrypeer-lab",
+                        "56ca5d942e9f"
+                    ]
+                }
+            }
+        }
+    }
+]

@@ -1,0 +1,250 @@
+[
+    {
+        "Id": "9798e20b6184e39fc809f4599daca88ee051cb0f6da18e5420d147b856930674",
+        "Created": "2026-09-28T11:58:20.629262001Z",
+        "Path": "/app/entrypoint.sh",
+        "Args": [
+            "uvicorn",
+            "app:app",
+            "--host",
+            "0.0.0.0",
+            "--port",
+            "5000",
+            "--app-dir",
+            "src",
+            "--no-server-header",
+            "--limit-concurrency",
+            "512",
+            "--backlog",
+            "256"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 20337,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-28T11:58:21.209457501Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:3bfa90c141c94401941c0657ed760ad79e42e006b7828b493bb4fff1f4368abd",
+        "ResolvConfPath": "/var/lib/docker/containers/9798e20b6184e39fc809f4599daca88ee051cb0f6da18e5420d147b856930674/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/9798e20b6184e39fc809f4599daca88ee051cb0f6da18e5420d147b856930674/hostname",
+        "HostsPath": "/var/lib/docker/containers/9798e20b6184e39fc809f4599daca88ee051cb0f6da18e5420d147b856930674/hosts",
+        "LogPath": "/var/lib/docker/containers/9798e20b6184e39fc809f4599daca88ee051cb0f6da18e5420d147b856930674/9798e20b6184e39fc809f4599daca88ee051cb0f6da18e5420d147b856930674-json.log",
+        "Name": "/uhbs-target-Krawl-http",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/Krawl-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "9798e20b6184e39fc809f4599daca88ee051cb0f6da18e5420d147b856930674",
+                "LowerDir": "/var/lib/docker/overlay2/adb06a91e53bb452ce2c9cf9a9327316176b77287240e842909ceeb76fd7b4c8-init/diff:/var/lib/docker/overlay2/qqg1iwrvzh9fjcc7gqvbrdlm1/diff:/var/lib/docker/overlay2/9u35nd3u5lc0aw7kggbn33aze/diff:/var/lib/docker/overlay2/tg7t49c4v3wd6elels51w8fmy/diff:/var/lib/docker/overlay2/wh0qbukuarq3r302xvw5u1lgb/diff:/var/lib/docker/overlay2/w8op60o6301ud9yi4efuzgbvn/diff:/var/lib/docker/overlay2/4m4k7iup4w61j17107ulo4rth/diff:/var/lib/docker/overlay2/zaugoa5r7ty0x6wsj5r859krz/diff:/var/lib/docker/overlay2/fqkoz4b6jc99i7f22u5zcar6n/diff:/var/lib/docker/overlay2/pb1v8jq20w5vah7ye7bef2tr7/diff:/var/lib/docker/overlay2/c7d4a61bb279bdfad9b2065e6a842e984606c5594dc5409ac7721f5a719b04cd/diff:/var/lib/docker/overlay2/8148b0e8b4185ac976dddc7c48b85c251081051452debaa9a0f05d3ad6652060/diff:/var/lib/docker/overlay2/d0431c91554a06dc98435b262d61e56d5a90cf23b01f0d21eab6aaeddcb9dd7b/diff:/var/lib/docker/overlay2/3d772b5f1c41b01474bb805f6b84098f0c3b101e01d7c3e401e6028ae8791295/diff",
+                "MergedDir": "/var/lib/docker/overlay2/adb06a91e53bb452ce2c9cf9a9327316176b77287240e842909ceeb76fd7b4c8/merged",
+                "UpperDir": "/var/lib/docker/overlay2/adb06a91e53bb452ce2c9cf9a9327316176b77287240e842909ceeb76fd7b4c8/diff",
+                "WorkDir": "/var/lib/docker/overlay2/adb06a91e53bb452ce2c9cf9a9327316176b77287240e842909ceeb76fd7b4c8/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/Krawl-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "9798e20b6184",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "5000/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.13.15",
+                "PYTHON_SHA256=1e66a7945a48390ee4c2a4268a0e4185884059a13c4aab6d148aa208deea4a76",
+                "PYTHONUNBUFFERED=1",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PIP_DISABLE_PIP_VERSION_CHECK=1",
+                "MALLOC_TRIM_THRESHOLD_=65536"
+            ],
+            "Cmd": [
+                "uvicorn",
+                "app:app",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                "5000",
+                "--app-dir",
+                "src",
+                "--no-server-header",
+                "--limit-concurrency",
+                "512",
+                "--backlog",
+                "256"
+            ],
+            "Image": "krawl:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": [
+                "/app/entrypoint.sh"
+            ],
+            "Labels": {
+                "org.opencontainers.image.description": "Krawl web crawler",
+                "org.opencontainers.image.documentation": "https://github.com/BlessedRebuS/Krawl#readme",
+                "org.opencontainers.image.licenses": "MIT",
+                "org.opencontainers.image.source": "https://github.com/BlessedRebuS/Krawl",
+                "org.opencontainers.image.title": "Krawl",
+                "org.opencontainers.image.url": "https://github.com/BlessedRebuS/Krawl",
+                "org.opencontainers.image.vendor": "BlessedRebuS",
+                "uhbs.unit": "Krawl-http"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "fd4d2a247fc467abc71460484a27e77aedb2e7f1f04392d2b90c36c9d6d244d7",
+            "SandboxKey": "/var/run/docker/netns/fd4d2a247fc4",
+            "Ports": {
+                "5000/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "Krawl-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "cbc72c0dfa4e8c7ed60ecff942e302f0058b9dcec40ca6af9372ede17ae4f62e",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.5",
+                    "MacAddress": "0a:a5:6f:89:5e:46",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-Krawl-http",
+                        "Krawl-lab",
+                        "9798e20b6184"
+                    ]
+                }
+            }
+        }
+    }
+]

@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `qeeqbox-honeypots-ldap`
+# Image name at grade time: qeeqbox-honeypots:uhbs-lab
+FROM sha256:92ffc59399766a172f37a7ca57f88c9e9dba10081bebc5245d2ab3d9558afcb4

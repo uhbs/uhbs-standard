@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "3f289d16290fb0bfd73081281bb12f5bbc87e8d7960033adfdb06ff87a955943"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "7e2ebed42caa94924b385895dea211d6063ef1ed57e9ba06c72e4b5a88715eee"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "7e2ebed42caa94924b385895dea211d6063ef1ed57e9ba06c72e4b5a88715eee"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "054ba4f65ced05fdc50c4baeeff789bf5ac60477b3b8e2a11fef22cceddd5a16"
+    },
+    {
+      "path": "report.json",
+      "sha256": "d4cca4e79952bc3db9eeca9049d9ad13d78a62695ba7d32639f2e07287184037"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "a557c76d71f467131d70002c66d0feb62fe616729c585d07d96df1203d534182"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "0ece3d9ffa77fa543b726629f3babe4639855c70a2071d1353e1124d472dcaf3"
+    }
+  ],
+  "extra": {
+    "target": "portlurker-generic",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

@@ -1,0 +1,193 @@
+"""UHQS always-grade invariants and regression guards."""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+import pytest
+
+from uhbs_core.check_scoring import score_checks, summarize_checks
+from uhbs_core.models import CheckOutcome, CheckResult
+from uhbs_core.telemetry.attack import validate_technique_id
+from uhbs_core.telemetry.formats import validate_stix21
+from uhbs_core.uhqs_math import (
+    SCORING_MODEL_ID,
+    AssessmentStatus,
+    CriticalControlVerdict,
+    compute_uhqs,
+    letter_grade,
+)
+
+
+def _scores(**overrides: float) -> dict[str, float]:
+    base = {"A": 80.0, "B": 80.0, "C": 80.0, "D": 100.0, "E": 80.0, "F": 80.0}
+    base.update(overrides)
+    return base
+
+
+def test_scoring_model_id_is_pinned() -> None:
+    assert SCORING_MODEL_ID == "uhqs-v5.2-measured-renorm"
+
+
+def test_incomplete_assessment_still_graded() -> None:
+    result = compute_uhqs(
+        _scores(),
+        profile_class="POSIX-Shell",
+        assessment_status=AssessmentStatus.INCOMPLETE,
+        critical_control_verdict=CriticalControlVerdict.INCOMPLETE,
+    )
+    # INCOMPLETE no longer discounts δ_C; all modules measured → full weighted sum.
+    assert result.uhqs == 80.0
+    assert result.graded is True
+    assert result.delta_c == 1.0
+    assert letter_grade(result.uhqs) == "B"
+
+
+def test_unmeasured_module_excluded_from_composite() -> None:
+    result = compute_uhqs(
+        {"A": 100, "B": 65, "C": 0, "D": 0, "E": 100, "F": 70},
+        profile_class="Web-API",
+        assessment_status=AssessmentStatus.INCOMPLETE,
+        critical_control_verdict=CriticalControlVerdict.INCOMPLETE,
+        measured_modules={"A": True, "B": True, "C": False, "E": True, "F": True},
+    )
+    assert result.uhqs == 83.75
+    assert letter_grade(result.uhqs) == "B"
+    assert result.delta_c == 1.0
+
+
+def test_gate_failed_still_graded() -> None:
+    result = compute_uhqs(
+        _scores(D=0.0),
+        profile_class="POSIX-Shell",
+        critical_control_verdict=CriticalControlVerdict.GATE_FAILED,
+    )
+    assert result.uhqs == 40.0  # 80 * 0.5
+    assert result.safety_gate_passed is False
+    assert result.critical_control_verdict is CriticalControlVerdict.GATE_FAILED
+    assert result.graded is True
+    assert letter_grade(result.uhqs) == "F"
+
+
+def test_gate_passed_publishes_weighted_sum() -> None:
+    result = compute_uhqs(
+        _scores(),
+        profile_class="POSIX-Shell",
+        critical_control_verdict=CriticalControlVerdict.GATE_PASSED,
+    )
+    assert result.uhqs == 80.0
+    assert result.delta_c == 1.0
+    assert result.graded is True
+
+
+def test_adding_failure_cannot_improve_score() -> None:
+    base = [
+        CheckResult(id="a", team="blue", passed=True, score=100.0),
+        CheckResult(id="b", team="blue", passed=True, score=100.0),
+    ]
+    worse = base + [CheckResult(id="c", team="blue", passed=False, score=0.0)]
+    assert score_checks(worse) <= score_checks(base)
+
+
+def test_omitting_mandatory_check_blocks_completeness() -> None:
+    checks = [
+        CheckResult.make(
+            id="m1",
+            team="blue",
+            outcome=CheckOutcome.PASS,
+            score=100.0,
+            mandatory=True,
+        ),
+        CheckResult.make(
+            id="m2",
+            team="blue",
+            outcome=CheckOutcome.NOT_TESTED,
+            mandatory=True,
+        ),
+    ]
+    agg = summarize_checks(checks)
+    assert agg.complete is False
+    assert agg.score == 0.0
+
+
+def test_not_applicable_leaves_denominator() -> None:
+    checks = [
+        CheckResult.make(
+            id="a",
+            team="blue",
+            outcome=CheckOutcome.PASS,
+            score=100.0,
+        ),
+        CheckResult.make(
+            id="b",
+            team="blue",
+            outcome=CheckOutcome.NOT_APPLICABLE,
+            applicability_rationale="protocol lacks capability X",
+            mandatory=True,
+        ),
+    ]
+    assert score_checks(checks) == 100.0
+    assert summarize_checks(checks).complete is True
+
+
+def test_not_tested_never_earns_credit() -> None:
+    c = CheckResult.make(
+        id="x",
+        team="blue",
+        outcome=CheckOutcome.NOT_TESTED,
+        score=50.0,
+    )
+    assert c.score == 0.0
+
+
+def test_stix_rejects_non_stix_honeypot_type() -> None:
+    ok, detail = validate_stix21({"type": "cowrie.session.connect"})
+    assert ok is False
+    assert "unknown" in detail.lower() or "type" in detail.lower()
+
+
+def test_stix_accepts_minimal_indicator() -> None:
+    ok, _ = validate_stix21(
+        {
+            "type": "indicator",
+            "id": "indicator--11111111-1111-1111-1111-111111111111",
+            "spec_version": "2.1",
+            "pattern": "[file:hashes.'SHA-256' = 'a']",
+            "pattern_type": "stix",
+            "valid_from": "2020-01-01T00:00:00Z",
+        }
+    )
+    assert ok is True
+
+
+def test_attack_word_alone_is_not_a_technique() -> None:
+    rec = validate_technique_id("attack")
+    assert rec.valid is False
+
+
+def test_attack_known_technique_validates() -> None:
+    rec = validate_technique_id("T1059.004")
+    assert rec.valid is True
+
+
+def test_mutation_restoring_skip_credit_would_fail_contract() -> None:
+    c = CheckResult(
+        id="skip",
+        team="white",
+        outcome=CheckOutcome.NOT_TESTED,
+        score=15.0,
+    )
+    assert c.score == 0.0
+
+
+def test_v5_golden_incomplete_fixture_is_graded() -> None:
+    root = Path(__file__).resolve().parents[1]
+    path = root / "docs" / "conformance" / "fixtures" / "v5" / "incomplete-ungraded.scorecard.json"
+    if not path.is_file():
+        pytest.skip("v5 incomplete fixture not present")
+    data = json.loads(path.read_text(encoding="utf-8"))
+    assert data.get("uhqs") is not None
+    assert data.get("grade") is not None
+    assert data.get("assessment_status") == "INCOMPLETE"
+    assert data.get("scoring_model_id") == SCORING_MODEL_ID

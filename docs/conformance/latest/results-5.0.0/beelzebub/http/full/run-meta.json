@@ -1,0 +1,68 @@
+{
+  "uhbs_version": "5.0.1",
+  "run_mode": "full",
+  "evaluated_at": "2026-09-26T14:58:23Z",
+  "proof_label": "Beelzebub (HTTP :8080)",
+  "target": {
+    "repository": "https://github.com/beelzebub-labs/beelzebub.git",
+    "git_commit": "67d5632a754f39f7b14c703d3009193150440116",
+    "git_branch": "main",
+    "class": "Web-API",
+    "protocol": "http",
+    "host": "beelzebub-lab",
+    "port": 8080,
+    "container_image": "beelzebub:uhbs-lab",
+    "container_image_id": "sha256:4663259f7336af0895572db5ec697518fc5608846dd54870d0baaec8f70172d3",
+    "base_image": "scratch",
+    "base_image_reason": "Upstream Dockerfile is the documented install path (README: ./install.sh --docker / docker compose). Multi-stage golang:alpine builder, final scratch. Lab overlay mounts static UHBS service YAMLs (no LLM keys).",
+    "container_runtime_strategy": "upstream-docker"
+  },
+  "grader": {
+    "package_version": "5.0.1",
+    "docker_image": "uhbs:5.0.1-full",
+    "docker_image_id": "sha256:320fb38dcf3ebf69befb2248b75ed32c63dafe6b83f959746209d337c3e7ca9b",
+    "inventory": "docs/conformance/labs/beelzebub/inventory.yaml",
+    "tps": "docs/conformance/labs/beelzebub/web_api_http_full.yaml"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry"
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "delta_c": 0.0,
+    "module_scores": {
+      "A": 100.0,
+      "B": 65.0,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 100.0,
+      "F": 70.0
+    },
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "safety_gate_passed": false,
+    "containment_measured": false
+  },
+  "artifacts": [
+    "README.md",
+    "REPORT.txt",
+    "SCORECARD.txt",
+    "evidence-pack.json",
+    "proof/full-run.cast",
+    "report.json",
+    "static/bandit-report.json",
+    "static/semgrep-report.json",
+    "uhbs-run.log"
+  ],
+  "limitations": [
+    "Published UHBS 5.0.1 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1); Docker Desktop lab, not a physical air-gap.",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement."
+  ]
+}

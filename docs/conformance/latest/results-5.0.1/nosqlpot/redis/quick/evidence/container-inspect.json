@@ -1,0 +1,207 @@
+[
+    {
+        "Id": "c20f3c6302846ad22a6dbf66325944eb7169207f9a2803594bee75a42ee404e7",
+        "Created": "2026-09-27T20:34:58.065554292Z",
+        "Path": "python3",
+        "Args": [
+            "nosqlpot.py",
+            "-deploy",
+            "redis",
+            "-port",
+            "6379"
+        ],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 1,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:34:58.120919792Z",
+            "FinishedAt": "2026-09-27T20:34:58.228937125Z"
+        },
+        "Image": "sha256:d83006e9ad8465696cbb0a9f9fa2f017eb72e7779be6eda2fbee572a2b1d8209",
+        "ResolvConfPath": "/var/lib/docker/containers/c20f3c6302846ad22a6dbf66325944eb7169207f9a2803594bee75a42ee404e7/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/c20f3c6302846ad22a6dbf66325944eb7169207f9a2803594bee75a42ee404e7/hostname",
+        "HostsPath": "/var/lib/docker/containers/c20f3c6302846ad22a6dbf66325944eb7169207f9a2803594bee75a42ee404e7/hosts",
+        "LogPath": "/var/lib/docker/containers/c20f3c6302846ad22a6dbf66325944eb7169207f9a2803594bee75a42ee404e7/c20f3c6302846ad22a6dbf66325944eb7169207f9a2803594bee75a42ee404e7-json.log",
+        "Name": "/nosqlpot-lab",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "c20f3c6302846ad22a6dbf66325944eb7169207f9a2803594bee75a42ee404e7",
+                "LowerDir": "/var/lib/docker/overlay2/84044c1ae2d3ec41e7225271a48ab11e2192d5907d6cadcd3f481b0e7205ebb4-init/diff:/var/lib/docker/overlay2/spmfqk37a8xaf8q0q0d7lxxk4/diff:/var/lib/docker/overlay2/wuzpxx3d2csr0s9etfs2oydfj/diff:/var/lib/docker/overlay2/gb9sih48gi8hvma942kqhgtnl/diff:/var/lib/docker/overlay2/5qeyu8ic8zdxjn8om1co1avnt/diff:/var/lib/docker/overlay2/qx4nbt5qfl6hswj9iu61kw887/diff:/var/lib/docker/overlay2/31dde0778fa9f08112e61ae8bb15bf748e1234eeb9925120464e5c289f825a52/diff:/var/lib/docker/overlay2/57e5b59b592a43f58455fb282635f3ce97cd58ddb70e2a00e8090fef27ad1f61/diff:/var/lib/docker/overlay2/641ec1e50fcc4006d984c001904f25750c0c5eb5ad58d529c16d4456cf675ffb/diff:/var/lib/docker/overlay2/9226f87fad8a9767d3469a7b90e3c54a0f60047c20d211215a6ea7c525fc114d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/84044c1ae2d3ec41e7225271a48ab11e2192d5907d6cadcd3f481b0e7205ebb4/merged",
+                "UpperDir": "/var/lib/docker/overlay2/84044c1ae2d3ec41e7225271a48ab11e2192d5907d6cadcd3f481b0e7205ebb4/diff",
+                "WorkDir": "/var/lib/docker/overlay2/84044c1ae2d3ec41e7225271a48ab11e2192d5907d6cadcd3f481b0e7205ebb4/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "c20f3c630284",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "6379/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+                "PYTHON_VERSION=3.11.16",
+                "PYTHON_SHA256=91bcdebfdde239a003ae93738a7fce0f9230fee5c4bc2b86f6e6e8c6f98aabe8"
+            ],
+            "Cmd": [
+                "python3",
+                "nosqlpot.py",
+                "-deploy",
+                "redis",
+                "-port",
+                "6379"
+            ],
+            "Image": "nosqlpot:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "SandboxID": "",
+            "SandboxKey": "",
+            "Ports": {},
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "nosqlpot-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "MacAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "nosqlpot-lab",
+                        "c20f3c630284"
+                    ]
+                }
+            }
+        }
+    }
+]

@@ -1,0 +1,5 @@
+source=.local/labs/endlessh/Dockerfile
+image=endlessh:uhbs-lab
+digest=sha256:afb3912dd411adf80907456db7db3058515fe3ca8501f8cc22c3d17c37a70dab
+dockerfile=docs/conformance/latest/results-5.0.1/endlessh/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/endlessh/Dockerfile.pin

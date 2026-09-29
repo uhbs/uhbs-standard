@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "b5827d87d6a53013137333e817497c671e7f2a5e4b3b58d16346fd6ab4f93e41"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "cdfd27023b92f31f65df8248cd5613f6e184b049cf2f139b8a9241455d955037"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "cdfd27023b92f31f65df8248cd5613f6e184b049cf2f139b8a9241455d955037"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "e0d380278e0993c390ea78e3018983821f73a9ae2275ce8d0207b3d1a1ef56d3"
+    },
+    {
+      "path": "report.json",
+      "sha256": "acadbfd725c6a40a8c5efddc113f03130560e75756b7cdf67944147d44b222f6"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "532d6a4070c55b713a81615dd884f47326be2743da4e0190d12e8345d93d2dec"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "44165fbd3152e3dea32323fe3dc8425fdef4f6f81bf4781cfdc5daa0f937a5b9"
+    }
+  ],
+  "extra": {
+    "target": "express-honeypot-http",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

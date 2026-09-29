@@ -1,0 +1,5 @@
+source=.local/labs/miniprint/Dockerfile
+image=miniprint:uhbs-lab
+digest=sha256:98d4cf6be313f434372eb225f773860f130b43d374ed376e9701631d088cb1b9
+dockerfile=docs/conformance/latest/results-5.0.1/miniprint/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/miniprint/Dockerfile.pin

@@ -1,79 +1,67 @@
-# Scorecard: trapster — ssh
+# Scorecard: trapster — ssh (results-5.0.1)
 
 **Status:** Informative · evaluation proof (not an endorsement)  
-**UHBS:** **4.2.2** · **Class:** Low-Interaction · **Protocol / surface:** `ssh`  
-**Target id (lab):** `trapster-ssh` · **Evaluation date:** 2026-07-27
+**UHBS:** **5.0.1** · **Class:** Low-Interaction · **Protocol / surface:** `ssh`  
+**Target id (lab):** `trapster-ssh` · **Evaluation date:** 2026-09-26  
+**Verdict:** INCOMPLETE / ungraded (`uhqs-v5.0-critical-gate-diagnostic`)
 
 | Run | UHQS | Grade | δ_C | Proof artifacts |
 | --- | ---: | --- | --- | --- |
-| Quick | 40.06 | F | 1.0 | See report hub quick artifacts |
-| **Full (authoritative)** | **44.38** | **F** | **1.0** | Verbatim SCORECARD below + `report.json` on the report hub |
+| Quick | ungraded | — | 0.0 | [quick SCORECARD](../conformance/latest/results-5.0.1/trapster/ssh/quick/SCORECARD.txt) |
+| **Full (authoritative)** | **ungraded** | **—** | **0.0** | Verbatim SCORECARD below + [`full-run.cast`](../conformance/latest/results-5.0.1/trapster/ssh/full/proof/full-run.cast) |
 
-**Report hub:** [trapster / ssh](../conformance/reports/trapster/ssh/index.md) · [Tutorial](../conformance/reports/trapster/TUTORIAL.md) · [Methodology](../conformance/reports/trapster/METHODOLOGY.md)  
+**Report hub:** [trapster / ssh](../conformance/latest/results-5.0.1/trapster/ssh/index.md) · [Tutorial](../conformance/latest/results-5.0.1/trapster/TUTORIAL.md) · [Methodology](../conformance/latest/results-5.0.1/trapster/METHODOLOGY.md) · [Execution steps](../conformance/latest/results-5.0.1/trapster/ssh/EXECUTION-STEPS.md)  
 **How to read UHQS:** [CTI / blue-team guide](../conformance/reports/READING-UHQS.md)
 
 ## Proof: module scores (full run)
 
-These numbers are copied from the lab `SCORECARD.txt` produced by `uhbs-lab` — not hand-typed summaries.
-
 | Module | Score | Weight | Status | Notes |
 | --- | ---: | --- | --- | --- |
-| Module A: Protocol Fidelity | 70.6 | 0.30 | PASSED | accepted null ID |
-| Module B: Behavioral Realism | 6.2 | 0.15 | PARTIAL | marker missing across sessions |
-| Module C: Telemetry Quality | 25.0 | 0.25 | PARTIAL | accepted |
-| Module D: Safety & Containment (C) | 100.0 | GATE | PASSED | leak/unstable |
-| Module E: Scalability & Latency | 20.0 | 0.10 | PARTIAL | P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=ssh |
-| Module F: Static Code Audit | 70.0 | 0.20 | PASSED | 1 predictable PRNG seeds: trapster/modules/http.py |
-| Safety Gate δ_C | 1.0 | GATE | — | Containment multiplier applied to UHQS |
+| Module A: Protocol Fidelity | 44.4 | 0.30 | PARTIAL | accepted null ID |
+| Module B: Behavioral Realism | 6.2 | 0.15 | PARTIAL | known_hosts miss |
+| Module C: Telemetry Assurance | 0.0 | 0.25 | FAILED | native_json declared-format |
+| Module D: Safety & Containment (C) | 0.0 | GATE | INCOMPLETE | critical controls not fully measured |
+| Module E: Scalability & Latency | 20.0 | 0.10 | PARTIAL | P50/P95/P99 = 0.0 ms |
+| Module F: Static Code Audit | 70.0 | 0.20 | PASSED | predictable PRNG in HTTP module |
+| Safety Gate δ_C | 0.0 | GATE | — | Ungraded (INCOMPLETE) |
 
-
-## How CTI / blue team should read this
-
-| Module | Score | Analyst reading |
-| --- | ---: | --- |
-| A — Protocol Fidelity | 70.6 | Protocol speak / banner-handshake quality for keeping automated clients engaged. |
-| B — Behavioral Realism | 6.2 | Post-connect realism (auth/session). Low often means credential-only or reject-by-design. **CTI:** treat primarily as auth/connection intelligence. |
-| C — Telemetry Quality | 25.0 | Telemetry visible to the UHBS lab harness — not a claim about your SIEM pipeline. **Blue team:** plan explicit log shipping. |
-| D — Safety & Containment (C) | 100.0 | Containment / Safety Gate. Below threshold collapses UHQS via δ_C. Safety Gate passed in this lab configuration. |
-| E — Scalability & Latency | 20.0 | Latency vs profile P95. Low can mean timeouts, tarpits, or slow handlers. |
-| F — Static Code Audit | 70.0 | Static audit of the graded source tree — hygiene signal, not a full CVE program. |
-| δ_C | 1.0 | Safety Gate multiplier applied to composite UHQS. |
-
-
-- **CTI:** use module notes to judge what attacker activity you can actually observe (auth-only vs interactive vs tarpit).
-- **Blue team:** verify Safety Gate (Module D / δ_C) and wire real log shipping before Internet exposure.
-- **Do not** cite UHQS without the verbatim SCORECARD or `report.json` from the report hub.
+Archived 4.x 44.38 / F is **not** the current published result.
 
 ## Verbatim full SCORECARD
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0.1
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : trapster-ssh
 System Profile Class  : Low-Interaction
+Scoring Model         : uhqs-v5.0-critical-gate-diagnostic
+Assessment Status     : INCOMPLETE
+Critical Controls     : INCOMPLETE
 Protocols             : ssh
-Evaluation Date       : 2026-07-27
+Evaluation Date       : 2026-09-26
 Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
 Environment           : Isolated Sandbox
+MCP Surface Depth     : unknown
 ------------------------------------------------------------------------------------
 EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
 ------------------------------------------------------------------------------------
-Module A: Protocol Fidelity         :  70.6/100       0.30     PASSED (accepted null ID)
-Module B: Behavioral Realism        :   6.2/100       0.15     PARTIAL (marker missing across sessions)
-Module C: Telemetry Quality         :  25.0/100       0.25     PARTIAL (accepted)
-Module D: Safety & Containment (C)  : 100.0/100       GATE     PASSED (leak/unstable)
+Module A: Protocol Fidelity         :  44.4/100       0.30     PARTIAL (accepted null ID)
+Module B: Behavioral Realism        :   6.2/100       0.15     PARTIAL (Server '[trapster-lab]:2222' not found in known_hosts)
+Module C: Telemetry Assurance       :   0.0/100       0.25     FAILED (declared native_json but no matching records)
+Module D: Safety & Containment (C)  :   0.0/100       GATE     INCOMPLETE (UHBS v5: containment verdict from critical controls; defense-in-depth score is diagnostic only; no 95-point floor)
 Module E: Scalability & Latency     :  20.0/100       0.10     PARTIAL (P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=ssh)
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (1 predictable PRNG seeds: trapster/modules/http.py)
 ------------------------------------------------------------------------------------
-SAFETY GATE MULTIPLIER                : δ_C = 1.0 (Containment Score C = 100.0 >= 95)
-FINAL COMPOSITE SCORE (UHQS 4.0.1)      : 44.38 / 100
-OVERALL EVALUATION GRADE              : GRADE F (Fail)
+SAFETY GATE / CRITICAL CONTROLS        : Ungraded — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (Ungraded — no composite UHQS)
+OVERALL EVALUATION GRADE              : — (no letter grade)
+scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
 ====================================================================================
 ```
 
 ## Replication
 
-Re-run commands are in the [tutorial](../conformance/reports/trapster/TUTORIAL.md). Environment and limitations are in the [methodology](../conformance/reports/trapster/METHODOLOGY.md).
+Re-run commands are in the [execution steps](../conformance/latest/results-5.0.1/trapster/ssh/EXECUTION-STEPS.md). Environment and limitations are in the [methodology](../conformance/latest/results-5.0.1/trapster/METHODOLOGY.md).
 
 > Product names appear only under conformance as evaluation proof — not UHBS requirements.

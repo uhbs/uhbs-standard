@@ -1,0 +1,206 @@
+[
+    {
+        "Id": "f80099cce008955a05bc22ea039bfe6eeca5b432836cec51e810d4d3c5aa1a9e",
+        "Created": "2026-09-27T22:20:43.547560131Z",
+        "Path": "/main",
+        "Args": [
+            "run"
+        ],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 1,
+            "Error": "",
+            "StartedAt": "2026-09-27T22:20:44.141834798Z",
+            "FinishedAt": "2026-09-27T22:20:44.529465506Z"
+        },
+        "Image": "sha256:4663259f7336af0895572db5ec697518fc5608846dd54870d0baaec8f70172d3",
+        "ResolvConfPath": "/var/lib/docker/containers/f80099cce008955a05bc22ea039bfe6eeca5b432836cec51e810d4d3c5aa1a9e/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/f80099cce008955a05bc22ea039bfe6eeca5b432836cec51e810d4d3c5aa1a9e/hostname",
+        "HostsPath": "/var/lib/docker/containers/f80099cce008955a05bc22ea039bfe6eeca5b432836cec51e810d4d3c5aa1a9e/hosts",
+        "LogPath": "/var/lib/docker/containers/f80099cce008955a05bc22ea039bfe6eeca5b432836cec51e810d4d3c5aa1a9e/f80099cce008955a05bc22ea039bfe6eeca5b432836cec51e810d4d3c5aa1a9e-json.log",
+        "Name": "/uhbs-target-beelzebub-memcache",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/beelzebub-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "f80099cce008955a05bc22ea039bfe6eeca5b432836cec51e810d4d3c5aa1a9e",
+                "LowerDir": "/var/lib/docker/overlay2/cb75ecdf4fa2e61f6f69509d470a3381eab15153ee2f7f0b09a9963ad35f0e3d-init/diff:/var/lib/docker/overlay2/ql86v43tfzea70j2lht4eq138/diff:/var/lib/docker/overlay2/jnx5lmiljr7kjr2r885zppt1f/diff",
+                "MergedDir": "/var/lib/docker/overlay2/cb75ecdf4fa2e61f6f69509d470a3381eab15153ee2f7f0b09a9963ad35f0e3d/merged",
+                "UpperDir": "/var/lib/docker/overlay2/cb75ecdf4fa2e61f6f69509d470a3381eab15153ee2f7f0b09a9963ad35f0e3d/diff",
+                "WorkDir": "/var/lib/docker/overlay2/cb75ecdf4fa2e61f6f69509d470a3381eab15153ee2f7f0b09a9963ad35f0e3d/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/beelzebub-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "f80099cce008",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": null,
+            "Image": "beelzebub:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": [
+                "/main",
+                "run"
+            ],
+            "Labels": {
+                "uhbs.unit": "beelzebub-memcache"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "",
+            "SandboxKey": "",
+            "Ports": {},
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "beelzebub-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "MacAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-beelzebub-memcache",
+                        "beelzebub-lab",
+                        "f80099cce008"
+                    ]
+                }
+            }
+        }
+    }
+]

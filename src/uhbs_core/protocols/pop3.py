@@ -30,14 +30,21 @@ class POP3Plugin(ProtocolPlugin):
         return [
             c
             for c in suite.checks
-            if "preauth" in c.id or "unknown" in c.id or "bare_lf" in c.id
+            if any(
+                key in c.id
+                for key in ("preauth", "unknown", "bare_lf")
+            )
         ]
 
     def probe_negotiation(
         self, host: str, port: int, target: TargetSpec, tps: TPS | None
     ) -> list[CheckResult]:
         suite = probe_pop3_rfc1939(host, port)
-        return [c for c in suite.checks if "greeting" in c.id or "capa" in c.id]
+        return [
+            c
+            for c in suite.checks
+            if any(key in c.id for key in ("greeting", "capa", "user_reply", "quit_ok"))
+        ]
 
     def probe_state(
         self, host: str, port: int, target: TargetSpec, tps: TPS | None

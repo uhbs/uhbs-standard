@@ -1,0 +1,34 @@
+{
+  "uhbs_version": "4.0.1",
+  "artifacts": [
+    {
+      "path": "REPORT.txt",
+      "sha256": "5df7364e3fb01256bb34bc49549f1247f1cd9eda8a583d66a1da52b328b5aaa9"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "5df7364e3fb01256bb34bc49549f1247f1cd9eda8a583d66a1da52b328b5aaa9"
+    },
+    {
+      "path": "report.json",
+      "sha256": "2edd88eb3be08c5de9ac388509c3eeabb0806cd92a404e193faf91c020d1cee8"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "c8f529523b7e8fdbb4ebf1fb15b535806d19f341be997e6bac05d3d2fbad267e"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "720df298f0bd6cf56123f73b449181698903994c4ff15f719476d694e6b3c1a9"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "2d60f7eb2cefd3772427e9040560514b22f20e2ec2188f79a70aac277940e429"
+    }
+  ],
+  "extra": {
+    "target": "trapster-ftp",
+    "uhqs": 51.78,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

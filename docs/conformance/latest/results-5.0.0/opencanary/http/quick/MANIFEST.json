@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "3080cd8ac66d83344daaa24c585e0e5fcb4e866c7c3822a5a9cd8c97f21c671a"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "89fdb4047b5f5187cb094dcc09561c8fd793cf85b2f483a4ad6b6cd46702b194"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "89fdb4047b5f5187cb094dcc09561c8fd793cf85b2f483a4ad6b6cd46702b194"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "f9e434e2f586c0f6ff16c5f32aca409ae9361d75e55edffef90b6b6bc4952d33"
+    },
+    {
+      "path": "report.json",
+      "sha256": "b8d35f10445224e2a65eb291dbf5176f151fd2621c96391dbe8dc172a9b68a9e"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "048e9d43f68273b4f4d7c622fd9d687cd688559a7e96a810ad8dc4976371cb75"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "e0b9d9be27e54ca7e6f19f6e89ec6e94ff0fd460f30cc1a8f3b1e07cac8e397c"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-http",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

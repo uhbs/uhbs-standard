@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "7b90b74a8ec2731477cedb818f0ba3ddc4c000bf7e9c76d7f942c3736022cd95"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "72e0f32de3a91282430c76d17118984a6ad23fa8fd49bb723acaa66e5464cb84"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "72e0f32de3a91282430c76d17118984a6ad23fa8fd49bb723acaa66e5464cb84"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "c4dd0904afb295b93faf463f394b7b65514c0d35d5bbd02bd16d7d276d2c83e1"
+    },
+    {
+      "path": "report.json",
+      "sha256": "10f3c13a1026cd794f27edb4c027fd001ab8af3662669a56d5508f08a723e692"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "41336b4eed19b0f27f4217a33d5ca4e24427707f193a2bf3320ff6efc327daa4"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "18ca483578e45ed1123aef3e6996e2475ea30fcb847209468f58105ed87ee019"
+    }
+  ],
+  "extra": {
+    "target": "modpot-http",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

@@ -11,7 +11,7 @@ import socket
 import struct
 from pathlib import Path
 
-from uhbs_core.models import CheckResult, TargetSpec
+from uhbs_core.models import CheckOutcome, CheckResult, TargetSpec
 from uhbs_core.netutil import tcp_transact
 from uhbs_core.protocols.base import ProtocolPlugin
 from uhbs_core.rfc_probes import _transact
@@ -205,14 +205,14 @@ def _rfcomm_channel_from_target(target: TargetSpec) -> int:
 
 
 def _soft_skip(check_id: str) -> CheckResult:
-    # Soft skip = probe path unavailable, not a protocol pass. Keep score=50
-    # for partial credit without claiming passed=True (grading integrity).
+    # Probe path unavailable — NOT_TESTED at zero credit (v5 skip-credit contract).
     return CheckResult(
         id=check_id,
         team="blue",
-        passed=False,
+        outcome=CheckOutcome.NOT_TESTED,
         detail=_SOFT_SKIP_DETAIL,
-        score=50.0,
+        score=0.0,
+        mandatory=False,
     )
 
 

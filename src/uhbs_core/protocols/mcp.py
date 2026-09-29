@@ -6,7 +6,7 @@ import json
 from typing import Any
 
 from uhbs_core._version import __version__
-from uhbs_core.models import CheckResult, TargetSpec
+from uhbs_core.models import CheckOutcome, CheckResult, TargetSpec
 from uhbs_core.protocols.base import ProtocolPlugin
 from uhbs_core.protocols.mcp_jsonrpc import (
     DEFAULT_TIMEOUT_S,
@@ -506,9 +506,13 @@ class MCPPlugin(ProtocolPlugin):
             CheckResult(
                 id="mcp.timing.iat_jitter",
                 team="red",
-                passed=True,
+                passed=jitter < max(2.0, 0.5 * med) if med else True,
                 detail=f"median={med:.3f}ms pstdev={jitter:.3f}ms tools/list RTT",
-                score=100.0,
+                score=(
+                    100.0
+                    if (jitter < max(2.0, 0.5 * med) if med else True)
+                    else 30.0
+                ),
             ),
         ]
 
@@ -570,22 +574,28 @@ class MCPPlugin(ProtocolPlugin):
                 if "SKIPPED_HIGH_RISK" in skip_reason
                 else "NEUTRAL_NO_SURFACE"
             )
+            # No safe interactive surface — outside scored payload scope (zero credit).
+            outcome = CheckOutcome.NOT_APPLICABLE
             return [
                 CheckResult(
                     id="mcp.payload.tool_echo",
                     team="red",
-                    passed=True,
+                    outcome=outcome,
                     detail=f"{status}: {skip_reason}",
-                    score=50.0,
+                    score=0.0,
                     evidence=[status],
+                    applicability_rationale=skip_reason,
+                    mandatory=False,
                 ),
                 CheckResult(
                     id="mcp.payload.prompt_injection",
                     team="red",
-                    passed=True,
+                    outcome=outcome,
                     detail=f"{status}: prompt-injection probe skipped — {skip_reason}",
-                    score=50.0,
+                    score=0.0,
                     evidence=[status],
+                    applicability_rationale=skip_reason,
+                    mandatory=False,
                 ),
             ]
 
@@ -593,7 +603,7 @@ class MCPPlugin(ProtocolPlugin):
         if args is None:
             reason = (
                 f"SKIPPED_UNSATISFIABLE_SCHEMA: cannot map string args for tool "
-                f"{tool.get('name')}. Module B payload capped."
+                f"{tool.get('name')}. Module B payload not tested."
             )
             ann[ANN_SURFACE] = "metadata_only"
             ann[ANN_REASON] = reason
@@ -601,10 +611,11 @@ class MCPPlugin(ProtocolPlugin):
                 CheckResult(
                     id="mcp.payload.tool_echo",
                     team="red",
-                    passed=True,
+                    outcome=CheckOutcome.NOT_TESTED,
                     detail=reason,
-                    score=50.0,
+                    score=0.0,
                     evidence=["SKIPPED_UNSATISFIABLE_SCHEMA"],
+                    mandatory=False,
                 )
             ]
 

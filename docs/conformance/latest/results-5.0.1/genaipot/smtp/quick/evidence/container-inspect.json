@@ -1,0 +1,214 @@
+[
+    {
+        "Id": "ee288b2fddb1262abfb40a6541ae7ad4695ab0878b62dcbea65861eade6329f1",
+        "Created": "2026-09-27T20:16:22.442088804Z",
+        "Path": "/app/start.sh",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 45589,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:16:22.640081845Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:627d7fde6d4a6f937fde3b3366fb55605a90cea6370e1f5beac9c39d8ecfeeac",
+        "ResolvConfPath": "/var/lib/docker/containers/ee288b2fddb1262abfb40a6541ae7ad4695ab0878b62dcbea65861eade6329f1/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/ee288b2fddb1262abfb40a6541ae7ad4695ab0878b62dcbea65861eade6329f1/hostname",
+        "HostsPath": "/var/lib/docker/containers/ee288b2fddb1262abfb40a6541ae7ad4695ab0878b62dcbea65861eade6329f1/hosts",
+        "LogPath": "/var/lib/docker/containers/ee288b2fddb1262abfb40a6541ae7ad4695ab0878b62dcbea65861eade6329f1/ee288b2fddb1262abfb40a6541ae7ad4695ab0878b62dcbea65861eade6329f1-json.log",
+        "Name": "/uhbs-target-genaipot-smtp",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/genaipot-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "ee288b2fddb1262abfb40a6541ae7ad4695ab0878b62dcbea65861eade6329f1",
+                "LowerDir": "/var/lib/docker/overlay2/680bb3f6c755640aff5c26d5a7b3c62f248e3fb6e198d7f0a779909c44ff4796-init/diff:/var/lib/docker/overlay2/8f5c734da08c0fad05f2f5d71a8553ea3041042ba319f960ba7a8416805ae5d8/diff:/var/lib/docker/overlay2/3457f9be1da77b849dcfeb028e0ac4e37f68b1f19ee8b552f8d292c2433a7573/diff:/var/lib/docker/overlay2/da8793309da7809305784eeefba2caed6e668e931f8a0264d14e35eecea0e26e/diff:/var/lib/docker/overlay2/57a349a90e11c1a4156d057cfa7c17fe7267a1d475d8a6349bbdb82a9b3ed75c/diff:/var/lib/docker/overlay2/3568c9057cc7f74ce6ee991001de7909ab2625c46b478e926d680feabc2c8e13/diff:/var/lib/docker/overlay2/d43e907667da9942ddf1dceb4f93d051f739944abb180550da3da59af186477a/diff:/var/lib/docker/overlay2/5a809aee2c347dafe0b300dc3813dc81801cf5f0c7fe2f64e0381bd1c7bde1dd/diff",
+                "MergedDir": "/var/lib/docker/overlay2/680bb3f6c755640aff5c26d5a7b3c62f248e3fb6e198d7f0a779909c44ff4796/merged",
+                "UpperDir": "/var/lib/docker/overlay2/680bb3f6c755640aff5c26d5a7b3c62f248e3fb6e198d7f0a779909c44ff4796/diff",
+                "WorkDir": "/var/lib/docker/overlay2/680bb3f6c755640aff5c26d5a7b3c62f248e3fb6e198d7f0a779909c44ff4796/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/genaipot-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "ee288b2fddb1",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "110/tcp": {},
+                "25/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568",
+                "PYTHON_VERSION=3.9.20",
+                "PYTHON_SHA256=6b281279efd85294d2d6993e173983a57464c0133956fbbb5536ec9646beaf0c"
+            ],
+            "Cmd": [
+                "/app/start.sh"
+            ],
+            "Image": "annls/genaipot:latest",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "uhbs.unit": "genaipot-smtp"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "1001c4c5790ca800373799552cff5825507370ccabee71a10a8ffdcec1de158d",
+            "SandboxKey": "/var/run/docker/netns/1001c4c5790c",
+            "Ports": {
+                "110/tcp": null,
+                "25/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "genaipot-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "67d65428acff122107341356d9a1877baac34fb306f3a73f1d6553ec99ca8532",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.3",
+                    "MacAddress": "0a:f3:d9:a3:38:b3",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-genaipot-smtp",
+                        "genaipot-lab",
+                        "ee288b2fddb1"
+                    ]
+                }
+            }
+        }
+    }
+]

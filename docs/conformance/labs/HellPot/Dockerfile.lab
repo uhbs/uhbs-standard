@@ -1,0 +1,20 @@
+# UHBS lab wrapper. Upstream Dockerfile (golang:1.23 + distroless) exists, but
+# lab needs Ubuntu runtime plus a bind/catchall config without a curl UA blacklist.
+# go.mod requires Go 1.23, so the binary is built with golang:1.23 then copied
+# onto ubuntu:latest.
+FROM golang:1.23 AS build
+WORKDIR /src
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+RUN CGO_ENABLED=0 go build -trimpath -ldflags "-s -w" -o /HellPot ./cmd/HellPot
+
+FROM ubuntu:latest
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates \
+    && rm -rf /var/lib/apt/lists/* \
+    && mkdir -p /telemetry
+COPY --from=build /HellPot /usr/local/bin/HellPot
+COPY docker_config.toml /config.toml
+EXPOSE 8080
+ENTRYPOINT ["/usr/local/bin/HellPot", "-c", "/config.toml"]

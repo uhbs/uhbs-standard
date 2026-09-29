@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "a75f48ab5d9d19b6bd8af2d7cf0206ac17c1480412ff65c4e90e5fde466856cd"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "19312ecc7cfd41ce4b663dcc356eef3c51d0fa104a3f57e94e1bdc43f2f2d52c"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "19312ecc7cfd41ce4b663dcc356eef3c51d0fa104a3f57e94e1bdc43f2f2d52c"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "0bebf603701fe6b93236f43804f3eb30f299a9592ef36f0e3c3b1acb763fc50c"
+    },
+    {
+      "path": "report.json",
+      "sha256": "0c7f046caf15227178403a2e7c29d9a09479dcfd32077f31f090276c1e737e5f"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "92320ad4eb172d03208f6837a1a30275b7dcfdc8eab86c385267cb21febbd643"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "1930b53103fb139ed3a90a650906653db1c8e229d55406bbc7e2f29f922dea64"
+    }
+  ],
+  "extra": {
+    "target": "qeeqbox-telnet",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

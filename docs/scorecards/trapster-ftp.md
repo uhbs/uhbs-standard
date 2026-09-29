@@ -1,82 +1,51 @@
-# Scorecard: trapster — ftp
+# Scorecard: trapster — ftp (results-5.0.1)
 
-**Status:** Informative · evaluation proof (not an endorsement)  
-**UHBS:** **4.2.2** · **Class:** Low-Interaction · **Protocol / surface:** `ftp`  
-**Target id (lab):** `trapster-ftp` · **Evaluation date:** 2026-07-27
+**Status:** Informative · evaluation proof  
+**UHBS:** **5.0.1** · **Class:** Low-Interaction · **Protocol:** `ftp`  
+**Target id:** `trapster-ftp` · **Evaluation date:** 2026-09-26  
+**Verdict:** INCOMPLETE / ungraded
 
-| Run | UHQS | Grade | δ_C | Proof artifacts |
-| --- | ---: | --- | --- | --- |
-| Quick | 43.37 | F | 0.5625 | See report hub quick artifacts |
-| **Full (authoritative)** | **51.78** | **D** | **0.81** | Verbatim SCORECARD below + `report.json` on the report hub |
-
-**Report hub:** [trapster / ftp](../conformance/reports/trapster/ftp/index.md) · [Tutorial](../conformance/reports/trapster/TUTORIAL.md) · [Methodology](../conformance/reports/trapster/METHODOLOGY.md)  
-**How to read UHQS:** [CTI / blue-team guide](../conformance/reports/READING-UHQS.md)
-
-## Proof: module scores (full run)
-
-These numbers are copied from the lab `SCORECARD.txt` produced by `uhbs-lab` — not hand-typed summaries.
-
-| Module | Score | Weight | Status | Notes |
-| --- | ---: | --- | --- | --- |
-| Module A: Protocol Fidelity | 60.0 | 0.30 | PARTIAL |  |
-| Module B: Behavioral Realism | 54.5 | 0.15 | PARTIAL |  |
-| Module C: Telemetry Quality | 55.0 | 0.25 | PARTIAL | no STIX objects found |
-| Module D: Safety & Containment (C) | 90.0 | GATE | PASSED | UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys) |
-| Module E: Scalability & Latency | 100.0 | 0.10 | PASSED | service alive after load (connect 0.2ms) |
-| Module F: Static Code Audit | 70.0 | 0.20 | PASSED | 1 predictable PRNG seeds: trapster/modules/http.py |
-| Safety Gate δ_C | 0.81 | GATE | — | Containment multiplier applied to UHQS |
-
-
-## How CTI / blue team should read this
-
-| Module | Score | Analyst reading |
+| Run | UHQS | Grade |
 | --- | ---: | --- |
-| A — Protocol Fidelity | 60.0 | Protocol speak / banner-handshake quality for keeping automated clients engaged. |
-| B — Behavioral Realism | 54.5 | Post-connect realism (auth/session). Low often means credential-only or reject-by-design. |
-| C — Telemetry Quality | 55.0 | Telemetry visible to the UHBS lab harness — not a claim about your SIEM pipeline. |
-| D — Safety & Containment (C) | 90.0 | Containment / Safety Gate. Below threshold collapses UHQS via δ_C. |
-| E — Scalability & Latency | 100.0 | Latency vs profile P95. Low can mean timeouts, tarpits, or slow handlers. |
-| F — Static Code Audit | 70.0 | Static audit of the graded source tree — hygiene signal, not a full CVE program. |
-| δ_C | 0.81 | Safety Gate multiplier applied to composite UHQS. |
+| Quick | ungraded | — |
+| **Full** | **ungraded** | **—** |
 
+**Hub:** [trapster / ftp](../conformance/latest/results-5.0.1/trapster/ftp/index.md) · [steps](../conformance/latest/results-5.0.1/trapster/ftp/EXECUTION-STEPS.md)
 
-- **CTI:** use module notes to judge what attacker activity you can actually observe (auth-only vs interactive vs tarpit).
-- **Blue team:** verify Safety Gate (Module D / δ_C) and wire real log shipping before Internet exposure.
-- **Do not** cite UHQS without the verbatim SCORECARD or `report.json` from the report hub.
+Archived 4.x 51.78 / D is **not** current.
 
 ## Verbatim full SCORECARD
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.0.1
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : trapster-ftp
 System Profile Class  : Low-Interaction
+Scoring Model         : uhqs-v5.0-critical-gate-diagnostic
+Assessment Status     : INCOMPLETE
+Critical Controls     : INCOMPLETE
 Protocols             : ftp
-Evaluation Date       : 2026-07-27
+Evaluation Date       : 2026-09-26
 Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
 Environment           : Isolated Sandbox
+MCP Surface Depth     : unknown
 ------------------------------------------------------------------------------------
 EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
 ------------------------------------------------------------------------------------
 Module A: Protocol Fidelity         :  60.0/100       0.30     PARTIAL (220 Microsoft FTP Service
 500 Unknown Command
 )
-Module B: Behavioral Realism        :  54.5/100       0.15     PARTIAL (PASS step failed: 530 User cannot log in.
+Module B: Behavioral Realism        :  37.0/100       0.15     PARTIAL (PASS step failed: 530 User cannot log in.
 )
-Module C: Telemetry Quality         :  55.0/100       0.25     PARTIAL (no STIX objects found)
-Module D: Safety & Containment (C)  :  90.0/100       GATE     PASSED (UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys))
-Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service alive after load (connect 0.2ms))
+Module C: Telemetry Assurance       :   0.0/100       0.25     INCOMPLETE (UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4)
+Module D: Safety & Containment (C)  :   0.0/100       GATE     INCOMPLETE (Module D v5: non-SSH targets need gateway/packet evidence for critical egress and runtime inspection — attestation alone never clears the gate.)
+Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service alive after load (connect 0.3ms))
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (1 predictable PRNG seeds: trapster/modules/http.py)
 ------------------------------------------------------------------------------------
-SAFETY GATE MULTIPLIER                : δ_C = 0.81 (C = 90.0 < 95 — exponential penalty)
-FINAL COMPOSITE SCORE (UHQS 4.0.1)      : 51.78 / 100
-OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
+SAFETY GATE / CRITICAL CONTROLS        : Ungraded — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (Ungraded — no composite UHQS)
+OVERALL EVALUATION GRADE              : — (no letter grade)
+scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
 ====================================================================================
 ```
-
-## Replication
-
-Re-run commands are in the [tutorial](../conformance/reports/trapster/TUTORIAL.md). Environment and limitations are in the [methodology](../conformance/reports/trapster/METHODOLOGY.md).
-
-> Product names appear only under conformance as evaluation proof — not UHBS requirements.

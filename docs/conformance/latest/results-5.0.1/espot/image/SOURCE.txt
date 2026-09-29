@@ -1,0 +1,5 @@
+source=.local/labs/espot/Dockerfile
+image=espot:uhbs-lab
+digest=sha256:353e164df44fef98a94ebd3da59b01bc0b576e757c1b425d954b871f9422b955
+dockerfile=docs/conformance/latest/results-5.0.1/espot/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/espot/Dockerfile.pin

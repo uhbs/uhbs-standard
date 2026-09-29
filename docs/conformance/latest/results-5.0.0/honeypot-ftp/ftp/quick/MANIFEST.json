@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "ce19ae82166aa45716ef3210b4ef1bdeed5a423c500cc91cd47b8e20ec31690e"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "8f058a88f5b4156572b01dca22060fd1003c44edeb3252b66b57c14b49a16fd9"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "8f058a88f5b4156572b01dca22060fd1003c44edeb3252b66b57c14b49a16fd9"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "8238d9d9ee26950c8b18b435cd344be18755fe3b6fa3247068dc4145d7f60310"
+    },
+    {
+      "path": "report.json",
+      "sha256": "2587a54ca0ba74e0a57e58e5be313243f3bc52eb3af77e6c6f304004743373e2"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "0cff16e7e7ad280585ab7aaa72904b4ab31c7648999056cb74a311dc1092dbbc"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "6fd1ec05c6444b3b476bf8216a530720a947304fbf6f3c4846f918073ea25949"
+    }
+  ],
+  "extra": {
+    "target": "honeypot-ftp-ftp",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

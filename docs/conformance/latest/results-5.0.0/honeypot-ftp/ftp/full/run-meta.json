@@ -1,0 +1,84 @@
+{
+  "uhbs_version": "5.0.1",
+  "run_mode": "full",
+  "evaluated_at": "2026-09-26T14:41:51Z",
+  "proof_label": "honeypot-ftp (FTP :21)",
+  "target": {
+    "repository": "https://github.com/alexbredo/honeypot-ftp.git",
+    "git_branch": "master",
+    "git_commit": "c7b7cbed4c52d3d84b62676dd1a359c6d9da2696",
+    "class": "Low-Interaction",
+    "protocol": "ftp",
+    "host": "honeypot-ftp-lab",
+    "port": 21,
+    "container_image": "honeypot-ftp:uhbs-lab",
+    "container_image_id": "sha256:7ef087855d43efbabddee32c56b5ff87db7f29702a33c58af123758571e1a7ff",
+    "base_image": "ubuntu:latest",
+    "base_image_reason": "ubuntu-wrapper: no upstream Dockerfile; Twisted FTP lab entry ftp_lab.py plus base/handler stubs.",
+    "container_runtime_strategy": "ubuntu-wrapper"
+  },
+  "grader": {
+    "package_version": "5.0.1",
+    "docker_image": "uhbs:5.0.1-full",
+    "docker_image_id": "sha256:320fb38dcf3ebf69befb2248b75ed32c63dafe6b83f959746209d337c3e7ca9b",
+    "inventory": "docs/conformance/labs/honeypot-ftp/inventory.yaml",
+    "tps": "docs/conformance/labs/honeypot-ftp/low_interaction_ftp_full.yaml",
+    "target_id": "honeypot-ftp-ftp"
+  },
+  "flags": {
+    "UHBS_QUICK": false,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": false,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "measured_vs_attested": {
+      "airgap": "attested",
+      "egress_gateway_log": "attested-empty-log",
+      "telemetry": "measured"
+    }
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "grade_long": null,
+    "delta_c": 0.0,
+    "module_scores": {
+      "A": 86.43,
+      "B": 37.0,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 100.0,
+      "F": 56.64
+    },
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  },
+  "limitations": [
+    "Published UHBS 5.0.1 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1); Docker Desktop lab, not a physical air-gap.",
+    "Product name is evaluation proof only \u2014 not a UHBS requirement or endorsement.",
+    "Do not transplant archived 4.x letter grades.",
+    "ubuntu-wrapper: no upstream Dockerfile; Twisted FTP lab entry ftp_lab.py plus base/handler stubs."
+  ],
+  "docs_reviewed": [
+    "README.md",
+    "ftp.py"
+  ]
+}

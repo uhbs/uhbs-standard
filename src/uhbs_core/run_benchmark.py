@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""UHBS v4.6.1 — Universal Honeypot Benchmarking Standard orchestrator (uhbs-core).
+"""UHBS v5.0.1 — Universal Honeypot Benchmarking Standard orchestrator (uhbs-core).
 
 Phases (§6):
   1) profile  — load TPS
   2) static   — Module F (+ optional capability signals)
   3) sandbox  — air-gap / egress preflight
   4) dynamic  — Modules A–E via protocol plugins
-  5) score    — UHQS 4.6.1 with profile-adaptive weights + δ_C gate
+  5) score    — UHQS 5.0.1 with profile-adaptive weights + δ_C gate
 
 Examples:
   uhbs lab --tps posix_shell_ssh --target 127.0.0.1 --port 2222 \\
@@ -108,6 +108,29 @@ def _want_module_f(modules: Sequence[str]) -> bool:
             "behavior",
         }
     )
+
+
+# Comparability guard: a composite renormalized over fewer measured modules
+# than this is published but stamped assessment_status=INCOMPLETE (partial
+# measurement — not comparable across units). See uhqs_math docstring:
+# unmeasured modules are excluded, never scored as 0.
+MIN_MEASURED_COMPOSITE = 4
+
+
+def composite_measured_flags(mods: Sequence[ModuleResult]) -> dict[str, bool]:
+    """Which composite modules (A/B/C/E/F) were actually measured.
+
+    Thin adapter over ``uhqs_math.measured_modules_from_results`` so the
+    harness (and its tests) share one derivation rule.
+    """
+    from uhbs_core.uhqs_math import measured_modules_from_results
+
+    payload = {
+        m.module: {"status": m.status, "complete": m.complete}
+        for m in mods
+        if m.module in {"A", "B", "C", "E", "F"}
+    }
+    return measured_modules_from_results(payload)
 
 
 def _run_dynamic(
@@ -309,15 +332,45 @@ def main(argv: Sequence[str] | None = None) -> int:
         out_dir=args.out,
         skip_sast_tools=args.skip_sast_tools,
     )
-    d_measured = any(
-        m.module == "D" and m.status != "SKIPPED" for m in t_mods
+    d_mod = next((m for m in t_mods if m.module == "D"), None)
+    d_measured = bool(
+        d_mod
+        and d_mod.status not in {"SKIPPED", "INCOMPLETE"}
+        and d_mod.critical_control_verdict
+        != "INCOMPLETE"
     )
+    incomplete = any(
+        (m.module in {"A", "B", "C", "D", "E", "F"} and not m.complete)
+        or m.status == "INCOMPLETE"
+        for m in t_mods
+    )
+    from uhbs_core.uhqs_math import AssessmentStatus, CriticalControlVerdict
+
+    verdict = CriticalControlVerdict.INCOMPLETE
+    if d_mod and d_mod.critical_control_verdict:
+        try:
+            verdict = CriticalControlVerdict(d_mod.critical_control_verdict)
+        except ValueError:
+            verdict = CriticalControlVerdict.INCOMPLETE
+    elif d_measured:
+        verdict = CriticalControlVerdict.GATE_PASSED
+
+    t_measured = composite_measured_flags(t_mods)
+    if sum(t_measured.values()) < MIN_MEASURED_COMPOSITE:
+        # Partial measurement — publish, but never present it as comparable.
+        incomplete = True
+
     t_uhqs = compute_uhqs(
         t_scores,
         target=target.label,
         profile_class=target.profile_class,
         phase="+".join(phases_n),
         containment_measured=d_measured,
+        assessment_status=(
+            AssessmentStatus.INCOMPLETE if incomplete else AssessmentStatus.COMPLETE
+        ),
+        critical_control_verdict=verdict,
+        measured_modules=t_measured,
     )
 
     extras = {
@@ -351,17 +404,45 @@ def main(argv: Sequence[str] | None = None) -> int:
             out_dir=args.out / "baseline",
             skip_sast_tools=args.skip_sast_tools,
         )
-        b_d = any(m.module == "D" and m.status != "SKIPPED" for m in b_mods)
+        b_d_mod = next((m for m in b_mods if m.module == "D"), None)
+        b_measured = bool(
+            b_d_mod
+            and b_d_mod.status not in {"SKIPPED", "INCOMPLETE"}
+            and b_d_mod.critical_control_verdict != "INCOMPLETE"
+        )
+        b_incomplete = any(
+            (m.module in {"A", "B", "C", "D", "E", "F"} and not m.complete)
+            or m.status == "INCOMPLETE"
+            for m in b_mods
+        )
+        b_verdict = CriticalControlVerdict.INCOMPLETE
+        if b_d_mod and b_d_mod.critical_control_verdict:
+            try:
+                b_verdict = CriticalControlVerdict(b_d_mod.critical_control_verdict)
+            except ValueError:
+                b_verdict = CriticalControlVerdict.INCOMPLETE
+        elif b_measured:
+            b_verdict = CriticalControlVerdict.GATE_PASSED
         b_uhqs = compute_uhqs(
             b_scores,
             target=baseline.label,
             profile_class=baseline.profile_class,
             phase="+".join(phases_n),
-            containment_measured=b_d,
+            containment_measured=b_measured,
+            critical_control_verdict=b_verdict,
+            assessment_status=(
+                AssessmentStatus.INCOMPLETE
+                if b_incomplete
+                else AssessmentStatus.COMPLETE
+            ),
+            measured_modules=composite_measured_flags(b_mods),
         )
         extras["baseline_scores"] = b_scores
         extras["baseline_uhqs"] = b_uhqs.to_dict()
-        extras["delta_uhqs"] = round(t_uhqs.uhqs - b_uhqs.uhqs, 2)
+        if t_uhqs.uhqs is not None and b_uhqs.uhqs is not None:
+            extras["delta_uhqs"] = round(t_uhqs.uhqs - b_uhqs.uhqs, 2)
+        else:
+            extras["delta_uhqs"] = None
         extras["baseline_modules"] = [m.to_dict() for m in b_mods]
 
     path = write_report(
@@ -372,6 +453,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         t_mods,
         extras=extras,
         evaluation_type=eval_type,
+        assurance_level="REPRODUCIBLE_LAB",
     )
     print(
         render_card(
@@ -389,9 +471,30 @@ def main(argv: Sequence[str] | None = None) -> int:
             f"Δ={extras['delta_uhqs']}"
         )
     echo_ok(f"Wrote {path}")
+    from uhbs_core.evidence_pack import build_evidence_pack, write_evidence_pack
+
+    pack = build_evidence_pack(
+        target=target,
+        uhqs=t_uhqs,
+        modules=[m for m in t_mods if m.module in {"A", "B", "C", "D", "E", "F"}],
+        out_dir=args.out,
+        profile_ref=str(tps.path) if getattr(tps, "path", None) else None,
+        protocols=target.protocol_list(),
+        assurance_level="REPRODUCIBLE_LAB",
+    )
+    ep = write_evidence_pack(args.out, pack=pack)
+    echo_ok(f"Wrote {ep}")
     manifest = write_manifest(
         args.out,
-        extra={"target": target.label, "uhqs": t_uhqs.uhqs, "grade": t_uhqs.grade},
+        extra={
+            "target": target.label,
+            "uhqs": t_uhqs.uhqs,
+            "grade": t_uhqs.grade,
+            "scoring_model_id": t_uhqs.scoring_model_id,
+            "assessment_status": t_uhqs.assessment_status,
+            "evidence_pack": "evidence-pack.json",
+            "evidence_manifest_digest": pack.get("manifest", {}).get("digest"),
+        },
     )
     echo_ok(f"Wrote {manifest}")
     return 0

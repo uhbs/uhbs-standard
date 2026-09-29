@@ -1,0 +1,52 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "945a4013dc0464f798fecfb3794711e6a7d9d5ec9dc0f4e2a41167f134cf811d"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "e16e6ca1dc76b92630a5d2fc759b3f1e60a263f2f89d9f9e1bdbe54b184bf84f"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "e16e6ca1dc76b92630a5d2fc759b3f1e60a263f2f89d9f9e1bdbe54b184bf84f"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "67a4849db3cfddb547c3313d2ba171f5609ff4d41a52f3cc0af35445b477b32a"
+    },
+    {
+      "path": "proof/full-run.cast",
+      "sha256": "2c6e77b2bb54dbf9016cc3f31d0e6f5740ec0fd7c2749c2354772a6820ba173d"
+    },
+    {
+      "path": "report.json",
+      "sha256": "05c421b361340b06868b73b62420ff0d75b0678aed93950a3e299e01dedeba10"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "76b581adfb3722292b25d0a573a722d3a366f243cb4596a03c52b020991855cb"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "41e3cc67a4b18b04a03ca6837484d4103ede1e28659704400be1269b7428ac97"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "328007b4b1d8916583f00e44c03f3aeb60027bc50d019772077a2ba7fb728bab"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "67c7ec22b247f45fe35b83bd62faf6c4de62a82915bc910dacac3ce0bf3255c3"
+    }
+  ],
+  "extra": {
+    "target": "heralding-smtp",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

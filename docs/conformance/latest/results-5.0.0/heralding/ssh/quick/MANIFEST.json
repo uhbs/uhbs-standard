@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "277d7e53403a1c3f757f1090c683c0ab1681b34b2af5a6a312500625dc676567"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "90125dd53e855072c81253156e73a08db8c8749d1f2e6b6ff5f4808d166495fe"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "90125dd53e855072c81253156e73a08db8c8749d1f2e6b6ff5f4808d166495fe"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "cde05bffec6729c0e951b48e0e0b8b0bbaf616bc64de7e41839121491d07f899"
+    },
+    {
+      "path": "report.json",
+      "sha256": "5989f9227a66d679f1b34ad3c33e525dbac836c50ba6a4a12f98438e599cd71f"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "dafa317633687dbf796226b9b038c55b04d0f9c2fdb7652b3f62de863fbbcbca"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "c10f38bda0b3740ed5f485f5bb6e3a4d3d4465260b2106f0243299a6a150952b"
+    }
+  ],
+  "extra": {
+    "target": "heralding-ssh",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "ab43401b5c78428539164fadd3dad85ef339577c90963bb8f54fa21cd16444e1"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "b44041c1c33ceae9d81089aefd8b295c3e5b76edf403cbaf0fc8d7969e449ccb"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "b44041c1c33ceae9d81089aefd8b295c3e5b76edf403cbaf0fc8d7969e449ccb"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "2e484aa30476fa50aa3058798bed85bb8ce536b598b81461ad2563dcf9a0cce0"
+    },
+    {
+      "path": "report.json",
+      "sha256": "3a6d9331e29901ba26774f0e3178fcfee7b19559c53e00f2b3a7380e5a6a927c"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "0eb22cbd8f974b23b07001f74bc06aca6ca314efe045b12e005162f1833a6776"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "4897ffdd84be9c0dc8cadb52716bd4146ab48aa44ba8088c9a94970671f2c459"
+    }
+  ],
+  "extra": {
+    "target": "elastichoney-http",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

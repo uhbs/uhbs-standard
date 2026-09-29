@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `Log4Pot-http`
+# Image name at grade time: log4pot:uhbs-lab
+FROM sha256:9bb74bb48640a29a35d8170e05f447befc37f2ab03b1491a1c6d60abdbc4cd71

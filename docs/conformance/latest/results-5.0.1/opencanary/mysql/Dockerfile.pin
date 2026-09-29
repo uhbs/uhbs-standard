@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `opencanary-mysql`
+# Image name at grade time: thinkst/opencanary:latest
+FROM sha256:c49e213d54b63b7a72975ed962c00bb93dea2d956081e15ac16f71dc6834b7a5

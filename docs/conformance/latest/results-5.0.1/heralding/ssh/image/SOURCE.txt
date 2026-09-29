@@ -1,0 +1,5 @@
+source=docs/conformance/labs/heralding/Dockerfile.lab
+image=heralding:uhbs-lab
+digest=sha256:3acb74f08830ef00aefd5c19bc94697f41317827928c14ac14b09d9c018a37f4
+dockerfile=docs/conformance/latest/results-5.0.1/heralding/ssh/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/heralding/ssh/Dockerfile.pin

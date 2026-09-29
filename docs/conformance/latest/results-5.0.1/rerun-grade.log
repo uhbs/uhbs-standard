@@ -1,0 +1,238 @@
+=== conpot-modbus
++ docker network create uhbs-lab
+Error response from daemon: network with name uhbs-lab already exists
++ docker rm -f uhbs-target-conpot-modbus
++ docker run -d --name uhbs-target-conpot-modbus --label uhbs.unit=conpot-modbus --network uhbs-lab --network-alias conpot-lab -v /Users/mz/Projects/uhbs-standard/.local/labs/conpot-telemetry:/telemetry:rw conpot:uhbs-lab
+ad218c9b031bd9dcc5fbdd8fc17db1f72bc88e101f523d99f61d36aaa6fde2ed
+site resolved: conpot (alias conpot-lab)
++ docker run --rm --network uhbs-lab -v /Users/mz/Projects/uhbs-standard:/work -w /work --entrypoint python3 uhbs:5.0.1 scripts/preflight_unit.py --inventory /work/docs/conformance/labs/conpot/inventory.yaml --site conpot --json --timeout 3.0 --tps /work/docs/conformance/labs/conpot/ics_modbus_full.yaml
+preflight attempt 1: modbus:port_closed
++ docker run --rm --network uhbs-lab -v /Users/mz/Projects/uhbs-standard:/work -w /work --entrypoint python3 uhbs:5.0.1 scripts/preflight_unit.py --inventory /work/docs/conformance/labs/conpot/inventory.yaml --site conpot --json --timeout 3.0 --tps /work/docs/conformance/labs/conpot/ics_modbus_full.yaml
+preflight PASS: [{"protocol": "modbus", "host": "conpot-lab", "port": 5020, "reachable": true, "class": "reachable", "detail": "tcp connect ok"}]
+=== grading conpot-modbus [quick] -> docs/conformance/latest/results-5.0.1/conpot/quick
+graded ok; log: docs/conformance/latest/results-5.0.1/conpot/quick/uhbs-run.log
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-start --unit-id conpot-modbus --mode quick --uhbs-version 5.0.1 --grader-image uhbs:5.0.1 --target-image conpot:uhbs-lab --telemetry-mode mounted --airgap-attested
+{"ok": true, "run_id": "4d318b415a6641cba03e3f567b831639", "unit_id": "conpot-modbus", "run_mode": "quick", "started_at": "2026-09-28T09:47:03Z"}
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-finish --unit-id conpot-modbus --mode quick --out-dir /Users/mz/Projects/uhbs-standard/docs/conformance/latest/results-5.0.1/conpot/quick
+{"ok": true, "run_id": "4d318b415a6641cba03e3f567b831639", "unit_id": "conpot-modbus", "run_mode": "quick", "run_status": "succeeded", "artifacts": [{"artifact_id": "194c21e4a28348558804d18b32eeecce", "type": "readme", "exists": true}, {"artifact_id": "a1e820dc60a1416eb7b2649d1ed10431", "type": "scorecard", "exists": true}, {"artifact_id": "4a69b2e76e554df980ca88c7a6f54539", "type": "report_txt", "exists": true}, {"artifact_id": "2774587e737a43759fd0b9754f69f217", "type": "report_json", "exists": true}, {"artifact_id": "3c226751640c4defbb6c93e3ce124fee", "type": "manifest", "exists": true}, {"artifact_id": "320b50e10bd44aecb834d6956e54c4df", "type": "run_meta", "exists": true}, {"artifact_id": "4c4a0961e1e64051b3fb33922ff5b22e", "type": "run_log", "exists": true}]}
+=== grading conpot-modbus [full] -> docs/conformance/latest/results-5.0.1/conpot/full
+graded ok; log: docs/conformance/latest/results-5.0.1/conpot/full/uhbs-run.log
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-start --unit-id conpot-modbus --mode full --uhbs-version 5.0.1 --grader-image uhbs:5.0.1-full --target-image conpot:uhbs-lab --telemetry-mode mounted --airgap-attested
+{"ok": true, "run_id": "356d67ad044744eeae37f358dc7118e0", "unit_id": "conpot-modbus", "run_mode": "full", "started_at": "2026-09-28T09:47:36Z"}
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-finish --unit-id conpot-modbus --mode full --out-dir /Users/mz/Projects/uhbs-standard/docs/conformance/latest/results-5.0.1/conpot/full --cast-path /Users/mz/Projects/uhbs-standard/docs/conformance/latest/results-5.0.1/conpot/full/proof/full-run.cast
+{"ok": true, "run_id": "356d67ad044744eeae37f358dc7118e0", "unit_id": "conpot-modbus", "run_mode": "full", "run_status": "succeeded", "artifacts": [{"artifact_id": "0149b5c69e2241299c143cbfa7fbb51f", "type": "readme", "exists": true}, {"artifact_id": "939f09cbcde84b6b80656f500397fdd9", "type": "scorecard", "exists": true}, {"artifact_id": "e2e42d8456004272970572b2e14bc8aa", "type": "report_txt", "exists": true}, {"artifact_id": "61edede035ab4d819d0ae33d4aa18958", "type": "report_json", "exists": true}, {"artifact_id": "5733b2a954fd429f98bdd7677f7b5765", "type": "manifest", "exists": true}, {"artifact_id": "4ab1c834c2ae492c80c06cfcad60ce9c", "type": "run_meta", "exists": true}, {"artifact_id": "d956ff5dfa924572837f3db6ba41ce1d", "type": "run_log", "exists": true}, {"artifact_id": "bff48f25e1944814bc6756ecd758faf6", "type": "cast", "exists": true}]}
++ docker rm -f uhbs-target-conpot-modbus
+uhbs-target-conpot-modbus
+validate_unit: exit 1
+FAIL conpot-modbus
+- upstream_commit is not recorded on the unit
+- quick: hash mismatch for uhbs-run.log: 4629387da9c9488b672f40025278381a209dd7be3606dba119ef4c0b1df2ff34 != 373b739e9bc11365365e7b1ca4c2b0707a7fba804bcd5c85e015907b93e42fa4
+- full: hash mismatch for proof/full-run.cast: 5d2a25ecef475f0e16560cac4997e795856afb1f315ea51339652806262bd05f != 64c6e77689494ff8eaa08951801cc4df2b804862ecf26cf4e697a604408a099a
+- full: hash mismatch for uhbs-run.log: d04e9220afb6ee50b30784afd2bd2ebde5b42fa63ebda936dd467d3db8b2bcb3 != 4bb710d396533573894b053aa3f6cd32425d182aa21e7084f8b1aee2968476c7
+- full: Module C incomplete (complete=false) — fix telemetry sink wiring / inject before publishing a full grade
+- full: Module C empty/missing telemetry sink ('0 malformed / 0 records')
+- full run_executions.base_image is not recorded
+- full run_executions.container_runtime_strategy is not recorded
+
+
+=== conpot-modbus summary
+  quick: UHQS=38.65 grade=F (Fail)
+  full: UHQS=52.65 grade=D (Needs Remediation)
+exit=0
+=== echidra-ssh
++ docker network create uhbs-lab
+Error response from daemon: network with name uhbs-lab already exists
++ docker rm -f uhbs-target-echidra-ssh
++ docker run -d --name uhbs-target-echidra-ssh --label uhbs.unit=echidra-ssh --network uhbs-lab --network-alias echidra-lab -v /Users/mz/Projects/uhbs-standard/.local/labs/echidra-telemetry:/telemetry:rw echidra:uhbs-lab
+e42df746046b55908035e163ee123f798fbbd7b535cd9af6c0ad541a27e6a609
+site resolved: echidra (alias echidra-lab)
++ docker run --rm --network uhbs-lab -v /Users/mz/Projects/uhbs-standard:/work -w /work --entrypoint python3 uhbs:5.0.1 scripts/preflight_unit.py --inventory /work/docs/conformance/labs/echidra/inventory.yaml --site echidra --json --timeout 3.0 --tps /work/docs/conformance/labs/echidra/low_interaction_ssh_full.yaml
+preflight attempt 1: ssh:port_closed
++ docker run --rm --network uhbs-lab -v /Users/mz/Projects/uhbs-standard:/work -w /work --entrypoint python3 uhbs:5.0.1 scripts/preflight_unit.py --inventory /work/docs/conformance/labs/echidra/inventory.yaml --site echidra --json --timeout 3.0 --tps /work/docs/conformance/labs/echidra/low_interaction_ssh_full.yaml
+preflight PASS: [{"protocol": "ssh", "host": "echidra-lab", "port": 2222, "reachable": true, "class": "reachable", "detail": "tcp connect ok"}]
+=== grading echidra-ssh [quick] -> docs/conformance/latest/results-5.0.1/echidra/quick
+graded ok; log: docs/conformance/latest/results-5.0.1/echidra/quick/uhbs-run.log
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-start --unit-id echidra-ssh --mode quick --uhbs-version 5.0.1 --grader-image uhbs:5.0.1 --target-image echidra:uhbs-lab --telemetry-mode mounted --airgap-attested
+{"ok": true, "run_id": "743e6ffdd4734e188c10313469219ee7", "unit_id": "echidra-ssh", "run_mode": "quick", "started_at": "2026-09-28T09:48:09Z"}
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-finish --unit-id echidra-ssh --mode quick --out-dir /Users/mz/Projects/uhbs-standard/docs/conformance/latest/results-5.0.1/echidra/quick
+{"ok": true, "run_id": "743e6ffdd4734e188c10313469219ee7", "unit_id": "echidra-ssh", "run_mode": "quick", "run_status": "succeeded", "artifacts": [{"artifact_id": "dde658916a2345a292533128ebb822fd", "type": "readme", "exists": true}, {"artifact_id": "2b1e4e83b37a4c718f3810f8b5269de2", "type": "scorecard", "exists": true}, {"artifact_id": "add9c0e2ab5e4fc78f4c4b985d2191d2", "type": "report_txt", "exists": true}, {"artifact_id": "f86e78412a92435dad9f469b6fb5cb96", "type": "report_json", "exists": true}, {"artifact_id": "6382d200fb3345bca13db990c3410c9f", "type": "manifest", "exists": true}, {"artifact_id": "f469316784724350845228e71931e516", "type": "run_meta", "exists": true}, {"artifact_id": "d03ba96f367749b28cae827bb4aa72bb", "type": "run_log", "exists": true}]}
+=== grading echidra-ssh [full] -> docs/conformance/latest/results-5.0.1/echidra/full
+graded ok; log: docs/conformance/latest/results-5.0.1/echidra/full/uhbs-run.log
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-start --unit-id echidra-ssh --mode full --uhbs-version 5.0.1 --grader-image uhbs:5.0.1-full --target-image echidra:uhbs-lab --telemetry-mode mounted --airgap-attested
+{"ok": true, "run_id": "3b291d57f78749e2b936a96e7bc2c7ad", "unit_id": "echidra-ssh", "run_mode": "full", "started_at": "2026-09-28T09:48:46Z"}
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-finish --unit-id echidra-ssh --mode full --out-dir /Users/mz/Projects/uhbs-standard/docs/conformance/latest/results-5.0.1/echidra/full --cast-path /Users/mz/Projects/uhbs-standard/docs/conformance/latest/results-5.0.1/echidra/full/proof/full-run.cast
+{"ok": true, "run_id": "3b291d57f78749e2b936a96e7bc2c7ad", "unit_id": "echidra-ssh", "run_mode": "full", "run_status": "succeeded", "artifacts": [{"artifact_id": "2857d18a79b74eb08b51084284532b79", "type": "readme", "exists": true}, {"artifact_id": "a75d267c56b3491bbd8a3f3602d39e63", "type": "scorecard", "exists": true}, {"artifact_id": "66fd2ec754c64e19a8b86347354c2e80", "type": "report_txt", "exists": true}, {"artifact_id": "2187d15263bf46ea84d73d27e458a4b6", "type": "report_json", "exists": true}, {"artifact_id": "f5fb754f1ad04b83aa70c8e8b145599a", "type": "manifest", "exists": true}, {"artifact_id": "1a68db882df847e8b1c128baab08011c", "type": "run_meta", "exists": true}, {"artifact_id": "64f7c6690b6444c1b109909b5c92ddb9", "type": "run_log", "exists": true}, {"artifact_id": "1e9221612f9049a585f3150fe9475b61", "type": "cast", "exists": true}]}
++ docker rm -f uhbs-target-echidra-ssh
+uhbs-target-echidra-ssh
+validate_unit: exit 1
+FAIL echidra-ssh
+- upstream_commit is not recorded on the unit
+- quick: hash mismatch for uhbs-run.log: e4d3f59c06390a33b399bd902c4e014763619d4fb683116f96038fa4fcd94d38 != 0ba4b54bd257779dd3a2412ab004df794de1a0e55ea2bee8f388f3032c71b2e8
+- full: hash mismatch for proof/full-run.cast: b87f4a083e300a4af12dafcecd2c608190d8a903b29183d21bdbb72dbd1386ed != 5e398b151fd9e96c0922cd4e654cdcad2ac8f29b4199a4975bfac176500a9090
+- full: hash mismatch for uhbs-run.log: dc3f7c7c2b038562af75f6813093c92cdef551ad7f0194fe9fdc9e8231cdda3e != 51135f246cc67443a05ecbf98df2ed98d615bc13a1733feb169b198a3564c1bb
+- full run_executions.base_image is not recorded
+- full run_executions.container_runtime_strategy is not recorded
+
+
+=== echidra-ssh summary
+  quick: UHQS=24.09 grade=F (Fail)
+  full: UHQS=38.09 grade=F (Fail)
+exit=0
+=== endlessh-ssh_tarpit
++ docker network create uhbs-lab
+Error response from daemon: network with name uhbs-lab already exists
++ docker rm -f uhbs-target-endlessh-ssh_tarpit
++ docker run -d --name uhbs-target-endlessh-ssh_tarpit --label uhbs.unit=endlessh-ssh_tarpit --network uhbs-lab --network-alias endlessh-lab -v /Users/mz/Projects/uhbs-standard/.local/labs/endlessh-telemetry:/telemetry:rw endlessh:uhbs-lab
+fb401a8285e2d29ea79f1b1a51fd4ed0a1e39a38c08ddfffd1ed8043033e47d8
+site resolved: endlessh (alias endlessh-lab)
++ docker run --rm --network uhbs-lab -v /Users/mz/Projects/uhbs-standard:/work -w /work --entrypoint python3 uhbs:5.0.1 scripts/preflight_unit.py --inventory /work/docs/conformance/labs/endlessh/inventory.yaml --site endlessh --json --timeout 3.0 --tps /work/docs/conformance/labs/endlessh/low_interaction_full.yaml
+preflight PASS: [{"protocol": "ssh_tarpit", "host": "endlessh-lab", "port": 2222, "reachable": true, "class": "reachable", "detail": "tcp connect ok"}]
+=== grading endlessh-ssh_tarpit [quick] -> docs/conformance/latest/results-5.0.1/endlessh/quick
+graded ok; log: docs/conformance/latest/results-5.0.1/endlessh/quick/uhbs-run.log
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-start --unit-id endlessh-ssh_tarpit --mode quick --uhbs-version 5.0.1 --grader-image uhbs:5.0.1 --target-image endlessh:uhbs-lab --telemetry-mode mounted --airgap-attested
+{"ok": true, "run_id": "240ac4acfcec422d80e785cd6c8bdcdb", "unit_id": "endlessh-ssh_tarpit", "run_mode": "quick", "started_at": "2026-09-28T09:48:57Z"}
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-finish --unit-id endlessh-ssh_tarpit --mode quick --out-dir /Users/mz/Projects/uhbs-standard/docs/conformance/latest/results-5.0.1/endlessh/quick
+{"ok": true, "run_id": "240ac4acfcec422d80e785cd6c8bdcdb", "unit_id": "endlessh-ssh_tarpit", "run_mode": "quick", "run_status": "succeeded", "artifacts": [{"artifact_id": "2e8f8fe89944496e8d410fdeefdd9360", "type": "readme", "exists": true}, {"artifact_id": "5d37505b63e5495b982d30fafc30f2bb", "type": "scorecard", "exists": true}, {"artifact_id": "c2998b72f6684a689fa39230ef56db69", "type": "report_txt", "exists": true}, {"artifact_id": "d2b35e4367074968803c4d41bb4909fd", "type": "report_json", "exists": true}, {"artifact_id": "fa5b69f992c3401cac92041d77c0ae42", "type": "manifest", "exists": true}, {"artifact_id": "ccccbb7ad0334bbaa71f16c399b3df61", "type": "run_meta", "exists": true}, {"artifact_id": "6281c081a0a949d1a372312eccf2f6e3", "type": "run_log", "exists": true}]}
+=== grading endlessh-ssh_tarpit [full] -> docs/conformance/latest/results-5.0.1/endlessh/full
+graded ok; log: docs/conformance/latest/results-5.0.1/endlessh/full/uhbs-run.log
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-start --unit-id endlessh-ssh_tarpit --mode full --uhbs-version 5.0.1 --grader-image uhbs:5.0.1-full --target-image endlessh:uhbs-lab --telemetry-mode mounted --airgap-attested
+{"ok": true, "run_id": "807a5667c9694fe6bfbb612ad6cb4efd", "unit_id": "endlessh-ssh_tarpit", "run_mode": "full", "started_at": "2026-09-28T09:49:16Z"}
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-finish --unit-id endlessh-ssh_tarpit --mode full --out-dir /Users/mz/Projects/uhbs-standard/docs/conformance/latest/results-5.0.1/endlessh/full --cast-path /Users/mz/Projects/uhbs-standard/docs/conformance/latest/results-5.0.1/endlessh/full/proof/full-run.cast
+{"ok": true, "run_id": "807a5667c9694fe6bfbb612ad6cb4efd", "unit_id": "endlessh-ssh_tarpit", "run_mode": "full", "run_status": "succeeded", "artifacts": [{"artifact_id": "70ae75d033944f57a209dc69fe39cbd1", "type": "readme", "exists": true}, {"artifact_id": "9df0ca981e5047f4b5894decf3359777", "type": "scorecard", "exists": true}, {"artifact_id": "833e66fcb28f4fe8b554439d6a101a44", "type": "report_txt", "exists": true}, {"artifact_id": "5949422b79df41b89a3dd450e25ddcb4", "type": "report_json", "exists": true}, {"artifact_id": "1f4b2164c0594012b8a69999c192625f", "type": "manifest", "exists": true}, {"artifact_id": "0875f0fa4c1c476f93c175db9393a908", "type": "run_meta", "exists": true}, {"artifact_id": "8b73ac58127a482d95f91af71eab071c", "type": "run_log", "exists": true}, {"artifact_id": "51b3fc06e8b0441bb7f13fd40ddbc17a", "type": "cast", "exists": true}]}
++ docker rm -f uhbs-target-endlessh-ssh_tarpit
+uhbs-target-endlessh-ssh_tarpit
+validate_unit: exit 1
+FAIL endlessh-ssh_tarpit
+- upstream_commit is not recorded on the unit
+- quick: hash mismatch for uhbs-run.log: e77644d22fed89f92b7bb5cc93ee58ae78eb4273c2fae37ebc34a2f1bc08bbd0 != f940b7a74846187d6a3d58f8645c470d0b62f6fb0733cbbf80537f804bc8ecc2
+- full: hash mismatch for proof/full-run.cast: 49deabfd4d44a65acd0d37c1101d4de4ee62d084758ef0202517d0887662389e != 0d911154c998a5ba72b56537d8bda9db6c0b494c8ca68a6f77f9f27ca1a47092
+- full: hash mismatch for uhbs-run.log: eb60963d6980d61a4a7f18c93bec1841a698982b48ce0b67cf1ed3f33003d6b6 != aa69fad72a477fb05d7b233b62f63032572f905c6b6b3b933453d3a8f25a93fb
+- full: Module C incomplete (complete=false) — fix telemetry sink wiring / inject before publishing a full grade
+- full: Module C empty/missing telemetry sink ('0 malformed / 0 records')
+- full run_executions.base_image is not recorded
+- full run_executions.container_runtime_strategy is not recorded
+
+
+=== endlessh-ssh_tarpit summary
+  quick: UHQS=18.73 grade=F (Fail)
+  full: UHQS=25.46 grade=F (Fail)
+exit=0
+=== espot-http
++ docker network create uhbs-lab
+Error response from daemon: network with name uhbs-lab already exists
++ docker rm -f uhbs-target-espot-http
++ docker run -d --name uhbs-target-espot-http --label uhbs.unit=espot-http --network uhbs-lab --network-alias espot-lab -v /Users/mz/Projects/uhbs-standard/.local/labs/espot-telemetry:/telemetry:rw espot:uhbs-lab
+d3e30ae863a20d4881508c946f8b24dbf064bc156d9664c2afd5e2b38c6a4e82
+site resolved: espot (alias espot-lab)
++ docker run --rm --network uhbs-lab -v /Users/mz/Projects/uhbs-standard:/work -w /work --entrypoint python3 uhbs:5.0.1 scripts/preflight_unit.py --inventory /work/docs/conformance/labs/espot/inventory.yaml --site espot --json --timeout 3.0 --tps /work/docs/conformance/labs/espot/web_api_full.yaml
+preflight PASS: [{"protocol": "http", "host": "espot-lab", "port": 9200, "reachable": true, "class": "reachable", "detail": "tcp connect ok"}]
+=== grading espot-http [quick] -> docs/conformance/latest/results-5.0.1/espot/quick
+graded ok; log: docs/conformance/latest/results-5.0.1/espot/quick/uhbs-run.log
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-start --unit-id espot-http --mode quick --uhbs-version 5.0.1 --grader-image uhbs:5.0.1 --target-image espot:uhbs-lab --telemetry-mode mounted --airgap-attested
+{"ok": true, "run_id": "18bfa4509e684f06aeeafba7e2bb3cb9", "unit_id": "espot-http", "run_mode": "quick", "started_at": "2026-09-28T09:49:19Z"}
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-finish --unit-id espot-http --mode quick --out-dir /Users/mz/Projects/uhbs-standard/docs/conformance/latest/results-5.0.1/espot/quick
+{"ok": true, "run_id": "18bfa4509e684f06aeeafba7e2bb3cb9", "unit_id": "espot-http", "run_mode": "quick", "run_status": "succeeded", "artifacts": [{"artifact_id": "5664827c6d1f4efda81e3bf84369d81c", "type": "readme", "exists": true}, {"artifact_id": "e791e235ab32414cb1a8cd25adfdaf70", "type": "scorecard", "exists": true}, {"artifact_id": "d94ac11388b24a74af88b2c6e3054b74", "type": "report_txt", "exists": true}, {"artifact_id": "f34f6008298b4810a1888263a5cc0bfe", "type": "report_json", "exists": true}, {"artifact_id": "f29c44894f9646738c705441da23bdbc", "type": "manifest", "exists": true}, {"artifact_id": "19c4ad8f152f4615b49e30c6ff0752df", "type": "run_meta", "exists": true}, {"artifact_id": "109647ed49bd48a595a75ff0467e3eed", "type": "run_log", "exists": true}]}
+=== grading espot-http [full] -> docs/conformance/latest/results-5.0.1/espot/full
+graded ok; log: docs/conformance/latest/results-5.0.1/espot/full/uhbs-run.log
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-start --unit-id espot-http --mode full --uhbs-version 5.0.1 --grader-image uhbs:5.0.1-full --target-image espot:uhbs-lab --telemetry-mode mounted --airgap-attested
+{"ok": true, "run_id": "ef0885fabda54ea0a55cf2e1515f4e98", "unit_id": "espot-http", "run_mode": "full", "started_at": "2026-09-28T09:49:29Z"}
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-finish --unit-id espot-http --mode full --out-dir /Users/mz/Projects/uhbs-standard/docs/conformance/latest/results-5.0.1/espot/full --cast-path /Users/mz/Projects/uhbs-standard/docs/conformance/latest/results-5.0.1/espot/full/proof/full-run.cast
+{"ok": true, "run_id": "ef0885fabda54ea0a55cf2e1515f4e98", "unit_id": "espot-http", "run_mode": "full", "run_status": "succeeded", "artifacts": [{"artifact_id": "838fad2bf07a4338a6f40e42d404e47f", "type": "readme", "exists": true}, {"artifact_id": "6f753af5c01f477fb21d11e00539bbfe", "type": "scorecard", "exists": true}, {"artifact_id": "4f32391096084eb4929feed311da1c86", "type": "report_txt", "exists": true}, {"artifact_id": "7af5537a7cf544f9a21983fd39fae8fa", "type": "report_json", "exists": true}, {"artifact_id": "9bd7c11b6ca74424a6a6568e22ffb129", "type": "manifest", "exists": true}, {"artifact_id": "522f04eb62704574a7b7d284d7af9a20", "type": "run_meta", "exists": true}, {"artifact_id": "47792ce98b7d44c6a716853103b33ee8", "type": "run_log", "exists": true}, {"artifact_id": "1605b29c7653448d92004980ccab9362", "type": "cast", "exists": true}]}
++ docker rm -f uhbs-target-espot-http
+uhbs-target-espot-http
+validate_unit: exit 1
+FAIL espot-http
+- upstream_commit is not recorded on the unit
+- quick: hash mismatch for uhbs-run.log: 4dfc6669babfc914f38b0f72daecc98dfc58bd053fa42efe54399a2819525d31 != 89eca3be0927416b5ef8c63d25e4527bdb3bee30534a5f2335adb776694187b6
+- full: hash mismatch for proof/full-run.cast: d8f8679495f151f6a163825ed939fee65106e2f5e5479b3cd0071434220aaf30 != ac886af53eaca852e44b6959947898aba03936b52b036146461690e768032cea
+- full: hash mismatch for uhbs-run.log: 68d95d65c5a2f0e78adc1001ba4e426776ac9fd1e737dad235caf8b084f0f550 != 834ac0ef57b04c10aa47e3a3742220f640b5504e41f4efe58a59c95d749a70fa
+- full: Module C empty/missing telemetry sink ('0 malformed / 0 records')
+- full run_executions.base_image is not recorded
+- full run_executions.container_runtime_strategy is not recorded
+
+
+=== espot-http summary
+  quick: UHQS=24.42 grade=F (Fail)
+  full: UHQS=31.09 grade=F (Fail)
+exit=0
+=== honeypot-ftp-ftp
++ docker network create uhbs-lab
+Error response from daemon: network with name uhbs-lab already exists
++ docker rm -f uhbs-target-honeypot-ftp-ftp
++ docker run -d --name uhbs-target-honeypot-ftp-ftp --label uhbs.unit=honeypot-ftp-ftp --network uhbs-lab --network-alias honeypot-ftp-lab -v /Users/mz/Projects/uhbs-standard/.local/labs/honeypot-ftp-telemetry:/telemetry:rw honeypot-ftp:uhbs-lab
+72f13ab8e226f7c759bbef5d18a8731d9255aec2eb68490f1cb771c07d7e8c07
+site resolved: honeypot-ftp (alias honeypot-ftp-lab)
++ docker run --rm --network uhbs-lab -v /Users/mz/Projects/uhbs-standard:/work -w /work --entrypoint python3 uhbs:5.0.1 scripts/preflight_unit.py --inventory /work/docs/conformance/labs/honeypot-ftp/inventory.yaml --site honeypot-ftp --json --timeout 3.0 --tps /work/docs/conformance/labs/honeypot-ftp/low_interaction_ftp_full.yaml
+preflight attempt 1: ftp:port_closed
++ docker run --rm --network uhbs-lab -v /Users/mz/Projects/uhbs-standard:/work -w /work --entrypoint python3 uhbs:5.0.1 scripts/preflight_unit.py --inventory /work/docs/conformance/labs/honeypot-ftp/inventory.yaml --site honeypot-ftp --json --timeout 3.0 --tps /work/docs/conformance/labs/honeypot-ftp/low_interaction_ftp_full.yaml
+preflight PASS: [{"protocol": "ftp", "host": "honeypot-ftp-lab", "port": 21, "reachable": true, "class": "reachable", "detail": "tcp connect ok"}]
+=== grading honeypot-ftp-ftp [quick] -> docs/conformance/latest/results-5.0.1/honeypot-ftp/ftp/quick
+graded ok; log: docs/conformance/latest/results-5.0.1/honeypot-ftp/ftp/quick/uhbs-run.log
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-start --unit-id honeypot-ftp-ftp --mode quick --uhbs-version 5.0.1 --grader-image uhbs:5.0.1 --target-image honeypot-ftp:uhbs-lab --telemetry-mode mounted --airgap-attested
+{"ok": true, "run_id": "7245e56b2b50496f963f71253763b355", "unit_id": "honeypot-ftp-ftp", "run_mode": "quick", "started_at": "2026-09-28T09:49:48Z"}
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-finish --unit-id honeypot-ftp-ftp --mode quick --out-dir /Users/mz/Projects/uhbs-standard/docs/conformance/latest/results-5.0.1/honeypot-ftp/ftp/quick
+{"ok": true, "run_id": "7245e56b2b50496f963f71253763b355", "unit_id": "honeypot-ftp-ftp", "run_mode": "quick", "run_status": "succeeded", "artifacts": [{"artifact_id": "989cad58faa74c72af3db8015cb8b0e9", "type": "readme", "exists": true}, {"artifact_id": "8ead07f1be4d4aaba91b6e959a83b7f4", "type": "scorecard", "exists": true}, {"artifact_id": "c48756dc9f37403b9654fec5d33146d5", "type": "report_txt", "exists": true}, {"artifact_id": "f44af2a20ab34ce6b1ed2af06f95187f", "type": "report_json", "exists": true}, {"artifact_id": "af3583cb347a46b185e64ce72dc9c684", "type": "manifest", "exists": true}, {"artifact_id": "f5294d38110444cdaa17db208ba64bbb", "type": "run_meta", "exists": true}, {"artifact_id": "073fb51870144b7dbaa3b469d5080df0", "type": "run_log", "exists": true}]}
+=== grading honeypot-ftp-ftp [full] -> docs/conformance/latest/results-5.0.1/honeypot-ftp/ftp/full
+graded ok; log: docs/conformance/latest/results-5.0.1/honeypot-ftp/ftp/full/uhbs-run.log
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-start --unit-id honeypot-ftp-ftp --mode full --uhbs-version 5.0.1 --grader-image uhbs:5.0.1-full --target-image honeypot-ftp:uhbs-lab --telemetry-mode mounted --airgap-attested
+{"ok": true, "run_id": "2107db64106d41578c8b3efbc19f69df", "unit_id": "honeypot-ftp-ftp", "run_mode": "full", "started_at": "2026-09-28T09:50:06Z"}
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-finish --unit-id honeypot-ftp-ftp --mode full --out-dir /Users/mz/Projects/uhbs-standard/docs/conformance/latest/results-5.0.1/honeypot-ftp/ftp/full --cast-path /Users/mz/Projects/uhbs-standard/docs/conformance/latest/results-5.0.1/honeypot-ftp/ftp/full/proof/full-run.cast
+{"ok": true, "run_id": "2107db64106d41578c8b3efbc19f69df", "unit_id": "honeypot-ftp-ftp", "run_mode": "full", "run_status": "succeeded", "artifacts": [{"artifact_id": "41d2476899d24f259a6746ce7a4a3688", "type": "readme", "exists": true}, {"artifact_id": "1aacf25ee4f040d2acad50be1ecbcb33", "type": "scorecard", "exists": true}, {"artifact_id": "f1e67ffcbdfe4da29150e15230680d5e", "type": "report_txt", "exists": true}, {"artifact_id": "cfc9bad6a1584815867eb4006ebcbac1", "type": "report_json", "exists": true}, {"artifact_id": "1b06174e81224a298fc5b8c521dcbe5a", "type": "manifest", "exists": true}, {"artifact_id": "07803fae690e498493281849129dd27e", "type": "run_meta", "exists": true}, {"artifact_id": "c79b744cea59412080804623541aed5c", "type": "run_log", "exists": true}, {"artifact_id": "885cff529c2f419a9f8a2841d58c9a45", "type": "cast", "exists": true}]}
++ docker rm -f uhbs-target-honeypot-ftp-ftp
+uhbs-target-honeypot-ftp-ftp
+validate_unit: exit 1
+FAIL honeypot-ftp-ftp
+- upstream_commit is not recorded on the unit
+- quick: hash mismatch for uhbs-run.log: f07e4e831b20afca79e9a4221778a008bd6f7319b61926414b8f17f2c49a48e8 != 5dd91b5e33230bea346ee5faf45905b36b57d6e525191aa002459d6b80e0759b
+- full: hash mismatch for proof/full-run.cast: de6f88872e25378c68c338e1eaa2a1e1f8a44666a2222c6acdeb2e9963ae0903 != 8085a33a6d5ebdbe91082e27ff848f873bd35ed856c769911fe29e30e76383d8
+- full: hash mismatch for uhbs-run.log: 896d649e74f420cde0bb8737f7e93755db093e6ef00a91f0e356b11cc6e69ae2 != 919d10f33bb3401d14185fb4808da1d6f75151449f1ecc8f3382e31412921f24
+- full: Module C incomplete (complete=false) — fix telemetry sink wiring / inject before publishing a full grade
+- full: Module C empty/missing telemetry sink ('0 malformed / 0 records')
+- full run_executions.base_image is not recorded
+- full run_executions.container_runtime_strategy is not recorded
+
+
+=== honeypot-ftp-ftp summary
+  quick: UHQS=16.79 grade=F (Fail)
+  full: UHQS=22.45 grade=F (Fail)
+exit=0
+=== mysql-honeypotd-mysql
++ docker network create uhbs-lab
+Error response from daemon: network with name uhbs-lab already exists
++ docker rm -f uhbs-target-mysql-honeypotd-mysql
++ docker run -d --name uhbs-target-mysql-honeypotd-mysql --label uhbs.unit=mysql-honeypotd-mysql --network uhbs-lab --network-alias mysql-honeypotd-lab -v /Users/mz/Projects/uhbs-standard/.local/labs/mysql-honeypotd-telemetry:/telemetry:rw mysql-honeypotd:uhbs-lab
+6a3a1fd8d789e1061dc55a5eb20ea70ece583919e4d4059408086f4907374e75
+site resolved: mysql-honeypotd (alias mysql-honeypotd-lab)
++ docker run --rm --network uhbs-lab -v /Users/mz/Projects/uhbs-standard:/work -w /work --entrypoint python3 uhbs:5.0.1 scripts/preflight_unit.py --inventory /work/docs/conformance/labs/mysql-honeypotd/inventory.yaml --site mysql-honeypotd --json --timeout 3.0 --tps /work/docs/conformance/labs/mysql-honeypotd/low_interaction_mysql_full.yaml
+preflight PASS: [{"protocol": "mysql", "host": "mysql-honeypotd-lab", "port": 3306, "reachable": true, "class": "reachable", "detail": "tcp connect ok"}]
+=== grading mysql-honeypotd-mysql [quick] -> docs/conformance/latest/results-5.0.1/mysql-honeypotd/mysql/quick
+graded ok; log: docs/conformance/latest/results-5.0.1/mysql-honeypotd/mysql/quick/uhbs-run.log
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-start --unit-id mysql-honeypotd-mysql --mode quick --uhbs-version 5.0.1 --grader-image uhbs:5.0.1 --target-image mysql-honeypotd:uhbs-lab --telemetry-mode mounted --airgap-attested
+{"ok": true, "run_id": "3a7919d1089b4eecb615f91467d56efd", "unit_id": "mysql-honeypotd-mysql", "run_mode": "quick", "started_at": "2026-09-28T09:50:21Z"}
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-finish --unit-id mysql-honeypotd-mysql --mode quick --out-dir /Users/mz/Projects/uhbs-standard/docs/conformance/latest/results-5.0.1/mysql-honeypotd/mysql/quick
+{"ok": true, "run_id": "3a7919d1089b4eecb615f91467d56efd", "unit_id": "mysql-honeypotd-mysql", "run_mode": "quick", "run_status": "succeeded", "artifacts": [{"artifact_id": "7ef80dc74f04403297d18c4a2a0d3244", "type": "readme", "exists": true}, {"artifact_id": "15cd0b7648be4af38afdbb700ecd7af1", "type": "scorecard", "exists": true}, {"artifact_id": "1c49ab5fbff54cd092a8b18a36a899f9", "type": "report_txt", "exists": true}, {"artifact_id": "f950ca1aeb2c49a0804ce9c06734b2eb", "type": "report_json", "exists": true}, {"artifact_id": "4a00cc7dc78a4a56afbdbd47b7a085fb", "type": "manifest", "exists": true}, {"artifact_id": "3eb13cf10dce4deebd7fb07091d39a0f", "type": "run_meta", "exists": true}, {"artifact_id": "d6fb7a88da9b4ade89c6984e3d1dd477", "type": "run_log", "exists": true}]}
+=== grading mysql-honeypotd-mysql [full] -> docs/conformance/latest/results-5.0.1/mysql-honeypotd/mysql/full
+graded ok; log: docs/conformance/latest/results-5.0.1/mysql-honeypotd/mysql/full/uhbs-run.log
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-start --unit-id mysql-honeypotd-mysql --mode full --uhbs-version 5.0.1 --grader-image uhbs:5.0.1-full --target-image mysql-honeypotd:uhbs-lab --telemetry-mode mounted --airgap-attested
+{"ok": true, "run_id": "236cfd13455f4797a228fdf003db8601", "unit_id": "mysql-honeypotd-mysql", "run_mode": "full", "started_at": "2026-09-28T09:50:41Z"}
++ /Users/mz/Projects/uhbs-standard/.venv/bin/python /Users/mz/Projects/uhbs-standard/scripts/tracker.py log-run-finish --unit-id mysql-honeypotd-mysql --mode full --out-dir /Users/mz/Projects/uhbs-standard/docs/conformance/latest/results-5.0.1/mysql-honeypotd/mysql/full --cast-path /Users/mz/Projects/uhbs-standard/docs/conformance/latest/results-5.0.1/mysql-honeypotd/mysql/full/proof/full-run.cast
+{"ok": true, "run_id": "236cfd13455f4797a228fdf003db8601", "unit_id": "mysql-honeypotd-mysql", "run_mode": "full", "run_status": "succeeded", "artifacts": [{"artifact_id": "80f785bfb4af43e2995c739d9806f8fd", "type": "readme", "exists": true}, {"artifact_id": "fac9eaae7dd445589f6da8c536dba1e1", "type": "scorecard", "exists": true}, {"artifact_id": "a15bf4be24ef414fa70d7feaa9a3fd5a", "type": "report_txt", "exists": true}, {"artifact_id": "5633866255b64af6a2a24386d8a23b3f", "type": "report_json", "exists": true}, {"artifact_id": "4f5d55073ab04c4e9d77f1da30b7c720", "type": "manifest", "exists": true}, {"artifact_id": "ee6a9d3d22f24c548385301dbe4331ab", "type": "run_meta", "exists": true}, {"artifact_id": "4bf1f8fe86024f8198a8f5030b52d533", "type": "run_log", "exists": true}, {"artifact_id": "aa772d7e416d4e4a94ddf6b4e0b5081b", "type": "cast", "exists": true}]}
++ docker rm -f uhbs-target-mysql-honeypotd-mysql
+uhbs-target-mysql-honeypotd-mysql
+validate_unit: exit 1
+FAIL mysql-honeypotd-mysql
+- upstream_commit is not recorded on the unit
+- quick: hash mismatch for uhbs-run.log: a81ffa997ef3bc1def0f29c5d751286a167cf5e1b14abf1b4e3fda11b425f0ba != 644e598f83e0b126306776a34b6e8e91fbf87ee2a761eff4329dba21bd546b54
+- full: hash mismatch for proof/full-run.cast: b7edebc8c0351292a22c44c56577ff14fd6916f640ba4fb705e33b0542d0ebaf != d3c09e712d7afe72ace7c6e98a80460e4395237fd348ebae708ac955b809e0e2
+- full: hash mismatch for uhbs-run.log: 90c7567ddf91fd20753ff722e116b1070862aced9b84195483f1d0de5eb0efdc != 3721b2a1737678bb2c54f78ddb255d795a037fafdb71d812cca9c96c9e42eaa0
+- full: Module C incomplete (complete=false) — fix telemetry sink wiring / inject before publishing a full grade
+- full: Module C empty/missing telemetry sink ('0 malformed / 0 records')
+- full run_executions.base_image is not recorded
+- full run_executions.container_runtime_strategy is not recorded
+
+
+=== mysql-honeypotd-mysql summary
+  quick: UHQS=20.99 grade=F (Fail)
+  full: UHQS=27.99 grade=F (Fail)
+exit=0
+ALL-DONE

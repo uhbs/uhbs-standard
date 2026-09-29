@@ -30,7 +30,7 @@ and decoy systems. It measures:
 
 ### 1.2 Universal Applicability
 
-Framework **v4.6.1** is 100% protocol-agnostic, architecture-neutral, and **vendor-neutral**. It provides standard testing procedures for:
+Framework **v5.0.1** is 100% protocol-agnostic, architecture-neutral, and **vendor-neutral**. It provides standard testing procedures for:
 
 | Domain | Examples |
 | --- | --- |
@@ -73,7 +73,7 @@ database engine) running under identical resource constraints.
 | 2 | Static Audit Execution | Analyze repository code, container build manifests, and system prompts |
 | 3 | Sandbox Environment Provisioning | Spin up the target with network egress monitors attached |
 | 4 | Dynamic Adversarial Execution | Run Modules A–E via automated harnesses |
-| 5 | Score Computation & Reporting | Apply Safety Gate \(\delta_C\) and emit the standardized scorecard |
+| 5 | Score Computation & Reporting | Apply the fail-closed Safety Gate (critical-control verdict) and emit the standardized scorecard |
 
 These phases **MUST** be implemented by UHBS-Lab harnesses. The reference
 orchestrator is `run_benchmark.py` (see [Reference Implementation](../reference-implementation.md)).

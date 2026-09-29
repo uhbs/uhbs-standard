@@ -1,0 +1,78 @@
+{
+  "uhbs_version": "4.6.1",
+  "target": {
+    "name": "Cowrie (Low-Interaction / SSH)",
+    "class": "Low-Interaction",
+    "profile_ref": "docs/conformance/labs/cowrie/low_interaction_ssh_full.yaml"
+  },
+  "evaluated_at": "2026-07-27",
+  "auditor": "UHBS-Lab detailed Docker run (cowrie/ssh; SFTP verified as SSH subsystem)",
+  "modules": {
+    "A": {
+      "score": 57.07,
+      "status": "PARTIAL",
+      "weight": 0.3,
+      "notes": ""
+    },
+    "B": {
+      "score": 60.0,
+      "status": "PARTIAL",
+      "weight": 0.15,
+      "notes": ""
+    },
+    "C": {
+      "score": 55.0,
+      "status": "PARTIAL",
+      "weight": 0.25,
+      "notes": ""
+    },
+    "D": {
+      "score": 100.0,
+      "status": "PASSED",
+      "notes": ""
+    },
+    "E": {
+      "score": 75.0,
+      "status": "PARTIAL",
+      "weight": 0.1,
+      "notes": ""
+    },
+    "F": {
+      "score": 70.0,
+      "status": "PARTIAL",
+      "weight": 0.2,
+      "notes": ""
+    }
+  },
+  "weights": {
+    "w_A": 0.3,
+    "w_B": 0.15,
+    "w_C": 0.25,
+    "w_E": 0.1,
+    "w_F": 0.2
+  },
+  "safety_gate": {
+    "containment_score": 100.0,
+    "delta_c": 1.0,
+    "passed": true,
+    "unauthorized_egress_leaks": 0
+  },
+  "uhqs": 61.37,
+  "grade": "D",
+  "notes": "Evaluation proof only. Live Cowrie SSH full lab (aliases cowrie-ssh fixture). Regraded 2026-07-27.",
+  "framework_refs": {
+    "attack": [
+      "T1595",
+      "T1059",
+      "T1105"
+    ],
+    "d3fend": [
+      "D3-DNR",
+      "D3-SHN"
+    ],
+    "engage_goals": [
+      "Elicit",
+      "Expose"
+    ]
+  }
+}

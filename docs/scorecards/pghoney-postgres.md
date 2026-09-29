@@ -1,80 +1,62 @@
-# Scorecard: pghoney — postgres
+# Scorecard: pghoney — postgres (results-5.0.1)
 
 **Status:** Informative · evaluation proof (not an endorsement)  
-**UHBS:** **4.2.2** · **Class:** Low-Interaction · **Protocol / surface:** `postgres`  
-**Target id (lab):** `pghoney-postgres` · **Evaluation date:** 2026-07-29
+**UHBS:** **5.0.1** · **Class:** Low-Interaction · **Protocol:** `postgres`  
+**Target id (lab):** `pghoney-postgres` · **Evaluation date:** 2026-09-26  
+**Verdict:** INCOMPLETE / INCOMPLETE / ungraded (`uhqs-v5.0-critical-gate-diagnostic`)
 
 | Run | UHQS | Grade | δ_C | Proof artifacts |
 | --- | ---: | --- | --- | --- |
-| Quick | 43.72 | F | 0.5625 | See report hub quick artifacts |
-| **Full (authoritative)** | **43.61** | **F** | **0.5625** | Verbatim SCORECARD below + `report.json` on the report hub |
+| Quick | ungraded | — | 0.0 | [quick SCORECARD](../conformance/latest/results-5.0.1/pghoney/postgres/quick/SCORECARD.txt) |
+| **Full (authoritative)** | **ungraded** | **—** | **0.0** | Verbatim SCORECARD below |
 
-**Report hub:** [pghoney / postgres](../conformance/reports/pghoney/postgres/index.md) · [Tutorial](../conformance/reports/pghoney/TUTORIAL.md) · [Methodology](../conformance/reports/pghoney/METHODOLOGY.md)  
-**How to read UHQS:** [CTI / blue-team guide](../conformance/reports/READING-UHQS.md)
+**Report hub:** [pghoney / postgres](../conformance/latest/results-5.0.1/pghoney/postgres/index.md) · [Tutorial](../conformance/latest/results-5.0.1/pghoney/TUTORIAL.md) · [Methodology](../conformance/latest/results-5.0.1/pghoney/METHODOLOGY.md) · [Execution steps](../conformance/latest/results-5.0.1/pghoney/postgres/EXECUTION-STEPS.md)
 
 ## Proof: module scores (full run)
 
-These numbers are copied from the lab `SCORECARD.txt` produced by `uhbs-lab` — not hand-typed summaries.
-
 | Module | Score | Weight | Status | Notes |
 | --- | ---: | --- | --- | --- |
-| Module A: Protocol Fidelity | 92.0 | 0.30 | PASSED | fsm=80 nego=100 timing=100 |
-| Module B: Behavioral Realism | 82.5 | 0.15 | PASSED | survived binary blast |
-| Module C: Telemetry Quality | 55.0 | 0.25 | PARTIAL | no STIX objects found |
-| Module D: Safety & Containment (C) | 75.0 | GATE | PASSED | UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys) |
-| Module E: Scalability & Latency | 100.0 | 0.10 | PASSED | service alive after load (connect 0.1ms) |
-| Module F: Static Code Audit | 69.0 | 0.20 | PARTIAL | POSIX coverage 0% (0/104) |
-| Safety Gate δ_C | 0.5625 | GATE | — | Containment multiplier applied to UHQS |
+| Module A: Protocol Fidelity | 78.4 | 0.30 | PASSED | median=1.002ms pstdev=10.118ms (target jitter often <2ms vs native) |
+| Module B: Behavioral Realism | 65.0 | 0.15 | PARTIAL | no payload probe implemented |
+| Module C: Telemetry Assurance | 0.0 | 0.25 | INCOMPLETE | UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4 |
+| Module D: Safety & Containment (C) | 0.0 | GATE | INCOMPLETE | Module D v5: non-SSH targets need gateway/packet evidence for critical egress and runtime inspection — attestation alone never clears the gate. |
+| Module E: Scalability & Latency | 100.0 | 0.10 | PASSED | service alive after load (connect 2.2ms) |
+| Module F: Static Code Audit | 70.8 | 0.20 | PASSED | trivy not installed — not tested (zero credit) |
+| Safety Gate δ_C | 0.0 | GATE | — | Ungraded when INCOMPLETE/GATE_FAILED |
 
-
-## How CTI / blue team should read this
-
-| Module | Score | Analyst reading |
-| --- | ---: | --- |
-| A — Protocol Fidelity | 92.0 | Protocol speak / banner-handshake quality for keeping automated clients engaged. |
-| B — Behavioral Realism | 82.5 | Post-connect realism (auth/session). Low often means credential-only or reject-by-design. |
-| C — Telemetry Quality | 55.0 | Telemetry visible to the UHBS lab harness — not a claim about your SIEM pipeline. |
-| D — Safety & Containment (C) | 75.0 | Containment / Safety Gate. Below threshold collapses UHQS via δ_C. |
-| E — Scalability & Latency | 100.0 | Latency vs profile P95. Low can mean timeouts, tarpits, or slow handlers. |
-| F — Static Code Audit | 69.0 | Static audit of the graded source tree — hygiene signal, not a full CVE program. |
-| δ_C | 0.5625 | Safety Gate multiplier applied to composite UHQS. |
-
-
-- **CTI:** use module notes to judge what attacker activity you can actually observe (auth-only vs interactive vs tarpit).
-- **Blue team:** verify Safety Gate (Module D / δ_C) and wire real log shipping before Internet exposure.
-- **Do not** cite UHQS without the verbatim SCORECARD or `report.json` from the report hub.
+Archived 4.x letter grades are **not** the current published result.
 
 ## Verbatim full SCORECARD
 
 ```text
 ====================================================================================
-                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v4.2.2
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
 ====================================================================================
 Target System         : pghoney-postgres
 System Profile Class  : Low-Interaction
+Scoring Model         : uhqs-v5.0-critical-gate-diagnostic
+Assessment Status     : INCOMPLETE
+Critical Controls     : INCOMPLETE
 Protocols             : postgres
-Evaluation Date       : 2026-07-29
+Evaluation Date       : 2026-09-26
 Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
 Environment           : Isolated Sandbox
 MCP Surface Depth     : unknown
 ------------------------------------------------------------------------------------
 EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
 ------------------------------------------------------------------------------------
-Module A: Protocol Fidelity         :  92.0/100       0.30     PASSED (fsm=80 nego=100 timing=100)
-Module B: Behavioral Realism        :  82.5/100       0.15     PASSED (survived binary blast)
-Module C: Telemetry Quality         :  55.0/100       0.25     PARTIAL (no STIX objects found)
-Module D: Safety & Containment (C)  :  75.0/100       GATE     PASSED (UHBS_AIRGAP_ATTESTED=1 (operator attestation; not a substitute for shell probes on SSH decoys))
-Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service alive after load (connect 0.1ms))
-Module F: Static Code Audit         :  69.0/100       0.20     PARTIAL (POSIX coverage 0% (0/104))
+Module A: Protocol Fidelity         :  78.4/100       0.30     PASSED (median=1.002ms pstdev=10.118ms (target jitter often <2ms vs native))
+Module B: Behavioral Realism        :  65.0/100       0.15     PARTIAL (no payload probe implemented)
+Module C: Telemetry Assurance       :   0.0/100       0.25     INCOMPLETE (UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4)
+Module D: Safety & Containment (C)  :   0.0/100       GATE     INCOMPLETE (Module D v5: non-SSH targets need gateway/packet evidence for critical egress and runtime inspection — attestation alone never clears the gate.)
+Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service alive after load (connect 2.2ms))
+Module F: Static Code Audit         :  70.8/100       0.20     PASSED (trivy not installed — not tested (zero credit))
 ------------------------------------------------------------------------------------
-SAFETY GATE MULTIPLIER                : δ_C = 0.5625 (C = 75.0 < 95 — exponential penalty)
-FINAL COMPOSITE SCORE (UHQS 4.2.2)      : 43.61 / 100
-OVERALL EVALUATION GRADE              : GRADE F (Fail)
+SAFETY GATE / CRITICAL CONTROLS        : Ungraded — assessment incomplete (mandatory checks NOT_TESTED/ERROR)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : null (Ungraded — no composite UHQS)
+OVERALL EVALUATION GRADE              : — (no letter grade)
+scoring_model_id                      : uhqs-v5.0-critical-gate-diagnostic
 ====================================================================================
 ```
-
-## Replication
-
-Re-run commands are in the [tutorial](../conformance/reports/pghoney/TUTORIAL.md). Environment and limitations are in the [methodology](../conformance/reports/pghoney/METHODOLOGY.md).
 
 > Product names appear only under conformance as evaluation proof — not UHBS requirements.

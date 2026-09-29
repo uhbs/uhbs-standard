@@ -1,0 +1,215 @@
+[
+    {
+        "Id": "6e62f36c05dafc6f7307cdb1d6d66cda1cd2f3a64bdb8a148762c0438d59cb1d",
+        "Created": "2026-09-27T20:48:46.254758925Z",
+        "Path": "/bin/sh",
+        "Args": [
+            "-c",
+            "test -f /var/log/ssh-auth-logger.log || { echo 'Creating log file...' \u0026\u0026 touch /var/log/ssh-auth-logger.log ; }; /go/bin/ssh-auth-logger 2\u003e\u00261 | tee -a /var/log/ssh-auth-logger.log"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 54627,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:48:46.713760717Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:5741d6672aaa078810f6d6f1bc6e138029a194b43acc5ca43d2354c314d255e1",
+        "ResolvConfPath": "/var/lib/docker/containers/6e62f36c05dafc6f7307cdb1d6d66cda1cd2f3a64bdb8a148762c0438d59cb1d/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/6e62f36c05dafc6f7307cdb1d6d66cda1cd2f3a64bdb8a148762c0438d59cb1d/hostname",
+        "HostsPath": "/var/lib/docker/containers/6e62f36c05dafc6f7307cdb1d6d66cda1cd2f3a64bdb8a148762c0438d59cb1d/hosts",
+        "LogPath": "/var/lib/docker/containers/6e62f36c05dafc6f7307cdb1d6d66cda1cd2f3a64bdb8a148762c0438d59cb1d/6e62f36c05dafc6f7307cdb1d6d66cda1cd2f3a64bdb8a148762c0438d59cb1d-json.log",
+        "Name": "/ssh-auth-logger-lab",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "6e62f36c05dafc6f7307cdb1d6d66cda1cd2f3a64bdb8a148762c0438d59cb1d",
+                "LowerDir": "/var/lib/docker/overlay2/eb63523483083e767d29e5b63ea299814809e72c5b162386661156a20986be39-init/diff:/var/lib/docker/overlay2/5b263a62500366b6d7932d5236a3a3b1ff2e4000bf8b9b4f52211a3c154cce32/diff:/var/lib/docker/overlay2/c7fa2e39204c3061deadb7b90112af27ab3a2f250a79b14ed82f4efa1d705f60/diff:/var/lib/docker/overlay2/06c6fc2969aea287a37745444a5980a7799a47d0b127c77d1b78276f46aeec2d/diff:/var/lib/docker/overlay2/077565a5f138627bb317df3cafef3e4a3820da0b32fc5518355fdb7e10075ae5/diff:/var/lib/docker/overlay2/61dc9d60d521fe78d2911dbcdec417733e9bc6b95200f2e0fa05c71dcb9c77f7/diff:/var/lib/docker/overlay2/0e208706a7d1711385a0e7c488b4d51f45293e7d4518ded0932b3b9a7a709467/diff:/var/lib/docker/overlay2/0cc9a77417dbec49975a27b49f076fa7d51e3bad34fa04a5c0bbd469132b263e/diff:/var/lib/docker/overlay2/c40455a565204a47e01ff2638745fb15941683ee09b82fb1c8ca150f12c19bc9/diff:/var/lib/docker/overlay2/f8ad42ee6f7da8c5e89589c33378cacf4190fa52b1fd00b25e3b6814b6ead3d5/diff",
+                "MergedDir": "/var/lib/docker/overlay2/eb63523483083e767d29e5b63ea299814809e72c5b162386661156a20986be39/merged",
+                "UpperDir": "/var/lib/docker/overlay2/eb63523483083e767d29e5b63ea299814809e72c5b162386661156a20986be39/diff",
+                "WorkDir": "/var/lib/docker/overlay2/eb63523483083e767d29e5b63ea299814809e72c5b162386661156a20986be39/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "6e62f36c05da",
+            "Domainname": "",
+            "User": "nobody",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "2222/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "SSHD_BIND=:2222",
+                "SSHD_RATE=5000000",
+                "SSHD_RSA_BITS=2048",
+                "PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "GOLANG_VERSION=1.25.5",
+                "GOTOOLCHAIN=local",
+                "GOPATH=/go",
+                "USER=nobody"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "test -f /var/log/ssh-auth-logger.log || { echo 'Creating log file...' \u0026\u0026 touch /var/log/ssh-auth-logger.log ; }; /go/bin/ssh-auth-logger 2\u003e\u00261 | tee -a /var/log/ssh-auth-logger.log"
+            ],
+            "Image": "justinazoff/ssh-auth-logger:latest",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "io.buildah.version": "1.42.0",
+                "maintainer": "Justin Azoff \u003cjustin.azoff@gmail.com\u003e",
+                "org.opencontainers.image.description": "A low/zero interaction ssh authentication logging honeypot",
+                "org.opencontainers.image.documentation": "https://github.com/JustinAzoff/ssh-auth-logger#",
+                "org.opencontainers.image.source": "https://github.com/JustinAzoff/ssh-auth-logger",
+                "org.opencontainers.image.title": "ssh-auth-logger",
+                "org.opencontainers.image.url": "https://hub.docker.com/r/justinazoff/ssh-auth-logger",
+                "org.opencontainers.image.version": "0.1.0"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "16ead8f36611b7e18696f0f7b7e048c4a9dc90bb5ac1bf8725c66310ff1cceee",
+            "SandboxKey": "/var/run/docker/netns/16ead8f36611",
+            "Ports": {
+                "2222/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "ssh-auth-logger-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "7afb747af7ebe015fb995fc3ac9273f3ec7aa26416cb8fdb2a3787bed24e9793",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "56:5e:3a:ff:ba:c1",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "ssh-auth-logger-lab",
+                        "6e62f36c05da"
+                    ]
+                }
+            }
+        }
+    }
+]

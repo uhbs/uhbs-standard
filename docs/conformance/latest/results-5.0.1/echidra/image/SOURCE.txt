@@ -1,0 +1,5 @@
+source=.local/labs/echidra/Dockerfile
+image=echidra:uhbs-lab
+digest=sha256:b77be4a5a0b0defbfb6a540ddf9957521f6da93070a75dd3c7a7a770f4bd48c3
+dockerfile=docs/conformance/latest/results-5.0.1/echidra/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/echidra/Dockerfile.pin

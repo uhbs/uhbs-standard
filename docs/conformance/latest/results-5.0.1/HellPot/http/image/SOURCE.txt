@@ -1,0 +1,5 @@
+source=docs/conformance/labs/HellPot/Dockerfile.lab
+image=hellpot:uhbs-lab
+digest=sha256:844413a1a06a87de1f9d03e0ae550e7074ab7437cf52c1a086e2730d935515ca
+dockerfile=docs/conformance/latest/results-5.0.1/HellPot/http/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/HellPot/http/Dockerfile.pin

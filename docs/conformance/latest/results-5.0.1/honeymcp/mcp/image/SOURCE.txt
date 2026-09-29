@@ -1,0 +1,5 @@
+source=.local/labs/honeymcp/Dockerfile
+image=honeymcp:uhbs-lab
+digest=sha256:7110d509ad99de427cc88c0a00a0f8136a51a1c0b9a033b0868cb51954707a83
+dockerfile=docs/conformance/latest/results-5.0.1/honeymcp/mcp/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/honeymcp/mcp/Dockerfile.pin

@@ -1,0 +1,18 @@
+{
+  "bundle_id": "uhbs-attack-pin-enterprise-ics-2026-09",
+  "enterprise_version": "16.1",
+  "ics_version": "16.1",
+  "note": "Minimal pinned technique ID set for offline validation. Expand from official ATT&CK STIX bundles in lab; IDs here must exist in the pinned releases.",
+  "techniques": {
+    "T1041": {"name": "Exfiltration Over C2 Channel", "revoked": false, "deprecated": false, "domains": ["enterprise"]},
+    "T1059": {"name": "Command and Scripting Interpreter", "revoked": false, "deprecated": false, "domains": ["enterprise"]},
+    "T1059.004": {"name": "Unix Shell", "revoked": false, "deprecated": false, "domains": ["enterprise"]},
+    "T1078": {"name": "Valid Accounts", "revoked": false, "deprecated": false, "domains": ["enterprise"]},
+    "T1082": {"name": "System Information Discovery", "revoked": false, "deprecated": false, "domains": ["enterprise"]},
+    "T1110": {"name": "Brute Force", "revoked": false, "deprecated": false, "domains": ["enterprise"]},
+    "T1595": {"name": "Active Scanning", "revoked": false, "deprecated": false, "domains": ["enterprise"]},
+    "T0801": {"name": "Monitor Process State", "revoked": false, "deprecated": false, "domains": ["ics"]},
+    "T0840": {"name": "Network Connection Enumeration", "revoked": false, "deprecated": false, "domains": ["ics"]},
+    "T0867": {"name": "Lateral Tool Transfer", "revoked": false, "deprecated": false, "domains": ["ics"]}
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "608b13b77ba6d4ce16685d261fbc55c875bc95383b99472bff704ba4f48fcf63"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "1b99807db6b550eeeb4d6107d979a570c510c0f7a407091350e9a4c34fa3b35a"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "1b99807db6b550eeeb4d6107d979a570c510c0f7a407091350e9a4c34fa3b35a"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "f24ea351bcc56fe59518fd474402d8d1d436e146de4a8108e219b070f452ab1d"
+    },
+    {
+      "path": "report.json",
+      "sha256": "ae23c495042740de2fa5c69519f9aa6b7e194559b0967540e47b9b385039c55c"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "179cae02bb38e5d0351a8c7652c48eae4ab4c170ca3d5ed85fa000d3be625166"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "27f489f9baaf9cd21d338ff91edca81fafb6d43bf4b17d1aa85643bce4fbe317"
+    }
+  ],
+  "extra": {
+    "target": "ssh-auth-logger-ssh",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

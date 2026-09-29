@@ -1,0 +1,5 @@
+source=pin:shiva-receiver:uhbs-lab@sha256:ba1ef65b29a3a75e9cd30a1f622da91ee5970a17c8f28816b42711b7e5bb4a44
+image=shiva-receiver:uhbs-lab
+digest=sha256:ba1ef65b29a3a75e9cd30a1f622da91ee5970a17c8f28816b42711b7e5bb4a44
+dockerfile=docs/conformance/latest/results-5.0.1/shiva/smtp/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/shiva/smtp/Dockerfile.pin

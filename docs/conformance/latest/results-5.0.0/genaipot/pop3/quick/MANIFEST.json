@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "40d874404aff8f35a664b6796bf6c5ae637cbb5bed6a3e1ddcaca1bb11e0b787"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "e8b94d708097a4c6c273dfedddc8cad5916ccade8a2b8a91fd016e761220bd3f"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "e8b94d708097a4c6c273dfedddc8cad5916ccade8a2b8a91fd016e761220bd3f"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "0f83008a4dc715ac65b8110d72fb3ce79354b971f415bfe45118b3a36808f45d"
+    },
+    {
+      "path": "report.json",
+      "sha256": "cbdd821bc4bf7d3df59849e72061da7a99191a0c3a10cde717e0ffe496cc5681"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "57df52d8efb9ce40ee2e6818a24d06b3875823c9a4e4992f729445ba89d6d881"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "9a658e872bc9eb28efd7534c49e832d3d390562248441ad259ef2454cb29fc0e"
+    }
+  ],
+  "extra": {
+    "target": "genaipot-pop3",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

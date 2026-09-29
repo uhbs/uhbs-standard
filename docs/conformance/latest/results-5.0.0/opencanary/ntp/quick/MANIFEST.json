@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "e7289c8632e76451ffc9cfde31ea8438dadd882544baf300a8cd6d23e0b13876"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "3d9621b7b18612fbe18e2188ef2187736870d503edea711edcbec5fe6c2ca003"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "3d9621b7b18612fbe18e2188ef2187736870d503edea711edcbec5fe6c2ca003"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "fcf1ee78071e4dad1ecd7845ec455aa86cf59807c4de685fb77cc6627840b4c0"
+    },
+    {
+      "path": "report.json",
+      "sha256": "78f87025798ce9e6637e8c705aa986ca2c5b6f7dff4ae4964b94f3ebaa761d85"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "96fb6596d315b03ab6e8af55a66432d1b74ec245a64f4a6b547fbf3115c59326"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "0f70b830dc6378ceab6538dfc4b14ddd32727dbea44fc0df80b4fc12f13b82ac"
+    }
+  ],
+  "extra": {
+    "target": "opencanary-ntp",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}

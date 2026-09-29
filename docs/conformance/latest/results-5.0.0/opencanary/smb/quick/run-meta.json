@@ -1,0 +1,78 @@
+{
+  "uhbs_version": "5.0.1",
+  "run_mode": "quick",
+  "evaluated_at": "2026-09-26T16:05:47Z",
+  "proof_label": "OpenCanary (UHBS multi-protocol proof) (smb)",
+  "target": {
+    "repository": "https://github.com/thinkst/opencanary.git",
+    "git_branch": "master",
+    "git_commit": "fb12e4fefbdb1b9acd1e5561a2614f827ab639ff",
+    "class": "Low-Interaction",
+    "protocol": "smb",
+    "host": "opencanary-smb",
+    "port": 445,
+    "container_image": "dperson/samba",
+    "container_image_id": "sha256:216f21e9a995109fb6befd2eb7ec811d7ad7b98a030e74dfa4bb1c8dbc2bc103",
+    "base_image": "opencanary:latest (thinkst)",
+    "base_image_reason": "Upstream publishes thinkst/opencanary image; lab mounts UHBS opencanary.conf. Default branch HEAD.",
+    "container_runtime_strategy": "upstream-image"
+  },
+  "grader": {
+    "package_version": "5.0.1",
+    "docker_image": "uhbs:5.0.1",
+    "docker_image_id": "sha256:aa436c35214d225126fd90db1dcbe307cbdbda9cad4c831efc068bd8901f6ba6",
+    "inventory": "docs/conformance/labs/opencanary/inventory.yaml",
+    "tps": "docs/conformance/labs/opencanary/low_interaction_smb_quick.yaml",
+    "target_id": "opencanary-smb"
+  },
+  "flags": {
+    "UHBS_QUICK": true,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": true,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "measured_vs_attested": {
+      "airgap": "attested",
+      "egress_gateway_log": "attested-empty-log",
+      "telemetry": "attested-partial"
+    }
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "grade_long": null,
+    "delta_c": 0.0,
+    "module_scores": {
+      "A": 84.0,
+      "B": 65.0,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 100.0,
+      "F": 0.0
+    },
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  },
+  "limitations": [
+    "Published UHBS 5.0.1 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1)."
+  ],
+  "docs_reviewed": []
+}

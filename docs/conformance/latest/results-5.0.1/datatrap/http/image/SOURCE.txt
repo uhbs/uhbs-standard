@@ -1,0 +1,5 @@
+source=.local/labs/datatrap/Dockerfile
+image=datatrap:uhbs-lab
+digest=sha256:c770fa469eac6850e2795447b47c5cd8f26e3051547eaae2f1819ec9774a48e0
+dockerfile=docs/conformance/latest/results-5.0.1/datatrap/http/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/datatrap/http/Dockerfile.pin

@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `HellPot-http`
+# Image name at grade time: hellpot:uhbs-lab
+FROM sha256:844413a1a06a87de1f9d03e0ae550e7074ab7437cf52c1a086e2730d935515ca

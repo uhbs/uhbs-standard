@@ -1,0 +1,217 @@
+[
+    {
+        "Id": "986cc799e967ccd804c71d8472413bd060b0345aceb46e931404c380a91699f3",
+        "Created": "2026-09-27T20:31:20.301018969Z",
+        "Path": "python3",
+        "Args": [
+            "./server.py",
+            "--bind",
+            "0.0.0.0"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 94281,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:31:20.449094677Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:98d4cf6be313f434372eb225f773860f130b43d374ed376e9701631d088cb1b9",
+        "ResolvConfPath": "/var/lib/docker/containers/986cc799e967ccd804c71d8472413bd060b0345aceb46e931404c380a91699f3/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/986cc799e967ccd804c71d8472413bd060b0345aceb46e931404c380a91699f3/hostname",
+        "HostsPath": "/var/lib/docker/containers/986cc799e967ccd804c71d8472413bd060b0345aceb46e931404c380a91699f3/hosts",
+        "LogPath": "/var/lib/docker/containers/986cc799e967ccd804c71d8472413bd060b0345aceb46e931404c380a91699f3/986cc799e967ccd804c71d8472413bd060b0345aceb46e931404c380a91699f3-json.log",
+        "Name": "/uhbs-target-miniprint-pjl",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/miniprint-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "986cc799e967ccd804c71d8472413bd060b0345aceb46e931404c380a91699f3",
+                "LowerDir": "/var/lib/docker/overlay2/7ef9215eaea81891460ee86ee708d7bcbdf83832d5708beba4cff62c41b12ac0-init/diff:/var/lib/docker/overlay2/gk0p77rs12mwrkvzglco9cmh7/diff:/var/lib/docker/overlay2/s6z31yymm7nv9hbj5oxkaokph/diff:/var/lib/docker/overlay2/yi91wfwkux24xduux6w84l6pm/diff:/var/lib/docker/overlay2/503eac470713f3487a1eff5bc65539ef0fe6ad736a3e1e12d336b32af0f037be/diff:/var/lib/docker/overlay2/cf09cf44e5a3b53b002ef89129041a290919e4bf4e3f835bccf0425a4d57e194/diff:/var/lib/docker/overlay2/173d50ffc525d7132680cf526fb64e11d92c8e43d3e781923121ecc7f3af4f27/diff:/var/lib/docker/overlay2/5165dfa8cf82dd7ace446d6009105292a4087b37f0739b3343c9067452aabe5f/diff:/var/lib/docker/overlay2/50ace8d4723e464261209ab5750ef863e664f115d34057e8093ffbcd17ee4a24/diff",
+                "MergedDir": "/var/lib/docker/overlay2/7ef9215eaea81891460ee86ee708d7bcbdf83832d5708beba4cff62c41b12ac0/merged",
+                "UpperDir": "/var/lib/docker/overlay2/7ef9215eaea81891460ee86ee708d7bcbdf83832d5708beba4cff62c41b12ac0/diff",
+                "WorkDir": "/var/lib/docker/overlay2/7ef9215eaea81891460ee86ee708d7bcbdf83832d5708beba4cff62c41b12ac0/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/miniprint-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "986cc799e967",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D",
+                "PYTHON_VERSION=3.7.17",
+                "PYTHON_PIP_VERSION=23.0.1",
+                "PYTHON_SETUPTOOLS_VERSION=57.5.0",
+                "PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/9af82b715db434abb94a0a6f3569f43e72157346/public/get-pip.py",
+                "PYTHON_GET_PIP_SHA256=45a2bb8bf2bb5eff16fdd00faef6f29731831c7c59bd9fc2bf1f3bed511ff1fe"
+            ],
+            "Cmd": [
+                "python3",
+                "./server.py",
+                "--bind",
+                "0.0.0.0"
+            ],
+            "Image": "miniprint:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "uhbs.unit": "miniprint-pjl"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "38faba27e78f6623e5e8d944e01989f71a4cc26021a4c0467c58eaa16d02aa57",
+            "SandboxKey": "/var/run/docker/netns/38faba27e78f",
+            "Ports": {},
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "miniprint-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "7fa196660280afc5307f811bff14cc2955d906999766557f0c494c719dfab2e8",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "7a:3e:57:aa:86:d9",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-miniprint-pjl",
+                        "miniprint-lab",
+                        "986cc799e967"
+                    ]
+                }
+            }
+        }
+    }
+]

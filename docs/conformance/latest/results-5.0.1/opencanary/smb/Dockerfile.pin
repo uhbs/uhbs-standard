@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `opencanary-smb`
+# Image name at grade time: dperson/samba
+FROM sha256:216f21e9a995109fb6befd2eb7ec811d7ad7b98a030e74dfa4bb1c8dbc2bc103

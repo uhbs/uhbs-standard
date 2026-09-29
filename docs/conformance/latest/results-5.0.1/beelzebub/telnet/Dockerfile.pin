@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `beelzebub-telnet`
+# Image name at grade time: beelzebub:uhbs-lab
+FROM sha256:4663259f7336af0895572db5ec697518fc5608846dd54870d0baaec8f70172d3

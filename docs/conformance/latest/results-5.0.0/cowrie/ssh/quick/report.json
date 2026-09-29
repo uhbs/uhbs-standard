@@ -1,0 +1,1157 @@
+{
+  "framework": "Universal Honeypot Benchmarking Standard (UHBS) v5.0.1",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "assessment_status": "INCOMPLETE",
+  "critical_control_verdict": "GATE_FAILED",
+  "evaluation_type": "Full-Spectrum (Static Audit + Dynamic Sandbox)",
+  "target": {
+    "name": "cowrie-ssh",
+    "kind": "ssh",
+    "host": "cowrie-lab",
+    "port": 2222,
+    "source_root": "/honeypot",
+    "profile_class": "Low-Interaction",
+    "protocols": [
+      "ssh"
+    ],
+    "ports_map": {
+      "ssh": 2222
+    }
+  },
+  "baseline": null,
+  "uhqs": {
+    "target": "cowrie-ssh",
+    "S_A": 16.56,
+    "S_B": 60.0,
+    "S_C": 0.02,
+    "C": 0.0,
+    "S_E": 100.0,
+    "S_F": 0.0,
+    "delta_c": 0.5,
+    "uhqs": 14.98,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "F",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "5.0.1",
+    "containment_measured": true,
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "GATE_FAILED",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
+    "graded": true
+  },
+  "hqs": {
+    "target": "cowrie-ssh",
+    "S_A": 16.56,
+    "S_B": 60.0,
+    "S_C": 0.02,
+    "C": 0.0,
+    "S_E": 100.0,
+    "S_F": 0.0,
+    "delta_c": 0.5,
+    "uhqs": 14.98,
+    "weights": {
+      "protocol": 0.3,
+      "behavior": 0.15,
+      "telemetry": 0.25,
+      "scale": 0.1,
+      "static": 0.2
+    },
+    "profile_class": "Low-Interaction",
+    "grade": "F",
+    "phase": "profile+static+sandbox+dynamic+score",
+    "version": "5.0.1",
+    "containment_measured": true,
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "GATE_FAILED",
+    "scoring_model_id": "uhqs-v5.2-measured-renorm",
+    "graded": true
+  },
+  "modules": [
+    {
+      "module": "SANDBOX",
+      "dimension": "sandbox",
+      "score": 70.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "sandbox.reach.ssh",
+          "team": "blue",
+          "passed": true,
+          "detail": "cowrie-lab:2222 open",
+          "score": 25.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "sandbox.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "operator attested air-gapped sandbox (UHBS_AIRGAP_ATTESTED=1)",
+          "score": 25.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "sandbox.egress_deny_tooling",
+          "team": "blue",
+          "passed": false,
+          "detail": "host-egress-deny.sh not found",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "sandbox.gateway_log_configured",
+          "team": "blue",
+          "passed": false,
+          "detail": "gateway log path not set",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "reachable_protocols": 1
+      },
+      "notes": [
+        "Phase 3 preflight \u2014 does not replace real air-gap deployment"
+      ],
+      "error": null,
+      "complete": true,
+      "applicable_checks": 0,
+      "scored_checks": 0,
+      "critical_control_verdict": null
+    },
+    {
+      "module": "F",
+      "dimension": "static",
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "checks": [
+        {
+          "id": "white.static_private_keys",
+          "team": "white",
+          "passed": true,
+          "detail": "0 static private keys",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.hardcoded_ssh_banners",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded SSH banners",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.predictable_seeds",
+          "team": "white",
+          "passed": false,
+          "detail": "1 predictable PRNG seeds: src/backend_pool/util.py",
+          "score": 0.0,
+          "evidence": [
+            "src/backend_pool/util.py"
+          ],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.hardcoded_macs",
+          "team": "white",
+          "passed": true,
+          "detail": "0 hardcoded MAC addresses",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.prompt_corpus_present",
+          "team": "white",
+          "passed": false,
+          "detail": "no prompt corpus (N/A for non-LLM)",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "NOT_APPLICABLE",
+          "mandatory": false,
+          "applicability_rationale": "Non-LLM targets need not ship a prompt corpus",
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.prompt_boundaries",
+          "team": "white",
+          "passed": true,
+          "detail": "no weak delimiter/extract patterns",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.fallback_strings",
+          "team": "white",
+          "passed": true,
+          "detail": "no plain-text LLM fallback artifacts",
+          "score": 10.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.sast_tools",
+          "team": "white",
+          "passed": false,
+          "detail": "SAST tools skipped by flag \u2014 zero credit",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "NOT_TESTED",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.vfs_posix_coverage",
+          "team": "white",
+          "passed": true,
+          "detail": "POSIX coverage 91% (95/104)",
+          "score": 22.84,
+          "evidence": [
+            "adduser",
+            "apt",
+            "apt-get",
+            "awk",
+            "base64",
+            "bash",
+            "busybox",
+            "cat",
+            "cd",
+            "chmod",
+            "chown",
+            "clear",
+            "cp",
+            "crontab",
+            "curl",
+            "cut",
+            "date",
+            "df",
+            "dig",
+            "docker",
+            "du",
+            "echo",
+            "env",
+            "export",
+            "file",
+            "find",
+            "free",
+            "git",
+            "grep",
+            "gunzip",
+            "gzip",
+            "head",
+            "history",
+            "id",
+            "ifconfig",
+            "ip",
+            "iptables",
+            "kill",
+            "less",
+            "ln"
+          ],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "white.blocking_calls",
+          "team": "white",
+          "passed": true,
+          "detail": "sleep/blocking markers in non-test code\u22481",
+          "score": 5.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "source_root": "/honeypot",
+        "coverage": 0.8889,
+        "not_tested": 1
+      },
+      "notes": [
+        "Module F white-box audit (keys/prompts/SAST/VFS)"
+      ],
+      "error": null,
+      "complete": false,
+      "applicable_checks": 9,
+      "scored_checks": 8,
+      "critical_control_verdict": null
+    },
+    {
+      "module": "A",
+      "dimension": "protocol",
+      "score": 16.56,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "rfc4253.identification_crlf",
+          "team": "blue",
+          "passed": true,
+          "detail": "SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u3",
+          "score": 100.0,
+          "evidence": [
+            "5353482d322e302d4f70656e5353485f392e3270312044656269616e2d322b646562313275330d0a"
+          ],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.kexinit_after_id",
+          "team": "blue",
+          "passed": true,
+          "detail": "KEXINIT observed after version exchange",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.legacy_version_handling",
+          "team": "blue",
+          "passed": true,
+          "detail": "handled SSH-1.5 probe without hang",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.reject_null_in_id",
+          "team": "red",
+          "passed": false,
+          "detail": "accepted null ID",
+          "score": 0.0,
+          "evidence": [
+            "5353482d322e302d4f70656e5353485f392e3270312044656269616e2d322b646562313275330d0a"
+          ],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.identification_crlf",
+          "team": "blue",
+          "passed": true,
+          "detail": "SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u3",
+          "score": 100.0,
+          "evidence": [
+            "5353482d322e302d4f70656e5353485f392e3270312044656269616e2d322b646562313275330d0a"
+          ],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "rfc4253.kexinit_after_id",
+          "team": "blue",
+          "passed": true,
+          "detail": "KEXINIT observed after version exchange",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "ssh.nego.hassh",
+          "team": "blue",
+          "passed": true,
+          "detail": "HASSH=92585b26f6634475d2d35bddbcdd1917 banner=SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u3",
+          "score": 100.0,
+          "evidence": [
+            "curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group14-sha1,ext-info-s;aes128-ctr,aes192-ctr,aes256-ctr,aes256-cbc,aes192-cbc,ae"
+          ],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "ssh.nego.weak_algorithms",
+          "team": "blue",
+          "passed": false,
+          "detail": "weak algorithm offers: diffie-hellman-group14-sha1, 3des-cbc, cast128-cbc, hmac-md5",
+          "score": 0.0,
+          "evidence": [
+            "curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group14-sha1,ext-info-s;aes128-ctr,aes192-ctr,aes256-ctr,aes256-cbc,aes192-cbc,aes128-cbc,3des-cbc,cast128-cbc;hmac-sha2-"
+          ],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "ssh.timing.sample_size",
+          "team": "blue",
+          "passed": true,
+          "detail": "n=50 requested=50 errors=0",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "ssh.timing.iat_jitter",
+          "team": "red",
+          "passed": false,
+          "detail": "median=0.805ms pstdev=3.681ms (target jitter often <2ms vs native)",
+          "score": 30.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "ssh.module_a.composite",
+          "team": "blue",
+          "passed": false,
+          "detail": "fsm=0 nego=0 timing=55",
+          "score": 16.55615,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "ssh": 16.56
+        },
+        "protocols": [
+          "ssh"
+        ],
+        "timing_samples": 50,
+        "available_plugins": [
+          "bacnet",
+          "bluetooth",
+          "coap",
+          "dhcp",
+          "dns",
+          "elasticsearch",
+          "ftp",
+          "generic",
+          "git",
+          "http",
+          "httpproxy",
+          "imap",
+          "ipp",
+          "irc",
+          "kubernetes",
+          "ldap",
+          "mcp",
+          "memcache",
+          "modbus",
+          "mongodb",
+          "mqtt",
+          "mssql",
+          "mysql",
+          "ntp",
+          "oracle",
+          "pjl",
+          "pop3",
+          "postgres",
+          "rdp",
+          "redis",
+          "s7comm",
+          "sip",
+          "smb",
+          "smtp",
+          "snmp",
+          "socks5",
+          "ssh",
+          "telnet",
+          "tftp",
+          "vnc"
+        ],
+        "coverage": 1.0,
+        "not_tested": 0
+      },
+      "notes": [
+        "UHBS Module A \u2014 plugins=['ssh']",
+        "class=Low-Interaction strict_rfc=True"
+      ],
+      "error": null,
+      "complete": true,
+      "applicable_checks": 11,
+      "scored_checks": 11,
+      "critical_control_verdict": null
+    },
+    {
+      "module": "B",
+      "dimension": "behavior",
+      "score": 60.0,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "ssh.state.cross_session",
+          "team": "blue",
+          "passed": false,
+          "detail": "marker missing across sessions",
+          "score": 0.0,
+          "evidence": [
+            "\r\nThe programs included with the Debian GNU/Linux system are free software;\r\nthe",
+            "\r\nThe programs included with the Debian GNU/Linux system are free software;\r\nthe"
+          ],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "ssh.payload.echo",
+          "team": "red",
+          "passed": true,
+          "detail": "echo path ok",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "ssh.fuzz.non_utf8",
+          "team": "red",
+          "passed": true,
+          "detail": "The programs included with the Debian GNU/Linux system are free software;\r\nthe exact distribution terms for each program are described in the\r\nindividual files ",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "per_protocol": {
+          "ssh": 60.0
+        },
+        "class": "Low-Interaction",
+        "surface_depth": "unknown",
+        "coverage": 1.0,
+        "not_tested": 0
+      },
+      "notes": [
+        "UHBS Module B class=Low-Interaction"
+      ],
+      "error": null,
+      "complete": true,
+      "applicable_checks": 3,
+      "scored_checks": 3,
+      "critical_control_verdict": null
+    },
+    {
+      "module": "C",
+      "dimension": "telemetry",
+      "score": 0.02,
+      "status": "PARTIAL",
+      "checks": [
+        {
+          "id": "c1.json_parse_clean",
+          "team": "blue",
+          "passed": true,
+          "detail": "0 malformed / 612 records",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C1",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c1.format.native_json",
+          "team": "blue",
+          "passed": true,
+          "detail": "native_json ok=612/612; errors=[]",
+          "score": 100.0,
+          "evidence": [
+            "schema=uhbs:format/native_json",
+            "version=uhbs-v5",
+            "validator=uhbs-telemetry-c1-1.0"
+          ],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C1",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c1.stix_not_required",
+          "team": "blue",
+          "passed": false,
+          "detail": "STIX not declared \u2014 format credit not claimed for non-STIX logs",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "NOT_APPLICABLE",
+          "mandatory": false,
+          "applicability_rationale": "STIX 2.1 not in declared native_event_format",
+          "catalog_id": "C1",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c2.sink_injection_resilience",
+          "team": "red",
+          "passed": false,
+          "detail": "markers=['ansi'] malformed=0",
+          "score": 0.0,
+          "evidence": [
+            "{\"markers_found\": [\"ansi\"], \"markers_expected\": [\"ansi\", \"json_break\", \"null_byte\", \"cr_inject\", \"formula\", \"unicode\"], \"malformed_records\": 0, \"json_parse_ok\": true, \"run_id\": \"uhbs-gt-469964c37e7b\", \"ok\": false}"
+          ],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C2",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c3.observable_coverage",
+          "team": "blue",
+          "passed": true,
+          "detail": "3/3 observables present",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C3",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c4.ground_truth_recall",
+          "team": "blue",
+          "passed": true,
+          "detail": "matched=6/6 dups=138",
+          "score": 100.0,
+          "evidence": [
+            "{\"run_id\": \"uhbs-gt-469964c37e7b\", \"created_at\": \"2026-09-26T12:43:38.850957+00:00\", \"observation_window_s\": 30.0, \"events\": [{\"tag\": \"uhbs-gt-469964c37e7b:session:0\", \"kind\": \"session\", \"emitted_at\": \"2026-09-26T12:43:38.850957+00:00\", \"payload\": {\"marker\": \"uhbs-gt-469964c37e7b:session:0\", \"seq\": 0}}, {\"tag\": \"uhbs-gt-469964c37e7b:credential:1\", \"kind\": \"credential\", \"emitted_at\": \"2026-09-26T12:43:38.850957+00:00\", \"payload\": {\"marker\": \"uhbs-gt-469964c37e7b:credential:1\", \"seq\": 1}}, {\"tag\": \"uhbs-gt-469964c37e7b:command:2\", \"kind\": \"command\", \"emitted_at\": \"2026-09-26T12:43:38.850957+00:00\", \"payload\": {\"marker\": \"uhbs-gt-469964c37e7b:command:2\", \"seq\": 2}}, {\"tag\": \"uhbs-gt-469964c37e7b:request:3\", \"kind\": \"request\", \"emitted_at\": \"2026-09-26T12:43:38.850957+00:00\", \"payload\": {\"mark"
+          ],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "C4",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c4.field_accuracy",
+          "team": "blue",
+          "passed": false,
+          "detail": "field_accuracy=0.0",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "FAIL",
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "C4",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "c5.attack_mapping",
+          "team": "blue",
+          "passed": false,
+          "detail": "no ATT&CK technique IDs claimed in telemetry",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "NOT_APPLICABLE",
+          "mandatory": false,
+          "applicability_rationale": "CTI mapping only evaluated when technique IDs are present",
+          "catalog_id": "C5",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "ground_truth": {
+          "recall": 1.0,
+          "field_accuracy": 0.0,
+          "duplicate_rate": 1.0,
+          "matched": 6,
+          "expected": 6
+        },
+        "collection_capability": {
+          "recall": 1.0,
+          "observable_coverage": 1.0,
+          "duplicate_rate": 1.0,
+          "declared_formats": [
+            "native_json"
+          ],
+          "status": "COMPLETE"
+        },
+        "coverage": 1.0
+      },
+      "notes": [
+        "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4",
+        "no native_event_format declared \u2014 validating as native_json only"
+      ],
+      "error": null,
+      "complete": true,
+      "applicable_checks": 6,
+      "scored_checks": 6,
+      "critical_control_verdict": null
+    },
+    {
+      "module": "D",
+      "dimension": "containment",
+      "score": 0.0,
+      "status": "GATE FAILED",
+      "checks": [
+        {
+          "id": "d1.airgap_attested",
+          "team": "blue",
+          "passed": true,
+          "detail": "UHBS_AIRGAP_ATTESTED set (metadata only; zero scoring weight)",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D1.meta",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_icmp",
+          "team": "blue",
+          "passed": false,
+          "detail": "OOB LEAK",
+          "score": 0.0,
+          "evidence": [
+            "\r\nThe programs included with the Debian GNU/Linux system are free software;\r\nthe exact distribution terms for each program are described in the\r\nindividual files in /usr/share/doc/*/copyright.\r\n\r\nDebian GNU/Linux comes with ABSOLUTELY NO WA"
+          ],
+          "critical": true,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D1.critical",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_dns",
+          "team": "blue",
+          "passed": false,
+          "detail": "OOB LEAK",
+          "score": 0.0,
+          "evidence": [
+            "\r\nThe programs included with the Debian GNU/Linux system are free software;\r\nthe exact distribution terms for each program are described in the\r\nindividual files in /usr/share/doc/*/copyright.\r\n\r\nDebian GNU/Linux comes with ABSOLUTELY NO WA"
+          ],
+          "critical": true,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D1.critical",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_tcp",
+          "team": "blue",
+          "passed": false,
+          "detail": "OOB LEAK",
+          "score": 0.0,
+          "evidence": [
+            "EXIT:0\n"
+          ],
+          "critical": true,
+          "outcome": "FAIL",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D1.critical",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_https",
+          "team": "blue",
+          "passed": true,
+          "detail": "egress blocked",
+          "score": 100.0,
+          "evidence": [
+            "\r\nThe programs included with the Debian GNU/Linux system are free software;\r\nthe exact distribution terms for each program are described in the\r\nindividual files in /usr/share/doc/*/copyright.\r\n\r\nDebian GNU/Linux comes with ABSOLUTELY NO WA"
+          ],
+          "critical": true,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D1.critical",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_http",
+          "team": "blue",
+          "passed": true,
+          "detail": "egress blocked",
+          "score": 100.0,
+          "evidence": [
+            "\r\nThe programs included with the Debian GNU/Linux system are free software;\r\nthe exact distribution terms for each program are described in the\r\nindividual files in /usr/share/doc/*/copyright.\r\n\r\nDebian GNU/Linux comes with ABSOLUTELY NO WA"
+          ],
+          "critical": true,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D1.critical",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d1.egress_gateway_log",
+          "team": "blue",
+          "passed": false,
+          "detail": "gateway log unset; shell egress probes cover D1 critical path",
+          "score": 0.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "NOT_APPLICABLE",
+          "mandatory": false,
+          "applicability_rationale": "optional supplementary evidence when SSH egress probes executed",
+          "catalog_id": "D1.supplemental",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.docker_sock",
+          "team": "blue",
+          "passed": true,
+          "detail": "no docker.sock",
+          "score": 100.0,
+          "evidence": [],
+          "critical": true,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d2.cgroup_escape_surface",
+          "team": "blue",
+          "passed": true,
+          "detail": "cgroup surface ok",
+          "score": 100.0,
+          "evidence": [],
+          "critical": true,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": "D2.critical",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d3.prompt_injection",
+          "team": "red",
+          "passed": true,
+          "detail": "no prompt/policy leak",
+          "score": 100.0,
+          "evidence": [
+            "\r\nThe programs included with the Debian GNU/Linux system are free software;\r\nthe exact distribution terms for each program are described in the\r\nindividual files in /usr/share/doc/*/copyright.\r\n\r\nDebian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent\r\npermitted by applicable law.\r\n\u001b[4hroot@svr04:~# mkdir -p /tmp\r\n\u001b[4lmkdir: cannot create directory `/tmp': File exists\r\n\u001b[4hroot@svr04:~# "
+          ],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D3.did",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "d3.context_exhaustion",
+          "team": "red",
+          "passed": true,
+          "detail": "stable",
+          "score": 100.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": false,
+          "applicability_rationale": null,
+          "catalog_id": "D3.did",
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "breakout": true,
+        "allowed_outbound_traffic": false,
+        "shell_exec": true,
+        "defense_in_depth_score": 0.0
+      },
+      "notes": [
+        "UHBS v5: containment verdict from critical controls; defense-in-depth score is diagnostic only; no 95-point floor"
+      ],
+      "error": null,
+      "complete": true,
+      "applicable_checks": 10,
+      "scored_checks": 10,
+      "critical_control_verdict": "GATE_FAILED"
+    },
+    {
+      "module": "E",
+      "dimension": "scale",
+      "score": 100.0,
+      "status": "PASSED",
+      "checks": [
+        {
+          "id": "e1.p95_vs_tps",
+          "team": "blue",
+          "passed": true,
+          "detail": "P50=1376.6ms P95=1492.8ms P99=1521.7ms TPS_limit=3000.0ms proto=ssh",
+          "score": 45.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e1.error_rate",
+          "team": "blue",
+          "passed": true,
+          "detail": "errors=0/15 rate=0.00%",
+          "score": 20.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e2.exhaustion_input",
+          "team": "red",
+          "passed": true,
+          "detail": "completed exhaustion/fuzz blast",
+          "score": 15.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        },
+        {
+          "id": "e2.circuit_breaker_alive",
+          "team": "blue",
+          "passed": true,
+          "detail": "service alive after load (connect 292.1ms)",
+          "score": 20.0,
+          "evidence": [],
+          "critical": false,
+          "outcome": "PASS",
+          "mandatory": true,
+          "applicability_rationale": null,
+          "catalog_id": null,
+          "evidence_refs": [],
+          "evidence_hashes": []
+        }
+      ],
+      "metrics": {
+        "p50_ms": 1376.6,
+        "p95_ms": 1492.75,
+        "p99_ms": 1521.67,
+        "p95_limit_ms": 3000.0,
+        "errors": 0,
+        "concurrency": 5,
+        "requests": 15,
+        "wall_s": 5.81,
+        "protocol": "ssh"
+      },
+      "notes": [],
+      "error": null,
+      "complete": true,
+      "applicable_checks": 0,
+      "scored_checks": 0,
+      "critical_control_verdict": null
+    }
+  ],
+  "extras": {
+    "target_scores": {
+      "protocol": 16.56,
+      "behavior": 60.0,
+      "telemetry": 0.02,
+      "containment": 0.0,
+      "scale": 100.0,
+      "static": 0.0
+    },
+    "uhqs_version": "5.0.1",
+    "tps": {
+      "name": "Low-Interaction-SSH-Telnet-Emulator",
+      "class": "Low-Interaction",
+      "protocols": [
+        "ssh"
+      ],
+      "expected_p95_latency_ms": 3000.0
+    },
+    "surface_depth": "unknown"
+  }
+}

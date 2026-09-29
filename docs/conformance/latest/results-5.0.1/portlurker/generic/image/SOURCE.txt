@@ -1,0 +1,5 @@
+source=.local/labs/portlurker/Dockerfile.lab
+image=portlurker:uhbs-lab
+digest=sha256:0809f50693b51d82ca643b1a96e58707564ffb1e2c8d2b757f5750d01b72a684
+dockerfile=docs/conformance/latest/results-5.0.1/portlurker/generic/Dockerfile
+dockerfile_pin=docs/conformance/latest/results-5.0.1/portlurker/generic/Dockerfile.pin

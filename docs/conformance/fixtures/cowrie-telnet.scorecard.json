@@ -1,47 +1,54 @@
 {
-  "uhbs_version": "4.6.1",
+  "uhbs_version": "5.0.1",
   "target": {
     "name": "Cowrie (Telnet :2223)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/cowrie/low_interaction_telnet_full.yaml"
   },
-  "evaluated_at": "2026-07-27",
-  "auditor": "UHBS-Lab detailed Docker run (cowrie/telnet; SFTP verified as SSH subsystem)",
+  "evaluated_at": "2026-09-26",
+  "auditor": "UHBS-Lab results-5.0.1 refresh (cowrie-telnet)",
   "modules": {
     "A": {
-      "score": 100.0,
+      "score": 86.43,
       "status": "PASSED",
-      "weight": 0.3,
-      "notes": ""
+      "notes": "",
+      "complete": true,
+      "weight": 0.3
     },
     "B": {
-      "score": 82.5,
+      "score": 65.0,
       "status": "PARTIAL",
-      "weight": 0.15,
-      "notes": ""
+      "notes": "",
+      "complete": true,
+      "weight": 0.15
     },
     "C": {
-      "score": 55.0,
-      "status": "PARTIAL",
-      "weight": 0.25,
-      "notes": ""
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "notes": "",
+      "complete": false,
+      "weight": 0.25
     },
     "D": {
-      "score": 90.0,
-      "status": "PASSED",
-      "notes": ""
+      "score": 0.0,
+      "status": "INCOMPLETE",
+      "notes": "",
+      "complete": false,
+      "critical_control_verdict": "INCOMPLETE"
     },
     "E": {
-      "score": 100.0,
-      "status": "PASSED",
-      "weight": 0.1,
-      "notes": ""
+      "score": 55.0,
+      "status": "PARTIAL",
+      "notes": "",
+      "complete": true,
+      "weight": 0.1
     },
     "F": {
       "score": 70.0,
-      "status": "PARTIAL",
-      "weight": 0.2,
-      "notes": ""
+      "status": "PASSED",
+      "notes": "",
+      "complete": true,
+      "weight": 0.2
     }
   },
   "weights": {
@@ -52,12 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 90.0,
-    "delta_c": 0.81,
+    "containment_score": 0.0,
+    "delta_c": 1.0,
     "passed": false,
+    "critical_control_verdict": "INCOMPLETE",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 64.9,
-  "grade": "D",
-  "notes": "Evaluation proof only. Cowrie Telnet :2223. Regraded 2026-07-27 with 0\u2013100 Module A scale / P95 defaults. Artifacts: docs/conformance/reports/cowrie/telnet/."
+  "uhqs": 73.57,
+  "grade": "C",
+  "notes": "Evaluation proof only. results-5.0.1 refresh of cowrie-telnet at fef0d620962e23194a9d34a048488f9c76c85835. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "assessment_status": "INCOMPLETE",
+  "critical_control_verdict": "INCOMPLETE",
+  "containment_measured": false
 }

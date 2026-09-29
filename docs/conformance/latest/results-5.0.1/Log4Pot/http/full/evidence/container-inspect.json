@@ -1,0 +1,239 @@
+[
+    {
+        "Id": "60ab2a90ca1f56908eed3337cc357ec701118df9777a03a5a0f7e5efd4243246",
+        "Created": "2026-09-27T19:53:36.239329839Z",
+        "Path": "python3",
+        "Args": [
+            "log4pot-server.py",
+            "--port",
+            "8080",
+            "--log",
+            "/telemetry/log4pot.log",
+            "--response",
+            "responses/default.json"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 73639,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T19:53:36.313737839Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:9bb74bb48640a29a35d8170e05f447befc37f2ab03b1491a1c6d60abdbc4cd71",
+        "ResolvConfPath": "/var/lib/docker/containers/60ab2a90ca1f56908eed3337cc357ec701118df9777a03a5a0f7e5efd4243246/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/60ab2a90ca1f56908eed3337cc357ec701118df9777a03a5a0f7e5efd4243246/hostname",
+        "HostsPath": "/var/lib/docker/containers/60ab2a90ca1f56908eed3337cc357ec701118df9777a03a5a0f7e5efd4243246/hosts",
+        "LogPath": "/var/lib/docker/containers/60ab2a90ca1f56908eed3337cc357ec701118df9777a03a5a0f7e5efd4243246/60ab2a90ca1f56908eed3337cc357ec701118df9777a03a5a0f7e5efd4243246-json.log",
+        "Name": "/Log4Pot-lab",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/Log4Pot-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {
+                "8080/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "18083"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "60ab2a90ca1f56908eed3337cc357ec701118df9777a03a5a0f7e5efd4243246",
+                "LowerDir": "/var/lib/docker/overlay2/e1d84e29f64439e24fb458aa5f8e52371435ed8164d01228ccb6b33c5968809e-init/diff:/var/lib/docker/overlay2/i418g6izx3rpaafh6ipetqas0/diff:/var/lib/docker/overlay2/4rvvsb31e15nck0aaqhizcqtc/diff:/var/lib/docker/overlay2/lgfaovav1f7h631xnwj1drwa8/diff:/var/lib/docker/overlay2/wbcv8kp26e9pc1tj7kqn4tlcx/diff:/var/lib/docker/overlay2/d2c1216eebd0c5478a4f10d14e5a44bdc4b8d7de15d82fffa89662d16f8eaa56/diff:/var/lib/docker/overlay2/5cc35d93811395525d6f2d7564da293528dfbb291417980d830f957b10262b1d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/e1d84e29f64439e24fb458aa5f8e52371435ed8164d01228ccb6b33c5968809e/merged",
+                "UpperDir": "/var/lib/docker/overlay2/e1d84e29f64439e24fb458aa5f8e52371435ed8164d01228ccb6b33c5968809e/diff",
+                "WorkDir": "/var/lib/docker/overlay2/e1d84e29f64439e24fb458aa5f8e52371435ed8164d01228ccb6b33c5968809e/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/Log4Pot-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "60ab2a90ca1f",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive"
+            ],
+            "Cmd": [
+                "python3",
+                "log4pot-server.py",
+                "--port",
+                "8080",
+                "--log",
+                "/telemetry/log4pot.log",
+                "--response",
+                "responses/default.json"
+            ],
+            "Image": "log4pot:uhbs-lab",
+            "Volumes": null,
+            "WorkingDir": "/opt/log4pot",
+            "Entrypoint": null,
+            "Labels": {
+                "org.opencontainers.image.created": "2026-09-12T10:29:18.701012+00:00",
+                "org.opencontainers.image.description": "The Ubuntu container image maintained by Canonical\n\nUbuntu is a Debian-based Linux operating system that runs from the desktop to the cloud, to all your internet connected things.\nIt is the world's most popular operating system across public clouds and OpenStack clouds.\nIt is the number one platform for containers; from Docker to Kubernetes to LXD, Ubuntu can run your containers at scale.\nFast, secure and simple, Ubuntu powers millions of PCs worldwide.\n",
+                "org.opencontainers.image.title": "ubuntu",
+                "org.opencontainers.image.version": "26.04",
+                "uhbs.unit": "Log4Pot-http"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "ab35ae4831cdbc21a6afd11ee58c1e945c7957057ca85c9552ff32054dc683ab",
+            "SandboxKey": "/var/run/docker/netns/ab35ae4831cd",
+            "Ports": {
+                "8080/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "18083"
+                    }
+                ]
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "Log4Pot-lab"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "d440a8d30f7ab4d2926f0df45b5e13c06c0b11177146aad7e17102282098b813",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "b2:af:40:64:42:8c",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "Log4Pot-lab",
+                        "60ab2a90ca1f"
+                    ]
+                }
+            }
+        }
+    }
+]

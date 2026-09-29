@@ -40,7 +40,7 @@ def test_cli_and_core_uhqs_agree() -> None:
     weights = weights_for_class("Low-Interaction")
     cli = cli_compute(LI_WORKED_SCORES, weights)
     core = core_compute(LI_WORKED_DIMS, target="x", profile_class="Low-Interaction")
-    assert cli.uhqs == core.uhqs == 46.97
+    assert cli.uhqs == core.uhqs == 46.98
     assert cli.delta_c == pytest.approx(core.delta_c)
     assert shared_letter(cli.uhqs) == letter_grade(cli.uhqs) == "F"
     assert grade_for(cli.uhqs).startswith("GRADE F")
@@ -55,18 +55,27 @@ def test_missing_module_score_raises() -> None:
         core_compute({"protocol": 1.0}, target="x")
 
 
-def test_containment_not_measured_skips_gate() -> None:
+def test_containment_not_measured_still_graded() -> None:
+    """Always-grade: unmeasured containment lowers δ_C; still publishes UHQS."""
     scores = {**LI_WORKED_DIMS, "containment": 10.0}
-    gated = core_compute(scores, target="x", profile_class="Low-Interaction")
-    ungated = core_compute(
+    gated = core_compute(
+        scores,
+        target="x",
+        profile_class="Low-Interaction",
+        critical_control_verdict="GATE_FAILED",
+    )
+    unmeasured = core_compute(
         scores,
         target="x",
         profile_class="Low-Interaction",
         containment_measured=False,
     )
-    assert gated.uhqs < ungated.uhqs
-    assert ungated.delta_c == 1.0
-    assert gated.delta_c < 1.0
+    assert gated.uhqs is not None
+    assert gated.delta_c == 0.5
+    assert unmeasured.uhqs is not None
+    assert unmeasured.delta_c == 1.0
+    assert unmeasured.graded
+    assert gated.graded
 
 
 def test_integrity_detects_tampered_uhqs() -> None:
@@ -83,35 +92,41 @@ def test_integrity_detects_tampered_grade() -> None:
     assert any("grade=" in e for e in errors)
 
 
-def test_integrity_respects_skipped_module_d() -> None:
+def test_integrity_skipped_module_d_still_graded() -> None:
     data = json.loads((FIXTURES / "cowrie-low-interaction.scorecard.json").read_text())
-    # Force a D score that would otherwise crush UHQS, but mark D as skipped
-    data["modules"]["D"] = {"score": 10.0, "status": "SKIPPED", "weight": 0.0}
-    data["safety_gate"] = {
-        "containment_score": 10.0,
-        "delta_c": 1.0,
-        "passed": True,
-        "unauthorized_egress_leaks": 0,
+    data["modules"]["D"] = {
+        "score": 10.0,
+        "status": "INCOMPLETE",
+        "complete": False,
+        "critical_control_verdict": "INCOMPLETE",
     }
-    # Recompute expected UHQS with gate not applied
-    from uhbs_core.uhqs_math import compute_uhqs
+    data["assessment_status"] = "INCOMPLETE"
+    data["critical_control_verdict"] = "INCOMPLETE"
+    data["containment_measured"] = False
+    # Low-Interaction base from remaining modules × δ_C 0.75
+    from uhbs_core.uhqs_math import compute_uhqs, letter_grade
 
-    expected = compute_uhqs(
-        {
-            "A": data["modules"]["A"]["score"],
-            "B": data["modules"]["B"]["score"],
-            "C": data["modules"]["C"]["score"],
-            "D": 10.0,
-            "E": data["modules"]["E"]["score"],
-            "F": data["modules"]["F"]["score"],
-        },
+    scores = {k: float(data["modules"][k]["score"]) for k in "ABCDEF"}
+    result = compute_uhqs(
+        scores,
         data["weights"],
+        assessment_status="INCOMPLETE",
+        critical_control_verdict="INCOMPLETE",
         containment_measured=False,
     )
-    data["uhqs"] = expected.uhqs
-    data["grade"] = letter_grade(expected.uhqs)
+    data["safety_gate"] = {
+        "containment_score": 10.0,
+        "delta_c": result.delta_c,
+        "passed": False,
+        "critical_control_verdict": "INCOMPLETE",
+        "unauthorized_egress_leaks": 0,
+    }
+    data["uhqs"] = result.uhqs
+    data["grade"] = letter_grade(result.uhqs)
     errors = assert_scorecard_integrity(data)
     assert errors == [], errors
+    assert data["uhqs"] is not None
+    assert data["grade"] is not None
 
 
 def test_cli_validate_scorecard_ok() -> None:
@@ -151,10 +166,11 @@ def test_cli_score_command() -> None:
             main, ["score", "--class", "Low-Interaction", "--scores", "scores.json"]
         )
     assert result.exit_code == 0, result.output
-    # Lab notice goes to stderr; JSON score payload stays on stdout.
-    assert "lab/sandbox evaluation of decoys" in (result.stderr or "")
-    payload = json.loads(result.stdout)
-    assert payload["uhqs"] == 46.97
+    assert "lab/sandbox evaluation of decoys" in result.output
+    json_start = result.output.index("{")
+    json_end = result.output.rindex("}") + 1
+    payload = json.loads(result.output[json_start:json_end])
+    assert payload["uhqs"] == 46.98
     assert payload["grade"] == "F"
 
 
@@ -165,10 +181,8 @@ def test_cli_prints_lab_sandbox_notice() -> None:
         ["validate-scorecard", str(FIXTURES / "cowrie-low-interaction.scorecard.json")],
     )
     assert result.exit_code == 0, result.output
-    assert "UHBS/AEP are for lab/sandbox evaluation of decoys" in (result.stderr or "")
-    assert "Do not run them against production or unauthorized real services" in (
-        result.stderr or ""
-    )
+    assert "UHBS/AEP are for lab/sandbox evaluation of decoys" in result.output
+    assert "Do not run them against production or unauthorized real services" in result.output
 
 
 def test_cli_lab_list_protocols() -> None:

@@ -1,0 +1,318 @@
+{
+  "version": "1.178.0",
+  "results": [
+    {
+      "check_id": "generic.nginx.security.insecure-redirect.insecure-redirect",
+      "path": "conf/nginx_snippet.conf",
+      "start": {
+        "line": 3,
+        "col": 5,
+        "offset": 104
+      },
+      "end": {
+        "line": 3,
+        "col": 43,
+        "offset": 142
+      },
+      "extra": {
+        "message": "Detected an insecure redirect in this nginx configuration. If no scheme is specified, nginx will forward the request with the incoming scheme. This could result in unencrypted communications. To fix this, include the 'https' scheme.",
+        "metadata": {
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "category": "security",
+          "technology": [
+            "nginx"
+          ],
+          "confidence": "LOW",
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A02_2021-Cryptographic_Failures"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/generic.nginx.security.insecure-redirect.insecure-redirect",
+          "shortlink": "https://sg.run/8y14"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "res/phpinfo.php.html",
+      "start": {
+        "line": 29,
+        "col": 1,
+        "offset": 1368
+      },
+      "end": {
+        "line": 29,
+        "col": 5507,
+        "offset": 6874
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+      "path": "res/phpinfo.php.html",
+      "start": {
+        "line": 69,
+        "col": 1,
+        "offset": 9837
+      },
+      "end": {
+        "line": 69,
+        "col": 6153,
+        "offset": 15989
+      },
+      "extra": {
+        "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+        "metadata": {
+          "category": "security",
+          "technology": [
+            "html"
+          ],
+          "cwe": [
+            "CWE-319: Cleartext Transmission of Sensitive Information"
+          ],
+          "owasp": [
+            "A03:2017 - Sensitive Data Exposure",
+            "A02:2021 - Cryptographic Failures",
+            "A04:2025 - Cryptographic Failures"
+          ],
+          "confidence": "HIGH",
+          "subcategory": [
+            "vuln"
+          ],
+          "references": [
+            "https://cwe.mitre.org/data/definitions/319.html"
+          ],
+          "likelihood": "LOW",
+          "impact": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+          "shortlink": "https://sg.run/RA5q"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.django.security.django-no-csrf-token.django-no-csrf-token",
+      "path": "res/upload.php.html",
+      "start": {
+        "line": 8,
+        "col": 9,
+        "offset": 142
+      },
+      "end": {
+        "line": 12,
+        "col": 16,
+        "offset": 418
+      },
+      "extra": {
+        "message": "Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks.",
+        "metadata": {
+          "category": "security",
+          "cwe": "CWE-352: Cross-Site Request Forgery (CSRF)",
+          "references": [
+            "https://docs.djangoproject.com/en/4.2/howto/csrf/"
+          ],
+          "confidence": "MEDIUM",
+          "likelihood": "MEDIUM",
+          "impact": "MEDIUM",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "django"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cross-Site Request Forgery (CSRF)"
+          ],
+          "source": "https://semgrep.dev/r/python.django.security.django-no-csrf-token.django-no-csrf-token",
+          "shortlink": "https://sg.run/N0Bp"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      ".env.example",
+      ".gitattributes",
+      ".gitignore",
+      "Cargo.lock",
+      "Cargo.toml",
+      "Dockerfile.dev",
+      "Dockerfile.lab",
+      "LICENSE",
+      "README.md",
+      "conf/honeyup.service",
+      "conf/nginx_snippet.conf",
+      "docker-compose.yml",
+      "entrypoint.sh",
+      "res/backup/index.html",
+      "res/config.env.txt",
+      "res/files/index.html",
+      "res/index.html",
+      "res/phpinfo.php.html",
+      "res/upload.php.html",
+      "src/main.rs",
+      "uploaded_files/test.txt"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 3.6828370094299316,
+    "profiling_times": {
+      "config_time": 5.659878730773926,
+      "core_time": 13.443517446517944,
+      "ignores_time": 0.036865234375,
+      "total_time": 19.433149337768555
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 16.885105848312378,
+      "per_file_time": {
+        "mean": 0.33108050682965445,
+        "std_dev": 0.44288689335589904
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.5180223900823463,
+        "count_ratio": 0.0784313725490196
+      },
+      "very_slow_files": [
+        {
+          "fpath": "entrypoint.sh",
+          "ftime": 1.5177948474884033
+        },
+        {
+          "fpath": "docker-compose.yml",
+          "ftime": 1.8128108978271484
+        },
+        {
+          "fpath": "res/phpinfo.php.html",
+          "ftime": 2.6818490028381348
+        },
+        {
+          "fpath": "res/phpinfo.php.html",
+          "ftime": 2.734408140182495
+        }
+      ]
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.963996399639964,
+      "rules_selected_ratio": 0.0675067506750675,
+      "rules_matched_ratio": 0.0675067506750675
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 917013632
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

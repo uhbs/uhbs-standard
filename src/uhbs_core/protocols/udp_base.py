@@ -32,7 +32,7 @@ from __future__ import annotations
 import os
 import statistics
 
-from uhbs_core.models import CheckResult, TargetSpec
+from uhbs_core.models import CheckOutcome, CheckResult, TargetSpec
 from uhbs_core.netutil import udp_transact
 from uhbs_core.protocols.base import ProtocolPlugin
 from uhbs_core.stats import ks_2samp
@@ -146,28 +146,28 @@ class UdpProtocolPlugin(ProtocolPlugin):
                     CheckResult(
                         id=f"{self.name}.timing.ks_vs_gold",
                         team="red",
-                        passed=False,
+                        outcome=CheckOutcome.ERROR,
                         detail=(
                             f"gold baseline {tps.gold_baseline_host}:{b_port} "
                             "did not reply enough to KS-compare"
                         ),
-                        score=40.0,
+                        score=0.0,
                     )
                 )
         else:
-            # Silent-by-design (or genuinely broken) target — we cannot
-            # measure a real RTT distribution either way, so this is
-            # explicitly a measurement limitation, not a fidelity verdict.
+            # Silent-by-design (or genuinely broken) target — measurement
+            # limitation, not free credit.
             checks.append(
                 CheckResult(
                     id=f"{self.name}.timing.iat_jitter",
                     team="blue",
-                    passed=True,
+                    outcome=CheckOutcome.NOT_TESTED,
                     detail=(
                         f"no UDP replies in {samples} samples — cannot measure "
-                        "jitter (alert-only canary assumed; timing N/A)"
+                        "jitter (alert-only canary assumed)"
                     ),
-                    score=50.0,
+                    score=0.0,
+                    mandatory=True,
                 )
             )
         return checks

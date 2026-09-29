@@ -1,0 +1,47 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "db53958b541700f400757aef4818f555bd759e4ec495ccdddff3dd01f52c02a6"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "4aa571d6e4e9e76fe99f12a69f21f1d903a85217890ebae0bf92e20bce0d36bd"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "4aa571d6e4e9e76fe99f12a69f21f1d903a85217890ebae0bf92e20bce0d36bd"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "84eab074800e5c831925eca56e54a4d945f6be2d2cd1c709b96989cce4db2aa3"
+    },
+    {
+      "path": "report.json",
+      "sha256": "b0a09c2d29edeb13824972ba26a6b1cf75b5c1f1e2d28a9727aa4fd9c9d0e887"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "3eec008658b75392439ffed4045ed693a401970ebf5206441015bcff9a7f2b28"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "9f8e883777d9f5714ee3075646c27e5c0ee9f1da24a07591c29a6abd1eec2b35"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "1a9c8267871a2d2cbac595921654b59ccd210efd9011ea41e4d5bdbf81b85bf3"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "eae3d08847e6c1fb9fefa23f0987038ade51bfbe86849b86ebe8f7490355885f"
+    }
+  ],
+  "extra": {
+    "target": "echidra",
+    "uhqs": 36.58,
+    "grade": "GRADE F (Fail)",
+    "critical_control_verdict": "GATE_PASSED"
+  }
+}

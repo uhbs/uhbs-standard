@@ -1,0 +1,1528 @@
+{
+  "version": "1.178.0",
+  "results": [
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/black.yml",
+      "start": {
+        "line": 9,
+        "col": 9,
+        "offset": 114
+      },
+      "end": {
+        "line": 9,
+        "col": 34,
+        "offset": 139
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/black.yml",
+      "start": {
+        "line": 11,
+        "col": 9,
+        "offset": 173
+      },
+      "end": {
+        "line": 11,
+        "col": 41,
+        "offset": 205
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/black.yml",
+      "start": {
+        "line": 15,
+        "col": 9,
+        "offset": 285
+      },
+      "end": {
+        "line": 15,
+        "col": 38,
+        "offset": 314
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/python.yml",
+      "start": {
+        "line": 9,
+        "col": 9,
+        "offset": 91
+      },
+      "end": {
+        "line": 9,
+        "col": 34,
+        "offset": 116
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/python.yml",
+      "start": {
+        "line": 11,
+        "col": 9,
+        "offset": 150
+      },
+      "end": {
+        "line": 11,
+        "col": 41,
+        "offset": 182
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+      "path": ".github/workflows/python.yml",
+      "start": {
+        "line": 15,
+        "col": 9,
+        "offset": 262
+      },
+      "end": {
+        "line": 15,
+        "col": 38,
+        "offset": 291
+      },
+      "extra": {
+        "message": "GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently repointed by the action owner, enabling supply-chain attacks \u2014 as seen in the trivy-action and kics-github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.",
+        "metadata": {
+          "category": "security",
+          "cwe": [
+            "CWE-1357: Reliance on Insufficiently Trustworthy Component",
+            "CWE-353: Missing Support for Integrity Check"
+          ],
+          "owasp": [
+            "A08:2021 - Software and Data Integrity Failures",
+            "A08:2025 - Software and Data Integrity Failures"
+          ],
+          "references": [
+            "https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions"
+          ],
+          "technology": [
+            "github-actions"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Cryptographic Issues",
+            "Other"
+          ],
+          "source": "https://semgrep.dev/r/yaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag",
+          "shortlink": "https://sg.run/2LgAL"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.eval-detected.eval-detected",
+      "path": "conpot/core/databus.py",
+      "start": {
+        "line": 92,
+        "col": 41,
+        "offset": 3422
+      },
+      "end": {
+        "line": 92,
+        "col": 61,
+        "offset": 3442
+      },
+      "extra": {
+        "message": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.",
+        "metadata": {
+          "source-rule-url": "https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b307-eval",
+          "cwe": [
+            "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "asvs": {
+            "control_id": "5.2.4 Dyanmic Code Execution Features",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing-requirements",
+            "section": "V5: Validation, Sanitization and Encoding Verification Requirements",
+            "version": "4"
+          },
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Code Injection"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.eval-detected.eval-detected",
+          "shortlink": "https://sg.run/ZvrD"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.eval-detected.eval-detected",
+      "path": "conpot/core/log_worker.py",
+      "start": {
+        "line": 62,
+        "col": 24,
+        "offset": 2096
+      },
+      "end": {
+        "line": 62,
+        "col": 65,
+        "offset": 2137
+      },
+      "extra": {
+        "message": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.",
+        "metadata": {
+          "source-rule-url": "https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b307-eval",
+          "cwe": [
+            "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "asvs": {
+            "control_id": "5.2.4 Dyanmic Code Execution Features",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing-requirements",
+            "section": "V5: Validation, Sanitization and Encoding Verification Requirements",
+            "version": "4"
+          },
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Code Injection"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.eval-detected.eval-detected",
+          "shortlink": "https://sg.run/ZvrD"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.eval-detected.eval-detected",
+      "path": "conpot/protocols/http/command_responder.py",
+      "start": {
+        "line": 52,
+        "col": 28,
+        "offset": 1712
+      },
+      "end": {
+        "line": 52,
+        "col": 37,
+        "offset": 1721
+      },
+      "extra": {
+        "message": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.",
+        "metadata": {
+          "source-rule-url": "https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b307-eval",
+          "cwe": [
+            "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+          ],
+          "owasp": [
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "asvs": {
+            "control_id": "5.2.4 Dyanmic Code Execution Features",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing-requirements",
+            "section": "V5: Validation, Sanitization and Encoding Verification Requirements",
+            "version": "4"
+          },
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "LOW",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Code Injection"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.eval-detected.eval-detected",
+          "shortlink": "https://sg.run/ZvrD"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "python.lang.security.audit.logging.logger-credential-leak.python-logger-credential-disclosure",
+      "path": "conpot/protocols/ipmi/ipmi_server.py",
+      "start": {
+        "line": 572,
+        "col": 13,
+        "offset": 22840
+      },
+      "end": {
+        "line": 574,
+        "col": 14,
+        "offset": 22952
+      },
+      "extra": {
+        "message": "Detected a python logger call with a potential hardcoded secret \"IPMI response sent (Set User Password) to %s\" being logged. This may lead to secret credentials being exposed. Make sure that the logger is not logging  sensitive information.",
+        "metadata": {
+          "cwe": [
+            "CWE-532: Insertion of Sensitive Information into Log File"
+          ],
+          "category": "security",
+          "technology": [
+            "python"
+          ],
+          "owasp": [
+            "A09:2021 - Security Logging and Monitoring Failures",
+            "A09:2025 - Security Logging & Alerting Failures"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures"
+          ],
+          "subcategory": [
+            "vuln"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "confidence": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Mishandled Sensitive Information"
+          ],
+          "source": "https://semgrep.dev/r/python.lang.security.audit.logging.logger-credential-leak.python-logger-credential-disclosure",
+          "shortlink": "https://sg.run/ydNx"
+        },
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "generic.secrets.security.detected-private-key.detected-private-key",
+      "path": "conpot/templates/default/ssl/ssl.key",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 2,
+        "col": 65,
+        "offset": 96
+      },
+      "extra": {
+        "message": "Private Key detected. This is a sensitive credential and should not be hardcoded here. Instead, store this in a separate, private file.",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "source-rule-url": "https://github.com/grab/secret-scanner/blob/master/scanner/signatures/pattern.go",
+          "category": "security",
+          "technology": [
+            "secrets"
+          ],
+          "confidence": "LOW",
+          "owasp": [
+            "A07:2021 - Identification and Authentication Failures",
+            "A07:2025 - Authentication Failures"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Hard-coded Secrets"
+          ],
+          "source": "https://semgrep.dev/r/generic.secrets.security.detected-private-key.detected-private-key",
+          "shortlink": "https://sg.run/b7dr"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "generic.secrets.security.detected-private-key.detected-private-key",
+      "path": "conpot/templates/kamstrup_382/ssl/ssl.key",
+      "start": {
+        "line": 1,
+        "col": 1,
+        "offset": 0
+      },
+      "end": {
+        "line": 2,
+        "col": 65,
+        "offset": 96
+      },
+      "extra": {
+        "message": "Private Key detected. This is a sensitive credential and should not be hardcoded here. Instead, store this in a separate, private file.",
+        "metadata": {
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "source-rule-url": "https://github.com/grab/secret-scanner/blob/master/scanner/signatures/pattern.go",
+          "category": "security",
+          "technology": [
+            "secrets"
+          ],
+          "confidence": "LOW",
+          "owasp": [
+            "A07:2021 - Identification and Authentication Failures",
+            "A07:2025 - Authentication Failures"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures"
+          ],
+          "cwe2022-top25": true,
+          "cwe2021-top25": true,
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "MEDIUM",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Hard-coded Secrets"
+          ],
+          "source": "https://semgrep.dev/r/generic.secrets.security.detected-private-key.detected-private-key",
+          "shortlink": "https://sg.run/b7dr"
+        },
+        "severity": "ERROR",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": "conpot/core/filesystem.py",
+            "start": {
+              "line": 306,
+              "col": 57,
+              "offset": 0
+            },
+            "end": {
+              "line": 306,
+              "col": 67,
+              "offset": 10
+            }
+          },
+          {
+            "path": "conpot/core/filesystem.py",
+            "start": {
+              "line": 335,
+              "col": 57,
+              "offset": 0
+            },
+            "end": {
+              "line": 335,
+              "col": 67,
+              "offset": 10
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line conpot/core/filesystem.py:306:\n `, KeyError` was unexpected",
+      "path": "conpot/core/filesystem.py",
+      "spans": [
+        {
+          "file": "conpot/core/filesystem.py",
+          "start": {
+            "line": 306,
+            "col": 57,
+            "offset": 0
+          },
+          "end": {
+            "line": 306,
+            "col": 67,
+            "offset": 10
+          }
+        },
+        {
+          "file": "conpot/core/filesystem.py",
+          "start": {
+            "line": 335,
+            "col": 57,
+            "offset": 0
+          },
+          "end": {
+            "line": 335,
+            "col": 67,
+            "offset": 10
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": "conpot/protocols/bacnet/bacnet_app.py",
+            "start": {
+              "line": 112,
+              "col": 53,
+              "offset": 0
+            },
+            "end": {
+              "line": 112,
+              "col": 65,
+              "offset": 12
+            }
+          },
+          {
+            "path": "conpot/protocols/bacnet/bacnet_app.py",
+            "start": {
+              "line": 148,
+              "col": 45,
+              "offset": 0
+            },
+            "end": {
+              "line": 148,
+              "col": 57,
+              "offset": 12
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line conpot/protocols/bacnet/bacnet_app.py:112:\n `, ValueError` was unexpected",
+      "path": "conpot/protocols/bacnet/bacnet_app.py",
+      "spans": [
+        {
+          "file": "conpot/protocols/bacnet/bacnet_app.py",
+          "start": {
+            "line": 112,
+            "col": 53,
+            "offset": 0
+          },
+          "end": {
+            "line": 112,
+            "col": 65,
+            "offset": 12
+          }
+        },
+        {
+          "file": "conpot/protocols/bacnet/bacnet_app.py",
+          "start": {
+            "line": 148,
+            "col": 45,
+            "offset": 0
+          },
+          "end": {
+            "line": 148,
+            "col": 57,
+            "offset": 12
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": "conpot/protocols/ftp/ftp_handler.py",
+            "start": {
+              "line": 219,
+              "col": 28,
+              "offset": 0
+            },
+            "end": {
+              "line": 219,
+              "col": 63,
+              "offset": 35
+            }
+          },
+          {
+            "path": "conpot/protocols/ftp/ftp_handler.py",
+            "start": {
+              "line": 337,
+              "col": 33,
+              "offset": 0
+            },
+            "end": {
+              "line": 337,
+              "col": 51,
+              "offset": 18
+            }
+          },
+          {
+            "path": "conpot/protocols/ftp/ftp_handler.py",
+            "start": {
+              "line": 355,
+              "col": 35,
+              "offset": 0
+            },
+            "end": {
+              "line": 355,
+              "col": 51,
+              "offset": 16
+            }
+          },
+          {
+            "path": "conpot/protocols/ftp/ftp_handler.py",
+            "start": {
+              "line": 377,
+              "col": 35,
+              "offset": 0
+            },
+            "end": {
+              "line": 377,
+              "col": 51,
+              "offset": 16
+            }
+          },
+          {
+            "path": "conpot/protocols/ftp/ftp_handler.py",
+            "start": {
+              "line": 400,
+              "col": 35,
+              "offset": 0
+            },
+            "end": {
+              "line": 400,
+              "col": 51,
+              "offset": 16
+            }
+          },
+          {
+            "path": "conpot/protocols/ftp/ftp_handler.py",
+            "start": {
+              "line": 457,
+              "col": 28,
+              "offset": 0
+            },
+            "end": {
+              "line": 457,
+              "col": 63,
+              "offset": 35
+            }
+          },
+          {
+            "path": "conpot/protocols/ftp/ftp_handler.py",
+            "start": {
+              "line": 478,
+              "col": 35,
+              "offset": 0
+            },
+            "end": {
+              "line": 478,
+              "col": 51,
+              "offset": 16
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line conpot/protocols/ftp/ftp_handler.py:219:\n `fs.errors.FSError, FilesystemError,` was unexpected",
+      "path": "conpot/protocols/ftp/ftp_handler.py",
+      "spans": [
+        {
+          "file": "conpot/protocols/ftp/ftp_handler.py",
+          "start": {
+            "line": 219,
+            "col": 28,
+            "offset": 0
+          },
+          "end": {
+            "line": 219,
+            "col": 63,
+            "offset": 35
+          }
+        },
+        {
+          "file": "conpot/protocols/ftp/ftp_handler.py",
+          "start": {
+            "line": 337,
+            "col": 33,
+            "offset": 0
+          },
+          "end": {
+            "line": 337,
+            "col": 51,
+            "offset": 18
+          }
+        },
+        {
+          "file": "conpot/protocols/ftp/ftp_handler.py",
+          "start": {
+            "line": 355,
+            "col": 35,
+            "offset": 0
+          },
+          "end": {
+            "line": 355,
+            "col": 51,
+            "offset": 16
+          }
+        },
+        {
+          "file": "conpot/protocols/ftp/ftp_handler.py",
+          "start": {
+            "line": 377,
+            "col": 35,
+            "offset": 0
+          },
+          "end": {
+            "line": 377,
+            "col": 51,
+            "offset": 16
+          }
+        },
+        {
+          "file": "conpot/protocols/ftp/ftp_handler.py",
+          "start": {
+            "line": 400,
+            "col": 35,
+            "offset": 0
+          },
+          "end": {
+            "line": 400,
+            "col": 51,
+            "offset": 16
+          }
+        },
+        {
+          "file": "conpot/protocols/ftp/ftp_handler.py",
+          "start": {
+            "line": 457,
+            "col": 28,
+            "offset": 0
+          },
+          "end": {
+            "line": 457,
+            "col": 63,
+            "offset": 35
+          }
+        },
+        {
+          "file": "conpot/protocols/ftp/ftp_handler.py",
+          "start": {
+            "line": 478,
+            "col": 35,
+            "offset": 0
+          },
+          "end": {
+            "line": 478,
+            "col": 51,
+            "offset": 16
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": "conpot/protocols/modbus/modbus_server.py",
+            "start": {
+              "line": 48,
+              "col": 28,
+              "offset": 0
+            },
+            "end": {
+              "line": 48,
+              "col": 37,
+              "offset": 9
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line conpot/protocols/modbus/modbus_server.py:48:\n `KeyError,` was unexpected",
+      "path": "conpot/protocols/modbus/modbus_server.py",
+      "spans": [
+        {
+          "file": "conpot/protocols/modbus/modbus_server.py",
+          "start": {
+            "line": 48,
+            "col": 28,
+            "offset": 0
+          },
+          "end": {
+            "line": 48,
+            "col": 37,
+            "offset": 9
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": "conpot/protocols/modbus/slave.py",
+            "start": {
+              "line": 297,
+              "col": 40,
+              "offset": 0
+            },
+            "end": {
+              "line": 297,
+              "col": 61,
+              "offset": 21
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line conpot/protocols/modbus/slave.py:297:\n `, KeyError, TypeError` was unexpected",
+      "path": "conpot/protocols/modbus/slave.py",
+      "spans": [
+        {
+          "file": "conpot/protocols/modbus/slave.py",
+          "start": {
+            "line": 297,
+            "col": 40,
+            "offset": 0
+          },
+          "end": {
+            "line": 297,
+            "col": 61,
+            "offset": 21
+          }
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "level": "warn",
+      "type": [
+        "PartialParsing",
+        [
+          {
+            "path": "conpot/utils/ext_ip.py",
+            "start": {
+              "line": 33,
+              "col": 44,
+              "offset": 0
+            },
+            "end": {
+              "line": 33,
+              "col": 55,
+              "offset": 11
+            }
+          }
+        ]
+      ],
+      "message": "Syntax error at line conpot/utils/ext_ip.py:33:\n `, TypeError` was unexpected",
+      "path": "conpot/utils/ext_ip.py",
+      "spans": [
+        {
+          "file": "conpot/utils/ext_ip.py",
+          "start": {
+            "line": 33,
+            "col": 44,
+            "offset": 0
+          },
+          "end": {
+            "line": 33,
+            "col": 55,
+            "offset": 11
+          }
+        }
+      ]
+    }
+  ],
+  "paths": {
+    "scanned": [
+      ".dockerignore",
+      ".github/FUNDING.yml",
+      ".github/ISSUE_TEMPLATE/bug_report.md",
+      ".github/ISSUE_TEMPLATE/feature_request.md",
+      ".github/ISSUE_TEMPLATE/general-issue-template.md",
+      ".github/workflows/black.yml",
+      ".github/workflows/python.yml",
+      ".gitignore",
+      ".python-version",
+      ".readthedocs.yaml",
+      "AGENTS.md",
+      "Dockerfile",
+      "Dockerfile.lab",
+      "LICENSE.txt",
+      "Makefile",
+      "README.md",
+      "changelog.txt",
+      "conpot/__init__.py",
+      "conpot/__main__.py",
+      "conpot/cli.py",
+      "conpot/core/__init__.py",
+      "conpot/core/attack_session.py",
+      "conpot/core/databus.py",
+      "conpot/core/filesystem.py",
+      "conpot/core/fs_utils.py",
+      "conpot/core/internal_interface.py",
+      "conpot/core/log_worker.py",
+      "conpot/core/loggers/__init__.py",
+      "conpot/core/loggers/event.py",
+      "conpot/core/loggers/helpers.py",
+      "conpot/core/loggers/hpfriends.py",
+      "conpot/core/loggers/json_log.py",
+      "conpot/core/loggers/sqlite_log.py",
+      "conpot/core/loggers/syslog.py",
+      "conpot/core/protocol_startup.py",
+      "conpot/core/protocol_wrapper.py",
+      "conpot/core/session_manager.py",
+      "conpot/core/templates.py",
+      "conpot/core/virtual_fs.py",
+      "conpot/data.tar",
+      "conpot/emulators/__init__.py",
+      "conpot/emulators/kamstrup/__init__.py",
+      "conpot/emulators/kamstrup/usage_simulator.py",
+      "conpot/emulators/misc/__init__.py",
+      "conpot/emulators/misc/random.py",
+      "conpot/emulators/misc/sysinfo.py",
+      "conpot/emulators/misc/uptime.py",
+      "conpot/emulators/plc/__init__.py",
+      "conpot/emulators/plc/awlsim_engine.py",
+      "conpot/emulators/plc/engine.py",
+      "conpot/emulators/plc/native.py",
+      "conpot/emulators/plc/scan_cycle.py",
+      "conpot/emulators/sensors/__init__.py",
+      "conpot/protocols/IEC104/DeviceDataController.py",
+      "conpot/protocols/IEC104/IEC104.py",
+      "conpot/protocols/IEC104/IEC104_server.py",
+      "conpot/protocols/IEC104/__init__.py",
+      "conpot/protocols/IEC104/errors.py",
+      "conpot/protocols/IEC104/frames.py",
+      "conpot/protocols/IEC104/i_frames_check.py",
+      "conpot/protocols/IEC104/register.py",
+      "conpot/protocols/__init__.py",
+      "conpot/protocols/bacnet/__init__.py",
+      "conpot/protocols/bacnet/bacnet_app.py",
+      "conpot/protocols/bacnet/bacnet_ip.py",
+      "conpot/protocols/bacnet/bacnet_server.py",
+      "conpot/protocols/dnp3/__init__.py",
+      "conpot/protocols/dnp3/dnp3_server.py",
+      "conpot/protocols/dnp3/session.py",
+      "conpot/protocols/enip/__init__.py",
+      "conpot/protocols/enip/enip_protocol.py",
+      "conpot/protocols/enip/enip_server.py",
+      "conpot/protocols/ftp/__init__.py",
+      "conpot/protocols/ftp/ftp_base_handler.py",
+      "conpot/protocols/ftp/ftp_handler.py",
+      "conpot/protocols/ftp/ftp_server.py",
+      "conpot/protocols/ftp/ftp_utils.py",
+      "conpot/protocols/goose/__init__.py",
+      "conpot/protocols/goose/goose_apdu.py",
+      "conpot/protocols/goose/goose_server.py",
+      "conpot/protocols/goose/session90_5.py",
+      "conpot/protocols/guardian_ast/__init__.py",
+      "conpot/protocols/guardian_ast/guardian_ast_server.py",
+      "conpot/protocols/http/__init__.py",
+      "conpot/protocols/http/command_responder.py",
+      "conpot/protocols/http/web_server.py",
+      "conpot/protocols/iccp/__init__.py",
+      "conpot/protocols/iccp/ber.py",
+      "conpot/protocols/iccp/cotp.py",
+      "conpot/protocols/iccp/iccp_server.py",
+      "conpot/protocols/iccp/iso_upper.py",
+      "conpot/protocols/iccp/mms.py",
+      "conpot/protocols/iccp/tpkt.py",
+      "conpot/protocols/ipmi/__init__.py",
+      "conpot/protocols/ipmi/fakebmc.py",
+      "conpot/protocols/ipmi/fakesession.py",
+      "conpot/protocols/ipmi/ipmi_server.py",
+      "conpot/protocols/kamstrup_management/__init__.py",
+      "conpot/protocols/kamstrup_management/command_responder.py",
+      "conpot/protocols/kamstrup_management/commands.py",
+      "conpot/protocols/kamstrup_management/kamstrup_management_server.py",
+      "conpot/protocols/kamstrup_meter/__init__.py",
+      "conpot/protocols/kamstrup_meter/command_responder.py",
+      "conpot/protocols/kamstrup_meter/decoder_382.py",
+      "conpot/protocols/kamstrup_meter/kamstrup_constants.py",
+      "conpot/protocols/kamstrup_meter/kamstrup_server.py",
+      "conpot/protocols/kamstrup_meter/messages.py",
+      "conpot/protocols/kamstrup_meter/register.py",
+      "conpot/protocols/kamstrup_meter/request_parser.py",
+      "conpot/protocols/modbus/__init__.py",
+      "conpot/protocols/modbus/modbus_block_databus_mediator.py",
+      "conpot/protocols/modbus/modbus_server.py",
+      "conpot/protocols/modbus/slave.py",
+      "conpot/protocols/modbus/slave_db.py",
+      "conpot/protocols/opcua/__init__.py",
+      "conpot/protocols/opcua/opcua_server.py",
+      "conpot/protocols/opcua/session.py",
+      "conpot/protocols/proxy/__init__.py",
+      "conpot/protocols/proxy/ascii_decoder.py",
+      "conpot/protocols/proxy/proxy.py",
+      "conpot/protocols/s7comm/__init__.py",
+      "conpot/protocols/s7comm/cotp.py",
+      "conpot/protocols/s7comm/exceptions.py",
+      "conpot/protocols/s7comm/s7.py",
+      "conpot/protocols/s7comm/s7_memory_map.py",
+      "conpot/protocols/s7comm/s7_server.py",
+      "conpot/protocols/s7comm/tpkt.py",
+      "conpot/protocols/schemas.py",
+      "conpot/protocols/snmp/__init__.py",
+      "conpot/protocols/snmp/command_responder.py",
+      "conpot/protocols/snmp/conpot_cmdrsp.py",
+      "conpot/protocols/snmp/databus_mediator.py",
+      "conpot/protocols/snmp/snmp_server.py",
+      "conpot/protocols/tftp/__init__.py",
+      "conpot/protocols/tftp/tftp_handler.py",
+      "conpot/protocols/tftp/tftp_server.py",
+      "conpot/templates/IEC104/IEC104.toml",
+      "conpot/templates/IEC104/snmp.toml",
+      "conpot/templates/IEC104/template.toml",
+      "conpot/templates/__init__.py",
+      "conpot/templates/default/bacnet.toml",
+      "conpot/templates/default/enip.toml",
+      "conpot/templates/default/ftp.toml",
+      "conpot/templates/default/http/htdocs/index.html",
+      "conpot/templates/default/http/statuscodes/400.status",
+      "conpot/templates/default/http/statuscodes/403.status",
+      "conpot/templates/default/http/statuscodes/404.status",
+      "conpot/templates/default/http/statuscodes/501.status",
+      "conpot/templates/default/http/statuscodes/503.status",
+      "conpot/templates/default/http.toml",
+      "conpot/templates/default/ipmi.toml",
+      "conpot/templates/default/modbus.toml",
+      "conpot/templates/default/s7comm.toml",
+      "conpot/templates/default/snmp.toml",
+      "conpot/templates/default/ssl/ssl.crt",
+      "conpot/templates/default/ssl/ssl.key",
+      "conpot/templates/default/template.toml",
+      "conpot/templates/default/tftp.toml",
+      "conpot/templates/dnp3/dnp3.toml",
+      "conpot/templates/dnp3/template.toml",
+      "conpot/templates/goose/goose.toml",
+      "conpot/templates/goose/template.toml",
+      "conpot/templates/guardian_ast/guardian_ast.toml",
+      "conpot/templates/guardian_ast/template.toml",
+      "conpot/templates/iccp/iccp.toml",
+      "conpot/templates/iccp/template.toml",
+      "conpot/templates/ipmi/ipmi.toml",
+      "conpot/templates/ipmi/template.toml",
+      "conpot/templates/kamstrup_382/kamstrup_management.toml",
+      "conpot/templates/kamstrup_382/kamstrup_meter.toml",
+      "conpot/templates/kamstrup_382/ssl/ssl.crt",
+      "conpot/templates/kamstrup_382/ssl/ssl.key",
+      "conpot/templates/kamstrup_382/template.toml",
+      "conpot/templates/opcua/opcua.toml",
+      "conpot/templates/opcua/template.toml",
+      "conpot/templates/parse.py",
+      "conpot/templates/plc_modbus/modbus.toml",
+      "conpot/templates/plc_modbus/template.toml",
+      "conpot/templates/proxy/proxy.toml",
+      "conpot/templates/proxy/template.toml",
+      "conpot/templates/snmp/snmp.toml",
+      "conpot/templates/snmp/template.toml",
+      "conpot/templates/validate.py",
+      "conpot/testing.cfg",
+      "conpot/utils/__init__.py",
+      "conpot/utils/asyncio_serve.py",
+      "conpot/utils/ext_ip.py",
+      "conpot/utils/logging.py",
+      "conpot/utils/networking.py",
+      "conpot/utils/server_tasks.py",
+      "docker-compose.yml",
+      "docs/Makefile",
+      "docs/source/api/index.rst",
+      "docs/source/api/reference/conpot.core.loggers.rst",
+      "docs/source/api/reference/conpot.core.rst",
+      "docs/source/api/reference/conpot.emulators.kamstrup.rst",
+      "docs/source/api/reference/conpot.emulators.misc.rst",
+      "docs/source/api/reference/conpot.emulators.rst",
+      "docs/source/api/reference/conpot.emulators.sensors.rst",
+      "docs/source/api/reference/conpot.protocols.IEC104.rst",
+      "docs/source/api/reference/conpot.protocols.bacnet.rst",
+      "docs/source/api/reference/conpot.protocols.enip.rst",
+      "docs/source/api/reference/conpot.protocols.ftp.rst",
+      "docs/source/api/reference/conpot.protocols.guardian_ast.rst",
+      "docs/source/api/reference/conpot.protocols.http.rst",
+      "docs/source/api/reference/conpot.protocols.ipmi.rst",
+      "docs/source/api/reference/conpot.protocols.kamstrup_management.rst",
+      "docs/source/api/reference/conpot.protocols.kamstrup_meter.rst",
+      "docs/source/api/reference/conpot.protocols.modbus.rst",
+      "docs/source/api/reference/conpot.protocols.proxy.rst",
+      "docs/source/api/reference/conpot.protocols.rst",
+      "docs/source/api/reference/conpot.protocols.s7comm.rst",
+      "docs/source/api/reference/conpot.protocols.snmp.rst",
+      "docs/source/api/reference/conpot.protocols.tftp.rst",
+      "docs/source/api/reference/conpot.rst",
+      "docs/source/api/reference/conpot.tests.helpers.rst",
+      "docs/source/api/reference/conpot.tests.rst",
+      "docs/source/api/reference/conpot.utils.rst",
+      "docs/source/concepts/databus.rst",
+      "docs/source/concepts/file_system.rst",
+      "docs/source/concepts/internal_interface.rst",
+      "docs/source/concepts/proxy_mode.rst",
+      "docs/source/concepts/templates.rst",
+      "docs/source/conf.py",
+      "docs/source/development/guidelines.rst",
+      "docs/source/faq.rst",
+      "docs/source/index.rst",
+      "docs/source/installation/configuration.rst",
+      "docs/source/installation/install.rst",
+      "docs/source/installation/quick_install.rst",
+      "docs/source/protocols/dnp3.rst",
+      "docs/source/protocols/enip.rst",
+      "docs/source/protocols/goose.rst",
+      "docs/source/protocols/http.rst",
+      "docs/source/protocols/iccp.rst",
+      "docs/source/protocols/index.rst",
+      "docs/source/protocols/modbus.rst",
+      "docs/source/protocols/opcua.rst",
+      "docs/source/protocols/s7comm.rst",
+      "docs/source/protocols/snmp.rst",
+      "docs/source/usage/customization.rst",
+      "docs/source/usage/index.rst",
+      "docs/source/usage/plc_emulator.rst",
+      "docs/source/usage/stop_restart.rst",
+      "docs/source/usage/usage.rst",
+      "pyproject.toml",
+      "pytest.ini",
+      "tools/conpot_cloner",
+      "tools/kamstrup_prober.py",
+      "tools/start_protocol.py",
+      "uv.lock"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.27356815338134766,
+    "profiling_times": {
+      "config_time": 0.943467378616333,
+      "core_time": 5.156021356582642,
+      "ignores_time": 0.0011463165283203125,
+      "total_time": 6.109797954559326
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 33.03543782234192,
+      "per_file_time": {
+        "mean": 0.05169865073918922,
+        "std_dev": 0.046630317776613806
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.2980205299095373,
+        "count_ratio": 0.00782472613458529
+      },
+      "very_slow_files": [
+        {
+          "fpath": "conpot/protocols/kamstrup_management/commands.py",
+          "ftime": 1.50522780418396
+        },
+        {
+          "fpath": "conpot/protocols/guardian_ast/guardian_ast_server.py",
+          "ftime": 1.6025419235229492
+        },
+        {
+          "fpath": "conpot/protocols/IEC104/IEC104.py",
+          "ftime": 1.665179967880249
+        },
+        {
+          "fpath": "conpot/protocols/ftp/ftp_handler.py",
+          "ftime": 2.244560956954956
+        },
+        {
+          "fpath": "conpot/protocols/http/command_responder.py",
+          "ftime": 2.827728033065796
+        }
+      ]
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at conpot/protocols/ftp/ftp_server.py:236:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "conpot/protocols/ftp/ftp_server.py",
+          "start": {
+            "line": 236,
+            "col": 9,
+            "offset": 9358
+          },
+          "end": {
+            "line": 236,
+            "col": 22,
+            "offset": 9371
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at conpot/protocols/guardian_ast/guardian_ast_server.py:51:8 [rules: 5, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "conpot/protocols/guardian_ast/guardian_ast_server.py",
+          "start": {
+            "line": 51,
+            "col": 9,
+            "offset": 1771
+          },
+          "end": {
+            "line": 51,
+            "col": 15,
+            "offset": 1777
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at conpot/protocols/http/command_responder.py:212:14 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "conpot/protocols/http/command_responder.py",
+          "start": {
+            "line": 212,
+            "col": 15,
+            "offset": 7469
+          },
+          "end": {
+            "line": 212,
+            "col": 26,
+            "offset": 7480
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at conpot/protocols/modbus/modbus_server.py:82:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "conpot/protocols/modbus/modbus_server.py",
+          "start": {
+            "line": 82,
+            "col": 9,
+            "offset": 2792
+          },
+          "end": {
+            "line": 82,
+            "col": 15,
+            "offset": 2798
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at conpot/protocols/s7comm/s7_server.py:62:8 [rules: 1, first: python.boto3.security.hardcoded-token.hardcoded-token]",
+        "location": {
+          "path": "conpot/protocols/s7comm/s7_server.py",
+          "start": {
+            "line": 62,
+            "col": 9,
+            "offset": 2241
+          },
+          "end": {
+            "line": 62,
+            "col": 15,
+            "offset": 2247
+          }
+        }
+      }
+    ],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 0.987357455888764,
+      "rules_selected_ratio": 0.0344629786843494,
+      "rules_matched_ratio": 0.0344629786843494
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 1218216000
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

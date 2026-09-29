@@ -1,0 +1,3 @@
+# UHBS 5.0.1 exact graded image pin — `portlurker-generic`
+# Image name at grade time: portlurker:uhbs-lab
+FROM sha256:0809f50693b51d82ca643b1a96e58707564ffb1e2c8d2b757f5750d01b72a684

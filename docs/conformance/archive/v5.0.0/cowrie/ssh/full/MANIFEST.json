@@ -1,0 +1,42 @@
+{
+  "uhbs_version": "4.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "cf1d52cf79859bdad72406e46bc12ee4f7f1c6e461709721734870b19d0ade76"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "dc45600aeba1a574d9f040fc151938745be69453851bb847d5ae30bfea2539aa"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "dc45600aeba1a574d9f040fc151938745be69453851bb847d5ae30bfea2539aa"
+    },
+    {
+      "path": "report.json",
+      "sha256": "1170013af12c3f8eb1f151344fd7bbd694127d444201de64c01c4828207bd834"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "bb47bfe07758325b029efb6741ef58f660854fb30f28e0f1e30d6b9201e015e5"
+    },
+    {
+      "path": "static/bandit-report.json",
+      "sha256": "0ad9e0c6512caf96d612b5405ebd2c1320d62e9795ca62953a0cc7559f31ec91"
+    },
+    {
+      "path": "static/semgrep-report.json",
+      "sha256": "4b4474009e0e115a15b704759ada9d964984cc5b9235661caafc021f160e1d12"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "4d22435b96863246240f875b1303874aa0fb3e07ce78a47cf9af8ca64a582963"
+    }
+  ],
+  "extra": {
+    "target": "cowrie-ssh",
+    "uhqs": 61.37,
+    "grade": "GRADE D (Needs Remediation)"
+  }
+}

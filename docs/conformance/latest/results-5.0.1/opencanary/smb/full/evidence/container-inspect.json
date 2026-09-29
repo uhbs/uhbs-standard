@@ -1,0 +1,288 @@
+[
+    {
+        "Id": "9c2aab33c011984f2bd860b4ebe57f2c5a8f6da5125427fa78a0f00dd427662b",
+        "Created": "2026-09-27T20:39:18.437799843Z",
+        "Path": "/sbin/tini",
+        "Args": [
+            "--",
+            "/usr/bin/samba.sh"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 18701,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T20:39:18.74426776Z",
+            "FinishedAt": "0001-01-01T00:00:00Z",
+            "Health": {
+                "Status": "starting",
+                "FailingStreak": 0,
+                "Log": []
+            }
+        },
+        "Image": "sha256:216f21e9a995109fb6befd2eb7ec811d7ad7b98a030e74dfa4bb1c8dbc2bc103",
+        "ResolvConfPath": "/var/lib/docker/containers/9c2aab33c011984f2bd860b4ebe57f2c5a8f6da5125427fa78a0f00dd427662b/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/9c2aab33c011984f2bd860b4ebe57f2c5a8f6da5125427fa78a0f00dd427662b/hostname",
+        "HostsPath": "/var/lib/docker/containers/9c2aab33c011984f2bd860b4ebe57f2c5a8f6da5125427fa78a0f00dd427662b/hosts",
+        "LogPath": "/var/lib/docker/containers/9c2aab33c011984f2bd860b4ebe57f2c5a8f6da5125427fa78a0f00dd427662b/9c2aab33c011984f2bd860b4ebe57f2c5a8f6da5125427fa78a0f00dd427662b-json.log",
+        "Name": "/uhbs-target-opencanary-smb",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/Users/mz/Projects/uhbs-standard/.local/labs/opencanary-telemetry:/telemetry:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "uhbs-lab",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "9c2aab33c011984f2bd860b4ebe57f2c5a8f6da5125427fa78a0f00dd427662b",
+                "LowerDir": "/var/lib/docker/overlay2/773a04dc60b58dc05d744651cb913d8f8abc315f1d9f3b7cf45a3a3766fece43-init/diff:/var/lib/docker/overlay2/f95a7b8e11ef9f8fa0962e3ca9e7f2cbb920bff72fb6e58777af6b5b1d63bceb/diff:/var/lib/docker/overlay2/8f1e552ca47c75270ae80b0f2e879de0ae1b81011eca863438429b0cec09da84/diff:/var/lib/docker/overlay2/0c08506f3c7cf8feba29e65d3412e179772f76abeeeee26542579eb4e558ca36/diff:/var/lib/docker/overlay2/2d975fa3cc47bd1e8ac77e03b52c3251c6a40f86e1aeb535eddec5cbfb2c2c69/diff",
+                "MergedDir": "/var/lib/docker/overlay2/773a04dc60b58dc05d744651cb913d8f8abc315f1d9f3b7cf45a3a3766fece43/merged",
+                "UpperDir": "/var/lib/docker/overlay2/773a04dc60b58dc05d744651cb913d8f8abc315f1d9f3b7cf45a3a3766fece43/diff",
+                "WorkDir": "/var/lib/docker/overlay2/773a04dc60b58dc05d744651cb913d8f8abc315f1d9f3b7cf45a3a3766fece43/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "3c8a65397cab3c60d7934b96e4e489ca13e0437f17796c97b8113c197714e99a",
+                "Source": "/var/lib/docker/volumes/3c8a65397cab3c60d7934b96e4e489ca13e0437f17796c97b8113c197714e99a/_data",
+                "Destination": "/etc",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Type": "bind",
+                "Source": "/Users/mz/Projects/uhbs-standard/.local/labs/opencanary-telemetry",
+                "Destination": "/telemetry",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "volume",
+                "Name": "4f2fcee953e0b526e7d7506471d3a0949dfcc6ac219fb69fb347d2ae5df20ec8",
+                "Source": "/var/lib/docker/volumes/4f2fcee953e0b526e7d7506471d3a0949dfcc6ac219fb69fb347d2ae5df20ec8/_data",
+                "Destination": "/run/samba",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Type": "volume",
+                "Name": "07c19bec08362de2e6f9afbe278ed693f0b4506ed2d4dfb28256a09180e0f908",
+                "Source": "/var/lib/docker/volumes/07c19bec08362de2e6f9afbe278ed693f0b4506ed2d4dfb28256a09180e0f908/_data",
+                "Destination": "/var/cache/samba",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Type": "volume",
+                "Name": "24744d20d1780ab217593084c2542cf1eb4471451dc30c302c8efe45d740d973",
+                "Source": "/var/lib/docker/volumes/24744d20d1780ab217593084c2542cf1eb4471451dc30c302c8efe45d740d973/_data",
+                "Destination": "/var/lib/samba",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            },
+            {
+                "Type": "volume",
+                "Name": "a14859a0c1f181bcc61c0d9556b6ca5f1c4f58f735ad727d8bb7e1c31d7ee951",
+                "Source": "/var/lib/docker/volumes/a14859a0c1f181bcc61c0d9556b6ca5f1c4f58f735ad727d8bb7e1c31d7ee951/_data",
+                "Destination": "/var/log/samba",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "9c2aab33c011",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "137/udp": {},
+                "138/udp": {},
+                "139/tcp": {},
+                "445/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": null,
+            "Healthcheck": {
+                "Test": [
+                    "CMD-SHELL",
+                    "smbclient -L \\\\localhost -U % -m SMB3"
+                ],
+                "Interval": 60000000000,
+                "Timeout": 15000000000
+            },
+            "Image": "dperson/samba",
+            "Volumes": {
+                "/etc": {},
+                "/run/samba": {},
+                "/var/cache/samba": {},
+                "/var/lib/samba": {},
+                "/var/log/samba": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/sbin/tini",
+                "--",
+                "/usr/bin/samba.sh"
+            ],
+            "Labels": {
+                "uhbs.unit": "opencanary-smb"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "302706a97f21287abe8454aa0d86905c825e3f103efa61ecc17fead0b7752081",
+            "SandboxKey": "/var/run/docker/netns/302706a97f21",
+            "Ports": {
+                "137/udp": null,
+                "138/udp": null,
+                "139/tcp": null,
+                "445/tcp": null
+            },
+            "Networks": {
+                "uhbs-lab": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "opencanary-smb"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "324969c80d8c8c7241631b9ac6f8675dc7acb2985a884d3a5afc09f4d1840e60",
+                    "EndpointID": "7a218ef898c804cdc2e7b8084930e89ceb215cf0e5fbb5c735feec6d3a4d2339",
+                    "Gateway": "172.20.0.1",
+                    "IPAddress": "172.20.0.2",
+                    "MacAddress": "aa:f7:14:da:53:9b",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "uhbs-target-opencanary-smb",
+                        "opencanary-smb",
+                        "9c2aab33c011"
+                    ]
+                }
+            }
+        }
+    }
+]

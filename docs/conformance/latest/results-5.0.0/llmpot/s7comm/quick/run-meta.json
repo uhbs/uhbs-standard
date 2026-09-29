@@ -1,0 +1,78 @@
+{
+  "uhbs_version": "5.0.1",
+  "run_mode": "quick",
+  "evaluated_at": "2026-09-26T15:53:33Z",
+  "proof_label": "LLMPot (momalab) (s7comm)",
+  "target": {
+    "repository": "https://github.com/momalab/LLMPot.git",
+    "git_branch": "main",
+    "git_commit": "9568b5ffe6f3626c70078e53eacaac4a9fcf1b9e",
+    "class": "ICS-SCADA",
+    "protocol": "s7comm",
+    "host": "llmpot-s7",
+    "port": 102,
+    "container_image": "llmpot-s7:uhbs-lab",
+    "container_image_id": "sha256:b93400e6064611136a503a66fcd6adfd64497e8c941989d3598fcd414c93c855",
+    "base_image": "python:3.11-slim-bookworm",
+    "base_image_reason": "Snap7 NoLogic gold lab image; upstream has no public ByT5 S7 weights.",
+    "container_runtime_strategy": "lab-dockerfile"
+  },
+  "grader": {
+    "package_version": "5.0.1",
+    "docker_image": "uhbs:5.0.1",
+    "docker_image_id": "sha256:aa436c35214d225126fd90db1dcbe307cbdbda9cad4c831efc068bd8901f6ba6",
+    "inventory": "docs/conformance/labs/llmpot/inventory.yaml",
+    "tps": "docs/conformance/labs/llmpot/ics_s7comm_quick.yaml",
+    "target_id": "llmpot-s7comm"
+  },
+  "flags": {
+    "UHBS_QUICK": true,
+    "UHBS_AIRGAP_ATTESTED": true,
+    "UHBS_EGRESS_GATEWAY_LOG": "/telemetry/egress-gateway.log",
+    "skip_sast_tools": true,
+    "phases": [
+      "profile",
+      "static",
+      "sandbox",
+      "dynamic",
+      "score"
+    ],
+    "modules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "source_root": "/honeypot",
+    "telemetry_dir": "/telemetry",
+    "measured_vs_attested": {
+      "airgap": "attested",
+      "egress_gateway_log": "attested-empty-log",
+      "telemetry": "attested-partial"
+    }
+  },
+  "results": {
+    "uhqs": null,
+    "grade": null,
+    "grade_long": null,
+    "delta_c": 0.0,
+    "module_scores": {
+      "A": 92.0,
+      "B": 45.0,
+      "C": 0.0,
+      "D": 0.0,
+      "E": 100.0,
+      "F": 0.0
+    },
+    "assessment_status": "INCOMPLETE",
+    "critical_control_verdict": "INCOMPLETE",
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic"
+  },
+  "limitations": [
+    "Published UHBS 5.0.1 Safety Gate outcome (ungraded when INCOMPLETE/GATE_FAILED).",
+    "Operator attested air-gap (UHBS_AIRGAP_ATTESTED=1)."
+  ],
+  "docs_reviewed": []
+}

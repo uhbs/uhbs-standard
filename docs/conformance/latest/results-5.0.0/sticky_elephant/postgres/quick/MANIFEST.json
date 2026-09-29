@@ -1,0 +1,40 @@
+{
+  "uhbs_version": "5.0.1",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "4b0628f2ff071e35c9d614efc45268c5028176b20c5bedefd4545e81e6033228"
+    },
+    {
+      "path": "REPORT.txt",
+      "sha256": "b16c5b0545242ce517cf78a6466eea1cf4e55cb60ab6072ada47eb84089598cf"
+    },
+    {
+      "path": "SCORECARD.txt",
+      "sha256": "b16c5b0545242ce517cf78a6466eea1cf4e55cb60ab6072ada47eb84089598cf"
+    },
+    {
+      "path": "evidence-pack.json",
+      "sha256": "f74cd722436ea9e5e54a995454e3c94af2a1b857e5a8c855e68573df637d09f5"
+    },
+    {
+      "path": "report.json",
+      "sha256": "af740db8994db42568efbdd545f896130d7ba7db480b4c04a88c64d391bbbe1a"
+    },
+    {
+      "path": "run-meta.json",
+      "sha256": "95b0f2ca0e3399dca16f322c1bd31f2334302340e6125aa2436a5c4e0b4ea106"
+    },
+    {
+      "path": "uhbs-run.log",
+      "sha256": "68d5e6595bf5db85844dd1518f941303c29800049e21518ea34edfdd5097cad4"
+    }
+  ],
+  "extra": {
+    "target": "sticky_elephant-postgres",
+    "uhqs": null,
+    "grade": null,
+    "scoring_model_id": "uhqs-v5.0-critical-gate-diagnostic",
+    "assessment_status": "INCOMPLETE"
+  }
+}
