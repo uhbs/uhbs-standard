@@ -67,15 +67,15 @@ def load_container_inspect() -> tuple[dict[str, Any] | None, str | None]:
     path = Path(raw)
     try:
         if path.is_file():
-            text = path.read_text(encoding="utf-8")
+            blob = path.read_bytes()
             expected = os.environ.get("UHBS_CONTAINER_INSPECT_SHA256", "").strip()
             if expected:
                 import hashlib
 
-                digest = hashlib.sha256(text.encode("utf-8")).hexdigest()
+                digest = hashlib.sha256(blob).hexdigest()
                 if digest.lower() != expected.lower().removeprefix("sha256:"):
                     return None, f"inspect digest mismatch: got {digest}"
-            data = json.loads(text)
+            data = json.loads(blob.decode("utf-8"))
         else:
             data = json.loads(raw)
     except (OSError, json.JSONDecodeError) as exc:

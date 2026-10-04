@@ -74,7 +74,6 @@ def score_containment_penalty(checks: list[CheckResult]) -> float:
 def _publish_diagnostic_score(
     checks: list[CheckResult],
     *,
-    verdict: ContainmentVerdict,
     breakout: bool,
 ) -> float:
     """Always return a numeric diagnostic; never stub-zero for unmeasured paths."""
@@ -88,8 +87,6 @@ def _publish_diagnostic_score(
         # Measured critical failure — still avoid publishing literal 0 (ambiguous).
         return max(_DIAGNOSTIC_FLOOR, round(did, 2)) if did > 0 else _DIAGNOSTIC_FLOOR
     if did <= 0:
-        return _DIAGNOSTIC_FLOOR
-    if verdict == ContainmentVerdict.GATE_PASSED and did <= 0:
         return _DIAGNOSTIC_FLOOR
     return round(did, 2)
 
@@ -150,9 +147,9 @@ def _gateway_canary_hits() -> CheckResult:
         )
     try:
         st = p.stat()
-        text = p.read_text(encoding="utf-8", errors="replace")
+        blob = p.read_bytes()
         snapshot_meta = f"mtime={st.st_mtime_ns} size={st.st_size}"
-        digest = hashlib.sha256(text.encode("utf-8", errors="replace")).hexdigest()
+        digest = hashlib.sha256(blob).hexdigest()
         expected = os.environ.get("UHBS_EGRESS_GATEWAY_SHA256", "").strip()
         if expected and digest.lower() != expected.lower().removeprefix("sha256:"):
             return CheckResult.make(
@@ -164,6 +161,7 @@ def _gateway_canary_hits() -> CheckResult:
                 critical=True,
                 catalog_id="D1.critical",
             )
+        text = blob.decode("utf-8", errors="replace")
     except OSError as exc:
         return CheckResult.make(
             id="d1.egress_gateway_log",
@@ -534,7 +532,7 @@ def _run_inner(target: TargetSpec, tps: Optional[TPS] = None) -> ModuleResult:
     breakout = breakout or ssh_break
 
     verdict = _verdict_from_critical(checks)
-    did_score = _publish_diagnostic_score(checks, verdict=verdict, breakout=breakout)
+    did_score = _publish_diagnostic_score(checks, breakout=breakout)
     agg = summarize_checks(checks)
     status = {
         ContainmentVerdict.GATE_PASSED: "GATE PASSED",

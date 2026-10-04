@@ -11,8 +11,10 @@ from uhbs_core.protocols import get_plugin
 from uhbs_core.protocols.pptp import (
     PPTP_MAGIC,
     PPTP_MSG_CONTROL,
+    PPTP_OCRP,
     PPTP_SCCRP,
     PPTPPlugin,
+    _control_types,
     build_outgoing_call_request,
     build_start_control_connection_request,
     is_pptp_control,
@@ -48,8 +50,10 @@ def test_ocrq_and_parsers() -> None:
     assert len(ocrq) == 168
     assert is_pptp_control(ocrq, control_type=7)
     sccrp = struct.pack("!HHIHH", 156, 1, PPTP_MAGIC, PPTP_SCCRP, 0) + b"\x00" * 144
+    ocrp = struct.pack("!HHIHH", 32, PPTP_MSG_CONTROL, PPTP_MAGIC, PPTP_OCRP, 0) + b"\x00" * 20
     assert is_sccrp(sccrp)
     assert not is_sccrp(b"\x00" * 12)
+    assert _control_types(sccrp + ocrp) == [PPTP_SCCRP, PPTP_OCRP]
 
 
 def test_pptp_unreachable_does_not_raise() -> None:
@@ -92,7 +96,7 @@ def _serve_pptp() -> tuple[str, int, threading.Event, socket.socket]:
                 if len(data) >= 12:
                     _l, msg, magic, ctrl = struct.unpack_from("!HHIH", data, 0)
                     if magic == PPTP_MAGIC and ctrl == 1:
-                        # Minimal SCCRP (156 octets) + tiny Outgoing-Call-Reply.
+                        # Minimal SCCRP (156 octets), then wait for OCRQ.
                         sccrp = (
                             struct.pack(
                                 "!HHIHH",
@@ -104,10 +108,30 @@ def _serve_pptp() -> tuple[str, int, threading.Event, socket.socket]:
                             )
                             + b"\x00" * 144
                         )
-                        ocrp = struct.pack(
-                            "!HHIHH", 32, PPTP_MSG_CONTROL, PPTP_MAGIC, 8, 0
-                        ) + b"\x00" * 20
-                        conn.sendall(sccrp + ocrp)
+                        conn.sendall(sccrp)
+                        rest = data[156:] if len(data) > 156 else b""
+                        if len(rest) < 12:
+                            try:
+                                rest = conn.recv(4096)
+                            except TimeoutError:
+                                rest = b""
+                        if len(rest) >= 12:
+                            _l2, _m2, magic2, ctrl2 = struct.unpack_from(
+                                "!HHIH", rest, 0
+                            )
+                            if magic2 == PPTP_MAGIC and ctrl2 == 7:
+                                ocrp = (
+                                    struct.pack(
+                                        "!HHIHH",
+                                        32,
+                                        PPTP_MSG_CONTROL,
+                                        PPTP_MAGIC,
+                                        8,
+                                        0,
+                                    )
+                                    + b"\x00" * 20
+                                )
+                                conn.sendall(ocrp)
         srv.close()
 
     threading.Thread(target=_loop, daemon=True).start()
@@ -130,7 +154,8 @@ def test_pptp_live_stub() -> None:
         assert nego[0].passed
         assert nego[0].score == 100.0
         state = plugin.probe_state(host, port, target, None)
-        assert state[0].score >= 70.0
+        assert state[0].passed
+        assert state[0].score == 100.0
     finally:
         stop.set()
         srv.close()

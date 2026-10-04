@@ -38,6 +38,35 @@ def tcp_transact(
         return b"", (time.perf_counter() - t0) * 1000.0, str(exc)
 
 
+def tcp_exchange(
+    host: str,
+    port: int,
+    payloads: list[bytes],
+    *,
+    timeout: float = 4.0,
+) -> tuple[list[bytes], float, str]:
+    """Send payloads sequentially on one TCP session; recv after each send.
+
+    Returns (replies_per_payload, rtt_ms, err). On connection error, replies is
+    empty and err is set. A timed-out recv yields ``b""`` for that step.
+    """
+    t0 = time.perf_counter()
+    replies: list[bytes] = []
+    try:
+        with socket.create_connection((host, port), timeout=timeout) as s:
+            s.settimeout(timeout)
+            for payload in payloads:
+                if payload:
+                    s.sendall(payload)
+                try:
+                    replies.append(s.recv(65535))
+                except TimeoutError:
+                    replies.append(b"")
+            return replies, (time.perf_counter() - t0) * 1000.0, ""
+    except OSError as exc:
+        return replies, (time.perf_counter() - t0) * 1000.0, str(exc)
+
+
 def udp_transact(
     host: str,
     port: int,

@@ -5,7 +5,7 @@ from __future__ import annotations
 import struct
 
 from uhbs_core.models import CheckResult, TargetSpec
-from uhbs_core.netutil import tcp_transact
+from uhbs_core.netutil import tcp_exchange, tcp_transact
 from uhbs_core.protocols.base import ProtocolPlugin
 from uhbs_core.tps import TPS
 
@@ -14,6 +14,7 @@ PPTP_MSG_CONTROL = 1
 PPTP_SCCRQ = 1
 PPTP_SCCRP = 2
 PPTP_OCRQ = 7
+PPTP_OCRP = 8
 
 _SCCRQ_LEN = 156
 _OCRQ_LEN = 168
@@ -99,6 +100,23 @@ def is_pptp_control(raw: bytes, *, control_type: int | None = None) -> bool:
     return ctrl == control_type
 
 
+def _control_types(raw: bytes) -> list[int]:
+    """Walk concatenated PPTP control messages; return control-message types."""
+    types: list[int] = []
+    offset = 0
+    while offset + 12 <= len(raw):
+        length, msg_type, magic, ctrl = struct.unpack_from("!HHIH", raw, offset)
+        if magic != PPTP_MAGIC or msg_type != PPTP_MSG_CONTROL or length < 12:
+            break
+        if offset + length > len(raw):
+            # Truncated trailer — still record the type we can see.
+            types.append(ctrl)
+            break
+        types.append(ctrl)
+        offset += length
+    return types
+
+
 class PPTPPlugin(ProtocolPlugin):
     """PPTP TCP/1723 control channel (SCCRQ/SCCRP + Outgoing-Call)."""
 
@@ -153,29 +171,40 @@ class PPTPPlugin(ProtocolPlugin):
     def probe_state(
         self, host: str, port: int, target: TargetSpec, tps: TPS | None
     ) -> list[CheckResult]:
-        # One TCP session: SCCRQ then OCRQ (Dionaea ESTABLISHED path).
-        script = build_start_control_connection_request() + build_outgoing_call_request()
-        raw, _, err = tcp_transact(host, port, script, timeout=4.0)
-        has_sccrp = is_sccrp(raw)
-        # After SCCRP (156 octets typical), look for further control traffic.
-        rest = raw[156:] if len(raw) >= 156 else raw[12:] if has_sccrp else b""
-        has_call = is_pptp_control(rest) or (
-            has_sccrp and len(raw) > 156 and is_pptp_control(raw[12:])
+        # One TCP session: SCCRQ → recv → OCRQ → recv (Dionaea ESTABLISHED path).
+        replies, _, err = tcp_exchange(
+            host,
+            port,
+            [
+                build_start_control_connection_request(),
+                build_outgoing_call_request(),
+            ],
+            timeout=4.0,
         )
-        # Dionaea OutgoingCall_Reply is 0x20 bytes; accept any post-SCCRP control.
-        if has_sccrp and len(raw) > 156:
-            has_call = True
-        ok = has_sccrp and (has_call or len(raw) >= 156)
-        score = 100.0 if (has_sccrp and has_call) else (70.0 if has_sccrp else 0.0)
+        first = replies[0] if replies else b""
+        second = replies[1] if len(replies) > 1 else b""
+        has_sccrp = is_sccrp(first) or is_sccrp(second)
+        # Prefer Outgoing-Call-Reply (type 8); accept any non-SCCRP control after setup.
+        types = _control_types(first) + _control_types(second)
+        has_call = PPTP_OCRP in types or any(
+            t not in {PPTP_SCCRQ, PPTP_SCCRP} for t in types
+        )
+        ok = has_sccrp and has_call
+        score = 100.0 if ok else (70.0 if has_sccrp else 0.0)
+        total_len = len(first) + len(second)
         return [
             CheckResult(
                 id="pptp.state.outgoing_call",
                 team="blue",
                 passed=ok,
                 detail=(
-                    f"SCCRP+call replies len={len(raw)}"
-                    if has_sccrp
-                    else (err or "no PPTP control replies")
+                    f"SCCRP+call replies len={total_len} types={types}"
+                    if ok
+                    else (
+                        f"SCCRP without call reply len={total_len} types={types}"
+                        if has_sccrp
+                        else (err or "no PPTP control replies")
+                    )
                 ),
                 score=score,
             )

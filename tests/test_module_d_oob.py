@@ -93,7 +93,7 @@ def _attach_oob(
         payload = inspect if inspect is not None else _clean_inspect()
         text = json.dumps([payload])
         insp.write_text(text, encoding="utf-8")
-        dig = hashlib.sha256(text.encode("utf-8")).hexdigest()
+        dig = hashlib.sha256(insp.read_bytes()).hexdigest()
         monkeypatch.setenv("UHBS_CONTAINER_INSPECT_JSON", str(insp))
         monkeypatch.setenv(
             "UHBS_CONTAINER_INSPECT_SHA256",
@@ -201,6 +201,24 @@ def test_digest_mismatch_incomplete(
     result = test_safety.run(_http_target())
     assert result.critical_control_verdict == ContainmentVerdict.INCOMPLETE.value
     assert result.score >= 1.0
+
+
+def test_inspect_digest_matches_raw_file_bytes(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """Harness pins use sha256(file bytes); verifier must not re-hash decoded text."""
+    from uhbs_core.containment_inspect import load_container_inspect
+    from uhbs_core.manifest import sha256_file
+
+    insp = tmp_path / "container-inspect.json"
+    # Non-ASCII whitespace-safe UTF-8 that still round-trips as JSON.
+    insp.write_bytes(b'[{"Id":"x","Config":{},"HostConfig":{},"State":{}}]')
+    dig = sha256_file(insp)
+    monkeypatch.setenv("UHBS_CONTAINER_INSPECT_JSON", str(insp))
+    monkeypatch.setenv("UHBS_CONTAINER_INSPECT_SHA256", dig)
+    data, err = load_container_inspect()
+    assert err is None
+    assert isinstance(data, dict)
 
 
 def test_ssh_presence_does_not_change_critical_criteria(
