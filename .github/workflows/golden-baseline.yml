@@ -53,4 +53,6 @@ jobs:
       - name: Run golden-baseline tests against real reference daemons
         env:
           RUN_LIVE_BASELINE: "1"
-        run: pytest -q tests/test_plugin_baseline_live.py -v
+        # --no-cov: this job is a live-daemon smoke check, not the coverage gate
+        # (pyproject addopts sets --cov-fail-under=80 and would fail a narrow suite).
+        run: pytest -q tests/test_plugin_baseline_live.py -v --no-cov

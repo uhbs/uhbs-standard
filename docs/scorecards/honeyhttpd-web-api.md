@@ -5,7 +5,7 @@
 
 | Run | UHQS | Grade | Proof |
 | --- | ---: | --- | --- |
-| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.1/honeyhttpd/http/quick/SCORECARD.txt) |
+| Quick | ungraded | — | [quick](../conformance/latest/results-5.0.1/honeyhttpd/http/index.md) |
 | **Full** | **ungraded** | **—** | Verbatim SCORECARD below |
 
 **Hub:** [honeyhttpd](../conformance/latest/results-5.0.1/honeyhttpd/http/index.md) · [Tutorial](../conformance/latest/results-5.0.1/honeyhttpd/http/../TUTORIAL.md) · [Execution steps](../conformance/latest/results-5.0.1/honeyhttpd/http/EXECUTION-STEPS.md)

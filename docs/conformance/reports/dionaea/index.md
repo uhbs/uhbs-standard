@@ -2,7 +2,7 @@
 
 **Status:** Informative · evaluation proof  
 **Upstream:** [https://github.com/dinotools/dionaea](https://github.com/dinotools/dionaea)  
-**Scope:** Every Dionaea service that has a UHBS protocol plugin is graded as its own unit (quick + full). Upstream-only surfaces without a UHBS plugin are listed under [protocol-coverage-audit.md](../protocol-coverage-audit.md).
+**Scope:** Every Dionaea service that has a UHBS protocol plugin is graded as its own unit (quick + full). Upstream-only surfaces without a UHBS plugin are listed under [protocol-coverage-audit.md](../../protocol-coverage-audit.md).
 
 | Protocol | Class / port | Quick | Full |
 | --- | --- | --- | --- |
@@ -20,7 +20,7 @@
 
 **Documented upstream, not UHBS-gradable yet:** `blackhole`, `epmap`, `mirror`.
 
-- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md) · [Coverage audit](../protocol-coverage-audit.md)
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md) · [Coverage audit](../../protocol-coverage-audit.md)
 
 > Named product is evaluation proof only — not a UHBS endorsement.
 
