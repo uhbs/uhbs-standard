@@ -13,8 +13,8 @@ lab used `root` / `admin` (Echidra accepts any credentials after a short delay).
 
 | Mode | UHQS | Grade | δ_C | Safety Gate | Folder |
 | --- | --- | --- | --- | --- | --- |
-| **Quick** | **57.33** | D | 1.0 | cleared (C=100) | [`quick/`](quick/) |
-| **Full** | **43.45** | F | 1.0 | cleared (C=100) | [`full/`](full/) |
+| **Quick** | **57.33** | D | 1.0 | cleared (C=100) | [`quick/`](quick/README.md) |
+| **Full** | **43.45** | F | 1.0 | cleared (C=100) | [`full/`](full/README.md) |
 
 Sanitized fixture (full): [`../../fixtures/echidra-low-interaction.scorecard.json`](../../fixtures/echidra-low-interaction.scorecard.json)
 

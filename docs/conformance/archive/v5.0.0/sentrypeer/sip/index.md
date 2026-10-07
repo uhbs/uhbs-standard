@@ -75,7 +75,7 @@ This page is the protocol-level proof hub for **sentrypeer** on **sip**. Prefer 
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/sentrypeer-sip.md`](../../../../scorecards/sentrypeer-sip.md)
+- Published scorecard page: [`../../../../scorecards/sentrypeer-sip.md`](../../../../../scorecards/sentrypeer-sip.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

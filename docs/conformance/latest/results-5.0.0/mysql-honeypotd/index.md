@@ -9,7 +9,7 @@
 | [mysql](mysql/index.md) | Low-Interaction · MySQL :3306 | [ungraded](mysql/quick/README.md) | [ungraded](mysql/full/README.md) | ready-for-review |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
-- Archive: [`../../../archive/v5.0.1/mysql-honeypotd/`](../../../archive/v5.0.1/mysql-honeypotd/)
+- Archive (created after refresh): `../../../archive/v5.0.1/mysql-honeypotd/`
 
 Honest v5 Safety Gate: units stay **ungraded** when INCOMPLETE or GATE_FAILED. Do not cite archived 4.x letter grades.
 

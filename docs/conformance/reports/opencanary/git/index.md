@@ -74,7 +74,7 @@ This page is the protocol-level proof hub for **opencanary** on **git**. Prefer 
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/opencanary-git.md`](../../../../scorecards/opencanary-git.md)
+- Published scorecard page: [`../../../../scorecards/opencanary-git.md`](https://github.com/uhbs/uhbs-standard/blob/main/docs/scorecards/opencanary-git.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

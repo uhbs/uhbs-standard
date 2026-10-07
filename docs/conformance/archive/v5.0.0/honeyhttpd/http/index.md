@@ -75,7 +75,7 @@ This page is the protocol-level proof hub for **honeyhttpd** on **http**. Prefer
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/honeyhttpd-http.md`](../../../../scorecards/honeyhttpd-http.md)
+- Published scorecard page: [`../../../../scorecards/honeyhttpd-http.md`](../../../../../scorecards/honeyhttpd-http.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

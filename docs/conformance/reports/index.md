@@ -39,49 +39,49 @@
 | [miniprint (sa7mon)](miniprint/index.md) | Low-Interaction | PJL/raw `:9100` | [41.83 / F](miniprint/quick/README.md) | [50.43 / D](miniprint/full/README.md) | [Reproduce](miniprint/TUTORIAL.md) |
 | [Conpot (mushorg)](conpot/index.md) | ICS-SCADA | Modbus `:5020` | [44.55 / F](conpot/quick/README.md) | [55.4 / D](conpot/full/README.md) | [Reproduce](conpot/TUTORIAL.md) |
 | [Cowrie](cowrie/index.md) | Low-Interaction | SSH `:2222` + Telnet `:2223` (SFTP via SSH) | see hub | see hub | [Reproduce](cowrie/TUTORIAL.md) |
-| [MQTT decoy A](mqtt-decoy-a/index.md) | Low-Interaction | MQTT `:1883` | — | [20.66 / F](mqtt-decoy-a/mqtt/full/) | [Reproduce](mqtt-decoy-a/TUTORIAL.md) |
-| [MQTT decoy B](mqtt-decoy-b/index.md) | Low-Interaction | MQTT `:1883` | — | [21.41 / F](mqtt-decoy-b/mqtt/full/) | [Reproduce](mqtt-decoy-b/TUTORIAL.md) |
-| [LLM Honeypot (Palisade)](llm-honeypot/index.md) | Low-Interaction | SSH `:2222` (Telnet off) | [67.94 / D](llm-honeypot/ssh/quick/) | [61.17 / D](llm-honeypot/ssh/full/) | [Reproduce](llm-honeypot/TUTORIAL.md) |
-| [HoneyAgents](honeyagents/index.md) | Low-Interaction | SSH `:2222` (Telnet mapped, not enabled) | [67.94 / D](honeyagents/ssh/quick/) | [65.24 / D](honeyagents/ssh/full/) | [Reproduce](honeyagents/TUTORIAL.md) |
+| [MQTT decoy A](mqtt-decoy-a/index.md) | Low-Interaction | MQTT `:1883` | — | [20.66 / F](mqtt-decoy-a/mqtt/full/README.md) | [Reproduce](mqtt-decoy-a/TUTORIAL.md) |
+| [MQTT decoy B](mqtt-decoy-b/index.md) | Low-Interaction | MQTT `:1883` | — | [21.41 / F](mqtt-decoy-b/mqtt/full/README.md) | [Reproduce](mqtt-decoy-b/TUTORIAL.md) |
+| [LLM Honeypot (Palisade)](llm-honeypot/index.md) | Low-Interaction | SSH `:2222` (Telnet off) | [67.94 / D](llm-honeypot/ssh/quick/README.md) | [61.17 / D](llm-honeypot/ssh/full/README.md) | [Reproduce](llm-honeypot/TUTORIAL.md) |
+| [HoneyAgents](honeyagents/index.md) | Low-Interaction | SSH `:2222` (Telnet mapped, not enabled) | [67.94 / D](honeyagents/ssh/quick/README.md) | [65.24 / D](honeyagents/ssh/full/README.md) | [Reproduce](honeyagents/TUTORIAL.md) |
 | [LLMPot (momalab)](llmpot/index.md) | multi | Modbus `:5020` / S7comm `:102` / HTTP `:8080` | see hub | see hub | [Reproduce](llmpot/TUTORIAL.md) |
 | [DataTrap (Thales)](datatrap/index.md) | multi | SSH / HTTP / MySQL / Redis / Telnet / PostgreSQL | see hub | see hub | [Reproduce](datatrap/TUTORIAL.md) |
 | [Endlessh (skeeto)](endlessh/index.md) | Low-Interaction | `ssh_tarpit` `:2222` | [46.55 / F](endlessh/quick/README.md) | [54.07 / D](endlessh/full/README.md) | [Reproduce](endlessh/TUTORIAL.md) |
 | [EchidraOSS (Qyleron)](echidra/index.md) | Low-Interaction | SSH `:2222` | [57.33 / D](echidra/quick/README.md) | [43.45 / F](echidra/full/README.md) | [Reproduce](echidra/TUTORIAL.md) |
 | [OpenCanary (thinkst)](opencanary/index.md) | multi | HTTP / FTP / SSH / Telnet / Redis / MySQL / RDP / SIP / SNMP / NTP / TFTP / VNC / Git / SMB | see hub | see hub | [Reproduce](opencanary/TUTORIAL.md) |
 | [Beelzebub](beelzebub/index.md) | multi | SSH / HTTP / Telnet / Redis / MCP | see hub | see hub | [Reproduce](beelzebub/TUTORIAL.md) |
-| [HoneyMCP](honeymcp/index.md) | Web-API | MCP `:8080` | [43.04 / F](honeymcp/mcp/quick/) | [42.93 / F](honeymcp/mcp/full/) | [Reproduce](honeymcp/TUTORIAL.md) |
+| [HoneyMCP](honeymcp/index.md) | Web-API | MCP `:8080` | [43.04 / F](honeymcp/mcp/quick/README.md) | [42.93 / F](honeymcp/mcp/full/README.md) | [Reproduce](honeymcp/TUTORIAL.md) |
 | [GenAIPot (ls1911)](genaipot/index.md) | Low-Interaction | SMTP `:25` + POP3 `:110` | see hub | see hub | [Reproduce](genaipot/TUTORIAL.md) |
-| [Elastichoney](elastichoney/index.md) | Web-API | HTTP ES `:9200` | [45.84 / F](elastichoney/http/quick/) | [45.73 / F](elastichoney/http/full/) | [Reproduce](elastichoney/TUTORIAL.md) |
-| [honeypot-ftp (alexbredo)](honeypot-ftp/index.md) | Low-Interaction | FTP `:21` | [42.71 / F](honeypot-ftp/ftp/quick/) | [42.6 / F](honeypot-ftp/ftp/full/) | [Reproduce](honeypot-ftp/TUTORIAL.md) |
+| [Elastichoney](elastichoney/index.md) | Web-API | HTTP ES `:9200` | [45.84 / F](elastichoney/http/quick/README.md) | [45.73 / F](elastichoney/http/full/README.md) | [Reproduce](elastichoney/TUTORIAL.md) |
+| [honeypot-ftp (alexbredo)](honeypot-ftp/index.md) | Low-Interaction | FTP `:21` | [42.71 / F](honeypot-ftp/ftp/quick/README.md) | [42.6 / F](honeypot-ftp/ftp/full/README.md) | [Reproduce](honeypot-ftp/TUTORIAL.md) |
 | [qeeqbox/honeypots](qeeqbox-honeypots/index.md) | multi | SSH/HTTP/FTP/Telnet/SMTP/POP3/MySQL/Postgres/Redis/VNC | see hub | see hub | [Reproduce](qeeqbox-honeypots/TUTORIAL.md) |
-| [SentryPeer](sentrypeer/index.md) | Low-Interaction | SIP `:5060` | [41.09 / F](sentrypeer/sip/quick/) | [40.98 / F](sentrypeer/sip/full/) | [Reproduce](sentrypeer/TUTORIAL.md) |
-| [wordpot](wordpot/index.md) | Web-API | HTTP `:8080` | [41.71 / F](wordpot/http/quick/) | [41.6 / F](wordpot/http/full/) | [Reproduce](wordpot/TUTORIAL.md) |
-| [MockSSH](mockssh/index.md) | Low-Interaction | SSH `:2222` | [59.2 / D](mockssh/ssh/quick/) | [59.0 / D](mockssh/ssh/full/) | [Reproduce](mockssh/TUTORIAL.md) |
+| [SentryPeer](sentrypeer/index.md) | Low-Interaction | SIP `:5060` | [41.09 / F](sentrypeer/sip/quick/README.md) | [40.98 / F](sentrypeer/sip/full/README.md) | [Reproduce](sentrypeer/TUTORIAL.md) |
+| [wordpot](wordpot/index.md) | Web-API | HTTP `:8080` | [41.71 / F](wordpot/http/quick/README.md) | [41.6 / F](wordpot/http/full/README.md) | [Reproduce](wordpot/TUTORIAL.md) |
+| [MockSSH](mockssh/index.md) | Low-Interaction | SSH `:2222` | [59.2 / D](mockssh/ssh/quick/README.md) | [59.0 / D](mockssh/ssh/full/README.md) | [Reproduce](mockssh/TUTORIAL.md) |
 | [Heralding](heralding/index.md) | Low-Interaction | SSH `:22` + FTP `:21` | see hub | see hub | [Reproduce](heralding/TUTORIAL.md) |
-| [HoneyHTTPD](honeyhttpd/index.md) | Web-API | HTTP `:8080` | [45.84 / F](honeyhttpd/http/quick/) | [45.73 / F](honeyhttpd/http/full/) | [Reproduce](honeyhttpd/TUTORIAL.md) |
-| [SHIVA](shiva/index.md) | Low-Interaction | SMTP `:2525` | [45.07 / F](shiva/smtp/quick/) | [44.96 / F](shiva/smtp/full/) | [Reproduce](shiva/TUTORIAL.md) |
+| [HoneyHTTPD](honeyhttpd/index.md) | Web-API | HTTP `:8080` | [45.84 / F](honeyhttpd/http/quick/README.md) | [45.73 / F](honeyhttpd/http/full/README.md) | [Reproduce](honeyhttpd/TUTORIAL.md) |
+| [SHIVA](shiva/index.md) | Low-Interaction | SMTP `:2525` | [45.07 / F](shiva/smtp/quick/README.md) | [44.96 / F](shiva/smtp/full/README.md) | [Reproduce](shiva/TUTORIAL.md) |
 | [Acra (skipped)](acra/index.md) | — | DB proxy / poison records (not a protocol honeypot) | — | — | [Note](acra/TUTORIAL.md) |
 | [ssh-honeypot / droberson (skipped)](ssh-honeypot/index.md) | — | SSH (Docker base image unavailable) | — | — | [Note](ssh-honeypot/index.md) |
 | [Ensnare (skipped)](ensnare/index.md) | — | Rails gem HTTP traps (not standalone) | — | — | [Note](ensnare/TUTORIAL.md) |
 | [snare (skipped)](snare/index.md) | — | Needs Tanner + page clone | — | — | [Note](snare/TUTORIAL.md) |
 | [Trapster Community](trapster/index.md) | multi | SSH / HTTP / FTP / Telnet | see hub | see hub | [Reproduce](trapster/TUTORIAL.md) |
-| [sshesame](sshesame/index.md) | Low-Interaction | SSH | [65.13 / D](sshesame/ssh/quick/) | [61.06 / D](sshesame/ssh/full/) | [Reproduce](sshesame/TUTORIAL.md) |
-| [ssh-auth-logger](ssh-auth-logger/index.md) | Low-Interaction | SSH | [44.38 / F](ssh-auth-logger/ssh/quick/) | [44.38 / F](ssh-auth-logger/ssh/full/) | [Reproduce](ssh-auth-logger/TUTORIAL.md) |
-| [ssh-honeypotd](ssh-honeypotd/index.md) | Low-Interaction | SSH | [44.38 / F](ssh-honeypotd/ssh/quick/) | [44.38 / F](ssh-honeypotd/ssh/full/) | [Reproduce](ssh-honeypotd/TUTORIAL.md) |
-| [HellPot](HellPot/index.md) | Web-API | HTTP | [43.98 / F](HellPot/http/quick/) | [43.87 / F](HellPot/http/full/) | [Reproduce](HellPot/TUTORIAL.md) |
-| [HoneyWire](HoneyWire/index.md) | Web-API | HTTP (WebRouterDecoy) | [45.84 / F](HoneyWire/http/quick/) | [45.84 / F](HoneyWire/http/full/) | [Reproduce](HoneyWire/TUTORIAL.md) |
-| [express-honeypot](express-honeypot/index.md) | Web-API | HTTP | [45.84 / F](express-honeypot/http/quick/) | [45.73 / F](express-honeypot/http/full/) | [Reproduce](express-honeypot/TUTORIAL.md) |
-| [mailoney](mailoney/index.md) | Low-Interaction | SMTP | [38.8 / F](mailoney/smtp/quick/) | [38.69 / F](mailoney/smtp/full/) | [Reproduce](mailoney/TUTORIAL.md) |
-| [pghoney](pghoney/index.md) | Low-Interaction | PostgreSQL | [43.72 / F](pghoney/postgres/quick/) | [43.61 / F](pghoney/postgres/full/) | [Reproduce](pghoney/TUTORIAL.md) |
-| [mysql-honeypotd](mysql-honeypotd/index.md) | Low-Interaction | MySQL | [40.35 / F](mysql-honeypotd/mysql/quick/) | [37.94 / F](mysql-honeypotd/mysql/full/) | [Reproduce](mysql-honeypotd/TUTORIAL.md) |
-| [Log4Pot](Log4Pot/index.md) | Web-API | HTTP | [41.71 / F](Log4Pot/http/quick/) | [38.0 / F](Log4Pot/http/full/) | [Reproduce](Log4Pot/TUTORIAL.md) |
-| [node-ftp-honeypot](node-ftp-honeypot/index.md) | Low-Interaction | FTP | [35.96 / F](node-ftp-honeypot/ftp/quick/) | [35.85 / F](node-ftp-honeypot/ftp/full/) | [Reproduce](node-ftp-honeypot/TUTORIAL.md) |
-| [SentryPeer](sentrypeer/index.md) | Low-Interaction | SIP | [43.38 / F](sentrypeer/sip/quick/) | [43.38 / F](sentrypeer/sip/full/) | [Reproduce](sentrypeer/TUTORIAL.md) |
-| [wordpot](wordpot/index.md) | Web-API | HTTP | [41.71 / F](wordpot/http/quick/) | [41.6 / F](wordpot/http/full/) | [Reproduce](wordpot/TUTORIAL.md) |
-| [MockSSH](mockssh/index.md) | Low-Interaction | SSH | [59.2 / F](mockssh/ssh/quick/) | [59.0 / F](mockssh/ssh/full/) | [Reproduce](mockssh/TUTORIAL.md) |
+| [sshesame](sshesame/index.md) | Low-Interaction | SSH | [65.13 / D](sshesame/ssh/quick/README.md) | [61.06 / D](sshesame/ssh/full/README.md) | [Reproduce](sshesame/TUTORIAL.md) |
+| [ssh-auth-logger](ssh-auth-logger/index.md) | Low-Interaction | SSH | [44.38 / F](ssh-auth-logger/ssh/quick/README.md) | [44.38 / F](ssh-auth-logger/ssh/full/README.md) | [Reproduce](ssh-auth-logger/TUTORIAL.md) |
+| [ssh-honeypotd](ssh-honeypotd/index.md) | Low-Interaction | SSH | [44.38 / F](ssh-honeypotd/ssh/quick/README.md) | [44.38 / F](ssh-honeypotd/ssh/full/README.md) | [Reproduce](ssh-honeypotd/TUTORIAL.md) |
+| [HellPot](HellPot/index.md) | Web-API | HTTP | [43.98 / F](HellPot/http/quick/README.md) | [43.87 / F](HellPot/http/full/README.md) | [Reproduce](HellPot/TUTORIAL.md) |
+| [HoneyWire](HoneyWire/index.md) | Web-API | HTTP (WebRouterDecoy) | [45.84 / F](HoneyWire/http/quick/README.md) | [45.84 / F](HoneyWire/http/full/README.md) | [Reproduce](HoneyWire/TUTORIAL.md) |
+| [express-honeypot](express-honeypot/index.md) | Web-API | HTTP | [45.84 / F](express-honeypot/http/quick/README.md) | [45.73 / F](express-honeypot/http/full/README.md) | [Reproduce](express-honeypot/TUTORIAL.md) |
+| [mailoney](mailoney/index.md) | Low-Interaction | SMTP | [38.8 / F](mailoney/smtp/quick/README.md) | [38.69 / F](mailoney/smtp/full/README.md) | [Reproduce](mailoney/TUTORIAL.md) |
+| [pghoney](pghoney/index.md) | Low-Interaction | PostgreSQL | [43.72 / F](pghoney/postgres/quick/README.md) | [43.61 / F](pghoney/postgres/full/README.md) | [Reproduce](pghoney/TUTORIAL.md) |
+| [mysql-honeypotd](mysql-honeypotd/index.md) | Low-Interaction | MySQL | [40.35 / F](mysql-honeypotd/mysql/quick/README.md) | [37.94 / F](mysql-honeypotd/mysql/full/README.md) | [Reproduce](mysql-honeypotd/TUTORIAL.md) |
+| [Log4Pot](Log4Pot/index.md) | Web-API | HTTP | [41.71 / F](Log4Pot/http/quick/README.md) | [38.0 / F](Log4Pot/http/full/README.md) | [Reproduce](Log4Pot/TUTORIAL.md) |
+| [node-ftp-honeypot](node-ftp-honeypot/index.md) | Low-Interaction | FTP | [35.96 / F](node-ftp-honeypot/ftp/quick/README.md) | [35.85 / F](node-ftp-honeypot/ftp/full/README.md) | [Reproduce](node-ftp-honeypot/TUTORIAL.md) |
+| [SentryPeer](sentrypeer/index.md) | Low-Interaction | SIP | [43.38 / F](sentrypeer/sip/quick/README.md) | [43.38 / F](sentrypeer/sip/full/README.md) | [Reproduce](sentrypeer/TUTORIAL.md) |
+| [wordpot](wordpot/index.md) | Web-API | HTTP | [41.71 / F](wordpot/http/quick/README.md) | [41.6 / F](wordpot/http/full/README.md) | [Reproduce](wordpot/TUTORIAL.md) |
+| [MockSSH](mockssh/index.md) | Low-Interaction | SSH | [59.2 / F](mockssh/ssh/quick/README.md) | [59.0 / F](mockssh/ssh/full/README.md) | [Reproduce](mockssh/TUTORIAL.md) |
 | [Heralding](heralding/index.md) | Low-Interaction | SSH + FTP | see hub | see hub | [Reproduce](heralding/TUTORIAL.md) |
-| [HoneyHTTPD](honeyhttpd/index.md) | Web-API | HTTP | [45.84 / F](honeyhttpd/http/quick/) | [45.73 / F](honeyhttpd/http/full/) | [Reproduce](honeyhttpd/TUTORIAL.md) |
-| [SHIVA](shiva/index.md) | Low-Interaction | SMTP | [45.07 / F](shiva/smtp/quick/) | [44.96 / F](shiva/smtp/full/) | [Reproduce](shiva/TUTORIAL.md) |
+| [HoneyHTTPD](honeyhttpd/index.md) | Web-API | HTTP | [45.84 / F](honeyhttpd/http/quick/README.md) | [45.73 / F](honeyhttpd/http/full/README.md) | [Reproduce](honeyhttpd/TUTORIAL.md) |
+| [SHIVA](shiva/index.md) | Low-Interaction | SMTP | [45.07 / F](shiva/smtp/quick/README.md) | [44.96 / F](shiva/smtp/full/README.md) | [Reproduce](shiva/TUTORIAL.md) |
 | [awesome-honeypots triage](../awesome-honeypots/TRIAGE.md) | — | grade_now / skip / deferred | — | — | [Deferred protocols](../awesome-honeypots/DEFERRED-PROTOCOLS.md) |
 | [Dionaea](dionaea/index.md) | multi | FTP / HTTP / SMB | see hub | see hub | [Reproduce](dionaea/TUTORIAL.md) |
 
@@ -162,7 +162,7 @@ PY
 2. Capture artifacts via `uhbs lab … --out docs/conformance/reports/<id>/<mode>`.
 3. Write `TUTORIAL.md` + `METHODOLOGY.md` + `run-meta.json`.
 4. Link the row in **this** index and in [`../index.md`](../index.md).
-5. Optionally add a sanitized fixture under [`../fixtures/`](../fixtures/).
+5. Optionally add a sanitized fixture under [`../fixtures/`](../index.md).
 
 ## Related
 

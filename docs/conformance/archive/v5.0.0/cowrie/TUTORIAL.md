@@ -51,7 +51,7 @@ python3 -c "import paramiko; t=paramiko.Transport(('cowrie-lab',2222)); t.connec
 
 !!! warning "Pin SSH host keys"
     UHBS rejects unknown host keys. Before grading, follow
-    [SSH host-key pinning](../../../tooling/ssh-known-hosts.md). Missing keys
+    [SSH host-key pinning](../../../../tooling/ssh-known-hosts.md). Missing keys
     yield Module D **INCOMPLETE**, not a false GATE_PASSED.
 
 ```bash

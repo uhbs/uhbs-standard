@@ -76,7 +76,7 @@ This page is the protocol-level proof hub for **honeymcp** on **mcp**. Prefer th
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/honeymcp-mcp.md`](../../../../scorecards/honeymcp-mcp.md)
+- Published scorecard page: [`../../../../scorecards/honeymcp-mcp.md`](https://github.com/uhbs/uhbs-standard/blob/main/docs/scorecards/honeymcp-mcp.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

@@ -75,7 +75,7 @@ This page is the protocol-level proof hub for **llmpot** on **http**. Prefer the
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/llmpot-http.md`](../../../../scorecards/llmpot-http.md)
+- Published scorecard page: [`../../../../scorecards/llmpot-http.md`](../../../../../scorecards/llmpot-http.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

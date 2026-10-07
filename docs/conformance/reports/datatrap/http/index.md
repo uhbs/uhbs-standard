@@ -75,7 +75,7 @@ This page is the protocol-level proof hub for **datatrap** on **http**. Prefer t
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/datatrap-http.md`](../../../../scorecards/datatrap-http.md)
+- Published scorecard page: [`../../../../scorecards/datatrap-http.md`](https://github.com/uhbs/uhbs-standard/blob/main/docs/scorecards/datatrap-http.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

@@ -75,7 +75,7 @@ This page is the protocol-level proof hub for **datatrap** on **ssh**. Prefer th
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/datatrap-ssh.md`](../../../../scorecards/datatrap-ssh.md)
+- Published scorecard page: [`../../../../scorecards/datatrap-ssh.md`](https://github.com/uhbs/uhbs-standard/blob/main/docs/scorecards/datatrap-ssh.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

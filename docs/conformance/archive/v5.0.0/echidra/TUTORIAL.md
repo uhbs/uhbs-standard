@@ -256,4 +256,4 @@ docker compose -f docker-compose.yml -f docker-compose.uhbs-lab.yml down
 # optional: docker network rm uhbs-lab
 ```
 
-Back to [Echidra report hub](index.md) · [all reports](../index.md).
+Back to [Echidra report hub](index.md) · [all reports](../../../../index.md).

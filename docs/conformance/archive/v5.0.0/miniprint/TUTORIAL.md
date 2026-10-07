@@ -5,7 +5,7 @@
 **Published artifacts:** [`quick/`](quick/README.md) · [`full/`](full/README.md) · trust notes: [METHODOLOGY.md](METHODOLOGY.md)
 
 !!! tip "Need install + validate + score only?"
-    Use **[Install & use UHBS](../../../tooling/install-and-use.md)**. This page
+    Use **[Install & use UHBS](../../../../tooling/install-and-use.md)**. This page
     re-runs the Docker lab that produced the published miniprint UHQS.
 
 ---
@@ -218,4 +218,4 @@ uhbs lab --tps /work/docs/conformance/labs/miniprint/low_interaction_quick.yaml 
 uhbs lab --tps low_interaction_ssh --protocol pjl --target miniprint-lab --port 9100 ...
 ```
 
-Back to [miniprint hub](index.md) · [all reports](../index.md).
+Back to [miniprint hub](index.md) · [all reports](../../../../index.md).

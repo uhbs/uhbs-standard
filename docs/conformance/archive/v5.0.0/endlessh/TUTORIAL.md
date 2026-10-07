@@ -187,4 +187,4 @@ SSH plugin and identical quick/full scores is superseded by this Docker pack.
 docker rm -f endlessh-lab
 ```
 
-Back to [Endlessh hub](index.md) · [all reports](../index.md).
+Back to [Endlessh hub](index.md) · [all reports](../../../../index.md).

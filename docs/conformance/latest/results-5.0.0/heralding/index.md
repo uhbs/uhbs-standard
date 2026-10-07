@@ -11,7 +11,7 @@
 | [ssh](ssh/index.md) | Low-Interaction · SSH :22 | [ungraded](ssh/quick/README.md) | [ungraded](ssh/full/README.md) | ready-for-review |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
-- Archive: [`../../../archive/v5.0.1/heralding/`](../../../archive/v5.0.1/heralding/)
+- Archive (created after refresh): `../../../archive/v5.0.1/heralding/`
 
 Honest v5 Safety Gate: units stay **ungraded** when INCOMPLETE or GATE_FAILED. Do not cite archived 4.x letter grades.
 

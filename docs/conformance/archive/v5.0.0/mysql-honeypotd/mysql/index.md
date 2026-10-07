@@ -76,7 +76,7 @@ This page is the protocol-level proof hub for **mysql-honeypotd** on **mysql**. 
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/mysql-honeypotd-mysql.md`](../../../../scorecards/mysql-honeypotd-mysql.md)
+- Published scorecard page: [`../../../../scorecards/mysql-honeypotd-mysql.md`](../../../../../scorecards/mysql-honeypotd-mysql.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

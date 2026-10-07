@@ -74,7 +74,7 @@ This page is the protocol-level proof hub for **opencanary** on **smb**. Prefer 
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/opencanary-smb.md`](../../../../scorecards/opencanary-smb.md)
+- Published scorecard page: [`../../../../scorecards/opencanary-smb.md`](../../../../../scorecards/opencanary-smb.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

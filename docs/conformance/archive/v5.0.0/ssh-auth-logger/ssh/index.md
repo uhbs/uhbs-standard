@@ -75,7 +75,7 @@ This page is the protocol-level proof hub for **ssh-auth-logger** on **ssh**. Pr
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/ssh-auth-logger-ssh.md`](../../../../scorecards/ssh-auth-logger-ssh.md)
+- Published scorecard page: [`../../../../scorecards/ssh-auth-logger-ssh.md`](../../../../../scorecards/ssh-auth-logger-ssh.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

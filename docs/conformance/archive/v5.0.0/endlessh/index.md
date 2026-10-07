@@ -53,7 +53,7 @@ SAST (F capped at 70), and records a clean gateway canary (D=90, δ_C=0.81).
 2. [TUTORIAL.md](TUTORIAL.md)  
 3. [`full/SCORECARD.txt`](full/SCORECARD.txt)  
 
-Back to the [reports index](../index.md).
+Back to the [reports index](../../../../index.md).
 
 
 ## What this decoy is

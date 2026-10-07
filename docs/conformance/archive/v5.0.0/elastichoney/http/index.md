@@ -75,7 +75,7 @@ This page is the protocol-level proof hub for **elastichoney** on **http**. Pref
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/elastichoney-http.md`](../../../../scorecards/elastichoney-http.md)
+- Published scorecard page: [`../../../../scorecards/elastichoney-http.md`](../../../../../scorecards/elastichoney-http.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

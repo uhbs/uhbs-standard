@@ -74,7 +74,7 @@ This page is the protocol-level proof hub for **dionaea** on **smb**. Prefer the
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/dionaea-smb.md`](../../../../scorecards/dionaea-smb.md)
+- Published scorecard page: [`../../../../scorecards/dionaea-smb.md`](https://github.com/uhbs/uhbs-standard/blob/main/docs/scorecards/dionaea-smb.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

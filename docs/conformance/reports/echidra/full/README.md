@@ -38,5 +38,5 @@ OVERALL EVALUATION GRADE              : GRADE F (Fail)
 - [`MANIFEST.json`](MANIFEST.json) — SHA-256 digests
 - [`run-meta.json`](run-meta.json) — provenance
 - [`uhbs-run.log`](uhbs-run.log) — console transcript
-- [`static/`](static/) — bandit / semgrep
+- [`static/`](../index.md) — bandit / semgrep
 

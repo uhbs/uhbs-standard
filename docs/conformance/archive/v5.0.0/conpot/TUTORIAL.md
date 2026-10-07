@@ -5,7 +5,7 @@
 **Published artifacts:** [`quick/`](quick/README.md) · [`full/`](full/README.md) · trust notes: [METHODOLOGY.md](METHODOLOGY.md)
 
 !!! tip "Need install + validate + score only?"
-    Use **[Install & use UHBS](../../../tooling/install-and-use.md)**. This page
+    Use **[Install & use UHBS](../../../../tooling/install-and-use.md)**. This page
     re-runs the Docker lab that produced the published Conpot UHQS.
 
 ---
@@ -214,4 +214,4 @@ docker rm -f conpot-lab
 4. **Multi-protocol template** — HTTP `:8800`, S7, SNMP, etc. are **not** scored in this report.  
 5. **Module E load** — keep concurrency low unless you have verified Conpot stays healthy.
 
-Back to [Conpot hub](index.md) · [all reports](../index.md).
+Back to [Conpot hub](index.md) · [all reports](../../../../index.md).

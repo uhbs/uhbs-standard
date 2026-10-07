@@ -75,7 +75,7 @@ This page is the protocol-level proof hub for **Log4Pot** on **http**. Prefer th
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/log4pot-http.md`](../../../../scorecards/log4pot-http.md)
+- Published scorecard page: [`../../../../scorecards/log4pot-http.md`](../../../../../scorecards/log4pot-http.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

@@ -9,7 +9,7 @@
 | [postgres](postgres/index.md) | Low-Interaction · Postgres :5432 | [ungraded](postgres/quick/README.md) | [ungraded](postgres/full/README.md) | ready-for-review |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
-- Archive: [`../../../archive/v5.0.1/pghoney/`](../../../archive/v5.0.1/pghoney/)
+- Archive (created after refresh): `../../../archive/v5.0.1/pghoney/`
 
 Honest v5 Safety Gate: units stay **ungraded** when INCOMPLETE or GATE_FAILED. Do not cite archived 4.x letter grades.
 

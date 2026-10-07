@@ -62,7 +62,7 @@ This page is the protocol-level proof hub for **portlurker** on **generic**. Pre
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/portlurker-generic.md`](../../../../scorecards/portlurker-generic.md)
+- Published scorecard page: [`../../../../scorecards/portlurker-generic.md`](../../../../../scorecards/portlurker-generic.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

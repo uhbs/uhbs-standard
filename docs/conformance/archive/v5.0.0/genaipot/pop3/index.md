@@ -75,7 +75,7 @@ This page is the protocol-level proof hub for **genaipot** on **pop3**. Prefer t
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/genaipot-pop3.md`](../../../../scorecards/genaipot-pop3.md)
+- Published scorecard page: [`../../../../scorecards/genaipot-pop3.md`](../../../../../scorecards/genaipot-pop3.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

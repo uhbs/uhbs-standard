@@ -54,4 +54,4 @@ runs bandit/semgrep (F capped at 70). Protocol fidelity stays weak (A≈21–23)
 2. [TUTORIAL.md](TUTORIAL.md)  
 3. [`full/SCORECARD.txt`](full/SCORECARD.txt) / [`full/report.json`](full/report.json)  
 
-Back to the [reports index](../index.md).
+Back to the [reports index](../../../../index.md).

@@ -7,8 +7,8 @@
 
 ## What was graded
 
-- **SMTP** — host `:2525` → container `:25`. Quick **30.9 / F**, full **30.78 / F**. See [smtp/](smtp/).
-- **POP3** — host `:1110` → container `:110`. Quick **44.24 / F**, full **44.13 / F**. See [pop3/](pop3/).
+- **SMTP** — host `:2525` → container `:25`. Quick **30.9 / F**, full **30.78 / F**. See [smtp/](smtp/index.md).
+- **POP3** — host `:1110` → container `:110`. Quick **44.24 / F**, full **44.13 / F**. See [pop3/](pop3/index.md).
 
 ## Environment notes
 

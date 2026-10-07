@@ -23,7 +23,7 @@ cd .local/labs/llm-honeypot
 git checkout 156004a1b122f201448635417ee47bd44d7f28ca
 ```
 
-Lab overlays (copied under UHBS): [`../../labs/llm-honeypot/configs/`](../../labs/llm-honeypot/configs/).
+Lab overlays (copied under UHBS): [`../../labs/llm-honeypot/configs/`](../../../conformance/index.md).
 
 ## 2. Start Cowrie with LLM-honeypot overlays
 

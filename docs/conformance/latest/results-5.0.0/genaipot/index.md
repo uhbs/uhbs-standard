@@ -10,7 +10,7 @@
 | [pop3](pop3/index.md) | Low-Interaction · POP3 :110 | [ungraded](pop3/quick/README.md) | [ungraded](pop3/full/README.md) | ready-for-review |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
-- Archive: [`../../../archive/v5.0.1/genaipot/`](../../../archive/v5.0.1/genaipot/)
+- Archive (created after refresh): `../../../archive/v5.0.1/genaipot/`
 
 Honest v5 Safety Gate: units stay **ungraded** when INCOMPLETE or GATE_FAILED. Do not cite archived 4.x letter grades.
 

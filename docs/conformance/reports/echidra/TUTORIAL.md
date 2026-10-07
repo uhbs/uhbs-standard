@@ -2,7 +2,7 @@
 
 **Status:** Informative · evaluation proof  
 **Target:** [Qyleron/EchidraOSS](https://github.com/Qyleron/EchidraOSS) — multi-protocol honeypot; graded on SSH `:2222`  
-**Published artifacts:** [`quick/`](quick/) · [`full/`](full/) · trust notes: [METHODOLOGY.md](METHODOLOGY.md)
+**Published artifacts:** [`quick/`](quick/README.md) · [`full/`](full/README.md) · trust notes: [METHODOLOGY.md](METHODOLOGY.md)
 
 This is the workflow used to produce the artifacts under
 `docs/conformance/reports/echidra/`. Product name = proof label only.

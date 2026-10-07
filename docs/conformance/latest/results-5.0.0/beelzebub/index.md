@@ -13,7 +13,7 @@
 | [Redis](redis/index.md) | Low-Interaction · Redis :6379 | [ungraded](redis/quick/README.md) | [ungraded](redis/full/README.md) | ready-for-review (INCOMPLETE) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
-- Archive: [`../../../archive/v5.0.1/beelzebub/`](../../../archive/v5.0.1/beelzebub/)
+- Archive (created after refresh): `../../../archive/v5.0.1/beelzebub/`
 
 v5 Safety Gate leaves completed Beelzebub protocol units **ungraded**. Do not cite archived 4.x letter grades.
 

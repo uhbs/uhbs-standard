@@ -34,7 +34,7 @@ SAST (F capped at 70), and records a clean gateway canary (D=90, δ_C=0.81).
 | [METHODOLOGY.md](METHODOLOGY.md) | Digests, tarpit limits, verification |
 | [`quick/SCORECARD.txt`](quick/SCORECARD.txt) | Human scorecard (quick) |
 | [`full/SCORECARD.txt`](full/SCORECARD.txt) | Human scorecard (full) |
-| [`full/static/`](full/static/) | Bandit / Semgrep (full) |
+| [`full/static/`](index.md) | Bandit / Semgrep (full) |
 
 ## Module snapshot (full)
 

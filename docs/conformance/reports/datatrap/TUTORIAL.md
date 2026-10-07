@@ -23,7 +23,7 @@ cd .local/labs/dd-honeypot && git checkout 7a906e11a0b19e75a32fead2ddd9a8b2b341b
 docker build -t datatrap:uhbs-lab .
 ```
 
-Lab honeypot tree (from upstream `test/honeypots/`): [`../../labs/datatrap/honeypot/`](../../labs/datatrap/honeypot/).
+Lab honeypot tree (from upstream `test/honeypots/`): [`../../labs/datatrap/honeypot/`](../../../conformance/index.md).
 
 ## 2. Start multi-protocol lab
 

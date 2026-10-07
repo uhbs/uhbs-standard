@@ -9,7 +9,7 @@
 | [ftp](ftp/index.md) | Low-Interaction · FTP :21 | [ungraded](ftp/quick/README.md) | [ungraded](ftp/full/README.md) | ready-for-review |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
-- Archive: [`../../../archive/v5.0.1/honeypot-ftp/`](../../../archive/v5.0.1/honeypot-ftp/)
+- Archive (created after refresh): `../../../archive/v5.0.1/honeypot-ftp/`
 
 Honest v5 Safety Gate: units stay **ungraded** when INCOMPLETE or GATE_FAILED. Do not cite archived 4.x letter grades.
 

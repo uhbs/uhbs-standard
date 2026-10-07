@@ -74,7 +74,7 @@ This page is the protocol-level proof hub for **sticky_elephant** on **postgres*
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/sticky_elephant-postgres.md`](../../../../scorecards/sticky_elephant-postgres.md)
+- Published scorecard page: [`../../../../scorecards/sticky_elephant-postgres.md`](../../../../../scorecards/sticky_elephant-postgres.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

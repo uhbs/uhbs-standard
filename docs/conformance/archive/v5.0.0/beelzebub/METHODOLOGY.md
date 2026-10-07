@@ -12,7 +12,7 @@ Only protocols with a dedicated UHBS harness plugin (or intentional generic TCP 
 - **Redis** — quick 50.56/D, full 61.01/D
 - **SSH** — quick 74.45/C, full 59.88/D
 - **Telnet** — quick 39.16/F, full 47.89/F
-- **MCP** — graded via the in-tree `mcp` plugin (Web-API class). See [mcp/](mcp/) and [architecture/mcp-honeypot-grading.md](../../../architecture/mcp-honeypot-grading.md). MCP is **not** the same as classic HTTP Web-API checks: JSON-RPC lifecycle, tool allowlists, and `surface_depth` apply.
+- **MCP** — graded via the in-tree `mcp` plugin (Web-API class). See [mcp/](mcp/) and [architecture/mcp-honeypot-grading.md](../../../../architecture/mcp-honeypot-grading.md). MCP is **not** the same as classic HTTP Web-API checks: JSON-RPC lifecycle, tool allowlists, and `surface_depth` apply.
 
 Other services the product may advertise (for example DNS, RDP, MySQL without a UHBS plugin path in this lab) were **not** graded as separate UHQS targets.
 

@@ -76,7 +76,7 @@ This page is the protocol-level proof hub for **opencanary** on **redis**. Prefe
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/opencanary-redis.md`](../../../../scorecards/opencanary-redis.md)
+- Published scorecard page: [`../../../../scorecards/opencanary-redis.md`](https://github.com/uhbs/uhbs-standard/blob/main/docs/scorecards/opencanary-redis.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

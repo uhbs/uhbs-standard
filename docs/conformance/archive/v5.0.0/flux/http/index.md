@@ -62,7 +62,7 @@ This page is the protocol-level proof hub for **flux** on **http**. Prefer the *
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/flux-http.md`](../../../../scorecards/flux-http.md)
+- Published scorecard page: [`../../../../scorecards/flux-http.md`](../../../../../scorecards/flux-http.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

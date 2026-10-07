@@ -188,7 +188,7 @@ docker run --rm --network uhbs-lab \
 
 ### MCP `:8000` {#mcp}
 
-Target id: `beelzebub-mcp` · class **Web-API (MCP v1)** · see [architecture/mcp-honeypot-grading.md](../../../architecture/mcp-honeypot-grading.md).
+Target id: `beelzebub-mcp` · class **Web-API (MCP v1)** · see [architecture/mcp-honeypot-grading.md](../../../../architecture/mcp-honeypot-grading.md).
 
 The lab overlay [`mcp-8000.yaml`](../../labs/beelzebub/configurations/services/mcp-8000.yaml) is the upstream Beelzebub MCP decoy (tools `tool:system-log` / `tool:user-account-manager`). Inventory sets `mcp_custom_allowlist_tools` so Module B can probe those decoys safely. Mount `configurations/` as in §2 so the container listens on **8000**.
 

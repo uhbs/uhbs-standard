@@ -75,7 +75,7 @@ This page is the protocol-level proof hub for **datatrap** on **redis**. Prefer 
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/datatrap-redis.md`](../../../../scorecards/datatrap-redis.md)
+- Published scorecard page: [`../../../../scorecards/datatrap-redis.md`](https://github.com/uhbs/uhbs-standard/blob/main/docs/scorecards/datatrap-redis.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

@@ -75,7 +75,7 @@ This page is the protocol-level proof hub for **honeyagents** on **ssh**. Prefer
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/honeyagents-ssh.md`](../../../../scorecards/honeyagents-ssh.md)
+- Published scorecard page: [`../../../../scorecards/honeyagents-ssh.md`](https://github.com/uhbs/uhbs-standard/blob/main/docs/scorecards/honeyagents-ssh.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

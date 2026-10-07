@@ -12,7 +12,7 @@
 | [Telnet](telnet/index.md) | Low-Interaction · Telnet :2323 | [ungraded](telnet/quick/README.md) | [ungraded](telnet/full/README.md) | ready-for-review (INCOMPLETE) |
 
 - [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
-- Archive: [`../../../archive/v5.0.1/trapster/`](../../../archive/v5.0.1/trapster/)
+- Archive (created after refresh): `../../../archive/v5.0.1/trapster/`
 
 v5 Safety Gate leaves every Trapster protocol **ungraded** (Module C declared-format and/or Module D critical controls incomplete). Do not cite archived 4.x letter grades.
 

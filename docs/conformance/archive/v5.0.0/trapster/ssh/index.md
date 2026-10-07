@@ -74,7 +74,7 @@ This page is the protocol-level proof hub for **trapster** on **ssh**. Prefer th
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/trapster-ssh.md`](../../../../scorecards/trapster-ssh.md)
+- Published scorecard page: [`../../../../scorecards/trapster-ssh.md`](../../../../../scorecards/trapster-ssh.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

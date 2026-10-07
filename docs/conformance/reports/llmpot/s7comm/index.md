@@ -75,7 +75,7 @@ This page is the protocol-level proof hub for **llmpot** on **s7comm**. Prefer t
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/llmpot-s7comm.md`](../../../../scorecards/llmpot-s7comm.md)
+- Published scorecard page: [`../../../../scorecards/llmpot-s7comm.md`](https://github.com/uhbs/uhbs-standard/blob/main/docs/scorecards/llmpot-s7comm.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

@@ -54,7 +54,7 @@ Full measures telemetry honestly (C=55), runs SAST (F capped at 70), and records
 3. Open [`full/SCORECARD.txt`](full/SCORECARD.txt) and [`full/report.json`](full/report.json).  
 4. Compare against [`quick/`](quick/README.md) to see which knobs change the grade.
 
-Back to the [reports index](../index.md).
+Back to the [reports index](../../../../index.md).
 
 
 ## What this decoy is

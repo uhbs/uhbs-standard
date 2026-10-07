@@ -289,8 +289,8 @@ When you add another decoy under `docs/conformance/reports/<id>/`:
 2. [ ] `run-meta.json` with image digests + commits  
 3. [ ] `MANIFEST.json` hashes refreshed  
 4. [ ] `TUTORIAL.md` + `METHODOLOGY.md` written  
-5. [ ] Row added to [`../index.md`](../index.md)  
+5. [ ] Row added to [`../index.md`](../../../../index.md)  
 6. [ ] Optional sanitized fixture under `docs/conformance/fixtures/`  
 7. [ ] Explicit non-endorsement language  
 
-Back to [ESPot report hub](index.md) · [all reports](../index.md).
+Back to [ESPot report hub](index.md) · [all reports](../../../../index.md).

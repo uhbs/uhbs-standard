@@ -7,4 +7,4 @@ This target is an **external MQTT honeypot** (`3.84.184.144:1883`), not a Docker
 3. Run Modules A–F (or `uhbs-lab` when a local container mirror is available).
 4. Compare against the published [`full/SCORECARD.txt`](mqtt/full/SCORECARD.txt).
 
-For install/validate walkthroughs see [Install & use UHBS](../../../tooling/install-and-use.md).
+For install/validate walkthroughs see [Install & use UHBS](../../../../tooling/install-and-use.md).

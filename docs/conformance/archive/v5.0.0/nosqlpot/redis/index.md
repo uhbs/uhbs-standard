@@ -73,7 +73,7 @@ This page is the protocol-level proof hub for **nosqlpot** on **redis**. Prefer 
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/nosqlpot-redis.md`](../../../../scorecards/nosqlpot-redis.md)
+- Published scorecard page: [`../../../../scorecards/nosqlpot-redis.md`](../../../../../scorecards/nosqlpot-redis.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

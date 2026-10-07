@@ -2,7 +2,7 @@
 
 **Upstream:** [jaksi/sshesame](https://github.com/jaksi/sshesame) · last push `2024-10-21`
 
-Pin the lab host key first ([SSH host-key pinning](../../../tooling/ssh-known-hosts.md)):
+Pin the lab host key first ([SSH host-key pinning](../../../../tooling/ssh-known-hosts.md)):
 
 ```bash
 mkdir -p .local

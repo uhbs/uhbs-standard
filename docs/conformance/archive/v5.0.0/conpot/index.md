@@ -43,7 +43,7 @@ Sanitized fixture (full): [`../../fixtures/conpot-ics-scada.scorecard.json`](../
 2. [TUTORIAL.md](TUTORIAL.md)  
 3. [`full/SCORECARD.txt`](full/SCORECARD.txt) / [`full/report.json`](full/report.json)  
 
-Back to the [reports index](../index.md).
+Back to the [reports index](../../../../index.md).
 
 
 ## What this decoy is

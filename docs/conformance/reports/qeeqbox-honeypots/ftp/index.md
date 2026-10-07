@@ -76,7 +76,7 @@ This page is the protocol-level proof hub for **qeeqbox-honeypots** on **ftp**. 
 - Product hub: [`../`](../index.md)
 - [Tutorial](../TUTORIAL.md)
 - [Methodology](../METHODOLOGY.md)
-- Published scorecard page: [`../../../../scorecards/qeeqbox-ftp.md`](../../../../scorecards/qeeqbox-ftp.md)
+- Published scorecard page: [`../../../../scorecards/qeeqbox-ftp.md`](https://github.com/uhbs/uhbs-standard/blob/main/docs/scorecards/qeeqbox-ftp.md)
 - How to read UHQS: [READING-UHQS.md](../../READING-UHQS.md)
 
 > Named products appear only under conformance as evaluation proof — not UHBS requirements or endorsements.

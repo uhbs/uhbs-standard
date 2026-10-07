@@ -6,7 +6,7 @@
 
 ## What was graded
 
-- **MCP** — Streamable HTTP on the default persona path `POST /mcp` (aws-admin). Quick **43.04 / F**, full **42.93 / F**. See [mcp/](mcp/) and [architecture/mcp-honeypot-grading.md](../../../architecture/mcp-honeypot-grading.md).
+- **MCP** — Streamable HTTP on the default persona path `POST /mcp` (aws-admin). Quick **43.04 / F**, full **42.93 / F**. See [mcp/](mcp/index.md) and [architecture/mcp-honeypot-grading.md](../../../architecture/mcp-honeypot-grading.md).
 
 Other personas (`/github/mcp`, `/vercel/mcp`, `/stripe/mcp`) and stdio transport were **not** graded as separate UHQS targets in this proof.
 
