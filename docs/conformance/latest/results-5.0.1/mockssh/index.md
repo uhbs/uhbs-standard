@@ -1,10 +1,12 @@
-# MockSSH (ncouture) (ssh)
+# MockSSH (ncouture)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/ncouture/MockSSH.git](https://github.com/ncouture/MockSSH.git)  
 
-- Benchmark: `mockssh`
-- Protocol: `ssh`
-- Archive: [`docs/conformance/archive/v5.0.1/mockssh/ssh`](../../../../docs/conformance/archive/v5.0.1/mockssh/ssh)
-- Latest path: `docs/conformance/latest/results-5.0.1/mockssh/ssh`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [SSH](ssh/index.md) | Low-Interaction · :2222 | [7.63 / F](ssh/index.md) | [12.97 / F](ssh/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id mockssh-ssh`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

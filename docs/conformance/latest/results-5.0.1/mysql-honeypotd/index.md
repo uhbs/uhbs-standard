@@ -1,10 +1,12 @@
-# mysql-honeypotd (sjinks) (mysql)
+# mysql-honeypotd (sjinks)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/sjinks/mysql-honeypotd.git](https://github.com/sjinks/mysql-honeypotd.git)  
 
-- Benchmark: `mysql-honeypotd`
-- Protocol: `mysql`
-- Archive: [`docs/conformance/archive/v5.0.1/mysql-honeypotd/mysql`](../../../../docs/conformance/archive/v5.0.1/mysql-honeypotd/mysql)
-- Latest path: `docs/conformance/latest/results-5.0.1/mysql-honeypotd/mysql`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [MYSQL](mysql/index.md) | Low-Interaction · :3306 | [38.16 / F](mysql/index.md) | [37.31 / F](mysql/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id mysql-honeypotd-mysql`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

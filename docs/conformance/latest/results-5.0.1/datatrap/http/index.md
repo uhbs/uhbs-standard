@@ -1,10 +1,63 @@
 # DataTrap (Thales dd-honeypot) (http)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**UHBS:** 5.0.1 · **Class:** Web-API · **Protocol:** `http`  
+**Target id:** `datatrap-http` · **Evaluated:** 2026-09-28
 
-- Benchmark: `datatrap`
-- Protocol: `http`
-- Archive: [`docs/conformance/archive/v5.0.1/datatrap/http`](../../../../docs/conformance/archive/v5.0.1/datatrap/http)
-- Latest path: `docs/conformance/latest/results-5.0.1/datatrap/http`
+| Run | UHQS | Grade | δ_C | Verdict | Artifacts |
+| --- | ---: | --- | --- | --- | --- |
+| [Quick](quick/SCORECARD.txt) | **33.13** | F | 0.5 | INCOMPLETE / GATE_FAILED | [`report.json`](quick/report.json) |
+| [Full](full/SCORECARD.txt) (authoritative) | **33.06** | F | 0.5 | COMPLETE / GATE_FAILED | [`report.json`](full/report.json) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id datatrap-http`.
+## Full run — module breakdown
+
+| Module | Score | Weight | Status | Notes |
+| --- | ---: | --- | --- | --- |
+| Module A: Protocol Fidelity | 100.0 | 0.25 | PASSED | fsm=100 nego=100 timing=100 |
+| Module B: Behavioral Realism | 65.0 | 0.20 | PARTIAL | no payload probe implemented |
+| Module C: Telemetry Assurance | 0.0 | 0.20 | PARTIAL | http_inject markers=[] malformed=0 |
+| Module D: Safety & Containment (C) | 75.0 | GATE | PASSED | User=(empty→root) UsernsMode=(empty) |
+| Module E: Scalability & Latency | 100.0 | 0.15 | PASSED | service alive after load (connect 0.2ms) |
+| Module F: Static Code Audit | 65.6 | 0.20 | PARTIAL | bandit HIGH=15 |
+| Safety Gate δ_C | 0.5 | GATE | — | Gate GATE_FAILED; δ_C=0.5 applied to composite |
+
+## Full scorecard (verbatim)
+
+```text
+====================================================================================
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
+====================================================================================
+Target System         : datatrap-http
+System Profile Class  : Web-API
+Scoring Model         : uhqs-v5.2-measured-renorm
+Assessment Status     : COMPLETE
+Critical Controls     : GATE_FAILED
+Protocols             : http
+Evaluation Date       : 2026-09-28
+Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
+Environment           : Isolated Sandbox
+MCP Surface Depth     : unknown
+------------------------------------------------------------------------------------
+EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
+------------------------------------------------------------------------------------
+Module A: Protocol Fidelity         : 100.0/100       0.25     PASSED (fsm=100 nego=100 timing=100)
+Module B: Behavioral Realism        :  65.0/100       0.20     PARTIAL (no payload probe implemented)
+Module C: Telemetry Assurance       :   0.0/100       0.20     PARTIAL (http_inject markers=[] malformed=0)
+Module D: Safety & Containment (C)  :  75.0/100       GATE     PASSED (User=(empty→root) UsernsMode=(empty))
+Module E: Scalability & Latency     : 100.0/100       0.15     PASSED (service alive after load (connect 0.2ms))
+Module F: Static Code Audit         :  65.6/100       0.20     PARTIAL (bandit HIGH=15)
+------------------------------------------------------------------------------------
+SAFETY GATE / CRITICAL CONTROLS        : GATE_FAILED (δ_C=0.5; defense-in-depth C=75.0; composite still published)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 33.06 / 100
+OVERALL EVALUATION GRADE              : GRADE F (Fail)
+scoring_model_id                      : uhqs-v5.2-measured-renorm
+====================================================================================
+```
+
+## Replication
+
+- Execution steps: [EXECUTION-STEPS.md](EXECUTION-STEPS.md)
+- How to read UHQS: [CTI / blue-team guide](../../../../reports/READING-UHQS.md)
+- Tutorial & methodology live on the [product hub](../index.md) (multi-protocol products)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

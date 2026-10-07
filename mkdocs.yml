@@ -11,6 +11,10 @@ copyright: UHBS v5.0.1 — evaluation framework (Apache-2.0)
 exclude_docs: |
   conformance/archive/**
   conformance/latest/results-5.0.0/**
+  # Archived 4.x-era scorecard narrative pages: kept in git, not rendered.
+  scorecards/*.md
+  !scorecards/index.md
+  !scorecards/*.scorecard.md
 
 theme:
   name: material
@@ -467,172 +471,16 @@ nav:
           - Methodology: conformance/latest/results-5.0.1/wordpot/METHODOLOGY.md
   - Scorecards:
       - Overview: scorecards/index.md
-      - ESPot:
-          - HTTP: scorecards/espot-web-api.md
-      - miniprint:
-          - PJL: scorecards/miniprint-low-interaction.md
-      - Conpot:
-          - Modbus: scorecards/conpot-ics-scada.md
-      - Cowrie:
-          - SSH: scorecards/cowrie-ssh.md
-          - TELNET: scorecards/cowrie-telnet.md
-      - Endlessh:
-          - SSH tarpit: scorecards/endlessh-ssh-tarpit.md
-      - OpenCanary:
-          - FTP: scorecards/opencanary-ftp.md
-          - GIT: scorecards/opencanary-git.md
-          - HTTP: scorecards/opencanary-web-api.md
-          - MYSQL: scorecards/opencanary-mysql.md
-          - NTP: scorecards/opencanary-ntp.md
-          - RDP: scorecards/opencanary-rdp.md
-          - REDIS: scorecards/opencanary-redis.md
-          - SIP: scorecards/opencanary-sip.md
-          - SMB: scorecards/opencanary-smb.md
-          - SNMP: scorecards/opencanary-snmp.md
-          - SSH: scorecards/opencanary-ssh.md
-          - TELNET: scorecards/opencanary-telnet.md
-          - TFTP: scorecards/opencanary-tftp.md
-          - VNC: scorecards/opencanary-vnc.md
       - Beelzebub:
-          - HTTP: scorecards/beelzebub-http.md
-          - Http.scorecard: scorecards/beelzebub-http.scorecard.md
-          - MCP: scorecards/beelzebub-mcp.md
-          - Mcp.scorecard: scorecards/beelzebub-mcp.scorecard.md
-          - REDIS: scorecards/beelzebub-redis.md
-          - Redis.scorecard: scorecards/beelzebub-redis.scorecard.md
-          - SSH: scorecards/beelzebub-ssh.md
-          - Ssh.scorecard: scorecards/beelzebub-ssh.scorecard.md
-          - TELNET: scorecards/beelzebub-telnet.md
-          - Telnet.scorecard: scorecards/beelzebub-telnet.scorecard.md
-      - HellPot:
-          - HTTP: scorecards/hellpot-http.md
-          - HTTP: scorecards/hellpot-web-api.md
-      - HoneyWire:
-          - HTTP: scorecards/honeywire-http.md
-      - LLM Honeypot:
-          - SSH: scorecards/llm-honeypot-ssh.md
-      - HoneyAgents:
-          - SSH: scorecards/honeyagents-ssh.md
-      - LLMPot:
-          - HTTP: scorecards/llmpot-http.md
-          - MODBUS: scorecards/llmpot-modbus.md
-          - S7comm: scorecards/llmpot-s7comm.md
-      - DataTrap:
-          - HTTP: scorecards/datatrap-http.md
-          - MYSQL: scorecards/datatrap-mysql.md
-          - PostgreSQL: scorecards/datatrap-postgres.md
-          - REDIS: scorecards/datatrap-redis.md
-          - SSH: scorecards/datatrap-ssh.md
-          - TELNET: scorecards/datatrap-telnet.md
-      - HoneyMCP:
-          - MCP: scorecards/honeymcp-mcp.md
-      - GenAIPot:
-          - POP3: scorecards/genaipot-pop3.md
-          - SMTP: scorecards/genaipot-smtp.md
-      - MQTT decoy A:
-          - Overview: scorecards/mqtt-decoy-a.md
-      - MQTT decoy B:
-          - Overview: scorecards/mqtt-decoy-b.md
-      - Artillery:
-          - Generic: scorecards/artillery-generic.md
+          - HTTP: scorecards/beelzebub-http.scorecard.md
+          - MCP: scorecards/beelzebub-mcp.scorecard.md
+          - REDIS: scorecards/beelzebub-redis.scorecard.md
+          - SSH: scorecards/beelzebub-ssh.scorecard.md
+          - TELNET: scorecards/beelzebub-telnet.scorecard.md
       - Dionaea:
-          - FTP: scorecards/dionaea-ftp.md
-          - Ftp.scorecard: scorecards/dionaea-ftp.scorecard.md
-          - HTTP: scorecards/dionaea-http.md
-          - Http.scorecard: scorecards/dionaea-http.scorecard.md
-          - SMB: scorecards/dionaea-smb.md
-          - Smb.scorecard: scorecards/dionaea-smb.scorecard.md
-      - echidra:
-          - SSH: scorecards/echidra-ssh.md
-      - echidra-low:
-          - Interaction: scorecards/echidra-low-interaction.md
-      - Elastichoney:
-          - HTTP: scorecards/elastichoney-http.md
-          - HTTP: scorecards/elastichoney-web-api.md
-      - express-honeypot:
-          - HTTP: scorecards/express-honeypot-http.md
-          - HTTP: scorecards/express-honeypot-web-api.md
-      - flux:
-          - HTTP: scorecards/flux-http.md
-          - HTTP: scorecards/flux-web-api.md
-      - fortigate-vpn-ssl:
-          - HTTP: scorecards/fortigate-vpn-ssl-http.md
-      - Heralding:
-          - FTP: scorecards/heralding-ftp.md
-          - SMTP: scorecards/heralding-smtp.md
-          - SSH: scorecards/heralding-ssh.md
-      - HoneyHTTPD:
-          - HTTP: scorecards/honeyhttpd-http.md
-          - HTTP: scorecards/honeyhttpd-web-api.md
-      - honeypot-ftp:
-          - FTP: scorecards/honeypot-ftp.md
-      - honeytrap:
-          - SSH: scorecards/honeytrap-ssh.md
-      - honeyup:
-          - HTTP: scorecards/honeyup-http.md
-          - HTTP: scorecards/honeyup-web-api.md
-      - Illustrative:
-          - POSIX / GenAI: scorecards/illustrative-posix-genai.md
-      - kippo:
-          - SSH: scorecards/kippo-ssh.md
-      - Krawl:
-          - HTTP: scorecards/krawl-http.md
-      - Log4Pot:
-          - HTTP: scorecards/log4pot-http.md
-          - HTTP: scorecards/log4pot-web-api.md
-      - mailoney:
-          - SMTP: scorecards/mailoney-smtp.md
-      - MockSSH:
-          - SSH: scorecards/mockssh-ssh.md
-      - modpot:
-          - HTTP: scorecards/modpot-http.md
-      - mysql-honeypotd:
-          - MYSQL: scorecards/mysql-honeypotd-mysql.md
-      - node-ftp-honeypot:
-          - FTP: scorecards/node-ftp-honeypot-ftp.md
-      - nosqlpot:
-          - REDIS: scorecards/nosqlpot-redis.md
-      - owa-honeypot:
-          - HTTP: scorecards/owa-honeypot-http.md
-      - OWASP Python-Honeypot:
-          - HTTP: scorecards/owasp-python-honeypot-http.md
-      - pghoney:
-          - PostgreSQL: scorecards/pghoney-postgres.md
-      - portlurker:
-          - Generic: scorecards/portlurker-generic.md
-      - pyRDP:
-          - RDP: scorecards/pyrdp-rdp.md
-      - qeeqbox:
-          - FTP: scorecards/qeeqbox-ftp.md
-          - HTTP: scorecards/qeeqbox-http.md
-          - MYSQL: scorecards/qeeqbox-mysql.md
-          - POP3: scorecards/qeeqbox-pop3.md
-          - PostgreSQL: scorecards/qeeqbox-postgres.md
-          - REDIS: scorecards/qeeqbox-redis.md
-          - SMTP: scorecards/qeeqbox-smtp.md
-          - SSH: scorecards/qeeqbox-ssh.md
-          - TELNET: scorecards/qeeqbox-telnet.md
-          - VNC: scorecards/qeeqbox-vnc.md
-      - SentryPeer:
-          - SIP: scorecards/sentrypeer-sip.md
-      - SHIVA:
-          - SMTP: scorecards/shiva-smtp.md
-      - ssh-auth-logger:
-          - SSH: scorecards/ssh-auth-logger-ssh.md
-      - ssh-honeypotd:
-          - SSH: scorecards/ssh-honeypotd-ssh.md
-      - sshesame:
-          - SSH: scorecards/sshesame-ssh.md
-      - sticky_elephant:
-          - PostgreSQL: scorecards/sticky_elephant-postgres.md
-      - Trapster:
-          - FTP: scorecards/trapster-ftp.md
-          - HTTP: scorecards/trapster-http.md
-          - SSH: scorecards/trapster-ssh.md
-          - TELNET: scorecards/trapster-telnet.md
-      - wordpot:
-          - HTTP: scorecards/wordpot-http.md
-          - HTTP: scorecards/wordpot-web-api.md
+          - FTP: scorecards/dionaea-ftp.scorecard.md
+          - HTTP: scorecards/dionaea-http.scorecard.md
+          - SMB: scorecards/dionaea-smb.scorecard.md
   - Mappings:
       - Overview: mappings/index.md
       - ATT&CK: mappings/attack.md

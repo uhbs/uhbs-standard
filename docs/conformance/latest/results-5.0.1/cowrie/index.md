@@ -1,10 +1,13 @@
-# Cowrie (UHBS multi-protocol proof) (ssh)
+# Cowrie (UHBS multi-protocol proof)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/cowrie/cowrie.git](https://github.com/cowrie/cowrie.git)  
 
-- Benchmark: `cowrie`
-- Protocol: `ssh`
-- Archive: [`docs/conformance/archive/v5.0.1/cowrie/ssh`](../../../../docs/conformance/archive/v5.0.1/cowrie/ssh)
-- Latest path: `docs/conformance/latest/results-5.0.1/cowrie/ssh`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [SSH](ssh/index.md) | Low-Interaction · :2222 | [17.25 / F](ssh/index.md) | [23.73 / F](ssh/index.md) |
+| [TELNET](telnet/index.md) | Low-Interaction · :2223 | [89.06 / B](telnet/index.md) | [77.98 / C](telnet/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id cowrie-ssh`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

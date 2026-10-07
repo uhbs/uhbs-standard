@@ -1,10 +1,12 @@
-# pyrdp (GoSecure) (rdp)
+# pyrdp (GoSecure)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/GoSecure/pyrdp.git](https://github.com/GoSecure/pyrdp.git)  
 
-- Benchmark: `pyrdp`
-- Protocol: `rdp`
-- Archive: [`docs/conformance/archive/v5.0.1/pyrdp/rdp`](../../../../docs/conformance/archive/v5.0.1/pyrdp/rdp)
-- Latest path: `docs/conformance/latest/results-5.0.1/pyrdp/rdp`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [RDP](rdp/index.md) | Low-Interaction · :3389 | [54.45 / D](rdp/index.md) | [36.14 / F](rdp/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id pyrdp-rdp`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

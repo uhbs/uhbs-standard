@@ -1,10 +1,12 @@
-# SHIVA Spampot (shiva-spampot) (smtp)
+# SHIVA Spampot (shiva-spampot)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/shiva-spampot/shiva.git](https://github.com/shiva-spampot/shiva.git)  
 
-- Benchmark: `shiva`
-- Protocol: `smtp`
-- Archive: [`docs/conformance/archive/v5.0.1/shiva/smtp`](../../../../docs/conformance/archive/v5.0.1/shiva/smtp)
-- Latest path: `docs/conformance/latest/results-5.0.1/shiva/smtp`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [SMTP](smtp/index.md) | Low-Interaction · :2525 | [90.45 / A](smtp/index.md) | [79.98 / C](smtp/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id shiva-smtp`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

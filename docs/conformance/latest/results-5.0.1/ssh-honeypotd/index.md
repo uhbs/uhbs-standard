@@ -1,10 +1,12 @@
-# ssh-honeypotd (sjinks) (ssh)
+# ssh-honeypotd (sjinks)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/sjinks/ssh-honeypotd.git](https://github.com/sjinks/ssh-honeypotd.git)  
 
-- Benchmark: `ssh-honeypotd`
-- Protocol: `ssh`
-- Archive: [`docs/conformance/archive/v5.0.1/ssh-honeypotd/ssh`](../../../../docs/conformance/archive/v5.0.1/ssh-honeypotd/ssh)
-- Latest path: `docs/conformance/latest/results-5.0.1/ssh-honeypotd/ssh`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [SSH](ssh/index.md) | Low-Interaction · :22 | [15.2 / F](ssh/index.md) | [17.13 / F](ssh/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id ssh-honeypotd-ssh`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

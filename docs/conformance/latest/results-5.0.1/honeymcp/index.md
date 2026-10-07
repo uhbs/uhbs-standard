@@ -1,10 +1,12 @@
-# HoneyMCP (UHBS MCP proof) (mcp)
+# HoneyMCP (UHBS MCP proof)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/kosiorkosa47/honeymcp.git](https://github.com/kosiorkosa47/honeymcp.git)  
 
-- Benchmark: `honeymcp`
-- Protocol: `mcp`
-- Archive: [`docs/conformance/archive/v5.0.1/honeymcp/mcp`](../../../../docs/conformance/archive/v5.0.1/honeymcp/mcp)
-- Latest path: `docs/conformance/latest/results-5.0.1/honeymcp/mcp`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [MCP](mcp/index.md) | Web-API · :8080 | [56.86 / D](mcp/index.md) | [58.59 / D](mcp/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id honeymcp-mcp`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

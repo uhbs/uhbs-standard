@@ -1,10 +1,12 @@
-# FortiGate VPN-SSL Honeypot (http)
+# FortiGate VPN-SSL Honeypot
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/PeterGabaldon/Fortigate.VPN-SSL.Honeypot.git](https://github.com/PeterGabaldon/Fortigate.VPN-SSL.Honeypot.git)  
 
-- Benchmark: `fortigate-vpn-ssl`
-- Protocol: `http`
-- Archive: [`docs/conformance/archive/v5.0.1/fortigate-vpn-ssl/http`](../../../../docs/conformance/archive/v5.0.1/fortigate-vpn-ssl/http)
-- Latest path: `docs/conformance/latest/results-5.0.1/fortigate-vpn-ssl/http`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [HTTP](http/index.md) | Web-API · :5000 | [26.95 / F](http/index.md) | [26.86 / F](http/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id fortigate-vpn-ssl-http`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

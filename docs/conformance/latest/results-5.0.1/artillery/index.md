@@ -1,10 +1,12 @@
-# artillery (BinaryDefense) (generic)
+# artillery (BinaryDefense)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/BinaryDefense/artillery.git](https://github.com/BinaryDefense/artillery.git)  
 
-- Benchmark: `artillery`
-- Protocol: `generic`
-- Archive: [`docs/conformance/archive/v5.0.1/artillery/generic`](../../../../docs/conformance/archive/v5.0.1/artillery/generic)
-- Latest path: `docs/conformance/latest/results-5.0.1/artillery/generic`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [GENERIC](generic/index.md) | Low-Interaction · :8080 | [34.05 / F](generic/index.md) | [34.05 / F](generic/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id artillery-generic`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

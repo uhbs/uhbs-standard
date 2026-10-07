@@ -1,10 +1,14 @@
-# Dionaea (UHBS multi-protocol proof) (ftp)
+# Dionaea (UHBS multi-protocol proof)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/dinotools/dionaea.git](https://github.com/dinotools/dionaea.git)  
 
-- Benchmark: `dionaea`
-- Protocol: `ftp`
-- Archive: [`docs/conformance/archive/v5.0.1/dionaea/ftp`](../../../../docs/conformance/archive/v5.0.1/dionaea/ftp)
-- Latest path: `docs/conformance/latest/results-5.0.1/dionaea/ftp`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [FTP](ftp/index.md) | Low-Interaction · :21 | [22.46 / F](ftp/index.md) | [22.4 / F](ftp/index.md) |
+| [HTTP](http/index.md) | Web-API · :80 | [20.13 / F](http/index.md) | [23.11 / F](http/index.md) |
+| [SMB](smb/index.md) | Low-Interaction · :445 | [28.98 / F](smb/index.md) | [33.1 / F](smb/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id dionaea-ftp`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

@@ -1,10 +1,13 @@
-# GenAIPot (ls1911 / Nucleon) (pop3)
+# GenAIPot (ls1911 / Nucleon)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/ls1911/GenAIPot.git](https://github.com/ls1911/GenAIPot.git)  
 
-- Benchmark: `genaipot`
-- Protocol: `pop3`
-- Archive: [`docs/conformance/archive/v5.0.1/genaipot/pop3`](../../../../docs/conformance/archive/v5.0.1/genaipot/pop3)
-- Latest path: `docs/conformance/latest/results-5.0.1/genaipot/pop3`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [POP3](pop3/index.md) | Low-Interaction · :110 | [4.14 / F](pop3/index.md) | [36.27 / F](pop3/index.md) |
+| [SMTP](smtp/index.md) | Low-Interaction · :25 | [22.32 / F](smtp/index.md) | [19.99 / F](smtp/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id genaipot-pop3`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

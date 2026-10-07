@@ -1,10 +1,12 @@
-# ssh-auth-logger (JustinAzoff) (ssh)
+# ssh-auth-logger (JustinAzoff)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/JustinAzoff/ssh-auth-logger.git](https://github.com/JustinAzoff/ssh-auth-logger.git)  
 
-- Benchmark: `ssh-auth-logger`
-- Protocol: `ssh`
-- Archive: [`docs/conformance/archive/v5.0.1/ssh-auth-logger/ssh`](../../../../docs/conformance/archive/v5.0.1/ssh-auth-logger/ssh)
-- Latest path: `docs/conformance/latest/results-5.0.1/ssh-auth-logger/ssh`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [SSH](ssh/index.md) | Low-Interaction · :2222 | [29.71 / F](ssh/index.md) | [37.12 / F](ssh/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id ssh-auth-logger-ssh`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

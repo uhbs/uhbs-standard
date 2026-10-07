@@ -257,12 +257,18 @@ for p in all_dirs:
     if p.name not in seen and p.name not in {"READING-UHQS"}:
         ordered.append(p)
 
-# Scorecards grouped by product (featured order, then alpha)
+# Scorecards grouped by product (featured order, then alpha).
+# Archived 4.x-era narrative pages stay in git but are excluded from MkDocs
+# (see exclude_docs in mkdocs.yml) — only the results-5.0.1 *.scorecard.md
+# wave pages and index.md are published.
 groups: dict[str, list[tuple[str, str]]] = defaultdict(list)
 for path in sorted(scorecards_dir.glob("*.md")):
     if path.name == "index.md":
         continue
-    product, child = parse_scorecard(path.stem)
+    if not path.name.endswith(".scorecard.md"):
+        continue
+    stem = path.name.removesuffix(".scorecard.md")
+    product, child = parse_scorecard(stem)
     groups[product].append((child, f"scorecards/{path.name}"))
 
 sc_order: list[str] = []

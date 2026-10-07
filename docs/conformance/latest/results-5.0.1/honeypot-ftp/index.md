@@ -1,10 +1,12 @@
-# honeypot-ftp (alexbredo) (ftp)
+# honeypot-ftp (alexbredo)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/alexbredo/honeypot-ftp.git](https://github.com/alexbredo/honeypot-ftp.git)  
 
-- Benchmark: `honeypot-ftp`
-- Protocol: `ftp`
-- Archive: [`docs/conformance/archive/v5.0.1/honeypot-ftp/ftp`](../../../../docs/conformance/archive/v5.0.1/honeypot-ftp/ftp)
-- Latest path: `docs/conformance/latest/results-5.0.1/honeypot-ftp/ftp`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [FTP](ftp/index.md) | Low-Interaction · :21 | [30.52 / F](ftp/index.md) | [29.93 / F](ftp/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id honeypot-ftp-ftp`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

@@ -1,10 +1,12 @@
-# sticky_elephant (betheroot) (postgres)
+# sticky_elephant (betheroot)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/betheroot/sticky_elephant.git](https://github.com/betheroot/sticky_elephant.git)  
 
-- Benchmark: `sticky_elephant`
-- Protocol: `postgres`
-- Archive: [`docs/conformance/archive/v5.0.1/sticky_elephant/postgres`](../../../../docs/conformance/archive/v5.0.1/sticky_elephant/postgres)
-- Latest path: `docs/conformance/latest/results-5.0.1/sticky_elephant/postgres`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [POSTGRES](postgres/index.md) | Low-Interaction · :5432 | [30.01 / F](postgres/index.md) | [30 / F](postgres/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id sticky_elephant-postgres`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

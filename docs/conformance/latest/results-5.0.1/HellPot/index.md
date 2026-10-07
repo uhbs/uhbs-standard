@@ -1,10 +1,12 @@
-# HellPot (yunginnanet) (http)
+# HellPot (yunginnanet)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/yunginnanet/HellPot.git](https://github.com/yunginnanet/HellPot.git)  
 
-- Benchmark: `HellPot`
-- Protocol: `http`
-- Archive: [`docs/conformance/archive/v5.0.1/HellPot/http`](../../../../docs/conformance/archive/v5.0.1/HellPot/http)
-- Latest path: `docs/conformance/latest/results-5.0.1/HellPot/http`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [HTTP](http/index.md) | Web-API · :8080 | [40.32 / F](http/index.md) | [39.59 / F](http/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id HellPot-http`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

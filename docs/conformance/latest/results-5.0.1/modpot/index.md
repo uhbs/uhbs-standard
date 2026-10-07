@@ -1,10 +1,12 @@
-# modpot (http)
+# modpot
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/referefref/modpot.git](https://github.com/referefref/modpot.git)  
 
-- Benchmark: `modpot`
-- Protocol: `http`
-- Archive: [`docs/conformance/archive/v5.0.1/modpot/http`](../../../../docs/conformance/archive/v5.0.1/modpot/http)
-- Latest path: `docs/conformance/latest/results-5.0.1/modpot/http`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [HTTP](http/index.md) | Web-API · :8080 | [33.12 / F](http/index.md) | [33.5 / F](http/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id modpot-http`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

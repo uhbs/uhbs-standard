@@ -1,10 +1,12 @@
-# LLM Honeypot (Palisade Research) (ssh)
+# LLM Honeypot (Palisade Research)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/PalisadeResearch/llm-honeypot.git](https://github.com/PalisadeResearch/llm-honeypot.git)  
 
-- Benchmark: `llm-honeypot`
-- Protocol: `ssh`
-- Archive: [`docs/conformance/archive/v5.0.1/llm-honeypot/ssh`](../../../../docs/conformance/archive/v5.0.1/llm-honeypot/ssh)
-- Latest path: `docs/conformance/latest/results-5.0.1/llm-honeypot/ssh`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [SSH](ssh/index.md) | Low-Interaction · :2222 | [17.24 / F](ssh/index.md) | [23.72 / F](ssh/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id llm-honeypot-ssh`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

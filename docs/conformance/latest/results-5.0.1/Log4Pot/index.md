@@ -1,10 +1,12 @@
-# Log4Pot (thomaspatzke) (http)
+# Log4Pot (thomaspatzke)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/thomaspatzke/Log4Pot.git](https://github.com/thomaspatzke/Log4Pot.git)  
 
-- Benchmark: `Log4Pot`
-- Protocol: `http`
-- Archive: [`docs/conformance/archive/v5.0.1/Log4Pot/http`](../../../../docs/conformance/archive/v5.0.1/Log4Pot/http)
-- Latest path: `docs/conformance/latest/results-5.0.1/Log4Pot/http`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [HTTP](http/index.md) | Web-API · :8080 | [35.54 / F](http/index.md) | [33.94 / F](http/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id Log4Pot-http`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

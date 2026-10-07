@@ -4,7 +4,7 @@
 
 - Benchmark: `blacknet`
 - Protocol: `legacy`
-- Archive: [`docs/conformance/archive/v5.0.1/blacknet`](../../../../docs/conformance/archive/v5.0.1/blacknet)
+- Archive (created after refresh): `docs/conformance/archive/v5.0.1/blacknet`
 - Latest path: `docs/conformance/latest/results-5.0.1/blacknet`
 
 Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id blacknet-legacy`.

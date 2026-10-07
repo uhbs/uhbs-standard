@@ -1,10 +1,12 @@
-# OWASP Python-Honeypot (http)
+# OWASP Python-Honeypot
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/OWASP/Python-Honeypot.git](https://github.com/OWASP/Python-Honeypot.git)  
 
-- Benchmark: `owasp-python-honeypot`
-- Protocol: `http`
-- Archive: [`docs/conformance/archive/v5.0.1/owasp-python-honeypot/http`](../../../../docs/conformance/archive/v5.0.1/owasp-python-honeypot/http)
-- Latest path: `docs/conformance/latest/results-5.0.1/owasp-python-honeypot/http`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [HTTP](http/index.md) | Web-API · :80 | [26.88 / F](http/index.md) | [27.89 / F](http/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id owasp-python-honeypot-http`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

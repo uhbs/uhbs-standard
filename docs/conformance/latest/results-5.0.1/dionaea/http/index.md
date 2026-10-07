@@ -1,10 +1,63 @@
 # Dionaea (UHBS multi-protocol proof) (http)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**UHBS:** 5.0.1 · **Class:** Web-API · **Protocol:** `http`  
+**Target id:** `dionaea-http` · **Evaluated:** 2026-09-27
 
-- Benchmark: `dionaea`
-- Protocol: `http`
-- Archive: [`docs/conformance/archive/v5.0.1/dionaea/http`](../../../../docs/conformance/archive/v5.0.1/dionaea/http)
-- Latest path: `docs/conformance/latest/results-5.0.1/dionaea/http`
+| Run | UHQS | Grade | δ_C | Verdict | Artifacts |
+| --- | ---: | --- | --- | --- | --- |
+| [Quick](quick/SCORECARD.txt) | **20.13** | F | 0.5 | INCOMPLETE / GATE_FAILED | [`report.json`](quick/report.json) |
+| [Full](full/SCORECARD.txt) (authoritative) | **23.11** | F | 0.5 | COMPLETE / GATE_FAILED | [`report.json`](full/report.json) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id dionaea-http`.
+## Full run — module breakdown
+
+| Module | Score | Weight | Status | Notes |
+| --- | ---: | --- | --- | --- |
+| Module A: Protocol Fidelity | 46.8 | 0.25 | PARTIAL | status=200 |
+| Module B: Behavioral Realism | 65.0 | 0.20 | PARTIAL | no payload probe implemented |
+| Module C: Telemetry Assurance | 0.0 | 0.20 | FAILED | declared native_json but no matching records |
+| Module D: Safety & Containment (C) | 75.0 | GATE | PASSED | User=(empty→root) UsernsMode=(empty) |
+| Module E: Scalability & Latency | 55.0 | 0.15 | PARTIAL | P50=4.3ms P95=1064.7ms P99=2086.8ms TPS_limit=150.0ms proto=http |
+| Module F: Static Code Audit | 66.3 | 0.20 | PARTIAL | bandit HIGH=9 |
+| Safety Gate δ_C | 0.5 | GATE | — | Gate GATE_FAILED; δ_C=0.5 applied to composite |
+
+## Full scorecard (verbatim)
+
+```text
+====================================================================================
+                  UNIVERSAL HONEYPOT BENCHMARK SCORECARD v5.0.1
+====================================================================================
+Target System         : dionaea-http
+System Profile Class  : Web-API
+Scoring Model         : uhqs-v5.2-measured-renorm
+Assessment Status     : COMPLETE
+Critical Controls     : GATE_FAILED
+Protocols             : http
+Evaluation Date       : 2026-09-27
+Evaluation Type       : Full-Spectrum (Static Audit + Dynamic Sandbox)
+Environment           : Isolated Sandbox
+MCP Surface Depth     : unknown
+------------------------------------------------------------------------------------
+EVALUATION MODULE                     SCORE (0-100)    WEIGHT    STATUS
+------------------------------------------------------------------------------------
+Module A: Protocol Fidelity         :  46.8/100       0.25     PARTIAL (status=200)
+Module B: Behavioral Realism        :  65.0/100       0.20     PARTIAL (no payload probe implemented)
+Module C: Telemetry Assurance       :   0.0/100       0.20     FAILED (declared native_json but no matching records)
+Module D: Safety & Containment (C)  :  75.0/100       GATE     PASSED (User=(empty→root) UsernsMode=(empty))
+Module E: Scalability & Latency     :  55.0/100       0.15     PARTIAL (P50=4.3ms P95=1064.7ms P99=2086.8ms TPS_limit=150.0ms proto=http)
+Module F: Static Code Audit         :  66.3/100       0.20     PARTIAL (bandit HIGH=9)
+------------------------------------------------------------------------------------
+SAFETY GATE / CRITICAL CONTROLS        : GATE_FAILED (δ_C=0.5; defense-in-depth C=75.0; composite still published)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 23.11 / 100
+OVERALL EVALUATION GRADE              : GRADE F (Fail)
+scoring_model_id                      : uhqs-v5.2-measured-renorm
+====================================================================================
+```
+
+## Replication
+
+- Execution steps: [EXECUTION-STEPS.md](EXECUTION-STEPS.md)
+- How to read UHQS: [CTI / blue-team guide](../../../../reports/READING-UHQS.md)
+- Tutorial & methodology live on the [product hub](../index.md) (multi-protocol products)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

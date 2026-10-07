@@ -1,10 +1,12 @@
-# pghoney (betheroot) (postgres)
+# pghoney (betheroot)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/betheroot/pghoney.git](https://github.com/betheroot/pghoney.git)  
 
-- Benchmark: `pghoney`
-- Protocol: `postgres`
-- Archive: [`docs/conformance/archive/v5.0.1/pghoney/postgres`](../../../../docs/conformance/archive/v5.0.1/pghoney/postgres)
-- Latest path: `docs/conformance/latest/results-5.0.1/pghoney/postgres`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [POSTGRES](postgres/index.md) | Low-Interaction · :5432 | [11.79 / F](postgres/index.md) | [18.09 / F](postgres/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id pghoney-postgres`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

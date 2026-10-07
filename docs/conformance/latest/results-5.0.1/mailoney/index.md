@@ -1,10 +1,12 @@
-# mailoney (phin3has) (smtp)
+# mailoney (phin3has)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/phin3has/mailoney.git](https://github.com/phin3has/mailoney.git)  
 
-- Benchmark: `mailoney`
-- Protocol: `smtp`
-- Archive: [`docs/conformance/archive/v5.0.1/mailoney/smtp`](../../../../docs/conformance/archive/v5.0.1/mailoney/smtp)
-- Latest path: `docs/conformance/latest/results-5.0.1/mailoney/smtp`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [SMTP](smtp/index.md) | Low-Interaction · :25 | [45.11 / F](smtp/index.md) | [53.25 / D](smtp/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id mailoney-smtp`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

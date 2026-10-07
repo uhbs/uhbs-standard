@@ -1,10 +1,12 @@
-# sentrypeer (sip)
+# sentrypeer
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/SentryPeer/SentryPeer.git](https://github.com/SentryPeer/SentryPeer.git)  
 
-- Benchmark: `sentrypeer`
-- Protocol: `sip`
-- Archive: [`docs/conformance/archive/v5.0.1/sentrypeer/sip`](../../../../docs/conformance/archive/v5.0.1/sentrypeer/sip)
-- Latest path: `docs/conformance/latest/results-5.0.1/sentrypeer/sip`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [SIP](sip/index.md) | Low-Interaction · :5060 | [79.55 / C](sip/index.md) | [79.52 / C](sip/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id sentrypeer-sip`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

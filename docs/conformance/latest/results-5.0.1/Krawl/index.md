@@ -1,10 +1,12 @@
-# Krawl (http)
+# Krawl
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/BlessedRebuS/Krawl.git](https://github.com/BlessedRebuS/Krawl.git)  
 
-- Benchmark: `Krawl`
-- Protocol: `http`
-- Archive: [`docs/conformance/archive/v5.0.1/Krawl/http`](../../../../docs/conformance/archive/v5.0.1/Krawl/http)
-- Latest path: `docs/conformance/latest/results-5.0.1/Krawl/http`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [HTTP](http/index.md) | Web-API · :5000 | [31.65 / F](http/index.md) | [32.32 / F](http/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id Krawl-http`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

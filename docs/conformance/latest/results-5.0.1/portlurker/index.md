@@ -1,10 +1,12 @@
-# portlurker (generic)
+# portlurker
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/bartnv/portlurker.git](https://github.com/bartnv/portlurker.git)  
 
-- Benchmark: `portlurker`
-- Protocol: `generic`
-- Archive: [`docs/conformance/archive/v5.0.1/portlurker/generic`](../../../../docs/conformance/archive/v5.0.1/portlurker/generic)
-- Latest path: `docs/conformance/latest/results-5.0.1/portlurker/generic`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [GENERIC](generic/index.md) | Low-Interaction · :8080 | [68.09 / D](generic/index.md) | [68.82 / D](generic/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id portlurker-generic`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.

@@ -1,10 +1,12 @@
-# nosqlpot (torque59) (redis)
+# nosqlpot (torque59)
 
-**Status:** placeholder — awaiting refresh (`refreshable`)
+**Status:** Informative · evaluation proof  
+**Upstream:** [https://github.com/torque59/nosqlpot.git](https://github.com/torque59/nosqlpot.git)  
 
-- Benchmark: `nosqlpot`
-- Protocol: `redis`
-- Archive: [`docs/conformance/archive/v5.0.1/nosqlpot/redis`](../../../../docs/conformance/archive/v5.0.1/nosqlpot/redis)
-- Latest path: `docs/conformance/latest/results-5.0.1/nosqlpot/redis`
+| Protocol | Class / port | Quick | Full |
+| --- | --- | --- | --- |
+| [REDIS](redis/index.md) | Low-Interaction · :6379 | [9.72 / F](redis/index.md) | [9.72 / F](redis/index.md) |
 
-Do not treat this page as a published UHQS grade. Workers replace these placeholders after a successful claim, clone, Ubuntu Docker run, and `python scripts/validate_unit.py --unit-id nosqlpot-redis`.
+- [Tutorial](TUTORIAL.md) · [Methodology](METHODOLOGY.md)
+
+> Named product is evaluation proof only — not a UHBS endorsement.
