@@ -155,6 +155,7 @@ FIXTURE_OVERRIDES: dict[tuple[str, str], str] = {
     ("cowrie", "telnet"): "docs/conformance/fixtures/cowrie-telnet.scorecard.json",
     ("mqtt-decoy-a", "mqtt"): "docs/conformance/fixtures/mqtt-decoy-a.scorecard.json",
     ("mqtt-decoy-b", "mqtt"): "docs/conformance/fixtures/mqtt-decoy-b.scorecard.json",
+    ("mockssh", "ssh"): "docs/conformance/fixtures/mockssh-low-interaction.scorecard.json",
 }
 
 UNIT_COLUMNS = [

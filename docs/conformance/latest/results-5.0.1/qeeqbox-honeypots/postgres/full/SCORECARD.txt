@@ -4,7 +4,7 @@
 Target System         : qeeqbox-postgres
 System Profile Class  : Database
 Scoring Model         : uhqs-v5.2-measured-renorm
-Assessment Status     : COMPLETE
+Assessment Status     : INCOMPLETE
 Critical Controls     : GATE_FAILED
 Protocols             : postgres
 Evaluation Date       : 2026-09-27

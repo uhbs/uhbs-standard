@@ -1,58 +1,54 @@
 {
   "uhbs_version": "5.0.1",
-  "scoring_model_id": "uhqs-v5.2-measured-renorm",
-  "assessment_status": "INCOMPLETE",
-  "critical_control_verdict": "INCOMPLETE",
-  "containment_measured": false,
   "target": {
-    "name": "Dionaea (SMB :445)",
+    "name": "Dionaea (UHBS multi-protocol proof) (smb)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/dionaea/low_interaction_smb_full.yaml"
   },
-  "evaluated_at": "2026-09-26",
+  "evaluated_at": "2026-09-27",
   "auditor": "UHBS-Lab results-5.0.1 refresh (dionaea-smb)",
   "modules": {
     "A": {
       "score": 70.43,
       "status": "PASSED",
+      "notes": "median=0.456ms pstdev=200.658ms (target jitter often <2ms vs native)",
       "complete": true,
-      "weight": 0.3,
-      "notes": "median=1.258ms pstdev=191.691ms (target jitter often <2ms vs native)"
+      "weight": 0.3
     },
     "B": {
       "score": 65.0,
       "status": "PARTIAL",
+      "notes": "no payload probe implemented",
       "complete": true,
-      "weight": 0.15,
-      "notes": "no payload probe implemented"
+      "weight": 0.15
     },
     "C": {
       "score": 0.0,
       "status": "INCOMPLETE",
+      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4",
       "complete": false,
-      "weight": 0.25,
-      "notes": "declared native_json but no matching records"
+      "weight": 0.25
     },
     "D": {
-      "score": 0.0,
-      "status": "INCOMPLETE",
-      "complete": false,
-      "notes": "UHBS v5: containment verdict from critical controls; defense-in-depth score is diagnostic only; no 95-point floor",
-      "critical_control_verdict": "INCOMPLETE"
+      "score": 75.0,
+      "status": "GATE_FAILED",
+      "notes": "User=(empty\u2192root) UsernsMode=(empty)",
+      "complete": true,
+      "critical_control_verdict": "GATE_FAILED"
     },
     "E": {
       "score": 55.0,
       "status": "PARTIAL",
+      "notes": "P50=1023.7ms P95=1059.0ms P99=1065.4ms TPS_limit=150.0ms proto=smb",
       "complete": true,
-      "weight": 0.1,
-      "notes": "P50=1024.7ms P95=1057.0ms P99=1062.9ms TPS_limit=150.0ms proto=smb"
+      "weight": 0.1
     },
     "F": {
       "score": 66.35,
       "status": "PARTIAL",
+      "notes": "bandit HIGH=9",
       "complete": true,
-      "weight": 0.2,
-      "notes": "no prompt corpus (N/A for non-LLM)"
+      "weight": 0.2
     }
   },
   "weights": {
@@ -63,12 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 0.0,
-    "delta_c": 1.0,
+    "containment_score": 75.0,
+    "delta_c": 0.5,
     "passed": false,
-    "critical_control_verdict": "INCOMPLETE"
+    "critical_control_verdict": "GATE_FAILED",
+    "unauthorized_egress_leaks": 0
   },
-  "uhqs": 66.2,
-  "grade": "D",
-  "notes": "Evaluation proof only. Upstream https://github.com/dinotools/dionaea.git@4e459f1b672a5b4c1e8335c0bff1b93738019215. UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Do not transplant archived 4.x letter grades. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor)."
+  "uhqs": 33.1,
+  "grade": "F",
+  "notes": "Evaluation proof only. results-5.0.1 local-Docker refresh of dionaea-smb at 4e459f1b672a (upstream https://github.com/dinotools/dionaea.git). Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor). Artifacts: docs/conformance/latest/results-5.0.1/dionaea/smb/full.",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "assessment_status": "INCOMPLETE",
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }

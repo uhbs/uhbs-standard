@@ -1,52 +1,52 @@
 {
   "uhbs_version": "5.0.1",
   "target": {
-    "name": "GenAIPot (POP3 :110)",
+    "name": "GenAIPot (ls1911 / Nucleon) (pop3)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/genaipot/low_interaction_pop3_full.yaml"
   },
-  "evaluated_at": "2026-09-26",
+  "evaluated_at": "2026-09-27",
   "auditor": "UHBS-Lab results-5.0.1 refresh (genaipot-pop3)",
   "modules": {
     "A": {
-      "score": 81.53,
+      "score": 83.87,
       "status": "PASSED",
-      "notes": "",
+      "notes": "median=0.391ms pstdev=133.399ms (target jitter often <2ms vs native)",
       "complete": true,
       "weight": 0.3
     },
     "B": {
       "score": 65.0,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "no payload probe implemented",
       "complete": true,
       "weight": 0.15
     },
     "C": {
       "score": 0.0,
       "status": "INCOMPLETE",
-      "notes": "",
+      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4",
       "complete": false,
       "weight": 0.25
     },
     "D": {
-      "score": 0.0,
-      "status": "INCOMPLETE",
-      "notes": "",
-      "complete": false,
-      "critical_control_verdict": "INCOMPLETE"
+      "score": 75.0,
+      "status": "GATE_FAILED",
+      "notes": "User=(empty\u2192root) UsernsMode=(empty)",
+      "complete": true,
+      "critical_control_verdict": "GATE_FAILED"
     },
     "E": {
       "score": 55.0,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "P50=4.6ms P95=1056.3ms P99=1058.9ms TPS_limit=300.0ms proto=pop3",
       "complete": true,
       "weight": 0.1
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
-      "notes": "",
+      "notes": "bandit HIGH=1",
       "complete": true,
       "weight": 0.2
     }
@@ -59,17 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 0.0,
-    "delta_c": 1.0,
+    "containment_score": 75.0,
+    "delta_c": 0.5,
     "passed": false,
-    "critical_control_verdict": "INCOMPLETE",
+    "critical_control_verdict": "GATE_FAILED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 71.61,
-  "grade": "C",
-  "notes": "Evaluation proof only. results-5.0.1 refresh of genaipot-pop3 at 205ffe40008f2e76e0decdb01bc19bf8e00acd8a. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "uhqs": 36.27,
+  "grade": "F",
+  "notes": "Evaluation proof only. results-5.0.1 local-Docker refresh of genaipot-pop3 at 205ffe40008f (upstream https://github.com/ls1911/GenAIPot.git). Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor). Artifacts: docs/conformance/latest/results-5.0.1/genaipot/pop3/full.",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
-  "critical_control_verdict": "INCOMPLETE",
-  "containment_measured": false
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }

@@ -67,7 +67,7 @@
   },
   "uhqs": 61.37,
   "grade": "D",
-  "notes": "Evaluation proof only. Live Cowrie SSH full lab (aliases cowrie-ssh fixture). Regraded 2026-07-27. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. Live Cowrie SSH full lab (aliases cowrie-ssh fixture). Regraded 2026-07-27. Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor).",
   "framework_refs": {
     "attack": [
       "T1595",

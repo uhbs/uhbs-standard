@@ -1,55 +1,52 @@
 {
   "uhbs_version": "5.0.1",
   "target": {
-    "name": "mailoney (SMTP)",
+    "name": "mailoney (phin3has) (smtp)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/mailoney/low_interaction_smtp_full.yaml"
   },
-  "evaluated_at": "2026-09-26",
-  "auditor": "UHBS-Lab full Docker refresh (results-5.0.1)",
+  "evaluated_at": "2026-09-27",
+  "auditor": "UHBS-Lab results-5.0.1 refresh (mailoney-smtp)",
   "modules": {
     "A": {
-      "score": 46.43,
+      "score": 16.87,
       "status": "PARTIAL",
-      "notes": "UHBS Module A \u2014 plugins=['smtp']; class=Low-Interaction strict_rfc=True",
+      "notes": "codes=[220, 354] (want 503)",
       "complete": true,
       "weight": 0.3
     },
     "B": {
       "score": 65.0,
       "status": "PARTIAL",
-      "notes": "UHBS Module B class=Low-Interaction",
+      "notes": "no payload probe implemented",
       "complete": true,
       "weight": 0.15
     },
     "C": {
       "score": 0.0,
       "status": "INCOMPLETE",
-      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4; no native_event_format declared \u2014 validating as native_json only",
+      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4",
       "complete": false,
       "weight": 0.25
     },
     "D": {
-      "score": 0.0,
-      "status": "INCOMPLETE",
-      "notes": "Module D v5: non-SSH targets need gateway/packet evidence for critical egress and runtime inspection \u2014 attestation alone never clears the gate.",
-      "complete": false,
-      "critical_control_verdict": "INCOMPLETE"
+      "score": 83.33,
+      "status": "GATE_PASSED",
+      "notes": "Memory=0 NanoCpus=0 PidsLimit=0",
+      "complete": true,
+      "critical_control_verdict": "GATE_PASSED"
     },
     "E": {
       "score": 100.0,
       "status": "PASSED",
-      "notes": "",
+      "notes": "service alive after load (connect 0.5ms)",
       "complete": true,
-      "weight": 0.1,
-      "p50_ms": 14.79,
-      "p95_ms": 1084.91,
-      "p99_ms": 2056.2
+      "weight": 0.1
     },
     "F": {
       "score": 75.62,
       "status": "PASSED",
-      "notes": "Module F white-box audit (keys/prompts/SAST/VFS)",
+      "notes": "trivy not installed \u2014 not tested (zero credit)",
       "complete": true,
       "weight": 0.2
     }
@@ -62,17 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 0.0,
+    "containment_score": 83.33,
     "delta_c": 1.0,
     "passed": false,
-    "critical_control_verdict": "INCOMPLETE",
+    "critical_control_verdict": "GATE_PASSED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 65.07,
+  "uhqs": 53.25,
   "grade": "D",
-  "notes": "Detailed evaluation proof only. Product name is not a UHBS requirement. Full Docker lab artifacts live under docs/conformance/latest/results-5.0.1/mailoney/smtp/. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 local-Docker refresh of mailoney-smtp at b8310a7019dd (upstream https://github.com/phin3has/mailoney.git). Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor). Artifacts: docs/conformance/latest/results-5.0.1/mailoney/smtp/full.",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
-  "critical_control_verdict": "INCOMPLETE",
-  "containment_measured": false
+  "critical_control_verdict": "GATE_PASSED",
+  "containment_measured": true
 }

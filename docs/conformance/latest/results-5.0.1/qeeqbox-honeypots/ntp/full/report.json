@@ -28,7 +28,7 @@
     "S_E": 35.0,
     "S_F": 60.34,
     "delta_c": 0.5,
-    "uhqs": 24.36,
+    "uhqs": 32.48,
     "weights": {
       "protocol": 0.3,
       "behavior": 0.15,
@@ -41,10 +41,24 @@
     "phase": "profile+static+sandbox+dynamic+score",
     "version": "5.0.1",
     "containment_measured": true,
-    "assessment_status": "INCOMPLETE",
+    "assessment_status": "COMPLETE",
     "critical_control_verdict": "GATE_FAILED",
     "scoring_model_id": "uhqs-v5.2-measured-renorm",
-    "graded": true
+    "graded": true,
+    "uhqs_pre_renorm": {
+      "uhqs": 24.36,
+      "grade": "GRADE F (Fail)",
+      "assessment_status": "INCOMPLETE",
+      "delta_c": 0.5
+    },
+    "measured_modules": {
+      "A": true,
+      "B": true,
+      "C": false,
+      "E": true,
+      "F": true
+    },
+    "rescore_note": "rescored 2026-09-28: measured-renorm exclusion fix (harness never passed measured_modules)"
   },
   "hqs": {
     "target": "qeeqbox-honeypots-ntp",

@@ -67,7 +67,7 @@
   },
   "uhqs": 5.0,
   "grade": "F",
-  "notes": "Evaluation proof only. results-5.0.1 refresh of node-ftp-honeypot-ftp at eb598813315b32749cecc1030741046b80b6dd2d. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 refresh of node-ftp-honeypot-ftp at eb598813315b32749cecc1030741046b80b6dd2d. Originally scored under uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor).",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",

@@ -28,7 +28,7 @@
     "S_E": 100.0,
     "S_F": 0.0,
     "delta_c": 0.5,
-    "uhqs": 16.79,
+    "uhqs": 30.52,
     "weights": {
       "protocol": 0.3,
       "behavior": 0.15,
@@ -44,7 +44,21 @@
     "assessment_status": "INCOMPLETE",
     "critical_control_verdict": "GATE_FAILED",
     "scoring_model_id": "uhqs-v5.2-measured-renorm",
-    "graded": true
+    "graded": true,
+    "uhqs_pre_renorm": {
+      "uhqs": 16.79,
+      "grade": "GRADE F (Fail)",
+      "assessment_status": "INCOMPLETE",
+      "delta_c": 0.5
+    },
+    "measured_modules": {
+      "A": true,
+      "B": true,
+      "C": false,
+      "E": true,
+      "F": false
+    },
+    "rescore_note": "rescored 2026-09-28: measured-renorm exclusion fix (harness never passed measured_modules)"
   },
   "hqs": {
     "target": "qeeqbox-ftp",

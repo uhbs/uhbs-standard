@@ -1,55 +1,52 @@
 {
   "uhbs_version": "5.0.1",
   "target": {
-    "name": "Conpot (mushorg ICS honeypot)",
+    "name": "Conpot \u2014 published UHBS lab reports",
     "class": "ICS-SCADA",
     "profile_ref": "docs/conformance/labs/conpot/ics_modbus_full.yaml"
   },
-  "evaluated_at": "2026-09-26",
-  "auditor": "UHBS-Lab full Docker refresh (results-5.0.1)",
+  "evaluated_at": "2026-09-28",
+  "auditor": "UHBS-Lab results-5.0.1 refresh (conpot-modbus)",
   "modules": {
     "A": {
-      "score": 65.43,
-      "status": "PARTIAL",
-      "notes": "UHBS Module A \u2014 plugins=['modbus']; class=ICS-SCADA strict_rfc=True",
+      "score": 79.0,
+      "status": "PASSED",
+      "notes": "resp=000100000003018302",
       "complete": true,
       "weight": 0.35
     },
     "B": {
       "score": 5.0,
       "status": "PARTIAL",
-      "notes": "UHBS Module B class=ICS-SCADA",
+      "notes": "write step (FC 0x06) failed/unacknowledged: resp=000200000003018602",
       "complete": true,
       "weight": 0.2
     },
     "C": {
       "score": 0.0,
       "status": "INCOMPLETE",
-      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4; no native_event_format declared \u2014 validating as native_json only",
+      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4",
       "complete": false,
       "weight": 0.15
     },
     "D": {
-      "score": 0.0,
-      "status": "INCOMPLETE",
-      "notes": "Module D v5: non-SSH targets need gateway/packet evidence for critical egress and runtime inspection \u2014 attestation alone never clears the gate.",
-      "complete": false,
-      "critical_control_verdict": "INCOMPLETE"
+      "score": 83.33,
+      "status": "GATE_PASSED",
+      "notes": "Memory=0 NanoCpus=0 PidsLimit=0",
+      "complete": true,
+      "critical_control_verdict": "GATE_PASSED"
     },
     "E": {
       "score": 100.0,
       "status": "PASSED",
-      "notes": "",
+      "notes": "service alive after load (connect 0.6ms)",
       "complete": true,
-      "weight": 0.1,
-      "p50_ms": 1.16,
-      "p95_ms": 15.34,
-      "p99_ms": 22.52
+      "weight": 0.1
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
-      "notes": "Module F white-box audit (keys/prompts/SAST/VFS)",
+      "notes": "2 static private keys: conpot/templates/default/ssl/ssl.key, conpot/templates/kamstrup_382/ssl/ssl.key",
       "complete": true,
       "weight": 0.2
     }
@@ -62,17 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 0.0,
+    "containment_score": 83.33,
     "delta_c": 1.0,
     "passed": false,
-    "critical_control_verdict": "INCOMPLETE",
+    "critical_control_verdict": "GATE_PASSED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 56.35,
+  "uhqs": 61.94,
   "grade": "D",
-  "notes": "Detailed evaluation proof only. Product name is not a UHBS requirement. Full Docker lab artifacts live under docs/conformance/latest/results-5.0.1/conpot/. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 local-Docker refresh of conpot-modbus at 35e2dfeca70c (upstream https://github.com/mushorg/conpot.git). Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor). Artifacts: docs/conformance/latest/results-5.0.1/conpot/full.",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
-  "critical_control_verdict": "INCOMPLETE",
-  "containment_measured": false
+  "critical_control_verdict": "GATE_PASSED",
+  "containment_measured": true
 }

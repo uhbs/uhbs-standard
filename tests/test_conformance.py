@@ -26,7 +26,7 @@ def _load(name: str) -> dict:
     [
         ("cowrie-low-interaction.scorecard.json", 61.37, "D"),
         ("posix-shell-lab.scorecard.json", 80.33, "B"),
-        ("echidra-low-interaction.scorecard.json", 36.58, "F"),
+        ("echidra-low-interaction.scorecard.json", 38.09, "F"),
         ("v5/gate-passed-graded.scorecard.json", 90.0, "A"),
         ("safety-gate-fail.scorecard.json", 23.49, "F"),
         ("v5/gate-failed-ungraded.scorecard.json", 50.0, "D"),

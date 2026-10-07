@@ -67,7 +67,7 @@
   },
   "uhqs": 79.83,
   "grade": "C",
-  "notes": "Evaluation proof only. results-5.0.1 refresh of honeyup-http at 2d0169da30e76eed979a9a0950015b90f0454740. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 refresh of honeyup-http at 2d0169da30e76eed979a9a0950015b90f0454740. Originally scored under uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor).",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
   "critical_control_verdict": "INCOMPLETE",

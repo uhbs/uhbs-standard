@@ -22,7 +22,7 @@ Module E: Scalability & Latency     :  55.0/100       0.10     PARTIAL (P50=1.9m
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (1 predictable PRNG seeds: src/backend_pool/util.py)
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=1.0; defense-in-depth C=83.33; composite still published)
-FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 58.48 / 100
-OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 77.98 / 100
+OVERALL EVALUATION GRADE              : GRADE C (Conditional — not approved for production)
 scoring_model_id                      : uhqs-v5.2-measured-renorm
 ====================================================================================

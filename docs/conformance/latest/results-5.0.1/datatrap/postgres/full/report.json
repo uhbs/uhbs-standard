@@ -41,7 +41,7 @@
     "phase": "profile+static+sandbox+dynamic+score",
     "version": "5.0.1",
     "containment_measured": true,
-    "assessment_status": "COMPLETE",
+    "assessment_status": "INCOMPLETE",
     "critical_control_verdict": "GATE_FAILED",
     "scoring_model_id": "uhqs-v5.2-measured-renorm",
     "graded": true,

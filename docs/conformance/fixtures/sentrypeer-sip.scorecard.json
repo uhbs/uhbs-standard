@@ -5,48 +5,48 @@
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/sentrypeer/low_interaction_sip_full.yaml"
   },
-  "evaluated_at": "2026-09-26",
+  "evaluated_at": "2026-09-27",
   "auditor": "UHBS-Lab results-5.0.1 refresh (sentrypeer-sip)",
   "modules": {
     "A": {
-      "score": 86.43,
+      "score": 100.0,
       "status": "PASSED",
-      "notes": "",
+      "notes": "fsm=100 nego=100 timing=100",
       "complete": true,
       "weight": 0.3
     },
     "B": {
       "score": 25.0,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "no state probe implemented",
       "complete": true,
       "weight": 0.15
     },
     "C": {
       "score": 0.0,
       "status": "INCOMPLETE",
-      "notes": "",
+      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4",
       "complete": false,
       "weight": 0.25
     },
     "D": {
-      "score": 0.0,
-      "status": "INCOMPLETE",
-      "notes": "",
-      "complete": false,
-      "critical_control_verdict": "INCOMPLETE"
+      "score": 83.33,
+      "status": "GATE_PASSED",
+      "notes": "Memory=0 NanoCpus=0 PidsLimit=0",
+      "complete": true,
+      "critical_control_verdict": "GATE_PASSED"
     },
     "E": {
       "score": 100.0,
       "status": "PASSED",
-      "notes": "",
+      "notes": "service alive after load (connect 1.0ms)",
       "complete": true,
       "weight": 0.1
     },
     "F": {
-      "score": 66.0,
-      "status": "PARTIAL",
-      "notes": "",
+      "score": 79.46,
+      "status": "PASSED",
+      "notes": "trivy not installed \u2014 not tested (zero credit)",
       "complete": true,
       "weight": 0.2
     }
@@ -59,17 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 0.0,
+    "containment_score": 83.33,
     "delta_c": 1.0,
     "passed": false,
-    "critical_control_verdict": "INCOMPLETE",
+    "critical_control_verdict": "GATE_PASSED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 70.51,
+  "uhqs": 79.52,
   "grade": "C",
-  "notes": "Evaluation proof only. results-5.0.1 refresh of sentrypeer-sip at 0340440ef96767cf7ad0f43cf972b2162c327de3. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 local-Docker refresh of sentrypeer-sip at 0340440ef967 (upstream https://github.com/SentryPeer/SentryPeer.git). Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor). Artifacts: docs/conformance/latest/results-5.0.1/sentrypeer/sip/full.",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
-  "critical_control_verdict": "INCOMPLETE",
-  "containment_measured": false
+  "critical_control_verdict": "GATE_PASSED",
+  "containment_measured": true
 }

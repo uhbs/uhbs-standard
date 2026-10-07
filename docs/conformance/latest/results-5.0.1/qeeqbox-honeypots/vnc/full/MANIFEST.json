@@ -7,11 +7,11 @@
     },
     {
       "path": "REPORT.txt",
-      "sha256": "96e6cc0eba7ce13cdf4a81cc53512f5ff951c69fc3863b852fccde6b2cd5b5cd"
+      "sha256": "fd205a59766b9987bd47b410f5a75e3ed5185d9ef1a389918579dd20f848fde3"
     },
     {
       "path": "SCORECARD.txt",
-      "sha256": "96e6cc0eba7ce13cdf4a81cc53512f5ff951c69fc3863b852fccde6b2cd5b5cd"
+      "sha256": "fd205a59766b9987bd47b410f5a75e3ed5185d9ef1a389918579dd20f848fde3"
     },
     {
       "path": "evidence/container-inspect.json",
@@ -35,11 +35,11 @@
     },
     {
       "path": "proof/full-run.cast",
-      "sha256": "65ad66a6ac03ff001b44200ea4121f65df9915b92258e33b25f8c972a65dafd6"
+      "sha256": "5344508353daa8b01edb24fc702bf98bbf9eb9b14797692bbb822ec5f1e316b8"
     },
     {
       "path": "report.json",
-      "sha256": "2f20d791ff92edfcbfbbf7dbff0dbdbed667c770c2210696083991344f6ad509"
+      "sha256": "332fad1c1a89d55928ca94e8374c26700cb504fd154a3b65360c36784c229e27"
     },
     {
       "path": "run-meta.json",
@@ -55,7 +55,7 @@
     },
     {
       "path": "uhbs-run.log",
-      "sha256": "541a6f6c8133a21c8e7aed4694ef30437ca7c292905951f0de71b5a1892d3d1a"
+      "sha256": "73585c770d3ec4a0e33c682f86d225bd05823aaaf1e59430fe2201132e611f23"
     }
   ],
   "extra": {
@@ -66,5 +66,6 @@
     "assessment_status": "INCOMPLETE",
     "evidence_pack": "evidence-pack.json",
     "evidence_manifest_digest": "4a6ea6dc6af5136a374486a8790cd92f64a423d3fa4cd949f586654a50a01a65"
-  }
+  },
+  "rescore": "rescored 2026-09-28: measured-renorm exclusion fix (harness never passed measured_modules)"
 }

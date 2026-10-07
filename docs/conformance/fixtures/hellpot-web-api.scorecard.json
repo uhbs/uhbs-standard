@@ -5,48 +5,48 @@
     "class": "Web-API",
     "profile_ref": "docs/conformance/labs/HellPot/web_api_http_full.yaml"
   },
-  "evaluated_at": "2026-09-26",
+  "evaluated_at": "2026-09-27",
   "auditor": "UHBS-Lab results-5.0.1 refresh (HellPot-http)",
   "modules": {
     "A": {
-      "score": 73.18,
+      "score": 83.39,
       "status": "PASSED",
-      "notes": "",
+      "notes": "status=200 (want 400/505 or close)",
       "complete": true,
       "weight": 0.25
     },
     "B": {
       "score": 65.0,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "no payload probe implemented",
       "complete": true,
       "weight": 0.2
     },
     "C": {
-      "score": 0.0,
-      "status": "INCOMPLETE",
-      "notes": "",
-      "complete": false,
+      "score": 78.5,
+      "status": "PASSED",
+      "notes": "field_accuracy=0.3509",
+      "complete": true,
       "weight": 0.2
     },
     "D": {
-      "score": 0.0,
-      "status": "INCOMPLETE",
-      "notes": "",
-      "complete": false,
-      "critical_control_verdict": "INCOMPLETE"
+      "score": 75.0,
+      "status": "GATE_FAILED",
+      "notes": "User=(empty\u2192root) UsernsMode=(empty)",
+      "complete": true,
+      "critical_control_verdict": "GATE_FAILED"
     },
     "E": {
       "score": 100.0,
       "status": "PASSED",
-      "notes": "",
+      "notes": "service alive after load (connect 0.2ms)",
       "complete": true,
       "weight": 0.15
     },
     "F": {
       "score": 73.21,
       "status": "PASSED",
-      "notes": "",
+      "notes": "trivy not installed \u2014 not tested (zero credit)",
       "complete": true,
       "weight": 0.2
     }
@@ -59,17 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 0.0,
-    "delta_c": 1.0,
+    "containment_score": 75.0,
+    "delta_c": 0.5,
     "passed": false,
-    "critical_control_verdict": "INCOMPLETE",
+    "critical_control_verdict": "GATE_FAILED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 76.17,
-  "grade": "C",
-  "notes": "Evaluation proof only. results-5.0.1 refresh of HellPot-http at 0ba62c99ea4599ec32474e4982a8ea4d4105c471. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "uhqs": 39.59,
+  "grade": "F",
+  "notes": "Evaluation proof only. results-5.0.1 local-Docker refresh of HellPot-http at 0ba62c99ea45 (upstream https://github.com/yunginnanet/HellPot.git). Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor). Artifacts: docs/conformance/latest/results-5.0.1/HellPot/http/full.",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
-  "assessment_status": "INCOMPLETE",
-  "critical_control_verdict": "INCOMPLETE",
-  "containment_measured": false
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }

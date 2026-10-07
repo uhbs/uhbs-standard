@@ -4,7 +4,7 @@
 Target System         : mailoney-smtp
 System Profile Class  : Low-Interaction
 Scoring Model         : uhqs-v5.2-measured-renorm
-Assessment Status     : COMPLETE
+Assessment Status     : INCOMPLETE
 Critical Controls     : GATE_PASSED
 Protocols             : smtp
 Evaluation Date       : 2026-09-27

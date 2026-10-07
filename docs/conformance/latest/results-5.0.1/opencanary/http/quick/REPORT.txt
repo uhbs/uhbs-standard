@@ -4,7 +4,7 @@
 Target System         : opencanary-http
 System Profile Class  : Web-API
 Scoring Model         : uhqs-v5.2-measured-renorm
-Assessment Status     : INCOMPLETE
+Assessment Status     : COMPLETE
 Critical Controls     : GATE_FAILED
 Protocols             : http
 Evaluation Date       : 2026-09-28
@@ -22,7 +22,7 @@ Module E: Scalability & Latency     : 100.0/100       0.15     PASSED (service a
 Module F: Static Code Audit         :   0.0/100       0.20     INCOMPLETE (Module F white-box audit (keys/prompts/SAST/VFS))
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=0.5; defense-in-depth C=75.0; composite still published)
-FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 25.33 / 100
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 31.66 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
 scoring_model_id                      : uhqs-v5.2-measured-renorm
 ====================================================================================

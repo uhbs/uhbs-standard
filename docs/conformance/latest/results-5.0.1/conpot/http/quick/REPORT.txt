@@ -4,7 +4,7 @@
 Target System         : conpot-http
 System Profile Class  : Web-API
 Scoring Model         : uhqs-v5.2-measured-renorm
-Assessment Status     : INCOMPLETE
+Assessment Status     : COMPLETE
 Critical Controls     : GATE_PASSED
 Protocols             : http
 Evaluation Date       : 2026-09-28
@@ -22,7 +22,7 @@ Module E: Scalability & Latency     : 100.0/100       0.15     PASSED (service a
 Module F: Static Code Audit         :   0.0/100       0.20     INCOMPLETE (Module F white-box audit (keys/prompts/SAST/VFS))
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=1.0; defense-in-depth C=83.33; composite still published)
-FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 53.0 / 100
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 66.25 / 100
 OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
 scoring_model_id                      : uhqs-v5.2-measured-renorm
 ====================================================================================

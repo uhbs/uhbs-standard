@@ -1,57 +1,54 @@
 {
   "uhbs_version": "5.0.1",
-  "scoring_model_id": "uhqs-v5.2-measured-renorm",
-  "assessment_status": "INCOMPLETE",
-  "critical_control_verdict": "INCOMPLETE",
-  "containment_measured": false,
   "target": {
-    "name": "Trapster Community (SSH :2222)",
+    "name": "Trapster Community (UHBS multi-protocol proof) (ssh)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/trapster/low_interaction_ssh_full.yaml"
   },
-  "evaluated_at": "2026-09-26",
+  "evaluated_at": "2026-09-28",
   "auditor": "UHBS-Lab results-5.0.1 refresh (trapster-ssh)",
   "modules": {
     "A": {
-      "score": 44.42,
-      "status": "PARTIAL",
+      "score": 70.5,
+      "status": "PASSED",
+      "notes": "accepted null ID",
       "complete": true,
-      "weight": 0.3,
-      "notes": "UHBS Module A \u2014 plugins=['ssh']"
+      "weight": 0.3
     },
     "B": {
       "score": 6.25,
       "status": "PARTIAL",
+      "notes": "Server '[trapster-lab]:2222' not found in known_hosts",
       "complete": true,
-      "weight": 0.15,
-      "notes": "UHBS Module B class=Low-Interaction"
+      "weight": 0.15
     },
     "C": {
-      "score": 0.0,
-      "status": "FAILED",
+      "score": 0.02,
+      "status": "PARTIAL",
+      "notes": "markers=[] malformed=0",
       "complete": true,
-      "weight": 0.25,
-      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4"
+      "weight": 0.25
     },
     "D": {
-      "score": 0.0,
-      "status": "INCOMPLETE",
-      "complete": false,
-      "notes": "UHBS v5: containment verdict from critical controls; defense-in-depth score is diagnostic only; no 95-point floor",
-      "critical_control_verdict": "INCOMPLETE"
+      "score": 75.0,
+      "status": "GATE_FAILED",
+      "notes": "User=(empty\u2192root) UsernsMode=(empty)",
+      "complete": true,
+      "critical_control_verdict": "GATE_FAILED"
     },
     "E": {
       "score": 20.0,
       "status": "PARTIAL",
+      "notes": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=ssh",
       "complete": true,
       "weight": 0.1
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
+      "notes": "1 predictable PRNG seeds: trapster/modules/http.py",
       "complete": true,
-      "weight": 0.2,
-      "notes": "Module F white-box audit (keys/prompts/SAST/VFS)"
+      "weight": 0.2
     }
   },
   "weights": {
@@ -62,12 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 0.0,
-    "delta_c": 1.0,
+    "containment_score": 75.0,
+    "delta_c": 0.5,
     "passed": false,
-    "critical_control_verdict": "INCOMPLETE"
+    "critical_control_verdict": "GATE_FAILED",
+    "unauthorized_egress_leaks": 0
   },
-  "uhqs": 30.26,
+  "uhqs": 19.05,
   "grade": "F",
-  "notes": "Evaluation proof only. Upstream https://github.com/0xBallpoint/trapster-community.git@c6cc6638e9cc9fd28e38ec6846f2b92cbf01d2b7. UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Do not transplant archived 4.x letter grades. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor)."
+  "notes": "Evaluation proof only. results-5.0.1 local-Docker refresh of trapster-ssh at c6cc6638e9cc (upstream https://github.com/0xBallpoint/trapster-community.git). Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor). Artifacts: docs/conformance/latest/results-5.0.1/trapster/ssh/full.",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }

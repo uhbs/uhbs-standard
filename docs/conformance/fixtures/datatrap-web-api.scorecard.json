@@ -5,48 +5,48 @@
     "class": "Web-API",
     "profile_ref": "docs/conformance/labs/datatrap/web_api_http_full.yaml"
   },
-  "evaluated_at": "2026-09-26",
+  "evaluated_at": "2026-09-28",
   "auditor": "UHBS-Lab results-5.0.1 refresh (datatrap-http)",
   "modules": {
     "A": {
       "score": 100.0,
       "status": "PASSED",
-      "notes": "",
+      "notes": "fsm=100 nego=100 timing=100",
       "complete": true,
       "weight": 0.25
     },
     "B": {
       "score": 65.0,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "no payload probe implemented",
       "complete": true,
       "weight": 0.2
     },
     "C": {
-      "score": 0.0,
-      "status": "INCOMPLETE",
-      "notes": "",
-      "complete": false,
+      "score": 0.02,
+      "status": "PARTIAL",
+      "notes": "http_inject markers=[] malformed=0",
+      "complete": true,
       "weight": 0.2
     },
     "D": {
-      "score": 0.0,
-      "status": "INCOMPLETE",
-      "notes": "",
-      "complete": false,
-      "critical_control_verdict": "INCOMPLETE"
+      "score": 75.0,
+      "status": "GATE_FAILED",
+      "notes": "User=(empty\u2192root) UsernsMode=(empty)",
+      "complete": true,
+      "critical_control_verdict": "GATE_FAILED"
     },
     "E": {
       "score": 100.0,
       "status": "PASSED",
-      "notes": "",
+      "notes": "service alive after load (connect 0.2ms)",
       "complete": true,
       "weight": 0.15
     },
     "F": {
       "score": 65.58,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "bandit HIGH=15",
       "complete": true,
       "weight": 0.2
     }
@@ -59,17 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 0.0,
-    "delta_c": 1.0,
+    "containment_score": 75.0,
+    "delta_c": 0.5,
     "passed": false,
-    "critical_control_verdict": "INCOMPLETE",
+    "critical_control_verdict": "GATE_FAILED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 82.64,
-  "grade": "B",
-  "notes": "Evaluation proof only. results-5.0.1 refresh of datatrap-http at c692e8c697647122821f635be2ce362555ce768b. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "uhqs": 33.06,
+  "grade": "F",
+  "notes": "Evaluation proof only. results-5.0.1 local-Docker refresh of datatrap-http at c692e8c69764 (upstream https://github.com/ThalesGroup/dd-honeypot.git). Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor). Artifacts: docs/conformance/latest/results-5.0.1/datatrap/http/full.",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
-  "assessment_status": "INCOMPLETE",
-  "critical_control_verdict": "INCOMPLETE",
-  "containment_measured": false
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }

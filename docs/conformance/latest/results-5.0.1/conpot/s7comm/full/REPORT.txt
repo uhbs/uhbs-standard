@@ -4,7 +4,7 @@
 Target System         : conpot-s7comm
 System Profile Class  : ICS-SCADA
 Scoring Model         : uhqs-v5.2-measured-renorm
-Assessment Status     : INCOMPLETE
+Assessment Status     : COMPLETE
 Critical Controls     : GATE_PASSED
 Protocols             : s7comm
 Evaluation Date       : 2026-09-28
@@ -22,7 +22,7 @@ Module E: Scalability & Latency     : 100.0/100       0.10     PASSED (service a
 Module F: Static Code Audit         :  70.0/100       0.20     PASSED (2 static private keys: conpot/templates/default/ssl/ssl.key, conpot/templates/kamstrup_382/ssl/ssl.key)
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=1.0; defense-in-depth C=83.33; composite still published)
-FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 69.2 / 100
-OVERALL EVALUATION GRADE              : GRADE D (Needs Remediation)
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 81.41 / 100
+OVERALL EVALUATION GRADE              : GRADE B (Production Baseline)
 scoring_model_id                      : uhqs-v5.2-measured-renorm
 ====================================================================================

@@ -7,11 +7,11 @@
     },
     {
       "path": "REPORT.txt",
-      "sha256": "6ff513677338bb1d159aa6643aef30be821d4edabb78b52b6333102733067a7b"
+      "sha256": "c08ebf429af68a3d1bd43837762c011256ed0e9311f8d93f53490833a09655b2"
     },
     {
       "path": "SCORECARD.txt",
-      "sha256": "6ff513677338bb1d159aa6643aef30be821d4edabb78b52b6333102733067a7b"
+      "sha256": "c08ebf429af68a3d1bd43837762c011256ed0e9311f8d93f53490833a09655b2"
     },
     {
       "path": "evidence/container-inspect.json",
@@ -35,11 +35,11 @@
     },
     {
       "path": "proof/full-run.cast",
-      "sha256": "8085a33a6d5ebdbe91082e27ff848f873bd35ed856c769911fe29e30e76383d8"
+      "sha256": "de6f88872e25378c68c338e1eaa2a1e1f8a44666a2222c6acdeb2e9963ae0903"
     },
     {
       "path": "report.json",
-      "sha256": "3e4a313d2a90be9df499c02b288339d8c59ea2c74bc789fa8e330a66605de056"
+      "sha256": "73337e8ddcf148020278cb10999008e24fef075fa07be47aad27e86257ecd73a"
     },
     {
       "path": "run-meta.json",
@@ -55,7 +55,7 @@
     },
     {
       "path": "uhbs-run.log",
-      "sha256": "919d10f33bb3401d14185fb4808da1d6f75151449f1ecc8f3382e31412921f24"
+      "sha256": "896d649e74f420cde0bb8737f7e93755db093e6ef00a91f0e356b11cc6e69ae2"
     }
   ],
   "extra": {

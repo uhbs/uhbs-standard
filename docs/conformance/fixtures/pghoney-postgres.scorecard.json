@@ -1,52 +1,52 @@
 {
   "uhbs_version": "5.0.1",
   "target": {
-    "name": "pghoney (Postgres :5432)",
+    "name": "pghoney (betheroot) (postgres)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/pghoney/database_postgres_full.yaml"
   },
-  "evaluated_at": "2026-09-26",
+  "evaluated_at": "2026-09-27",
   "auditor": "UHBS-Lab results-5.0.1 refresh (pghoney-postgres)",
   "modules": {
     "A": {
-      "score": 78.43,
-      "status": "PASSED",
-      "notes": "",
+      "score": 34.07,
+      "status": "PARTIAL",
+      "notes": "[Errno -2] Name or service not known",
       "complete": true,
       "weight": 0.3
     },
     "B": {
-      "score": 65.0,
+      "score": 5.0,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "[Errno -2] Name or service not known",
       "complete": true,
       "weight": 0.15
     },
     "C": {
       "score": 0.0,
       "status": "INCOMPLETE",
-      "notes": "",
+      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4",
       "complete": false,
       "weight": 0.25
     },
     "D": {
-      "score": 0.0,
-      "status": "INCOMPLETE",
-      "notes": "",
-      "complete": false,
-      "critical_control_verdict": "INCOMPLETE"
+      "score": 75.0,
+      "status": "GATE_FAILED",
+      "notes": "User=(empty\u2192root) UsernsMode=(empty)",
+      "complete": true,
+      "critical_control_verdict": "GATE_FAILED"
     },
     "E": {
-      "score": 100.0,
-      "status": "PASSED",
-      "notes": "",
+      "score": 20.0,
+      "status": "PARTIAL",
+      "notes": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=postgres",
       "complete": true,
       "weight": 0.1
     },
     "F": {
       "score": 70.81,
       "status": "PASSED",
-      "notes": "",
+      "notes": "trivy not installed \u2014 not tested (zero credit)",
       "complete": true,
       "weight": 0.2
     }
@@ -59,17 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 0.0,
-    "delta_c": 1.0,
+    "containment_score": 75.0,
+    "delta_c": 0.5,
     "passed": false,
-    "critical_control_verdict": "INCOMPLETE",
+    "critical_control_verdict": "GATE_FAILED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 76.59,
-  "grade": "C",
-  "notes": "Evaluation proof only. results-5.0.1 refresh of pghoney-postgres at f5d367f749f7e9353421aaf44dad856df490c441. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "uhqs": 18.09,
+  "grade": "F",
+  "notes": "Evaluation proof only. results-5.0.1 local-Docker refresh of pghoney-postgres at f5d367f749f7 (upstream https://github.com/betheroot/pghoney.git). Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor). Artifacts: docs/conformance/latest/results-5.0.1/pghoney/postgres/full.",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
-  "critical_control_verdict": "INCOMPLETE",
-  "containment_measured": false
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }

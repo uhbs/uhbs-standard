@@ -5,48 +5,48 @@
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/datatrap/low_interaction_mysql_full.yaml"
   },
-  "evaluated_at": "2026-09-26",
+  "evaluated_at": "2026-09-28",
   "auditor": "UHBS-Lab results-5.0.1 refresh (datatrap-mysql)",
   "modules": {
     "A": {
-      "score": 48.43,
+      "score": 43.21,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "c1=0 c2=0 e1='' e2=''",
       "complete": true,
       "weight": 0.3
     },
     "B": {
       "score": 5.0,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "timed out",
       "complete": true,
       "weight": 0.15
     },
     "C": {
       "score": 0.0,
       "status": "INCOMPLETE",
-      "notes": "",
+      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4",
       "complete": false,
       "weight": 0.25
     },
     "D": {
-      "score": 0.0,
-      "status": "INCOMPLETE",
-      "notes": "",
-      "complete": false,
-      "critical_control_verdict": "INCOMPLETE"
+      "score": 75.0,
+      "status": "GATE_FAILED",
+      "notes": "User=(empty\u2192root) UsernsMode=(empty)",
+      "complete": true,
+      "critical_control_verdict": "GATE_FAILED"
     },
     "E": {
       "score": 20.0,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=mysql",
       "complete": true,
       "weight": 0.1
     },
     "F": {
       "score": 65.58,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "bandit HIGH=15",
       "complete": true,
       "weight": 0.2
     }
@@ -59,17 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 0.0,
-    "delta_c": 1.0,
+    "containment_score": 75.0,
+    "delta_c": 0.5,
     "passed": false,
-    "critical_control_verdict": "INCOMPLETE",
+    "critical_control_verdict": "GATE_FAILED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 40.53,
+  "uhqs": 19.22,
   "grade": "F",
-  "notes": "Evaluation proof only. results-5.0.1 refresh of datatrap-mysql at c692e8c697647122821f635be2ce362555ce768b. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 local-Docker refresh of datatrap-mysql at c692e8c69764 (upstream https://github.com/ThalesGroup/dd-honeypot.git). Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor). Artifacts: docs/conformance/latest/results-5.0.1/datatrap/mysql/full.",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
-  "critical_control_verdict": "INCOMPLETE",
-  "containment_measured": false
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }

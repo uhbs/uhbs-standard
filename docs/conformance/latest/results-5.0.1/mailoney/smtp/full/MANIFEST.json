@@ -6,11 +6,11 @@
     },
     {
       "path": "REPORT.txt",
-      "sha256": "e16daa001553191d4ff90155efb463cb6b3c0209b14fe179aadba27d2b73380e"
+      "sha256": "1a2c0ad75f80c73fce1e040be49bd36d09e63e6190e72b9ccb1969e1652f17b9"
     },
     {
       "path": "SCORECARD.txt",
-      "sha256": "e16daa001553191d4ff90155efb463cb6b3c0209b14fe179aadba27d2b73380e"
+      "sha256": "1a2c0ad75f80c73fce1e040be49bd36d09e63e6190e72b9ccb1969e1652f17b9"
     },
     {
       "path": "evidence/container-inspect.json",
@@ -38,7 +38,7 @@
     },
     {
       "path": "report.json",
-      "sha256": "a7e5b2be6f1bfcf9b673921762fc284605d2a35d3c31dd163919269e231aea31"
+      "sha256": "a597adc59e1ebf3712663d7abedeb6bbc3112918fa0509aec903aeafc4c13ef4"
     },
     {
       "path": "run-meta.json",

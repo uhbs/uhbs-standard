@@ -7,11 +7,11 @@
     },
     {
       "path": "REPORT.txt",
-      "sha256": "ee4d376da9bedd1fc1eea0451bb04a076eac5eb51c9e9a057875d7d9e7b6c7f8"
+      "sha256": "c21010bf4db977e5a4a152741fbce2c9be93e726e95bf3828eb90c5875ba40ab"
     },
     {
       "path": "SCORECARD.txt",
-      "sha256": "ee4d376da9bedd1fc1eea0451bb04a076eac5eb51c9e9a057875d7d9e7b6c7f8"
+      "sha256": "c21010bf4db977e5a4a152741fbce2c9be93e726e95bf3828eb90c5875ba40ab"
     },
     {
       "path": "evidence/container-inspect.json",
@@ -35,7 +35,7 @@
     },
     {
       "path": "report.json",
-      "sha256": "01ffa8ff0a2cad0f3d6b9b6ed87c9078e191b633c92de7303fad67e545ad8d64"
+      "sha256": "b431bc50a5199de31c717c5a8d7cac80ee09421b809305e865f311f92dbcc713"
     },
     {
       "path": "run-meta.json",
@@ -54,5 +54,6 @@
     "assessment_status": "INCOMPLETE",
     "evidence_pack": "evidence-pack.json",
     "evidence_manifest_digest": "2d56fceab3681c20dab73f634c396c935f7b8f25e8894b9a6a268d9127e66158"
-  }
+  },
+  "rescore": "rescored 2026-09-28: measured-renorm exclusion fix (harness never passed measured_modules)"
 }

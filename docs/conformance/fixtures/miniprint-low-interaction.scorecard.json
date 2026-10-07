@@ -1,56 +1,53 @@
 {
   "uhbs_version": "5.0.1",
   "target": {
-    "name": "miniprint (sa7mon PJL honeypot)",
+    "name": "miniprint \u2014 published UHBS lab reports",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/miniprint/low_interaction_full.yaml"
   },
-  "evaluated_at": "2026-09-26",
-  "auditor": "UHBS-Lab full Docker refresh (results-5.0.1)",
+  "evaluated_at": "2026-09-27",
+  "auditor": "UHBS-Lab results-5.0.1 refresh (miniprint-pjl)",
   "modules": {
     "A": {
-      "score": 80.43,
-      "status": "PASSED",
-      "notes": "UHBS Module A \u2014 plugins=['pjl']; class=Low-Interaction strict_rfc=True",
+      "score": 34.0,
+      "status": "PARTIAL",
+      "notes": "[Errno -2] Name or service not known",
       "complete": true,
       "weight": 0.3
     },
     "B": {
-      "score": 65.0,
+      "score": 13.0,
       "status": "PARTIAL",
-      "notes": "UHBS Module B class=Low-Interaction",
+      "notes": "[Errno -2] Name or service not known",
       "complete": true,
       "weight": 0.15
     },
     "C": {
       "score": 0.0,
       "status": "INCOMPLETE",
-      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4; no native_event_format declared \u2014 validating as native_json only",
+      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4",
       "complete": false,
       "weight": 0.25
     },
     "D": {
-      "score": 0.0,
-      "status": "INCOMPLETE",
-      "notes": "Module D v5: non-SSH targets need gateway/packet evidence for critical egress and runtime inspection \u2014 attestation alone never clears the gate.",
-      "complete": false,
-      "critical_control_verdict": "INCOMPLETE"
+      "score": 75.0,
+      "status": "GATE_FAILED",
+      "notes": "User=(empty\u2192root) UsernsMode=(empty)",
+      "complete": true,
+      "critical_control_verdict": "GATE_FAILED"
     },
     "E": {
-      "score": 55.0,
+      "score": 20.0,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=100.0ms proto=pjl",
       "complete": true,
-      "weight": 0.1,
-      "p50_ms": 1025.86,
-      "p95_ms": 2051.43,
-      "p99_ms": 2081.16
+      "weight": 0.1
     },
     "F": {
-      "score": 69.33,
-      "status": "PARTIAL",
-      "notes": "Module F white-box audit (keys/prompts/SAST/VFS)",
-      "complete": true,
+      "score": 0.0,
+      "status": "SKIPPED",
+      "notes": "no source_root configured",
+      "complete": false,
       "weight": 0.2
     }
   },
@@ -62,17 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 0.0,
-    "delta_c": 1.0,
+    "containment_score": 75.0,
+    "delta_c": 0.5,
     "passed": false,
-    "critical_control_verdict": "INCOMPLETE",
+    "critical_control_verdict": "GATE_FAILED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 70.99,
-  "grade": "C",
-  "notes": "Detailed evaluation proof only. Product name is not a UHBS requirement. Full Docker lab artifacts live under docs/conformance/latest/results-5.0.1/miniprint/. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "uhqs": 12.86,
+  "grade": "F",
+  "notes": "Evaluation proof only. results-5.0.1 local-Docker refresh of miniprint-pjl at 494d2fc75b94 (upstream https://github.com/sa7mon/miniprint.git). Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor). Artifacts: docs/conformance/latest/results-5.0.1/miniprint/full.",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
-  "critical_control_verdict": "INCOMPLETE",
-  "containment_measured": false
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }

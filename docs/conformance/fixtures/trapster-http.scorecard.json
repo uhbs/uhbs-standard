@@ -1,57 +1,54 @@
 {
   "uhbs_version": "5.0.1",
-  "scoring_model_id": "uhqs-v5.2-measured-renorm",
-  "assessment_status": "INCOMPLETE",
-  "critical_control_verdict": "INCOMPLETE",
-  "containment_measured": false,
   "target": {
-    "name": "Trapster Community (HTTP :8080)",
+    "name": "Trapster Community (UHBS multi-protocol proof) (http)",
     "class": "Web-API",
     "profile_ref": "docs/conformance/labs/trapster/web_api_http_full.yaml"
   },
-  "evaluated_at": "2026-09-26",
+  "evaluated_at": "2026-09-28",
   "auditor": "UHBS-Lab results-5.0.1 refresh (trapster-http)",
   "modules": {
     "A": {
-      "score": 73.18,
+      "score": 90.59,
       "status": "PASSED",
+      "notes": "status=200 (want 400/505 or close)",
       "complete": true,
-      "weight": 0.25,
-      "notes": "UHBS Module A \u2014 plugins=['http']"
+      "weight": 0.25
     },
     "B": {
       "score": 65.0,
       "status": "PARTIAL",
+      "notes": "no payload probe implemented",
       "complete": true,
-      "weight": 0.2,
-      "notes": "UHBS Module B class=Web-API"
+      "weight": 0.2
     },
     "C": {
-      "score": 0.0,
-      "status": "INCOMPLETE",
-      "complete": false,
-      "weight": 0.2,
-      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4"
+      "score": 0.02,
+      "status": "PARTIAL",
+      "notes": "http_inject markers=[] malformed=0",
+      "complete": true,
+      "weight": 0.2
     },
     "D": {
-      "score": 0.0,
-      "status": "INCOMPLETE",
-      "complete": false,
-      "notes": "Module D v5: non-SSH targets need gateway/packet evidence for critical egress and runtime inspection \u2014 attestation alone never clears the gate.",
-      "critical_control_verdict": "INCOMPLETE"
+      "score": 75.0,
+      "status": "GATE_FAILED",
+      "notes": "User=(empty\u2192root) UsernsMode=(empty)",
+      "complete": true,
+      "critical_control_verdict": "GATE_FAILED"
     },
     "E": {
-      "score": 100.0,
-      "status": "PASSED",
+      "score": 55.0,
+      "status": "PARTIAL",
+      "notes": "P50=2.1ms P95=1063.4ms P99=1064.6ms TPS_limit=150.0ms proto=http",
       "complete": true,
       "weight": 0.15
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
+      "notes": "1 predictable PRNG seeds: trapster/modules/http.py",
       "complete": true,
-      "weight": 0.2,
-      "notes": "Module F white-box audit (keys/prompts/SAST/VFS)"
+      "weight": 0.2
     }
   },
   "weights": {
@@ -62,12 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 0.0,
-    "delta_c": 1.0,
+    "containment_score": 75.0,
+    "delta_c": 0.5,
     "passed": false,
-    "critical_control_verdict": "INCOMPLETE"
+    "critical_control_verdict": "GATE_FAILED",
+    "unauthorized_egress_leaks": 0
   },
-  "uhqs": 75.37,
-  "grade": "C",
-  "notes": "Evaluation proof only. Upstream https://github.com/0xBallpoint/trapster-community.git@c6cc6638e9cc9fd28e38ec6846f2b92cbf01d2b7. UHQS v5 scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Do not transplant archived 4.x letter grades. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor)."
+  "uhqs": 28.95,
+  "grade": "F",
+  "notes": "Evaluation proof only. results-5.0.1 local-Docker refresh of trapster-http at c6cc6638e9cc (upstream https://github.com/0xBallpoint/trapster-community.git). Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor). Artifacts: docs/conformance/latest/results-5.0.1/trapster/http/full.",
+  "scoring_model_id": "uhqs-v5.2-measured-renorm",
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }

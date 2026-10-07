@@ -64,5 +64,5 @@
   },
   "uhqs": 76.0,
   "grade": "C",
-  "notes": "v5 golden: incomplete \u2192 Ungraded. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor)."
+  "notes": "v5 golden: incomplete \u2192 Ungraded. Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor)."
 }

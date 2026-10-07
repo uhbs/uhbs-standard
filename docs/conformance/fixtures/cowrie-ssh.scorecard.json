@@ -1,52 +1,52 @@
 {
   "uhbs_version": "5.0.1",
   "target": {
-    "name": "Cowrie (SSH :2222)",
+    "name": "Cowrie (UHBS multi-protocol proof) (ssh)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/cowrie/low_interaction_ssh_full.yaml"
   },
-  "evaluated_at": "2026-09-26",
+  "evaluated_at": "2026-09-27",
   "auditor": "UHBS-Lab results-5.0.1 refresh (cowrie-ssh)",
   "modules": {
     "A": {
-      "score": 16.56,
+      "score": 22.61,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "accepted null ID",
       "complete": true,
       "weight": 0.3
     },
     "B": {
-      "score": 60.0,
+      "score": 6.25,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "Host key for server 'cowrie-lab' does not match: got 'AAAAC3NzaC1lZDI1NTE5AAAAIMBuaXnvSsORPVMSFY6UZAtRICRRlJFKx1GxoqSCBd7m', expected 'AAAAC3NzaC1lZDI1NTE5AAAAILQg1t9/eK4ktUlv3vLEDyDBVkmaGcJw/gsEvet6gU0Y'",
       "complete": true,
       "weight": 0.15
     },
     "C": {
-      "score": 0.0,
+      "score": 0.02,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "markers=[] malformed=0",
       "complete": true,
       "weight": 0.25
     },
     "D": {
-      "score": 0.0,
-      "status": "GATE_FAILED",
-      "notes": "",
+      "score": 83.33,
+      "status": "GATE_PASSED",
+      "notes": "Memory=0 NanoCpus=0 PidsLimit=0",
       "complete": true,
-      "critical_control_verdict": "GATE_FAILED"
+      "critical_control_verdict": "GATE_PASSED"
     },
     "E": {
-      "score": 100.0,
-      "status": "PASSED",
-      "notes": "",
+      "score": 20.0,
+      "status": "PARTIAL",
+      "notes": "P50=0.0ms P95=0.0ms P99=0.0ms TPS_limit=3000.0ms proto=ssh",
       "complete": true,
       "weight": 0.1
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
-      "notes": "",
+      "notes": "1 predictable PRNG seeds: src/backend_pool/util.py",
       "complete": true,
       "weight": 0.2
     }
@@ -59,17 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 0.0,
-    "delta_c": 0.5,
-    "passed": false,
-    "critical_control_verdict": "GATE_FAILED",
-    "unauthorized_egress_leaks": 1
+    "containment_score": 83.33,
+    "delta_c": 1.0,
+    "passed": true,
+    "critical_control_verdict": "GATE_PASSED",
+    "unauthorized_egress_leaks": 0
   },
-  "uhqs": 18.98,
+  "uhqs": 23.73,
   "grade": "F",
-  "notes": "Evaluation proof only. results-5.0.1 refresh of cowrie-ssh at fef0d620962e23194a9d34a048488f9c76c85835. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 local-Docker refresh of cowrie-ssh at fef0d620962e (upstream https://github.com/cowrie/cowrie.git). Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor). Artifacts: docs/conformance/latest/results-5.0.1/cowrie/ssh/full.",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "COMPLETE",
-  "critical_control_verdict": "GATE_FAILED",
+  "critical_control_verdict": "GATE_PASSED",
   "containment_measured": true
 }

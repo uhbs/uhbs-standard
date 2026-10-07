@@ -1,52 +1,52 @@
 {
   "uhbs_version": "5.0.1",
   "target": {
-    "name": "Cowrie (Telnet :2223)",
+    "name": "Cowrie (UHBS multi-protocol proof) (telnet)",
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/cowrie/low_interaction_telnet_full.yaml"
   },
-  "evaluated_at": "2026-09-26",
+  "evaluated_at": "2026-09-28",
   "auditor": "UHBS-Lab results-5.0.1 refresh (cowrie-telnet)",
   "modules": {
     "A": {
-      "score": 86.43,
+      "score": 97.44,
       "status": "PASSED",
-      "notes": "",
+      "notes": "fsm=100 nego=91 timing=100",
       "complete": true,
       "weight": 0.3
     },
     "B": {
       "score": 65.0,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "no payload probe implemented",
       "complete": true,
       "weight": 0.15
     },
     "C": {
       "score": 0.0,
       "status": "INCOMPLETE",
-      "notes": "",
+      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4",
       "complete": false,
       "weight": 0.25
     },
     "D": {
-      "score": 0.0,
-      "status": "INCOMPLETE",
-      "notes": "",
-      "complete": false,
-      "critical_control_verdict": "INCOMPLETE"
+      "score": 83.33,
+      "status": "GATE_PASSED",
+      "notes": "Memory=0 NanoCpus=0 PidsLimit=0",
+      "complete": true,
+      "critical_control_verdict": "GATE_PASSED"
     },
     "E": {
       "score": 55.0,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "P50=1.9ms P95=1004.0ms P99=1006.6ms TPS_limit=500.0ms proto=telnet",
       "complete": true,
       "weight": 0.1
     },
     "F": {
       "score": 70.0,
       "status": "PASSED",
-      "notes": "",
+      "notes": "1 predictable PRNG seeds: src/backend_pool/util.py",
       "complete": true,
       "weight": 0.2
     }
@@ -59,17 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 0.0,
+    "containment_score": 83.33,
     "delta_c": 1.0,
     "passed": false,
-    "critical_control_verdict": "INCOMPLETE",
+    "critical_control_verdict": "GATE_PASSED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 73.57,
+  "uhqs": 77.98,
   "grade": "C",
-  "notes": "Evaluation proof only. results-5.0.1 refresh of cowrie-telnet at fef0d620962e23194a9d34a048488f9c76c85835. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 local-Docker refresh of cowrie-telnet at fef0d620962e (upstream https://github.com/cowrie/cowrie.git). Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor). Artifacts: docs/conformance/latest/results-5.0.1/cowrie/telnet/full.",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
-  "critical_control_verdict": "INCOMPLETE",
-  "containment_measured": false
+  "critical_control_verdict": "GATE_PASSED",
+  "containment_measured": true
 }

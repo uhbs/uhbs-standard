@@ -28,7 +28,7 @@
     "S_E": 100.0,
     "S_F": 0.0,
     "delta_c": 1.0,
-    "uhqs": 29.95,
+    "uhqs": 54.45,
     "weights": {
       "protocol": 0.3,
       "behavior": 0.15,
@@ -37,14 +37,28 @@
       "static": 0.2
     },
     "profile_class": "Low-Interaction",
-    "grade": "GRADE F (Fail)",
+    "grade": "GRADE D (Needs Remediation)",
     "phase": "profile+static+sandbox+dynamic+score",
     "version": "5.0.1",
     "containment_measured": true,
     "assessment_status": "INCOMPLETE",
     "critical_control_verdict": "GATE_PASSED",
     "scoring_model_id": "uhqs-v5.2-measured-renorm",
-    "graded": true
+    "graded": true,
+    "uhqs_pre_renorm": {
+      "uhqs": 29.95,
+      "grade": "GRADE F (Fail)",
+      "assessment_status": "INCOMPLETE",
+      "delta_c": 1.0
+    },
+    "measured_modules": {
+      "A": true,
+      "B": true,
+      "C": false,
+      "E": true,
+      "F": false
+    },
+    "rescore_note": "rescored 2026-09-28: measured-renorm exclusion fix (harness never passed measured_modules)"
   },
   "hqs": {
     "target": "pyrdp-rdp",

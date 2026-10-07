@@ -4,7 +4,7 @@
 Target System         : conpot
 System Profile Class  : ICS-SCADA
 Scoring Model         : uhqs-v5.2-measured-renorm
-Assessment Status     : COMPLETE
+Assessment Status     : INCOMPLETE
 Critical Controls     : GATE_PASSED
 Protocols             : modbus
 Evaluation Date       : 2026-09-28

@@ -5,41 +5,41 @@
     "class": "Low-Interaction",
     "profile_ref": "docs/conformance/labs/pyrdp/low_interaction_rdp_full.yaml"
   },
-  "evaluated_at": "2026-09-26",
+  "evaluated_at": "2026-09-28",
   "auditor": "UHBS-Lab results-5.0.1 refresh (pyrdp-rdp)",
   "modules": {
     "A": {
-      "score": 0.0,
-      "status": "FAILED",
-      "notes": "",
+      "score": 36.43,
+      "status": "PARTIAL",
+      "notes": "no reply",
       "complete": true,
       "weight": 0.3
     },
     "B": {
-      "score": 13.0,
+      "score": 33.0,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "r1= r2= e=-",
       "complete": true,
       "weight": 0.15
     },
     "C": {
       "score": 0.0,
       "status": "INCOMPLETE",
-      "notes": "",
+      "notes": "UHBS v5 Module C: declared-format validation; sink-side C2; ground-truth C4",
       "complete": false,
       "weight": 0.25
     },
     "D": {
-      "score": 0.0,
-      "status": "INCOMPLETE",
-      "notes": "",
-      "complete": false,
-      "critical_control_verdict": "INCOMPLETE"
+      "score": 83.33,
+      "status": "GATE_PASSED",
+      "notes": "Memory=0 NanoCpus=0 PidsLimit=0",
+      "complete": true,
+      "critical_control_verdict": "GATE_PASSED"
     },
     "E": {
-      "score": 20.0,
+      "score": 40.0,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "P50=1024.0ms P95=2053.5ms P99=2058.9ms TPS_limit=150.0ms proto=rdp",
       "complete": true,
       "weight": 0.1
     },
@@ -59,17 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 0.0,
+    "containment_score": 83.33,
     "delta_c": 1.0,
     "passed": false,
-    "critical_control_verdict": "INCOMPLETE",
+    "critical_control_verdict": "GATE_PASSED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 7.18,
+  "uhqs": 36.14,
   "grade": "F",
-  "notes": "Evaluation proof only. results-5.0.1 refresh of pyrdp-rdp at b610809260778cf1bfb15ad3c6493bd318dbb508. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "notes": "Evaluation proof only. results-5.0.1 local-Docker refresh of pyrdp-rdp at b61080926077 (upstream https://github.com/GoSecure/pyrdp.git). Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor). Artifacts: docs/conformance/latest/results-5.0.1/pyrdp/rdp/full.",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
   "assessment_status": "INCOMPLETE",
-  "critical_control_verdict": "INCOMPLETE",
-  "containment_measured": false
+  "critical_control_verdict": "GATE_PASSED",
+  "containment_measured": true
 }

@@ -5,48 +5,48 @@
     "class": "Web-API",
     "profile_ref": "docs/conformance/labs/owasp-python-honeypot/web_api_http_full.yaml"
   },
-  "evaluated_at": "2026-09-26",
+  "evaluated_at": "2026-09-27",
   "auditor": "UHBS-Lab results-5.0.1 refresh (owasp-python-honeypot-http)",
   "modules": {
     "A": {
-      "score": 46.43,
+      "score": 60.0,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "status=200",
       "complete": true,
       "weight": 0.25
     },
     "B": {
       "score": 65.0,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "no payload probe implemented",
       "complete": true,
       "weight": 0.2
     },
     "C": {
       "score": 0.0,
-      "status": "INCOMPLETE",
-      "notes": "",
-      "complete": false,
+      "status": "FAILED",
+      "notes": "declared native_json but no matching records",
+      "complete": true,
       "weight": 0.2
     },
     "D": {
-      "score": 0.0,
-      "status": "INCOMPLETE",
-      "notes": "",
-      "complete": false,
-      "critical_control_verdict": "INCOMPLETE"
+      "score": 75.0,
+      "status": "GATE_FAILED",
+      "notes": "User=(empty\u2192root) UsernsMode=(empty)",
+      "complete": true,
+      "critical_control_verdict": "GATE_FAILED"
     },
     "E": {
       "score": 100.0,
       "status": "PASSED",
-      "notes": "",
+      "notes": "service alive after load (connect 0.1ms)",
       "complete": true,
       "weight": 0.15
     },
     "F": {
-      "score": 66.0,
+      "score": 63.94,
       "status": "PARTIAL",
-      "notes": "",
+      "notes": "bandit HIGH=11",
       "complete": true,
       "weight": 0.2
     }
@@ -59,17 +59,17 @@
     "w_F": 0.2
   },
   "safety_gate": {
-    "containment_score": 0.0,
-    "delta_c": 1.0,
+    "containment_score": 75.0,
+    "delta_c": 0.5,
     "passed": false,
-    "critical_control_verdict": "INCOMPLETE",
+    "critical_control_verdict": "GATE_FAILED",
     "unauthorized_egress_leaks": 0
   },
-  "uhqs": 66.01,
-  "grade": "D",
-  "notes": "Evaluation proof only. results-5.0.1 refresh of owasp-python-honeypot-http at 5482fdcc0b828a5d3acf354910843b907e92032a. scoring_model_id=uhqs-v5.0-critical-gate-diagnostic. Regraded under uhqs-v5.1-always-grade (always-grade; gate is \u03b4_C factor).",
+  "uhqs": 27.89,
+  "grade": "F",
+  "notes": "Evaluation proof only. results-5.0.1 local-Docker refresh of owasp-python-honeypot-http at 5482fdcc0b82 (upstream https://github.com/OWASP/Python-Honeypot.git). Regraded under uhqs-v5.2-measured-renorm (always-grade; measured modules renormalized; Safety Gate is a \u03b4_C factor). Artifacts: docs/conformance/latest/results-5.0.1/owasp-python-honeypot/http/full.",
   "scoring_model_id": "uhqs-v5.2-measured-renorm",
-  "assessment_status": "INCOMPLETE",
-  "critical_control_verdict": "INCOMPLETE",
-  "containment_measured": false
+  "assessment_status": "COMPLETE",
+  "critical_control_verdict": "GATE_FAILED",
+  "containment_measured": true
 }

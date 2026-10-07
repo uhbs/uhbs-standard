@@ -22,7 +22,7 @@ Module E: Scalability & Latency     :  40.0/100       0.10     PARTIAL (P50=1024
 Module F: Static Code Audit         :   0.0/100       0.20     FAILED
 ------------------------------------------------------------------------------------
 SAFETY GATE / CRITICAL CONTROLS        : INCOMPLETE (δ_C=1.0; defense-in-depth C=83.33; composite still published)
-FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 19.88 / 100
+FINAL COMPOSITE SCORE (UHQS 5.0.1)      : 36.14 / 100
 OVERALL EVALUATION GRADE              : GRADE F (Fail)
 scoring_model_id                      : uhqs-v5.2-measured-renorm
 ====================================================================================
